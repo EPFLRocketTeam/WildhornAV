@@ -1,0 +1,6 @@
+deploy-flash/
+FIP_artifacts/
+images-*/
+linux-*/
+tf-a-*/
+u-boot-*/
