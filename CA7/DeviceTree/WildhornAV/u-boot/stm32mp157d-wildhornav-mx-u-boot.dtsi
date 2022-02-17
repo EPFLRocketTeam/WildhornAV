@@ -198,6 +198,10 @@
 	u-boot,dm-pre-reloc;
 
 	/* USER CODE BEGIN usbotg_hs */
+	
+	u-boot,force-b-session-valid;
+	dr_mode = "peripheral";
+	
 	/* USER CODE END usbotg_hs */
 };
 

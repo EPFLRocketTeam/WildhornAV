@@ -460,6 +460,11 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbotg_hs */
+	
+	phys = <&usbphyc_port1 0>;
+	phy-names = "usb2-phy";
+	usb-role-switch;
+	
 	/* USER CODE END usbotg_hs */
 };
 
@@ -474,6 +479,9 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbphyc_port0 */
+	
+	phy-supply = <&vdd_usb>;
+	
 	/* USER CODE END usbphyc_port0 */
 };
 
@@ -481,6 +489,9 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbphyc_port1 */
+	
+	phy-supply = <&vdd_usb>;
+	
 	/* USER CODE END usbphyc_port1 */
 };
 

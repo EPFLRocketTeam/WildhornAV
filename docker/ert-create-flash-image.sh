@@ -49,10 +49,11 @@ edit_bootfs() {
 	echo "MENU BACKGROUND ../splash.bmp" 		>> extlinux/extlinux.conf
 	echo "TIMEOUT 5" 				>> extlinux/extlinux.conf
 	echo "DEFAULT $1" 				>> extlinux/extlinux.conf
+	echo "        SAY Booting IacoBoard..." 	>> extlinux/extlinux.conf	
 	echo "LABEL $1" 				>> extlinux/extlinux.conf
 	echo "        KERNEL /uImage" 			>> extlinux/extlinux.conf
 	echo "        FDT /$1.dtb" 			>> extlinux/extlinux.conf
-	echo "        APPEND root=PARTUUID=e91c4e10-16e6-4c0e-bd0e-77becf4a3582 rootwait rw console=ttySTM0,115200" >> extlinux/extlinux.conf
+	echo "        APPEND root=PARTUUID=e91c4e10-16e6-4c0e-bd0e-77becf4a3582 rootwait rw earlyprintk console=ttySTM0,115200" >> extlinux/extlinux.conf
 	
 	popd
 	

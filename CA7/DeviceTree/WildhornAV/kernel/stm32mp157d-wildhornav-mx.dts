@@ -117,6 +117,17 @@
 			default-state = "off";
 		};
 	};
+	
+	usb_phy_tuning:usb-phy-tuning{
+		st,hs-dc-level = <2>;
+		st,fs-rftime-tuning;
+		st,hs-rftime-reduction;
+		st,hs-current-trim = <15>;
+		st,hs-impedance-trim = <1>;
+		st,squelch-level = <3>;
+		st,hs-rx-offset = <2>;
+		st,no-lsfs-sc;
+	};
 		
 	/* USER CODE END root */
 
@@ -785,6 +796,9 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbh_ehci */
+	
+	phys = <&usbphyc_port0>;
+	
 	/* USER CODE END usbh_ehci */
 };
 
@@ -800,6 +814,12 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbotg_hs */
+	
+	phys = <&usbphyc_port1 0>;
+	phy-names = "usb2-phy";
+	usb-role-switch;
+	role-switch-default-mode = "peripheral";
+	
 	/* USER CODE END usbotg_hs */
 };
 
@@ -816,6 +836,10 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbphyc_port0 */
+	
+	phy-supply = <&vdd_usb>;
+	st,phy-tuning = <&usb_phy_tuning>;
+	
 	/* USER CODE END usbphyc_port0 */
 };
 
@@ -824,6 +848,10 @@
 	status = "okay";
 
 	/* USER CODE BEGIN usbphyc_port1 */
+	
+	phy-supply = <&vdd_usb>;
+	st,phy-tuning = <&usb_phy_tuning>;
+	
 	/* USER CODE END usbphyc_port1 */
 };
 
@@ -847,6 +875,10 @@
 
 &adc {
 	status = "disabled";
+};
+
+&usbh_ohci{
+	phys = <&usbphyc_port0>;
 };
 
 /* USER CODE END addons */
