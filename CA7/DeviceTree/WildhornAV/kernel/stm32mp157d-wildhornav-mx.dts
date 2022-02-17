@@ -22,7 +22,7 @@
 /* USER CODE END includes */
 
 / {
-	model = "EPFL Rocket Team - IacoBoard";
+	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.10-dunfell-mp1-21-03-31";
 	compatible = "st,stm32mp157d-wildhornav-mx", "st,stm32mp157";
 
 	memory@c0000000 {
@@ -277,14 +277,14 @@
 					 <STM32_PINMUX('C', 11, AF12)>, /* SDMMC1_D3 */
 					 <STM32_PINMUX('D', 2, AF12)>, /* SDMMC1_CMD */
 					 <STM32_PINMUX('E', 6, AF8)>; /* SDMMC1_D2 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
 		pins2 {
 			u-boot,dm-pre-reloc;
 			pinmux = <STM32_PINMUX('C', 12, AF12)>; /* SDMMC1_CK */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <3>;
 		};
@@ -298,21 +298,21 @@
 					 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1_D1 */
 					 <STM32_PINMUX('C', 11, AF12)>, /* SDMMC1_D3 */
 					 <STM32_PINMUX('E', 6, AF8)>; /* SDMMC1_D2 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
 		pins2 {
 			u-boot,dm-pre-reloc;
 			pinmux = <STM32_PINMUX('C', 12, AF12)>; /* SDMMC1_CK */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <3>;
 		};
 		pins3 {
 			u-boot,dm-pre-reloc;
 			pinmux = <STM32_PINMUX('D', 2, AF12)>; /* SDMMC1_CMD */
-			bias-disable;
+			bias-pull-up;
 			drive-open-drain;
 			slew-rate = <1>;
 		};
@@ -394,7 +394,7 @@
 &dma1{
 	status = "okay";
 
-	/* USER CODE BEGIN dma1 */	
+	/* USER CODE BEGIN dma1 */
 	/* USER CODE END dma1 */
 };
 
@@ -744,7 +744,7 @@
 	broken-cd;
 	disable-wp;
 	st,sig-dir;
-	st,use-ckin;
+	//st,use-ckin;
 	st,neg-edge;
 	bus-width = <4>;
 	vmmc-supply = <&v3v3>;

@@ -22,7 +22,7 @@
 /* USER CODE END includes */
 
 / {
-	model = "EPFL Rocket Team - IacoBoard";
+	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.10-dunfell-mp1-21-03-31";
 	compatible = "st,stm32mp157d-wildhornav-mx", "st,stm32mp157";
 
 	memory@c0000000 {
@@ -39,7 +39,7 @@
 		ranges;
 
 		/* USER CODE BEGIN reserved-memory */
-				
+		
 		mcuram2:mcuram2@10000000{
 			compatible = "shared-dma-pool";
 			reg = <0x10000000 0x40000>;
@@ -85,9 +85,9 @@
 	};
 
 	/* USER CODE BEGIN root */
-		
+	
 	aliases{
-		//ethernet0 = &ethernet0;
+		ethernet0 = &ethernet0;
 		serial0 = &uart8;
 		serial1 = &usart2;
 		serial2 = &usart3;
@@ -97,7 +97,7 @@
 	chosen{
 		stdout-path = "serial0:115200n8";
 	};
-	
+
 	vin:vin{
 		compatible = "regulator-fixed";
 		regulator-name = "vin";
@@ -106,6 +106,7 @@
 		regulator-always-on;
 	};
 
+	
 	led{
 		compatible = "gpio-leds";
 
@@ -116,7 +117,7 @@
 			default-state = "off";
 		};
 	};
-	
+		
 	/* USER CODE END root */
 
 	clocks {
@@ -276,14 +277,14 @@
 					 <STM32_PINMUX('C', 11, AF12)>, /* SDMMC1_D3 */
 					 <STM32_PINMUX('D', 2, AF12)>, /* SDMMC1_CMD */
 					 <STM32_PINMUX('E', 6, AF8)>; /* SDMMC1_D2 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
 		pins2 {
 			u-boot,dm-pre-reloc;
 			pinmux = <STM32_PINMUX('C', 12, AF12)>; /* SDMMC1_CK */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <3>;
 		};
@@ -297,21 +298,21 @@
 					 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1_D1 */
 					 <STM32_PINMUX('C', 11, AF12)>, /* SDMMC1_D3 */
 					 <STM32_PINMUX('E', 6, AF8)>; /* SDMMC1_D2 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
 		pins2 {
 			u-boot,dm-pre-reloc;
 			pinmux = <STM32_PINMUX('C', 12, AF12)>; /* SDMMC1_CK */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <3>;
 		};
 		pins3 {
 			u-boot,dm-pre-reloc;
 			pinmux = <STM32_PINMUX('D', 2, AF12)>; /* SDMMC1_CMD */
-			bias-disable;
+			bias-pull-up;
 			drive-open-drain;
 			slew-rate = <1>;
 		};
@@ -739,7 +740,7 @@
 
 	/* USER CODE BEGIN sdmmc1 */
 	
-	//cd-gpios = <&gpiob 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // SD detect -- we don't have
+	//cd-gpios = <&gpiob 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // NO SD CARD DETECT
 	broken-cd;
 	disable-wp;
 	st,sig-dir;

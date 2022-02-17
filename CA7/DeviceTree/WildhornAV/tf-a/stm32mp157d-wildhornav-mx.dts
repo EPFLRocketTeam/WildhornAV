@@ -24,7 +24,7 @@
 /* USER CODE END includes */
 
 / {
-	model = "EPFL Rocket Team - IacoBoard";
+	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.10-dunfell-mp1-21-03-31";
 	compatible = "st,stm32mp157d-wildhornav-mx", "st,stm32mp157";
 
 	/* USER CODE BEGIN root */
@@ -89,13 +89,13 @@
 					 <STM32_PINMUX('C', 11, AF12)>, /* SDMMC1_D3 */
 					 <STM32_PINMUX('D', 2, AF12)>, /* SDMMC1_CMD */
 					 <STM32_PINMUX('E', 6, AF8)>; /* SDMMC1_D2 */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <1>;
 		};
 		pins2 {
 			pinmux = <STM32_PINMUX('C', 12, AF12)>; /* SDMMC1_CK */
-			bias-disable;
+			bias-pull-up;
 			drive-push-pull;
 			slew-rate = <3>;
 		};
