@@ -3,9 +3,9 @@
 ############## GENERAL HELPERS ################
 
 usage() {
-	echo "Usage: ert-compile-device-tree <device-tree-name> <path/to/CA7>"
+	echo "Usage: ert-compile-device-tree <path/to/CA7>"
 	echo ""
-	echo "    Example: ert-compile-device-tree stm32mp157d-boardtest-mx ./CA7"
+	echo "    Example: ert-compile-device-tree ./CA7"
 	exit 1
 }
 
@@ -15,6 +15,9 @@ detect_folders() {
 	
 	TMP_FILES=("$ABS_ROOT/DeviceTree"/*)
 	PROJECT_NAME=$(basename "${TMP_FILES[0]}")
+	
+	TMP_FILES=("$ABS_ROOT/DeviceTree/$PROJECT_NAME/kernel"/*)
+	DEVICE_TREE_NAME=$(basename "${TMP_FILES[0]}" .dts)
 	
 	TMP_FILES=("$ABS_ROOT"/linux*)
 	LINUX_DIR=$(basename "${TMP_FILES[0]}")
@@ -126,21 +129,21 @@ compile_uboot() {
 }
 
 ########### MAIN ################
-if [ $# -ne 2 ];
+if [ $# -ne 1 ];
 then
 	echo "[ERROR]: bad number of parameters"
 	echo ""
 	usage
 else
 	# find all necessary files
-	detect_folders $2
+	detect_folders $1
 	echo ""
 	echo "CA7 root folder: $ABS_ROOT"
 	echo "Project name: $PROJECT_NAME"
 	echo "Linux folder: $LINUX_DIR"
 	echo "TF-A folder: $TFA_DIR"
 	echo "U-boot folder: $UBOOT_DIR"
-	echo "Device tree name: $1"
+	echo "Device tree name: $DEVICE_TREE_NAME"
 	echo ""
 	
 	# ask for confirmation
@@ -154,9 +157,9 @@ else
 		rm -rf FIP_artifacts/
 		
 		#do the compilation
-		compile_linux $1
-		compile_tfa $1
-		compile_uboot $1
+		compile_linux $DEVICE_TREE_NAME
+		compile_tfa $DEVICE_TREE_NAME
+		compile_uboot $DEVICE_TREE_NAME
 		
 		popd
 	fi
