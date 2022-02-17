@@ -50,12 +50,12 @@ compile_linux() {
 	
 	# configure linux compilation
 	mkdir -p ../build
-	make O="$PWD/../build" multi_v7_defconfig fragment*.config
+	make O="$PWD/../build" multi_v7_defconfig fragment*.config -j8
 	for f in `ls -1 ../fragment*.config`; do scripts/kconfig/merge_config.sh -m -r -O $PWD/../build $PWD/../build/.config $f; done
 	yes '' | make oldconfig O="$PWD/../build"
 	
 	# do compilation
-	make "$1".dtb LOADADDR=0xC2000040 O="$PWD/../build"
+	make "$1".dtb LOADADDR=0xC2000040 O="$PWD/../build" -j8
 	
 	popd
 	popd
@@ -87,7 +87,7 @@ compile_tfa() {
 	export FIP_DEPLOYDIR_ROOT="$ABS_ROOT/FIP_artifacts"
 	
 	# do compilation
-	make -f ../Makefile.sdk TF_A_DEVICETREE=$1 FIP_CONFIG=" trusted" FIP_BL32_CONF="tfa," TF_A_CONFIG="trusted emmc sdcard usb" DEPLOYDIR=$FIP_DEPLOYDIR_ROOT/arm-trusted-firmware stm32
+	make -f ../Makefile.sdk TF_A_DEVICETREE=$1 FIP_CONFIG=" trusted" FIP_BL32_CONF="tfa," TF_A_CONFIG="trusted emmc sdcard usb" DEPLOYDIR=$FIP_DEPLOYDIR_ROOT/arm-trusted-firmware stm32 -j8
 	
 	popd
 	popd
@@ -119,7 +119,7 @@ compile_uboot() {
 	export FIP_DEPLOYDIR_ROOT="$ABS_ROOT/FIP_artifacts"
 	
 	# do compilation
-	make -f ../Makefile.sdk DEVICE_TREE=$1 DEPLOYDIR=$FIP_DEPLOYDIR_ROOT/u-boot FIP_CONFIG=" trusted" FIP_BL32_CONF="tfa," all
+	make -f ../Makefile.sdk DEVICE_TREE=$1 DEPLOYDIR=$FIP_DEPLOYDIR_ROOT/u-boot FIP_CONFIG=" trusted" FIP_BL32_CONF="tfa," all -j8
 	
 	popd
 	popd
