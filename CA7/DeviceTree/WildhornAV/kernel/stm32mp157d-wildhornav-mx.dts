@@ -374,6 +374,11 @@
 	status = "okay";
 
 	/* USER CODE BEGIN m4_rproc */
+	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
+			<&vdev0vring1>, <&vdev0buffer>;
+	interrupt-parent = <&exti>;
+	interrupts = <68 1>;
+	wakeup-source;
 	/* USER CODE END m4_rproc */
 
 	m4_system_resources{
@@ -395,6 +400,9 @@
 	status = "okay";
 
 	/* USER CODE BEGIN dma1 */
+
+	sram = <&dma_pool>;
+	
 	/* USER CODE END dma1 */
 };
 
@@ -402,6 +410,9 @@
 	status = "disabled";
 
 	/* USER CODE BEGIN dma2 */
+	
+	sram = <&dma_pool>;	
+	
 	/* USER CODE END dma2 */
 };
 
@@ -568,7 +579,7 @@
 
 	/* USER CODE BEGIN iwdg2 */
 	
-	timeout-sec = <32>;
+	timeout-sec = <128>;
 	
 	/* USER CODE END iwdg2 */
 };
