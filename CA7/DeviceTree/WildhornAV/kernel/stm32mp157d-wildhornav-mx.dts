@@ -478,9 +478,9 @@
 	pmic:stpmic@33{
 		compatible = "st,stpmic1";
 		reg = <0x33>;
-		//interrupts-extended = <&exti_pwr 55 IRQ_TYPE_EDGE_FALLING>;
-		//interrupt-controller;
-		//#interrupt-cells = <2>;
+		interrupts-extended = <&exti_pwr 55 IRQ_TYPE_EDGE_FALLING>;
+		interrupt-controller;
+		#interrupt-cells = <2>;
 		status = "okay";
 
 		regulators {
@@ -567,6 +567,11 @@
 				regulator-name = "vbus_sw";
 				regulator-active-discharge = <1>;
 			};
+		};
+		
+		onkey{
+			compatible = "st,stpmic1-onkey"; 
+			status = "disabled";
 		};
 
 		watchdog{
