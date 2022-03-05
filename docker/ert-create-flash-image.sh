@@ -3,15 +3,21 @@
 ############## GENERAL HELPERS ################
 
 usage() {
-	echo "Usage: ert-create-flash-image <device-tree-name> <path/to/CA7>"
+	echo "Usage: ert-create-flash-image <path/to/CA7>"
 	echo ""
-	echo "    Example: ert-create-flash-image stm32mp157d-boardtest-mx ./CA7"
+	echo "    Example: ert-create-flash-image ./CA7"
 	exit 1
 }
 
 detect_folders() {
 	REL_ROOT=$1
 	ABS_ROOT=$(realpath "$REL_ROOT")
+	
+	TMP_FILES=("$ABS_ROOT/DeviceTree"/*)
+	PROJECT_NAME=$(basename "${TMP_FILES[0]}")
+	
+	TMP_FILES=("$ABS_ROOT/DeviceTree/$PROJECT_NAME/kernel"/*)
+	DEVICE_TREE_NAME=$(basename "${TMP_FILES[0]}" .dts)
 	
 	TMP_FILES=("$ABS_ROOT"/linux*)
 	LINUX_DIR=$(basename "${TMP_FILES[0]}")
@@ -43,10 +49,11 @@ edit_bootfs() {
 	echo "MENU BACKGROUND ../splash.bmp" 		>> extlinux/extlinux.conf
 	echo "TIMEOUT 5" 				>> extlinux/extlinux.conf
 	echo "DEFAULT $1" 				>> extlinux/extlinux.conf
+	echo "        SAY Booting IacoBoard..." 	>> extlinux/extlinux.conf	
 	echo "LABEL $1" 				>> extlinux/extlinux.conf
 	echo "        KERNEL /uImage" 			>> extlinux/extlinux.conf
 	echo "        FDT /$1.dtb" 			>> extlinux/extlinux.conf
-	echo "        APPEND root=PARTUUID=e91c4e10-16e6-4c0e-bd0e-77becf4a3582 rootwait rw console=ttySTM0,115200" >> extlinux/extlinux.conf
+	echo "        APPEND root=/dev/mmcblk0p6 rootwait rw earlyprintk console=ttySTM0,115200" >> extlinux/extlinux.conf
 	
 	popd
 	
@@ -89,19 +96,19 @@ create_image() {
 }
 
 ########### MAIN ################
-if [ $# -ne 2 ];
+if [ $# -ne 1 ];
 then
 	echo "[ERROR]: bad number of parameters"
 	echo ""
 	usage
 else
 	# find all necessary files
-	detect_folders $2
+	detect_folders $1
 	echo ""
 	echo "CA7 root folder: $ABS_ROOT"
 	echo "Linux folder: $LINUX_DIR"
 	echo "Filesystem images folder: $IMAGES_DIR"
-	echo "Device tree name: $1"
+	echo "Device tree name: $DEVICE_TREE_NAME"
 	echo ""
 	
 	# ask for confirmation
@@ -115,8 +122,8 @@ else
 		mkdir -p deploy-flash/
 		
 		#create flash image
-		edit_bootfs $1
-		create_image $1
+		edit_bootfs $DEVICE_TREE_NAME
+		create_image $DEVICE_TREE_NAME
 		
 		popd
 	fi
