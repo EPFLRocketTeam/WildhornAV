@@ -39,12 +39,6 @@
 		ranges;
 
 		/* USER CODE BEGIN reserved-memory */
-		
-		mcuram2:mcuram2@10000000{
-			compatible = "shared-dma-pool";
-			reg = <0x10000000 0x40000>;
-			no-map;
-		};
 
 		vdev0vring0:vdev0vring0@10040000{
 			compatible = "shared-dma-pool";
@@ -63,22 +57,17 @@
 			reg = <0x10042000 0x4000>;
 			no-map;
 		};
-
-		mcuram:mcuram@30000000{
-			compatible = "shared-dma-pool";
-			reg = <0x30000000 0x40000>;
-			no-map;
-		};
-
-		retram:retram@38000000{
-			compatible = "shared-dma-pool";
+		/* RETRAM memory region reserved for firmware code and data */
+			retram: retram@0x38000000 {
 			reg = <0x38000000 0x10000>;
-			no-map;
 		};
-
-		gpu_reserved:gpu@d4000000{
-			reg = <0xd4000000 0x4000000>;
-			no-map;
+		/* MCUSRAM memory region reserved for firmware code and data */
+		mcusram: mcusram@0x10000000 {
+			reg = <0x10000000 0x40000>;
+		};
+		/* MCUSRAM aliased memory region reserved for firmware code and data */
+		mcusram2: mcusram2@0x30000000 {
+			reg = <0x30000000 0x40000>;
 		};
 		
 		/* USER CODE END reserved-memory */
@@ -391,7 +380,8 @@
 	status = "okay";
 
 	/* USER CODE BEGIN m4_rproc */
-	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
+	st,auto-boot = <1>;
+	memory-region = <&retram>, <&mcusram>, <&mcusram2>, <&vdev0vring0>,
 			<&vdev0vring1>, <&vdev0buffer>;
 	interrupt-parent = <&exti>;
 	interrupts = <68 1>;
@@ -801,6 +791,20 @@
 
 	/* USER CODE BEGIN uart8 */
 	/* USER CODE END uart8 */
+};
+
+&usbh_ehci{
+	status = "okay";
+
+	/* USER CODE BEGIN usbh_ehci */
+	/* USER CODE END usbh_ehci */
+};
+
+&usbh_ohci{
+	status = "okay";
+
+	/* USER CODE BEGIN usbh_ohci */
+	/* USER CODE END usbh_ohci */
 };
 
 &usbotg_hs{

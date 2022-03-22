@@ -52,7 +52,7 @@ void control_thread(void * arg) {
 
 	led_init();
 
-	led_set_color(LED_ORANGE);
+	led_set_color(LED_BLUE);
 
 	last_wake_time = xTaskGetTickCount();
 
