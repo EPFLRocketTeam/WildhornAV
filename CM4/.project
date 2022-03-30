@@ -37,6 +37,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Common</locationURI>
 		</link>
 		<link>
+			<name>Core/ThreadSafe/newlib_lock_glue.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/ThreadSafe/newlib_lock_glue.c</locationURI>
+		</link>
+		<link>
+			<name>Core/ThreadSafe/stm32_lock.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/ThreadSafe/stm32_lock.h</locationURI>
+		</link>
+		<link>
 			<name>Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal.c</locationURI>
@@ -205,6 +215,101 @@
 			<name>Middlewares/Third_Party/FreeRTOS/timers.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/CMakeLists.txt</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/CMakeLists.txt</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/condition.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/condition.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/device.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/device.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/generic_device.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_device.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/generic_init.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_init.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/generic_io.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_io.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/generic_shmem.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_shmem.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/init.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/init.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/io.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/io.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/log.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/log.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/remoteproc_virtio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/remoteproc/remoteproc_virtio.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/rpmsg.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/rpmsg.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/rpmsg_virtio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/rpmsg_virtio.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/shmem.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/sys.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/cortexm/sys.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/time.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/time.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/virt_uart.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/virtio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/virtqueue.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtqueue.c</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
