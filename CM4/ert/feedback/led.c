@@ -10,7 +10,7 @@
  *	INCLUDES
  **********************/
 
-#include <led.h>
+#include "led.h"
 #include <main.h>
 #include <tim.h>
 
@@ -19,6 +19,8 @@
  **********************/
 
 #define LED_TIM			htim3
+
+
 
 /**********************
  *	CONSTANTS
@@ -55,7 +57,7 @@
  *	DECLARATIONS
  **********************/
 
-void led_init(void) {
+void led_rgb_init(void) {
 	LED_TIM.Instance->ARR = LED_MAX;
 	LED_TIM.Instance->CCR1 = 0;
 	LED_TIM.Instance->CCR2 = 0;
@@ -65,7 +67,7 @@ void led_init(void) {
 	HAL_TIMEx_PWMN_Start(&LED_TIM, TIM_CHANNEL_3);
 }
 
-void led_set_color(uint8_t r, uint8_t g, uint8_t b) {
+void led_rgb_set_color(uint8_t r, uint8_t g, uint8_t b) {
 	LED_TIM.Instance->CCR1 = r;
 	LED_TIM.Instance->CCR2 = g;
 	LED_TIM.Instance->CCR3 = b;

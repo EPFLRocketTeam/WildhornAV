@@ -39,12 +39,6 @@
 		ranges;
 
 		/* USER CODE BEGIN reserved-memory */
-		
-		mcuram2:mcuram2@10000000{
-			compatible = "shared-dma-pool";
-			reg = <0x10000000 0x40000>;
-			no-map;
-		};
 
 		vdev0vring0:vdev0vring0@10040000{
 			compatible = "shared-dma-pool";
@@ -63,22 +57,17 @@
 			reg = <0x10042000 0x4000>;
 			no-map;
 		};
-
-		mcuram:mcuram@30000000{
-			compatible = "shared-dma-pool";
-			reg = <0x30000000 0x40000>;
-			no-map;
-		};
-
-		retram:retram@38000000{
-			compatible = "shared-dma-pool";
+		/* RETRAM memory region reserved for firmware code and data */
+		retram: retram@0x38000000 {
 			reg = <0x38000000 0x10000>;
-			no-map;
 		};
-
-		gpu_reserved:gpu@d4000000{
-			reg = <0xd4000000 0x4000000>;
-			no-map;
+		/* MCUSRAM memory region reserved for firmware code and data */
+		mcusram: mcusram@0x10000000 {
+			reg = <0x10000000 0x40000>;
+		};
+		/* MCUSRAM aliased memory region reserved for firmware code and data */
+		mcusram2: mcusram2@0x30000000 {
+			reg = <0x30000000 0x40000>;
 		};
 		
 		/* USER CODE END reserved-memory */
@@ -246,15 +235,6 @@
 		};
 	};
 
-	m4_tim4_pwm_pins_mx: m4_tim4_pwm_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 6, RSVD)>, /* TIM4_CH1 */
-					 <STM32_PINMUX('D', 13, RSVD)>, /* TIM4_CH2 */
-					 <STM32_PINMUX('D', 14, RSVD)>, /* TIM4_CH3 */
-					 <STM32_PINMUX('D', 15, RSVD)>; /* TIM4_CH4 */
-		};
-	};
-
 	m4_tim5_pwm_pins_mx: m4_tim5_pwm_mx-0 {
 		pins {
 			pinmux = <STM32_PINMUX('A', 0, RSVD)>, /* TIM5_CH1 */
@@ -391,7 +371,8 @@
 	status = "okay";
 
 	/* USER CODE BEGIN m4_rproc */
-	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
+	st,auto-boot = <1>;
+	memory-region = <&retram>, <&mcusram>, <&mcusram2>, <&vdev0vring0>,
 			<&vdev0vring1>, <&vdev0buffer>;
 	interrupt-parent = <&exti>;
 	interrupts = <68 1>;
@@ -686,8 +667,6 @@
 };
 
 &m4_timers4{
-	pinctrl-names = "default";
-	pinctrl-0 = <&m4_tim4_pwm_pins_mx>;
 	status = "okay";
 
 	/* USER CODE BEGIN m4_timers4 */
