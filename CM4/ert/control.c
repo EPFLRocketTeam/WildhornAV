@@ -76,11 +76,15 @@ void control_thread(void * arg) {
 
 		if(dummy) {
 			led_rgb_set_color(LED_RED);
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+			//HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+			GPIOB->BSRR = GPIO_PIN_6;
 		} else {
 			led_rgb_set_color(LED_GREEN);
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+			//HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
+			GPIOB->BSRR = GPIO_PIN_6<<16;
 		}
+
+
 
 		uint8_t string[] = "I am alive\n        ";
 
