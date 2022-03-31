@@ -16,6 +16,7 @@
  **********************/
 
 #include <stdint.h>
+#include <main.h>
 
 /**********************
  *  CONSTANTS
@@ -74,6 +75,12 @@
 #ifdef __cplusplus
 extern "C"{
 #endif
+
+
+void gpio_set(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void gpio_clr(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void gpio_config(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void gpio_get(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 
 
 

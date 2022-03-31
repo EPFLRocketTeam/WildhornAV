@@ -41,4 +41,12 @@
  *	DECLARATIONS
  **********************/
 
+void gpio_set(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) {
+	GPIOx->BSRR = GPIO_Pin;
+}
+
+void gpio_clr(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) {
+	GPIOx->BSRR = GPIO_Pin<<16;
+}
+
 /* END */
