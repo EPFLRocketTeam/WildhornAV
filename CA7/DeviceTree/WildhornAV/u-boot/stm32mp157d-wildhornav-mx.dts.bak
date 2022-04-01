@@ -22,7 +22,7 @@
 /* USER CODE END includes */
 
 / {
-	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.10-dunfell-mp1-21-03-31";
+	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.10-dunfell-mp1-21-11-17";
 	compatible = "st,stm32mp157d-wildhornav-mx", "st,stm32mp157";
 
 	memory@c0000000 {
@@ -232,6 +232,20 @@
 		};
 	};
 
+	m4_tim3_pins_mx: m4_tim3_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 1, RSVD)>; /* TIM3_CH4 */
+		};
+	};
+
+	m4_tim3_pwm_pins_mx: m4_tim3_pwm_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 0, RSVD)>, /* TIM3_CH3 */
+					 <STM32_PINMUX('C', 6, RSVD)>, /* TIM3_CH1 */
+					 <STM32_PINMUX('C', 7, RSVD)>; /* TIM3_CH2 */
+		};
+	};
+
 	m4_tim4_pwm_pins_mx: m4_tim4_pwm_mx-0 {
 		pins {
 			pinmux = <STM32_PINMUX('B', 6, RSVD)>, /* TIM4_CH1 */
@@ -334,40 +348,6 @@
 		};
 	};
 
-	tim3_pins_mx: tim3_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 1, AF2)>; /* TIM3_CH4 */
-			bias-disable;
-			drive-push-pull;
-			slew-rate = <0>;
-		};
-	};
-
-	tim3_sleep_pins_mx: tim3_sleep_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 1, ANALOG)>; /* TIM3_CH4 */
-		};
-	};
-
-	tim3_pwm_pins_mx: tim3_pwm_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 0, AF2)>, /* TIM3_CH3 */
-					 <STM32_PINMUX('C', 6, AF2)>, /* TIM3_CH1 */
-					 <STM32_PINMUX('C', 7, AF2)>; /* TIM3_CH2 */
-			bias-disable;
-			drive-push-pull;
-			slew-rate = <0>;
-		};
-	};
-
-	tim3_pwm_sleep_pins_mx: tim3_pwm_sleep_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 0, ANALOG)>, /* TIM3_CH3 */
-					 <STM32_PINMUX('C', 6, ANALOG)>, /* TIM3_CH1 */
-					 <STM32_PINMUX('C', 7, ANALOG)>; /* TIM3_CH2 */
-		};
-	};
-
 	uart8_pins_mx: uart8_mx-0 {
 		u-boot,dm-pre-reloc;
 		pins1 {
@@ -454,11 +434,10 @@
 };
 
 &dmamux1{
+	status = "okay";
 
 	dma-masters = <&dma1>;
 	dma-channels = <8>;
-
-	status = "okay";
 
 	/* USER CODE BEGIN dmamux1 */
 	/* USER CODE END dmamux1 */
@@ -617,6 +596,7 @@
 };
 
 &iwdg2{
+	u-boot,dm-pre-reloc;
 	status = "okay";
 
 	/* USER CODE BEGIN iwdg2 */
@@ -694,6 +674,15 @@
 
 	/* USER CODE BEGIN m4_m_can2 */
 	/* USER CODE END m4_m_can2 */
+};
+
+&m4_timers3{
+	pinctrl-names = "default";
+	pinctrl-0 = <&m4_tim3_pins_mx>, <&m4_tim3_pwm_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN m4_timers3 */
+	/* USER CODE END m4_timers3 */
 };
 
 &m4_timers4{
@@ -801,26 +790,6 @@
 
 	/* USER CODE BEGIN tamp */
 	/* USER CODE END tamp */
-};
-
-&timers3{
-	pinctrl-names = "default", "sleep";
-	pinctrl-0 = <&tim3_pins_mx>;
-	pinctrl-1 = <&tim3_sleep_pins_mx>;
-	status = "okay";
-
-	/* USER CODE BEGIN timers3 */
-	/* USER CODE END timers3 */
-
-	pwm{
-		pinctrl-names = "default", "sleep";
-		pinctrl-0 = <&tim3_pwm_pins_mx>;
-		pinctrl-1 = <&tim3_pwm_sleep_pins_mx>;
-		status = "okay";
-
-		/* USER CODE BEGIN timers3_pwm */
-		/* USER CODE END timers3_pwm */
-	};
 };
 
 &uart8{

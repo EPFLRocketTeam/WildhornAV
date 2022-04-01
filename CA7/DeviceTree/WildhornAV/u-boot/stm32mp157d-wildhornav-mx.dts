@@ -22,7 +22,7 @@
 /* USER CODE END includes */
 
 / {
-	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.10-dunfell-mp1-21-03-31";
+	model = "STMicroelectronics custom STM32CubeMX board - openstlinux-5.10-dunfell-mp1-21-11-17";
 	compatible = "st,stm32mp157d-wildhornav-mx", "st,stm32mp157";
 
 	memory@c0000000 {
@@ -434,11 +434,10 @@
 };
 
 &dmamux1{
+	status = "okay";
 
 	dma-masters = <&dma1>;
 	dma-channels = <8>;
-
-	status = "okay";
 
 	/* USER CODE BEGIN dmamux1 */
 	/* USER CODE END dmamux1 */
@@ -597,6 +596,7 @@
 };
 
 &iwdg2{
+	u-boot,dm-pre-reloc;
 	status = "okay";
 
 	/* USER CODE BEGIN iwdg2 */
