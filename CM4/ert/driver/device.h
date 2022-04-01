@@ -19,6 +19,7 @@
 #include <util.h>
 
 #include "interface.h"
+#include "deamon.h"
 
 /**********************
  *  CONSTANTS
@@ -74,14 +75,14 @@ error_t device_write_u16(device_context_t * dev, uint32_t addr, uint16_t data);
 error_t device_write_i8(device_context_t * dev, uint32_t addr, int8_t data);
 error_t device_write_u8(device_context_t * dev, uint32_t addr, uint8_t data);
 
-error_t device_read_i32(device_context_t * dev, uint32_t addr, int32_t data);
-error_t device_read_u32(device_context_t * dev, uint32_t addr, uint32_t data);
+error_t device_read_i32(device_context_t * dev, uint32_t addr, int32_t* data);
+error_t device_read_u32(device_context_t * dev, uint32_t addr, uint32_t* data);
 
-error_t device_read_i16(device_context_t * dev, uint32_t addr, int16_t data);
-error_t device_read_u16(device_context_t * dev, uint32_t addr, uint16_t data);
+error_t device_read_i16(device_context_t * dev, uint32_t addr, int16_t* data);
+error_t device_read_u16(device_context_t * dev, uint32_t addr, uint16_t* data);
 
-error_t device_read_i8(device_context_t * dev, uint32_t addr, int8_t data);
-error_t device_read_u8(device_context_t * dev, uint32_t addr, uint8_t data);
+error_t device_read_i8(device_context_t * dev, uint32_t addr, int8_t* data);
+error_t device_read_u8(device_context_t * dev, uint32_t addr, uint8_t* data);
 
 
 

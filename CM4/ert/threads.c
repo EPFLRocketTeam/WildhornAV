@@ -32,14 +32,14 @@
  *	MACROS
  **********************/
 
-#define CREATE_THREAD(handle, name, func, sz, prio) \
+#define CREATE_THREAD(handle, name, func, cont, sz, prio) \
 	static StaticTask_t name##_buffer; \
 	static StackType_t name##_stack[ sz ]; \
 	handle = xTaskCreateStatic( \
 			func, \
 	        #name, \
 			sz, \
-			( void * ) 0, \
+			( void * ) cont, \
 			prio, \
 			name##_stack, \
 			&name##_buffer)
@@ -67,7 +67,7 @@ static TaskHandle_t control_handle = NULL;
 
 void threads_init(void) {
 
-	CREATE_THREAD(control_handle, control, control_thread, CONTROL_SZ, CONTROL_PRIO);
+	CREATE_THREAD(control_handle, control, control_thread, 0, CONTROL_SZ, CONTROL_PRIO);
 
 }
 

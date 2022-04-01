@@ -60,6 +60,11 @@
  *  TYPEDEFS
  **********************/
 
+typedef enum gpio_config {
+	GPIO_OUT_PP,
+	GPIO_OUT_OD,
+	GPIO_IN
+}gpio_config_t;
 
 
 
@@ -79,8 +84,8 @@ extern "C"{
 
 void gpio_set(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 void gpio_clr(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-void gpio_config(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-void gpio_get(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+uint8_t gpio_get(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+void gpio_cfg(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, gpio_config_t cfg);
 
 
 

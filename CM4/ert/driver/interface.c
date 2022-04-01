@@ -17,7 +17,6 @@
  *	CONSTANTS
  **********************/
 
-#define INTERFACE_MAX_DEVICES 16
 
 /**********************
  *	MACROS
@@ -34,7 +33,6 @@
  *	VARIABLES
  **********************/
 
-interface_context_t * devices[INTERFACE_MAX_DEVICES];
 
 
 /**********************
@@ -58,12 +56,6 @@ error_t interface_create(   interface_context_t * interface,
     interface->recv = recv;
     interface->data_rdy = data_rdy;
     interface->id = count++;
-
-    if(interface->id < INTERFACE_MAX_DEVICES) {
-        devices[interface->id] = interface;
-    } else {
-        return ER_OUT_OF_RANGE;
-    }
 
     return ER_SUCCESS;
 }

@@ -63,16 +63,17 @@ extern "C"{
 #endif
 
 
+
 /** head must be of util_list_t type with the next field as the head
  *  any node with the util_list_attribute can be cast to util_list_t
  *  
  * 
  */
-static inline void util_list_append(util_list_t* head, util_list_t* node) 
+static inline void util_list_append(util_list_t* head, util_list_t* node)
 {
-    util_list_t** p = &head->next;
+    util_list_t** p = (util_list_t**) &head->next;
     while((*p) != 0) {
-        p = &(*p)->next;
+        p = (util_list_t**) &(*p)->next;
     }
     *p = node;
 }
@@ -82,11 +83,11 @@ static inline void util_list_append(util_list_t* head, util_list_t* node)
  * 
  * 
  */
-static inline void util_list_remove(util_list_t* head, util_list_t* node) 
+static inline void util_list_remove(util_list_t* head, util_list_t* node)
 {
-    util_list_t** p = &head->next;
+    util_list_t** p = (util_list_t**) &head->next;
     while((*p) != node) {
-        p = &(*p)->next;
+        p = (util_list_t**) &(*p)->next;
     }
     *p = node->next; //this remove the node from the list
 }
@@ -95,16 +96,11 @@ static inline void util_list_remove(util_list_t* head, util_list_t* node)
 
 static inline void util_encode_u8(uint8_t * data, uint8_t value) {
     data[0] = value;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
 }
 
 static inline void util_encode_u16(uint8_t * data, uint16_t value) {
     data[0] = value;
     data[1] = value>>8;
-    data[2] = 0x00;
-    data[3] = 0x00;
 }
 
 static inline void util_encode_u32(uint8_t * data, uint32_t value) {
@@ -116,16 +112,11 @@ static inline void util_encode_u32(uint8_t * data, uint32_t value) {
 
 static inline void util_encode_i8(uint8_t * data, int8_t value) {
     data[0] = value;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
 }
 
 static inline void util_encode_i16(uint8_t * data, int16_t value) {
     data[0] = value;
     data[1] = value>>8;
-    data[2] = 0x00;
-    data[3] = 0x00;
 }
 
 static inline void util_encode_i32(uint8_t * data, int32_t value) {
@@ -158,6 +149,43 @@ static inline int16_t util_decode_i16(uint8_t * data) {
 static inline int32_t util_decode_i32(uint8_t * data) {
     return (int32_t) data[0] | data[1] << 8 | data[2] << 16 | data[3] << 24;
 }
+
+
+/* circular buffer */
+
+#define UTIL_GENERATE_BUFFER(type, name)   																		\
+	typedef struct UTIL_BUFFER_##name{   																		\
+		uint16_t c_ix;                																			\
+		uint16_t l_ix;            																				\
+		uint16_t bfr_len;           																			\
+		type * buffer;            																				\
+	}UTIL_BUFFER_##name##_t;             																		\
+static inline void util_buffer_##name##_init(UTIL_BUFFER_##name##_t * bfr, type * buffer, uint16_t bfr_len) { 	\
+	bfr->c_ix = 0;                                                                                   			\
+	bfr->l_ix = 0;                                                                                   			\
+	bfr->bfr_len = bfr_len;                                                                          			\
+	bfr->buffer = buffer;                                                                            			\
+}                                                                                                    			\
+static inline void util_buffer_##name##_add(UTIL_BUFFER_##name##_t * bfr, type d) {                  			\
+	bfr->buffer[bfr->c_ix++] = d;                                                                    			\
+	if(bfr->c_ix == bfr->bfr_len) bfr->c_ix = 0;                                                     			\
+}                                                                                                    			\
+static inline type util_buffer_##name##_get(UTIL_BUFFER_##name##_t * bfr) {                          			\
+	type tmp = bfr->buffer[bfr->l_ix++];                                                          	 			\
+	if(bfr->l_ix == bfr->bfr_len) bfr->l_ix=0;                                                       			\
+	return tmp;                                                                                      			\
+}                                                                                                    			\
+static inline type util_buffer_##name##_access(UTIL_BUFFER_##name##_t * bfr, uint16_t ix) {          			\
+	int16_t i = bfr->c_ix - ix - 1;                                                                  			\
+	while(i < 0) i += bfr->bfr_len;                                                      			 			\
+	return bfr->buffer[i];                                                                           			\
+}																									  			\
+static inline uint8_t util_buffer_##name##_isempty(UTIL_BUFFER_##name##_t * bfr) {                           	\
+	return bfr->l_ix == bfr->c_ix;                                                                   			\
+}
+
+
+#define util_abs(a)	((a)<0?-(a):(a))
 
 
 #ifdef __cplusplus

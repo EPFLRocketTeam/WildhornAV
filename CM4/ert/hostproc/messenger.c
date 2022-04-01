@@ -4,15 +4,17 @@
  *	Date		: 30.01.2021
  *	Version		: 0.1
  *	Description	: messenger to communicate with linux kernel on CA7
+ *				  in this file we define the messenger which communicates between
+ *				  rpmsg and openAMP
  */
 
 /**********************
  *	INCLUDES
  **********************/
 
+#include <hostproc/messenger.h>
 #include <openamp.h>
 
-#include "linuxcomm/messenger.h"
 
 /**********************
  *	CONSTANTS

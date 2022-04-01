@@ -26,7 +26,7 @@
  *	CONSTANTS
  **********************/
 
-#define LED_MAX			(0xfff)
+#define LED_MAX			(0xff)
 
 
 
@@ -62,9 +62,9 @@ void led_rgb_init(void) {
 	LED_TIM.Instance->CCR1 = 0;
 	LED_TIM.Instance->CCR2 = 0;
 	LED_TIM.Instance->CCR3 = 0;
-	HAL_TIMEx_PWMN_Start(&LED_TIM, TIM_CHANNEL_1);
-	HAL_TIMEx_PWMN_Start(&LED_TIM, TIM_CHANNEL_2);
-	HAL_TIMEx_PWMN_Start(&LED_TIM, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&LED_TIM, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&LED_TIM, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&LED_TIM, TIM_CHANNEL_3);
 }
 
 void led_rgb_set_color(uint8_t r, uint8_t g, uint8_t b) {

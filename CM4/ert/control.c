@@ -27,7 +27,7 @@
  *	CONSTANTS
  **********************/
 
-#define CONTROL_HEART_BEAT	100
+#define CONTROL_HEART_BEAT	200
 
 
 /**********************
@@ -60,7 +60,7 @@ void control_thread(void * arg) {
 
 	led_rgb_init();
 
-	led_rgb_set_color(LED_BLUE);
+	led_rgb_set_color(LED_TEAL);
 
 	last_wake_time = xTaskGetTickCount();
 
@@ -73,6 +73,7 @@ void control_thread(void * arg) {
 	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
 	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
 	GPIO_InitStructure.Pull = GPIO_NOPULL;
+	GPIO_InitStructure.Pin = GPIO_PIN_6;
 	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
 
 	GPIO_InitStructure.Pin = GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15;
@@ -82,28 +83,38 @@ void control_thread(void * arg) {
 
 	for(;;) {
 
-		if(dummy) {
+		if(dummy % 4 == 0) {
 			led_rgb_set_color(LED_RED);
 			gpio_set(GPIOB, GPIO_PIN_6);
 			gpio_clr(GPIOD, GPIO_PIN_13);
-			gpio_set(GPIOD, GPIO_PIN_14);
+			gpio_clr(GPIOD, GPIO_PIN_14);
 			gpio_clr(GPIOD, GPIO_PIN_15);
-		} else {
+		} else if(dummy % 4 == 1) {
 			led_rgb_set_color(LED_GREEN);
 			gpio_clr(GPIOB, GPIO_PIN_6);
 			gpio_set(GPIOD, GPIO_PIN_13);
 			gpio_clr(GPIOD, GPIO_PIN_14);
+			gpio_clr(GPIOD, GPIO_PIN_15);
+		} else if(dummy % 4 == 2) {
+			led_rgb_set_color(LED_BLUE);
+			gpio_clr(GPIOB, GPIO_PIN_6);
+			gpio_clr(GPIOD, GPIO_PIN_13);
+			gpio_set(GPIOD, GPIO_PIN_14);
+			gpio_clr(GPIOD, GPIO_PIN_15);
+		} else {
+			led_rgb_set_color(LED_BLACK);
+			gpio_clr(GPIOB, GPIO_PIN_6);
+			gpio_clr(GPIOD, GPIO_PIN_13);
+			gpio_clr(GPIOD, GPIO_PIN_14);
 			gpio_set(GPIOD, GPIO_PIN_15);
 		}
+		dummy++;
 
 
 
 		uint8_t string[] = "I am alive\n\r        ";
 
 		HAL_UART_Transmit(&huart2, string, 15, 200);
-
-
-		dummy = !dummy;
 
 
 
