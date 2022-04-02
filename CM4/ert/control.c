@@ -112,13 +112,6 @@ void control_thread(void * arg) {
 
 
 
-		uint8_t string[] = "I am alive\n\r        ";
-
-		HAL_UART_Transmit(&huart2, string, 15, 200);
-
-
-
-
 
 		vTaskDelayUntil( &last_wake_time, period );
 	}
