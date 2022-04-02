@@ -10,6 +10,7 @@
  *	INCLUDES
  **********************/
 
+#include <cmsis_os.h>
 #include <util.h>
 
 #include "device.h"
@@ -46,16 +47,18 @@
  *	PROTOTYPES
  **********************/
 
+void device_deamon_thread(void * arg);
+
 
 /**********************
  *	DECLARATIONS
  **********************/
 
 
-error_t device_create(	device_context_t * dev,
-						interface_context_t * interface,
-						error_t (*read_reg)(interface_context_t*, uint32_t, uint8_t *, uint32_t),
-						error_t (*write_reg)(interface_context_t*, uint32_t, uint8_t *, uint32_t))
+error_t device_create(	device_t * dev,
+						device_interface_t * interface,
+						error_t (*read_reg)(device_interface_t*, uint32_t, uint8_t *, uint32_t),
+						error_t (*write_reg)(device_interface_t*, uint32_t, uint8_t *, uint32_t))
 {
 	static int32_t count = 0;
 	dev->interface = interface;
@@ -67,7 +70,49 @@ error_t device_create(	device_context_t * dev,
 }
 
 
-error_t device_write_i32(device_context_t * dev, uint32_t addr, int32_t data)
+error_t device_interface_create(   device_interface_t * interface,
+                            void * inst,
+							device_deamon_t * deamon,
+                            error_t (*send)(void*, uint8_t*, uint32_t),
+							error_t (*recv)(void*, uint8_t*, uint32_t),
+							error_t (*data_rdy)(void*))
+{
+    static int32_t count = 0;
+    interface->inst = inst;
+    interface->send = send;
+    interface->recv = recv;
+    interface->data_rdy = data_rdy;
+    interface->id = count++;
+    util_list_append((util_list_t *) &deamon->head, (util_list_t *) interface);
+    return ER_SUCCESS;
+}
+
+error_t device_deamon_create(	device_deamon_t * deamon,
+						const char * name,
+						uint32_t prio)
+{
+	static uint32_t counter = 0;
+	deamon->id = counter++;
+	deamon->head = NULL;
+	deamon->handle = xTaskCreateStatic(device_deamon_thread, name, DEAMON_STACK_SIZE, deamon, prio, deamon->stack, &deamon->buffer);
+	return ER_SUCCESS;
+}
+
+void device_deamon_thread(void * arg)
+{
+	deamon = (device_deamon_t * ) arg;
+
+	for(;;) {
+
+	}
+
+}
+
+
+// device write functions
+
+
+error_t device_write_i32(device_t * dev, uint32_t addr, int32_t data)
 {
     uint8_t tmp[LEN_32];
     util_encode_i32(tmp, data);
@@ -75,7 +120,7 @@ error_t device_write_i32(device_context_t * dev, uint32_t addr, int32_t data)
     return ER_SUCCESS;
 }
 
-error_t device_write_u32(device_context_t * dev, uint32_t addr, uint32_t data)
+error_t device_write_u32(device_t * dev, uint32_t addr, uint32_t data)
 {
     uint8_t tmp[LEN_32];
     util_encode_u32(tmp, data);
@@ -83,7 +128,7 @@ error_t device_write_u32(device_context_t * dev, uint32_t addr, uint32_t data)
     return ER_SUCCESS;
 }
 
-error_t device_write_i16(device_context_t * dev, uint32_t addr, int16_t data)
+error_t device_write_i16(device_t * dev, uint32_t addr, int16_t data)
 {
     uint8_t tmp[LEN_16];
     util_encode_i16(tmp, data);
@@ -91,7 +136,7 @@ error_t device_write_i16(device_context_t * dev, uint32_t addr, int16_t data)
     return ER_SUCCESS;
 }
 
-error_t device_write_u16(device_context_t * dev, uint32_t addr, uint16_t data)
+error_t device_write_u16(device_t * dev, uint32_t addr, uint16_t data)
 {
     uint8_t tmp[LEN_16];
     util_encode_u16(tmp, data);
@@ -99,14 +144,14 @@ error_t device_write_u16(device_context_t * dev, uint32_t addr, uint16_t data)
     return ER_SUCCESS;
 }
 
-error_t device_write_i8(device_context_t * dev, uint32_t addr, int8_t data)
+error_t device_write_i8(device_t * dev, uint32_t addr, int8_t data)
 {
     uint8_t tmp[LEN_8];
     util_encode_i8(tmp, data);
     dev->write_reg(dev->interface, addr, tmp, LEN_8);
     return ER_SUCCESS;
 }
-error_t device_write_u8(device_context_t * dev, uint32_t addr, uint8_t data)
+error_t device_write_u8(device_t * dev, uint32_t addr, uint8_t data)
 {
     uint8_t tmp[LEN_8];
     util_encode_u8(tmp, data);
@@ -114,14 +159,14 @@ error_t device_write_u8(device_context_t * dev, uint32_t addr, uint8_t data)
     return ER_SUCCESS;
 }
 
-error_t device_read_i32(device_context_t * dev, uint32_t addr, int32_t* data)
+error_t device_read_i32(device_t * dev, uint32_t addr, int32_t* data)
 {
     uint8_t tmp[LEN_32];
     dev->read_reg(dev->interface, addr, tmp, LEN_32);
     *data = util_decode_i32(tmp);
     return ER_SUCCESS;
 }
-error_t device_read_u32(device_context_t * dev, uint32_t addr, uint32_t* data)
+error_t device_read_u32(device_t * dev, uint32_t addr, uint32_t* data)
 {
     uint8_t tmp[LEN_32];
     dev->read_reg(dev->interface, addr, tmp, LEN_32);
@@ -129,7 +174,7 @@ error_t device_read_u32(device_context_t * dev, uint32_t addr, uint32_t* data)
     return ER_SUCCESS;
 }
 
-error_t device_read_i16(device_context_t * dev, uint32_t addr, int16_t* data)
+error_t device_read_i16(device_t * dev, uint32_t addr, int16_t* data)
 {
     uint8_t tmp[LEN_16];
     dev->read_reg(dev->interface, addr, tmp, LEN_16);
@@ -137,7 +182,7 @@ error_t device_read_i16(device_context_t * dev, uint32_t addr, int16_t* data)
     return ER_SUCCESS;
 }
 
-error_t device_read_u16(device_context_t * dev, uint32_t addr, uint16_t* data)
+error_t device_read_u16(device_t * dev, uint32_t addr, uint16_t* data)
 {
     uint8_t tmp[LEN_16];
     dev->read_reg(dev->interface, addr, tmp, LEN_16);
@@ -145,7 +190,7 @@ error_t device_read_u16(device_context_t * dev, uint32_t addr, uint16_t* data)
     return ER_SUCCESS;
 }
 
-error_t device_read_i8(device_context_t * dev, uint32_t addr, int8_t* data)
+error_t device_read_i8(device_t * dev, uint32_t addr, int8_t* data)
 {
     uint8_t tmp[LEN_8];
     dev->read_reg(dev->interface, addr, tmp, LEN_8);
@@ -153,7 +198,7 @@ error_t device_read_i8(device_context_t * dev, uint32_t addr, int8_t* data)
     return ER_SUCCESS;
 }
 
-error_t device_read_u8(device_context_t * dev, uint32_t addr, uint8_t* data)
+error_t device_read_u8(device_t * dev, uint32_t addr, uint8_t* data)
 {
     uint8_t tmp[LEN_8];
     dev->read_reg(dev->interface, addr, tmp, LEN_8);
