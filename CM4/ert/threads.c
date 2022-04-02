@@ -1,7 +1,7 @@
 /*  Title		: Threads
  *  Filename	: threads.c
  *	Author		: iacopo sprenger
- *	Date		: 20.01.2022
+ *	Date		: 20.02.2022
  *	Version		: 0.1
  *	Description	: template for code files
  */

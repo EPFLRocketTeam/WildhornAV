@@ -22,6 +22,7 @@
 #include "cmsis_os.h"
 #include "adc.h"
 #include "dac.h"
+#include "dma.h"
 #include "fdcan.h"
 #include "i2c.h"
 #include "ipcc.h"
@@ -123,6 +124,7 @@ int main(void)
   MX_TIM3_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
+  MX_DMA_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
 

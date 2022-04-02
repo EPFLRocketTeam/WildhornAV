@@ -44,7 +44,7 @@ typedef struct device_interface {
     /* arguments: device_ptr, data, len) */
     error_t (*send)(void*, uint8_t*, uint32_t);
     /* arguments: device_ptr, data, len) */
-    error_t (*recv)(void*, uint8_t*, uint32_t);
+    error_t (*recv)(void*, uint8_t*, uint32_t*);
     /* arguments: device_ptr*/
     error_t (*handle_data)(void*);
 
@@ -100,7 +100,7 @@ error_t device_interface_create(   device_interface_t * interface,
                             		void * inst,
 									device_deamon_t * deamon,
 									error_t (*send)(void*, uint8_t*, uint32_t),
-									error_t (*recv)(void*, uint8_t*, uint32_t),
+									error_t (*recv)(void*, uint8_t*, uint32_t*),
 									error_t (*handle_data)(void*));
 
 error_t device_write_i32(device_t * dev, uint32_t addr, int32_t data);

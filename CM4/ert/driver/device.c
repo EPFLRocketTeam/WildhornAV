@@ -1,7 +1,7 @@
 /*  Title		: Generic device driver
  *  Filename	: device.c
  *	Author		: iacopo sprenger
- *	Date		: 20.03.2021
+ *	Date		: 20.03.2022
  *	Version		: 0.1
  *	Description	: 
  */
@@ -70,11 +70,11 @@ error_t device_create(	device_t * dev,
 }
 
 
-error_t device_interface_create(   device_interface_t * interface,
+error_t device_interface_create(   	device_interface_t * interface,
                             		void * inst,
 									device_deamon_t * deamon,
 									error_t (*send)(void*, uint8_t*, uint32_t),
-									error_t (*recv)(void*, uint8_t*, uint32_t),
+									error_t (*recv)(void*, uint8_t*, uint32_t*),
 									error_t (*handle_data)(void*))
 {
     static int32_t count = 0;
