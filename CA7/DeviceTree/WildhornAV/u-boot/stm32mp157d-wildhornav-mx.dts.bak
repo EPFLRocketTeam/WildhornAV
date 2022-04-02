@@ -39,12 +39,6 @@
 		ranges;
 
 		/* USER CODE BEGIN reserved-memory */
-		
-		mcuram2:mcuram2@10000000{
-			compatible = "shared-dma-pool";
-			reg = <0x10000000 0x40000>;
-			no-map;
-		};
 
 		vdev0vring0:vdev0vring0@10040000{
 			compatible = "shared-dma-pool";
@@ -63,22 +57,17 @@
 			reg = <0x10042000 0x4000>;
 			no-map;
 		};
-
-		mcuram:mcuram@30000000{
-			compatible = "shared-dma-pool";
-			reg = <0x30000000 0x40000>;
-			no-map;
-		};
-
-		retram:retram@38000000{
-			compatible = "shared-dma-pool";
+		/* RETRAM memory region reserved for firmware code and data */
+		retram: retram@0x38000000 {
 			reg = <0x38000000 0x10000>;
-			no-map;
 		};
-
-		gpu_reserved:gpu@d4000000{
-			reg = <0xd4000000 0x4000000>;
-			no-map;
+		/* MCUSRAM memory region reserved for firmware code and data */
+		mcusram: mcusram@0x10000000 {
+			reg = <0x10000000 0x40000>;
+		};
+		/* MCUSRAM aliased memory region reserved for firmware code and data */
+		mcusram2: mcusram2@0x30000000 {
+			reg = <0x30000000 0x40000>;
 		};
 		
 		/* USER CODE END reserved-memory */
@@ -232,6 +221,44 @@
 		};
 	};
 
+	m4_spi1_pins_mx: m4_spi1_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('A', 5, RSVD)>, /* SPI1_SCK */
+					 <STM32_PINMUX('A', 6, RSVD)>, /* SPI1_MISO */
+					 <STM32_PINMUX('B', 5, RSVD)>; /* SPI1_MOSI */
+		};
+	};
+
+	m4_spi2_pins_mx: m4_spi2_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('A', 9, RSVD)>, /* SPI2_SCK */
+					 <STM32_PINMUX('B', 15, RSVD)>, /* SPI2_MOSI */
+					 <STM32_PINMUX('C', 2, RSVD)>; /* SPI2_MISO */
+		};
+	};
+
+	m4_spi3_pins_mx: m4_spi3_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('A', 8, RSVD)>, /* SPI3_MOSI */
+					 <STM32_PINMUX('C', 10, RSVD)>, /* SPI3_SCK */
+					 <STM32_PINMUX('D', 10, RSVD)>; /* SPI3_MISO */
+		};
+	};
+
+	m4_tim3_pins_mx: m4_tim3_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 1, RSVD)>; /* TIM3_CH4 */
+		};
+	};
+
+	m4_tim3_pwm_pins_mx: m4_tim3_pwm_mx-0 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 0, RSVD)>, /* TIM3_CH3 */
+					 <STM32_PINMUX('C', 6, RSVD)>, /* TIM3_CH1 */
+					 <STM32_PINMUX('C', 7, RSVD)>; /* TIM3_CH2 */
+		};
+	};
+
 	m4_tim4_pwm_pins_mx: m4_tim4_pwm_mx-0 {
 		pins {
 			pinmux = <STM32_PINMUX('B', 6, RSVD)>, /* TIM4_CH1 */
@@ -334,40 +361,6 @@
 		};
 	};
 
-	tim3_pins_mx: tim3_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 1, AF2)>; /* TIM3_CH4 */
-			bias-disable;
-			drive-push-pull;
-			slew-rate = <0>;
-		};
-	};
-
-	tim3_sleep_pins_mx: tim3_sleep_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 1, ANALOG)>; /* TIM3_CH4 */
-		};
-	};
-
-	tim3_pwm_pins_mx: tim3_pwm_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 0, AF2)>, /* TIM3_CH3 */
-					 <STM32_PINMUX('C', 6, AF2)>, /* TIM3_CH1 */
-					 <STM32_PINMUX('C', 7, AF2)>; /* TIM3_CH2 */
-			bias-disable;
-			drive-push-pull;
-			slew-rate = <0>;
-		};
-	};
-
-	tim3_pwm_sleep_pins_mx: tim3_pwm_sleep_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('B', 0, ANALOG)>, /* TIM3_CH3 */
-					 <STM32_PINMUX('C', 6, ANALOG)>, /* TIM3_CH1 */
-					 <STM32_PINMUX('C', 7, ANALOG)>; /* TIM3_CH2 */
-		};
-	};
-
 	uart8_pins_mx: uart8_mx-0 {
 		u-boot,dm-pre-reloc;
 		pins1 {
@@ -406,12 +399,13 @@
 
 &m4_rproc{
 	/*Restriction: "memory-region" property is not managed - please to use User-Section if needed*/
-	mboxes = <&ipcc 2>;
-	mbox-names = "shutdown";
+	mboxes = <&ipcc 0>, <&ipcc 1>, <&ipcc 2>;
+	mbox-names = "vq0", "vq1", "shutdown";
 	status = "okay";
 
 	/* USER CODE BEGIN m4_rproc */
-	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
+	st,auto-boot = <1>;
+	memory-region = <&retram>, <&mcusram>, <&mcusram2>, <&vdev0vring0>,
 			<&vdev0vring1>, <&vdev0buffer>;
 	interrupt-parent = <&exti>;
 	interrupts = <68 1>;
@@ -696,6 +690,42 @@
 	/* USER CODE END m4_m_can2 */
 };
 
+&m4_spi1{
+	pinctrl-names = "default";
+	pinctrl-0 = <&m4_spi1_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN m4_spi1 */
+	/* USER CODE END m4_spi1 */
+};
+
+&m4_spi2{
+	pinctrl-names = "default";
+	pinctrl-0 = <&m4_spi2_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN m4_spi2 */
+	/* USER CODE END m4_spi2 */
+};
+
+&m4_spi3{
+	pinctrl-names = "default";
+	pinctrl-0 = <&m4_spi3_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN m4_spi3 */
+	/* USER CODE END m4_spi3 */
+};
+
+&m4_timers3{
+	pinctrl-names = "default";
+	pinctrl-0 = <&m4_tim3_pins_mx>, <&m4_tim3_pwm_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN m4_timers3 */
+	/* USER CODE END m4_timers3 */
+};
+
 &m4_timers4{
 	pinctrl-names = "default";
 	pinctrl-0 = <&m4_tim4_pwm_pins_mx>;
@@ -803,26 +833,6 @@
 	/* USER CODE END tamp */
 };
 
-&timers3{
-	pinctrl-names = "default", "sleep";
-	pinctrl-0 = <&tim3_pins_mx>;
-	pinctrl-1 = <&tim3_sleep_pins_mx>;
-	status = "okay";
-
-	/* USER CODE BEGIN timers3 */
-	/* USER CODE END timers3 */
-
-	pwm{
-		pinctrl-names = "default", "sleep";
-		pinctrl-0 = <&tim3_pwm_pins_mx>;
-		pinctrl-1 = <&tim3_pwm_sleep_pins_mx>;
-		status = "okay";
-
-		/* USER CODE BEGIN timers3_pwm */
-		/* USER CODE END timers3_pwm */
-	};
-};
-
 &uart8{
 	u-boot,dm-pre-reloc;
 	pinctrl-names = "default", "sleep";
@@ -832,6 +842,20 @@
 
 	/* USER CODE BEGIN uart8 */
 	/* USER CODE END uart8 */
+};
+
+&usbh_ehci{
+	status = "okay";
+
+	/* USER CODE BEGIN usbh_ehci */
+	/* USER CODE END usbh_ehci */
+};
+
+&usbh_ohci{
+	status = "okay";
+
+	/* USER CODE BEGIN usbh_ohci */
+	/* USER CODE END usbh_ohci */
 };
 
 &usbotg_hs{
@@ -912,6 +936,61 @@
 &usbh_ohci{
 	phys = <&usbphyc_port0>;
 };
+
+
+//pincontrol
+
+//&pinctrl {
+//	st,package = <STM32MP_PKG_AB>;
+//
+//	gpioa: gpio@50002000 {
+//		status = "disabled";
+//		ngpios = <16>;
+//		gpio-ranges = <&pinctrl 0 0 16>;
+//	};
+//
+//	gpiob: gpio@50003000 {
+//		status = "disabled";
+//		ngpios = <16>;
+//		gpio-ranges = <&pinctrl 0 16 16>;
+//	};
+//
+//	gpioc: gpio@50004000 {
+//		status = "disabled";
+//		ngpios = <16>;
+//		gpio-ranges = <&pinctrl 0 32 16>;
+//	};
+//
+//	gpiod: gpio@50005000 {
+//		status = "disabled";
+//		ngpios = <16>;
+//		gpio-ranges = <&pinctrl 0 48 16>;
+//	};
+//
+//	gpioe: gpio@50006000 {
+//		status = "disabled";
+//		ngpios = <16>;
+//		gpio-ranges = <&pinctrl 0 64 16>;
+//	};
+//
+//	gpiof: gpio@50007000 {
+//		status = "disabled";
+//		ngpios = <6>;
+//		gpio-ranges = <&pinctrl 6 86 6>;
+//	};
+//
+//	gpiog: gpio@50008000 {
+//		status = "disabled";
+//		ngpios = <10>;
+//		gpio-ranges = <&pinctrl 6 102 10>;
+//	};
+//
+//	gpioh: gpio@50009000 {
+//		status = "disabled";
+//		ngpios = <2>;
+//		gpio-ranges = <&pinctrl 0 112 2>;
+//	};
+//};
 
 /* USER CODE END addons */
 
