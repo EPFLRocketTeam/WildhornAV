@@ -37,7 +37,7 @@
  *  TYPEDEFS
  **********************/
 
-typedef struct device_context {
+typedef struct device_interface {
     util_list_attribute;
     uint32_t id;
     void * inst;
@@ -46,20 +46,22 @@ typedef struct device_context {
     /* arguments: device_ptr, data, len) */
     error_t (*recv)(void*, uint8_t*, uint32_t);
     /* arguments: device_ptr*/
-    error_t (*data_rdy)(void*);
+    error_t (*handle_data)(void*);
 
 }device_interface_t;
 
-typedef struct device_context {
+typedef struct device_deamon {
 	util_list_attribute;
 	uint32_t id;
 	StaticTask_t buffer;
 	StackType_t stack[ DEAMON_STACK_SIZE ];
 	TaskHandle_t handle;
 	util_list_t * head;
+	void * inst;
+	error_t (*data_rdy)(void*);
 }device_deamon_t;
 
-typedef struct device_context {
+typedef struct device {
     util_list_attribute;
     uint32_t id;
     device_interface_t * interface;
@@ -90,14 +92,16 @@ error_t device_create(	device_t * dev,
 
 error_t device_deamon_create(	device_deamon_t * deamon,
 								const char * name,
-								uint32_t prio);
+								uint32_t prio,
+								void * inst,
+								error_t (*data_rdy)(void*));
 
 error_t device_interface_create(   device_interface_t * interface,
                             		void * inst,
 									device_deamon_t * deamon,
 									error_t (*send)(void*, uint8_t*, uint32_t),
 									error_t (*recv)(void*, uint8_t*, uint32_t),
-									error_t (*data_rdy)(void*));
+									error_t (*handle_data)(void*));
 
 error_t device_write_i32(device_t * dev, uint32_t addr, int32_t data);
 error_t device_write_u32(device_t * dev, uint32_t addr, uint32_t data);

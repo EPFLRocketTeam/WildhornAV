@@ -30,7 +30,7 @@
     void* next 
 
 #define util_list_foreach(head, node) \
-    for(util_list_t node = head->next; node->next != NULL; node = node->next)
+    for(util_list_t * node = head; node->next != NULL; node = node->next)
 
 
 /**********************
