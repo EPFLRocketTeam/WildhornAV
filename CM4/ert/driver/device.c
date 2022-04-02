@@ -75,7 +75,7 @@ error_t device_interface_create(   	device_interface_t * interface,
 									device_deamon_t * deamon,
 									error_t (*send)(void*, uint8_t*, uint32_t),
 									error_t (*recv)(void*, uint8_t*, uint32_t*),
-									error_t (*handle_data)(void*))
+									error_t (*handle_data)(void*, void*))
 {
     static int32_t count = 0;
     interface->inst = inst;
@@ -111,7 +111,7 @@ void device_deamon_thread(void * arg)
 		if(deamon->data_rdy(deamon->inst) == ER_SUCCESS) {
 			util_list_foreach(deamon->head, node) {
 				device_interface_t * interface = (device_interface_t *) node;
-				interface->handle_data(interface->inst);
+				interface->handle_data(interface->inst, deamon->inst);
 			}
 		}
 	}
