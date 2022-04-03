@@ -15,12 +15,23 @@ The CA7 subdir contains the device tree overlays for our hostboard as well as th
 The CM4 subdir contains all the code which will be running on the coprocessor.
 
 ## Features
-* Linux boot  ![img](https://img.shields.io/badge/Feature-Done-success)
-* Coprocessor launch ![img](https://img.shields.io/badge/Feature-Done-success)
-* Blinking led ![img](https://img.shields.io/badge/Feature-Done-success)
-* Generic device driver ![img](https://img.shields.io/badge/Feature-Progress-important)
-* Multiboard communication ![img](https://img.shields.io/badge/Feature-Progress-important)
-* Sensor interfaces ![img](https://img.shields.io/badge/Feature-Unstarted-critical)
+![img](https://img.shields.io/badge/Feature-Done-success)  Linux boot 
+![img](https://img.shields.io/badge/Feature-Done-success) Coprocessor launch
+![img](https://img.shields.io/badge/Feature-Done-success) Blinking led 
+![img](https://img.shields.io/badge/Feature-Progress-important) Generic device driver 
+![img](https://img.shields.io/badge/Feature-Progress-important) Coprocessor communication 
+![img](https://img.shields.io/badge/Feature-Progress-important) Multiboard communication 
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) Barometer device
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) Accelerometer device
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) Gyroscope device
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) GNSS device
+![img](https://img.shields.io/badge/Feature-Progress-important) Radio device
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) Recovery device
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) I2C interface
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) SPI interface
+![img](https://img.shields.io/badge/Feature-Progress-important) UART interface
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) State machine
+![img](https://img.shields.io/badge/Feature-Unstarted-critical) State estimation
 
 ## Contributors
 
