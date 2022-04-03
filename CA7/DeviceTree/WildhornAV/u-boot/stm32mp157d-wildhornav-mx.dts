@@ -797,6 +797,13 @@
 	/* USER CODE END rcc */
 };
 
+&rng1{
+	status = "okay";
+
+	/* USER CODE BEGIN rng1 */
+	/* USER CODE END rng1 */
+};
+
 &rtc{
 	status = "okay";
 
