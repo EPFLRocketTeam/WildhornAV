@@ -98,8 +98,8 @@
 		1 		/*APB1*/
 		1 		/*APB2*/
 		1 		/*APB3*/
-		0 		/*APB4*/
-		1 		/*APB5*/
+		1 		/*APB4*/
+		2 		/*APB5*/
 		0 		/*RTC*/
 		0 		/*MCO1*/
 		0 		/*MCO2*/
@@ -145,7 +145,7 @@
 	pll2:st,pll@1 {
 		compatible = "st,stm32mp1-pll";
 		reg = <1>;
-		cfg = < 3 32 3 1 0 PQR(1,0,1) >;
+		cfg = < 3 32 1 1 0 PQR(1,0,1) >;
 		frac = < 0xa00 >;
 		u-boot,dm-pre-reloc;
 	};

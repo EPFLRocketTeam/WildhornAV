@@ -179,7 +179,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL2.PLLSource = RCC_PLL12SOURCE_HSI;
   RCC_OscInitStruct.PLL2.PLLM = 4;
   RCC_OscInitStruct.PLL2.PLLN = 33;
-  RCC_OscInitStruct.PLL2.PLLP = 4;
+  RCC_OscInitStruct.PLL2.PLLP = 2;
   RCC_OscInitStruct.PLL2.PLLQ = 2;
   RCC_OscInitStruct.PLL2.PLLR = 1;
   RCC_OscInitStruct.PLL2.PLLFRACV = 2560;
@@ -220,8 +220,8 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.AXISSInit.AXI_Div = RCC_AXI_DIV1;
   RCC_ClkInitStruct.MCUInit.MCU_Clock = RCC_MCUSSOURCE_PLL3;
   RCC_ClkInitStruct.MCUInit.MCU_Div = RCC_MCU_DIV1;
-  RCC_ClkInitStruct.APB4_Div = RCC_APB4_DIV1;
-  RCC_ClkInitStruct.APB5_Div = RCC_APB5_DIV2;
+  RCC_ClkInitStruct.APB4_Div = RCC_APB4_DIV2;
+  RCC_ClkInitStruct.APB5_Div = RCC_APB5_DIV4;
   RCC_ClkInitStruct.APB1_Div = RCC_APB1_DIV2;
   RCC_ClkInitStruct.APB2_Div = RCC_APB2_DIV2;
   RCC_ClkInitStruct.APB3_Div = RCC_APB3_DIV2;
