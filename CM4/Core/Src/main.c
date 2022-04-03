@@ -26,6 +26,7 @@
 #include "fdcan.h"
 #include "i2c.h"
 #include "ipcc.h"
+#include "openamp.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -98,6 +99,8 @@ int main(void)
   {
     /* IPCC initialisation */
      MX_IPCC_Init();
+    /* OpenAmp initialisation ---------------------------------*/
+    MX_OPENAMP_Init(RPMSG_REMOTE, NULL);
   }
 
   /* USER CODE BEGIN SysInit */
