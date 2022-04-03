@@ -15,28 +15,29 @@ The CA7 subdir contains the device tree overlays for our hostboard as well as th
 The CM4 subdir contains all the code which will be running on the coprocessor.
 
 ## Features
-![img](https://img.shields.io/badge/Feature-Done-success)  Linux boot 
-![img](https://img.shields.io/badge/Feature-Done-success) Coprocessor launch
-![img](https://img.shields.io/badge/Feature-Done-success) Blinking led 
-![img](https://img.shields.io/badge/Feature-Progress-important) Generic device driver 
-![img](https://img.shields.io/badge/Feature-Progress-important) Coprocessor communication 
-![img](https://img.shields.io/badge/Feature-Progress-important) Multiboard communication 
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) Barometer device
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) Accelerometer device
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) Gyroscope device
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) GNSS device
-![img](https://img.shields.io/badge/Feature-Progress-important) Radio device
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) Recovery device
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) I2C interface
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) SPI interface
-![img](https://img.shields.io/badge/Feature-Progress-important) UART interface
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) State machine
-![img](https://img.shields.io/badge/Feature-Unstarted-critical) State estimation
+* ![img](https://img.shields.io/badge/Feature-Done-success) Compilation scripts [Olivér, Maxime, Yohann, Alex]
+* ![img](https://img.shields.io/badge/Feature-Done-success) Linux boot [Iacopo, Olivér]
+* ![img](https://img.shields.io/badge/Feature-Done-success) Coprocessor launch [Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Done-success) Blinking led [Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Generic device driver [Iacopo] 
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Coprocessor communication [Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Multiboard communication [Olivér]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Barometer device [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Accelerometer device [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Gyroscope device [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) GNSS device [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Radio device [Charlotte]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Recovery device [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) I2C interface [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) SPI interface [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) UART interface [Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) State machine [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) State estimation [Yohann]
 
 ## Contributors
 
 * Alex Schulster
-* Yohan Paulus
+* Yohann Paulus
 * Maxime Chantemargue
 * Oliver Facklam
 * Iacopo Sprenger
