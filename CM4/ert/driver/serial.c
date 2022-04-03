@@ -116,9 +116,18 @@ void uart_idle_handler(UART_HandleTypeDef * uart) {
 	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
 
+device_deamon_t * serial_get_deamon(void)
+{
+	return &serial_deamon;
+}
+
+device_interface_t * serial_get_interface(void)
+{
+	return &feedback_interface;
+}
 
 
-error_t serial_initialize(void)
+error_t serial_init(void)
 {
 	error_t error = ER_SUCCESS;
 

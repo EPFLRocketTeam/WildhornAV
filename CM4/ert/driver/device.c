@@ -118,6 +118,19 @@ void device_deamon_thread(void * arg)
 }
 
 
+
+//interface send/recv functions
+
+error_t device_interface_send(device_interface_t * interface, uint8_t * data, uint32_t len)
+{
+	interface->send(interface->inst, data, len);
+}
+
+error_t device_interface_recv(device_interface_t * interface, uint8_t * data, uint32_t * len)
+{
+	interface->recv(interface->inst, data, len);
+}
+
 // device write functions
 
 

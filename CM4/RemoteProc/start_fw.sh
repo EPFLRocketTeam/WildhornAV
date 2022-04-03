@@ -5,7 +5,7 @@
 # for now, fixed firmware location and name 
 
 FW_NAME=WildhornAV_CM4.elf
-FW_LOCATION=$(eval pwd)
+FW_LOCATION=/lib/firmware
 
 echo -n $FW_LOCATION > /sys/module/firmware_class/parameters/path
 

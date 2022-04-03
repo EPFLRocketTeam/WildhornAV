@@ -103,6 +103,11 @@ error_t device_interface_create(   device_interface_t * interface,
 									error_t (*recv)(void*, uint8_t*, uint32_t*),
 									error_t (*handle_data)(void*, void*));
 
+
+error_t device_interface_send(device_interface_t * interface, uint8_t * data, uint32_t len);
+error_t device_interface_recv(device_interface_t * interface, uint8_t * data, uint32_t * len);
+
+
 error_t device_write_i32(device_t * dev, uint32_t addr, int32_t data);
 error_t device_write_u32(device_t * dev, uint32_t addr, uint32_t data);
 

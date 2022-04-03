@@ -54,6 +54,7 @@
 			/* USER CODE END clk_hsi */
 		};
 		clk_csi: clk-csi {
+			status = "disabled";
 
 			/* USER CODE BEGIN clk_csi */
 			/* USER CODE END clk_csi */
@@ -97,8 +98,8 @@
 		1 		/*APB1*/
 		1 		/*APB2*/
 		1 		/*APB3*/
-		1 		/*APB4*/
-		2 		/*APB5*/
+		0 		/*APB4*/
+		1 		/*APB5*/
 		0 		/*RTC*/
 		0 		/*MCO1*/
 		0 		/*MCO2*/
@@ -106,7 +107,7 @@
 	st,pkcs = <
 		CLK_CKPER_DISABLED
 		CLK_ETH_DISABLED
-		CLK_SDMMC12_PLL3R
+		CLK_SDMMC12_HSI
 		CLK_STGEN_HSI
 		CLK_USBPHY_PLL4R
 		CLK_SPI2S1_PLL3Q
@@ -124,14 +125,13 @@
 		CLK_UART24_PCLK1
 		CLK_UART35_PCLK1
 		CLK_UART6_PCLK2
-		CLK_UART78_PCLK1
+		CLK_UART78_HSI
 		CLK_SPDIF_DISABLED
 		CLK_FDCAN_PLL3Q
 		CLK_SAI1_DISABLED
 		CLK_SAI2_DISABLED
 		CLK_SAI3_DISABLED
 		CLK_SAI4_DISABLED
-		CLK_RNG1_CSI
 		CLK_LPTIM1_DISABLED
 		CLK_LPTIM23_DISABLED
 		CLK_LPTIM45_DISABLED
@@ -145,14 +145,14 @@
 	pll2:st,pll@1 {
 		compatible = "st,stm32mp1-pll";
 		reg = <1>;
-		cfg = < 3 32 1 1 0 PQR(1,0,1) >;
+		cfg = < 3 32 3 1 0 PQR(1,0,1) >;
 		frac = < 0xa00 >;
 		u-boot,dm-pre-reloc;
 	};
 	pll3:st,pll@2 {
 		compatible = "st,stm32mp1-pll";
 		reg = <2>;
-		cfg = < 3 24 1 3 1 PQR(1,1,1) >;
+		cfg = < 3 24 1 3 1 PQR(1,1,0) >;
 		u-boot,dm-pre-reloc;
 	};
 	pll4:st,pll@3 {

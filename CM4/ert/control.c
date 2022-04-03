@@ -17,7 +17,8 @@
 
 #include <cmsis_os.h>
 
-
+#include <driver/serial.h>
+#include <driver/device.h>
 
 #include <control.h>
 #include <feedback/led.h>
@@ -66,6 +67,10 @@ void control_thread(void * arg) {
 
 	static uint8_t dummy = 0;
 
+	serial_init();
+
+	device_interface_t * serial_interface = serial_get_interface();
+
 	//GPIO init leds
 
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -109,6 +114,8 @@ void control_thread(void * arg) {
 			gpio_set(GPIOD, GPIO_PIN_15);
 		}
 		dummy++;
+
+		device_interface_send(serial_interface, "hello\r\n", 7);
 
 
 
