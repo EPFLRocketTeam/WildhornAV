@@ -39,7 +39,7 @@
 		ranges;
 
 		/* USER CODE BEGIN reserved-memory */
-
+		
 		mcuram2:mcuram2@10000000{
 			compatible = "shared-dma-pool";
 			reg = <0x10000000 0x40000>;
@@ -625,7 +625,7 @@
 
 	/* USER CODE BEGIN iwdg2 */
 	
-	timeout-sec = <32>;
+	timeout-sec = <128>;
 	
 	/* USER CODE END iwdg2 */
 };
@@ -946,7 +946,6 @@
 &usbh_ohci{
 	phys = <&usbphyc_port0>;
 };
-
 
 /* USER CODE END addons */
 

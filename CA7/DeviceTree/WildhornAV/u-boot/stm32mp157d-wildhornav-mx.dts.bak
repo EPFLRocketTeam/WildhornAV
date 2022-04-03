@@ -39,6 +39,12 @@
 		ranges;
 
 		/* USER CODE BEGIN reserved-memory */
+		
+		mcuram2:mcuram2@10000000{
+			compatible = "shared-dma-pool";
+			reg = <0x10000000 0x40000>;
+			no-map;
+		};
 
 		vdev0vring0:vdev0vring0@10040000{
 			compatible = "shared-dma-pool";
@@ -57,17 +63,22 @@
 			reg = <0x10042000 0x4000>;
 			no-map;
 		};
-		/* RETRAM memory region reserved for firmware code and data */
-		retram: retram@0x38000000 {
-			reg = <0x38000000 0x10000>;
-		};
-		/* MCUSRAM memory region reserved for firmware code and data */
-		mcusram: mcusram@0x10000000 {
-			reg = <0x10000000 0x40000>;
-		};
-		/* MCUSRAM aliased memory region reserved for firmware code and data */
-		mcusram2: mcusram2@0x30000000 {
+
+		mcuram:mcuram@30000000{
+			compatible = "shared-dma-pool";
 			reg = <0x30000000 0x40000>;
+			no-map;
+		};
+
+		retram:retram@38000000{
+			compatible = "shared-dma-pool";
+			reg = <0x38000000 0x10000>;
+			no-map;
+		};
+
+		gpu_reserved:gpu@d4000000{
+			reg = <0xd4000000 0x4000000>;
+			no-map;
 		};
 		
 		/* USER CODE END reserved-memory */
@@ -218,30 +229,6 @@
 		pins {
 			pinmux = <STM32_PINMUX('D', 0, RSVD)>, /* I2C5_SDA */
 					 <STM32_PINMUX('D', 1, RSVD)>; /* I2C5_SCL */
-		};
-	};
-
-	m4_spi1_pins_mx: m4_spi1_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('A', 5, RSVD)>, /* SPI1_SCK */
-					 <STM32_PINMUX('A', 6, RSVD)>, /* SPI1_MISO */
-					 <STM32_PINMUX('B', 5, RSVD)>; /* SPI1_MOSI */
-		};
-	};
-
-	m4_spi2_pins_mx: m4_spi2_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('A', 9, RSVD)>, /* SPI2_SCK */
-					 <STM32_PINMUX('B', 15, RSVD)>, /* SPI2_MOSI */
-					 <STM32_PINMUX('C', 2, RSVD)>; /* SPI2_MISO */
-		};
-	};
-
-	m4_spi3_pins_mx: m4_spi3_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('A', 8, RSVD)>, /* SPI3_MOSI */
-					 <STM32_PINMUX('C', 10, RSVD)>, /* SPI3_SCK */
-					 <STM32_PINMUX('D', 10, RSVD)>; /* SPI3_MISO */
 		};
 	};
 
@@ -404,8 +391,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN m4_rproc */
-	st,auto-boot = <1>;
-	memory-region = <&retram>, <&mcusram>, <&mcusram2>, <&vdev0vring0>,
+	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
 			<&vdev0vring1>, <&vdev0buffer>;
 	interrupt-parent = <&exti>;
 	interrupts = <68 1>;
@@ -615,7 +601,7 @@
 
 	/* USER CODE BEGIN iwdg2 */
 	
-	timeout-sec = <32>;
+	timeout-sec = <128>;
 	
 	/* USER CODE END iwdg2 */
 };
@@ -688,33 +674,6 @@
 
 	/* USER CODE BEGIN m4_m_can2 */
 	/* USER CODE END m4_m_can2 */
-};
-
-&m4_spi1{
-	pinctrl-names = "default";
-	pinctrl-0 = <&m4_spi1_pins_mx>;
-	status = "okay";
-
-	/* USER CODE BEGIN m4_spi1 */
-	/* USER CODE END m4_spi1 */
-};
-
-&m4_spi2{
-	pinctrl-names = "default";
-	pinctrl-0 = <&m4_spi2_pins_mx>;
-	status = "okay";
-
-	/* USER CODE BEGIN m4_spi2 */
-	/* USER CODE END m4_spi2 */
-};
-
-&m4_spi3{
-	pinctrl-names = "default";
-	pinctrl-0 = <&m4_spi3_pins_mx>;
-	status = "okay";
-
-	/* USER CODE BEGIN m4_spi3 */
-	/* USER CODE END m4_spi3 */
 };
 
 &m4_timers3{
@@ -844,20 +803,6 @@
 	/* USER CODE END uart8 */
 };
 
-&usbh_ehci{
-	status = "okay";
-
-	/* USER CODE BEGIN usbh_ehci */
-	/* USER CODE END usbh_ehci */
-};
-
-&usbh_ohci{
-	status = "okay";
-
-	/* USER CODE BEGIN usbh_ohci */
-	/* USER CODE END usbh_ohci */
-};
-
 &usbotg_hs{
 	u-boot,dm-pre-reloc;
 	status = "okay";
@@ -936,7 +881,6 @@
 &usbh_ohci{
 	phys = <&usbphyc_port0>;
 };
-
 
 /* USER CODE END addons */
 

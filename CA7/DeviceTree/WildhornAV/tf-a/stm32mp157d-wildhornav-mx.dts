@@ -391,9 +391,6 @@
 	secure-status = "okay";
 
 	/* USER CODE BEGIN iwdg2 */
-	
-	timeout-sec = <32>;
-	
 	/* USER CODE END iwdg2 */
 };
 

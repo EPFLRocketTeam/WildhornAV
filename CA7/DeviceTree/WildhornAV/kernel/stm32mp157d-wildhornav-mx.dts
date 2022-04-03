@@ -415,8 +415,7 @@
 	status = "okay";
 
 	/* USER CODE BEGIN m4_rproc */
-	st,auto-boot = <1>;
-	memory-region = <&retram>, <&mcusram>, <&mcusram2>, <&vdev0vring0>,
+	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
 			<&vdev0vring1>, <&vdev0buffer>;
 	interrupt-parent = <&exti>;
 	interrupts = <68 1>;
@@ -626,7 +625,7 @@
 
 	/* USER CODE BEGIN iwdg2 */
 	
-	timeout-sec = <32>;
+	timeout-sec = <128>;
 	
 	/* USER CODE END iwdg2 */
 };
@@ -947,7 +946,6 @@
 &usbh_ohci{
 	phys = <&usbphyc_port0>;
 };
-
 
 /* USER CODE END addons */
 
