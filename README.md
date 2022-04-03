@@ -26,7 +26,7 @@ The CM4 subdir contains all the code which will be running on the coprocessor. T
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Accelerometer device [unassigned]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Gyroscope device [unassigned]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) GNSS device [unassigned]
-* ![img](https://img.shields.io/badge/Feature-Progress-important) Radio device [Charlotte]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Radio device [Martin, Charlotte]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Recovery device [unassigned]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) I2C interface [unassigned]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) SPI interface [unassigned]
