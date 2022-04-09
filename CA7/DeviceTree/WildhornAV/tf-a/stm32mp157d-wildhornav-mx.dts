@@ -435,10 +435,11 @@
 	status = "okay";
 
 	/* USER CODE BEGIN sdmmc1 */
+	
 	disable-wp;
 	st,neg-edge;
 	bus-width = <4>;
-	vmmc-supply = <&v3v3>;
+	//vmmc-supply = <&v3v3>; // DO NOT link SD card supply with regulator due to power cycle problem
 	
 	/* USER CODE END sdmmc1 */
 };
