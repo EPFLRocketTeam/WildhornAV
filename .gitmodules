@@ -1,0 +1,24 @@
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/openembedded-core"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/openembedded-core
+	url = https://git.openembedded.org/openembedded-core
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/bitbake"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/bitbake
+	url = https://git.openembedded.org/bitbake
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-openembedded"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-openembedded
+	url = https://git.openembedded.org/meta-openembedded
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-qt5"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/meta-st-openstlinux"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/meta-st-openstlinux
+	url = https://github.com/STMicroelectronics/meta-st-openstlinux
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/meta-st-stm32mp"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/meta-st-stm32mp
+	url = https://github.com/STMicroelectronics/meta-st-stm32mp
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/meta-st-stm32mp-addons"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/meta-st-stm32mp-addons
+	url = https://github.com/STMicroelectronics/meta-st-stm32mp-addons
+[submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/scripts"]
+	path = distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/scripts
+	url = https://github.com/STMicroelectronics/meta-st-scripts

@@ -1,0 +1,34 @@
+This README file contains information on the contents of the meta-ert layer.
+
+Please see the corresponding sections below for details.
+
+Dependencies
+============
+
+  STM32MP1 Distribution Package
+  
+
+Maintenance
+=======
+
+Maintainer: Oliver FACKLAM
+
+
+Table of Contents
+=================
+
+  I. Adding the meta-ert layer to your build
+ II. Misc
+
+
+I. Adding the meta-ert layer to your build
+=================================================
+
+Run 'bitbake-layers add-layer meta-ert'
+
+II. Misc
+========
+
+This layer is used to configure a machine & distro specific to EPFL Rocket Team's hostboard.
+
+
