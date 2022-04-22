@@ -75,7 +75,7 @@ error_t device_interface_create(   	device_interface_t * interface,
 									device_deamon_t * deamon,
 									error_t (*send)(void*, uint8_t*, uint32_t),
 									error_t (*recv)(void*, uint8_t*, uint32_t*),
-									error_t (*handle_data)(void*, void*))
+									error_t (*handle_data)(void*))
 {
     static int32_t count = 0;
     interface->inst = inst;
@@ -111,25 +111,12 @@ void device_deamon_thread(void * arg)
 		if(deamon->data_rdy(deamon->inst) == ER_SUCCESS) {
 			util_list_foreach(deamon->head, node) {
 				device_interface_t * interface = (device_interface_t *) node;
-				interface->handle_data(interface->inst, deamon->inst);
+				interface->handle_data(interface->inst);
 			}
 		}
 	}
 }
 
-
-
-//interface send/recv functions
-
-error_t device_interface_send(device_interface_t * interface, uint8_t * data, uint32_t len)
-{
-	interface->send(interface->inst, data, len);
-}
-
-error_t device_interface_recv(device_interface_t * interface, uint8_t * data, uint32_t * len)
-{
-	interface->recv(interface->inst, data, len);
-}
 
 // device write functions
 
@@ -230,5 +217,3 @@ error_t device_read_u8(device_t * dev, uint32_t addr, uint8_t* data)
 
 
 /* END */
-
-
