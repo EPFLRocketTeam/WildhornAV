@@ -118,6 +118,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+#ifdef USE_DEFAULT_TASK
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -126,6 +127,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
+#endif
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 

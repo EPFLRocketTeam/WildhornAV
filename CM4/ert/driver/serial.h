@@ -53,6 +53,9 @@ device_deamon_t * serial_get_deamon(void);
 
 device_interface_t * serial_get_interface(void);
 
+
+
+
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */

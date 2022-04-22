@@ -19,7 +19,6 @@
 /**********************
  *	CONSTANTS
  **********************/
-#define DEVICE_NAME_LEN 16
 
 #define LEN_32 4
 #define LEN_16 2
@@ -83,7 +82,8 @@ error_t device_interface_create(   	device_interface_t * interface,
     interface->recv = recv;
     interface->handle_data = handle_data;
     interface->id = count++;
-    util_list_append((util_list_t *) &deamon->head, (util_list_t *) interface);
+    deamon->interfaces[deamon->interfaces_count] = interface;
+    deamon->interfaces_count++;
     return ER_SUCCESS;
 }
 
@@ -95,9 +95,9 @@ error_t device_deamon_create(	device_deamon_t * deamon,
 {
 	static uint32_t counter = 0;
 	deamon->id = counter++;
-	deamon->head = NULL;
 	deamon->inst = inst;
 	deamon->data_rdy = data_rdy;
+	deamon->interfaces_count = 0;
 	deamon->handle = xTaskCreateStatic(device_deamon_thread, name, DEAMON_STACK_SIZE, deamon, prio, deamon->stack, &deamon->buffer);
 	return ER_SUCCESS;
 }
@@ -106,11 +106,11 @@ void device_deamon_thread(void * arg)
 {
 	device_deamon_t * deamon = (device_deamon_t * ) arg;
 
-
 	for(;;) {
 		if(deamon->data_rdy(deamon->inst) == ER_SUCCESS) {
-			util_list_foreach(deamon->head, node) {
-				device_interface_t * interface = (device_interface_t *) node;
+			//iterate over all interfaces in deamon
+			for(uint16_t i = 0; i < deamon->interfaces_count; i++) {
+				device_interface_t * interface = deamon->interfaces[i];
 				interface->handle_data(interface->inst, deamon->inst);
 			}
 		}
@@ -123,12 +123,13 @@ void device_deamon_thread(void * arg)
 
 error_t device_interface_send(device_interface_t * interface, uint8_t * data, uint32_t len)
 {
-	interface->send(interface->inst, data, len);
+
+	return interface->send(interface->inst, data, len);
 }
 
 error_t device_interface_recv(device_interface_t * interface, uint8_t * data, uint32_t * len)
 {
-	interface->recv(interface->inst, data, len);
+	return interface->recv(interface->inst, data, len);
 }
 
 // device write functions

@@ -288,13 +288,6 @@
 		};
 	};
 
-	m4_usart2_pins_mx: m4_usart2_mx-0 {
-		pins {
-			pinmux = <STM32_PINMUX('D', 5, RSVD)>, /* USART2_TX */
-					 <STM32_PINMUX('D', 6, RSVD)>; /* USART2_RX */
-		};
-	};
-
 	m4_usart3_pins_mx: m4_usart3_mx-0 {
 		pins {
 			pinmux = <STM32_PINMUX('B', 11, RSVD)>, /* USART3_RX */
@@ -410,8 +403,8 @@
 
 &m4_rproc{
 	/*Restriction: "memory-region" property is not managed - please to use User-Section if needed*/
-	mboxes = <&ipcc 2>;
-	mbox-names = "shutdown";
+	mboxes = <&ipcc 0>, <&ipcc 1>, <&ipcc 2>;
+	mbox-names = "vq0", "vq1", "shutdown";
 	status = "okay";
 
 	/* USER CODE BEGIN m4_rproc */
@@ -754,15 +747,6 @@
 	/* USER CODE END m4_timers5 */
 };
 
-&m4_usart2{
-	pinctrl-names = "default";
-	pinctrl-0 = <&m4_usart2_pins_mx>;
-	status = "okay";
-
-	/* USER CODE BEGIN m4_usart2 */
-	/* USER CODE END m4_usart2 */
-};
-
 &m4_usart3{
 	pinctrl-names = "default";
 	pinctrl-0 = <&m4_usart3_pins_mx>;
@@ -885,7 +869,7 @@
 	/* USER CODE BEGIN usbphyc_port0 */
 	
 	phy-supply = <&vdd_usb>;
-	st,phy-tuning = <&usb_phy_tuning>;
+	//st,phy-tuning = <&usb_phy_tuning>;
 	
 	/* USER CODE END usbphyc_port0 */
 };
@@ -897,7 +881,7 @@
 	/* USER CODE BEGIN usbphyc_port1 */
 	
 	phy-supply = <&vdd_usb>;
-	st,phy-tuning = <&usb_phy_tuning>;
+	//st,phy-tuning = <&usb_phy_tuning>;
 	
 	connector {
 		compatible = "usb-a-connector";

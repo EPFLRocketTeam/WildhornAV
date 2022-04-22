@@ -25,6 +25,8 @@
 
 #define DEVICE_NAME_LEN 16
 
+#define DEVICE_MAX_INTERFACES_PER_DEAMON	16
+
 #define DEAMON_STACK_SIZE	1024
 
 
@@ -38,7 +40,6 @@
  **********************/
 
 typedef struct device_interface {
-    util_list_attribute;
     uint32_t id;
     void * inst;
     /* arguments: device_ptr, data, len) */
@@ -51,18 +52,17 @@ typedef struct device_interface {
 }device_interface_t;
 
 typedef struct device_deamon {
-	util_list_attribute;
 	uint32_t id;
 	StaticTask_t buffer;
 	StackType_t stack[ DEAMON_STACK_SIZE ];
 	TaskHandle_t handle;
-	util_list_t * head;
+	uint32_t interfaces_count;
+	device_interface_t * interfaces[DEVICE_MAX_INTERFACES_PER_DEAMON];
 	void * inst;
 	error_t (*data_rdy)(void*);
 }device_deamon_t;
 
 typedef struct device {
-    util_list_attribute;
     uint32_t id;
     device_interface_t * interface;
     /*arguments: context, addr, data, data_len*/

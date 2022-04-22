@@ -23,12 +23,13 @@
 #include <control.h>
 #include <feedback/led.h>
 #include <abstraction/gpio.h>
+#include <abstraction/dma.h>
 
 /**********************
  *	CONSTANTS
  **********************/
 
-#define CONTROL_HEART_BEAT	200
+#define CONTROL_HEART_BEAT	2000
 
 
 /**********************
@@ -59,6 +60,7 @@ void control_thread(void * arg) {
 	static TickType_t last_wake_time;
 	static const TickType_t period = pdMS_TO_TICKS(CONTROL_HEART_BEAT);
 
+
 	led_rgb_init();
 
 	led_rgb_set_color(LED_TEAL);
@@ -73,18 +75,12 @@ void control_thread(void * arg) {
 
 	//GPIO init leds
 
-	GPIO_InitTypeDef GPIO_InitStructure;
-
-	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-	GPIO_InitStructure.Pull = GPIO_NOPULL;
-	GPIO_InitStructure.Pin = GPIO_PIN_6;
-	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
-
-	GPIO_InitStructure.Pin = GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15;
-	HAL_GPIO_Init(GPIOD, &GPIO_InitStructure);
 
 
+
+	dma2_init_scheduler();
+
+	dma_scheduler_dev_t * sched = dma2_get_scheduler();
 
 	for(;;) {
 

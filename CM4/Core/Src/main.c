@@ -22,11 +22,9 @@
 #include "cmsis_os.h"
 #include "adc.h"
 #include "dac.h"
-#include "dma.h"
 #include "fdcan.h"
 #include "i2c.h"
 #include "ipcc.h"
-#include "openamp.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -88,6 +86,9 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+  //wait for debugger to connect
+  for(uint32_t i = 0; i < 0xFFFFFFFE; i++);
+
   /* USER CODE END Init */
 
   if(IS_ENGINEERING_BOOT_MODE())
@@ -99,8 +100,6 @@ int main(void)
   {
     /* IPCC initialisation */
      MX_IPCC_Init();
-    /* OpenAmp initialisation ---------------------------------*/
-    MX_OPENAMP_Init(RPMSG_REMOTE, NULL);
   }
 
   /* USER CODE BEGIN SysInit */
@@ -118,13 +117,11 @@ int main(void)
   MX_I2C5_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
-  MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_USART6_UART_Init();
   MX_TIM3_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
-  MX_DMA_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
 

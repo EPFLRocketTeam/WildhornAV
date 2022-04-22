@@ -13,7 +13,7 @@
  **********************/
 
 #include <hostproc/messenger.h>
-#include <openamp.h>
+//#include <openamp.h>
 
 
 /**********************
@@ -67,7 +67,7 @@ uint16_t rpmsg_expected_nbytes = 0;
  *	PROTOTYPES
  **********************/
 
-static int rx_callback(struct rpmsg_endpoint *rp_chnl, void *data, size_t len, uint32_t src, void *priv);
+//static int rx_callback(struct rpmsg_endpoint *rp_chnl, void *data, size_t len, uint32_t src, void *priv);
 
 /**********************
  *	DECLARATIONS

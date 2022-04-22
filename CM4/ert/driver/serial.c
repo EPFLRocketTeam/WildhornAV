@@ -24,11 +24,9 @@
  *	CONSTANTS
  **********************/
 
-#define FEEDBACK_SERIAL_DEV	huart2
-
 #define SERIAL_BUFFER_LEN 256
 
-#define SERIAL_DMA_LEN 128
+#define SERIAL_DMA_LEN 32
 
 
 /**********************
@@ -41,10 +39,15 @@
  **********************/
 
 typedef enum serial_interrupt_source{
-	SOURCE_DMA_FIRST_HALF,
-	SOURCE_DMA_SECOND_HALF,
-	SOURCE_IDLE
+	SERIAL_SOURCE_DMA_FIRST_HALF,
+	SERIAL_SOURCE_DMA_SECOND_HALF,
+	SERIAL_SOURCE_IDLE
 }serial_interrupt_source_t;
+
+typedef enum serial_transfer_mode{
+	SERIAL_TRANSFER_DMA,
+	SERIAL_TRANSFER_IT
+}serial_transfer_mode_t;
 
 typedef struct serial_deamon_context {
 	SemaphoreHandle_t rx_sem;
@@ -54,7 +57,10 @@ typedef struct serial_deamon_context {
 }serial_deamon_context_t;
 
 typedef struct serial_interface_context {
-	UART_HandleTypeDef * uart;
+	uart_dev_t * uart;
+	dma_scheduler_dev_t * dma;
+	dma_stream_dev_t * rx_dma;
+	dma_stream_dev_t * tx_dma;
 	uint8_t rx_dma_buffer[SERIAL_DMA_LEN];
 	uint8_t rx_data[SERIAL_BUFFER_LEN];
 	uint32_t rx_data_len;
@@ -88,33 +94,14 @@ error_t serial_recv(void * context, uint8_t* data, uint32_t * len);
 
 error_t serial_handle_data(void * if_context, void * dem_context);
 
+error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode);
+
 
 /**********************
  *	DECLARATIONS
  **********************/
 
 //Interrupt receive handler for serial
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	static BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	serial_deamon_context.source = SOURCE_DMA_SECOND_HALF;
-	xSemaphoreGiveFromISR(serial_deamon_context.rx_sem , &xHigherPriorityTaskWoken );
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-
-void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart) {
-	static BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	serial_deamon_context.source = SOURCE_DMA_FIRST_HALF;
-	xSemaphoreGiveFromISR(serial_deamon_context.rx_sem , &xHigherPriorityTaskWoken );
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-
-void uart_idle_handler(UART_HandleTypeDef * uart) {
-	static BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	serial_deamon_context.source = SOURCE_IDLE;
-	xSemaphoreGiveFromISR(serial_deamon_context.rx_sem , &xHigherPriorityTaskWoken );
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
 
 device_deamon_t * serial_get_deamon(void)
 {
@@ -135,10 +122,19 @@ error_t serial_init(void)
 	serial_deamon_context.rx_sem = xSemaphoreCreateBinaryStatic(&serial_deamon_context.rx_sem_buffer);
 
 	//initialize feedback serial
-	feedback_interface_context.uart = &FEEDBACK_SERIAL_DEV;
-	feedback_interface_context.first_half = 1;
+	uart_config_t uart_config;
+	uart_config.baudrate = 115200;
+	uart_config.prescaler = UART_PSCALER_DIV8;
+	uart_config.uart_clock_freq =100e6;
 
-	HAL_UART_Receive_DMA(&FEEDBACK_SERIAL_DEV, feedback_interface_context.rx_dma_buffer, SERIAL_DMA_LEN);
+	//initialize uart hardware
+	feedback_interface_context.uart = uart_get_usart2();
+	uart_init(feedback_interface_context.uart, uart_config);
+
+	//start reception using DMA
+	//TODO: handle error cases!
+	serial_setup_reception(&feedback_interface_context, SERIAL_TRANSFER_IT);
+
 
 
 
@@ -163,11 +159,41 @@ error_t serial_data_ready(void * context)
 
 }
 
+error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode)
+{
+	if( mode == SERIAL_TRANSFER_DMA) {
+		//setup dma reception
+		interface_context->uart->rx_stream = dma_scheduler_request_stream(interface_context->dma);
+		//check if a stream was available
+		if(interface_context->tx_dma == NULL) {
+			return ER_RESSOURCE_ERROR;
+		}
+		return ER_RESSOURCE_ERROR;
+		//TODO: setup reception using DMA
+
+
+	} else if ( mode == SERIAL_TRANSFER_IT) {
+		//setup Interrupt reception
+		uart_receive_IT(interface_context->uart);
+	}
+	return ER_FAILURE;
+}
+
 error_t serial_send(void * context, uint8_t* data, uint32_t len)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
 
-	HAL_UART_Transmit_DMA(interface_context->uart, data, len);
+	dma_stream_dev_t * stream = dma_scheduler_request_stream(interface_context->dma);
+
+	if(stream != NULL) {
+		//send using DMA
+		interface_context->uart->tx_stream = dma_scheduler_request_stream(interface_context->dma);
+		uart_transmit_DMA(interface_context->uart, len, data);
+	} else {
+		//send using interrupts
+	}
+
+	//UART: interface_context->uart
 
 	return ER_SUCCESS;
 }
@@ -181,7 +207,7 @@ error_t serial_recv(void * context, uint8_t * data, uint32_t * len)
 		*len = interface_context->rx_data_len;
 	}
 
-	dma_copy(data, interface_context->rx_data, *len);
+	//dma_copy(data, interface_context->rx_data, *len);
 
 	interface_context->rx_data_len -= *len;
 
@@ -192,32 +218,6 @@ error_t serial_handle_data(void * if_context, void * dem_context)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) if_context;
 	serial_deamon_context_t * deamon_context = (serial_deamon_context_t *) dem_context;
-
-	if (deamon_context->source == SOURCE_DMA_FIRST_HALF) {
-		interface_context->first_half = 0;
-		for(uint32_t i = 0; i < SERIAL_DMA_LEN; i++) { //replace with DMA
-			interface_context->rx_data[interface_context->rx_data_len++] = interface_context->rx_dma_buffer[i];
-		}
-	} else if (deamon_context->source == SOURCE_DMA_SECOND_HALF) {
-		interface_context->first_half = 1;
-		for(uint32_t i = 0; i < SERIAL_DMA_LEN; i++) { //replace with DMA
-			interface_context->rx_data[interface_context->rx_data_len++] = interface_context->rx_dma_buffer[i+SERIAL_DMA_LEN/2];
-		}
-	} else {
-		HAL_UART_DMAStop(interface_context->uart);
-		uint16_t data_length  = SERIAL_DMA_LEN - __HAL_DMA_GET_COUNTER(interface_context->uart->hdmarx);
-		if(interface_context->first_half) {
-			for(uint32_t i = 0; i < data_length; i++) { //replace with DMA
-				interface_context->rx_data[interface_context->rx_data_len++] = interface_context->rx_dma_buffer[i];
-			}
-		} else {
-			for(uint32_t i = 0; i < data_length; i++) { //replace with DMA
-				interface_context->rx_data[interface_context->rx_data_len++] = interface_context->rx_dma_buffer[i+SERIAL_DMA_LEN/2];
-			}
-		}
-		HAL_UART_Receive_DMA(interface_context->uart, interface_context->rx_dma_buffer, SERIAL_DMA_LEN);
-
-	}
 
 	return ER_SUCCESS;
 }
