@@ -10,12 +10,15 @@
 #define UTIL_H
 
 
+//#define UTIL_ALLOW_LIST
 
 /**********************
  *  INCLUDES
  **********************/
 
 #include <stdint.h>
+#include <main.h>
+#include <cmsis_os.h>
 
 /**********************
  *  CONSTANTS
@@ -26,12 +29,23 @@
  *  MACROS
  **********************/
 
+//clears mask and writes at its place
+//not thread safe
+#define WRITE_IN_REG(reg, mask, data) (reg) &= ~(mask); (reg) |= (data)
+
+#ifdef UTIL_ALLOW_LIST
+
 #define util_list_attribute \
-    void* next 
+    struct util_list_t * next
 
 #define util_list_foreach(head, node) \
     for(util_list_t * node = head; node->next != NULL; node = node->next)
 
+#endif
+
+
+#define ENTER_CRITICAL taskENTER_CRITICAL
+#define EXIT_CRITICAL taskEXIT_CRITICAL
 
 /**********************
  *  TYPEDEFS
@@ -42,14 +56,17 @@ typedef enum error {
     ER_DATA_NOT_RDY = 0<<1,
     ER_FAILURE = 1<<1,
     ER_OUT_OF_RANGE = 1<<2,
-	ER_TIMEOUT = 1<<3
+	ER_TIMEOUT = 1<<3,
+	ER_RESSOURCE_ERROR = 1<<4
 }error_t;
 
+#ifdef UTIL_ALLOW_LIST
+
 typedef struct util_list {
-    void* next;
+	struct util_list_t * next;
 }util_list_t;
 
-
+#endif
 
 //buffers
 typedef struct util_buffer_u8{
@@ -88,16 +105,17 @@ extern "C"{
 #endif
 
 
-
+#ifdef UTIL_ALLOW_LIST
 /** head must be of util_list_t type with the next field as the head
  *  any node with the util_list_attribute can be cast to util_list_t
  *  
  * 
  */
-static inline void util_list_append(util_list_t* head, util_list_t* node)
+static inline void util_list_append(util_list_t** head, util_list_t* node)
 {
-    util_list_t** p = (util_list_t**) &head->next;
-    while((*p) != 0) {
+    util_list_t** p = (util_list_t**) head;
+    node->next = NULL;
+    while((*p) != NULL) {
         p = (util_list_t**) &(*p)->next;
     }
     *p = node;
@@ -108,14 +126,17 @@ static inline void util_list_append(util_list_t* head, util_list_t* node)
  * 
  * 
  */
-static inline void util_list_remove(util_list_t* head, util_list_t* node)
+static inline void util_list_remove(util_list_t** head, util_list_t* node)
 {
-    util_list_t** p = (util_list_t**) &head->next;
-    while((*p) != node) {
+    util_list_t** p = (util_list_t**) head;
+    while((*p) != 0) {
         p = (util_list_t**) &(*p)->next;
+        if((*p) == node) break;
     }
     *p = node->next; //this remove the node from the list
 }
+
+#endif
 
 /* data encoding and decoding */
 

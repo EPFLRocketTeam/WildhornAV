@@ -12,21 +12,23 @@
 
 #include <util.h>
 #include <usart.h>
-
-#include <abstraction/dma.h>
-#include <abstraction/uart.h>
+#include <main.h>
 
 #include "serial.h"
-#include "device.h"
+#include <device/device.h>
 
 
 /**********************
  *	CONSTANTS
  **********************/
 
-#define FEEDBACK_SERIAL_DEV	huart2
+#define S1_UART 			huart2
+#define S2_UART 			huart3
+#define S3_UART 			huart6
 
 #define SERIAL_BUFFER_LEN 256
+
+#define SERIAL_DMA_LEN 32
 
 
 /**********************
@@ -38,6 +40,17 @@
  *	TYPEDEFS
  **********************/
 
+typedef enum serial_interrupt_source{
+	SERIAL_SOURCE_DMA_FIRST_HALF,
+	SERIAL_SOURCE_DMA_SECOND_HALF,
+	SERIAL_SOURCE_IDLE
+}serial_interrupt_source_t;
+
+typedef enum serial_transfer_mode{
+	SERIAL_TRANSFER_DMA,
+	SERIAL_TRANSFER_IT
+}serial_transfer_mode_t;
+
 typedef struct serial_deamon_context {
 	SemaphoreHandle_t rx_sem;
 	StaticSemaphore_t rx_sem_buffer;
@@ -46,9 +59,12 @@ typedef struct serial_deamon_context {
 
 typedef struct serial_interface_context {
 	UART_HandleTypeDef * uart;
-	uint8_t rx_dma_buffer[SERIAL_BUFFER_LEN];
+	util_buffer_u8_t rx_buffer;
 	uint8_t rx_data[SERIAL_BUFFER_LEN];
 	uint32_t rx_data_len;
+	uint8_t rx_fragment;
+	uint8_t tx_data[SERIAL_BUFFER_LEN];
+
 
 }serial_interface_context_t;
 
@@ -63,7 +79,9 @@ static device_interface_t feedback_interface;
 
 static serial_deamon_context_t serial_deamon_context;
 
-static serial_interface_context_t serial_feedback_context;
+static serial_interface_context_t feedback_interface_context = {
+		.uart = &S3_UART
+};
 
 
 /**********************
@@ -76,7 +94,9 @@ error_t serial_send(void * context, uint8_t* data, uint32_t len);
 
 error_t serial_recv(void * context, uint8_t* data, uint32_t * len);
 
-error_t serial_handle_data(void * context);
+error_t serial_handle_data(void * if_context, void * dem_context);
+
+error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode);
 
 
 /**********************
@@ -86,34 +106,54 @@ error_t serial_handle_data(void * context);
 //Interrupt receive handler for serial
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	static BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	xSemaphoreGiveFromISR(serial_deamon_context.rx_sem , &xHigherPriorityTaskWoken );
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+	for(uint8_t i = 0; i < serial_deamon.interfaces_count; i++) {
+		serial_interface_context_t * serial_context = (serial_interface_context_t *) serial_deamon.interfaces[i]->context;
+		if(serial_context->uart == huart) {
+			util_buffer_u8_add(&serial_context->rx_buffer, serial_context->rx_fragment);
+
+			serial_deamon_context_t * deamon_context = (serial_deamon_context_t *) serial_deamon.context;
+			xSemaphoreGiveFromISR( deamon_context->rx_sem, &xHigherPriorityTaskWoken );
+
+			break;
+		}
+	}
 	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
 
-void HAL_UART_TxHalfCpltCallback(UART_HandleTypeDef *huart) {
-	static BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	xSemaphoreGiveFromISR(serial_deamon_context.rx_sem , &xHigherPriorityTaskWoken );
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+
+
+
+device_deamon_t * serial_get_deamon(void)
+{
+	return &serial_deamon;
 }
 
-void uart_idle_handler(UART_HandleTypeDef * uart) {
-	static BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	xSemaphoreGiveFromISR(serial_deamon_context.rx_sem , &xHigherPriorityTaskWoken );
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+device_interface_t * serial_get_feedback_interface(void)
+{
+	return &feedback_interface;
 }
 
 
-
-error_t serial_initialize(void)
+error_t serial_init(void)
 {
 	error_t error = ER_SUCCESS;
 
+	//initialize deamon semaphore
+	serial_deamon_context.rx_sem = xSemaphoreCreateBinaryStatic(&serial_deamon_context.rx_sem_buffer);
+
 	error |= device_deamon_create(&serial_deamon, "serial deamon", 6, (void *) &serial_deamon_context, serial_data_ready);
 
-	error |= device_interface_create(&feedback_interface, (void*) &serial_feedback_context, &serial_deamon, serial_send, serial_recv, serial_handle_data);
 
+	return error;
+}
 
+error_t serial_feedback_init(void) {
+	error_t error = ER_SUCCESS;
+
+	error |= device_interface_create(&feedback_interface, (void*) &feedback_interface_context, &serial_deamon, serial_send, serial_recv, serial_handle_data);
+
+	serial_setup_reception(&feedback_interface_context, SERIAL_TRANSFER_IT);
 
 	return error;
 }
@@ -129,6 +169,25 @@ error_t serial_data_ready(void * context)
 
 }
 
+error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode)
+{
+	if( mode == SERIAL_TRANSFER_DMA) {
+		//setup dma reception
+
+		return ER_RESSOURCE_ERROR;
+		//TODO: setup reception using DMA
+
+
+	} else if ( mode == SERIAL_TRANSFER_IT) {
+		//setup Interrupt reception byte per byte
+		util_buffer_u8_init(&interface_context->rx_buffer, interface_context->rx_data, SERIAL_BUFFER_LEN);
+
+		HAL_UART_Receive_IT(interface_context->uart, &interface_context->rx_fragment, 1);
+
+	}
+	return ER_FAILURE;
+}
+
 error_t serial_send(void * context, uint8_t* data, uint32_t len)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
@@ -141,26 +200,23 @@ error_t serial_send(void * context, uint8_t* data, uint32_t len)
 error_t serial_recv(void * context, uint8_t * data, uint32_t * len)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
-
-	//copy data using DMA
-	if(*len > interface_context->rx_data_len) {
-		*len = interface_context->rx_data_len;
+	uint16_t i = 0;
+	while(!util_buffer_u8_isempty(&interface_context->rx_buffer) && i < len) {
+		data[i++] = util_buffer_u8_get(&interface_context->rx_buffer);
 	}
-
-	dma_copy(data, interface_context->rx_data, *len);
-
+	*len = i;
 	return ER_SUCCESS;
 }
 
-error_t serial_handle_data(void * context)
+
+error_t serial_handle_data(void * if_context, void * dem_context)
 {
-	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
+	serial_interface_context_t * interface_context = (serial_interface_context_t *) if_context;
+	serial_deamon_context_t * deamon_context = (serial_deamon_context_t *) dem_context;
 
-	for(uint32_t i = 0; i < SERIAL_BUFFER_LEN; i++) {
-		interface_context->rx_data[interface_context->rx_data_len++] = interface_context->rx_dma_buffer[i];
-	}
+	//no data handling for now
 
-
+	return ER_SUCCESS;
 }
 
 

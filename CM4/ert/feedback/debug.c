@@ -1,17 +1,17 @@
-/*  Title		: UART
- *  Filename	: uart.c
+/*  Title		: Debug
+ *  Filename	: debug.c
  *	Author		: iacopo sprenger
- *	Date		: 02.04.2022
+ *	Date		: 22.04.2022
  *	Version		: 0.1
- *	Description	: uart hardware abstraction
+ *	Description	: debug interface for computer connection
+ *				  will be running inside the serial reception deamon
  */
 
 /**********************
  *	INCLUDES
  **********************/
 
-#include "uart.h"
-#include <usart.h>
+#include <feedback/debug.h>
 
 /**********************
  *	CONSTANTS
@@ -41,6 +41,5 @@
 /**********************
  *	DECLARATIONS
  **********************/
-
 
 /* END */

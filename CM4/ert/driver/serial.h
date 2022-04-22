@@ -16,6 +16,8 @@
  **********************/
 
 #include <stdint.h>
+#include <device/device.h>
+#include <util.h>
 
 /**********************
  *  CONSTANTS
@@ -32,6 +34,8 @@
  **********************/
 
 
+
+
 /**********************
  *  VARIABLES
  **********************/
@@ -44,6 +48,16 @@
 #ifdef __cplusplus
 extern "C"{
 #endif
+
+error_t serial_init(void);
+
+error_t serial_feedback_init(void);
+
+device_deamon_t * serial_get_deamon(void);
+
+device_interface_t * serial_get_feedback_interface(void);
+
+
 
 
 #ifdef __cplusplus

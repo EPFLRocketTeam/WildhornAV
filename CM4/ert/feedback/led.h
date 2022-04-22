@@ -35,6 +35,9 @@
 #define LED_WHITE		0xff, 0xff, 0xff
 
 
+
+
+
 /**********************
  *  MACROS
  **********************/
@@ -44,11 +47,42 @@
  *  TYPEDEFS
  **********************/
 
+typedef struct led_color {
+	uint8_t r;
+	uint8_t g;
+	uint8_t b;
+}led_color_t;
+
 
 
 /**********************
  *  VARIABLES
  **********************/
+
+static const led_color_t led_red = {
+		.r = 0xff,
+		.g = 0x00,
+		.b = 0x00
+};
+
+static const led_color_t led_green = {
+		.r = 0x00,
+		.g = 0xff,
+		.b = 0x00
+};
+
+static const led_color_t led_blue = {
+		.r = 0x00,
+		.g = 0x00,
+		.b = 0xff
+};
+
+static const led_color_t led_black = {
+		.r = 0x00,
+		.g = 0x00,
+		.b = 0x00
+};
+
 
 
 /**********************
@@ -61,7 +95,13 @@ extern "C"{
 
 void led_rgb_init(void);
 
-void led_rgb_set_color(uint8_t r, uint8_t g, uint8_t b);
+void led_rgb_set_color(led_color_t color);
+
+void led_rgb_set_rgb(uint8_t r, uint8_t g, uint8_t b);
+
+void led_feedback_init(void);
+
+void led_rgb_thread(void * arg);
 
 #ifdef __cplusplus
 } // extern "C"

@@ -19,7 +19,6 @@
 /**********************
  *	CONSTANTS
  **********************/
-#define DEVICE_NAME_LEN 16
 
 #define LEN_32 4
 #define LEN_16 2
@@ -71,19 +70,22 @@ error_t device_create(	device_t * dev,
 
 
 error_t device_interface_create(   	device_interface_t * interface,
-                            		void * inst,
+                            		void * context,
 									device_deamon_t * deamon,
 									error_t (*send)(void*, uint8_t*, uint32_t),
 									error_t (*recv)(void*, uint8_t*, uint32_t*),
-									error_t (*handle_data)(void*))
+									error_t (*handle_data)(void*, void*))
 {
     static int32_t count = 0;
-    interface->inst = inst;
+    interface->context = context;
     interface->send = send;
     interface->recv = recv;
     interface->handle_data = handle_data;
     interface->id = count++;
-    util_list_append((util_list_t *) &deamon->head, (util_list_t *) interface);
+    if(deamon && handle_data) {
+    	deamon->interfaces[deamon->interfaces_count] = interface;
+    	deamon->interfaces_count++;
+    }
     return ER_SUCCESS;
 }
 
@@ -95,10 +97,14 @@ error_t device_deamon_create(	device_deamon_t * deamon,
 {
 	static uint32_t counter = 0;
 	deamon->id = counter++;
-	deamon->head = NULL;
-	deamon->inst = inst;
+	deamon->context = inst;
 	deamon->data_rdy = data_rdy;
-	deamon->handle = xTaskCreateStatic(device_deamon_thread, name, DEAMON_STACK_SIZE, deamon, prio, deamon->stack, &deamon->buffer);
+	deamon->interfaces_count = 0;
+	if(data_rdy) {
+		deamon->handle = xTaskCreateStatic(device_deamon_thread, name, DEAMON_STACK_SIZE, deamon, prio, deamon->stack, &deamon->buffer);
+	} else {
+		return ER_RESSOURCE_ERROR;
+	}
 	return ER_SUCCESS;
 }
 
@@ -106,17 +112,38 @@ void device_deamon_thread(void * arg)
 {
 	device_deamon_t * deamon = (device_deamon_t * ) arg;
 
-
 	for(;;) {
-		if(deamon->data_rdy(deamon->inst) == ER_SUCCESS) {
-			util_list_foreach(deamon->head, node) {
-				device_interface_t * interface = (device_interface_t *) node;
-				interface->handle_data(interface->inst);
+		if(deamon->data_rdy(deamon->context) == ER_SUCCESS) {
+			//iterate over all interfaces in deamon
+			for(uint16_t i = 0; i < deamon->interfaces_count; i++) {
+				device_interface_t * interface = deamon->interfaces[i];
+				interface->handle_data(interface->context, deamon->context);
 			}
 		}
 	}
 }
 
+
+
+//interface send/recv functions
+
+error_t device_interface_send(device_interface_t * interface, uint8_t * data, uint32_t len)
+{
+	if(interface->send) {
+		return interface->send(interface->context, data, len);
+	} else {
+		return ER_RESSOURCE_ERROR;
+	}
+}
+
+error_t device_interface_recv(device_interface_t * interface, uint8_t * data, uint32_t * len)
+{
+	if(interface->send) {
+		return interface->recv(interface->context, data, len);
+	} else {
+		return ER_RESSOURCE_ERROR;
+	}
+}
 
 // device write functions
 
@@ -217,5 +244,3 @@ error_t device_read_u8(device_t * dev, uint32_t addr, uint8_t* data)
 
 
 /* END */
-
-

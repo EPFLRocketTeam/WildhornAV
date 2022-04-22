@@ -1,2 +1,17 @@
 .settings
 .settings/*
+
+CM4/Debug/
+CM4/Release/
+
+#compilation artifacts
+*.d
+*.o
+*.a
+*.su
+
+# Executables
+*.list
+*.bin
+*.elf
+#.map

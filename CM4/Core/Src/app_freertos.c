@@ -72,12 +72,13 @@ unsigned long getRunTimeCounterValue(void);
 /* Functions needed when configGENERATE_RUN_TIME_STATS is on */
 __weak void configureTimerForRunTimeStats(void)
 {
-
+	//enable tim5 for runtime stats
+	TIM2->CR1 = 0b1;
 }
 
 __weak unsigned long getRunTimeCounterValue(void)
 {
-return 0;
+	return TIM2->CNT;
 }
 /* USER CODE END 1 */
 
@@ -118,6 +119,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+#ifdef USE_DEF_TASK
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -126,6 +128,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
+#endif
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 

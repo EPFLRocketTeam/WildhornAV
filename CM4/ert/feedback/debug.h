@@ -1,22 +1,22 @@
-/*  Title       : UART
- *  Filename    : uart.h
- *  Author      : iacopo sprenger
- *  Date        : 02.04.2022
- *  Version     : 0.1
- *  Description : uart hardware abstraction
+/*  Title		: Debug
+ *  Filename	: debug.h
+ *	Author		: iacopo sprenger
+ *	Date		: 22.04.2022
+ *	Version		: 0.1
+ *	Description	: debug interface for computer connection
+ *				  will be running inside the serial reception deamon
  */
 
-#ifndef UART_H
-#define UART_H
+#ifndef DEBUG_H
+#define DEBUG_H
 
 
 
 /**********************
  *  INCLUDES
  **********************/
-#include <main.h>
+
 #include <stdint.h>
-#include <util.h>
 
 /**********************
  *  CONSTANTS
@@ -51,6 +51,6 @@ extern "C"{
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* DMA_H */
+#endif /* DEBUG_H */
 
 /* END */

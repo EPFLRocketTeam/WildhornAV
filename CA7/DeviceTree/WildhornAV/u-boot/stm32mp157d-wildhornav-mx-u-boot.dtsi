@@ -110,8 +110,8 @@
 		CLK_SDMMC12_HSI
 		CLK_STGEN_HSI
 		CLK_USBPHY_PLL4R
-		CLK_SPI2S1_PLL4P
-		CLK_SPI2S23_PLL4P
+		CLK_SPI2S1_PLL3Q
+		CLK_SPI2S23_PLL3Q
 		CLK_SPI45_DISABLED
 		CLK_SPI6_DISABLED
 		CLK_I2C46_HSI
@@ -139,7 +139,7 @@
 	pll1:st,pll@0 {
 		compatible = "st,stm32mp1-pll";
 		reg = <0>;
-		cfg = < 3 39 0 1 1 PQR(1,0,0) >;
+		cfg = < 3 49 0 1 1 PQR(1,0,0) >;
 		u-boot,dm-pre-reloc;
 	};
 	pll2:st,pll@1 {
@@ -158,7 +158,7 @@
 	pll4:st,pll@3 {
 		compatible = "st,stm32mp1-pll";
 		reg = <3>;
-		cfg = < 3 25 4 1 13 PQR(1,0,1) >;
+		cfg = < 3 25 4 1 13 PQR(0,0,1) >;
 		frac = < 0x800 >;
 		u-boot,dm-pre-reloc;
 	};

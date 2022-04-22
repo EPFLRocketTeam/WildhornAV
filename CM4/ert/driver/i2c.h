@@ -1,22 +1,22 @@
-/*  Title       : UART
- *  Filename    : uart.h
- *  Author      : iacopo sprenger
- *  Date        : 02.04.2022
- *  Version     : 0.1
- *  Description : uart hardware abstraction
+/*  Title		: I2C
+ *  Filename	: i2c.c
+ *	Author		: iacopo sprenger
+ *	Date		: 22.04.2022
+ *	Version		: 0.1
+ *	Description	: i2c interface for the generic device driver
  */
 
-#ifndef UART_H
-#define UART_H
+
+#ifndef I2C_H
+#define I2C_H
 
 
 
 /**********************
  *  INCLUDES
  **********************/
-#include <main.h>
+
 #include <stdint.h>
-#include <util.h>
 
 /**********************
  *  CONSTANTS
@@ -47,10 +47,12 @@ extern "C"{
 #endif
 
 
+void i2c_init(void);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* DMA_H */
+#endif /* I2C_H */
 
 /* END */
