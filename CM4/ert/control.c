@@ -18,7 +18,7 @@
 #include <cmsis_os.h>
 
 #include <driver/serial.h>
-#include <driver/device.h>
+#include <device/device.h>
 
 #include <control.h>
 #include <feedback/led.h>
@@ -58,14 +58,9 @@
 void control_thread(void * arg) {
 	static TickType_t last_wake_time;
 	static const TickType_t period = pdMS_TO_TICKS(2000);
-
-	led_rgb_init();
-
-	led_rgb_set_color(LED_TEAL);
-
 	last_wake_time = xTaskGetTickCount();
 
-	serial_init();
+
 
 	device_interface_t * serial_interface = serial_get_feedback_interface();
 

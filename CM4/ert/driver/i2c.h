@@ -1,13 +1,14 @@
-/*  Title       : Serial
- *  Filename    : serial.h
- *  Author      : iacopo sprenger
- *  Date        : 02.04.2022
- *  Version     : 0.1
- *  Description : serial interface for device driver
+/*  Title		: I2C
+ *  Filename	: i2c.c
+ *	Author		: iacopo sprenger
+ *	Date		: 22.04.2022
+ *	Version		: 0.1
+ *	Description	: i2c interface for the generic device driver
  */
 
-#ifndef SERIAL_H
-#define SERIAL_H
+
+#ifndef I2C_H
+#define I2C_H
 
 
 
@@ -16,8 +17,6 @@
  **********************/
 
 #include <stdint.h>
-#include <device/device.h>
-#include <util.h>
 
 /**********************
  *  CONSTANTS
@@ -34,8 +33,6 @@
  **********************/
 
 
-
-
 /**********************
  *  VARIABLES
  **********************/
@@ -49,21 +46,13 @@
 extern "C"{
 #endif
 
-error_t serial_init(void);
 
-error_t serial_feedback_init(void);
-
-device_deamon_t * serial_get_deamon(void);
-
-device_interface_t * serial_get_feedback_interface(void);
-
-
-
+void i2c_init(void);
 
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* SERIAL_H */
+#endif /* I2C_H */
 
 /* END */

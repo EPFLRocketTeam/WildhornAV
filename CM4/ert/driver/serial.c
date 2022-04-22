@@ -15,7 +15,7 @@
 #include <main.h>
 
 #include "serial.h"
-#include "device.h"
+#include <device/device.h>
 
 
 /**********************
@@ -142,18 +142,18 @@ error_t serial_init(void)
 	//initialize deamon semaphore
 	serial_deamon_context.rx_sem = xSemaphoreCreateBinaryStatic(&serial_deamon_context.rx_sem_buffer);
 
-
-	serial_setup_reception(&feedback_interface_context, SERIAL_TRANSFER_IT);
-
-
-
-
 	error |= device_deamon_create(&serial_deamon, "serial deamon", 6, (void *) &serial_deamon_context, serial_data_ready);
+
+
+	return error;
+}
+
+error_t serial_feedback_init(void) {
+	error_t error = ER_SUCCESS;
 
 	error |= device_interface_create(&feedback_interface, (void*) &feedback_interface_context, &serial_deamon, serial_send, serial_recv, serial_handle_data);
 
-
-
+	serial_setup_reception(&feedback_interface_context, SERIAL_TRANSFER_IT);
 
 	return error;
 }

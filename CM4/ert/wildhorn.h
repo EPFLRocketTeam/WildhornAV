@@ -1,13 +1,13 @@
-/*  Title       : Serial
- *  Filename    : serial.h
+/*  Title       : Wildhorn
+ *  Filename    : wildhorn.h
  *  Author      : iacopo sprenger
- *  Date        : 02.04.2022
+ *  Date        : 22.04.2022
  *  Version     : 0.1
- *  Description : serial interface for device driver
+ *  Description : wildhorn rocket parameters
  */
 
-#ifndef SERIAL_H
-#define SERIAL_H
+#ifndef WILDHORN_H
+#define WILDHORN_H
 
 
 
@@ -16,12 +16,23 @@
  **********************/
 
 #include <stdint.h>
-#include <device/device.h>
-#include <util.h>
 
 /**********************
  *  CONSTANTS
  **********************/
+
+
+//present sockets
+
+#define WH_TRUE		1
+#define WH_FALSE 	0
+
+
+#define WH_HAS_SENSORS	WH_TRUE
+#define WH_HAS_FEEDBACK WH_TRUE
+#define WH_HAS_RADIO	WH_FALSE
+#define WH_HAS_GNSS		WH_FALSE
+#define WH_HAS_KRTEK	WH_FALSE
 
 
 /**********************
@@ -32,8 +43,6 @@
 /**********************
  *  TYPEDEFS
  **********************/
-
-
 
 
 /**********************
@@ -49,21 +58,11 @@
 extern "C"{
 #endif
 
-error_t serial_init(void);
-
-error_t serial_feedback_init(void);
-
-device_deamon_t * serial_get_deamon(void);
-
-device_interface_t * serial_get_feedback_interface(void);
-
-
-
 
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* SERIAL_H */
+#endif /* WILDHORN_H */
 
 /* END */
