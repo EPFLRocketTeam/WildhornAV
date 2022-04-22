@@ -41,7 +41,7 @@
 
 typedef struct device_interface {
     uint32_t id;
-    void * inst;
+    void * context;
     /* arguments: device_ptr, data, len) */
     error_t (*send)(void*, uint8_t*, uint32_t);
     /* arguments: device_ptr, data, len) */
@@ -58,7 +58,7 @@ typedef struct device_deamon {
 	TaskHandle_t handle;
 	uint32_t interfaces_count;
 	device_interface_t * interfaces[DEVICE_MAX_INTERFACES_PER_DEAMON];
-	void * inst;
+	void * context;
 	error_t (*data_rdy)(void*);
 }device_deamon_t;
 

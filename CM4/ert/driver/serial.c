@@ -23,8 +23,8 @@
  **********************/
 
 #define S1_UART 			huart2
-#define S2_UART 			huart3;
-#define S3_UART 			huart6;
+#define S2_UART 			huart3
+#define S3_UART 			huart6
 
 #define SERIAL_BUFFER_LEN 256
 
@@ -79,7 +79,9 @@ static device_interface_t feedback_interface;
 
 static serial_deamon_context_t serial_deamon_context;
 
-static serial_interface_context_t feedback_interface_context;
+static serial_interface_context_t feedback_interface_context = {
+		.uart = &S3_UART
+};
 
 
 /**********************
@@ -104,14 +106,19 @@ error_t serial_setup_reception(serial_interface_context_t * interface_context, s
 //Interrupt receive handler for serial
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 	for(uint8_t i = 0; i < serial_deamon.interfaces_count; i++) {
-		serial_interface_context_t * serial_context = (serial_interface_context_t *) serial_deamon.interfaces[i]->inst;
+		serial_interface_context_t * serial_context = (serial_interface_context_t *) serial_deamon.interfaces[i]->context;
 		if(serial_context->uart == huart) {
 			util_buffer_u8_add(&serial_context->rx_buffer, serial_context->rx_fragment);
-			//release semaphore
+
+			serial_deamon_context_t * deamon_context = (serial_deamon_context_t *) serial_deamon.context;
+			xSemaphoreGiveFromISR( deamon_context->rx_sem, &xHigherPriorityTaskWoken );
+
 			break;
 		}
 	}
+	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
 
 
@@ -193,7 +200,11 @@ error_t serial_send(void * context, uint8_t* data, uint32_t len)
 error_t serial_recv(void * context, uint8_t * data, uint32_t * len)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
-
+	uint16_t i = 0;
+	while(!util_buffer_u8_isempty(&interface_context->rx_buffer) && i < len) {
+		data[i++] = util_buffer_u8_get(&interface_context->rx_buffer);
+	}
+	*len = i;
 	return ER_SUCCESS;
 }
 
@@ -202,6 +213,8 @@ error_t serial_handle_data(void * if_context, void * dem_context)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) if_context;
 	serial_deamon_context_t * deamon_context = (serial_deamon_context_t *) dem_context;
+
+	//no data handling for now
 
 	return ER_SUCCESS;
 }

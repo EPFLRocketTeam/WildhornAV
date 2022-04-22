@@ -57,7 +57,7 @@
 
 void control_thread(void * arg) {
 	static TickType_t last_wake_time;
-	static const TickType_t period = pdMS_TO_TICKS(CONTROL_HEART_BEAT);
+	static const TickType_t period = pdMS_TO_TICKS(2000);
 
 	led_rgb_init();
 
@@ -65,57 +65,19 @@ void control_thread(void * arg) {
 
 	last_wake_time = xTaskGetTickCount();
 
-	static uint8_t dummy = 0;
-
 	serial_init();
 
 	device_interface_t * serial_interface = serial_get_feedback_interface();
 
-	//GPIO init leds
-
-	GPIO_InitTypeDef GPIO_InitStructure;
-
-	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-	GPIO_InitStructure.Pull = GPIO_NOPULL;
-	GPIO_InitStructure.Pin = GPIO_PIN_6;
-	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
-
-	GPIO_InitStructure.Pin = GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15;
-	HAL_GPIO_Init(GPIOD, &GPIO_InitStructure);
-
-
+	static uint8_t char_buffer[64];
+	static uint16_t val = 0;
 
 	for(;;) {
 
-		if(dummy % 4 == 0) {
-			led_rgb_set_color(LED_RED);
-			gpio_set(GPIOB, GPIO_PIN_6);
-			gpio_clr(GPIOD, GPIO_PIN_13);
-			gpio_clr(GPIOD, GPIO_PIN_14);
-			gpio_clr(GPIOD, GPIO_PIN_15);
-		} else if(dummy % 4 == 1) {
-			led_rgb_set_color(LED_GREEN);
-			gpio_clr(GPIOB, GPIO_PIN_6);
-			gpio_set(GPIOD, GPIO_PIN_13);
-			gpio_clr(GPIOD, GPIO_PIN_14);
-			gpio_clr(GPIOD, GPIO_PIN_15);
-		} else if(dummy % 4 == 2) {
-			led_rgb_set_color(LED_BLUE);
-			gpio_clr(GPIOB, GPIO_PIN_6);
-			gpio_clr(GPIOD, GPIO_PIN_13);
-			gpio_set(GPIOD, GPIO_PIN_14);
-			gpio_clr(GPIOD, GPIO_PIN_15);
-		} else {
-			led_rgb_set_color(LED_BLACK);
-			gpio_clr(GPIOB, GPIO_PIN_6);
-			gpio_clr(GPIOD, GPIO_PIN_13);
-			gpio_clr(GPIOD, GPIO_PIN_14);
-			gpio_set(GPIOD, GPIO_PIN_15);
-		}
-		dummy++;
+		uint16_t len = sprintf(char_buffer, "salut: %d\n\r", val++);
+		device_interface_send(serial_interface, char_buffer, len);
 
-		device_interface_send(serial_interface, "hello\r\n", 7);
+
 
 
 

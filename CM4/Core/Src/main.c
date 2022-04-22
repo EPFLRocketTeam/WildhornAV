@@ -79,6 +79,9 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+	//wait for debugger connection
+	for(uint32_t i = 0; i < 0x01fffffe; i++);
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -126,6 +129,7 @@ int main(void)
   MX_SPI2_Init();
   MX_DMA_Init();
   MX_SPI3_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
   threads_init();

@@ -57,6 +57,21 @@
  *	DECLARATIONS
  **********************/
 
+
+void led_feedback_init(void) {
+	//GPIO init leds
+	//feedback leds located on socket 3
+
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+	GPIO_InitStructure.Pull = GPIO_NOPULL;
+	GPIO_InitStructure.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3;
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+}
+
 void led_rgb_init(void) {
 	LED_TIM.Instance->ARR = LED_MAX;
 	LED_TIM.Instance->CCR1 = 0;

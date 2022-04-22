@@ -13,6 +13,8 @@
 
 #include <cmsis_os.h>
 #include <threads.h>
+#include <wildhorn.h>
+#include <feedback/led.h>
 
 
 #include <control.h>
@@ -66,6 +68,10 @@ static TaskHandle_t control_handle = NULL;
 
 
 void threads_init(void) {
+
+#if WH_HAS_FEEDBACK == WH_TRUE
+	led_feedback_init();
+#endif
 
 	CREATE_THREAD(control_handle, control, control_thread, 0, CONTROL_SZ, CONTROL_PRIO);
 
