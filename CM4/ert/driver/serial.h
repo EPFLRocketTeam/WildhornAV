@@ -53,7 +53,7 @@ error_t serial_init(void);
 
 device_deamon_t * serial_get_deamon(void);
 
-device_interface_t * serial_get_interface(void);
+device_interface_t * serial_get_feedback_interface(void);
 
 
 

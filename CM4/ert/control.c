@@ -69,7 +69,7 @@ void control_thread(void * arg) {
 
 	serial_init();
 
-	device_interface_t * serial_interface = serial_get_interface();
+	device_interface_t * serial_interface = serial_get_feedback_interface();
 
 	//GPIO init leds
 
