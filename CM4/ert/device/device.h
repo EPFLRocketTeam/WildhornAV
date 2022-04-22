@@ -65,10 +65,11 @@ typedef struct device_deamon {
 typedef struct device {
     uint32_t id;
     device_interface_t * interface;
-    /*arguments: context, addr, data, data_len*/
-    error_t (*read_reg)(device_interface_t*, uint32_t, uint8_t *, uint32_t);
-    /*arguments: context, addr, data, data_len*/
-    error_t (*write_reg)(device_interface_t*, uint32_t, uint8_t *, uint32_t);
+    void * context;
+    /*arguments: context, interface, addr, data, data_len*/
+    error_t (*read_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t);
+    /*arguments: context, interface, addr, data, data_len*/
+    error_t (*write_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t);
 }device_t;
 
 
@@ -86,9 +87,10 @@ extern "C"{
 #endif
 
 error_t device_create(	device_t * dev,
+						void * context,
 						device_interface_t * interface,
-						error_t (*read_reg)(device_interface_t*, uint32_t, uint8_t *, uint32_t),
-						error_t (*write_reg)(device_interface_t*, uint32_t, uint8_t *, uint32_t));
+						error_t (*read_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t),
+						error_t (*write_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t));
 
 error_t device_deamon_create(	device_deamon_t * deamon,
 								const char * name,

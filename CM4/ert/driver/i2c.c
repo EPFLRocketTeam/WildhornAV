@@ -12,6 +12,7 @@
 
 #include <main.h>
 #include <driver/i2c.h>
+#include <device/device.h>
 #include <i2c.h>
 #include <util.h>
 
@@ -19,9 +20,9 @@
  *	CONSTANTS
  **********************/
 
-#define S1_I2C		hi2c1;
-#define S2_I2C		hi2c2;
-#define S3_I2C		hi2c5;
+#define S1_I2C		hi2c1
+#define S2_I2C		hi2c2
+#define S3_I2C		hi2c5
 
 /**********************
  *	MACROS
@@ -32,14 +33,17 @@
  *	TYPEDEFS
  **********************/
 
-typedef struct i2c_interface_context {
-	I2C_HandleTypeDef * i2c;
 
-}i2c_interface_context_t;
 
 /**********************
  *	VARIABLES
  **********************/
+
+device_interface_t sensor_interface;
+
+i2c_interface_context_t sensor_interface_context = {
+		.i2c = &S2_I2C
+};
 
 
 /**********************
@@ -74,8 +78,14 @@ void i2c_spi_guard(void) {
 	HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 }
 
+device_interface_t * i2c_get_sensor_interface(void) {
+	return &sensor_interface;
+}
+
 void i2c_init(void) {
 	error_t error = ER_SUCCESS;
+
+	device_interface_create(&sensor_interface, (void *) &sensor_interface_context, NULL, NULL, NULL, NULL);
 
 }
 

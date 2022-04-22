@@ -16,6 +16,7 @@
 #include <wildhorn.h>
 #include <feedback/led.h>
 #include <driver/serial.h>
+#include <driver/i2c.h>
 
 
 #include <control.h>
@@ -83,6 +84,7 @@ void threads_init(void) {
 
 #if WH_HAS_SENSORS == WH_TRUE
 	i2c_spi_guard();
+	i2c_init();
 #endif
 
 	CREATE_THREAD(led_rgb_handle, led_rgb, led_rgb_thread, LED_RGB_PRIO, LED_RGB_SZ, 0);
