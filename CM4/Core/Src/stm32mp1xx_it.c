@@ -257,7 +257,7 @@ void USART2_IRQHandler(void)
   /* USER CODE END USART2_IRQn 0 */
   HAL_UART_IRQHandler(&huart2);
   /* USER CODE BEGIN USART2_IRQn 1 */
-  uart_interrupt_handler(&huart2);
+
   /* USER CODE END USART2_IRQn 1 */
 }
 
@@ -271,7 +271,7 @@ void USART3_IRQHandler(void)
   /* USER CODE END USART3_IRQn 0 */
   HAL_UART_IRQHandler(&huart3);
   /* USER CODE BEGIN USART3_IRQn 1 */
-  uart_interrupt_handler(&huart3);
+
   /* USER CODE END USART3_IRQn 1 */
 }
 
@@ -327,7 +327,7 @@ void USART6_IRQHandler(void)
   /* USER CODE END USART6_IRQn 0 */
   HAL_UART_IRQHandler(&huart6);
   /* USER CODE BEGIN USART6_IRQn 1 */
-  uart_interrupt_handler(&huart6);
+
   /* USER CODE END USART6_IRQn 1 */
 }
 

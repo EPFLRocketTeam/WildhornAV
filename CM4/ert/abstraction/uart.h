@@ -46,10 +46,6 @@
 extern "C"{
 #endif
 
-void uart_interrupt_handler(UART_HandleTypeDef * uart);
-
-__weak void uart_idle_handler(UART_HandleTypeDef * uart);
-
 
 #ifdef __cplusplus
 } // extern "C"
