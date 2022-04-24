@@ -19,6 +19,7 @@
 
 #include <driver/serial.h>
 #include <device/device.h>
+#include <device/i2c_sensor.h>
 
 #include <control.h>
 #include <feedback/led.h>
@@ -64,6 +65,10 @@ void control_thread(void * arg) {
 
 	device_interface_t * serial_interface = serial_get_feedback_interface();
 
+	i2c_sensor_init();
+
+	device_t * i2c_accelerometer = i2c_get_accelerometer();
+
 	static uint8_t char_buffer[64];
 	static uint16_t val = 0;
 
@@ -72,7 +77,10 @@ void control_thread(void * arg) {
 		uint16_t len = sprintf(char_buffer, "salut: %d\n\r", val++);
 		device_interface_send(serial_interface, char_buffer, len);
 
+		static uint8_t data;
+		device_read_u8(i2c_accelerometer, 0x0F, &data);
 
+		data;
 
 
 
