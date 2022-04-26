@@ -23,6 +23,7 @@
 
 
 
+
 /**********************
  *	CONSTANTS
  **********************/
@@ -94,6 +95,8 @@ void led_feedback_init(void) {
 	GPIO_InitStructure.Pull = GPIO_NOPULL;
 	GPIO_InitStructure.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_SET);
 
 }
 

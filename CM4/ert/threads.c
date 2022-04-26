@@ -15,6 +15,7 @@
 #include <threads.h>
 #include <wildhorn.h>
 #include <feedback/led.h>
+#include <feedback/buzzer.h>
 #include <driver/serial.h>
 #include <driver/i2c.h>
 
@@ -78,8 +79,10 @@ void threads_init(void) {
 	serial_init();
 
 #if WH_HAS_FEEDBACK == WH_TRUE
+	buzzer_init();
 	led_feedback_init();
 	serial_feedback_init();
+
 #endif
 
 #if WH_HAS_SENSORS == WH_TRUE
