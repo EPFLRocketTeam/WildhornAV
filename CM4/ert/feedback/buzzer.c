@@ -35,9 +35,14 @@
  *	MACROS
  **********************/
 
-#define COMPUTE_NOTE(note)
+#define TIMER_FREQ	200e6
+#define NOTE_MAGIC	4
+#define RYTM_MAGIC  2000
 
-#define COMPUTE_RYTM(time)
+
+#define COMPUTE_NOTE(note) (TIMER_FREQ)/(NOTE_MAGIC)/(note)
+
+#define COMPUTE_RYTM(time) (TIMER_FREQ)/(RYTM_MAGIC)/(time)
 
 
 /**********************
@@ -71,7 +76,7 @@ void buzzer_note_interrupt(void) {
 }
 
 void buzzer_rytm_interrupt(void) {
-	NOTE_TIMER->ARR =
+	NOTE_TIMER->ARR = COMPUTE_NOTE(A4);
 }
 
 void buzzer_init(void) {
