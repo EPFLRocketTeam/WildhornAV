@@ -370,7 +370,7 @@ void TIM16_IRQHandler(void)
   /* USER CODE BEGIN TIM16_IRQn 0 */
 	buzzer_rytm_interrupt();
   /* USER CODE END TIM16_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim16);
+	HAL_TIM_IRQHandler(&htim16);
   /* USER CODE BEGIN TIM16_IRQn 1 */
 
   /* USER CODE END TIM16_IRQn 1 */
@@ -384,7 +384,7 @@ void TIM14_IRQHandler(void)
   /* USER CODE BEGIN TIM14_IRQn 0 */
 	buzzer_note_interrupt();
   /* USER CODE END TIM14_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim14);
+	HAL_TIM_IRQHandler(&htim14);
   /* USER CODE BEGIN TIM14_IRQn 1 */
 
   /* USER CODE END TIM14_IRQn 1 */

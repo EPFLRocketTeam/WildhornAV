@@ -23,6 +23,7 @@
 
 #include <control.h>
 #include <feedback/led.h>
+#include <feedback/buzzer.h>
 
 #include <abstraction/gpio.h>
 
@@ -59,10 +60,22 @@
 
 void control_thread(void * arg) {
 	static TickType_t last_wake_time;
-	static const TickType_t period = pdMS_TO_TICKS(2000);
+	static const TickType_t period = pdMS_TO_TICKS(500);
 	last_wake_time = xTaskGetTickCount();
 
+	GPIO_InitTypeDef GPIO_InitStruct;
 
+	GPIO_InitStruct.Pin = GPIO_PIN_11;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+	GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
 
 
@@ -74,17 +87,50 @@ void control_thread(void * arg) {
 
 	static uint8_t char_buffer[64];
 	static uint16_t val = 0;
+	static uint8_t proxenete = 0;
 
 	for(;;) {
 
-		uint16_t len = sprintf(char_buffer, "salut: %d\n\r", val++);
-		device_interface_send(serial_interface, char_buffer, len);
+		//uint16_t len = sprintf(char_buffer, "salut: %d\n\r", val++);
+		//device_interface_send(serial_interface, char_buffer, len);
 
 		static uint8_t data;
 		device_read_u8(i2c_accelerometer, 0x0F, &data);
 
-		data;
+		if(val == 0) {
+			gpio_set(GPIOA, GPIO_PIN_1);
+			gpio_clr(GPIOA, GPIO_PIN_2);
+			gpio_clr(GPIOA, GPIO_PIN_3);
+			gpio_set(GPIOC, GPIO_PIN_4);
+			gpio_clr(GPIOC, GPIO_PIN_5);
+		} else if (val == 1) {
+			gpio_clr(GPIOA, GPIO_PIN_1);
+			gpio_set(GPIOA, GPIO_PIN_2);
+			gpio_clr(GPIOA, GPIO_PIN_3);
+			gpio_clr(GPIOC, GPIO_PIN_4);
+			gpio_set(GPIOC, GPIO_PIN_5);
+		} else {
+			gpio_clr(GPIOA, GPIO_PIN_1);
+			gpio_clr(GPIOA, GPIO_PIN_2);
+			gpio_set(GPIOA, GPIO_PIN_3);
+			gpio_set(GPIOC, GPIO_PIN_4);
+			gpio_set(GPIOC, GPIO_PIN_5);
+		}
+		val++;
+		if(val==3) {
+			val=0;
+		}
 
+		if(!gpio_get(GPIOF, GPIO_PIN_11)) {
+			if(!proxenete) {
+				buzzer_enable();
+				proxenete = 1;
+			} else {
+				buzzer_disable();
+				proxenete = 0;
+			}
+
+		}
 
 
 

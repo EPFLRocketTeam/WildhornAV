@@ -1,6 +1,19 @@
 #ifndef NOTE_H
 #define NOTE_H
 
+
+typedef struct note {
+	uint16_t freq; //0.1Hz
+	uint16_t time; //beat
+}note_t;
+
+#define T1_4	1
+#define T1_2	2
+#define T1		4
+#define T1_1_2	6
+#define T2		8
+#define T4      16
+
 //notes in 0.1HZ --> 4400 = 440.0 Hz
 
 #define C0 163

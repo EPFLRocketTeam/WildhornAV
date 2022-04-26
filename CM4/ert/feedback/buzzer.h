@@ -47,6 +47,8 @@ extern "C"{
 
 void buzzer_note_interrupt(void);
 void buzzer_rytm_interrupt(void);
+void buzzer_enable(void);
+void buzzer_disable(void);
 void buzzer_init(void);
 
 #ifdef __cplusplus
