@@ -42,11 +42,11 @@
 typedef struct device_interface {
     uint32_t id;
     void * context;
-    /* arguments: device_ptr, data, len) */
+    /* arguments: if context, data, len) */
     error_t (*send)(void*, uint8_t*, uint32_t);
-    /* arguments: device_ptr, data, len) */
+    /* arguments: if context, data, len) */
     error_t (*recv)(void*, uint8_t*, uint32_t*);
-    /* arguments: device_ptr*/
+    /* arguments: if context, dem context */
     error_t (*handle_data)(void*, void*);
 
 }device_interface_t;

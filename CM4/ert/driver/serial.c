@@ -26,8 +26,6 @@
 #define S2_UART 			huart3
 #define S3_UART 			huart6
 
-#define SERIAL_BUFFER_LEN 256
-
 #define SERIAL_DMA_LEN 32
 
 
@@ -40,33 +38,7 @@
  *	TYPEDEFS
  **********************/
 
-typedef enum serial_interrupt_source{
-	SERIAL_SOURCE_DMA_FIRST_HALF,
-	SERIAL_SOURCE_DMA_SECOND_HALF,
-	SERIAL_SOURCE_IDLE
-}serial_interrupt_source_t;
 
-typedef enum serial_transfer_mode{
-	SERIAL_TRANSFER_DMA,
-	SERIAL_TRANSFER_IT
-}serial_transfer_mode_t;
-
-typedef struct serial_deamon_context {
-	SemaphoreHandle_t rx_sem;
-	StaticSemaphore_t rx_sem_buffer;
-
-}serial_deamon_context_t;
-
-typedef struct serial_interface_context {
-	UART_HandleTypeDef * uart;
-	util_buffer_u8_t rx_buffer;
-	uint8_t rx_data[SERIAL_BUFFER_LEN];
-	uint32_t rx_data_len;
-	uint8_t rx_fragment;
-	uint8_t tx_data[SERIAL_BUFFER_LEN];
-
-
-}serial_interface_context_t;
 
 
 /**********************

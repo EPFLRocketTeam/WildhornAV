@@ -44,6 +44,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		DATA_CHECK=$( cat  update.patch )
 		if [ -z "$DATA_CHECK" ]; then
 			echo "no changes detected, exit"
+			kermit $KERMIT_CONFIG -f
 			exit 0
 		fi
 
@@ -60,6 +61,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		echo "delta applied"
 
 		kermit $KERMIT_CONFIG -C "remote host cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
+		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"
 
 	else
@@ -69,7 +71,8 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		kermit $KERMIT_CONFIG -s patcher.py ~/
 		kermit $KERMIT_CONFIG -s start_fw.sh ~/
 		kermit $KERMIT_CONFIG -s stop_fw.sh ~/
-		kermit $KERMIT_CONFIG -s rc.local /etc/rc.local
+		kermit $KERMIT_CONFIG -s rc.local ~/
+		kermit $KERMIT_CONFIG -C " remote host mv rc.local /etc/rc.local, exit"
 		kermit $KERMIT_CONFIG -C " remote host chmod +x /etc/rc.local, exit"
 		echo "tools sent"
 
@@ -84,6 +87,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		echo "firmware uncompressed"
 
 		kermit $KERMIT_CONFIG -C "remote host cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
+		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"	
 
 	fi

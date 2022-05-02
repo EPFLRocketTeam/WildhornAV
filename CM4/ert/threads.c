@@ -81,8 +81,6 @@ void threads_init(void) {
 #if WH_HAS_FEEDBACK == WH_TRUE
 	buzzer_init();
 	led_feedback_init();
-	serial_feedback_init();
-
 #endif
 
 #if WH_HAS_SENSORS == WH_TRUE
