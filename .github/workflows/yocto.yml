@@ -40,3 +40,9 @@ jobs:
           MACHINE=stm32mp1-wildhornav DISTRO=openstlinux-ert EULA_stm32mp1wildhornav=1 source layers/meta-st/scripts/envsetup.sh --no-ui
           bitbake ert-image-core
 
+      # Uploads artifacts (built images)
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ert-images
+          path: distribution-package/build-openstlinuxert-stm32mp1-wildhornav/tmp-glibc/deploy/images/stm32mp1-wildhornav # or path/to/artifact
+
