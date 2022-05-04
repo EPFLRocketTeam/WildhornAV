@@ -31,7 +31,7 @@ jobs:
       # Installs dependencies
       - name: Install dependencies
         run: |
-          apt-get install bsdmainutils build-essential chrpath cpio debianutils diffstat gawk gcc-multilib git iputils-ping libegl1-mesa libgmp-dev libmpc-dev libsdl1.2-dev libssl-dev pylint python3 python3-git python3-jinja2 python3-pexpect python3-pip socat texinfo unzip wget xterm xz-utils
+          sudo apt-get install bsdmainutils build-essential chrpath cpio debianutils diffstat gawk gcc-multilib git iputils-ping libegl1-mesa libgmp-dev libmpc-dev libsdl1.2-dev libssl-dev pylint python3 python3-git python3-jinja2 python3-pexpect python3-pip socat texinfo unzip wget xterm xz-utils
 
       # Sources the compilation environment & compiles ERT image core
       - name: Compile ERT image core
