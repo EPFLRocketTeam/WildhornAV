@@ -53,7 +53,7 @@ edit_bootfs() {
 	echo "LABEL $1" 				>> extlinux/extlinux.conf
 	echo "        KERNEL /uImage" 			>> extlinux/extlinux.conf
 	echo "        FDT /$1.dtb" 			>> extlinux/extlinux.conf
-	echo "        APPEND root=/dev/mmcblk0p6 rootwait rw earlyprintk console=ttySTM0,115200" >> extlinux/extlinux.conf
+	echo "        APPEND root=/dev/mmcblk0p6 rootwait rw console=ttySTM0,115200" >> extlinux/extlinux.conf
 	
 	popd
 	

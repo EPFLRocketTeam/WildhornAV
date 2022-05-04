@@ -137,6 +137,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_rcc_ex.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_spi.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_spi.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_spi_ex.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_spi_ex.c</locationURI>
+		</link>
+		<link>
 			<name>Drivers/STM32MP1xx_HAL_Driver/stm32mp1xx_hal_tim.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_hal_tim.c</locationURI>
@@ -162,9 +172,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_ll_adc.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/Third_Party/FreeRTOS/cmsis_os2.c</name>
+			<name>Middlewares/Third_Party/FreeRTOS/cmsis_os.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/FreeRTOS/croutine.c</name>
@@ -175,11 +185,6 @@
 			<name>Middlewares/Third_Party/FreeRTOS/event_groups.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/Third_Party/FreeRTOS/heap_4.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/FreeRTOS/list.c</name>
@@ -210,6 +215,101 @@
 			<name>Middlewares/Third_Party/FreeRTOS/timers.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/CMakeLists.txt</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/CMakeLists.txt</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/condition.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/condition.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/device.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/device.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_device.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_device.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_init.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_init.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_io.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_io.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_shmem.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_shmem.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/init.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/init.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/io.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/io.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/log.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/log.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/remoteproc_virtio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/remoteproc/remoteproc_virtio.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/rpmsg.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/rpmsg.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/rpmsg_virtio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/rpmsg_virtio.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/shmem.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/sys.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/cortexm/sys.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/time.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/time.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/virt_uart.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/virtual_driver/virt_uart.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/virtio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtio.c</locationURI>
+		</link>
+		<link>
+			<name>Middlewares/Third_Party/OpenAMP/virtqueue.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/virtio/virtqueue.c</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
