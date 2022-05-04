@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: 'recursive'
+          fetch-depth: '0'
 
       # Sources the compilation environment & compiles ERT image core
       - name: Compile ERT image core
