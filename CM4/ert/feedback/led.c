@@ -63,15 +63,18 @@ static led_blink_state_t blink_sequence[] = {
 		LED_OFF
 };
 
-static const blink_sequence_len = sizeof(blink_sequence)/sizeof(led_blink_state_t);
+static const int blink_sequence_len = sizeof(blink_sequence)/sizeof(led_blink_state_t);
 
 static led_color_t color_sequence[] =  {
+		led_green,
 		led_red,
 		led_blue,
-		led_green
+		led_red,
+		led_green,
+		led_blue
 };
 
-static const color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t);
+static const int color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t);
 
 /**********************
  *	PROTOTYPES

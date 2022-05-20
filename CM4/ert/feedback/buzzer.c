@@ -95,28 +95,6 @@ void buzzer_rytm_interrupt(void) {
 	}
 }
 
-/*
-void buzzer_rytm_interrupt(void) {
-	melody_active = 1;
-	if(still_alive[melody_state].freq == 0) {
-		melody_active = 0;
-		gpio_clr(GPIOA, GPIO_PIN_0);
-		RYTM_TIMER->ARR = COMPUTE_RYTM(still_alive[melody_state].time)/2;
-	} else {
-		melody_active = 1;
-		gpio_set(GPIOA, GPIO_PIN_0);
-		NOTE_TIMER->ARR = COMPUTE_NOTE(still_alive[melody_state].freq);
-		RYTM_TIMER->ARR = COMPUTE_RYTM(still_alive[melody_state].time);
-	}
-
-	melody_state++;
-	if(melody_state == still_alive_len) {
-		melody_state=0;
-	}
-}
-
-*/
-
 void buzzer_enable(void) {
 	HAL_TIM_Base_Start_IT(&RYTM_TIMER_DEV);
 	HAL_TIM_Base_Start_IT(&NOTE_TIMER_DEV);
@@ -140,10 +118,6 @@ void buzzer_init(void) {
 	RYTM_TIMER->ARR = COMPUTE_RYTM(2);
 	RYTM_TIMER->CNT = 0;
 	melody_active=0;
-
-	HAL_TIM_Base_Start_IT(&RYTM_TIMER_DEV);
-	HAL_TIM_Base_Start_IT(&NOTE_TIMER_DEV);
-
 }
 
 /* END */
