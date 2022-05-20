@@ -176,6 +176,7 @@
 									<listOptionValue builtIn="false" value="../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include"/>
 									<listOptionValue builtIn="false" value="../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include"/>
 									<listOptionValue builtIn="false" value="../../Middlewares/Third_Party/OpenAMP/virtual_driver"/>
+									<listOptionValue builtIn="false" value="../ert"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1346748544" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -204,6 +205,7 @@
 									<listOptionValue builtIn="false" value="../../Middlewares/Third_Party/OpenAMP/open-amp/lib/include"/>
 									<listOptionValue builtIn="false" value="../../Middlewares/Third_Party/OpenAMP/libmetal/lib/include"/>
 									<listOptionValue builtIn="false" value="../../Middlewares/Third_Party/OpenAMP/virtual_driver"/>
+									<listOptionValue builtIn="false" value="../ert"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1776950510" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>

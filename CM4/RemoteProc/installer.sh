@@ -10,7 +10,10 @@ REMOTE_SSH=$( ifconfig | grep 192.168.7. )
 
 SSH_TARGET="root@192.168.7.1"
 
-KERMIT_CONFIG=kermit_config.cfg
+KERMIT_CONFIG_FAST=kermit_config_fast.cfg
+KERMIT_CONFIG_SLOW=kermit_config_slow.cfg
+
+KERMIT_CONFIG=$KERMIT_CONFIG_SLOW
 
 
 if [[ $1 == "kermit" ]]; then
@@ -33,7 +36,10 @@ echo "last firmware hash [local]: "$LAST_FIRMWARE_HASH
 if [[ -z "$REMOTE_SSH" ]]; then 
 	# use ckermit
 	echo "using CKERMIT"
-	REMOTE_FIRMWARE_HASH=$( kermit kermit_config.cfg -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
+
+	kermit $KERMIT_CONFIG -C "remote host cd ~, exit"
+
+	REMOTE_FIRMWARE_HASH=$( kermit $KERMIT_CONFIG -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
 	echo "last firmware hash [remote]: "$REMOTE_FIRMWARE_HASH
 	if [[ $LAST_FIRMWARE_HASH == $REMOTE_FIRMWARE_HASH ]] ; then
 		echo "firmware match, delta update possible"
@@ -48,6 +54,11 @@ if [[ -z "$REMOTE_SSH" ]]; then
 			exit 0
 		fi
 
+		#kermit $KERMIT_CONFIG -f -C "remote host stty -F /dev/ttySTM0 921600, exit"
+
+		#KERMIT_CONFIG=$KERMIT_CONFIG_FAST
+		#echo "speed up"
+
 		bzip2 -f update.patch
 		echo "delta compressed"
 
@@ -60,12 +71,25 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		kermit $KERMIT_CONFIG -C "remote host python3 patcher.py, exit"
 		echo "delta applied"
 
-		kermit $KERMIT_CONFIG -C "remote host cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
+		kermit $KERMIT_CONFIG -C "remote host cp -p WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
 		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"
 
+		REMOTE_FIRMWARE_HASH=$( kermit $KERMIT_CONFIG -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
+		echo "remote installed firmware hash: "$REMOTE_FIRMWARE_HASH
+
+		#kermit $KERMIT_CONFIG -f -C "remote host stty -F 115200, exit"
+
+		#KERMIT_CONFIG=$KERMIT_CONFIG_SLOW
+		#echo "speed down"
+
 	else
 		echo "firmware mismatch, full refresh required"
+
+		#kermit $KERMIT_CONFIG -f -C "remote host stty -F /dev/ttySTM0 921600, exit"
+
+		#KERMIT_CONFIG=$KERMIT_CONFIG_FAST
+		#echo "speed up"
 
 		kermit $KERMIT_CONFIG -s patch.py ~/
 		kermit $KERMIT_CONFIG -s patcher.py ~/
@@ -80,15 +104,25 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		bzip2 -f WildhornAV_CM4.elf
 		echo "firmware compressed"
 
+		
+
 		kermit $KERMIT_CONFIG -s WildhornAV_CM4.elf.bz2 ~/
 		echo "firmware sent"
 
 		kermit $KERMIT_CONFIG -C "remote host bunzip2 -f  WildhornAV_CM4.elf.bz2, exit"
 		echo "firmware uncompressed"
 
-		kermit $KERMIT_CONFIG -C "remote host cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
+		kermit $KERMIT_CONFIG -C "remote host cp -p WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
 		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"	
+
+		REMOTE_FIRMWARE_HASH=$( kermit kermit_config.cfg -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
+		echo "remote installed firmware hash: "$REMOTE_FIRMWARE_HASH
+
+		#kermit $KERMIT_CONFIG -f -C "remote host stty -F 115200, exit"
+
+		#KERMIT_CONFIG=$KERMIT_CONFIG_SLOW
+		#echo "speed down"
 
 	fi
 
@@ -126,6 +160,9 @@ else
 		ssh $SSH_TARGET "cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw"
 		echo "firmware installed"
 
+		REMOTE_HASH_CHECK=$( ssh $SSH_TARGET "sha256sum /lib/firmware/rproc-m4-fw" | awk '{print $1}' )
+		echo "remote installed firmware hash: "$REMOTE_HASH_CHECK
+
 	else
 		echo "firmware mismatch, full refresh required"
 
@@ -150,10 +187,12 @@ else
 		ssh $SSH_TARGET "cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw"
 		echo "firmware installed"	
 
+		REMOTE_HASH_CHECK=$( ssh $SSH_TARGET "sha256sum /lib/firmware/rproc-m4-fw" | awk '{print $1}' )
+		echo "remote installed firmware hash: "$REMOTE_HASH_CHECK
+
 	fi
 
-	REMOTE_HASH_CHECK=$( ssh $SSH_TARGET "sha256sum /lib/firmware/rproc-m4-fw" | awk '{print $1}' )
-	echo "remote installed firmware hash: "$REMOTE_HASH_CHECK
+	
 
 	LOCAL_HASH_CHECK=$( sha256sum ../Debug/WildhornAV_CM4.elf | awk '{print $1}' )
 	echo "local latest firmware hash: "$LOCAL_HASH_CHECK

@@ -70,8 +70,6 @@ static led_color_t color_sequence[] =  {
 		led_red,
 		led_blue,
 		led_red,
-		led_green,
-		led_blue
 };
 
 static const int color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t);
