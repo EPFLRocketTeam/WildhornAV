@@ -18,9 +18,8 @@
 #include <feedback/buzzer.h>
 #include <driver/serial.h>
 #include <driver/i2c.h>
-
-
 #include <control.h>
+#include <device/hostproc.h>
 
 
 /**********************
@@ -76,10 +75,17 @@ static TaskHandle_t led_rgb_handle = NULL;
 
 void threads_init(void) {
 
+	//initialize serial
 	serial_init();
+	//initialize host comm
+	if(hostproc_init() != ER_SUCCESS) {
+		while(1);
+	}
 
 #if WH_HAS_FEEDBACK == WH_TRUE
+#if WH_USE_BUZZER == WH_TRUE
 	buzzer_init();
+#endif
 	led_feedback_init();
 #endif
 
@@ -87,6 +93,9 @@ void threads_init(void) {
 	i2c_spi_guard();
 	i2c_init();
 #endif
+
+
+
 
 	CREATE_THREAD(led_rgb_handle, led_rgb, led_rgb_thread, LED_RGB_PRIO, LED_RGB_SZ, 0);
 

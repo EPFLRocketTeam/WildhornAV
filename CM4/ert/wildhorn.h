@@ -35,6 +35,9 @@
 #define WH_HAS_KRTEK	WH_FALSE
 
 
+#define WH_USE_BUZZER	WH_FALSE
+
+
 /**********************
  *  MACROS
  **********************/

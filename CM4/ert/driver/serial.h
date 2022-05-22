@@ -76,17 +76,17 @@ typedef struct serial_interface_context {
 extern "C"{
 #endif
 
-error_t serial_init(void);
+util_error_t serial_init(void);
 
-error_t serial_feedback_init(void);
+util_error_t serial_feedback_init(void);
 
 device_deamon_t * serial_get_deamon(void);
 
 device_interface_t * serial_get_feedback_interface(void);
 
-error_t serial_send(void * context, uint8_t* data, uint32_t len);
+util_error_t serial_send(void * context, uint8_t* data, uint32_t len);
 
-error_t serial_recv(void * context, uint8_t * data, uint32_t * len);
+util_error_t serial_recv(void * context, uint8_t * data, uint32_t * len);
 
 
 

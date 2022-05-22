@@ -51,14 +51,14 @@
  *  TYPEDEFS
  **********************/
 
-typedef enum error {
+typedef enum util_error {
     ER_SUCCESS = 0,
     ER_DATA_NOT_RDY = 0<<1,
     ER_FAILURE = 1<<1,
     ER_OUT_OF_RANGE = 1<<2,
 	ER_TIMEOUT = 1<<3,
 	ER_RESSOURCE_ERROR = 1<<4
-}error_t;
+}util_error_t;
 
 #ifdef UTIL_ALLOW_LIST
 

@@ -60,15 +60,15 @@ static serial_interface_context_t feedback_interface_context = {
  *	PROTOTYPES
  **********************/
 
-error_t serial_data_ready(void * context);
+util_error_t serial_data_ready(void * context);
 
-error_t serial_send(void * context, uint8_t* data, uint32_t len);
+util_error_t serial_send(void * context, uint8_t* data, uint32_t len);
 
-error_t serial_recv(void * context, uint8_t* data, uint32_t * len);
+util_error_t serial_recv(void * context, uint8_t* data, uint32_t * len);
 
-error_t serial_handle_data(void * if_context, void * dem_context);
+util_error_t serial_handle_data(void * if_context, void * dem_context);
 
-error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode);
+util_error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode);
 
 
 /**********************
@@ -107,9 +107,9 @@ device_interface_t * serial_get_feedback_interface(void)
 }
 
 
-error_t serial_init(void)
+util_error_t serial_init(void)
 {
-	error_t error = ER_SUCCESS;
+	util_error_t error = ER_SUCCESS;
 
 	//initialize deamon semaphore
 	serial_deamon_context.rx_sem = xSemaphoreCreateBinaryStatic(&serial_deamon_context.rx_sem_buffer);
@@ -120,8 +120,8 @@ error_t serial_init(void)
 	return error;
 }
 
-error_t serial_feedback_init(void) {
-	error_t error = ER_SUCCESS;
+util_error_t serial_feedback_init(void) {
+	util_error_t error = ER_SUCCESS;
 
 	error |= device_interface_create(&feedback_interface, (void*) &feedback_interface_context, &serial_deamon, serial_send, serial_recv, serial_handle_data);
 
@@ -130,7 +130,7 @@ error_t serial_feedback_init(void) {
 	return error;
 }
 
-error_t serial_data_ready(void * context)
+util_error_t serial_data_ready(void * context)
 {
 	serial_deamon_context_t * deamon_context = (serial_deamon_context_t *) context;
 	if( xSemaphoreTake(deamon_context->rx_sem, 0xffff) == pdTRUE ) {
@@ -141,7 +141,7 @@ error_t serial_data_ready(void * context)
 
 }
 
-error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode)
+util_error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode)
 {
 	if( mode == SERIAL_TRANSFER_DMA) {
 		//setup dma reception
@@ -160,16 +160,16 @@ error_t serial_setup_reception(serial_interface_context_t * interface_context, s
 	return ER_FAILURE;
 }
 
-error_t serial_send(void * context, uint8_t* data, uint32_t len)
+util_error_t serial_send(void * context, uint8_t* data, uint32_t len)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
 
-	HAL_UART_Transmit_DMA(interface_context->uart, data, len);
+	HAL_UART_Transmit_IT(interface_context->uart, data, len);
 
 	return ER_SUCCESS;
 }
 
-error_t serial_recv(void * context, uint8_t * data, uint32_t * len)
+util_error_t serial_recv(void * context, uint8_t * data, uint32_t * len)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
 	uint16_t i = 0;
@@ -181,7 +181,7 @@ error_t serial_recv(void * context, uint8_t * data, uint32_t * len)
 }
 
 
-error_t serial_handle_data(void * if_context, void * dem_context)
+util_error_t serial_handle_data(void * if_context, void * dem_context)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) if_context;
 	serial_deamon_context_t * deamon_context = (serial_deamon_context_t *) dem_context;

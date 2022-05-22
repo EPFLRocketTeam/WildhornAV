@@ -66,9 +66,9 @@ debug_interface_context_t debug_interface_context;
 /*
  * Setup serial debug protocol
  */
-error_t debug_init(void){
+util_error_t debug_init(void){
 
-	error_t error = 0;
+	util_error_t error = 0;
 
 
 	msv2_init(&debug_interface_context.msv2);

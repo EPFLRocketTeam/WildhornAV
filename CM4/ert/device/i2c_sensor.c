@@ -13,6 +13,7 @@
 #include <device/device.h>
 #include <device/i2c_sensor.h>
 #include <driver/i2c.h>
+#include <util.h>
 /**********************
  *	CONSTANTS
  **********************/
@@ -37,7 +38,7 @@ typedef struct i2c_sensor_context {
  **********************/
 
 
-#include <util.h>
+
 
 static device_t i2c_accelerometer_device;
 static device_t i2c_gyroscope_device;
@@ -59,9 +60,9 @@ static i2c_sensor_context_t i2c_barometer_device_context = {
  *	PROTOTYPES
  **********************/
 
-error_t read_reg(void * context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len);
+util_error_t read_reg(void * context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len);
 
-error_t write_reg(void * context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len);
+util_error_t write_reg(void * context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len);
 
 
 /**********************
@@ -72,7 +73,7 @@ device_t * i2c_get_accelerometer(void) {
 	return &i2c_accelerometer_device;
 }
 
-error_t i2c_sensor_init(void) {
+util_error_t i2c_sensor_init(void) {
 
 	device_interface_t * i2c_sensor_interface = i2c_get_sensor_interface();
 
@@ -83,18 +84,18 @@ error_t i2c_sensor_init(void) {
 }
 
 
-error_t read_reg(void* context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len) {
+util_error_t read_reg(void* context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len) {
 	i2c_interface_context_t * i2c_context = (i2c_interface_context_t *) dev->context;
 	i2c_sensor_context_t * dev_context = (i2c_sensor_context_t *) context;
-	HAL_I2C_Mem_Read(i2c_context->i2c, dev_context->device_address, (uint8_t) address, sizeof(uint8_t), data, sizeof(uint8_t), 500);
+	HAL_I2C_Mem_Read_IT(i2c_context->i2c, dev_context->device_address, (uint8_t) address, sizeof(uint8_t), data, sizeof(uint8_t));
 
 	return ER_SUCCESS;
 }
 
-error_t write_reg(void* context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len) {
+util_error_t write_reg(void* context, device_interface_t* dev, uint32_t address, uint8_t * data, uint32_t data_len) {
 	i2c_interface_context_t * i2c_context = (i2c_interface_context_t *) dev->context;
 	i2c_sensor_context_t * dev_context = (i2c_sensor_context_t *) context;
-	HAL_I2C_Mem_Write(i2c_context->i2c, dev_context->device_address, (uint8_t) address, sizeof(uint8_t), data, sizeof(uint8_t), 500);
+	HAL_I2C_Mem_Write_IT(i2c_context->i2c, dev_context->device_address, (uint8_t) address, sizeof(uint8_t), data, sizeof(uint8_t));
 
 	return ER_SUCCESS;
 }

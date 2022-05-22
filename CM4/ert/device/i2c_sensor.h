@@ -47,7 +47,7 @@ extern "C"{
 
 device_t * i2c_get_accelerometer(void);
 
-error_t i2c_sensor_init(void);
+util_error_t i2c_sensor_init(void);
 
 
 #ifdef __cplusplus

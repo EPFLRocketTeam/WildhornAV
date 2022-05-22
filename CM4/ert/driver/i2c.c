@@ -83,7 +83,7 @@ device_interface_t * i2c_get_sensor_interface(void) {
 }
 
 void i2c_init(void) {
-	error_t error = ER_SUCCESS;
+	util_error_t error = ER_SUCCESS;
 
 	device_interface_create(&sensor_interface, (void *) &sensor_interface_context, NULL, NULL, NULL, NULL);
 
