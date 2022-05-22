@@ -1,0 +1,48 @@
+# This is a basic workflow to compile Yocto ERT image
+
+name: Yocto Build
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-20.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+          fetch-depth: '0'
+
+      # Installs dependencies
+      - name: Install dependencies
+        run: |
+          sudo apt-get install bsdmainutils build-essential chrpath cpio debianutils diffstat gawk gcc-multilib git iputils-ping libegl1-mesa libgmp-dev libmpc-dev libsdl1.2-dev libssl-dev pylint python3 python3-git python3-jinja2 python3-pexpect python3-pip socat texinfo unzip wget xterm xz-utils
+
+      # Sources the compilation environment & compiles ERT image core
+      - name: Compile ERT image core
+        run: |
+          cd distribution-package
+          MACHINE=stm32mp1-wildhornav DISTRO=openstlinux-ert EULA_stm32mp1wildhornav=1 source layers/meta-st/scripts/envsetup.sh --no-ui
+          bitbake ert-image-core
+
+      # Uploads artifacts (built images)
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ert-images
+          path: distribution-package/build-openstlinuxert-stm32mp1-wildhornav/tmp-glibc/deploy/images/stm32mp1-wildhornav # or path/to/artifact
+

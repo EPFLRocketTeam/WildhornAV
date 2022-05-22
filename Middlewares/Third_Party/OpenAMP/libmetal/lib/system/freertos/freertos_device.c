@@ -5,12 +5,11 @@
  */
 
 /*
- * @file	generic/device.c
- * @brief	Generic libmetal device operations.
+ * @file	freertos/device.c
+ * @brief	FreeRTOS device operations.
  */
 
 #include <metal/device.h>
-#include <metal/io.h>
 #include <metal/sys.h>
 #include <metal/utilities.h>
 
