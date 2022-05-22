@@ -187,6 +187,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</locationURI>
 		</link>
 		<link>
+			<name>Middlewares/Third_Party/FreeRTOS/heap_4.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</locationURI>
+		</link>
+		<link>
 			<name>Middlewares/Third_Party/FreeRTOS/list.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/list.c</locationURI>
@@ -219,7 +224,7 @@
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/CMakeLists.txt</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/rpmsg/CMakeLists.txt</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/open-amp/lib/proxy/CMakeLists.txt</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/condition.c</name>
