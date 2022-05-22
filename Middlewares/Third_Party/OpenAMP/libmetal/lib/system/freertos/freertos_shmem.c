@@ -5,8 +5,8 @@
  */
 
 /*
- * @file	generic/shmem.c
- * @brief	Generic libmetal shared memory handling.
+ * @file	freertos/shmem.c
+ * @brief	FreeRTOS libmetal shared memory handling.
  */
 
 #include <metal/shmem.h>

@@ -1,21 +1,22 @@
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file   openamp.c
   * @author  MCD Application Team
   * @brief  Code for openamp applications
   ******************************************************************************
-  * @attention
+   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                       opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
+/* USER CODE END Header */
 
 #include "openamp.h"
 #include "rsc_table.h"
@@ -223,19 +224,6 @@ void OPENAMP_DeInit()
   /* USER CODE END POST_OPENAMP_DEINIT */
 }
 
-void OPENAMP_init_ept(struct rpmsg_endpoint *ept)
-{
-  /* USER CODE BEGIN PRE_EP_INIT */
-
-  /* USER CODE END PRE_EP_INIT */
-
-  rpmsg_init_ept(ept, "", RPMSG_ADDR_ANY, RPMSG_ADDR_ANY, NULL, NULL);
-
-  /* USER CODE BEGIN POST_EP_INIT */
-
-  /* USER CODE END POST_EP_INIT */
-}
-
 int OPENAMP_create_endpoint(struct rpmsg_endpoint *ept, const char *name,
                             uint32_t dest, rpmsg_ept_cb cb,
                             rpmsg_ns_unbind_cb unbind_cb)
@@ -280,5 +268,3 @@ void OPENAMP_Wait_EndPointready(struct rpmsg_endpoint *rp_ept)
     /* USER CODE END 1 */
   }
 }
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

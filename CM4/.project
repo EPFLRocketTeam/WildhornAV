@@ -224,7 +224,7 @@
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/condition.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/condition.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/condition.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/device.c</name>
@@ -232,24 +232,24 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/device.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/Third_Party/OpenAMP/generic_device.c</name>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_device.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_device.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_device.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/Third_Party/OpenAMP/generic_init.c</name>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_init.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_init.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_init.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/Third_Party/OpenAMP/generic_io.c</name>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_io.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_io.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_io.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/Third_Party/OpenAMP/generic_shmem.c</name>
+			<name>Middlewares/Third_Party/OpenAMP/freertos_shmem.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_shmem.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/freertos_shmem.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/init.c</name>
@@ -289,12 +289,12 @@
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/sys.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/cortexm/sys.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/cortexm/sys.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/time.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/time.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/freertos/time.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/OpenAMP/virt_uart.c</name>

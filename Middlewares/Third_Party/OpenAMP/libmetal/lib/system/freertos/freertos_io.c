@@ -5,8 +5,8 @@
  */
 
 /*
- * @file	generic/io.c
- * @brief	Generic libmetal io operations
+ * @file	freertos/io.c
+ * @brief	FreeRTOS libmetal io operations
  */
 
 #include <metal/io.h>

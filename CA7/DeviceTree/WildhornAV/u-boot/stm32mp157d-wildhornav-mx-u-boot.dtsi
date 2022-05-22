@@ -78,7 +78,7 @@
 
 #ifndef CONFIG_TFABOOT
 
-&rcc {
+&rcc{
 	u-boot,dm-pre-reloc;
 	st,clksrc = <
 		CLK_MPU_PLL1P
@@ -162,6 +162,9 @@
 		frac = < 0x800 >;
 		u-boot,dm-pre-reloc;
 	};
+
+	/* USER CODE BEGIN rcc */
+	/* USER CODE END rcc */
 };
 
 &i2c4{
@@ -185,6 +188,13 @@
 
 	/* USER CODE BEGIN hash1 */
 	/* USER CODE END hash1 */
+};
+
+&iwdg2{
+	u-boot,dm-pre-reloc;
+
+	/* USER CODE BEGIN iwdg2 */
+	/* USER CODE END iwdg2 */
 };
 
 &uart8{
