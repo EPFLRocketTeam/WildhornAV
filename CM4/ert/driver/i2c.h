@@ -17,6 +17,7 @@
  **********************/
 
 #include <stdint.h>
+#include <device/device.h>
 
 /**********************
  *  CONSTANTS
@@ -31,6 +32,11 @@
 /**********************
  *  TYPEDEFS
  **********************/
+
+typedef struct i2c_interface_context {
+	I2C_HandleTypeDef * i2c;
+
+}i2c_interface_context_t;
 
 
 /**********************
@@ -48,6 +54,8 @@ extern "C"{
 
 
 void i2c_init(void);
+void i2c_spi_guard(void);
+device_interface_t * i2c_get_sensor_interface(void);
 
 #ifdef __cplusplus
 } // extern "C"

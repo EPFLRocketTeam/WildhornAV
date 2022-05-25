@@ -95,7 +95,7 @@
 	};
 	
 	chosen{
-		stdout-path = "serial0:115200n8";
+		stdout-path = "serial0:921600n8";
 	};
 
 	vin:vin{
@@ -732,6 +732,20 @@
 
 	/* USER CODE BEGIN m4_spi3 */
 	/* USER CODE END m4_spi3 */
+};
+
+&m4_timers14{
+	status = "okay";
+
+	/* USER CODE BEGIN m4_timers14 */
+	/* USER CODE END m4_timers14 */
+};
+
+&m4_timers16{
+	status = "okay";
+
+	/* USER CODE BEGIN m4_timers16 */
+	/* USER CODE END m4_timers16 */
 };
 
 &m4_timers2{

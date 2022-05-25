@@ -66,6 +66,8 @@ void DMA2_Stream5_IRQHandler(void);
 void USART6_IRQHandler(void);
 void IPCC_RX1_IRQHandler(void);
 void IPCC_TX1_IRQHandler(void);
+void TIM16_IRQHandler(void);
+void TIM14_IRQHandler(void);
 void RCC_WAKEUP_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 

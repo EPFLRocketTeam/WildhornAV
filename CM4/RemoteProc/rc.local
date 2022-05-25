@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sh /home/root/start_fw.sh

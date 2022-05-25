@@ -250,19 +250,19 @@ typedef struct dma_scheduler_dev {
 extern "C"{
 #endif
 
-error_t dma2_init_scheduler(void);
+util_error_t dma2_init_scheduler(void);
 dma_scheduler_dev_t * dma2_get_scheduler(void);
 dma_stream_dev_t * dma2_get_streams(void);
 
 
-error_t dma_scheduler_init(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_streams, uint16_t nb_dma_streams);
+util_error_t dma_scheduler_init(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_streams, uint16_t nb_dma_streams);
 dma_stream_dev_t * dma_scheduler_request_stream(dma_scheduler_dev_t * dma_scheduler);
-error_t dma_scheduler_release_stream(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_stream) ;
-error_t dma_start_stream(dma_stream_dev_t * stream, dma_stream_config_t config);
-error_t dma_stop_stream(dma_stream_dev_t * stream);
+util_error_t dma_scheduler_release_stream(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_stream) ;
+util_error_t dma_start_stream(dma_stream_dev_t * stream, dma_stream_config_t config);
+util_error_t dma_stop_stream(dma_stream_dev_t * stream);
 
 
-error_t dma_copy(void * dst, void * src, uint32_t len);
+util_error_t dma_copy(void * dst, void * src, uint32_t len);
 
 #ifdef __cplusplus
 } // extern "C"

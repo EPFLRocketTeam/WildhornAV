@@ -734,6 +734,20 @@
 	/* USER CODE END m4_spi3 */
 };
 
+&m4_timers14{
+	status = "okay";
+
+	/* USER CODE BEGIN m4_timers14 */
+	/* USER CODE END m4_timers14 */
+};
+
+&m4_timers16{
+	status = "okay";
+
+	/* USER CODE BEGIN m4_timers16 */
+	/* USER CODE END m4_timers16 */
+};
+
 &m4_timers2{
 	pinctrl-names = "default";
 	pinctrl-0 = <&m4_tim2_pins_mx>;

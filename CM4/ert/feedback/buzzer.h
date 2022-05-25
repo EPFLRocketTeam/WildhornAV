@@ -1,13 +1,13 @@
-/*  Title		: Messenger
- *  Filename	: messenger.c
- *	Author		: iacopo sprenger
- *	Date		: 30.01.2021
- *	Version		: 0.1
- *	Description	: messenger to communicate with linux kernel on CA7
+/*  Title       : Buzzer
+ *  Filename    : buzzer.h
+ *  Author      : iacopo sprenger
+ *  Date        : 25.04.2022
+ *  Version     : 0.1
+ *  Description : software control for a buzzer
  */
 
-#ifndef MESSENGER_H
-#define MESSENGER_H
+#ifndef BUZZER_H
+#define BUZZER_H
 
 
 
@@ -45,11 +45,16 @@
 extern "C"{
 #endif
 
+void buzzer_note_interrupt(void);
+void buzzer_rytm_interrupt(void);
+void buzzer_enable(void);
+void buzzer_disable(void);
+void buzzer_init(void);
 
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* MESSENGER_H */
+#endif /* BUZZER_H */
 
 /* END */

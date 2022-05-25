@@ -173,7 +173,7 @@ void dma_handle_interrupt(dma_stream_dev_t * stream) {
  * External interfaces
  */
 
-error_t dma2_init_scheduler(void) {
+util_error_t dma2_init_scheduler(void) {
 	dma_scheduler_init(&dma2_scheduler, dma2_streams, 8);
 	return ER_SUCCESS;
 }
@@ -192,7 +192,7 @@ dma_stream_dev_t * dma2_get_streams(void) {
  * GENERIC FUNCTIONS
  */
 
-error_t dma_scheduler_init(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_streams, uint16_t nb_dma_streams)
+util_error_t dma_scheduler_init(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_streams, uint16_t nb_dma_streams)
 {
 	if(nb_dma_streams > DMA_STREAMS_MAX_LEN) {
 		return ER_OUT_OF_RANGE;
@@ -247,7 +247,7 @@ dma_stream_dev_t * dma_scheduler_request_stream(dma_scheduler_dev_t * dma_schedu
 	return stream;
 }
 
-error_t dma_scheduler_release_stream(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_stream) {
+util_error_t dma_scheduler_release_stream(dma_scheduler_dev_t * dma_scheduler, dma_stream_dev_t * dma_stream) {
 	ENTER_CRITICAL();
 
 	dma_stream->state = DMA_STREAM_FREE;
@@ -260,7 +260,7 @@ error_t dma_scheduler_release_stream(dma_scheduler_dev_t * dma_scheduler, dma_st
 }
 
 
-error_t dma_start_stream(dma_stream_dev_t * stream, dma_stream_config_t config) {
+util_error_t dma_start_stream(dma_stream_dev_t * stream, dma_stream_config_t config) {
 	stream->dma_stream->CR = 0;
 	while (stream->dma_stream->CR && DMA_SxCR_EN); //Wait for transfer to finish
 

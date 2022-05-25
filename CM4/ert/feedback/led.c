@@ -23,6 +23,7 @@
 
 
 
+
 /**********************
  *	CONSTANTS
  **********************/
@@ -62,15 +63,16 @@ static led_blink_state_t blink_sequence[] = {
 		LED_OFF
 };
 
-static const blink_sequence_len = sizeof(blink_sequence)/sizeof(led_blink_state_t);
+static const int blink_sequence_len = sizeof(blink_sequence)/sizeof(led_blink_state_t);
 
 static led_color_t color_sequence[] =  {
+		led_green,
 		led_red,
 		led_blue,
-		led_green
+		led_red,
 };
 
-static const color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t);
+static const int color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t);
 
 /**********************
  *	PROTOTYPES
@@ -94,6 +96,8 @@ void led_feedback_init(void) {
 	GPIO_InitStructure.Pull = GPIO_NOPULL;
 	GPIO_InitStructure.Pin = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_SET);
 
 }
 
