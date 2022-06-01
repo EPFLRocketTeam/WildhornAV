@@ -20,6 +20,7 @@
 #include <driver/i2c.h>
 #include <control.h>
 #include <device/hostproc.h>
+#include <od/od.h>
 
 
 /**********************
@@ -27,6 +28,9 @@
  **********************/
 
 #define DEFAULT_SZ	(1024)
+
+#define OD_SZ           DEFAULT_SZ
+#define OD_PRIO         (6)
 
 #define CONTROL_SZ		DEFAULT_SZ
 #define CONTROL_PRIO	(6)
@@ -60,6 +64,7 @@
  *	VARIABLES
  **********************/
 
+static TaskHandle_t od_handle = NULL;
 static TaskHandle_t control_handle = NULL;
 static TaskHandle_t led_rgb_handle = NULL;
 
@@ -82,6 +87,9 @@ void threads_init(void) {
 		while(1);
 	}
 
+	// initialize object dictionary
+	od_init();
+
 #if WH_HAS_FEEDBACK == WH_TRUE
 #if WH_USE_BUZZER == WH_TRUE
 	buzzer_init();
@@ -95,6 +103,7 @@ void threads_init(void) {
 #endif
 
 
+	CREATE_THREAD(od_handle, od, od_update_task, NULL, OD_SZ, OD_PRIO);
 
 
 	CREATE_THREAD(led_rgb_handle, led_rgb, led_rgb_thread, LED_RGB_PRIO, LED_RGB_SZ, 0);

@@ -23,6 +23,7 @@
  **********************/
 
 #define OD_MSGQ_SIZE (16)
+#define DEBUG_NO_CAN 0      // set to 1 to turn off CAN to test OD functionality only
 
 /**********************
  *	MACROS
@@ -134,6 +135,32 @@ static void od_unsafe_write(uint8_t data_id, uint8_t *src) {
     memcpy(to_send.data, src, to_send.size);
 
     osMessageQueuePut(out_q, &to_send, 0U, osWaitForever);
+}
+
+/**
+ * Task definition
+ */
+void od_update_task(__attribute__((unused)) void *argument) {
+    while(1) {
+        // Get latest incoming frame (blocking)
+        od_frame_t to_receive;
+
+#if DEBUG_NO_CAN
+        #warning "[DEBUG]: CAN turned off!"
+        osMessageQueueGet(out_q, &to_receive, NULL, osWaitForever);
+#else
+        osMessageQueueGet(in_q, &to_receive, NULL, osWaitForever);
+#endif
+
+
+        // Update field atomically
+        int32_t lock = osKernelLock();
+
+        od_entry_t entry = od_entries[to_receive.data_id];
+        memcpy(entry.data, to_receive.data, entry.size);
+
+        osKernelRestoreLock(lock);
+    }
 }
 
 /* END */

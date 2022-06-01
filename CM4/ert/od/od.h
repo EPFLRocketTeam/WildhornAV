@@ -41,7 +41,6 @@
  *  VARIABLES
  **********************/
 
-DECLARE_OD_ENTRY(TEMPERATURE, float)
 
 /**********************
  *  PROTOTYPES
@@ -52,6 +51,9 @@ extern "C"{
 #endif
 
 void od_init();
+void od_update_task(void *argument);
+
+DECLARE_OD_ENTRY(TEMPERATURE, float)
 
 #ifdef __cplusplus
 } // extern "C"
