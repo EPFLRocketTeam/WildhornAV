@@ -172,9 +172,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32MP1xx_HAL_Driver/Src/stm32mp1xx_ll_adc.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/Third_Party/FreeRTOS/cmsis_os.c</name>
+			<name>Middlewares/Third_Party/FreeRTOS/cmsis_os2.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/Third_Party/FreeRTOS/croutine.c</name>

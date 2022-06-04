@@ -18,6 +18,7 @@
 #include <stdint.h>
 #include <device/device.h>
 #include <util.h>
+#include <semphr.h>
 
 /**********************
  *  CONSTANTS
