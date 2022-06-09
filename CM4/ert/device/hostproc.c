@@ -39,6 +39,7 @@
 
 typedef struct hostproc_interface_context {
 	VIRT_UART_HandleTypeDef * uart;
+	uint8_t rx_once;
 }hostproc_interface_context_t;
 
 
@@ -78,13 +79,16 @@ device_t * hostproc_get_device(void) {
 
 
 void host_UART0_RX(VIRT_UART_HandleTypeDef *huart) {
-	led_rgb_set_rgb(0x00, 0, 0xff);
+	led_rgb_set_rgb(0xff, 0xff, 0xff);
+	hostproc_interface_context.rx_once = 1;
 }
 
 util_error_t host_send(void* context, uint8_t* data, uint32_t len) {
 	hostproc_interface_context_t * interface_context = (hostproc_interface_context_t *) context;
+	if(interface_context->rx_once) {
+		VIRT_UART_Transmit(interface_context->uart, data, len);
+	}
 
-	VIRT_UART_Transmit(interface_context->uart, data, len);
 
 	return ER_SUCCESS;
 }
@@ -102,8 +106,15 @@ util_error_t hostproc_init(void) {
 	if (VIRT_UART_RegisterCallback(&host_UART0, VIRT_UART_RXCPLT_CB_ID, host_UART0_RX) != VIRT_UART_OK) {
 		return ER_FAILURE;
 	}
+	//we need to receive once before sending...
+//	if (VIRT_UART_Transmit(&host_UART0, "Welcome", sizeof("welcome")) != VIRT_UART_OK) {
+//		return ER_FAILURE;
+//	}
+
+
 
 	hostproc_interface_context.uart = &host_UART0;
+	hostproc_interface_context.rx_once = 0;
 
 	device_interface_create(&hostproc_interface, (void*) &hostproc_interface_context, NULL, host_send, host_recv, NULL);
 
