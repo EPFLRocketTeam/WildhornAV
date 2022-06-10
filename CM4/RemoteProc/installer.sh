@@ -70,7 +70,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 
 		kermit $KERMIT_CONFIG -C "remote host python3 patcher.py, exit"
 		echo "delta applied"
-
+        kermit $KERMIT_CONFIG -C "remote host mkdir /lib/firmware , exit"
 		kermit $KERMIT_CONFIG -C "remote host cp -p WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
 		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"
@@ -158,6 +158,8 @@ else
 		ssh $SSH_TARGET "python3 patcher.py"
 		echo "delta applied"
 
+        ssh $SSH_TARGET "mkdir /lib/firmware/"
+
 		ssh $SSH_TARGET "cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw"
 		echo "firmware installed"
 
@@ -184,6 +186,8 @@ else
 
 		ssh $SSH_TARGET "bunzip2 -f  WildhornAV_CM4.elf.bz2"
 		echo "firmware uncompressed"
+
+        ssh $SSH_TARGET "mkdir /lib/firmware/"
 
 		ssh $SSH_TARGET "cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw"
 		echo "firmware installed"	
