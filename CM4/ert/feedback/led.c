@@ -142,7 +142,7 @@ void led_rgb_set_color(led_color_t color) {
 	LED_TIM.Instance->CCR3 = color.b;
 }
 
-void led_rgb_thread(void * arg) {
+void led_rgb_thread(__attribute__((unused)) void * arg) {
 	static TickType_t last_wake_time;
 	static TickType_t period = pdMS_TO_TICKS(500);
 
