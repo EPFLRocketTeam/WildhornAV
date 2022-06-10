@@ -126,7 +126,7 @@ void control_abort_run(void);
  *	DECLARATIONS
  **********************/
 
-void control_thread(void * arg) {
+void control_thread(__attribute__((unused)) void * arg) {
 	static TickType_t last_wake_time;
 	static const TickType_t period = pdMS_TO_TICKS(CONTROL_HEART_BEAT);
 	last_wake_time = xTaskGetTickCount();
