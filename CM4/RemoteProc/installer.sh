@@ -13,7 +13,7 @@ SSH_TARGET="root@192.168.7.1"
 KERMIT_CONFIG_FAST=kermit_config_fast.cfg
 KERMIT_CONFIG_SLOW=kermit_config_slow.cfg
 
-KERMIT_CONFIG=$KERMIT_CONFIG_SLOW
+KERMIT_CONFIG=$KERMIT_CONFIG_FAST
 
 
 if [[ $1 == "kermit" ]]; then
@@ -70,7 +70,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 
 		kermit $KERMIT_CONFIG -C "remote host python3 patcher.py, exit"
 		echo "delta applied"
-
+        kermit $KERMIT_CONFIG -C "remote host mkdir /lib/firmware , exit"
 		kermit $KERMIT_CONFIG -C "remote host cp -p WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
 		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"
@@ -111,8 +111,9 @@ if [[ -z "$REMOTE_SSH" ]]; then
 
 		kermit $KERMIT_CONFIG -C "remote host bunzip2 -f  WildhornAV_CM4.elf.bz2, exit"
 		echo "firmware uncompressed"
-
-		kermit $KERMIT_CONFIG -C "remote host cp -p WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw, exit"
+		
+		kermit $KERMIT_CONFIG -C "remote host mkdir /lib/firmware , exit"
+		kermit $KERMIT_CONFIG -C "remote host cp -p WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw , exit"
 		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"	
 
@@ -157,6 +158,8 @@ else
 		ssh $SSH_TARGET "python3 patcher.py"
 		echo "delta applied"
 
+        ssh $SSH_TARGET "mkdir /lib/firmware/"
+
 		ssh $SSH_TARGET "cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw"
 		echo "firmware installed"
 
@@ -183,6 +186,8 @@ else
 
 		ssh $SSH_TARGET "bunzip2 -f  WildhornAV_CM4.elf.bz2"
 		echo "firmware uncompressed"
+
+        ssh $SSH_TARGET "mkdir /lib/firmware/"
 
 		ssh $SSH_TARGET "cp WildhornAV_CM4.elf /lib/firmware/rproc-m4-fw"
 		echo "firmware installed"	
