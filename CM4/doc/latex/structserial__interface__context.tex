@@ -1,0 +1,98 @@
+\hypertarget{structserial__interface__context}{}\doxysection{serial\+\_\+interface\+\_\+context Struct Reference}
+\label{structserial__interface__context}\index{serial\_interface\_context@{serial\_interface\_context}}
+
+
+{\ttfamily \#include $<$serial.\+h$>$}
+
+
+
+Collaboration diagram for serial\+\_\+interface\+\_\+context\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{structserial__interface__context__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+UART\+\_\+\+Handle\+Type\+Def $\ast$ \mbox{\hyperlink{structserial__interface__context_a40d13756f9068fa295fb3a53bafad6f6}{uart}}
+\item 
+\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} \mbox{\hyperlink{structserial__interface__context_a5efe7bb09f9f2f4ebc27e013ebc846c4}{rx\+\_\+buffer}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structserial__interface__context_a8f7d35840a87fd225a9a721d9f68c346}{rx\+\_\+data}} \mbox{[}\mbox{\hyperlink{serial_8h_a18cfa1a8dfcd9e011effeeca1e191d05}{SERIAL\+\_\+\+BUFFER\+\_\+\+LEN}}\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structserial__interface__context_a8c16f0042527b750a824c20a0d688abe}{rx\+\_\+data\+\_\+len}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structserial__interface__context_a1e1ddbe16eccc67fe4303023b1d9765f}{rx\+\_\+fragment}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structserial__interface__context_a815360ce6574042882897ecbc01bc106}{tx\+\_\+data}} \mbox{[}\mbox{\hyperlink{serial_8h_a18cfa1a8dfcd9e011effeeca1e191d05}{SERIAL\+\_\+\+BUFFER\+\_\+\+LEN}}\mbox{]}
+\item 
+void $\ast$ \mbox{\hyperlink{structserial__interface__context_ae7c2b353352541cf3c9b0e07a56a27df}{protocol}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structserial__interface__context_ae7c2b353352541cf3c9b0e07a56a27df}\label{structserial__interface__context_ae7c2b353352541cf3c9b0e07a56a27df}} 
+\index{serial\_interface\_context@{serial\_interface\_context}!protocol@{protocol}}
+\index{protocol@{protocol}!serial\_interface\_context@{serial\_interface\_context}}
+\doxysubsubsection{\texorpdfstring{protocol}{protocol}}
+{\footnotesize\ttfamily void$\ast$ serial\+\_\+interface\+\_\+context\+::protocol}
+
+\mbox{\Hypertarget{structserial__interface__context_a5efe7bb09f9f2f4ebc27e013ebc846c4}\label{structserial__interface__context_a5efe7bb09f9f2f4ebc27e013ebc846c4}} 
+\index{serial\_interface\_context@{serial\_interface\_context}!rx\_buffer@{rx\_buffer}}
+\index{rx\_buffer@{rx\_buffer}!serial\_interface\_context@{serial\_interface\_context}}
+\doxysubsubsection{\texorpdfstring{rx\_buffer}{rx\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} serial\+\_\+interface\+\_\+context\+::rx\+\_\+buffer}
+
+
+
+Referenced by HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback(), serial\+\_\+recv(), and serial\+\_\+setup\+\_\+reception().
+
+\mbox{\Hypertarget{structserial__interface__context_a8f7d35840a87fd225a9a721d9f68c346}\label{structserial__interface__context_a8f7d35840a87fd225a9a721d9f68c346}} 
+\index{serial\_interface\_context@{serial\_interface\_context}!rx\_data@{rx\_data}}
+\index{rx\_data@{rx\_data}!serial\_interface\_context@{serial\_interface\_context}}
+\doxysubsubsection{\texorpdfstring{rx\_data}{rx\_data}}
+{\footnotesize\ttfamily uint8\+\_\+t serial\+\_\+interface\+\_\+context\+::rx\+\_\+data\mbox{[}\mbox{\hyperlink{serial_8h_a18cfa1a8dfcd9e011effeeca1e191d05}{SERIAL\+\_\+\+BUFFER\+\_\+\+LEN}}\mbox{]}}
+
+
+
+Referenced by serial\+\_\+setup\+\_\+reception().
+
+\mbox{\Hypertarget{structserial__interface__context_a8c16f0042527b750a824c20a0d688abe}\label{structserial__interface__context_a8c16f0042527b750a824c20a0d688abe}} 
+\index{serial\_interface\_context@{serial\_interface\_context}!rx\_data\_len@{rx\_data\_len}}
+\index{rx\_data\_len@{rx\_data\_len}!serial\_interface\_context@{serial\_interface\_context}}
+\doxysubsubsection{\texorpdfstring{rx\_data\_len}{rx\_data\_len}}
+{\footnotesize\ttfamily uint32\+\_\+t serial\+\_\+interface\+\_\+context\+::rx\+\_\+data\+\_\+len}
+
+\mbox{\Hypertarget{structserial__interface__context_a1e1ddbe16eccc67fe4303023b1d9765f}\label{structserial__interface__context_a1e1ddbe16eccc67fe4303023b1d9765f}} 
+\index{serial\_interface\_context@{serial\_interface\_context}!rx\_fragment@{rx\_fragment}}
+\index{rx\_fragment@{rx\_fragment}!serial\_interface\_context@{serial\_interface\_context}}
+\doxysubsubsection{\texorpdfstring{rx\_fragment}{rx\_fragment}}
+{\footnotesize\ttfamily uint8\+\_\+t serial\+\_\+interface\+\_\+context\+::rx\+\_\+fragment}
+
+
+
+Referenced by HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback(), and serial\+\_\+setup\+\_\+reception().
+
+\mbox{\Hypertarget{structserial__interface__context_a815360ce6574042882897ecbc01bc106}\label{structserial__interface__context_a815360ce6574042882897ecbc01bc106}} 
+\index{serial\_interface\_context@{serial\_interface\_context}!tx\_data@{tx\_data}}
+\index{tx\_data@{tx\_data}!serial\_interface\_context@{serial\_interface\_context}}
+\doxysubsubsection{\texorpdfstring{tx\_data}{tx\_data}}
+{\footnotesize\ttfamily uint8\+\_\+t serial\+\_\+interface\+\_\+context\+::tx\+\_\+data\mbox{[}\mbox{\hyperlink{serial_8h_a18cfa1a8dfcd9e011effeeca1e191d05}{SERIAL\+\_\+\+BUFFER\+\_\+\+LEN}}\mbox{]}}
+
+\mbox{\Hypertarget{structserial__interface__context_a40d13756f9068fa295fb3a53bafad6f6}\label{structserial__interface__context_a40d13756f9068fa295fb3a53bafad6f6}} 
+\index{serial\_interface\_context@{serial\_interface\_context}!uart@{uart}}
+\index{uart@{uart}!serial\_interface\_context@{serial\_interface\_context}}
+\doxysubsubsection{\texorpdfstring{uart}{uart}}
+{\footnotesize\ttfamily UART\+\_\+\+Handle\+Type\+Def$\ast$ serial\+\_\+interface\+\_\+context\+::uart}
+
+
+
+Referenced by HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback(), serial\+\_\+send(), and serial\+\_\+setup\+\_\+reception().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{serial_8h}{serial.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,108 @@
+\hypertarget{buzzer_8h}{}\doxysection{buzzer.\+h File Reference}
+\label{buzzer_8h}\index{buzzer.h@{buzzer.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for buzzer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{buzzer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{buzzer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{buzzer_8h_ad5f1120505a7d8bd44c07b0e8b5a95ea}{buzzer\+\_\+note\+\_\+interrupt}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8h_a51a122ea93e6cb66b977a91900893a5b}{buzzer\+\_\+rytm\+\_\+interrupt}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8h_a63f4d0e2dec60a4fcbe0de3824bd2d06}{buzzer\+\_\+enable}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8h_a1310d5aed0a0534924cc5d0ce387b3f2}{buzzer\+\_\+disable}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8h_a0cead532fdd0c0de5fa1c1de0f6556bd}{buzzer\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{buzzer_8h_a1310d5aed0a0534924cc5d0ce387b3f2}\label{buzzer_8h_a1310d5aed0a0534924cc5d0ce387b3f2}} 
+\index{buzzer.h@{buzzer.h}!buzzer\_disable@{buzzer\_disable}}
+\index{buzzer\_disable@{buzzer\_disable}!buzzer.h@{buzzer.h}}
+\doxysubsubsection{\texorpdfstring{buzzer\_disable()}{buzzer\_disable()}}
+{\footnotesize\ttfamily void buzzer\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References NOTE\+\_\+\+TIMER\+\_\+\+DEV, and RYTM\+\_\+\+TIMER\+\_\+\+DEV.
+
+\mbox{\Hypertarget{buzzer_8h_a63f4d0e2dec60a4fcbe0de3824bd2d06}\label{buzzer_8h_a63f4d0e2dec60a4fcbe0de3824bd2d06}} 
+\index{buzzer.h@{buzzer.h}!buzzer\_enable@{buzzer\_enable}}
+\index{buzzer\_enable@{buzzer\_enable}!buzzer.h@{buzzer.h}}
+\doxysubsubsection{\texorpdfstring{buzzer\_enable()}{buzzer\_enable()}}
+{\footnotesize\ttfamily void buzzer\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References NOTE\+\_\+\+TIMER\+\_\+\+DEV, and RYTM\+\_\+\+TIMER\+\_\+\+DEV.
+
+\mbox{\Hypertarget{buzzer_8h_a0cead532fdd0c0de5fa1c1de0f6556bd}\label{buzzer_8h_a0cead532fdd0c0de5fa1c1de0f6556bd}} 
+\index{buzzer.h@{buzzer.h}!buzzer\_init@{buzzer\_init}}
+\index{buzzer\_init@{buzzer\_init}!buzzer.h@{buzzer.h}}
+\doxysubsubsection{\texorpdfstring{buzzer\_init()}{buzzer\_init()}}
+{\footnotesize\ttfamily void buzzer\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References A4, BUZZER\+\_\+\+PIN, BUZZER\+\_\+\+PORT, COMPUTE\+\_\+\+NOTE, COMPUTE\+\_\+\+RYTM, melody\+\_\+active, NOTE\+\_\+\+TIMER, and RYTM\+\_\+\+TIMER.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{buzzer_8h_a0cead532fdd0c0de5fa1c1de0f6556bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{buzzer_8h_ad5f1120505a7d8bd44c07b0e8b5a95ea}\label{buzzer_8h_ad5f1120505a7d8bd44c07b0e8b5a95ea}} 
+\index{buzzer.h@{buzzer.h}!buzzer\_note\_interrupt@{buzzer\_note\_interrupt}}
+\index{buzzer\_note\_interrupt@{buzzer\_note\_interrupt}!buzzer.h@{buzzer.h}}
+\doxysubsubsection{\texorpdfstring{buzzer\_note\_interrupt()}{buzzer\_note\_interrupt()}}
+{\footnotesize\ttfamily void buzzer\+\_\+note\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References BUZZER\+\_\+\+PIN, BUZZER\+\_\+\+PORT, gpio\+\_\+clr(), gpio\+\_\+set(), melody\+\_\+active, and state.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{buzzer_8h_ad5f1120505a7d8bd44c07b0e8b5a95ea_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{buzzer_8h_a51a122ea93e6cb66b977a91900893a5b}\label{buzzer_8h_a51a122ea93e6cb66b977a91900893a5b}} 
+\index{buzzer.h@{buzzer.h}!buzzer\_rytm\_interrupt@{buzzer\_rytm\_interrupt}}
+\index{buzzer\_rytm\_interrupt@{buzzer\_rytm\_interrupt}!buzzer.h@{buzzer.h}}
+\doxysubsubsection{\texorpdfstring{buzzer\_rytm\_interrupt()}{buzzer\_rytm\_interrupt()}}
+{\footnotesize\ttfamily void buzzer\+\_\+rytm\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References COMPUTE\+\_\+\+NOTE, gpio\+\_\+clr(), gpio\+\_\+set(), melody\+\_\+active, melody\+\_\+state, NOTE\+\_\+\+TIMER, still\+\_\+alive, and still\+\_\+alive\+\_\+len.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{buzzer_8h_a51a122ea93e6cb66b977a91900893a5b_cgraph}
+\end{center}
+\end{figure}

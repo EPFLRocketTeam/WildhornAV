@@ -1,0 +1,661 @@
+\hypertarget{device_8c}{}\doxysection{device.\+c File Reference}
+\label{device_8c}\index{device.c@{device.c}}
+{\ttfamily \#include $<$cmsis\+\_\+os.\+h$>$}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}device.\+h\char`\"{}}\newline
+Include dependency graph for device.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{device_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{device_8c_aa9caecfb71f8b1f14ee23dfcdb61b26d}{LEN\+\_\+32}}~4
+\item 
+\#define \mbox{\hyperlink{device_8c_a8f9898d4afeef708bc0053ada6a65f0c}{LEN\+\_\+16}}~2
+\item 
+\#define \mbox{\hyperlink{device_8c_a3d925ba4de135ae0ebb531aba4fa1dd9}{LEN\+\_\+8}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{device_8c_ad46e400d04e068c348c8d2c8ec10ec41}{device\+\_\+deamon\+\_\+thread}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Generic device deamon thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a40846c40a3f7c8473fdd3b96d12b7f7d}{device\+\_\+create}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, void $\ast$context, \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$interface, \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$\mbox{\hyperlink{i2c__sensor_8c_a91cf04fe5df04ba769f873ab7a67c03f}{read\+\_\+reg}})(void $\ast$, \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$, uint32\+\_\+t, uint8\+\_\+t $\ast$, uint32\+\_\+t), \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$\mbox{\hyperlink{i2c__sensor_8c_a5389e7d11cf7b6edabca8ca6d332f33f}{write\+\_\+reg}})(void $\ast$, \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$, uint32\+\_\+t, uint8\+\_\+t $\ast$, uint32\+\_\+t))
+\begin{DoxyCompactList}\small\item\em Initialize a device instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a8f74c3046fc52d8fc597787db18196f5}{device\+\_\+interface\+\_\+create}} (\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$interface, void $\ast$context, \mbox{\hyperlink{device_8h_a3f1dc2e1b55c12b0d136fdff2f3f0807}{device\+\_\+deamon\+\_\+t}} $\ast$deamon, \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$send)(void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t), \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$recv)(void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t $\ast$), \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$handle\+\_\+data)(void $\ast$, void $\ast$))
+\begin{DoxyCompactList}\small\item\em Initialize a device interface instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a24bb18ba20d0384221faefbced5dffca}{device\+\_\+deamon\+\_\+create}} (\mbox{\hyperlink{device_8h_a3f1dc2e1b55c12b0d136fdff2f3f0807}{device\+\_\+deamon\+\_\+t}} $\ast$deamon, const char $\ast$name, uint32\+\_\+t prio, void $\ast$context, \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$data\+\_\+rdy)(void $\ast$))
+\begin{DoxyCompactList}\small\item\em Initializea device deamon instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a8241a7452a61c40f99634701e0465b8a}{device\+\_\+interface\+\_\+send}} (\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$interface, uint8\+\_\+t $\ast$data, uint32\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Send raw data through the interface specific send function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a308dbd102a9b7e95d6d5c9557485cc41}{device\+\_\+interface\+\_\+recv}} (\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$interface, uint8\+\_\+t $\ast$data, uint32\+\_\+t $\ast$len)
+\begin{DoxyCompactList}\small\item\em Receive raw data through the interface specific recv function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a49ab16e299e085e57ec10ad104d3368a}{device\+\_\+write\+\_\+i32}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, int32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write an int32\+\_\+t to a device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_aa82379d33dc02d11d203997bd8be261b}{device\+\_\+write\+\_\+u32}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, uint32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write an uint32\+\_\+t to a device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_ad499850e679a98f22b43d2a5d4f9c3bc}{device\+\_\+write\+\_\+i16}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, int16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write an int16\+\_\+t to a device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_ad6d6bb06cc01d887bd83c56fb259d902}{device\+\_\+write\+\_\+u16}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, uint16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write an uint16\+\_\+t to a device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_ae65e386988bdb170ea846caaa583cf66}{device\+\_\+write\+\_\+i8}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, int8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write an int8\+\_\+t to a device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a64f5bce998b3eed9dbb433170a02db08}{device\+\_\+write\+\_\+u8}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write an uint8\+\_\+t to a device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a5153f83bf023f5c9c6da70cd7643982d}{device\+\_\+read\+\_\+i32}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, int32\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read from an int32\+\_\+t device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a1a4e44ed0b5d713f795712cd1bc16cc1}{device\+\_\+read\+\_\+u32}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, uint32\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read from an uint32\+\_\+t device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a3b5d985fde3de2899100b44cfed9e1c6}{device\+\_\+read\+\_\+i16}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, int16\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read from an int16\+\_\+t device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a5457600e01cdd6c6a783a8c7f9ae9d91}{device\+\_\+read\+\_\+u16}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, uint16\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read from an uint16\+\_\+t device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_add27f7f71d0e9e6cca8ea813afc55c3c}{device\+\_\+read\+\_\+i8}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, int8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read from an int8\+\_\+t device register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{device_8c_a57284d4392bec024c7790a47a736a225}{device\+\_\+read\+\_\+u8}} (\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$dev, uint32\+\_\+t addr, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read from an uint8\+\_\+t device register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{device_8c_a8f9898d4afeef708bc0053ada6a65f0c}\label{device_8c_a8f9898d4afeef708bc0053ada6a65f0c}} 
+\index{device.c@{device.c}!LEN\_16@{LEN\_16}}
+\index{LEN\_16@{LEN\_16}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{LEN\_16}{LEN\_16}}
+{\footnotesize\ttfamily \#define LEN\+\_\+16~2}
+
+\mbox{\Hypertarget{device_8c_aa9caecfb71f8b1f14ee23dfcdb61b26d}\label{device_8c_aa9caecfb71f8b1f14ee23dfcdb61b26d}} 
+\index{device.c@{device.c}!LEN\_32@{LEN\_32}}
+\index{LEN\_32@{LEN\_32}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{LEN\_32}{LEN\_32}}
+{\footnotesize\ttfamily \#define LEN\+\_\+32~4}
+
+\mbox{\Hypertarget{device_8c_a3d925ba4de135ae0ebb531aba4fa1dd9}\label{device_8c_a3d925ba4de135ae0ebb531aba4fa1dd9}} 
+\index{device.c@{device.c}!LEN\_8@{LEN\_8}}
+\index{LEN\_8@{LEN\_8}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{LEN\_8}{LEN\_8}}
+{\footnotesize\ttfamily \#define LEN\+\_\+8~1}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{device_8c_a40846c40a3f7c8473fdd3b96d12b7f7d}\label{device_8c_a40846c40a3f7c8473fdd3b96d12b7f7d}} 
+\index{device.c@{device.c}!device\_create@{device\_create}}
+\index{device\_create@{device\_create}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_create()}{device\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{void $\ast$}]{context,  }\item[{\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$}]{interface,  }\item[{\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$)(void $\ast$, \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$, uint32\+\_\+t, uint8\+\_\+t $\ast$, uint32\+\_\+t)}]{read\+\_\+reg,  }\item[{\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$)(void $\ast$, \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$, uint32\+\_\+t, uint8\+\_\+t $\ast$, uint32\+\_\+t)}]{write\+\_\+reg }\end{DoxyParamCaption})}
+
+
+
+Initialize a device instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & Pointer to the {\ttfamily device\+\_\+t} structure describing this device. \\
+\hline
+{\em context} & Generic pointer to a device context. \\
+\hline
+{\em interface} & Pointer to the {\ttfamily device\+\_\+interface\+\_\+t} associated with this device. \\
+\hline
+{\em read\+\_\+reg} & Pointer to a read register function for this device. \\
+\hline
+{\em write\+\_\+reg} & Pointer to a write register function for this device. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::id, device\+::interface, read\+\_\+reg(), device\+::read\+\_\+reg, write\+\_\+reg(), and device\+::write\+\_\+reg.
+
+
+
+Referenced by i2c\+\_\+sensor\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{device_8c_a40846c40a3f7c8473fdd3b96d12b7f7d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{device_8c_a40846c40a3f7c8473fdd3b96d12b7f7d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a24bb18ba20d0384221faefbced5dffca}\label{device_8c_a24bb18ba20d0384221faefbced5dffca}} 
+\index{device.c@{device.c}!device\_deamon\_create@{device\_deamon\_create}}
+\index{device\_deamon\_create@{device\_deamon\_create}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_deamon\_create()}{device\_deamon\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+deamon\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a3f1dc2e1b55c12b0d136fdff2f3f0807}{device\+\_\+deamon\+\_\+t}} $\ast$}]{deamon,  }\item[{const char $\ast$}]{name,  }\item[{uint32\+\_\+t}]{prio,  }\item[{void $\ast$}]{context,  }\item[{\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$)(void $\ast$)}]{data\+\_\+rdy }\end{DoxyParamCaption})}
+
+
+
+Initializea device deamon instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deamon} & \\
+\hline
+{\em name} & \\
+\hline
+{\em prio} & \\
+\hline
+{\em context} & \\
+\hline
+{\em data\+\_\+rdy} & \\
+\hline
+\end{DoxyParams}
+
+
+References device\+\_\+deamon\+::buffer, device\+\_\+deamon\+::context, device\+\_\+deamon\+::data\+\_\+rdy, DEAMON\+\_\+\+STACK\+\_\+\+SIZE, device\+\_\+deamon\+\_\+thread(), ER\+\_\+\+RESSOURCE\+\_\+\+ERROR, ER\+\_\+\+SUCCESS, device\+\_\+deamon\+::handle, device\+\_\+deamon\+::id, device\+\_\+deamon\+::interfaces\+\_\+count, and device\+\_\+deamon\+::stack.
+
+
+
+Referenced by serial\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device_8c_a24bb18ba20d0384221faefbced5dffca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device_8c_a24bb18ba20d0384221faefbced5dffca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_ad46e400d04e068c348c8d2c8ec10ec41}\label{device_8c_ad46e400d04e068c348c8d2c8ec10ec41}} 
+\index{device.c@{device.c}!device\_deamon\_thread@{device\_deamon\_thread}}
+\index{device\_deamon\_thread@{device\_deamon\_thread}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_deamon\_thread()}{device\_deamon\_thread()}}
+{\footnotesize\ttfamily void device\+\_\+deamon\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Generic device deamon thread. 
+
+This thread will call the handle data function for an interface, whenever data is ready for a group of interfaces belonging to the same deamon. 
+\begin{DoxyParams}{Parameters}
+{\em arg} & Free\+RTOS entry point context, used to pass the deamon context to the thread. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+\_\+interface\+::context, device\+\_\+deamon\+::context, device\+\_\+deamon\+::data\+\_\+rdy, ER\+\_\+\+SUCCESS, device\+\_\+interface\+::handle\+\_\+data, and device\+\_\+deamon\+::interfaces\+\_\+count.
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device_8c_ad46e400d04e068c348c8d2c8ec10ec41_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a8f74c3046fc52d8fc597787db18196f5}\label{device_8c_a8f74c3046fc52d8fc597787db18196f5}} 
+\index{device.c@{device.c}!device\_interface\_create@{device\_interface\_create}}
+\index{device\_interface\_create@{device\_interface\_create}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_interface\_create()}{device\_interface\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+interface\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$}]{interface,  }\item[{void $\ast$}]{context,  }\item[{\mbox{\hyperlink{device_8h_a3f1dc2e1b55c12b0d136fdff2f3f0807}{device\+\_\+deamon\+\_\+t}} $\ast$}]{deamon,  }\item[{\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$)(void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t)}]{send,  }\item[{\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$)(void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t $\ast$)}]{recv,  }\item[{\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$)(void $\ast$, void $\ast$)}]{handle\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Initialize a device interface instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & \\
+\hline
+{\em context} & \\
+\hline
+{\em deamon} & \\
+\hline
+{\em send} & \\
+\hline
+{\em recv} & \\
+\hline
+{\em handle\+\_\+data} & \\
+\hline
+\end{DoxyParams}
+
+
+References device\+\_\+interface\+::context, ER\+\_\+\+SUCCESS, device\+\_\+interface\+::handle\+\_\+data, device\+\_\+interface\+::id, device\+\_\+deamon\+::interfaces, device\+\_\+deamon\+::interfaces\+\_\+count, device\+\_\+interface\+::recv, and device\+\_\+interface\+::send.
+
+
+
+Referenced by debug\+\_\+init(), hostproc\+\_\+init(), i2c\+\_\+init(), and serial\+\_\+feedback\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device_8c_a8f74c3046fc52d8fc597787db18196f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a308dbd102a9b7e95d6d5c9557485cc41}\label{device_8c_a308dbd102a9b7e95d6d5c9557485cc41}} 
+\index{device.c@{device.c}!device\_interface\_recv@{device\_interface\_recv}}
+\index{device\_interface\_recv@{device\_interface\_recv}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_interface\_recv()}{device\_interface\_recv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+interface\+\_\+recv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$}]{interface,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+Receive raw data through the interface specific recv function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & The interface through which data should be received. \\
+\hline
+{\em data} & A point to the data to be received. \\
+\hline
+{\em len} & A pointer to the length of the data to be received. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+\_\+interface\+::context, ER\+\_\+\+RESSOURCE\+\_\+\+ERROR, device\+\_\+interface\+::recv, and device\+\_\+interface\+::send.
+
+\mbox{\Hypertarget{device_8c_a8241a7452a61c40f99634701e0465b8a}\label{device_8c_a8241a7452a61c40f99634701e0465b8a}} 
+\index{device.c@{device.c}!device\_interface\_send@{device\_interface\_send}}
+\index{device\_interface\_send@{device\_interface\_send}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_interface\_send()}{device\_interface\_send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+interface\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$}]{interface,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Send raw data through the interface specific send function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interface} & The interface through which data should be sent. \\
+\hline
+{\em data} & A point to the data to be sent. \\
+\hline
+{\em len} & The length of the data to be sent. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+\_\+interface\+::context, ER\+\_\+\+RESSOURCE\+\_\+\+ERROR, and device\+\_\+interface\+::send.
+
+
+
+Referenced by control\+\_\+thread().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device_8c_a8241a7452a61c40f99634701e0465b8a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a3b5d985fde3de2899100b44cfed9e1c6}\label{device_8c_a3b5d985fde3de2899100b44cfed9e1c6}} 
+\index{device.c@{device.c}!device\_read\_i16@{device\_read\_i16}}
+\index{device\_read\_i16@{device\_read\_i16}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_read\_i16()}{device\_read\_i16()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+read\+\_\+i16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{int16\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read from an int16\+\_\+t device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & A pointer to the data to be read. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+16, device\+::read\+\_\+reg, and util\+\_\+decode\+\_\+i16().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{device_8c_a3b5d985fde3de2899100b44cfed9e1c6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a5153f83bf023f5c9c6da70cd7643982d}\label{device_8c_a5153f83bf023f5c9c6da70cd7643982d}} 
+\index{device.c@{device.c}!device\_read\_i32@{device\_read\_i32}}
+\index{device\_read\_i32@{device\_read\_i32}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_read\_i32()}{device\_read\_i32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+read\+\_\+i32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{int32\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read from an int32\+\_\+t device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & A pointer to the data to be read. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+32, device\+::read\+\_\+reg, and util\+\_\+decode\+\_\+i32().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{device_8c_a5153f83bf023f5c9c6da70cd7643982d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_add27f7f71d0e9e6cca8ea813afc55c3c}\label{device_8c_add27f7f71d0e9e6cca8ea813afc55c3c}} 
+\index{device.c@{device.c}!device\_read\_i8@{device\_read\_i8}}
+\index{device\_read\_i8@{device\_read\_i8}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_read\_i8()}{device\_read\_i8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+read\+\_\+i8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{int8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read from an int8\+\_\+t device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & A pointer to the data to be read. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+8, device\+::read\+\_\+reg, and util\+\_\+decode\+\_\+i8().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{device_8c_add27f7f71d0e9e6cca8ea813afc55c3c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a5457600e01cdd6c6a783a8c7f9ae9d91}\label{device_8c_a5457600e01cdd6c6a783a8c7f9ae9d91}} 
+\index{device.c@{device.c}!device\_read\_u16@{device\_read\_u16}}
+\index{device\_read\_u16@{device\_read\_u16}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_read\_u16()}{device\_read\_u16()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+read\+\_\+u16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{uint16\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read from an uint16\+\_\+t device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & A pointer to the data to be read. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+16, device\+::read\+\_\+reg, and util\+\_\+decode\+\_\+u16().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{device_8c_a5457600e01cdd6c6a783a8c7f9ae9d91_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a1a4e44ed0b5d713f795712cd1bc16cc1}\label{device_8c_a1a4e44ed0b5d713f795712cd1bc16cc1}} 
+\index{device.c@{device.c}!device\_read\_u32@{device\_read\_u32}}
+\index{device\_read\_u32@{device\_read\_u32}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_read\_u32()}{device\_read\_u32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+read\+\_\+u32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{uint32\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read from an uint32\+\_\+t device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & A pointer to the data to be read. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+32, device\+::read\+\_\+reg, and util\+\_\+decode\+\_\+u32().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{device_8c_a1a4e44ed0b5d713f795712cd1bc16cc1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a57284d4392bec024c7790a47a736a225}\label{device_8c_a57284d4392bec024c7790a47a736a225}} 
+\index{device.c@{device.c}!device\_read\_u8@{device\_read\_u8}}
+\index{device\_read\_u8@{device\_read\_u8}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_read\_u8()}{device\_read\_u8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+read\+\_\+u8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read from an uint8\+\_\+t device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & A pointer to the data to be read. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+8, device\+::read\+\_\+reg, and util\+\_\+decode\+\_\+u8().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{device_8c_a57284d4392bec024c7790a47a736a225_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_ad499850e679a98f22b43d2a5d4f9c3bc}\label{device_8c_ad499850e679a98f22b43d2a5d4f9c3bc}} 
+\index{device.c@{device.c}!device\_write\_i16@{device\_write\_i16}}
+\index{device\_write\_i16@{device\_write\_i16}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_write\_i16()}{device\_write\_i16()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+write\+\_\+i16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{int16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write an int16\+\_\+t to a device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & The data to be written. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+16, util\+\_\+encode\+\_\+i16(), and device\+::write\+\_\+reg.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{device_8c_ad499850e679a98f22b43d2a5d4f9c3bc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a49ab16e299e085e57ec10ad104d3368a}\label{device_8c_a49ab16e299e085e57ec10ad104d3368a}} 
+\index{device.c@{device.c}!device\_write\_i32@{device\_write\_i32}}
+\index{device\_write\_i32@{device\_write\_i32}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_write\_i32()}{device\_write\_i32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+write\+\_\+i32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{int32\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write an int32\+\_\+t to a device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & The data to be written. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+32, util\+\_\+encode\+\_\+i32(), and device\+::write\+\_\+reg.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{device_8c_a49ab16e299e085e57ec10ad104d3368a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_ae65e386988bdb170ea846caaa583cf66}\label{device_8c_ae65e386988bdb170ea846caaa583cf66}} 
+\index{device.c@{device.c}!device\_write\_i8@{device\_write\_i8}}
+\index{device\_write\_i8@{device\_write\_i8}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_write\_i8()}{device\_write\_i8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+write\+\_\+i8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{int8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write an int8\+\_\+t to a device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & The data to be written. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+8, util\+\_\+encode\+\_\+i8(), and device\+::write\+\_\+reg.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{device_8c_ae65e386988bdb170ea846caaa583cf66_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_ad6d6bb06cc01d887bd83c56fb259d902}\label{device_8c_ad6d6bb06cc01d887bd83c56fb259d902}} 
+\index{device.c@{device.c}!device\_write\_u16@{device\_write\_u16}}
+\index{device\_write\_u16@{device\_write\_u16}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_write\_u16()}{device\_write\_u16()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+write\+\_\+u16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{uint16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write an uint16\+\_\+t to a device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & The data to be written. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+16, util\+\_\+encode\+\_\+u16(), and device\+::write\+\_\+reg.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{device_8c_ad6d6bb06cc01d887bd83c56fb259d902_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_aa82379d33dc02d11d203997bd8be261b}\label{device_8c_aa82379d33dc02d11d203997bd8be261b}} 
+\index{device.c@{device.c}!device\_write\_u32@{device\_write\_u32}}
+\index{device\_write\_u32@{device\_write\_u32}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_write\_u32()}{device\_write\_u32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+write\+\_\+u32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{uint32\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write an uint32\+\_\+t to a device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & The data to be written. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+32, util\+\_\+encode\+\_\+u32(), and device\+::write\+\_\+reg.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{device_8c_aa82379d33dc02d11d203997bd8be261b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{device_8c_a64f5bce998b3eed9dbb433170a02db08}\label{device_8c_a64f5bce998b3eed9dbb433170a02db08}} 
+\index{device.c@{device.c}!device\_write\_u8@{device\_write\_u8}}
+\index{device\_write\_u8@{device\_write\_u8}!device.c@{device.c}}
+\doxysubsubsection{\texorpdfstring{device\_write\_u8()}{device\_write\_u8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} device\+\_\+write\+\_\+u8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write an uint8\+\_\+t to a device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & A pointer to the desired device. \\
+\hline
+{\em addr} & The address of the register. \\
+\hline
+{\em data} & The data to be written. \\
+\hline
+\end{DoxyParams}
+
+
+References device\+::context, ER\+\_\+\+SUCCESS, device\+::interface, LEN\+\_\+8, util\+\_\+encode\+\_\+u8(), and device\+::write\+\_\+reg.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{device_8c_a64f5bce998b3eed9dbb433170a02db08_cgraph}
+\end{center}
+\end{figure}

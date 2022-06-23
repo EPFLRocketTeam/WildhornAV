@@ -1,0 +1,4 @@
+<map id="device_read_i16" name="device_read_i16">
+<area shape="rect" id="node1" title="Read from an int16_t device register." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node2" href="$util_8h.html#a4bbb13e4f3f6d787ead1dcd41713bb7f" title=" " alt="" coords="181,5,305,32"/>
+</map>

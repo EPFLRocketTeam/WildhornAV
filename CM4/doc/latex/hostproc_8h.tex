@@ -1,0 +1,91 @@
+\hypertarget{hostproc_8h}{}\doxysection{hostproc.\+h File Reference}
+\label{hostproc_8h}\index{hostproc.h@{hostproc.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$virt\+\_\+uart.\+h$>$}\newline
+{\ttfamily \#include $<$device/device.\+h$>$}\newline
+Include dependency graph for hostproc.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{hostproc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{hostproc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$ \mbox{\hyperlink{hostproc_8h_ae883ea2a1d7b023c7d9e3446634b0dda}{hostproc\+\_\+get\+\_\+interface}} (void)
+\item 
+\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$ \mbox{\hyperlink{hostproc_8h_a4bec96a248ecceab42732c88857b1b94}{hostproc\+\_\+get\+\_\+device}} (void)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{hostproc_8h_ae4468a3e6e2edab7e071064a558a3aab}{hostproc\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hostproc_8h_a4bec96a248ecceab42732c88857b1b94}\label{hostproc_8h_a4bec96a248ecceab42732c88857b1b94}} 
+\index{hostproc.h@{hostproc.h}!hostproc\_get\_device@{hostproc\_get\_device}}
+\index{hostproc\_get\_device@{hostproc\_get\_device}!hostproc.h@{hostproc.h}}
+\doxysubsubsection{\texorpdfstring{hostproc\_get\_device()}{hostproc\_get\_device()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}}$\ast$ hostproc\+\_\+get\+\_\+device (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References hostproc\+\_\+device.
+
+\mbox{\Hypertarget{hostproc_8h_ae883ea2a1d7b023c7d9e3446634b0dda}\label{hostproc_8h_ae883ea2a1d7b023c7d9e3446634b0dda}} 
+\index{hostproc.h@{hostproc.h}!hostproc\_get\_interface@{hostproc\_get\_interface}}
+\index{hostproc\_get\_interface@{hostproc\_get\_interface}!hostproc.h@{hostproc.h}}
+\doxysubsubsection{\texorpdfstring{hostproc\_get\_interface()}{hostproc\_get\_interface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}}$\ast$ hostproc\+\_\+get\+\_\+interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References hostproc\+\_\+interface.
+
+
+
+Referenced by control\+\_\+thread().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8h_ae883ea2a1d7b023c7d9e3446634b0dda_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hostproc_8h_ae4468a3e6e2edab7e071064a558a3aab}\label{hostproc_8h_ae4468a3e6e2edab7e071064a558a3aab}} 
+\index{hostproc.h@{hostproc.h}!hostproc\_init@{hostproc\_init}}
+\index{hostproc\_init@{hostproc\_init}!hostproc.h@{hostproc.h}}
+\doxysubsubsection{\texorpdfstring{hostproc\_init()}{hostproc\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} hostproc\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+interface\+\_\+create(), ER\+\_\+\+FAILURE, ER\+\_\+\+SUCCESS, host\+\_\+recv(), host\+\_\+send(), host\+\_\+\+UART0, host\+\_\+\+UART0\+\_\+\+RX(), hostproc\+\_\+interface, hostproc\+\_\+interface\+\_\+context\+::rx\+\_\+once, and hostproc\+\_\+interface\+\_\+context\+::uart.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8h_ae4468a3e6e2edab7e071064a558a3aab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{hostproc_8h_ae4468a3e6e2edab7e071064a558a3aab_icgraph}
+\end{center}
+\end{figure}

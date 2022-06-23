@@ -1,0 +1,11 @@
+<map id="serial_feedback_init" name="serial_feedback_init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,159,133"/>
+<area shape="rect" id="node2" href="$device_8c.html#a8f74c3046fc52d8fc597787db18196f5" title="Initialize a device interface instance." alt="" coords="207,5,385,32"/>
+<area shape="rect" id="node3" href="$serial_8c.html#a283822682739d803aa85d24cd03b637d" title=" " alt="" coords="223,56,369,83"/>
+<area shape="rect" id="node4" href="$serial_8c.html#ab4d41ce25afdf0aa91606681e656b269" title=" " alt="" coords="249,107,343,133"/>
+<area shape="rect" id="node7" href="$serial_8c.html#aaa9c92c8c435763f7cdf1ebd4446c03f" title=" " alt="" coords="248,157,344,184"/>
+<area shape="rect" id="node8" href="$serial_8c.html#a8a30ba0a692d0c738876a2deba5f169e" title=" " alt="" coords="211,208,381,235"/>
+<area shape="rect" id="node5" href="$util_8h.html#a7380877202d2b7868d7d2282a8ae77b8" title=" " alt="" coords="449,81,588,108"/>
+<area shape="rect" id="node6" href="$util_8h.html#a8a45ea6e7c44e4c999d1fa69f5c05574" title=" " alt="" coords="433,132,604,159"/>
+<area shape="rect" id="node9" href="$util_8h.html#a33e9e3d0f064d38a99efa8b72ae7c9d5" title=" " alt="" coords="449,208,588,235"/>
+</map>

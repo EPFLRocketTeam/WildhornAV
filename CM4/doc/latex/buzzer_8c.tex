@@ -1,0 +1,258 @@
+\hypertarget{buzzer_8c}{}\doxysection{buzzer.\+c File Reference}
+\label{buzzer_8c}\index{buzzer.c@{buzzer.c}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$tim.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}buzzer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$abstraction/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$feedback/still\+\_\+alive.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}note.\+h\char`\"{}}\newline
+Include dependency graph for buzzer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{buzzer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_af1ec6ace35ca92c3716b0188dc5ad09e}{NOTE\+\_\+\+TIMER\+\_\+\+DEV}}~htim14
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_a66f8e173a569920cd148d1c03938509f}{RYTM\+\_\+\+TIMER\+\_\+\+DEV}}~htim16
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_a1bab45e79d75e53596af943e597d0ca1}{NOTE\+\_\+\+TIMER}}~NOTE\+\_\+\+TIMER\+\_\+\+DEV.\+Instance
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_ad1bb324a3133ce2a3cc9db6c6d1e8552}{RYTM\+\_\+\+TIMER}}~RYTM\+\_\+\+TIMER\+\_\+\+DEV.\+Instance
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_ab61d0981ed42df9e18211b273d22cfcd}{BUZZER\+\_\+\+PIN}}~GPIO\+\_\+\+PIN\+\_\+3
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_abf0d28f731e836936a87086ea8b798da}{BUZZER\+\_\+\+PORT}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_acf926951944b6cf370b7229ebd50dd8b}{TIMER\+\_\+\+FREQ}}~200e6
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_afb691147dd5c9c4f21b3f64be2932bb5}{NOTE\+\_\+\+PRESC}}~10
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_a73d84cd957a1e93ed4ff47f64822087a}{RYTM\+\_\+\+PRESC}}~20000
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_a12053e0afe532f8b7b915708e61feb3f}{TIMER\+\_\+\+TRIM}}~-\/1e6
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_a33049815f6f216d2fc2ecb361598d04a}{COMPUTE\+\_\+\+NOTE}}(\mbox{\hyperlink{structnote}{note}})~((((\mbox{\hyperlink{buzzer_8c_acf926951944b6cf370b7229ebd50dd8b}{TIMER\+\_\+\+FREQ}})+(\mbox{\hyperlink{buzzer_8c_a12053e0afe532f8b7b915708e61feb3f}{TIMER\+\_\+\+TRIM}}))$\ast$10)/(\mbox{\hyperlink{buzzer_8c_afb691147dd5c9c4f21b3f64be2932bb5}{NOTE\+\_\+\+PRESC}})/(\mbox{\hyperlink{structnote}{note}}))/2
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_a464458e3a14a647f6c824723bbb23fc0}{RYTM\+\_\+\+MS}}(ms)~(ms)$\ast$(((\mbox{\hyperlink{buzzer_8c_acf926951944b6cf370b7229ebd50dd8b}{TIMER\+\_\+\+FREQ}})+(\mbox{\hyperlink{buzzer_8c_a12053e0afe532f8b7b915708e61feb3f}{TIMER\+\_\+\+TRIM}}))/(\mbox{\hyperlink{buzzer_8c_a73d84cd957a1e93ed4ff47f64822087a}{RYTM\+\_\+\+PRESC}}))/(1000)
+\item 
+\#define \mbox{\hyperlink{buzzer_8c_a0ebc21afd0c1fdea2aaf1cd6ed57ea20}{COMPUTE\+\_\+\+RYTM}}(time)~\mbox{\hyperlink{buzzer_8c_a464458e3a14a647f6c824723bbb23fc0}{RYTM\+\_\+\+MS}}((time)$\ast$100)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{buzzer_8c_ad5f1120505a7d8bd44c07b0e8b5a95ea}{buzzer\+\_\+note\+\_\+interrupt}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8c_a51a122ea93e6cb66b977a91900893a5b}{buzzer\+\_\+rytm\+\_\+interrupt}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8c_a63f4d0e2dec60a4fcbe0de3824bd2d06}{buzzer\+\_\+enable}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8c_a1310d5aed0a0534924cc5d0ce387b3f2}{buzzer\+\_\+disable}} (void)
+\item 
+void \mbox{\hyperlink{buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd}{buzzer\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{buzzer_8c_a48f5e0de2e30b591e5c94fbc6700d262}{melody\+\_\+state}} = 0
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{buzzer_8c_a0b57aa10271a66f3dc936bba1d2f3830}{state}} = 0
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{buzzer_8c_ab1f19890f9f4d95a901c1623fb4ba0e6}{melody\+\_\+active}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{buzzer_8c_ab61d0981ed42df9e18211b273d22cfcd}\label{buzzer_8c_ab61d0981ed42df9e18211b273d22cfcd}} 
+\index{buzzer.c@{buzzer.c}!BUZZER\_PIN@{BUZZER\_PIN}}
+\index{BUZZER\_PIN@{BUZZER\_PIN}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{BUZZER\_PIN}{BUZZER\_PIN}}
+{\footnotesize\ttfamily \#define BUZZER\+\_\+\+PIN~GPIO\+\_\+\+PIN\+\_\+3}
+
+\mbox{\Hypertarget{buzzer_8c_abf0d28f731e836936a87086ea8b798da}\label{buzzer_8c_abf0d28f731e836936a87086ea8b798da}} 
+\index{buzzer.c@{buzzer.c}!BUZZER\_PORT@{BUZZER\_PORT}}
+\index{BUZZER\_PORT@{BUZZER\_PORT}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{BUZZER\_PORT}{BUZZER\_PORT}}
+{\footnotesize\ttfamily \#define BUZZER\+\_\+\+PORT~GPIOC}
+
+\mbox{\Hypertarget{buzzer_8c_a33049815f6f216d2fc2ecb361598d04a}\label{buzzer_8c_a33049815f6f216d2fc2ecb361598d04a}} 
+\index{buzzer.c@{buzzer.c}!COMPUTE\_NOTE@{COMPUTE\_NOTE}}
+\index{COMPUTE\_NOTE@{COMPUTE\_NOTE}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{COMPUTE\_NOTE}{COMPUTE\_NOTE}}
+{\footnotesize\ttfamily \#define COMPUTE\+\_\+\+NOTE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{structnote}{note}} }\end{DoxyParamCaption})~((((\mbox{\hyperlink{buzzer_8c_acf926951944b6cf370b7229ebd50dd8b}{TIMER\+\_\+\+FREQ}})+(\mbox{\hyperlink{buzzer_8c_a12053e0afe532f8b7b915708e61feb3f}{TIMER\+\_\+\+TRIM}}))$\ast$10)/(\mbox{\hyperlink{buzzer_8c_afb691147dd5c9c4f21b3f64be2932bb5}{NOTE\+\_\+\+PRESC}})/(\mbox{\hyperlink{structnote}{note}}))/2}
+
+\mbox{\Hypertarget{buzzer_8c_a0ebc21afd0c1fdea2aaf1cd6ed57ea20}\label{buzzer_8c_a0ebc21afd0c1fdea2aaf1cd6ed57ea20}} 
+\index{buzzer.c@{buzzer.c}!COMPUTE\_RYTM@{COMPUTE\_RYTM}}
+\index{COMPUTE\_RYTM@{COMPUTE\_RYTM}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{COMPUTE\_RYTM}{COMPUTE\_RYTM}}
+{\footnotesize\ttfamily \#define COMPUTE\+\_\+\+RYTM(\begin{DoxyParamCaption}\item[{}]{time }\end{DoxyParamCaption})~\mbox{\hyperlink{buzzer_8c_a464458e3a14a647f6c824723bbb23fc0}{RYTM\+\_\+\+MS}}((time)$\ast$100)}
+
+\mbox{\Hypertarget{buzzer_8c_afb691147dd5c9c4f21b3f64be2932bb5}\label{buzzer_8c_afb691147dd5c9c4f21b3f64be2932bb5}} 
+\index{buzzer.c@{buzzer.c}!NOTE\_PRESC@{NOTE\_PRESC}}
+\index{NOTE\_PRESC@{NOTE\_PRESC}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_PRESC}{NOTE\_PRESC}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+\+PRESC~10}
+
+\mbox{\Hypertarget{buzzer_8c_a1bab45e79d75e53596af943e597d0ca1}\label{buzzer_8c_a1bab45e79d75e53596af943e597d0ca1}} 
+\index{buzzer.c@{buzzer.c}!NOTE\_TIMER@{NOTE\_TIMER}}
+\index{NOTE\_TIMER@{NOTE\_TIMER}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_TIMER}{NOTE\_TIMER}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+\+TIMER~NOTE\+\_\+\+TIMER\+\_\+\+DEV.\+Instance}
+
+\mbox{\Hypertarget{buzzer_8c_af1ec6ace35ca92c3716b0188dc5ad09e}\label{buzzer_8c_af1ec6ace35ca92c3716b0188dc5ad09e}} 
+\index{buzzer.c@{buzzer.c}!NOTE\_TIMER\_DEV@{NOTE\_TIMER\_DEV}}
+\index{NOTE\_TIMER\_DEV@{NOTE\_TIMER\_DEV}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_TIMER\_DEV}{NOTE\_TIMER\_DEV}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+\+TIMER\+\_\+\+DEV~htim14}
+
+\mbox{\Hypertarget{buzzer_8c_a464458e3a14a647f6c824723bbb23fc0}\label{buzzer_8c_a464458e3a14a647f6c824723bbb23fc0}} 
+\index{buzzer.c@{buzzer.c}!RYTM\_MS@{RYTM\_MS}}
+\index{RYTM\_MS@{RYTM\_MS}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{RYTM\_MS}{RYTM\_MS}}
+{\footnotesize\ttfamily \#define RYTM\+\_\+\+MS(\begin{DoxyParamCaption}\item[{}]{ms }\end{DoxyParamCaption})~(ms)$\ast$(((\mbox{\hyperlink{buzzer_8c_acf926951944b6cf370b7229ebd50dd8b}{TIMER\+\_\+\+FREQ}})+(\mbox{\hyperlink{buzzer_8c_a12053e0afe532f8b7b915708e61feb3f}{TIMER\+\_\+\+TRIM}}))/(\mbox{\hyperlink{buzzer_8c_a73d84cd957a1e93ed4ff47f64822087a}{RYTM\+\_\+\+PRESC}}))/(1000)}
+
+\mbox{\Hypertarget{buzzer_8c_a73d84cd957a1e93ed4ff47f64822087a}\label{buzzer_8c_a73d84cd957a1e93ed4ff47f64822087a}} 
+\index{buzzer.c@{buzzer.c}!RYTM\_PRESC@{RYTM\_PRESC}}
+\index{RYTM\_PRESC@{RYTM\_PRESC}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{RYTM\_PRESC}{RYTM\_PRESC}}
+{\footnotesize\ttfamily \#define RYTM\+\_\+\+PRESC~20000}
+
+\mbox{\Hypertarget{buzzer_8c_ad1bb324a3133ce2a3cc9db6c6d1e8552}\label{buzzer_8c_ad1bb324a3133ce2a3cc9db6c6d1e8552}} 
+\index{buzzer.c@{buzzer.c}!RYTM\_TIMER@{RYTM\_TIMER}}
+\index{RYTM\_TIMER@{RYTM\_TIMER}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{RYTM\_TIMER}{RYTM\_TIMER}}
+{\footnotesize\ttfamily \#define RYTM\+\_\+\+TIMER~RYTM\+\_\+\+TIMER\+\_\+\+DEV.\+Instance}
+
+\mbox{\Hypertarget{buzzer_8c_a66f8e173a569920cd148d1c03938509f}\label{buzzer_8c_a66f8e173a569920cd148d1c03938509f}} 
+\index{buzzer.c@{buzzer.c}!RYTM\_TIMER\_DEV@{RYTM\_TIMER\_DEV}}
+\index{RYTM\_TIMER\_DEV@{RYTM\_TIMER\_DEV}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{RYTM\_TIMER\_DEV}{RYTM\_TIMER\_DEV}}
+{\footnotesize\ttfamily \#define RYTM\+\_\+\+TIMER\+\_\+\+DEV~htim16}
+
+\mbox{\Hypertarget{buzzer_8c_acf926951944b6cf370b7229ebd50dd8b}\label{buzzer_8c_acf926951944b6cf370b7229ebd50dd8b}} 
+\index{buzzer.c@{buzzer.c}!TIMER\_FREQ@{TIMER\_FREQ}}
+\index{TIMER\_FREQ@{TIMER\_FREQ}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{TIMER\_FREQ}{TIMER\_FREQ}}
+{\footnotesize\ttfamily \#define TIMER\+\_\+\+FREQ~200e6}
+
+\mbox{\Hypertarget{buzzer_8c_a12053e0afe532f8b7b915708e61feb3f}\label{buzzer_8c_a12053e0afe532f8b7b915708e61feb3f}} 
+\index{buzzer.c@{buzzer.c}!TIMER\_TRIM@{TIMER\_TRIM}}
+\index{TIMER\_TRIM@{TIMER\_TRIM}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{TIMER\_TRIM}{TIMER\_TRIM}}
+{\footnotesize\ttfamily \#define TIMER\+\_\+\+TRIM~-\/1e6}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{buzzer_8c_a1310d5aed0a0534924cc5d0ce387b3f2}\label{buzzer_8c_a1310d5aed0a0534924cc5d0ce387b3f2}} 
+\index{buzzer.c@{buzzer.c}!buzzer\_disable@{buzzer\_disable}}
+\index{buzzer\_disable@{buzzer\_disable}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_disable()}{buzzer\_disable()}}
+{\footnotesize\ttfamily void buzzer\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References NOTE\+\_\+\+TIMER\+\_\+\+DEV, and RYTM\+\_\+\+TIMER\+\_\+\+DEV.
+
+\mbox{\Hypertarget{buzzer_8c_a63f4d0e2dec60a4fcbe0de3824bd2d06}\label{buzzer_8c_a63f4d0e2dec60a4fcbe0de3824bd2d06}} 
+\index{buzzer.c@{buzzer.c}!buzzer\_enable@{buzzer\_enable}}
+\index{buzzer\_enable@{buzzer\_enable}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_enable()}{buzzer\_enable()}}
+{\footnotesize\ttfamily void buzzer\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References NOTE\+\_\+\+TIMER\+\_\+\+DEV, and RYTM\+\_\+\+TIMER\+\_\+\+DEV.
+
+\mbox{\Hypertarget{buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd}\label{buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd}} 
+\index{buzzer.c@{buzzer.c}!buzzer\_init@{buzzer\_init}}
+\index{buzzer\_init@{buzzer\_init}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_init()}{buzzer\_init()}}
+{\footnotesize\ttfamily void buzzer\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References A4, BUZZER\+\_\+\+PIN, BUZZER\+\_\+\+PORT, COMPUTE\+\_\+\+NOTE, COMPUTE\+\_\+\+RYTM, melody\+\_\+active, NOTE\+\_\+\+TIMER, and RYTM\+\_\+\+TIMER.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{buzzer_8c_ad5f1120505a7d8bd44c07b0e8b5a95ea}\label{buzzer_8c_ad5f1120505a7d8bd44c07b0e8b5a95ea}} 
+\index{buzzer.c@{buzzer.c}!buzzer\_note\_interrupt@{buzzer\_note\_interrupt}}
+\index{buzzer\_note\_interrupt@{buzzer\_note\_interrupt}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_note\_interrupt()}{buzzer\_note\_interrupt()}}
+{\footnotesize\ttfamily void buzzer\+\_\+note\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References BUZZER\+\_\+\+PIN, BUZZER\+\_\+\+PORT, gpio\+\_\+clr(), gpio\+\_\+set(), melody\+\_\+active, and state.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{buzzer_8c_ad5f1120505a7d8bd44c07b0e8b5a95ea_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{buzzer_8c_a51a122ea93e6cb66b977a91900893a5b}\label{buzzer_8c_a51a122ea93e6cb66b977a91900893a5b}} 
+\index{buzzer.c@{buzzer.c}!buzzer\_rytm\_interrupt@{buzzer\_rytm\_interrupt}}
+\index{buzzer\_rytm\_interrupt@{buzzer\_rytm\_interrupt}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_rytm\_interrupt()}{buzzer\_rytm\_interrupt()}}
+{\footnotesize\ttfamily void buzzer\+\_\+rytm\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References COMPUTE\+\_\+\+NOTE, gpio\+\_\+clr(), gpio\+\_\+set(), melody\+\_\+active, melody\+\_\+state, NOTE\+\_\+\+TIMER, still\+\_\+alive, and still\+\_\+alive\+\_\+len.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{buzzer_8c_a51a122ea93e6cb66b977a91900893a5b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{buzzer_8c_ab1f19890f9f4d95a901c1623fb4ba0e6}\label{buzzer_8c_ab1f19890f9f4d95a901c1623fb4ba0e6}} 
+\index{buzzer.c@{buzzer.c}!melody\_active@{melody\_active}}
+\index{melody\_active@{melody\_active}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{melody\_active}{melody\_active}}
+{\footnotesize\ttfamily uint8\+\_\+t melody\+\_\+active = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by buzzer\+\_\+init(), buzzer\+\_\+note\+\_\+interrupt(), and buzzer\+\_\+rytm\+\_\+interrupt().
+
+\mbox{\Hypertarget{buzzer_8c_a48f5e0de2e30b591e5c94fbc6700d262}\label{buzzer_8c_a48f5e0de2e30b591e5c94fbc6700d262}} 
+\index{buzzer.c@{buzzer.c}!melody\_state@{melody\_state}}
+\index{melody\_state@{melody\_state}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{melody\_state}{melody\_state}}
+{\footnotesize\ttfamily uint16\+\_\+t melody\+\_\+state = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by buzzer\+\_\+rytm\+\_\+interrupt().
+
+\mbox{\Hypertarget{buzzer_8c_a0b57aa10271a66f3dc936bba1d2f3830}\label{buzzer_8c_a0b57aa10271a66f3dc936bba1d2f3830}} 
+\index{buzzer.c@{buzzer.c}!state@{state}}
+\index{state@{state}!buzzer.c@{buzzer.c}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily uint8\+\_\+t state = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by buzzer\+\_\+note\+\_\+interrupt().
+

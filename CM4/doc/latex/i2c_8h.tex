@@ -1,0 +1,115 @@
+\hypertarget{i2c_8h}{}\doxysection{i2c.\+h File Reference}
+\label{i2c_8h}\index{i2c.h@{i2c.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$device/device.\+h$>$}\newline
+Include dependency graph for i2c.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{i2c_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{i2c_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structi2c__interface__context}{i2c\+\_\+interface\+\_\+context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structi2c__interface__context}{i2c\+\_\+interface\+\_\+context}} \mbox{\hyperlink{i2c_8h_a2524fd243c29c32582e55cf0619c591c}{i2c\+\_\+interface\+\_\+context\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{i2c_8h_a5730d9445429351b9f750084c5cb5aae}{i2c\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{i2c_8h_a9315e3dfa8912309ae77398caa91b2ef}{i2c\+\_\+spi\+\_\+guard}} (void)
+\item 
+\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$ \mbox{\hyperlink{i2c_8h_adf1cc79fc1fd312feb2f87adf80e1c93}{i2c\+\_\+get\+\_\+sensor\+\_\+interface}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{i2c_8h_a2524fd243c29c32582e55cf0619c591c}\label{i2c_8h_a2524fd243c29c32582e55cf0619c591c}} 
+\index{i2c.h@{i2c.h}!i2c\_interface\_context\_t@{i2c\_interface\_context\_t}}
+\index{i2c\_interface\_context\_t@{i2c\_interface\_context\_t}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_interface\_context\_t}{i2c\_interface\_context\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structi2c__interface__context}{i2c\+\_\+interface\+\_\+context}} \mbox{\hyperlink{i2c_8h_a2524fd243c29c32582e55cf0619c591c}{i2c\+\_\+interface\+\_\+context\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c_8h_adf1cc79fc1fd312feb2f87adf80e1c93}\label{i2c_8h_adf1cc79fc1fd312feb2f87adf80e1c93}} 
+\index{i2c.h@{i2c.h}!i2c\_get\_sensor\_interface@{i2c\_get\_sensor\_interface}}
+\index{i2c\_get\_sensor\_interface@{i2c\_get\_sensor\_interface}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_get\_sensor\_interface()}{i2c\_get\_sensor\_interface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}}$\ast$ i2c\+\_\+get\+\_\+sensor\+\_\+interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References sensor\+\_\+interface.
+
+
+
+Referenced by i2c\+\_\+sensor\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{i2c_8h_adf1cc79fc1fd312feb2f87adf80e1c93_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c_8h_a5730d9445429351b9f750084c5cb5aae}\label{i2c_8h_a5730d9445429351b9f750084c5cb5aae}} 
+\index{i2c.h@{i2c.h}!i2c\_init@{i2c\_init}}
+\index{i2c\_init@{i2c\_init}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_init()}{i2c\_init()}}
+{\footnotesize\ttfamily void i2c\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+interface\+\_\+create(), ER\+\_\+\+SUCCESS, sensor\+\_\+interface, and sensor\+\_\+interface\+\_\+context.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{i2c_8h_a5730d9445429351b9f750084c5cb5aae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{i2c_8h_a5730d9445429351b9f750084c5cb5aae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c_8h_a9315e3dfa8912309ae77398caa91b2ef}\label{i2c_8h_a9315e3dfa8912309ae77398caa91b2ef}} 
+\index{i2c.h@{i2c.h}!i2c\_spi\_guard@{i2c\_spi\_guard}}
+\index{i2c\_spi\_guard@{i2c\_spi\_guard}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_spi\_guard()}{i2c\_spi\_guard()}}
+{\footnotesize\ttfamily void i2c\+\_\+spi\+\_\+guard (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{i2c_8h_a9315e3dfa8912309ae77398caa91b2ef_icgraph}
+\end{center}
+\end{figure}

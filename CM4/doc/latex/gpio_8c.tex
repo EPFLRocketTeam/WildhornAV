@@ -1,0 +1,75 @@
+\hypertarget{gpio_8c}{}\doxysection{gpio.\+c File Reference}
+\label{gpio_8c}\index{gpio.c@{gpio.c}}
+{\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+Include dependency graph for gpio.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{gpio_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{gpio_8c_a1b612fd022e3fde596541841e62aa298}{gpio\+\_\+get}} (GPIO\+\_\+\+Type\+Def $\ast$gpio, uint16\+\_\+t pin)
+\item 
+void \mbox{\hyperlink{gpio_8c_ac7b331a8a1f86ac42ce528b4570f11a8}{gpio\+\_\+set}} (GPIO\+\_\+\+Type\+Def $\ast$gpio, uint16\+\_\+t pin)
+\item 
+void \mbox{\hyperlink{gpio_8c_a2470f0a89b339d63e8cd56d52dcdcc2f}{gpio\+\_\+clr}} (GPIO\+\_\+\+Type\+Def $\ast$gpio, uint16\+\_\+t pin)
+\item 
+void \mbox{\hyperlink{gpio_8c_a730a826d00526cf309ae606f95d4596f}{gpio\+\_\+cfg}} (GPIO\+\_\+\+Type\+Def $\ast$gpio, uint16\+\_\+t pins, \mbox{\hyperlink{gpio_8h_a1704b90d04f66cf6e928d9461762586b}{gpio\+\_\+config\+\_\+t}} cfg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gpio_8c_a730a826d00526cf309ae606f95d4596f}\label{gpio_8c_a730a826d00526cf309ae606f95d4596f}} 
+\index{gpio.c@{gpio.c}!gpio\_cfg@{gpio\_cfg}}
+\index{gpio\_cfg@{gpio\_cfg}!gpio.c@{gpio.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_cfg()}{gpio\_cfg()}}
+{\footnotesize\ttfamily void gpio\+\_\+cfg (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{gpio,  }\item[{uint16\+\_\+t}]{pins,  }\item[{\mbox{\hyperlink{gpio_8h_a1704b90d04f66cf6e928d9461762586b}{gpio\+\_\+config\+\_\+t}}}]{cfg }\end{DoxyParamCaption})}
+
+
+
+References gpio\+\_\+config\+::alternate, gpio\+\_\+config\+::drive, gpio\+\_\+config\+::mode, gpio\+\_\+config\+::speed, and WRITE\+\_\+\+IN\+\_\+\+REG.
+
+\mbox{\Hypertarget{gpio_8c_a2470f0a89b339d63e8cd56d52dcdcc2f}\label{gpio_8c_a2470f0a89b339d63e8cd56d52dcdcc2f}} 
+\index{gpio.c@{gpio.c}!gpio\_clr@{gpio\_clr}}
+\index{gpio\_clr@{gpio\_clr}!gpio.c@{gpio.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_clr()}{gpio\_clr()}}
+{\footnotesize\ttfamily void gpio\+\_\+clr (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{gpio,  }\item[{uint16\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Referenced by buzzer\+\_\+note\+\_\+interrupt(), and buzzer\+\_\+rytm\+\_\+interrupt().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{gpio_8c_a2470f0a89b339d63e8cd56d52dcdcc2f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gpio_8c_a1b612fd022e3fde596541841e62aa298}\label{gpio_8c_a1b612fd022e3fde596541841e62aa298}} 
+\index{gpio.c@{gpio.c}!gpio\_get@{gpio\_get}}
+\index{gpio\_get@{gpio\_get}!gpio.c@{gpio.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_get()}{gpio\_get()}}
+{\footnotesize\ttfamily uint8\+\_\+t gpio\+\_\+get (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{gpio,  }\item[{uint16\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8c_ac7b331a8a1f86ac42ce528b4570f11a8}\label{gpio_8c_ac7b331a8a1f86ac42ce528b4570f11a8}} 
+\index{gpio.c@{gpio.c}!gpio\_set@{gpio\_set}}
+\index{gpio\_set@{gpio\_set}!gpio.c@{gpio.c}}
+\doxysubsubsection{\texorpdfstring{gpio\_set()}{gpio\_set()}}
+{\footnotesize\ttfamily void gpio\+\_\+set (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{gpio,  }\item[{uint16\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Referenced by buzzer\+\_\+note\+\_\+interrupt(), and buzzer\+\_\+rytm\+\_\+interrupt().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{gpio_8c_ac7b331a8a1f86ac42ce528b4570f11a8_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,196 @@
+\hypertarget{threads_8c}{}\doxysection{threads.\+c File Reference}
+\label{threads_8c}\index{threads.c@{threads.c}}
+{\ttfamily \#include $<$cmsis\+\_\+os.\+h$>$}\newline
+{\ttfamily \#include $<$threads.\+h$>$}\newline
+{\ttfamily \#include $<$wildhorn.\+h$>$}\newline
+{\ttfamily \#include $<$feedback/led.\+h$>$}\newline
+{\ttfamily \#include $<$feedback/buzzer.\+h$>$}\newline
+{\ttfamily \#include $<$driver/serial.\+h$>$}\newline
+{\ttfamily \#include $<$driver/i2c.\+h$>$}\newline
+{\ttfamily \#include $<$control.\+h$>$}\newline
+{\ttfamily \#include $<$device/hostproc.\+h$>$}\newline
+{\ttfamily \#include $<$od/od.\+h$>$}\newline
+Include dependency graph for threads.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{threads_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}{DEFAULT\+\_\+\+SZ}}~(1024)
+\item 
+\#define \mbox{\hyperlink{threads_8c_a21eee1c9115a82e3449a2ed029858465}{OD\+\_\+\+SZ}}~\mbox{\hyperlink{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}{DEFAULT\+\_\+\+SZ}}
+\item 
+\#define \mbox{\hyperlink{threads_8c_a47a639612a0838f9896f61b2b78461e5}{OD\+\_\+\+PRIO}}~(6)
+\item 
+\#define \mbox{\hyperlink{threads_8c_a92e4da7cbab7a2ffc590874e07740759}{CONTROL\+\_\+\+SZ}}~\mbox{\hyperlink{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}{DEFAULT\+\_\+\+SZ}}
+\item 
+\#define \mbox{\hyperlink{threads_8c_aa26bb7cd6b12ff3011efc7907e826395}{CONTROL\+\_\+\+PRIO}}~(6)
+\item 
+\#define \mbox{\hyperlink{threads_8c_ad4611c301a3a0e2107d78ebc2e9d6756}{LED\+\_\+\+RGB\+\_\+\+SZ}}~\mbox{\hyperlink{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}{DEFAULT\+\_\+\+SZ}}
+\item 
+\#define \mbox{\hyperlink{threads_8c_a78ac11286f302c230ee1edac3542a966}{LED\+\_\+\+RGB\+\_\+\+PRIO}}~(0)
+\item 
+\#define \mbox{\hyperlink{threads_8c_aa63339aebfecba6ec07b6580f7844796}{CREATE\+\_\+\+THREAD}}(handle,  name,  func,  cont,  sz,  prio)
+\begin{DoxyCompactList}\small\item\em macro to declare a static thread in Free\+RTOS \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{threads_8c_aa5c157013c08e62ad9eb931165c9663b}{threads\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize all the threads of Wildhorn AV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static Task\+Handle\+\_\+t \mbox{\hyperlink{threads_8c_a474bb21bb37125f0b511cbcb5236f0d3}{od\+\_\+handle}} = NULL
+\item 
+static Task\+Handle\+\_\+t \mbox{\hyperlink{threads_8c_afd547ccc0e75c74287a0c86f1af92c32}{control\+\_\+handle}} = NULL
+\item 
+static Task\+Handle\+\_\+t \mbox{\hyperlink{threads_8c_a813b0efcf8e0f5ce29b10b088268f377}{led\+\_\+rgb\+\_\+handle}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{threads_8c_aa26bb7cd6b12ff3011efc7907e826395}\label{threads_8c_aa26bb7cd6b12ff3011efc7907e826395}} 
+\index{threads.c@{threads.c}!CONTROL\_PRIO@{CONTROL\_PRIO}}
+\index{CONTROL\_PRIO@{CONTROL\_PRIO}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{CONTROL\_PRIO}{CONTROL\_PRIO}}
+{\footnotesize\ttfamily \#define CONTROL\+\_\+\+PRIO~(6)}
+
+\mbox{\Hypertarget{threads_8c_a92e4da7cbab7a2ffc590874e07740759}\label{threads_8c_a92e4da7cbab7a2ffc590874e07740759}} 
+\index{threads.c@{threads.c}!CONTROL\_SZ@{CONTROL\_SZ}}
+\index{CONTROL\_SZ@{CONTROL\_SZ}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{CONTROL\_SZ}{CONTROL\_SZ}}
+{\footnotesize\ttfamily \#define CONTROL\+\_\+\+SZ~\mbox{\hyperlink{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}{DEFAULT\+\_\+\+SZ}}}
+
+\mbox{\Hypertarget{threads_8c_aa63339aebfecba6ec07b6580f7844796}\label{threads_8c_aa63339aebfecba6ec07b6580f7844796}} 
+\index{threads.c@{threads.c}!CREATE\_THREAD@{CREATE\_THREAD}}
+\index{CREATE\_THREAD@{CREATE\_THREAD}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{CREATE\_THREAD}{CREATE\_THREAD}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+THREAD(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{name,  }\item[{}]{func,  }\item[{}]{cont,  }\item[{}]{sz,  }\item[{}]{prio }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{static} StaticTask\_t name\#\#\_buffer; \(\backslash\)}
+\DoxyCodeLine{    static StackType\_t name\#\#\_stack[ sz ]; \(\backslash\)}
+\DoxyCodeLine{    handle = xTaskCreateStatic( \(\backslash\)}
+\DoxyCodeLine{            func, \(\backslash\)}
+\DoxyCodeLine{            \#name, \(\backslash\)}
+\DoxyCodeLine{            sz, \(\backslash\)}
+\DoxyCodeLine{            ( \textcolor{keywordtype}{void} * ) cont, \(\backslash\)}
+\DoxyCodeLine{            prio, \(\backslash\)}
+\DoxyCodeLine{            name\#\#\_stack, \(\backslash\)}
+\DoxyCodeLine{            \&name\#\#\_buffer)}
+
+\end{DoxyCode}
+
+
+macro to declare a static thread in Free\+RTOS 
+
+This macros make the necessary funtion calls to setup a stack and working area for the declaration of a static Free\+RTOS thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A {\ttfamily Task\+Handle\+\_\+t} object to reference the created Thread. \\
+\hline
+{\em name} & A name for thread. \\
+\hline
+{\em func} & The entry point for the thread. \\
+\hline
+{\em cont} & The context for the thread. \\
+\hline
+{\em sz} & The desired size for the thread stack. \\
+\hline
+{\em prio} & The priority for the thread. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}\label{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}} 
+\index{threads.c@{threads.c}!DEFAULT\_SZ@{DEFAULT\_SZ}}
+\index{DEFAULT\_SZ@{DEFAULT\_SZ}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_SZ}{DEFAULT\_SZ}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+SZ~(1024)}
+
+\mbox{\Hypertarget{threads_8c_a78ac11286f302c230ee1edac3542a966}\label{threads_8c_a78ac11286f302c230ee1edac3542a966}} 
+\index{threads.c@{threads.c}!LED\_RGB\_PRIO@{LED\_RGB\_PRIO}}
+\index{LED\_RGB\_PRIO@{LED\_RGB\_PRIO}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{LED\_RGB\_PRIO}{LED\_RGB\_PRIO}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+RGB\+\_\+\+PRIO~(0)}
+
+\mbox{\Hypertarget{threads_8c_ad4611c301a3a0e2107d78ebc2e9d6756}\label{threads_8c_ad4611c301a3a0e2107d78ebc2e9d6756}} 
+\index{threads.c@{threads.c}!LED\_RGB\_SZ@{LED\_RGB\_SZ}}
+\index{LED\_RGB\_SZ@{LED\_RGB\_SZ}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{LED\_RGB\_SZ}{LED\_RGB\_SZ}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+RGB\+\_\+\+SZ~\mbox{\hyperlink{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}{DEFAULT\+\_\+\+SZ}}}
+
+\mbox{\Hypertarget{threads_8c_a47a639612a0838f9896f61b2b78461e5}\label{threads_8c_a47a639612a0838f9896f61b2b78461e5}} 
+\index{threads.c@{threads.c}!OD\_PRIO@{OD\_PRIO}}
+\index{OD\_PRIO@{OD\_PRIO}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{OD\_PRIO}{OD\_PRIO}}
+{\footnotesize\ttfamily \#define OD\+\_\+\+PRIO~(6)}
+
+\mbox{\Hypertarget{threads_8c_a21eee1c9115a82e3449a2ed029858465}\label{threads_8c_a21eee1c9115a82e3449a2ed029858465}} 
+\index{threads.c@{threads.c}!OD\_SZ@{OD\_SZ}}
+\index{OD\_SZ@{OD\_SZ}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{OD\_SZ}{OD\_SZ}}
+{\footnotesize\ttfamily \#define OD\+\_\+\+SZ~\mbox{\hyperlink{threads_8c_ac6f0a28c47e342f30c21f17cea85b5d3}{DEFAULT\+\_\+\+SZ}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{threads_8c_aa5c157013c08e62ad9eb931165c9663b}\label{threads_8c_aa5c157013c08e62ad9eb931165c9663b}} 
+\index{threads.c@{threads.c}!threads\_init@{threads\_init}}
+\index{threads\_init@{threads\_init}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{threads\_init()}{threads\_init()}}
+{\footnotesize\ttfamily void threads\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize all the threads of Wildhorn AV. 
+
+This is the only function that needs to be called from the ST Auto-\/generated files. This is clever in case the autogeneration fails. This will minimize the code to be rewritten. 
+
+References buzzer\+\_\+init(), control\+\_\+handle, CONTROL\+\_\+\+PRIO, CONTROL\+\_\+\+SZ, control\+\_\+thread(), CREATE\+\_\+\+THREAD, ER\+\_\+\+SUCCESS, hostproc\+\_\+init(), i2c\+\_\+init(), i2c\+\_\+spi\+\_\+guard(), led\+\_\+feedback\+\_\+init(), led\+\_\+rgb\+\_\+handle, LED\+\_\+\+RGB\+\_\+\+PRIO, LED\+\_\+\+RGB\+\_\+\+SZ, led\+\_\+rgb\+\_\+thread(), od\+\_\+handle, od\+\_\+init(), OD\+\_\+\+PRIO, OD\+\_\+\+SZ, od\+\_\+update\+\_\+task(), and serial\+\_\+init().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{threads_8c_aa5c157013c08e62ad9eb931165c9663b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{threads_8c_afd547ccc0e75c74287a0c86f1af92c32}\label{threads_8c_afd547ccc0e75c74287a0c86f1af92c32}} 
+\index{threads.c@{threads.c}!control\_handle@{control\_handle}}
+\index{control\_handle@{control\_handle}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{control\_handle}{control\_handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t control\+\_\+handle = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by threads\+\_\+init().
+
+\mbox{\Hypertarget{threads_8c_a813b0efcf8e0f5ce29b10b088268f377}\label{threads_8c_a813b0efcf8e0f5ce29b10b088268f377}} 
+\index{threads.c@{threads.c}!led\_rgb\_handle@{led\_rgb\_handle}}
+\index{led\_rgb\_handle@{led\_rgb\_handle}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{led\_rgb\_handle}{led\_rgb\_handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t led\+\_\+rgb\+\_\+handle = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by threads\+\_\+init().
+
+\mbox{\Hypertarget{threads_8c_a474bb21bb37125f0b511cbcb5236f0d3}\label{threads_8c_a474bb21bb37125f0b511cbcb5236f0d3}} 
+\index{threads.c@{threads.c}!od\_handle@{od\_handle}}
+\index{od\_handle@{od\_handle}!threads.c@{threads.c}}
+\doxysubsubsection{\texorpdfstring{od\_handle}{od\_handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t od\+\_\+handle = NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by threads\+\_\+init().
+

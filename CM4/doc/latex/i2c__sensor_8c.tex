@@ -1,0 +1,199 @@
+\hypertarget{i2c__sensor_8c}{}\doxysection{i2c\+\_\+sensor.\+c File Reference}
+\label{i2c__sensor_8c}\index{i2c\_sensor.c@{i2c\_sensor.c}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$device/device.\+h$>$}\newline
+{\ttfamily \#include $<$device/i2c\+\_\+sensor.\+h$>$}\newline
+{\ttfamily \#include $<$driver/i2c.\+h$>$}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+Include dependency graph for i2c\+\_\+sensor.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c__sensor_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structi2c__sensor__context}{i2c\+\_\+sensor\+\_\+context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structi2c__sensor__context}{i2c\+\_\+sensor\+\_\+context}} \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_a91cf04fe5df04ba769f873ab7a67c03f}{read\+\_\+reg}} (void $\ast$context, \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$dev, uint32\+\_\+t address, uint8\+\_\+t $\ast$data, uint32\+\_\+t data\+\_\+len)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_a5389e7d11cf7b6edabca8ca6d332f33f}{write\+\_\+reg}} (void $\ast$context, \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$dev, uint32\+\_\+t address, uint8\+\_\+t $\ast$data, uint32\+\_\+t data\+\_\+len)
+\item 
+\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$ \mbox{\hyperlink{i2c__sensor_8c_a2873688865ff4828a9875b550be6d6af}{i2c\+\_\+get\+\_\+accelerometer}} (void)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_ae29d9882a5c70774cc736efa8ae5fa30}{i2c\+\_\+sensor\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_af8ef11521a985b8d812dc1cfd74687a7}{i2c\+\_\+accelerometer\+\_\+device}}
+\item 
+static \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_a422a661f451823d6a300b90d0e3fd1e1}{i2c\+\_\+gyroscope\+\_\+device}}
+\item 
+static \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_ab8709b11a0d59284aa20baa95803ee70}{i2c\+\_\+barometer\+\_\+device}}
+\item 
+static \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_a6ed46c11cb9c8302cf9629b8ca724a2c}{i2c\+\_\+accelerometer\+\_\+device\+\_\+context}}
+\item 
+static \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_aa6fa87f4e537e3ab3607bc7264f38aad}{i2c\+\_\+gyroscope\+\_\+device\+\_\+context}}
+\item 
+static \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}} \mbox{\hyperlink{i2c__sensor_8c_ae728af291bcd5241b1592bef33969d6a}{i2c\+\_\+barometer\+\_\+device\+\_\+context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}\label{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_sensor\_context\_t@{i2c\_sensor\_context\_t}}
+\index{i2c\_sensor\_context\_t@{i2c\_sensor\_context\_t}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_sensor\_context\_t}{i2c\_sensor\_context\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structi2c__sensor__context}{i2c\+\_\+sensor\+\_\+context}} \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c__sensor_8c_a2873688865ff4828a9875b550be6d6af}\label{i2c__sensor_8c_a2873688865ff4828a9875b550be6d6af}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_get\_accelerometer@{i2c\_get\_accelerometer}}
+\index{i2c\_get\_accelerometer@{i2c\_get\_accelerometer}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_get\_accelerometer()}{i2c\_get\_accelerometer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}}$\ast$ i2c\+\_\+get\+\_\+accelerometer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References i2c\+\_\+accelerometer\+\_\+device.
+
+\mbox{\Hypertarget{i2c__sensor_8c_ae29d9882a5c70774cc736efa8ae5fa30}\label{i2c__sensor_8c_ae29d9882a5c70774cc736efa8ae5fa30}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_sensor\_init@{i2c\_sensor\_init}}
+\index{i2c\_sensor\_init@{i2c\_sensor\_init}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_sensor\_init()}{i2c\_sensor\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} i2c\+\_\+sensor\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+create(), ER\+\_\+\+SUCCESS, i2c\+\_\+accelerometer\+\_\+device, i2c\+\_\+accelerometer\+\_\+device\+\_\+context, i2c\+\_\+get\+\_\+sensor\+\_\+interface(), read\+\_\+reg(), and write\+\_\+reg().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c__sensor_8c_ae29d9882a5c70774cc736efa8ae5fa30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c__sensor_8c_a91cf04fe5df04ba769f873ab7a67c03f}\label{i2c__sensor_8c_a91cf04fe5df04ba769f873ab7a67c03f}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!read\_reg@{read\_reg}}
+\index{read\_reg@{read\_reg}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{read\_reg()}{read\_reg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} read\+\_\+reg (\begin{DoxyParamCaption}\item[{void $\ast$}]{context,  }\item[{\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+interface\+::context, ER\+\_\+\+SUCCESS, and i2c\+\_\+interface\+\_\+context\+::i2c.
+
+
+
+Referenced by device\+\_\+create(), and i2c\+\_\+sensor\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c__sensor_8c_a91cf04fe5df04ba769f873ab7a67c03f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c__sensor_8c_a5389e7d11cf7b6edabca8ca6d332f33f}\label{i2c__sensor_8c_a5389e7d11cf7b6edabca8ca6d332f33f}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!write\_reg@{write\_reg}}
+\index{write\_reg@{write\_reg}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{write\_reg()}{write\_reg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} write\+\_\+reg (\begin{DoxyParamCaption}\item[{void $\ast$}]{context,  }\item[{\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$}]{dev,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+interface\+::context, ER\+\_\+\+SUCCESS, and i2c\+\_\+interface\+\_\+context\+::i2c.
+
+
+
+Referenced by device\+\_\+create(), and i2c\+\_\+sensor\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c__sensor_8c_a5389e7d11cf7b6edabca8ca6d332f33f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{i2c__sensor_8c_af8ef11521a985b8d812dc1cfd74687a7}\label{i2c__sensor_8c_af8ef11521a985b8d812dc1cfd74687a7}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_accelerometer\_device@{i2c\_accelerometer\_device}}
+\index{i2c\_accelerometer\_device@{i2c\_accelerometer\_device}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_accelerometer\_device}{i2c\_accelerometer\_device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} i2c\+\_\+accelerometer\+\_\+device\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by i2c\+\_\+get\+\_\+accelerometer(), and i2c\+\_\+sensor\+\_\+init().
+
+\mbox{\Hypertarget{i2c__sensor_8c_a6ed46c11cb9c8302cf9629b8ca724a2c}\label{i2c__sensor_8c_a6ed46c11cb9c8302cf9629b8ca724a2c}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_accelerometer\_device\_context@{i2c\_accelerometer\_device\_context}}
+\index{i2c\_accelerometer\_device\_context@{i2c\_accelerometer\_device\_context}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_accelerometer\_device\_context}{i2c\_accelerometer\_device\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}} i2c\+\_\+accelerometer\+\_\+device\+\_\+context\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        .device\_address = 0x68}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Referenced by i2c\+\_\+sensor\+\_\+init().
+
+\mbox{\Hypertarget{i2c__sensor_8c_ab8709b11a0d59284aa20baa95803ee70}\label{i2c__sensor_8c_ab8709b11a0d59284aa20baa95803ee70}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_barometer\_device@{i2c\_barometer\_device}}
+\index{i2c\_barometer\_device@{i2c\_barometer\_device}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_barometer\_device}{i2c\_barometer\_device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} i2c\+\_\+barometer\+\_\+device\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{i2c__sensor_8c_ae728af291bcd5241b1592bef33969d6a}\label{i2c__sensor_8c_ae728af291bcd5241b1592bef33969d6a}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_barometer\_device\_context@{i2c\_barometer\_device\_context}}
+\index{i2c\_barometer\_device\_context@{i2c\_barometer\_device\_context}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_barometer\_device\_context}{i2c\_barometer\_device\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}} i2c\+\_\+barometer\+\_\+device\+\_\+context\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        .device\_address = 0x18}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{i2c__sensor_8c_a422a661f451823d6a300b90d0e3fd1e1}\label{i2c__sensor_8c_a422a661f451823d6a300b90d0e3fd1e1}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_gyroscope\_device@{i2c\_gyroscope\_device}}
+\index{i2c\_gyroscope\_device@{i2c\_gyroscope\_device}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_gyroscope\_device}{i2c\_gyroscope\_device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} i2c\+\_\+gyroscope\+\_\+device\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{i2c__sensor_8c_aa6fa87f4e537e3ab3607bc7264f38aad}\label{i2c__sensor_8c_aa6fa87f4e537e3ab3607bc7264f38aad}} 
+\index{i2c\_sensor.c@{i2c\_sensor.c}!i2c\_gyroscope\_device\_context@{i2c\_gyroscope\_device\_context}}
+\index{i2c\_gyroscope\_device\_context@{i2c\_gyroscope\_device\_context}!i2c\_sensor.c@{i2c\_sensor.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_gyroscope\_device\_context}{i2c\_gyroscope\_device\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{i2c__sensor_8c_aaa24b046c6b0c4863297a6b3dd8997c8}{i2c\+\_\+sensor\+\_\+context\+\_\+t}} i2c\+\_\+gyroscope\+\_\+device\+\_\+context\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        .device\_address = 0x68}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

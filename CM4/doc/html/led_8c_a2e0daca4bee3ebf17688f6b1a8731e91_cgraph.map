@@ -1,0 +1,6 @@
+<map id="led_rgb_thread" name="led_rgb_thread">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,124,83"/>
+<area shape="rect" id="node2" href="$led_8c.html#a9ef2dbf2af55bb679e15eaec5280872d" title="Initialize the RGB LED." alt="" coords="191,5,289,32"/>
+<area shape="rect" id="node3" href="$led_8c.html#aaefbfbd12cbeda9bf240aa909f3175c9" title="Set RBG LED color using color structure." alt="" coords="172,56,308,83"/>
+<area shape="rect" id="node4" href="$led_8c.html#ade6bdac7c83c0d5970b09caca131f7b6" title="Set RBG LED color using r, g, b values." alt="" coords="177,107,303,133"/>
+</map>
