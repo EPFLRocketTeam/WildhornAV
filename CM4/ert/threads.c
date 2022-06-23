@@ -43,6 +43,18 @@
  *	MACROS
  **********************/
 
+/**
+ * @brief 	macro to declare a static thread in FreeRTOS
+ * @details	This macros make the necessary funtion calls to setup a stack and
+ * 			working area for the declaration of a static FreeRTOS thread.
+ *
+ * @param	handle	A @p TaskHandle_t object to reference the created Thread.
+ * @param	name	A name for thread.
+ * @param 	func	The entry point for the thread.
+ * @param 	cont	The context for the thread.
+ * @param 	sz		The desired size for the thread stack.
+ * @param	prio	The priority for the thread.
+ */
 #define CREATE_THREAD(handle, name, func, cont, sz, prio) \
 	static StaticTask_t name##_buffer; \
 	static StackType_t name##_stack[ sz ]; \
@@ -77,7 +89,13 @@ static TaskHandle_t led_rgb_handle = NULL;
  *	DECLARATIONS
  **********************/
 
-
+/**
+ * @brief	Initialize all the threads of Wildhorn AV
+ * @details	This is the only function that needs to be called from the ST
+ * 			Auto-generated files. This is clever in case the autogeneration
+ * 			fails. This will minimize the code to be rewritten.
+ *
+ */
 void threads_init(void) {
 
 	//initialize serial

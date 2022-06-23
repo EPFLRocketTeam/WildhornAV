@@ -56,6 +56,16 @@ static uint16_t calc_field_CRC(uint16_t* p_data_array, uint16_t length);
  *	DECLARATIONS
  **********************/
 
+/**
+ * @brief	Compute the CRC for a data packet.
+ * @details	Function taken from Maxon Serial V2 specification manual.
+ *
+ * @param	p_data_array	Pointer to the data array of the packet.
+ * @param	length			Length of the packet
+ *
+ * @note	The p_data_array data must contain two empty bytes [0x00, 0x00] at the end,
+ * 			where the CRC goes.
+ */
 uint16_t calc_field_CRC(uint16_t *p_data_array, uint16_t length) {
 	uint16_t shifter, c;
 	uint16_t carry;
@@ -76,11 +86,25 @@ uint16_t calc_field_CRC(uint16_t *p_data_array, uint16_t length) {
 	return crc;
 }
 
+/**
+ * @brief Initialize a msv2 packet creator instance.
+ *
+ * @param 	msv2	Pointer to the msv2 instance to be initialized.
+ */
 void msv2_init(MSV2_INST_t * msv2) {
 	static uint32_t id_counter = 0;
 	msv2->id = id_counter++;
 }
 
+/**
+ * @brief Generate an msv2 packet
+ * @details
+ *
+ * @param 	msv2		Pointer to the msv2 packet creator instance.
+ * @param 	opcode		Opcode to be placed in the packet header.
+ * @param 	data_len	Length of the packet data payload.
+ * @param 	data		Data to be placed in the packet payload.
+ */
 uint16_t msv2_create_frame(MSV2_INST_t * msv2, uint8_t opcode, uint8_t data_len, uint8_t * data) {
 	uint16_t array_len = data_len+2; //we add 1 for the opcode and len fields and 1 for the crc
 	msv2->tx.data_len = data_len;
@@ -114,9 +138,15 @@ uint16_t msv2_create_frame(MSV2_INST_t * msv2, uint8_t opcode, uint8_t data_len,
 	}
 	return counter;
 }
-/*
- * 	d: received byte
+
+/**
+ * @brief Decode an msv2 fragment (one byte at a time)
+ * @details
  *
+ * @param	msv2	Pointer to the msv2 packet creator instance.
+ * @param	d		Fragment to be decoded.
+ *
+ * @note	This function is to be called upon reception of a byte.
  */
 MSV2_ERROR_t msv2_decode_fragment(MSV2_INST_t * msv2, uint8_t d) {
     //if a DLE in data is followed by STX, we start again
@@ -196,10 +226,20 @@ MSV2_ERROR_t msv2_decode_fragment(MSV2_INST_t * msv2, uint8_t d) {
     return MSV2_PROGRESS;
 }
 
+/**
+ * @brief	Getter for the pointer to the rx data array contained in the msv2 packet creator
+ *
+ * @param	msv2	Pointer to the msv2 packet creator instance.
+ */
 uint8_t * msv2_rx_data(MSV2_INST_t * msv2) {
 	return msv2->rx.data;
 }
 
+/**
+ * @brief	Getter for the pointer to the tx data array contained in the msv2 packet creator
+ *
+ * @param	msv2	Pointer to the msv2 packet creator instance.
+ */
 uint8_t * msv2_tx_data(MSV2_INST_t * msv2) {
 	return msv2->tx.data;
 }

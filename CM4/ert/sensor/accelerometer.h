@@ -1,13 +1,13 @@
-/*  Title		: H3LS331DL
- *  Filename	: H3LS331DL.c
+/*  Title		: Accelerometer
+ *  Filename	: accelerometer.h
  *	Author		: iacopo sprenger
- *	Date		: 22.04.2022
+ *	Date		: 10.06.2022
  *	Version		: 0.1
- *	Description	: device driver for H3LS331DL
+ *	Description	: accelerometer setup and acquisition
  */
 
-#ifndef H3LS331DL_H
-#define H3LS331DL_H
+#ifndef ACCELEROMETER_H
+#define ACCELEROMETER_H
 
 
 
@@ -16,6 +16,7 @@
  **********************/
 
 #include <stdint.h>
+#include <util.h>
 
 /**********************
  *  CONSTANTS
@@ -45,15 +46,13 @@
 extern "C"{
 #endif
 
-//device_t * i2c_get_accelerometer(void);
 
-util_error_t i2c_sensor_init(void);
-
+util_error_t accelerometer_init(void);
 
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* H3LS331DL_H */
+#endif /* ACCELEROMETER_H */
 
 /* END */

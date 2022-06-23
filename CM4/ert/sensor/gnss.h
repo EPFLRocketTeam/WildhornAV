@@ -1,13 +1,13 @@
-/*  Title		: H3LS331DL
- *  Filename	: H3LS331DL.c
+/*  Title		: GNSS
+ *  Filename	: gnss.h
  *	Author		: iacopo sprenger
- *	Date		: 22.04.2022
+ *	Date		: 10.06.2022
  *	Version		: 0.1
- *	Description	: device driver for H3LS331DL
+ *	Description	: gnss setup and acquisition
  */
 
-#ifndef H3LS331DL_H
-#define H3LS331DL_H
+#ifndef GNSS_H
+#define GNSS_H
 
 
 
@@ -45,15 +45,11 @@
 extern "C"{
 #endif
 
-//device_t * i2c_get_accelerometer(void);
-
-util_error_t i2c_sensor_init(void);
-
 
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* H3LS331DL_H */
+#endif /* GNSS_H */
 
 /* END */

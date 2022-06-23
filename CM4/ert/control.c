@@ -1,9 +1,7 @@
-/*  Title		: Control
- *  Filename	: control.c
- *	Author		: iacopo sprenger
- *	Date		: 20.01.2022
- *	Version		: 0.1
- *	Description	: control
+/** @file	Control
+ *	@author Iacopo Sprenger
+ *	@date	20.01.2022
+ *	@brief	Main control of the program through the global state machine
  */
 
 /**********************
@@ -44,20 +42,37 @@
  *	TYPEDEFS
  **********************/
 
+/**
+ * @brief State of the control FSM
+ */
 typedef enum control_state {
+	/** Wait for arming or calibration */
 	CONTROL_IDLE,
+	/** Calibrate sensors and actuators */
 	CONTROL_CALIBRATION,
+	/** Armed, wait for liftoff */
 	CONTROL_ARMED,
+	/** Powered ascent */
 	CONTROL_POWERED,
+	/** Supersonic flight */
 	CONTROL_SUPERSONIC,
+	/** Subsonic, coast flight */
 	CONTROL_COAST,
+	/** Apogee reached, trigger first event */
 	CONTROL_APOGEE,
+	/** Drogue chute descent, wait for second event */
 	CONTROL_DROGUE,
+	/** Low alt reached, trigger second event */
 	CONTROL_EVENT,
+	/** Main chute descent, wait for touchdown */
 	CONTROL_MAIN,
+	/** Touchdown detected, end of the flight */
 	CONTROL_TOUCHDOWN,
+	/** Ballistic flight detected */
 	CONTROL_BALLISTIC,
+	/** Auto triggered error */
 	CONTROL_ERROR,
+	/** User triggered error */
 	CONTROL_ABORT
 }control_state_t;
 
@@ -126,6 +141,15 @@ void control_abort_run(void);
  *	DECLARATIONS
  **********************/
 
+/**
+ * @brief 	Control thread entry point
+ * @details This thread holds the main state machine of the WildhornAV software. It will be
+ * 			the main decision point for actions to be taken with respect to real world events.
+ *
+ *
+ * @param	arg	freertos thread entry point context (unused)
+ *
+ */
 void control_thread(__attribute__((unused)) void * arg) {
 	static TickType_t last_wake_time;
 	static const TickType_t period = pdMS_TO_TICKS(CONTROL_HEART_BEAT);
@@ -146,114 +170,240 @@ void control_thread(__attribute__((unused)) void * arg) {
 	}
 }
 
+
+/**
+ * @brief	Idle state entry
+ * @details
+ */
 void control_idle_start(void) {
 	control.state = CONTROL_IDLE;
 
 }
+
+/**
+ * @brief	Idle state runtime
+ * @details
+ */
 void control_idle_run(void) {
 
 }
 
+/**
+ * @brief	Calibration state entry
+ * @details
+ */
 void control_calibration_start(void) {
 	control.state = CONTROL_CALIBRATION;
 }
+
+/**
+ * @brief	Calibration state runtime
+ * @details
+ */
 void control_calibration_run(void) {
 
 }
 
+/**
+ * @brief	Armed state entry
+ * @details
+ */
 void control_armed_start(void) {
 	control.state = CONTROL_ARMED;
 
 }
+
+/**
+ * @brief	Armed state runtime
+ * @details
+ */
 void control_armed_run(void) {
 
 }
 
+/**
+ * @brief	Powered state entry
+ * @details
+ */
 void control_powered_start(void) {
 	control.state = CONTROL_POWERED;
 
 }
+
+/**
+ * @brief	Powered state runtime
+ * @details
+ */
 void control_powered_run(void) {
 
 }
 
+/**
+ * @brief	Supersonic state entry
+ * @details
+ */
 void control_supersonic_start(void) {
 	control.state = CONTROL_SUPERSONIC;
 
 }
+
+/**
+ * @brief	Supersonic state runtime
+ * @details
+ */
 void control_supersonic_run(void) {
 
 }
 
+/**
+ * @brief	Coast state entry
+ * @details
+ */
 void control_coast_start(void) {
 	control.state = CONTROL_COAST;
 
 }
 
+/**
+ * @brief	Coast state runtime
+ * @details
+ */
 void control_coast_run(void) {
 
 }
 
+/**
+ * @brief	Apogee state entry
+ * @details
+ */
 void control_apogee_start(void) {
 	control.state = CONTROL_APOGEE;
 
 }
+
+/**
+ * @brief	Apogee state runtime
+ * @details
+ */
 void control_apogee_run(void) {
 
 }
 
+/**
+ * @brief	Drogue state entry
+ * @details
+ */
 void control_drogue_start(void) {
 	control.state = CONTROL_DROGUE;
 
 }
+
+/**
+ * @brief	Drogue state runtime
+ * @details
+ */
 void control_drogue_run(void) {
 
 }
 
+/**
+ * @brief	Event state entry
+ * @details
+ */
 void control_event_start(void) {
 	control.state = CONTROL_EVENT;
 
 }
+
+/**
+ * @brief	Event state runtime
+ * @details
+ */
 void control_event_run(void) {
 
 }
 
+/**
+ * @brief	Main state entry
+ * @details
+ */
 void control_main_start(void) {
 	control.state = CONTROL_MAIN;
 
 }
+
+/**
+ * @brief	Main state runtime
+ * @details
+ */
 void control_main_run(void) {
 
 }
 
+/**
+ * @brief	Touchdown state entry
+ * @details
+ */
 void control_touchdown_start(void) {
 	control.state = CONTROL_TOUCHDOWN;
 
 }
+
+/**
+ * @brief	Touchdown state runtime
+ * @details
+ */
 void control_touchdown_run(void) {
 
 }
 
+/**
+ * @brief	Ballistic state entry
+ * @details
+ */
 void control_ballistic_start(void) {
 	control.state = CONTROL_BALLISTIC;
 
 }
+
+/**
+ * @brief	Ballistic state runtime
+ * @details
+ */
 void control_ballistic_run(void) {
 
 }
 
+/**
+ * @brief	Error state entry
+ * @details
+ */
 void control_error_start(void) {
 	control.state = CONTROL_ERROR;
 
 }
+
+/**
+ * @brief	Error state runtime
+ * @details
+ */
 void control_error_run(void) {
 
 }
 
+/**
+ * @brief	Abort state entry
+ * @details
+ */
 void control_abort_start(void) {
 	control.state = CONTROL_ABORT;
 
 }
+
+/**
+ * @brief	Abort state runtime
+ * @details
+ */
 void control_abort_run(void) {
 
 }

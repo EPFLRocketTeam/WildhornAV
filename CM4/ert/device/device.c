@@ -53,7 +53,16 @@ void device_deamon_thread(void * arg);
  *	DECLARATIONS
  **********************/
 
-
+/**
+ * @brief Initialize a device instance
+ * @details
+ *
+ * @param	dev			Pointer to the @p device_t structure describing this device.
+ * @param   context		Generic pointer to a device context.
+ * @param	interface	Pointer to the @p device_interface_t associated with this device.
+ * @param	read_reg	Pointer to a read register function for this device.
+ * @param	write_reg	Pointer to a write register function for this device.
+ */
 util_error_t device_create(	device_t * dev,
 						void * context,
 						device_interface_t * interface,
@@ -70,7 +79,17 @@ util_error_t device_create(	device_t * dev,
 	return ER_SUCCESS;
 }
 
-
+/**
+ * @brief	Initialize a device interface instance.
+ * @details
+ *
+ * @param	interface
+ * @param 	context
+ * @param	deamon
+ * @param	send
+ * @param	recv
+ * @param 	handle_data
+ */
 util_error_t device_interface_create(   	device_interface_t * interface,
                             		void * context,
 									device_deamon_t * deamon,
@@ -91,15 +110,25 @@ util_error_t device_interface_create(   	device_interface_t * interface,
     return ER_SUCCESS;
 }
 
+/**
+ * @brief Initializea device deamon instance
+ * @details
+ *
+ * @param	deamon
+ * @param	name
+ * @param	prio
+ * @param	context
+ * @param 	data_rdy
+ */
 util_error_t device_deamon_create(	device_deamon_t * deamon,
 								const char * name,
 								uint32_t prio,
-								void * inst,
+								void * context,
 								util_error_t (*data_rdy)(void*))
 {
 	static uint32_t counter = 0;
 	deamon->id = counter++;
-	deamon->context = inst;
+	deamon->context = context;
 	deamon->data_rdy = data_rdy;
 	deamon->interfaces_count = 0;
 	if(data_rdy) {
@@ -110,6 +139,13 @@ util_error_t device_deamon_create(	device_deamon_t * deamon,
 	return ER_SUCCESS;
 }
 
+/**
+ * @brief 	Generic device deamon thread
+ * @details This thread will call the handle data function for an interface,
+ * 			whenever data is ready for a group of interfaces belonging to
+ * 			the same deamon.
+ * @param	arg	FreeRTOS entry point context, used to pass the deamon context to the thread.
+ */
 void device_deamon_thread(void * arg)
 {
 	device_deamon_t * deamon = (device_deamon_t * ) arg;
@@ -129,6 +165,14 @@ void device_deamon_thread(void * arg)
 
 //interface send/recv functions
 
+/**
+ * @brief Send raw data through the interface specific send function.
+ * @details
+ *
+ * @param	interface	The interface through which data should be sent.
+ * @param 	data		A point to the data to be sent.
+ * @param	len			The length of the data to be sent.
+ */
 util_error_t device_interface_send(device_interface_t * interface, uint8_t * data, uint32_t len)
 {
 	if(interface->send) {
@@ -138,6 +182,14 @@ util_error_t device_interface_send(device_interface_t * interface, uint8_t * dat
 	}
 }
 
+/**
+ * @brief Receive raw data through the interface specific recv function.
+ * @details
+ *
+ * @param	interface	The interface through which data should be received.
+ * @param 	data		A point to the data to be received.
+ * @param	len			A pointer to the length of the data to be received.
+ */
 util_error_t device_interface_recv(device_interface_t * interface, uint8_t * data, uint32_t * len)
 {
 	if(interface->send) {
@@ -149,7 +201,14 @@ util_error_t device_interface_recv(device_interface_t * interface, uint8_t * dat
 
 // device write functions
 
-
+/**
+ * @brief	Write an int32_t to a device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	The data to be written.
+ */
 util_error_t device_write_i32(device_t * dev, uint32_t addr, int32_t data)
 {
     uint8_t tmp[LEN_32];
@@ -158,6 +217,14 @@ util_error_t device_write_i32(device_t * dev, uint32_t addr, int32_t data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Write an uint32_t to a device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	The data to be written.
+ */
 util_error_t device_write_u32(device_t * dev, uint32_t addr, uint32_t data)
 {
     uint8_t tmp[LEN_32];
@@ -166,6 +233,14 @@ util_error_t device_write_u32(device_t * dev, uint32_t addr, uint32_t data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Write an int16_t to a device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	The data to be written.
+ */
 util_error_t device_write_i16(device_t * dev, uint32_t addr, int16_t data)
 {
     uint8_t tmp[LEN_16];
@@ -174,6 +249,14 @@ util_error_t device_write_i16(device_t * dev, uint32_t addr, int16_t data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Write an uint16_t to a device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	The data to be written.
+ */
 util_error_t device_write_u16(device_t * dev, uint32_t addr, uint16_t data)
 {
     uint8_t tmp[LEN_16];
@@ -182,6 +265,14 @@ util_error_t device_write_u16(device_t * dev, uint32_t addr, uint16_t data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Write an int8_t to a device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	The data to be written.
+ */
 util_error_t device_write_i8(device_t * dev, uint32_t addr, int8_t data)
 {
     uint8_t tmp[LEN_8];
@@ -189,6 +280,15 @@ util_error_t device_write_i8(device_t * dev, uint32_t addr, int8_t data)
     dev->write_reg(dev->context, dev->interface, addr, tmp, LEN_8);
     return ER_SUCCESS;
 }
+
+/**
+ * @brief	Write an uint8_t to a device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	The data to be written.
+ */
 util_error_t device_write_u8(device_t * dev, uint32_t addr, uint8_t data)
 {
     uint8_t tmp[LEN_8];
@@ -197,6 +297,14 @@ util_error_t device_write_u8(device_t * dev, uint32_t addr, uint8_t data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Read from an int32_t device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	A pointer to the data to be read.
+ */
 util_error_t device_read_i32(device_t * dev, uint32_t addr, int32_t* data)
 {
     uint8_t tmp[LEN_32];
@@ -204,6 +312,15 @@ util_error_t device_read_i32(device_t * dev, uint32_t addr, int32_t* data)
     *data = util_decode_i32(tmp);
     return ER_SUCCESS;
 }
+
+/**
+ * @brief	Read from an uint32_t device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	A pointer to the data to be read.
+ */
 util_error_t device_read_u32(device_t * dev, uint32_t addr, uint32_t* data)
 {
     uint8_t tmp[LEN_32];
@@ -212,6 +329,14 @@ util_error_t device_read_u32(device_t * dev, uint32_t addr, uint32_t* data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Read from an int16_t device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	A pointer to the data to be read.
+ */
 util_error_t device_read_i16(device_t * dev, uint32_t addr, int16_t* data)
 {
     uint8_t tmp[LEN_16];
@@ -220,6 +345,14 @@ util_error_t device_read_i16(device_t * dev, uint32_t addr, int16_t* data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Read from an uint16_t device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	A pointer to the data to be read.
+ */
 util_error_t device_read_u16(device_t * dev, uint32_t addr, uint16_t* data)
 {
     uint8_t tmp[LEN_16];
@@ -228,6 +361,14 @@ util_error_t device_read_u16(device_t * dev, uint32_t addr, uint16_t* data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Read from an int8_t device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	A pointer to the data to be read.
+ */
 util_error_t device_read_i8(device_t * dev, uint32_t addr, int8_t* data)
 {
     uint8_t tmp[LEN_8];
@@ -236,6 +377,14 @@ util_error_t device_read_i8(device_t * dev, uint32_t addr, int8_t* data)
     return ER_SUCCESS;
 }
 
+/**
+ * @brief	Read from an uint8_t device register.
+ * @details
+ *
+ * @param	dev		A pointer to the desired device.
+ * @param	addr	The address of the register.
+ * @param	data	A pointer to the data to be read.
+ */
 util_error_t device_read_u8(device_t * dev, uint32_t addr, uint8_t* data)
 {
     uint8_t tmp[LEN_8];
