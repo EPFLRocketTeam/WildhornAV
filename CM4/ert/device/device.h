@@ -60,16 +60,16 @@ typedef struct device_deamon {
 	device_interface_t * interfaces[DEVICE_MAX_INTERFACES_PER_DEAMON];
 	void * context;
 	util_error_t (*data_rdy)(void*);
-}device_deamon_t;
+}device_daemon_t;
 
 typedef struct device {
     uint32_t id;
     device_interface_t * interface;
     void * context;
     /*arguments: context, interface, addr, data, data_len*/
-    util_error_t (*read_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t);
+    util_error_t (*read_reg)(void*, device_interface_t *, uint32_t, uint8_t *, uint32_t);
     /*arguments: context, interface, addr, data, data_len*/
-    util_error_t (*write_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t);
+    util_error_t (*write_reg)(void*, device_interface_t *, uint32_t, uint8_t *, uint32_t);
 }device_t;
 
 
@@ -89,10 +89,10 @@ extern "C"{
 util_error_t device_create(	device_t * dev,
 						void * context,
 						device_interface_t * interface,
-						util_error_t (*read_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t),
-						util_error_t (*write_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t));
+						util_error_t (*read_reg)(void*, device_interface_t *, uint32_t, uint8_t *, uint32_t),
+						util_error_t (*write_reg)(void*, device_interface_t *, uint32_t, uint8_t *, uint32_t));
 
-util_error_t device_deamon_create(	device_deamon_t * deamon,
+util_error_t device_deamon_create(	device_daemon_t * deamon,
 								const char * name,
 								uint32_t prio,
 								void * inst,
@@ -100,7 +100,7 @@ util_error_t device_deamon_create(	device_deamon_t * deamon,
 
 util_error_t device_interface_create(   device_interface_t * interface,
                             		void * inst,
-									device_deamon_t * deamon,
+									device_daemon_t * deamon,
 									util_error_t (*send)(void*, uint8_t*, uint32_t),
 									util_error_t (*recv)(void*, uint8_t*, uint32_t*),
 									util_error_t (*handle_data)(void*, void*));

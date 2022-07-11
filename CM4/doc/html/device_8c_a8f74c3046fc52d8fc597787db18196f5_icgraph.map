@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Initialize a device interface instance." alt="" coords="353,81,532,108"/>
 <area shape="rect" id="node2" href="$debug_8c.html#afe1b638971fa81c93343301dac156183" title=" " alt="" coords="183,5,274,32"/>
 <area shape="rect" id="node3" href="$hostproc_8c.html#ae4468a3e6e2edab7e071064a558a3aab" title=" " alt="" coords="175,56,282,83"/>
-<area shape="rect" id="node5" href="$i2c_8c.html#a5730d9445429351b9f750084c5cb5aae" title=" " alt="" coords="194,107,263,133"/>
+<area shape="rect" id="node5" href="$i2c_8c.html#a5730d9445429351b9f750084c5cb5aae" title="Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which a..." alt="" coords="194,107,263,133"/>
 <area shape="rect" id="node6" href="$serial_8c.html#a035895fca7f038e31817520a194d3ef7" title=" " alt="" coords="152,157,305,184"/>
 <area shape="rect" id="node4" href="$threads_8c.html#aa5c157013c08e62ad9eb931165c9663b" title="Initialize all the threads of Wildhorn AV." alt="" coords="5,81,104,108"/>
 </map>

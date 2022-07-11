@@ -45,7 +45,7 @@
  *	VARIABLES
  **********************/
 
-static device_deamon_t serial_deamon;
+static device_daemon_t serial_deamon;
 
 static device_interface_t feedback_interface;
 
@@ -96,7 +96,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 
 
-device_deamon_t * serial_get_deamon(void)
+device_daemon_t * serial_get_deamon(void)
 {
 	return &serial_deamon;
 }

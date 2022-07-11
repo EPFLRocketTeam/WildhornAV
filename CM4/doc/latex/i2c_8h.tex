@@ -20,21 +20,21 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structi2c__interface__context}{i2c\+\_\+interface\+\_\+context}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em I2C interface context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \mbox{\hyperlink{structi2c__interface__context}{i2c\+\_\+interface\+\_\+context}} \mbox{\hyperlink{i2c_8h_a2524fd243c29c32582e55cf0619c591c}{i2c\+\_\+interface\+\_\+context\+\_\+t}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em I2C interface context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{i2c_8h_a5730d9445429351b9f750084c5cb5aae}{i2c\+\_\+init}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which are present on the hostboards. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{i2c_8h_a9315e3dfa8912309ae77398caa91b2ef}{i2c\+\_\+spi\+\_\+guard}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em This funcion disables completely the SPI for hardware saveguard. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$ \mbox{\hyperlink{i2c_8h_adf1cc79fc1fd312feb2f87adf80e1c93}{i2c\+\_\+get\+\_\+sensor\+\_\+interface}} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Getter for the interface associated with the sensors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -46,6 +46,10 @@ void \mbox{\hyperlink{i2c_8h_a9315e3dfa8912309ae77398caa91b2ef}{i2c\+\_\+spi\+\_
 
 
 
+I2C interface context structure. 
+
+this only contains the HAL I2C handle pointer. 
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{i2c_8h_adf1cc79fc1fd312feb2f87adf80e1c93}\label{i2c_8h_adf1cc79fc1fd312feb2f87adf80e1c93}} 
 \index{i2c.h@{i2c.h}!i2c\_get\_sensor\_interface@{i2c\_get\_sensor\_interface}}
@@ -55,13 +59,21 @@ void \mbox{\hyperlink{i2c_8h_a9315e3dfa8912309ae77398caa91b2ef}{i2c\+\_\+spi\+\_
 
 
 
+Getter for the interface associated with the sensors. 
+
+\begin{DoxyReturn}{Returns}
+The pointer to the sensor interface object 
+\end{DoxyReturn}
+
+
 References sensor\+\_\+interface.
 
 
 
 Referenced by i2c\+\_\+sensor\+\_\+init().
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -76,20 +88,26 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
+Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which are present on the hostboards. 
+
+
+
 References device\+\_\+interface\+\_\+create(), ER\+\_\+\+SUCCESS, sensor\+\_\+interface, and sensor\+\_\+interface\+\_\+context.
 
 
 
 Referenced by threads\+\_\+init().
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=302pt]{i2c_8h_a5730d9445429351b9f750084c5cb5aae_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -104,9 +122,14 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
+This funcion disables completely the SPI for hardware saveguard. 
+
+
+
 Referenced by threads\+\_\+init().
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

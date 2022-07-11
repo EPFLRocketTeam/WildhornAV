@@ -5,929 +5,903 @@
 \contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
 \contentsline {chapter}{\numberline {3}Data Structure Documentation}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}control Struct Reference}{5}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Field Documentation}{5}{subsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}state}{5}{subsubsection.3.1.2.1}%
-\contentsline {section}{\numberline {3.2}debug\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{6}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{6}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.1.1}Field Documentation}{5}{subsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1.1}state}{5}{subsubsection.3.1.1.1}%
+\contentsline {section}{\numberline {3.2}debug\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{5}{section.3.2}%
 \contentsline {section}{\numberline {3.3}debug\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{6}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{6}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Field Documentation}{6}{subsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.1}msv2}{7}{subsubsection.3.3.2.1}%
+\contentsline {subsection}{\numberline {3.3.1}Field Documentation}{6}{subsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}msv2}{6}{subsubsection.3.3.1.1}%
 \contentsline {section}{\numberline {3.4}device Struct Reference}{7}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{7}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Field Documentation}{7}{subsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.1}context}{8}{subsubsection.3.4.2.1}%
-\contentsline {subsubsection}{\numberline {3.4.2.2}id}{8}{subsubsection.3.4.2.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.3}interface}{8}{subsubsection.3.4.2.3}%
-\contentsline {subsubsection}{\numberline {3.4.2.4}read\_reg}{8}{subsubsection.3.4.2.4}%
-\contentsline {subsubsection}{\numberline {3.4.2.5}write\_reg}{9}{subsubsection.3.4.2.5}%
-\contentsline {section}{\numberline {3.5}device\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deamon Struct Reference}{9}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{9}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Field Documentation}{10}{subsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.2.1}buffer}{10}{subsubsection.3.5.2.1}%
-\contentsline {subsubsection}{\numberline {3.5.2.2}context}{10}{subsubsection.3.5.2.2}%
-\contentsline {subsubsection}{\numberline {3.5.2.3}data\_rdy}{10}{subsubsection.3.5.2.3}%
-\contentsline {subsubsection}{\numberline {3.5.2.4}handle}{10}{subsubsection.3.5.2.4}%
-\contentsline {subsubsection}{\numberline {3.5.2.5}id}{10}{subsubsection.3.5.2.5}%
-\contentsline {subsubsection}{\numberline {3.5.2.6}interfaces}{11}{subsubsection.3.5.2.6}%
-\contentsline {subsubsection}{\numberline {3.5.2.7}interfaces\_count}{11}{subsubsection.3.5.2.7}%
-\contentsline {subsubsection}{\numberline {3.5.2.8}stack}{11}{subsubsection.3.5.2.8}%
-\contentsline {section}{\numberline {3.6}device\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface Struct Reference}{11}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{11}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Field Documentation}{12}{subsection.3.6.2}%
-\contentsline {subsubsection}{\numberline {3.6.2.1}context}{12}{subsubsection.3.6.2.1}%
-\contentsline {subsubsection}{\numberline {3.6.2.2}handle\_data}{12}{subsubsection.3.6.2.2}%
-\contentsline {subsubsection}{\numberline {3.6.2.3}id}{12}{subsubsection.3.6.2.3}%
-\contentsline {subsubsection}{\numberline {3.6.2.4}recv}{12}{subsubsection.3.6.2.4}%
-\contentsline {subsubsection}{\numberline {3.6.2.5}send}{13}{subsubsection.3.6.2.5}%
-\contentsline {section}{\numberline {3.7}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}request Struct Reference}{13}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{13}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Field Documentation}{13}{subsection.3.7.2}%
-\contentsline {subsubsection}{\numberline {3.7.2.1}dst}{13}{subsubsection.3.7.2.1}%
-\contentsline {subsubsection}{\numberline {3.7.2.2}dst\_inc}{13}{subsubsection.3.7.2.2}%
-\contentsline {subsubsection}{\numberline {3.7.2.3}src}{14}{subsubsection.3.7.2.3}%
-\contentsline {subsubsection}{\numberline {3.7.2.4}src\_inc}{14}{subsubsection.3.7.2.4}%
-\contentsline {subsubsection}{\numberline {3.7.2.5}tranfser\_len}{14}{subsubsection.3.7.2.5}%
-\contentsline {section}{\numberline {3.8}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}scheduler\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dev Struct Reference}{14}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{15}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Field Documentation}{15}{subsection.3.8.2}%
-\contentsline {subsubsection}{\numberline {3.8.2.1}free\_stream\_count}{15}{subsubsection.3.8.2.1}%
-\contentsline {subsubsection}{\numberline {3.8.2.2}stream\_count}{15}{subsubsection.3.8.2.2}%
-\contentsline {subsubsection}{\numberline {3.8.2.3}streams}{15}{subsubsection.3.8.2.3}%
-\contentsline {section}{\numberline {3.9}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}stream\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}config Struct Reference}{16}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{16}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Field Documentation}{16}{subsection.3.9.2}%
-\contentsline {subsubsection}{\numberline {3.9.2.1}direction}{16}{subsubsection.3.9.2.1}%
-\contentsline {subsubsection}{\numberline {3.9.2.2}dmamux\_request\_number}{16}{subsubsection.3.9.2.2}%
-\contentsline {subsubsection}{\numberline {3.9.2.3}m0\_addr}{17}{subsubsection.3.9.2.3}%
-\contentsline {subsubsection}{\numberline {3.9.2.4}m1\_addr}{17}{subsubsection.3.9.2.4}%
-\contentsline {subsubsection}{\numberline {3.9.2.5}p\_addr}{17}{subsubsection.3.9.2.5}%
-\contentsline {subsubsection}{\numberline {3.9.2.6}peripheral\_flow\_control}{17}{subsubsection.3.9.2.6}%
-\contentsline {subsubsection}{\numberline {3.9.2.7}priority}{17}{subsubsection.3.9.2.7}%
-\contentsline {subsubsection}{\numberline {3.9.2.8}stream\_number}{18}{subsubsection.3.9.2.8}%
-\contentsline {subsubsection}{\numberline {3.9.2.9}transfer\_cplt}{18}{subsubsection.3.9.2.9}%
-\contentsline {subsubsection}{\numberline {3.9.2.10}transfer\_error}{18}{subsubsection.3.9.2.10}%
-\contentsline {subsubsection}{\numberline {3.9.2.11}transfer\_half}{18}{subsubsection.3.9.2.11}%
-\contentsline {subsubsection}{\numberline {3.9.2.12}transfer\_size}{18}{subsubsection.3.9.2.12}%
-\contentsline {subsubsection}{\numberline {3.9.2.13}user\_context}{19}{subsubsection.3.9.2.13}%
-\contentsline {section}{\numberline {3.10}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}stream\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dev Struct Reference}{19}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{19}{subsection.3.10.1}%
-\contentsline {subsection}{\numberline {3.10.2}Field Documentation}{19}{subsection.3.10.2}%
-\contentsline {subsubsection}{\numberline {3.10.2.1}dma}{19}{subsubsection.3.10.2.1}%
-\contentsline {subsubsection}{\numberline {3.10.2.2}dma\_stream}{20}{subsubsection.3.10.2.2}%
-\contentsline {subsubsection}{\numberline {3.10.2.3}dmamux\_channel}{20}{subsubsection.3.10.2.3}%
-\contentsline {subsubsection}{\numberline {3.10.2.4}dmamux\_channel\_status}{20}{subsubsection.3.10.2.4}%
-\contentsline {subsubsection}{\numberline {3.10.2.5}number}{20}{subsubsection.3.10.2.5}%
-\contentsline {subsubsection}{\numberline {3.10.2.6}state}{20}{subsubsection.3.10.2.6}%
-\contentsline {subsubsection}{\numberline {3.10.2.7}transfer\_cplt}{21}{subsubsection.3.10.2.7}%
-\contentsline {subsubsection}{\numberline {3.10.2.8}transfer\_error}{21}{subsubsection.3.10.2.8}%
-\contentsline {subsubsection}{\numberline {3.10.2.9}transfer\_half}{21}{subsubsection.3.10.2.9}%
-\contentsline {subsubsection}{\numberline {3.10.2.10}user\_context}{21}{subsubsection.3.10.2.10}%
-\contentsline {section}{\numberline {3.11}gpio\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}config Struct Reference}{21}{section.3.11}%
-\contentsline {subsection}{\numberline {3.11.1}Detailed Description}{22}{subsection.3.11.1}%
-\contentsline {subsection}{\numberline {3.11.2}Field Documentation}{22}{subsection.3.11.2}%
-\contentsline {subsubsection}{\numberline {3.11.2.1}alternate}{22}{subsubsection.3.11.2.1}%
-\contentsline {subsubsection}{\numberline {3.11.2.2}bias}{22}{subsubsection.3.11.2.2}%
-\contentsline {subsubsection}{\numberline {3.11.2.3}drive}{22}{subsubsection.3.11.2.3}%
-\contentsline {subsubsection}{\numberline {3.11.2.4}mode}{23}{subsubsection.3.11.2.4}%
-\contentsline {subsubsection}{\numberline {3.11.2.5}speed}{23}{subsubsection.3.11.2.5}%
-\contentsline {section}{\numberline {3.12}hostproc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{23}{section.3.12}%
-\contentsline {subsection}{\numberline {3.12.1}Detailed Description}{23}{subsection.3.12.1}%
-\contentsline {subsection}{\numberline {3.12.2}Field Documentation}{23}{subsection.3.12.2}%
-\contentsline {subsubsection}{\numberline {3.12.2.1}rx\_once}{23}{subsubsection.3.12.2.1}%
-\contentsline {subsubsection}{\numberline {3.12.2.2}uart}{24}{subsubsection.3.12.2.2}%
-\contentsline {section}{\numberline {3.13}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{24}{section.3.13}%
-\contentsline {subsection}{\numberline {3.13.1}Detailed Description}{24}{subsection.3.13.1}%
-\contentsline {subsection}{\numberline {3.13.2}Field Documentation}{24}{subsection.3.13.2}%
-\contentsline {subsubsection}{\numberline {3.13.2.1}i2c}{24}{subsubsection.3.13.2.1}%
-\contentsline {section}{\numberline {3.14}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{24}{section.3.14}%
-\contentsline {subsection}{\numberline {3.14.1}Detailed Description}{25}{subsection.3.14.1}%
-\contentsline {subsection}{\numberline {3.14.2}Field Documentation}{25}{subsection.3.14.2}%
-\contentsline {subsubsection}{\numberline {3.14.2.1}device\_address}{25}{subsubsection.3.14.2.1}%
-\contentsline {section}{\numberline {3.15}led\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}color Struct Reference}{25}{section.3.15}%
-\contentsline {subsection}{\numberline {3.15.1}Detailed Description}{25}{subsection.3.15.1}%
-\contentsline {subsection}{\numberline {3.15.2}Field Documentation}{25}{subsection.3.15.2}%
-\contentsline {subsubsection}{\numberline {3.15.2.1}b}{25}{subsubsection.3.15.2.1}%
-\contentsline {subsubsection}{\numberline {3.15.2.2}g}{26}{subsubsection.3.15.2.2}%
-\contentsline {subsubsection}{\numberline {3.15.2.3}r}{26}{subsubsection.3.15.2.3}%
-\contentsline {section}{\numberline {3.16}MSV2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}INST Struct Reference}{26}{section.3.16}%
-\contentsline {subsection}{\numberline {3.16.1}Detailed Description}{27}{subsection.3.16.1}%
-\contentsline {subsection}{\numberline {3.16.2}Field Documentation}{27}{subsection.3.16.2}%
-\contentsline {subsubsection}{\numberline {3.16.2.1}id}{27}{subsubsection.3.16.2.1}%
-\contentsline {subsubsection}{\numberline {3.16.2.2}rx}{27}{subsubsection.3.16.2.2}%
-\contentsline {subsubsection}{\numberline {3.16.2.3}tx}{27}{subsubsection.3.16.2.3}%
-\contentsline {section}{\numberline {3.17}MSV2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}RX\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DATA Struct Reference}{27}{section.3.17}%
-\contentsline {subsection}{\numberline {3.17.1}Detailed Description}{28}{subsection.3.17.1}%
-\contentsline {subsection}{\numberline {3.17.2}Field Documentation}{28}{subsection.3.17.2}%
-\contentsline {subsubsection}{\numberline {3.17.2.1}counter}{28}{subsubsection.3.17.2.1}%
-\contentsline {subsubsection}{\numberline {3.17.2.2}crc}{28}{subsubsection.3.17.2.2}%
-\contentsline {subsubsection}{\numberline {3.17.2.3}crc\_data}{28}{subsubsection.3.17.2.3}%
-\contentsline {subsubsection}{\numberline {3.17.2.4}data}{29}{subsubsection.3.17.2.4}%
-\contentsline {subsubsection}{\numberline {3.17.2.5}data\_len}{29}{subsubsection.3.17.2.5}%
-\contentsline {subsubsection}{\numberline {3.17.2.6}escape}{29}{subsubsection.3.17.2.6}%
-\contentsline {subsubsection}{\numberline {3.17.2.7}length}{29}{subsubsection.3.17.2.7}%
-\contentsline {subsubsection}{\numberline {3.17.2.8}opcode}{29}{subsubsection.3.17.2.8}%
-\contentsline {subsubsection}{\numberline {3.17.2.9}state}{30}{subsubsection.3.17.2.9}%
-\contentsline {section}{\numberline {3.18}MSV2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TX\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DATA Struct Reference}{30}{section.3.18}%
-\contentsline {subsection}{\numberline {3.18.1}Detailed Description}{30}{subsection.3.18.1}%
-\contentsline {subsection}{\numberline {3.18.2}Field Documentation}{30}{subsection.3.18.2}%
-\contentsline {subsubsection}{\numberline {3.18.2.1}crc}{30}{subsubsection.3.18.2.1}%
-\contentsline {subsubsection}{\numberline {3.18.2.2}crc\_data}{30}{subsubsection.3.18.2.2}%
-\contentsline {subsubsection}{\numberline {3.18.2.3}data}{31}{subsubsection.3.18.2.3}%
-\contentsline {subsubsection}{\numberline {3.18.2.4}data\_len}{31}{subsubsection.3.18.2.4}%
-\contentsline {subsubsection}{\numberline {3.18.2.5}opcode}{31}{subsubsection.3.18.2.5}%
-\contentsline {section}{\numberline {3.19}note Struct Reference}{31}{section.3.19}%
-\contentsline {subsection}{\numberline {3.19.1}Detailed Description}{31}{subsection.3.19.1}%
-\contentsline {subsection}{\numberline {3.19.2}Field Documentation}{32}{subsection.3.19.2}%
-\contentsline {subsubsection}{\numberline {3.19.2.1}freq}{32}{subsubsection.3.19.2.1}%
-\contentsline {subsubsection}{\numberline {3.19.2.2}time}{32}{subsubsection.3.19.2.2}%
-\contentsline {section}{\numberline {3.20}od\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}entry\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{32}{section.3.20}%
-\contentsline {subsection}{\numberline {3.20.1}Detailed Description}{32}{subsection.3.20.1}%
-\contentsline {subsection}{\numberline {3.20.2}Field Documentation}{32}{subsection.3.20.2}%
-\contentsline {subsubsection}{\numberline {3.20.2.1}data}{32}{subsubsection.3.20.2.1}%
-\contentsline {subsubsection}{\numberline {3.20.2.2}data\_id}{33}{subsubsection.3.20.2.2}%
-\contentsline {subsubsection}{\numberline {3.20.2.3}size}{33}{subsubsection.3.20.2.3}%
-\contentsline {section}{\numberline {3.21}od\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}frame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{33}{section.3.21}%
-\contentsline {subsection}{\numberline {3.21.1}Detailed Description}{33}{subsection.3.21.1}%
-\contentsline {subsection}{\numberline {3.21.2}Field Documentation}{33}{subsection.3.21.2}%
-\contentsline {subsubsection}{\numberline {3.21.2.1}data}{33}{subsubsection.3.21.2.1}%
-\contentsline {subsubsection}{\numberline {3.21.2.2}data\_id}{34}{subsubsection.3.21.2.2}%
-\contentsline {subsubsection}{\numberline {3.21.2.3}size}{34}{subsubsection.3.21.2.3}%
-\contentsline {section}{\numberline {3.22}packet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}def Struct Reference}{34}{section.3.22}%
-\contentsline {subsection}{\numberline {3.22.1}Detailed Description}{34}{subsection.3.22.1}%
-\contentsline {subsection}{\numberline {3.22.2}Field Documentation}{34}{subsection.3.22.2}%
-\contentsline {subsubsection}{\numberline {3.22.2.1}len}{34}{subsubsection.3.22.2.1}%
-\contentsline {subsubsection}{\numberline {3.22.2.2}opcode}{35}{subsubsection.3.22.2.2}%
-\contentsline {section}{\numberline {3.23}serial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deamon\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{35}{section.3.23}%
-\contentsline {subsection}{\numberline {3.23.1}Detailed Description}{35}{subsection.3.23.1}%
-\contentsline {subsection}{\numberline {3.23.2}Field Documentation}{35}{subsection.3.23.2}%
-\contentsline {subsubsection}{\numberline {3.23.2.1}rx\_sem}{35}{subsubsection.3.23.2.1}%
-\contentsline {subsubsection}{\numberline {3.23.2.2}rx\_sem\_buffer}{35}{subsubsection.3.23.2.2}%
-\contentsline {section}{\numberline {3.24}serial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{36}{section.3.24}%
-\contentsline {subsection}{\numberline {3.24.1}Detailed Description}{36}{subsection.3.24.1}%
-\contentsline {subsection}{\numberline {3.24.2}Field Documentation}{36}{subsection.3.24.2}%
-\contentsline {subsubsection}{\numberline {3.24.2.1}protocol}{36}{subsubsection.3.24.2.1}%
-\contentsline {subsubsection}{\numberline {3.24.2.2}rx\_buffer}{37}{subsubsection.3.24.2.2}%
-\contentsline {subsubsection}{\numberline {3.24.2.3}rx\_data}{37}{subsubsection.3.24.2.3}%
-\contentsline {subsubsection}{\numberline {3.24.2.4}rx\_data\_len}{37}{subsubsection.3.24.2.4}%
-\contentsline {subsubsection}{\numberline {3.24.2.5}rx\_fragment}{37}{subsubsection.3.24.2.5}%
-\contentsline {subsubsection}{\numberline {3.24.2.6}tx\_data}{37}{subsubsection.3.24.2.6}%
-\contentsline {subsubsection}{\numberline {3.24.2.7}uart}{38}{subsubsection.3.24.2.7}%
-\contentsline {section}{\numberline {3.25}util\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}buffer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}i16 Struct Reference}{38}{section.3.25}%
-\contentsline {subsection}{\numberline {3.25.1}Detailed Description}{38}{subsection.3.25.1}%
-\contentsline {subsection}{\numberline {3.25.2}Field Documentation}{38}{subsection.3.25.2}%
-\contentsline {subsubsection}{\numberline {3.25.2.1}bfr\_len}{38}{subsubsection.3.25.2.1}%
-\contentsline {subsubsection}{\numberline {3.25.2.2}buffer}{38}{subsubsection.3.25.2.2}%
-\contentsline {subsubsection}{\numberline {3.25.2.3}c\_ix}{39}{subsubsection.3.25.2.3}%
-\contentsline {subsubsection}{\numberline {3.25.2.4}l\_ix}{39}{subsubsection.3.25.2.4}%
-\contentsline {section}{\numberline {3.26}util\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}buffer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}u16 Struct Reference}{39}{section.3.26}%
-\contentsline {subsection}{\numberline {3.26.1}Detailed Description}{39}{subsection.3.26.1}%
-\contentsline {subsection}{\numberline {3.26.2}Field Documentation}{39}{subsection.3.26.2}%
-\contentsline {subsubsection}{\numberline {3.26.2.1}bfr\_len}{39}{subsubsection.3.26.2.1}%
-\contentsline {subsubsection}{\numberline {3.26.2.2}buffer}{40}{subsubsection.3.26.2.2}%
-\contentsline {subsubsection}{\numberline {3.26.2.3}c\_ix}{40}{subsubsection.3.26.2.3}%
-\contentsline {subsubsection}{\numberline {3.26.2.4}l\_ix}{40}{subsubsection.3.26.2.4}%
-\contentsline {section}{\numberline {3.27}util\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}buffer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}u8 Struct Reference}{40}{section.3.27}%
-\contentsline {subsection}{\numberline {3.27.1}Detailed Description}{40}{subsection.3.27.1}%
-\contentsline {subsection}{\numberline {3.27.2}Field Documentation}{41}{subsection.3.27.2}%
-\contentsline {subsubsection}{\numberline {3.27.2.1}bfr\_len}{41}{subsubsection.3.27.2.1}%
-\contentsline {subsubsection}{\numberline {3.27.2.2}buffer}{41}{subsubsection.3.27.2.2}%
-\contentsline {subsubsection}{\numberline {3.27.2.3}c\_ix}{41}{subsubsection.3.27.2.3}%
-\contentsline {subsubsection}{\numberline {3.27.2.4}l\_ix}{41}{subsubsection.3.27.2.4}%
-\contentsline {chapter}{\numberline {4}File Documentation}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}accelerometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{43}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Function Documentation}{43}{subsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.1.1}accelerometer\_init()}{44}{subsubsection.4.1.1.1}%
-\contentsline {section}{\numberline {4.2}accelerometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{44}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Function Documentation}{45}{subsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.1.1}accelerometer\_init()}{45}{subsubsection.4.2.1.1}%
-\contentsline {section}{\numberline {4.3}barometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{45}{section.4.3}%
-\contentsline {section}{\numberline {4.4}barometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{45}{section.4.4}%
-\contentsline {section}{\numberline {4.5}buzzer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{46}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Macro Definition Documentation}{47}{subsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.1.1}BUZZER\_PIN}{47}{subsubsection.4.5.1.1}%
-\contentsline {subsubsection}{\numberline {4.5.1.2}BUZZER\_PORT}{47}{subsubsection.4.5.1.2}%
-\contentsline {subsubsection}{\numberline {4.5.1.3}COMPUTE\_NOTE}{47}{subsubsection.4.5.1.3}%
-\contentsline {subsubsection}{\numberline {4.5.1.4}COMPUTE\_RYTM}{47}{subsubsection.4.5.1.4}%
-\contentsline {subsubsection}{\numberline {4.5.1.5}NOTE\_PRESC}{48}{subsubsection.4.5.1.5}%
-\contentsline {subsubsection}{\numberline {4.5.1.6}NOTE\_TIMER}{48}{subsubsection.4.5.1.6}%
-\contentsline {subsubsection}{\numberline {4.5.1.7}NOTE\_TIMER\_DEV}{48}{subsubsection.4.5.1.7}%
-\contentsline {subsubsection}{\numberline {4.5.1.8}RYTM\_MS}{48}{subsubsection.4.5.1.8}%
-\contentsline {subsubsection}{\numberline {4.5.1.9}RYTM\_PRESC}{48}{subsubsection.4.5.1.9}%
-\contentsline {subsubsection}{\numberline {4.5.1.10}RYTM\_TIMER}{48}{subsubsection.4.5.1.10}%
-\contentsline {subsubsection}{\numberline {4.5.1.11}RYTM\_TIMER\_DEV}{49}{subsubsection.4.5.1.11}%
-\contentsline {subsubsection}{\numberline {4.5.1.12}TIMER\_FREQ}{49}{subsubsection.4.5.1.12}%
-\contentsline {subsubsection}{\numberline {4.5.1.13}TIMER\_TRIM}{49}{subsubsection.4.5.1.13}%
-\contentsline {subsection}{\numberline {4.5.2}Function Documentation}{49}{subsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.2.1}buzzer\_disable()}{49}{subsubsection.4.5.2.1}%
-\contentsline {subsubsection}{\numberline {4.5.2.2}buzzer\_enable()}{49}{subsubsection.4.5.2.2}%
-\contentsline {subsubsection}{\numberline {4.5.2.3}buzzer\_init()}{50}{subsubsection.4.5.2.3}%
-\contentsline {subsubsection}{\numberline {4.5.2.4}buzzer\_note\_interrupt()}{50}{subsubsection.4.5.2.4}%
-\contentsline {subsubsection}{\numberline {4.5.2.5}buzzer\_rytm\_interrupt()}{51}{subsubsection.4.5.2.5}%
-\contentsline {subsection}{\numberline {4.5.3}Variable Documentation}{51}{subsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.3.1}melody\_active}{51}{subsubsection.4.5.3.1}%
-\contentsline {subsubsection}{\numberline {4.5.3.2}melody\_state}{51}{subsubsection.4.5.3.2}%
-\contentsline {subsubsection}{\numberline {4.5.3.3}state}{52}{subsubsection.4.5.3.3}%
-\contentsline {section}{\numberline {4.6}buzzer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{52}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Function Documentation}{53}{subsection.4.6.1}%
-\contentsline {subsubsection}{\numberline {4.6.1.1}buzzer\_disable()}{53}{subsubsection.4.6.1.1}%
-\contentsline {subsubsection}{\numberline {4.6.1.2}buzzer\_enable()}{53}{subsubsection.4.6.1.2}%
-\contentsline {subsubsection}{\numberline {4.6.1.3}buzzer\_init()}{53}{subsubsection.4.6.1.3}%
-\contentsline {subsubsection}{\numberline {4.6.1.4}buzzer\_note\_interrupt()}{54}{subsubsection.4.6.1.4}%
-\contentsline {subsubsection}{\numberline {4.6.1.5}buzzer\_rytm\_interrupt()}{54}{subsubsection.4.6.1.5}%
-\contentsline {section}{\numberline {4.7}control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{55}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Macro Definition Documentation}{57}{subsection.4.7.1}%
-\contentsline {subsubsection}{\numberline {4.7.1.1}CONTROL\_HEART\_BEAT}{57}{subsubsection.4.7.1.1}%
-\contentsline {subsection}{\numberline {4.7.2}Typedef Documentation}{57}{subsection.4.7.2}%
-\contentsline {subsubsection}{\numberline {4.7.2.1}control\_state\_t}{57}{subsubsection.4.7.2.1}%
-\contentsline {subsubsection}{\numberline {4.7.2.2}control\_t}{57}{subsubsection.4.7.2.2}%
-\contentsline {subsection}{\numberline {4.7.3}Enumeration Type Documentation}{57}{subsection.4.7.3}%
-\contentsline {subsubsection}{\numberline {4.7.3.1}control\_state}{57}{subsubsection.4.7.3.1}%
-\contentsline {subsection}{\numberline {4.7.4}Function Documentation}{58}{subsection.4.7.4}%
-\contentsline {subsubsection}{\numberline {4.7.4.1}control\_abort\_run()}{58}{subsubsection.4.7.4.1}%
-\contentsline {subsubsection}{\numberline {4.7.4.2}control\_abort\_start()}{58}{subsubsection.4.7.4.2}%
-\contentsline {subsubsection}{\numberline {4.7.4.3}control\_apogee\_run()}{59}{subsubsection.4.7.4.3}%
-\contentsline {subsubsection}{\numberline {4.7.4.4}control\_apogee\_start()}{59}{subsubsection.4.7.4.4}%
-\contentsline {subsubsection}{\numberline {4.7.4.5}control\_armed\_run()}{59}{subsubsection.4.7.4.5}%
-\contentsline {subsubsection}{\numberline {4.7.4.6}control\_armed\_start()}{59}{subsubsection.4.7.4.6}%
-\contentsline {subsubsection}{\numberline {4.7.4.7}control\_ballistic\_run()}{60}{subsubsection.4.7.4.7}%
-\contentsline {subsubsection}{\numberline {4.7.4.8}control\_ballistic\_start()}{60}{subsubsection.4.7.4.8}%
-\contentsline {subsubsection}{\numberline {4.7.4.9}control\_calibration\_run()}{60}{subsubsection.4.7.4.9}%
-\contentsline {subsubsection}{\numberline {4.7.4.10}control\_calibration\_start()}{60}{subsubsection.4.7.4.10}%
-\contentsline {subsubsection}{\numberline {4.7.4.11}control\_coast\_run()}{61}{subsubsection.4.7.4.11}%
-\contentsline {subsubsection}{\numberline {4.7.4.12}control\_coast\_start()}{61}{subsubsection.4.7.4.12}%
-\contentsline {subsubsection}{\numberline {4.7.4.13}control\_drogue\_run()}{61}{subsubsection.4.7.4.13}%
-\contentsline {subsubsection}{\numberline {4.7.4.14}control\_drogue\_start()}{61}{subsubsection.4.7.4.14}%
-\contentsline {subsubsection}{\numberline {4.7.4.15}control\_error\_run()}{62}{subsubsection.4.7.4.15}%
-\contentsline {subsubsection}{\numberline {4.7.4.16}control\_error\_start()}{62}{subsubsection.4.7.4.16}%
-\contentsline {subsubsection}{\numberline {4.7.4.17}control\_event\_run()}{62}{subsubsection.4.7.4.17}%
-\contentsline {subsubsection}{\numberline {4.7.4.18}control\_event\_start()}{62}{subsubsection.4.7.4.18}%
-\contentsline {subsubsection}{\numberline {4.7.4.19}control\_idle\_run()}{63}{subsubsection.4.7.4.19}%
-\contentsline {subsubsection}{\numberline {4.7.4.20}control\_idle\_start()}{63}{subsubsection.4.7.4.20}%
-\contentsline {subsubsection}{\numberline {4.7.4.21}control\_main\_run()}{63}{subsubsection.4.7.4.21}%
-\contentsline {subsubsection}{\numberline {4.7.4.22}control\_main\_start()}{63}{subsubsection.4.7.4.22}%
-\contentsline {subsubsection}{\numberline {4.7.4.23}control\_powered\_run()}{64}{subsubsection.4.7.4.23}%
-\contentsline {subsubsection}{\numberline {4.7.4.24}control\_powered\_start()}{64}{subsubsection.4.7.4.24}%
-\contentsline {subsubsection}{\numberline {4.7.4.25}control\_supersonic\_run()}{64}{subsubsection.4.7.4.25}%
-\contentsline {subsubsection}{\numberline {4.7.4.26}control\_supersonic\_start()}{64}{subsubsection.4.7.4.26}%
-\contentsline {subsubsection}{\numberline {4.7.4.27}control\_thread()}{64}{subsubsection.4.7.4.27}%
-\contentsline {subsubsection}{\numberline {4.7.4.28}control\_touchdown\_run()}{65}{subsubsection.4.7.4.28}%
-\contentsline {subsubsection}{\numberline {4.7.4.29}control\_touchdown\_start()}{66}{subsubsection.4.7.4.29}%
-\contentsline {subsection}{\numberline {4.7.5}Variable Documentation}{66}{subsection.4.7.5}%
-\contentsline {subsubsection}{\numberline {4.7.5.1}control}{66}{subsubsection.4.7.5.1}%
-\contentsline {section}{\numberline {4.8}control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{66}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Function Documentation}{67}{subsection.4.8.1}%
-\contentsline {subsubsection}{\numberline {4.8.1.1}control\_thread()}{67}{subsubsection.4.8.1.1}%
-\contentsline {section}{\numberline {4.9}debug.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{67}{section.4.9}%
-\contentsline {subsection}{\numberline {4.9.1}Typedef Documentation}{68}{subsection.4.9.1}%
-\contentsline {subsubsection}{\numberline {4.9.1.1}debug\_context\_t}{68}{subsubsection.4.9.1.1}%
-\contentsline {subsubsection}{\numberline {4.9.1.2}debug\_interface\_context\_t}{68}{subsubsection.4.9.1.2}%
-\contentsline {subsection}{\numberline {4.9.2}Function Documentation}{68}{subsection.4.9.2}%
-\contentsline {subsubsection}{\numberline {4.9.2.1}debug\_init()}{68}{subsubsection.4.9.2.1}%
-\contentsline {subsection}{\numberline {4.9.3}Variable Documentation}{69}{subsection.4.9.3}%
-\contentsline {subsubsection}{\numberline {4.9.3.1}debug\_context}{69}{subsubsection.4.9.3.1}%
-\contentsline {subsubsection}{\numberline {4.9.3.2}debug\_interface\_context}{69}{subsubsection.4.9.3.2}%
-\contentsline {subsubsection}{\numberline {4.9.3.3}feedback\_interface\_context}{69}{subsubsection.4.9.3.3}%
-\contentsline {section}{\numberline {4.10}debug.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{70}{section.4.10}%
-\contentsline {section}{\numberline {4.11}device.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{70}{section.4.11}%
-\contentsline {subsection}{\numberline {4.11.1}Macro Definition Documentation}{72}{subsection.4.11.1}%
-\contentsline {subsubsection}{\numberline {4.11.1.1}LEN\_16}{72}{subsubsection.4.11.1.1}%
-\contentsline {subsubsection}{\numberline {4.11.1.2}LEN\_32}{72}{subsubsection.4.11.1.2}%
-\contentsline {subsubsection}{\numberline {4.11.1.3}LEN\_8}{72}{subsubsection.4.11.1.3}%
-\contentsline {subsection}{\numberline {4.11.2}Function Documentation}{72}{subsection.4.11.2}%
-\contentsline {subsubsection}{\numberline {4.11.2.1}device\_create()}{72}{subsubsection.4.11.2.1}%
-\contentsline {subsubsection}{\numberline {4.11.2.2}device\_deamon\_create()}{73}{subsubsection.4.11.2.2}%
-\contentsline {subsubsection}{\numberline {4.11.2.3}device\_deamon\_thread()}{74}{subsubsection.4.11.2.3}%
-\contentsline {subsubsection}{\numberline {4.11.2.4}device\_interface\_create()}{75}{subsubsection.4.11.2.4}%
-\contentsline {subsubsection}{\numberline {4.11.2.5}device\_interface\_recv()}{75}{subsubsection.4.11.2.5}%
-\contentsline {subsubsection}{\numberline {4.11.2.6}device\_interface\_send()}{76}{subsubsection.4.11.2.6}%
-\contentsline {subsubsection}{\numberline {4.11.2.7}device\_read\_i16()}{76}{subsubsection.4.11.2.7}%
-\contentsline {subsubsection}{\numberline {4.11.2.8}device\_read\_i32()}{77}{subsubsection.4.11.2.8}%
-\contentsline {subsubsection}{\numberline {4.11.2.9}device\_read\_i8()}{77}{subsubsection.4.11.2.9}%
-\contentsline {subsubsection}{\numberline {4.11.2.10}device\_read\_u16()}{78}{subsubsection.4.11.2.10}%
-\contentsline {subsubsection}{\numberline {4.11.2.11}device\_read\_u32()}{78}{subsubsection.4.11.2.11}%
-\contentsline {subsubsection}{\numberline {4.11.2.12}device\_read\_u8()}{79}{subsubsection.4.11.2.12}%
-\contentsline {subsubsection}{\numberline {4.11.2.13}device\_write\_i16()}{79}{subsubsection.4.11.2.13}%
-\contentsline {subsubsection}{\numberline {4.11.2.14}device\_write\_i32()}{80}{subsubsection.4.11.2.14}%
-\contentsline {subsubsection}{\numberline {4.11.2.15}device\_write\_i8()}{80}{subsubsection.4.11.2.15}%
-\contentsline {subsubsection}{\numberline {4.11.2.16}device\_write\_u16()}{81}{subsubsection.4.11.2.16}%
-\contentsline {subsubsection}{\numberline {4.11.2.17}device\_write\_u32()}{81}{subsubsection.4.11.2.17}%
-\contentsline {subsubsection}{\numberline {4.11.2.18}device\_write\_u8()}{82}{subsubsection.4.11.2.18}%
-\contentsline {section}{\numberline {4.12}device.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{82}{section.4.12}%
-\contentsline {subsection}{\numberline {4.12.1}Macro Definition Documentation}{84}{subsection.4.12.1}%
-\contentsline {subsubsection}{\numberline {4.12.1.1}DEAMON\_STACK\_SIZE}{84}{subsubsection.4.12.1.1}%
-\contentsline {subsubsection}{\numberline {4.12.1.2}DEVICE\_MAX\_INTERFACES\_PER\_DEAMON}{84}{subsubsection.4.12.1.2}%
-\contentsline {subsubsection}{\numberline {4.12.1.3}DEVICE\_NAME\_LEN}{84}{subsubsection.4.12.1.3}%
-\contentsline {subsection}{\numberline {4.12.2}Typedef Documentation}{84}{subsection.4.12.2}%
-\contentsline {subsubsection}{\numberline {4.12.2.1}device\_deamon\_t}{84}{subsubsection.4.12.2.1}%
-\contentsline {subsubsection}{\numberline {4.12.2.2}device\_interface\_t}{84}{subsubsection.4.12.2.2}%
-\contentsline {subsubsection}{\numberline {4.12.2.3}device\_t}{84}{subsubsection.4.12.2.3}%
-\contentsline {subsection}{\numberline {4.12.3}Function Documentation}{85}{subsection.4.12.3}%
-\contentsline {subsubsection}{\numberline {4.12.3.1}device\_create()}{85}{subsubsection.4.12.3.1}%
-\contentsline {subsubsection}{\numberline {4.12.3.2}device\_deamon\_create()}{86}{subsubsection.4.12.3.2}%
-\contentsline {subsubsection}{\numberline {4.12.3.3}device\_interface\_create()}{87}{subsubsection.4.12.3.3}%
-\contentsline {subsubsection}{\numberline {4.12.3.4}device\_interface\_recv()}{87}{subsubsection.4.12.3.4}%
-\contentsline {subsubsection}{\numberline {4.12.3.5}device\_interface\_send()}{88}{subsubsection.4.12.3.5}%
-\contentsline {subsubsection}{\numberline {4.12.3.6}device\_read\_i16()}{88}{subsubsection.4.12.3.6}%
-\contentsline {subsubsection}{\numberline {4.12.3.7}device\_read\_i32()}{89}{subsubsection.4.12.3.7}%
-\contentsline {subsubsection}{\numberline {4.12.3.8}device\_read\_i8()}{89}{subsubsection.4.12.3.8}%
-\contentsline {subsubsection}{\numberline {4.12.3.9}device\_read\_u16()}{90}{subsubsection.4.12.3.9}%
-\contentsline {subsubsection}{\numberline {4.12.3.10}device\_read\_u32()}{90}{subsubsection.4.12.3.10}%
-\contentsline {subsubsection}{\numberline {4.12.3.11}device\_read\_u8()}{91}{subsubsection.4.12.3.11}%
-\contentsline {subsubsection}{\numberline {4.12.3.12}device\_write\_i16()}{91}{subsubsection.4.12.3.12}%
-\contentsline {subsubsection}{\numberline {4.12.3.13}device\_write\_i32()}{92}{subsubsection.4.12.3.13}%
-\contentsline {subsubsection}{\numberline {4.12.3.14}device\_write\_i8()}{92}{subsubsection.4.12.3.14}%
-\contentsline {subsubsection}{\numberline {4.12.3.15}device\_write\_u16()}{93}{subsubsection.4.12.3.15}%
-\contentsline {subsubsection}{\numberline {4.12.3.16}device\_write\_u32()}{93}{subsubsection.4.12.3.16}%
-\contentsline {subsubsection}{\numberline {4.12.3.17}device\_write\_u8()}{94}{subsubsection.4.12.3.17}%
-\contentsline {section}{\numberline {4.13}dma.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{94}{section.4.13}%
-\contentsline {subsection}{\numberline {4.13.1}Function Documentation}{95}{subsection.4.13.1}%
-\contentsline {subsubsection}{\numberline {4.13.1.1}dma2\_get\_scheduler()}{95}{subsubsection.4.13.1.1}%
-\contentsline {subsubsection}{\numberline {4.13.1.2}dma2\_get\_streams()}{95}{subsubsection.4.13.1.2}%
-\contentsline {subsubsection}{\numberline {4.13.1.3}dma2\_init\_scheduler()}{96}{subsubsection.4.13.1.3}%
-\contentsline {subsubsection}{\numberline {4.13.1.4}dma\_handle\_interrupt()}{96}{subsubsection.4.13.1.4}%
-\contentsline {subsubsection}{\numberline {4.13.1.5}dma\_scheduler\_init()}{96}{subsubsection.4.13.1.5}%
-\contentsline {subsubsection}{\numberline {4.13.1.6}dma\_scheduler\_release\_stream()}{97}{subsubsection.4.13.1.6}%
-\contentsline {subsubsection}{\numberline {4.13.1.7}dma\_scheduler\_request\_stream()}{97}{subsubsection.4.13.1.7}%
-\contentsline {subsubsection}{\numberline {4.13.1.8}dma\_start\_stream()}{97}{subsubsection.4.13.1.8}%
-\contentsline {subsection}{\numberline {4.13.2}Variable Documentation}{97}{subsection.4.13.2}%
-\contentsline {subsubsection}{\numberline {4.13.2.1}dma2\_scheduler}{97}{subsubsection.4.13.2.1}%
-\contentsline {subsubsection}{\numberline {4.13.2.2}dma2\_streams}{98}{subsubsection.4.13.2.2}%
-\contentsline {section}{\numberline {4.14}dma.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{98}{section.4.14}%
-\contentsline {subsection}{\numberline {4.14.1}Macro Definition Documentation}{102}{subsection.4.14.1}%
-\contentsline {subsubsection}{\numberline {4.14.1.1}DMA\_STATUS\_TC}{102}{subsubsection.4.14.1.1}%
-\contentsline {subsubsection}{\numberline {4.14.1.2}DMA\_STATUS\_TE}{102}{subsubsection.4.14.1.2}%
-\contentsline {subsubsection}{\numberline {4.14.1.3}DMA\_STATUS\_TH}{102}{subsubsection.4.14.1.3}%
-\contentsline {subsubsection}{\numberline {4.14.1.4}DMA\_STREAMS\_MAX\_LEN}{102}{subsubsection.4.14.1.4}%
-\contentsline {subsubsection}{\numberline {4.14.1.5}STM32\_DMAMUX1\_ADC1}{103}{subsubsection.4.14.1.5}%
-\contentsline {subsubsection}{\numberline {4.14.1.6}STM32\_DMAMUX1\_ADC2}{103}{subsubsection.4.14.1.6}%
-\contentsline {subsubsection}{\numberline {4.14.1.7}STM32\_DMAMUX1\_CRYP2\_IN}{103}{subsubsection.4.14.1.7}%
-\contentsline {subsubsection}{\numberline {4.14.1.8}STM32\_DMAMUX1\_CRYP2\_OUT}{103}{subsubsection.4.14.1.8}%
-\contentsline {subsubsection}{\numberline {4.14.1.9}STM32\_DMAMUX1\_DAC1\_CH1}{103}{subsubsection.4.14.1.9}%
-\contentsline {subsubsection}{\numberline {4.14.1.10}STM32\_DMAMUX1\_DAC1\_CH2}{103}{subsubsection.4.14.1.10}%
-\contentsline {subsubsection}{\numberline {4.14.1.11}STM32\_DMAMUX1\_DCMI}{104}{subsubsection.4.14.1.11}%
-\contentsline {subsubsection}{\numberline {4.14.1.12}STM32\_DMAMUX1\_DFSDM1\_FLT0}{104}{subsubsection.4.14.1.12}%
-\contentsline {subsubsection}{\numberline {4.14.1.13}STM32\_DMAMUX1\_DFSDM1\_FLT1}{104}{subsubsection.4.14.1.13}%
-\contentsline {subsubsection}{\numberline {4.14.1.14}STM32\_DMAMUX1\_DFSDM1\_FLT2}{104}{subsubsection.4.14.1.14}%
-\contentsline {subsubsection}{\numberline {4.14.1.15}STM32\_DMAMUX1\_DFSDM1\_FLT3}{104}{subsubsection.4.14.1.15}%
-\contentsline {subsubsection}{\numberline {4.14.1.16}STM32\_DMAMUX1\_DFSDM1\_FLT4}{104}{subsubsection.4.14.1.16}%
-\contentsline {subsubsection}{\numberline {4.14.1.17}STM32\_DMAMUX1\_DFSDM1\_FLT5}{105}{subsubsection.4.14.1.17}%
-\contentsline {subsubsection}{\numberline {4.14.1.18}STM32\_DMAMUX1\_HASH2\_IN}{105}{subsubsection.4.14.1.18}%
-\contentsline {subsubsection}{\numberline {4.14.1.19}STM32\_DMAMUX1\_I2C1\_RX}{105}{subsubsection.4.14.1.19}%
-\contentsline {subsubsection}{\numberline {4.14.1.20}STM32\_DMAMUX1\_I2C1\_TX}{105}{subsubsection.4.14.1.20}%
-\contentsline {subsubsection}{\numberline {4.14.1.21}STM32\_DMAMUX1\_I2C2\_RX}{105}{subsubsection.4.14.1.21}%
-\contentsline {subsubsection}{\numberline {4.14.1.22}STM32\_DMAMUX1\_I2C2\_TX}{105}{subsubsection.4.14.1.22}%
-\contentsline {subsubsection}{\numberline {4.14.1.23}STM32\_DMAMUX1\_I2C3\_RX}{106}{subsubsection.4.14.1.23}%
-\contentsline {subsubsection}{\numberline {4.14.1.24}STM32\_DMAMUX1\_I2C3\_TX}{106}{subsubsection.4.14.1.24}%
-\contentsline {subsubsection}{\numberline {4.14.1.25}STM32\_DMAMUX1\_I2C5\_RX}{106}{subsubsection.4.14.1.25}%
-\contentsline {subsubsection}{\numberline {4.14.1.26}STM32\_DMAMUX1\_I2C5\_TX}{106}{subsubsection.4.14.1.26}%
-\contentsline {subsubsection}{\numberline {4.14.1.27}STM32\_DMAMUX1\_REQ\_GEN0}{106}{subsubsection.4.14.1.27}%
-\contentsline {subsubsection}{\numberline {4.14.1.28}STM32\_DMAMUX1\_REQ\_GEN1}{106}{subsubsection.4.14.1.28}%
-\contentsline {subsubsection}{\numberline {4.14.1.29}STM32\_DMAMUX1\_REQ\_GEN2}{107}{subsubsection.4.14.1.29}%
-\contentsline {subsubsection}{\numberline {4.14.1.30}STM32\_DMAMUX1\_REQ\_GEN3}{107}{subsubsection.4.14.1.30}%
-\contentsline {subsubsection}{\numberline {4.14.1.31}STM32\_DMAMUX1\_REQ\_GEN4}{107}{subsubsection.4.14.1.31}%
-\contentsline {subsubsection}{\numberline {4.14.1.32}STM32\_DMAMUX1\_REQ\_GEN5}{107}{subsubsection.4.14.1.32}%
-\contentsline {subsubsection}{\numberline {4.14.1.33}STM32\_DMAMUX1\_REQ\_GEN6}{107}{subsubsection.4.14.1.33}%
-\contentsline {subsubsection}{\numberline {4.14.1.34}STM32\_DMAMUX1\_REQ\_GEN7}{107}{subsubsection.4.14.1.34}%
-\contentsline {subsubsection}{\numberline {4.14.1.35}STM32\_DMAMUX1\_RSVD117}{108}{subsubsection.4.14.1.35}%
-\contentsline {subsubsection}{\numberline {4.14.1.36}STM32\_DMAMUX1\_RSVD118}{108}{subsubsection.4.14.1.36}%
-\contentsline {subsubsection}{\numberline {4.14.1.37}STM32\_DMAMUX1\_RSVD119}{108}{subsubsection.4.14.1.37}%
-\contentsline {subsubsection}{\numberline {4.14.1.38}STM32\_DMAMUX1\_RSVD120}{108}{subsubsection.4.14.1.38}%
-\contentsline {subsubsection}{\numberline {4.14.1.39}STM32\_DMAMUX1\_RSVD121}{108}{subsubsection.4.14.1.39}%
-\contentsline {subsubsection}{\numberline {4.14.1.40}STM32\_DMAMUX1\_RSVD122}{108}{subsubsection.4.14.1.40}%
-\contentsline {subsubsection}{\numberline {4.14.1.41}STM32\_DMAMUX1\_RSVD123}{109}{subsubsection.4.14.1.41}%
-\contentsline {subsubsection}{\numberline {4.14.1.42}STM32\_DMAMUX1\_RSVD124}{109}{subsubsection.4.14.1.42}%
-\contentsline {subsubsection}{\numberline {4.14.1.43}STM32\_DMAMUX1\_RSVD125}{109}{subsubsection.4.14.1.43}%
-\contentsline {subsubsection}{\numberline {4.14.1.44}STM32\_DMAMUX1\_RSVD126}{109}{subsubsection.4.14.1.44}%
-\contentsline {subsubsection}{\numberline {4.14.1.45}STM32\_DMAMUX1\_RSVD127}{109}{subsubsection.4.14.1.45}%
-\contentsline {subsubsection}{\numberline {4.14.1.46}STM32\_DMAMUX1\_RSVD41}{109}{subsubsection.4.14.1.46}%
-\contentsline {subsubsection}{\numberline {4.14.1.47}STM32\_DMAMUX1\_RSVD42}{110}{subsubsection.4.14.1.47}%
-\contentsline {subsubsection}{\numberline {4.14.1.48}STM32\_DMAMUX1\_RSVD54}{110}{subsubsection.4.14.1.48}%
-\contentsline {subsubsection}{\numberline {4.14.1.49}STM32\_DMAMUX1\_RSVD95}{110}{subsubsection.4.14.1.49}%
-\contentsline {subsubsection}{\numberline {4.14.1.50}STM32\_DMAMUX1\_RSVD96}{110}{subsubsection.4.14.1.50}%
-\contentsline {subsubsection}{\numberline {4.14.1.51}STM32\_DMAMUX1\_RSVD97}{110}{subsubsection.4.14.1.51}%
-\contentsline {subsubsection}{\numberline {4.14.1.52}STM32\_DMAMUX1\_RSVD98}{110}{subsubsection.4.14.1.52}%
-\contentsline {subsubsection}{\numberline {4.14.1.53}STM32\_DMAMUX1\_SAI1\_A}{111}{subsubsection.4.14.1.53}%
-\contentsline {subsubsection}{\numberline {4.14.1.54}STM32\_DMAMUX1\_SAI1\_B}{111}{subsubsection.4.14.1.54}%
-\contentsline {subsubsection}{\numberline {4.14.1.55}STM32\_DMAMUX1\_SAI2\_A}{111}{subsubsection.4.14.1.55}%
-\contentsline {subsubsection}{\numberline {4.14.1.56}STM32\_DMAMUX1\_SAI2\_B}{111}{subsubsection.4.14.1.56}%
-\contentsline {subsubsection}{\numberline {4.14.1.57}STM32\_DMAMUX1\_SAI3\_A}{111}{subsubsection.4.14.1.57}%
-\contentsline {subsubsection}{\numberline {4.14.1.58}STM32\_DMAMUX1\_SAI3\_B}{111}{subsubsection.4.14.1.58}%
-\contentsline {subsubsection}{\numberline {4.14.1.59}STM32\_DMAMUX1\_SAI4\_A}{112}{subsubsection.4.14.1.59}%
-\contentsline {subsubsection}{\numberline {4.14.1.60}STM32\_DMAMUX1\_SAI4\_B}{112}{subsubsection.4.14.1.60}%
-\contentsline {subsubsection}{\numberline {4.14.1.61}STM32\_DMAMUX1\_SPDIFRX\_CS}{112}{subsubsection.4.14.1.61}%
-\contentsline {subsubsection}{\numberline {4.14.1.62}STM32\_DMAMUX1\_SPDIFRX\_DT}{112}{subsubsection.4.14.1.62}%
-\contentsline {subsubsection}{\numberline {4.14.1.63}STM32\_DMAMUX1\_SPI1\_RX}{112}{subsubsection.4.14.1.63}%
-\contentsline {subsubsection}{\numberline {4.14.1.64}STM32\_DMAMUX1\_SPI1\_TX}{112}{subsubsection.4.14.1.64}%
-\contentsline {subsubsection}{\numberline {4.14.1.65}STM32\_DMAMUX1\_SPI2\_RX}{113}{subsubsection.4.14.1.65}%
-\contentsline {subsubsection}{\numberline {4.14.1.66}STM32\_DMAMUX1\_SPI2\_TX}{113}{subsubsection.4.14.1.66}%
-\contentsline {subsubsection}{\numberline {4.14.1.67}STM32\_DMAMUX1\_SPI3\_RX}{113}{subsubsection.4.14.1.67}%
-\contentsline {subsubsection}{\numberline {4.14.1.68}STM32\_DMAMUX1\_SPI3\_TX}{113}{subsubsection.4.14.1.68}%
-\contentsline {subsubsection}{\numberline {4.14.1.69}STM32\_DMAMUX1\_SPI4\_RX}{113}{subsubsection.4.14.1.69}%
-\contentsline {subsubsection}{\numberline {4.14.1.70}STM32\_DMAMUX1\_SPI4\_TX}{113}{subsubsection.4.14.1.70}%
-\contentsline {subsubsection}{\numberline {4.14.1.71}STM32\_DMAMUX1\_SPI5\_RX}{114}{subsubsection.4.14.1.71}%
-\contentsline {subsubsection}{\numberline {4.14.1.72}STM32\_DMAMUX1\_SPI5\_TX}{114}{subsubsection.4.14.1.72}%
-\contentsline {subsubsection}{\numberline {4.14.1.73}STM32\_DMAMUX1\_TIM15\_CH1}{114}{subsubsection.4.14.1.73}%
-\contentsline {subsubsection}{\numberline {4.14.1.74}STM32\_DMAMUX1\_TIM15\_COM}{114}{subsubsection.4.14.1.74}%
-\contentsline {subsubsection}{\numberline {4.14.1.75}STM32\_DMAMUX1\_TIM15\_TRIG}{114}{subsubsection.4.14.1.75}%
-\contentsline {subsubsection}{\numberline {4.14.1.76}STM32\_DMAMUX1\_TIM15\_UP}{114}{subsubsection.4.14.1.76}%
-\contentsline {subsubsection}{\numberline {4.14.1.77}STM32\_DMAMUX1\_TIM16\_CH1}{115}{subsubsection.4.14.1.77}%
-\contentsline {subsubsection}{\numberline {4.14.1.78}STM32\_DMAMUX1\_TIM16\_UP}{115}{subsubsection.4.14.1.78}%
-\contentsline {subsubsection}{\numberline {4.14.1.79}STM32\_DMAMUX1\_TIM17\_CH1}{115}{subsubsection.4.14.1.79}%
-\contentsline {subsubsection}{\numberline {4.14.1.80}STM32\_DMAMUX1\_TIM17\_UP}{115}{subsubsection.4.14.1.80}%
-\contentsline {subsubsection}{\numberline {4.14.1.81}STM32\_DMAMUX1\_TIM1\_CH1}{115}{subsubsection.4.14.1.81}%
-\contentsline {subsubsection}{\numberline {4.14.1.82}STM32\_DMAMUX1\_TIM1\_CH2}{115}{subsubsection.4.14.1.82}%
-\contentsline {subsubsection}{\numberline {4.14.1.83}STM32\_DMAMUX1\_TIM1\_CH3}{116}{subsubsection.4.14.1.83}%
-\contentsline {subsubsection}{\numberline {4.14.1.84}STM32\_DMAMUX1\_TIM1\_CH4}{116}{subsubsection.4.14.1.84}%
-\contentsline {subsubsection}{\numberline {4.14.1.85}STM32\_DMAMUX1\_TIM1\_COM}{116}{subsubsection.4.14.1.85}%
-\contentsline {subsubsection}{\numberline {4.14.1.86}STM32\_DMAMUX1\_TIM1\_TRIG}{116}{subsubsection.4.14.1.86}%
-\contentsline {subsubsection}{\numberline {4.14.1.87}STM32\_DMAMUX1\_TIM1\_UP}{116}{subsubsection.4.14.1.87}%
-\contentsline {subsubsection}{\numberline {4.14.1.88}STM32\_DMAMUX1\_TIM2\_CH1}{116}{subsubsection.4.14.1.88}%
-\contentsline {subsubsection}{\numberline {4.14.1.89}STM32\_DMAMUX1\_TIM2\_CH2}{117}{subsubsection.4.14.1.89}%
-\contentsline {subsubsection}{\numberline {4.14.1.90}STM32\_DMAMUX1\_TIM2\_CH3}{117}{subsubsection.4.14.1.90}%
-\contentsline {subsubsection}{\numberline {4.14.1.91}STM32\_DMAMUX1\_TIM2\_CH4}{117}{subsubsection.4.14.1.91}%
-\contentsline {subsubsection}{\numberline {4.14.1.92}STM32\_DMAMUX1\_TIM2\_UP}{117}{subsubsection.4.14.1.92}%
-\contentsline {subsubsection}{\numberline {4.14.1.93}STM32\_DMAMUX1\_TIM3\_CH1}{117}{subsubsection.4.14.1.93}%
-\contentsline {subsubsection}{\numberline {4.14.1.94}STM32\_DMAMUX1\_TIM3\_CH2}{117}{subsubsection.4.14.1.94}%
-\contentsline {subsubsection}{\numberline {4.14.1.95}STM32\_DMAMUX1\_TIM3\_CH3}{118}{subsubsection.4.14.1.95}%
-\contentsline {subsubsection}{\numberline {4.14.1.96}STM32\_DMAMUX1\_TIM3\_CH4}{118}{subsubsection.4.14.1.96}%
-\contentsline {subsubsection}{\numberline {4.14.1.97}STM32\_DMAMUX1\_TIM3\_TRIG}{118}{subsubsection.4.14.1.97}%
-\contentsline {subsubsection}{\numberline {4.14.1.98}STM32\_DMAMUX1\_TIM3\_UP}{118}{subsubsection.4.14.1.98}%
-\contentsline {subsubsection}{\numberline {4.14.1.99}STM32\_DMAMUX1\_TIM4\_CH1}{118}{subsubsection.4.14.1.99}%
-\contentsline {subsubsection}{\numberline {4.14.1.100}STM32\_DMAMUX1\_TIM4\_CH2}{118}{subsubsection.4.14.1.100}%
-\contentsline {subsubsection}{\numberline {4.14.1.101}STM32\_DMAMUX1\_TIM4\_CH3}{119}{subsubsection.4.14.1.101}%
-\contentsline {subsubsection}{\numberline {4.14.1.102}STM32\_DMAMUX1\_TIM4\_UP}{119}{subsubsection.4.14.1.102}%
-\contentsline {subsubsection}{\numberline {4.14.1.103}STM32\_DMAMUX1\_TIM5\_CH1}{119}{subsubsection.4.14.1.103}%
-\contentsline {subsubsection}{\numberline {4.14.1.104}STM32\_DMAMUX1\_TIM5\_CH2}{119}{subsubsection.4.14.1.104}%
-\contentsline {subsubsection}{\numberline {4.14.1.105}STM32\_DMAMUX1\_TIM5\_CH3}{119}{subsubsection.4.14.1.105}%
-\contentsline {subsubsection}{\numberline {4.14.1.106}STM32\_DMAMUX1\_TIM5\_CH4}{119}{subsubsection.4.14.1.106}%
-\contentsline {subsubsection}{\numberline {4.14.1.107}STM32\_DMAMUX1\_TIM5\_TRIG}{120}{subsubsection.4.14.1.107}%
-\contentsline {subsubsection}{\numberline {4.14.1.108}STM32\_DMAMUX1\_TIM5\_UP}{120}{subsubsection.4.14.1.108}%
-\contentsline {subsubsection}{\numberline {4.14.1.109}STM32\_DMAMUX1\_TIM6\_UP}{120}{subsubsection.4.14.1.109}%
-\contentsline {subsubsection}{\numberline {4.14.1.110}STM32\_DMAMUX1\_TIM7\_UP}{120}{subsubsection.4.14.1.110}%
-\contentsline {subsubsection}{\numberline {4.14.1.111}STM32\_DMAMUX1\_TIM8\_CH1}{120}{subsubsection.4.14.1.111}%
-\contentsline {subsubsection}{\numberline {4.14.1.112}STM32\_DMAMUX1\_TIM8\_CH2}{120}{subsubsection.4.14.1.112}%
-\contentsline {subsubsection}{\numberline {4.14.1.113}STM32\_DMAMUX1\_TIM8\_CH3}{121}{subsubsection.4.14.1.113}%
-\contentsline {subsubsection}{\numberline {4.14.1.114}STM32\_DMAMUX1\_TIM8\_CH4}{121}{subsubsection.4.14.1.114}%
-\contentsline {subsubsection}{\numberline {4.14.1.115}STM32\_DMAMUX1\_TIM8\_COM}{121}{subsubsection.4.14.1.115}%
-\contentsline {subsubsection}{\numberline {4.14.1.116}STM32\_DMAMUX1\_TIM8\_TRIG}{121}{subsubsection.4.14.1.116}%
-\contentsline {subsubsection}{\numberline {4.14.1.117}STM32\_DMAMUX1\_TIM8\_UP}{121}{subsubsection.4.14.1.117}%
-\contentsline {subsubsection}{\numberline {4.14.1.118}STM32\_DMAMUX1\_UART4\_RX}{121}{subsubsection.4.14.1.118}%
-\contentsline {subsubsection}{\numberline {4.14.1.119}STM32\_DMAMUX1\_UART4\_TX}{122}{subsubsection.4.14.1.119}%
-\contentsline {subsubsection}{\numberline {4.14.1.120}STM32\_DMAMUX1\_UART5\_RX}{122}{subsubsection.4.14.1.120}%
-\contentsline {subsubsection}{\numberline {4.14.1.121}STM32\_DMAMUX1\_UART5\_TX}{122}{subsubsection.4.14.1.121}%
-\contentsline {subsubsection}{\numberline {4.14.1.122}STM32\_DMAMUX1\_UART7\_RX}{122}{subsubsection.4.14.1.122}%
-\contentsline {subsubsection}{\numberline {4.14.1.123}STM32\_DMAMUX1\_UART7\_TX}{122}{subsubsection.4.14.1.123}%
-\contentsline {subsubsection}{\numberline {4.14.1.124}STM32\_DMAMUX1\_UART8\_RX}{122}{subsubsection.4.14.1.124}%
-\contentsline {subsubsection}{\numberline {4.14.1.125}STM32\_DMAMUX1\_UART8\_TX}{123}{subsubsection.4.14.1.125}%
-\contentsline {subsubsection}{\numberline {4.14.1.126}STM32\_DMAMUX1\_USART2\_RX}{123}{subsubsection.4.14.1.126}%
-\contentsline {subsubsection}{\numberline {4.14.1.127}STM32\_DMAMUX1\_USART2\_TX}{123}{subsubsection.4.14.1.127}%
-\contentsline {subsubsection}{\numberline {4.14.1.128}STM32\_DMAMUX1\_USART3\_RX}{123}{subsubsection.4.14.1.128}%
-\contentsline {subsubsection}{\numberline {4.14.1.129}STM32\_DMAMUX1\_USART3\_TX}{123}{subsubsection.4.14.1.129}%
-\contentsline {subsubsection}{\numberline {4.14.1.130}STM32\_DMAMUX1\_USART6\_RX}{123}{subsubsection.4.14.1.130}%
-\contentsline {subsubsection}{\numberline {4.14.1.131}STM32\_DMAMUX1\_USART6\_TX}{124}{subsubsection.4.14.1.131}%
-\contentsline {subsection}{\numberline {4.14.2}Typedef Documentation}{124}{subsection.4.14.2}%
-\contentsline {subsubsection}{\numberline {4.14.2.1}dma\_request\_t}{124}{subsubsection.4.14.2.1}%
-\contentsline {subsubsection}{\numberline {4.14.2.2}dma\_scheduler\_dev\_t}{124}{subsubsection.4.14.2.2}%
-\contentsline {subsubsection}{\numberline {4.14.2.3}dma\_stream\_config\_t}{124}{subsubsection.4.14.2.3}%
-\contentsline {subsubsection}{\numberline {4.14.2.4}dma\_stream\_dev\_t}{124}{subsubsection.4.14.2.4}%
-\contentsline {subsubsection}{\numberline {4.14.2.5}dma\_stream\_dir\_t}{124}{subsubsection.4.14.2.5}%
-\contentsline {subsubsection}{\numberline {4.14.2.6}dma\_stream\_state\_t}{124}{subsubsection.4.14.2.6}%
-\contentsline {subsection}{\numberline {4.14.3}Enumeration Type Documentation}{124}{subsection.4.14.3}%
-\contentsline {subsubsection}{\numberline {4.14.3.1}dma\_stream\_dir}{124}{subsubsection.4.14.3.1}%
-\contentsline {subsubsection}{\numberline {4.14.3.2}dma\_stream\_state}{125}{subsubsection.4.14.3.2}%
-\contentsline {subsection}{\numberline {4.14.4}Function Documentation}{125}{subsection.4.14.4}%
-\contentsline {subsubsection}{\numberline {4.14.4.1}dma2\_get\_scheduler()}{125}{subsubsection.4.14.4.1}%
-\contentsline {subsubsection}{\numberline {4.14.4.2}dma2\_get\_streams()}{125}{subsubsection.4.14.4.2}%
-\contentsline {subsubsection}{\numberline {4.14.4.3}dma2\_init\_scheduler()}{126}{subsubsection.4.14.4.3}%
-\contentsline {subsubsection}{\numberline {4.14.4.4}dma\_copy()}{126}{subsubsection.4.14.4.4}%
-\contentsline {subsubsection}{\numberline {4.14.4.5}dma\_scheduler\_init()}{126}{subsubsection.4.14.4.5}%
-\contentsline {subsubsection}{\numberline {4.14.4.6}dma\_scheduler\_release\_stream()}{127}{subsubsection.4.14.4.6}%
-\contentsline {subsubsection}{\numberline {4.14.4.7}dma\_scheduler\_request\_stream()}{127}{subsubsection.4.14.4.7}%
-\contentsline {subsubsection}{\numberline {4.14.4.8}dma\_start\_stream()}{127}{subsubsection.4.14.4.8}%
-\contentsline {subsubsection}{\numberline {4.14.4.9}dma\_stop\_stream()}{127}{subsubsection.4.14.4.9}%
-\contentsline {section}{\numberline {4.15}gnss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{128}{section.4.15}%
-\contentsline {section}{\numberline {4.16}gnss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{128}{section.4.16}%
-\contentsline {section}{\numberline {4.17}gpio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{129}{section.4.17}%
-\contentsline {subsection}{\numberline {4.17.1}Function Documentation}{129}{subsection.4.17.1}%
-\contentsline {subsubsection}{\numberline {4.17.1.1}gpio\_cfg()}{130}{subsubsection.4.17.1.1}%
-\contentsline {subsubsection}{\numberline {4.17.1.2}gpio\_clr()}{130}{subsubsection.4.17.1.2}%
-\contentsline {subsubsection}{\numberline {4.17.1.3}gpio\_get()}{130}{subsubsection.4.17.1.3}%
-\contentsline {subsubsection}{\numberline {4.17.1.4}gpio\_set()}{131}{subsubsection.4.17.1.4}%
-\contentsline {section}{\numberline {4.18}gpio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{131}{section.4.18}%
-\contentsline {subsection}{\numberline {4.18.1}Typedef Documentation}{132}{subsection.4.18.1}%
-\contentsline {subsubsection}{\numberline {4.18.1.1}gpio\_bias\_t}{132}{subsubsection.4.18.1.1}%
-\contentsline {subsubsection}{\numberline {4.18.1.2}gpio\_config\_t}{133}{subsubsection.4.18.1.2}%
-\contentsline {subsubsection}{\numberline {4.18.1.3}gpio\_drive\_t}{133}{subsubsection.4.18.1.3}%
-\contentsline {subsubsection}{\numberline {4.18.1.4}gpio\_mode\_t}{133}{subsubsection.4.18.1.4}%
-\contentsline {subsection}{\numberline {4.18.2}Enumeration Type Documentation}{133}{subsection.4.18.2}%
-\contentsline {subsubsection}{\numberline {4.18.2.1}gpio\_bias}{133}{subsubsection.4.18.2.1}%
-\contentsline {subsubsection}{\numberline {4.18.2.2}gpio\_drive}{133}{subsubsection.4.18.2.2}%
-\contentsline {subsubsection}{\numberline {4.18.2.3}gpio\_mode}{134}{subsubsection.4.18.2.3}%
-\contentsline {subsection}{\numberline {4.18.3}Function Documentation}{134}{subsection.4.18.3}%
-\contentsline {subsubsection}{\numberline {4.18.3.1}gpio\_cfg()}{134}{subsubsection.4.18.3.1}%
-\contentsline {subsubsection}{\numberline {4.18.3.2}gpio\_clr()}{134}{subsubsection.4.18.3.2}%
-\contentsline {subsubsection}{\numberline {4.18.3.3}gpio\_get()}{135}{subsubsection.4.18.3.3}%
-\contentsline {subsubsection}{\numberline {4.18.3.4}gpio\_set()}{135}{subsubsection.4.18.3.4}%
-\contentsline {section}{\numberline {4.19}gyroscope.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{135}{section.4.19}%
-\contentsline {section}{\numberline {4.20}gyroscope.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{136}{section.4.20}%
-\contentsline {section}{\numberline {4.21}hostproc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{136}{section.4.21}%
-\contentsline {subsection}{\numberline {4.21.1}Typedef Documentation}{137}{subsection.4.21.1}%
-\contentsline {subsubsection}{\numberline {4.21.1.1}hostproc\_interface\_context\_t}{138}{subsubsection.4.21.1.1}%
-\contentsline {subsection}{\numberline {4.21.2}Function Documentation}{138}{subsection.4.21.2}%
-\contentsline {subsubsection}{\numberline {4.21.2.1}host\_recv()}{138}{subsubsection.4.21.2.1}%
-\contentsline {subsubsection}{\numberline {4.21.2.2}host\_send()}{138}{subsubsection.4.21.2.2}%
-\contentsline {subsubsection}{\numberline {4.21.2.3}host\_UART0\_RX()}{139}{subsubsection.4.21.2.3}%
-\contentsline {subsubsection}{\numberline {4.21.2.4}hostproc\_get\_device()}{139}{subsubsection.4.21.2.4}%
-\contentsline {subsubsection}{\numberline {4.21.2.5}hostproc\_get\_interface()}{140}{subsubsection.4.21.2.5}%
-\contentsline {subsubsection}{\numberline {4.21.2.6}hostproc\_init()}{140}{subsubsection.4.21.2.6}%
-\contentsline {subsection}{\numberline {4.21.3}Variable Documentation}{141}{subsection.4.21.3}%
-\contentsline {subsubsection}{\numberline {4.21.3.1}host\_UART0}{141}{subsubsection.4.21.3.1}%
-\contentsline {subsubsection}{\numberline {4.21.3.2}hostproc\_device}{141}{subsubsection.4.21.3.2}%
-\contentsline {subsubsection}{\numberline {4.21.3.3}hostproc\_interface}{141}{subsubsection.4.21.3.3}%
-\contentsline {subsubsection}{\numberline {4.21.3.4}hostproc\_interface\_context}{141}{subsubsection.4.21.3.4}%
-\contentsline {section}{\numberline {4.22}hostproc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{142}{section.4.22}%
-\contentsline {subsection}{\numberline {4.22.1}Function Documentation}{143}{subsection.4.22.1}%
-\contentsline {subsubsection}{\numberline {4.22.1.1}hostproc\_get\_device()}{143}{subsubsection.4.22.1.1}%
-\contentsline {subsubsection}{\numberline {4.22.1.2}hostproc\_get\_interface()}{143}{subsubsection.4.22.1.2}%
-\contentsline {subsubsection}{\numberline {4.22.1.3}hostproc\_init()}{144}{subsubsection.4.22.1.3}%
-\contentsline {section}{\numberline {4.23}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{144}{section.4.23}%
-\contentsline {subsection}{\numberline {4.23.1}Macro Definition Documentation}{145}{subsection.4.23.1}%
-\contentsline {subsubsection}{\numberline {4.23.1.1}S1\_I2C}{146}{subsubsection.4.23.1.1}%
-\contentsline {subsubsection}{\numberline {4.23.1.2}S2\_I2C}{146}{subsubsection.4.23.1.2}%
-\contentsline {subsubsection}{\numberline {4.23.1.3}S3\_I2C}{146}{subsubsection.4.23.1.3}%
-\contentsline {subsection}{\numberline {4.23.2}Function Documentation}{146}{subsection.4.23.2}%
-\contentsline {subsubsection}{\numberline {4.23.2.1}i2c\_get\_sensor\_interface()}{146}{subsubsection.4.23.2.1}%
-\contentsline {subsubsection}{\numberline {4.23.2.2}i2c\_init()}{147}{subsubsection.4.23.2.2}%
-\contentsline {subsubsection}{\numberline {4.23.2.3}i2c\_spi\_guard()}{147}{subsubsection.4.23.2.3}%
-\contentsline {subsection}{\numberline {4.23.3}Variable Documentation}{148}{subsection.4.23.3}%
-\contentsline {subsubsection}{\numberline {4.23.3.1}sensor\_interface}{148}{subsubsection.4.23.3.1}%
-\contentsline {subsubsection}{\numberline {4.23.3.2}sensor\_interface\_context}{148}{subsubsection.4.23.3.2}%
-\contentsline {section}{\numberline {4.24}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{148}{section.4.24}%
-\contentsline {subsection}{\numberline {4.24.1}Typedef Documentation}{149}{subsection.4.24.1}%
-\contentsline {subsubsection}{\numberline {4.24.1.1}i2c\_interface\_context\_t}{149}{subsubsection.4.24.1.1}%
-\contentsline {subsection}{\numberline {4.24.2}Function Documentation}{149}{subsection.4.24.2}%
-\contentsline {subsubsection}{\numberline {4.24.2.1}i2c\_get\_sensor\_interface()}{150}{subsubsection.4.24.2.1}%
-\contentsline {subsubsection}{\numberline {4.24.2.2}i2c\_init()}{150}{subsubsection.4.24.2.2}%
-\contentsline {subsubsection}{\numberline {4.24.2.3}i2c\_spi\_guard()}{151}{subsubsection.4.24.2.3}%
-\contentsline {section}{\numberline {4.25}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sensor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{151}{section.4.25}%
-\contentsline {subsection}{\numberline {4.25.1}Typedef Documentation}{152}{subsection.4.25.1}%
-\contentsline {subsubsection}{\numberline {4.25.1.1}i2c\_sensor\_context\_t}{152}{subsubsection.4.25.1.1}%
-\contentsline {subsection}{\numberline {4.25.2}Function Documentation}{152}{subsection.4.25.2}%
-\contentsline {subsubsection}{\numberline {4.25.2.1}i2c\_get\_accelerometer()}{152}{subsubsection.4.25.2.1}%
-\contentsline {subsubsection}{\numberline {4.25.2.2}i2c\_sensor\_init()}{153}{subsubsection.4.25.2.2}%
-\contentsline {subsubsection}{\numberline {4.25.2.3}read\_reg()}{153}{subsubsection.4.25.2.3}%
-\contentsline {subsubsection}{\numberline {4.25.2.4}write\_reg()}{154}{subsubsection.4.25.2.4}%
-\contentsline {subsection}{\numberline {4.25.3}Variable Documentation}{154}{subsection.4.25.3}%
-\contentsline {subsubsection}{\numberline {4.25.3.1}i2c\_accelerometer\_device}{154}{subsubsection.4.25.3.1}%
-\contentsline {subsubsection}{\numberline {4.25.3.2}i2c\_accelerometer\_device\_context}{154}{subsubsection.4.25.3.2}%
-\contentsline {subsubsection}{\numberline {4.25.3.3}i2c\_barometer\_device}{155}{subsubsection.4.25.3.3}%
-\contentsline {subsubsection}{\numberline {4.25.3.4}i2c\_barometer\_device\_context}{155}{subsubsection.4.25.3.4}%
-\contentsline {subsubsection}{\numberline {4.25.3.5}i2c\_gyroscope\_device}{155}{subsubsection.4.25.3.5}%
-\contentsline {subsubsection}{\numberline {4.25.3.6}i2c\_gyroscope\_device\_context}{155}{subsubsection.4.25.3.6}%
-\contentsline {section}{\numberline {4.26}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sensor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{156}{section.4.26}%
-\contentsline {subsection}{\numberline {4.26.1}Function Documentation}{156}{subsection.4.26.1}%
-\contentsline {subsubsection}{\numberline {4.26.1.1}i2c\_sensor\_init()}{156}{subsubsection.4.26.1.1}%
-\contentsline {section}{\numberline {4.27}led.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{157}{section.4.27}%
-\contentsline {subsection}{\numberline {4.27.1}Macro Definition Documentation}{158}{subsection.4.27.1}%
-\contentsline {subsubsection}{\numberline {4.27.1.1}LED\_MAX}{158}{subsubsection.4.27.1.1}%
-\contentsline {subsubsection}{\numberline {4.27.1.2}LED\_TIM}{158}{subsubsection.4.27.1.2}%
-\contentsline {subsection}{\numberline {4.27.2}Typedef Documentation}{158}{subsection.4.27.2}%
-\contentsline {subsubsection}{\numberline {4.27.2.1}led\_blink\_state\_t}{158}{subsubsection.4.27.2.1}%
-\contentsline {subsection}{\numberline {4.27.3}Enumeration Type Documentation}{158}{subsection.4.27.3}%
-\contentsline {subsubsection}{\numberline {4.27.3.1}led\_blick\_state}{158}{subsubsection.4.27.3.1}%
-\contentsline {subsection}{\numberline {4.27.4}Function Documentation}{159}{subsection.4.27.4}%
-\contentsline {subsubsection}{\numberline {4.27.4.1}led\_feedback\_init()}{159}{subsubsection.4.27.4.1}%
-\contentsline {subsubsection}{\numberline {4.27.4.2}led\_rgb\_init()}{159}{subsubsection.4.27.4.2}%
-\contentsline {subsubsection}{\numberline {4.27.4.3}led\_rgb\_set\_color()}{160}{subsubsection.4.27.4.3}%
-\contentsline {subsubsection}{\numberline {4.27.4.4}led\_rgb\_set\_rgb()}{160}{subsubsection.4.27.4.4}%
-\contentsline {subsubsection}{\numberline {4.27.4.5}led\_rgb\_thread()}{161}{subsubsection.4.27.4.5}%
-\contentsline {subsection}{\numberline {4.27.5}Variable Documentation}{161}{subsection.4.27.5}%
-\contentsline {subsubsection}{\numberline {4.27.5.1}blink\_sequence}{162}{subsubsection.4.27.5.1}%
-\contentsline {subsubsection}{\numberline {4.27.5.2}blink\_sequence\_len}{162}{subsubsection.4.27.5.2}%
-\contentsline {subsubsection}{\numberline {4.27.5.3}color\_sequence}{162}{subsubsection.4.27.5.3}%
-\contentsline {subsubsection}{\numberline {4.27.5.4}color\_sequence\_len}{162}{subsubsection.4.27.5.4}%
-\contentsline {section}{\numberline {4.28}led.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{163}{section.4.28}%
-\contentsline {subsection}{\numberline {4.28.1}Macro Definition Documentation}{164}{subsection.4.28.1}%
-\contentsline {subsubsection}{\numberline {4.28.1.1}LED\_BLACK}{164}{subsubsection.4.28.1.1}%
-\contentsline {subsubsection}{\numberline {4.28.1.2}LED\_BLUE}{164}{subsubsection.4.28.1.2}%
-\contentsline {subsubsection}{\numberline {4.28.1.3}LED\_GREEN}{164}{subsubsection.4.28.1.3}%
-\contentsline {subsubsection}{\numberline {4.28.1.4}LED\_LILA}{165}{subsubsection.4.28.1.4}%
-\contentsline {subsubsection}{\numberline {4.28.1.5}LED\_ORANGE}{165}{subsubsection.4.28.1.5}%
-\contentsline {subsubsection}{\numberline {4.28.1.6}LED\_PINK}{165}{subsubsection.4.28.1.6}%
-\contentsline {subsubsection}{\numberline {4.28.1.7}LED\_RED}{165}{subsubsection.4.28.1.7}%
-\contentsline {subsubsection}{\numberline {4.28.1.8}LED\_TEAL}{165}{subsubsection.4.28.1.8}%
-\contentsline {subsubsection}{\numberline {4.28.1.9}LED\_WHITE}{165}{subsubsection.4.28.1.9}%
-\contentsline {subsubsection}{\numberline {4.28.1.10}LED\_YELLOW}{166}{subsubsection.4.28.1.10}%
-\contentsline {subsection}{\numberline {4.28.2}Typedef Documentation}{166}{subsection.4.28.2}%
-\contentsline {subsubsection}{\numberline {4.28.2.1}led\_color\_t}{166}{subsubsection.4.28.2.1}%
-\contentsline {subsection}{\numberline {4.28.3}Function Documentation}{166}{subsection.4.28.3}%
-\contentsline {subsubsection}{\numberline {4.28.3.1}led\_feedback\_init()}{166}{subsubsection.4.28.3.1}%
-\contentsline {subsubsection}{\numberline {4.28.3.2}led\_rgb\_init()}{167}{subsubsection.4.28.3.2}%
-\contentsline {subsubsection}{\numberline {4.28.3.3}led\_rgb\_set\_color()}{167}{subsubsection.4.28.3.3}%
-\contentsline {subsubsection}{\numberline {4.28.3.4}led\_rgb\_set\_rgb()}{168}{subsubsection.4.28.3.4}%
-\contentsline {subsubsection}{\numberline {4.28.3.5}led\_rgb\_thread()}{168}{subsubsection.4.28.3.5}%
-\contentsline {subsection}{\numberline {4.28.4}Variable Documentation}{168}{subsection.4.28.4}%
-\contentsline {subsubsection}{\numberline {4.28.4.1}led\_black}{168}{subsubsection.4.28.4.1}%
-\contentsline {subsubsection}{\numberline {4.28.4.2}led\_blue}{169}{subsubsection.4.28.4.2}%
-\contentsline {subsubsection}{\numberline {4.28.4.3}led\_green}{169}{subsubsection.4.28.4.3}%
-\contentsline {subsubsection}{\numberline {4.28.4.4}led\_red}{169}{subsubsection.4.28.4.4}%
-\contentsline {section}{\numberline {4.29}msv2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{170}{section.4.29}%
-\contentsline {subsection}{\numberline {4.29.1}Macro Definition Documentation}{170}{subsection.4.29.1}%
-\contentsline {subsubsection}{\numberline {4.29.1.1}DLE}{170}{subsubsection.4.29.1.1}%
-\contentsline {subsubsection}{\numberline {4.29.1.2}STX}{171}{subsubsection.4.29.1.2}%
-\contentsline {subsection}{\numberline {4.29.2}Function Documentation}{171}{subsection.4.29.2}%
-\contentsline {subsubsection}{\numberline {4.29.2.1}calc\_field\_CRC()}{171}{subsubsection.4.29.2.1}%
-\contentsline {subsubsection}{\numberline {4.29.2.2}msv2\_create\_frame()}{171}{subsubsection.4.29.2.2}%
-\contentsline {subsubsection}{\numberline {4.29.2.3}msv2\_decode\_fragment()}{172}{subsubsection.4.29.2.3}%
-\contentsline {subsubsection}{\numberline {4.29.2.4}msv2\_init()}{172}{subsubsection.4.29.2.4}%
-\contentsline {subsubsection}{\numberline {4.29.2.5}msv2\_rx\_data()}{173}{subsubsection.4.29.2.5}%
-\contentsline {subsubsection}{\numberline {4.29.2.6}msv2\_tx\_data()}{173}{subsubsection.4.29.2.6}%
-\contentsline {section}{\numberline {4.30}msv2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{173}{section.4.30}%
-\contentsline {subsection}{\numberline {4.30.1}Macro Definition Documentation}{175}{subsection.4.30.1}%
-\contentsline {subsubsection}{\numberline {4.30.1.1}MSV2\_MAX\_DATA\_LEN}{175}{subsubsection.4.30.1.1}%
-\contentsline {subsubsection}{\numberline {4.30.1.2}MSV2\_MAX\_FRAME\_LEN}{175}{subsubsection.4.30.1.2}%
-\contentsline {subsection}{\numberline {4.30.2}Typedef Documentation}{175}{subsection.4.30.2}%
-\contentsline {subsubsection}{\numberline {4.30.2.1}MSV2\_DECODE\_STATE\_t}{175}{subsubsection.4.30.2.1}%
-\contentsline {subsubsection}{\numberline {4.30.2.2}MSV2\_ERROR\_t}{175}{subsubsection.4.30.2.2}%
-\contentsline {subsubsection}{\numberline {4.30.2.3}MSV2\_INST\_t}{175}{subsubsection.4.30.2.3}%
-\contentsline {subsubsection}{\numberline {4.30.2.4}MSV2\_RX\_DATA\_t}{175}{subsubsection.4.30.2.4}%
-\contentsline {subsubsection}{\numberline {4.30.2.5}MSV2\_TX\_DATA\_t}{175}{subsubsection.4.30.2.5}%
-\contentsline {subsection}{\numberline {4.30.3}Enumeration Type Documentation}{175}{subsection.4.30.3}%
-\contentsline {subsubsection}{\numberline {4.30.3.1}MSV2\_DECODE\_STATE}{175}{subsubsection.4.30.3.1}%
-\contentsline {subsubsection}{\numberline {4.30.3.2}MSV2\_ERROR}{176}{subsubsection.4.30.3.2}%
-\contentsline {subsection}{\numberline {4.30.4}Function Documentation}{176}{subsection.4.30.4}%
-\contentsline {subsubsection}{\numberline {4.30.4.1}msv2\_create\_frame()}{176}{subsubsection.4.30.4.1}%
-\contentsline {subsubsection}{\numberline {4.30.4.2}msv2\_decode\_fragment()}{177}{subsubsection.4.30.4.2}%
-\contentsline {subsubsection}{\numberline {4.30.4.3}msv2\_init()}{177}{subsubsection.4.30.4.3}%
-\contentsline {subsubsection}{\numberline {4.30.4.4}msv2\_rx\_data()}{178}{subsubsection.4.30.4.4}%
-\contentsline {subsubsection}{\numberline {4.30.4.5}msv2\_tx\_data()}{178}{subsubsection.4.30.4.5}%
-\contentsline {section}{\numberline {4.31}note.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{178}{section.4.31}%
-\contentsline {subsection}{\numberline {4.31.1}Macro Definition Documentation}{181}{subsection.4.31.1}%
-\contentsline {subsubsection}{\numberline {4.31.1.1}A0}{181}{subsubsection.4.31.1.1}%
-\contentsline {subsubsection}{\numberline {4.31.1.2}A0H}{181}{subsubsection.4.31.1.2}%
-\contentsline {subsubsection}{\numberline {4.31.1.3}A1}{181}{subsubsection.4.31.1.3}%
-\contentsline {subsubsection}{\numberline {4.31.1.4}A1H}{182}{subsubsection.4.31.1.4}%
-\contentsline {subsubsection}{\numberline {4.31.1.5}A2}{182}{subsubsection.4.31.1.5}%
-\contentsline {subsubsection}{\numberline {4.31.1.6}A2H}{182}{subsubsection.4.31.1.6}%
-\contentsline {subsubsection}{\numberline {4.31.1.7}A3}{182}{subsubsection.4.31.1.7}%
-\contentsline {subsubsection}{\numberline {4.31.1.8}A3H}{182}{subsubsection.4.31.1.8}%
-\contentsline {subsubsection}{\numberline {4.31.1.9}A4}{182}{subsubsection.4.31.1.9}%
-\contentsline {subsubsection}{\numberline {4.31.1.10}A4H}{183}{subsubsection.4.31.1.10}%
-\contentsline {subsubsection}{\numberline {4.31.1.11}A5}{183}{subsubsection.4.31.1.11}%
-\contentsline {subsubsection}{\numberline {4.31.1.12}A5H}{183}{subsubsection.4.31.1.12}%
-\contentsline {subsubsection}{\numberline {4.31.1.13}A6}{183}{subsubsection.4.31.1.13}%
-\contentsline {subsubsection}{\numberline {4.31.1.14}A6H}{183}{subsubsection.4.31.1.14}%
-\contentsline {subsubsection}{\numberline {4.31.1.15}A7}{183}{subsubsection.4.31.1.15}%
-\contentsline {subsubsection}{\numberline {4.31.1.16}A7H}{184}{subsubsection.4.31.1.16}%
-\contentsline {subsubsection}{\numberline {4.31.1.17}A8}{184}{subsubsection.4.31.1.17}%
-\contentsline {subsubsection}{\numberline {4.31.1.18}A8H}{184}{subsubsection.4.31.1.18}%
-\contentsline {subsubsection}{\numberline {4.31.1.19}B0}{184}{subsubsection.4.31.1.19}%
-\contentsline {subsubsection}{\numberline {4.31.1.20}B1}{184}{subsubsection.4.31.1.20}%
-\contentsline {subsubsection}{\numberline {4.31.1.21}B2}{184}{subsubsection.4.31.1.21}%
-\contentsline {subsubsection}{\numberline {4.31.1.22}B3}{185}{subsubsection.4.31.1.22}%
-\contentsline {subsubsection}{\numberline {4.31.1.23}B4}{185}{subsubsection.4.31.1.23}%
-\contentsline {subsubsection}{\numberline {4.31.1.24}B5}{185}{subsubsection.4.31.1.24}%
-\contentsline {subsubsection}{\numberline {4.31.1.25}B6}{185}{subsubsection.4.31.1.25}%
-\contentsline {subsubsection}{\numberline {4.31.1.26}B7}{185}{subsubsection.4.31.1.26}%
-\contentsline {subsubsection}{\numberline {4.31.1.27}B8}{185}{subsubsection.4.31.1.27}%
-\contentsline {subsubsection}{\numberline {4.31.1.28}C0}{186}{subsubsection.4.31.1.28}%
-\contentsline {subsubsection}{\numberline {4.31.1.29}C0H}{186}{subsubsection.4.31.1.29}%
-\contentsline {subsubsection}{\numberline {4.31.1.30}C1}{186}{subsubsection.4.31.1.30}%
-\contentsline {subsubsection}{\numberline {4.31.1.31}C1H}{186}{subsubsection.4.31.1.31}%
-\contentsline {subsubsection}{\numberline {4.31.1.32}C2}{186}{subsubsection.4.31.1.32}%
-\contentsline {subsubsection}{\numberline {4.31.1.33}C2H}{186}{subsubsection.4.31.1.33}%
-\contentsline {subsubsection}{\numberline {4.31.1.34}C3}{187}{subsubsection.4.31.1.34}%
-\contentsline {subsubsection}{\numberline {4.31.1.35}C3H}{187}{subsubsection.4.31.1.35}%
-\contentsline {subsubsection}{\numberline {4.31.1.36}C4}{187}{subsubsection.4.31.1.36}%
-\contentsline {subsubsection}{\numberline {4.31.1.37}C4H}{187}{subsubsection.4.31.1.37}%
-\contentsline {subsubsection}{\numberline {4.31.1.38}C5}{187}{subsubsection.4.31.1.38}%
-\contentsline {subsubsection}{\numberline {4.31.1.39}C5H}{187}{subsubsection.4.31.1.39}%
-\contentsline {subsubsection}{\numberline {4.31.1.40}C6}{188}{subsubsection.4.31.1.40}%
-\contentsline {subsubsection}{\numberline {4.31.1.41}C6H}{188}{subsubsection.4.31.1.41}%
-\contentsline {subsubsection}{\numberline {4.31.1.42}C7}{188}{subsubsection.4.31.1.42}%
-\contentsline {subsubsection}{\numberline {4.31.1.43}C7H}{188}{subsubsection.4.31.1.43}%
-\contentsline {subsubsection}{\numberline {4.31.1.44}C8}{188}{subsubsection.4.31.1.44}%
-\contentsline {subsubsection}{\numberline {4.31.1.45}C8H}{188}{subsubsection.4.31.1.45}%
-\contentsline {subsubsection}{\numberline {4.31.1.46}D0}{189}{subsubsection.4.31.1.46}%
-\contentsline {subsubsection}{\numberline {4.31.1.47}D0H}{189}{subsubsection.4.31.1.47}%
-\contentsline {subsubsection}{\numberline {4.31.1.48}D1}{189}{subsubsection.4.31.1.48}%
-\contentsline {subsubsection}{\numberline {4.31.1.49}D1H}{189}{subsubsection.4.31.1.49}%
-\contentsline {subsubsection}{\numberline {4.31.1.50}D2}{189}{subsubsection.4.31.1.50}%
-\contentsline {subsubsection}{\numberline {4.31.1.51}D2H}{189}{subsubsection.4.31.1.51}%
-\contentsline {subsubsection}{\numberline {4.31.1.52}D3}{190}{subsubsection.4.31.1.52}%
-\contentsline {subsubsection}{\numberline {4.31.1.53}D3H}{190}{subsubsection.4.31.1.53}%
-\contentsline {subsubsection}{\numberline {4.31.1.54}D4}{190}{subsubsection.4.31.1.54}%
-\contentsline {subsubsection}{\numberline {4.31.1.55}D4H}{190}{subsubsection.4.31.1.55}%
-\contentsline {subsubsection}{\numberline {4.31.1.56}D5}{190}{subsubsection.4.31.1.56}%
-\contentsline {subsubsection}{\numberline {4.31.1.57}D5H}{190}{subsubsection.4.31.1.57}%
-\contentsline {subsubsection}{\numberline {4.31.1.58}D6}{191}{subsubsection.4.31.1.58}%
-\contentsline {subsubsection}{\numberline {4.31.1.59}D6H}{191}{subsubsection.4.31.1.59}%
-\contentsline {subsubsection}{\numberline {4.31.1.60}D7}{191}{subsubsection.4.31.1.60}%
-\contentsline {subsubsection}{\numberline {4.31.1.61}D7H}{191}{subsubsection.4.31.1.61}%
-\contentsline {subsubsection}{\numberline {4.31.1.62}D8}{191}{subsubsection.4.31.1.62}%
-\contentsline {subsubsection}{\numberline {4.31.1.63}D8H}{191}{subsubsection.4.31.1.63}%
-\contentsline {subsubsection}{\numberline {4.31.1.64}E0}{192}{subsubsection.4.31.1.64}%
-\contentsline {subsubsection}{\numberline {4.31.1.65}E1}{192}{subsubsection.4.31.1.65}%
-\contentsline {subsubsection}{\numberline {4.31.1.66}E2}{192}{subsubsection.4.31.1.66}%
-\contentsline {subsubsection}{\numberline {4.31.1.67}E3}{192}{subsubsection.4.31.1.67}%
-\contentsline {subsubsection}{\numberline {4.31.1.68}E4}{192}{subsubsection.4.31.1.68}%
-\contentsline {subsubsection}{\numberline {4.31.1.69}E5}{192}{subsubsection.4.31.1.69}%
-\contentsline {subsubsection}{\numberline {4.31.1.70}E6}{193}{subsubsection.4.31.1.70}%
-\contentsline {subsubsection}{\numberline {4.31.1.71}E7}{193}{subsubsection.4.31.1.71}%
-\contentsline {subsubsection}{\numberline {4.31.1.72}E8}{193}{subsubsection.4.31.1.72}%
-\contentsline {subsubsection}{\numberline {4.31.1.73}F0}{193}{subsubsection.4.31.1.73}%
-\contentsline {subsubsection}{\numberline {4.31.1.74}F0H}{193}{subsubsection.4.31.1.74}%
-\contentsline {subsubsection}{\numberline {4.31.1.75}F1}{193}{subsubsection.4.31.1.75}%
-\contentsline {subsubsection}{\numberline {4.31.1.76}F1H}{194}{subsubsection.4.31.1.76}%
-\contentsline {subsubsection}{\numberline {4.31.1.77}F2}{194}{subsubsection.4.31.1.77}%
-\contentsline {subsubsection}{\numberline {4.31.1.78}F2H}{194}{subsubsection.4.31.1.78}%
-\contentsline {subsubsection}{\numberline {4.31.1.79}F3}{194}{subsubsection.4.31.1.79}%
-\contentsline {subsubsection}{\numberline {4.31.1.80}F3H}{194}{subsubsection.4.31.1.80}%
-\contentsline {subsubsection}{\numberline {4.31.1.81}F4}{194}{subsubsection.4.31.1.81}%
-\contentsline {subsubsection}{\numberline {4.31.1.82}F4H}{195}{subsubsection.4.31.1.82}%
-\contentsline {subsubsection}{\numberline {4.31.1.83}F5}{195}{subsubsection.4.31.1.83}%
-\contentsline {subsubsection}{\numberline {4.31.1.84}F5H}{195}{subsubsection.4.31.1.84}%
-\contentsline {subsubsection}{\numberline {4.31.1.85}F6}{195}{subsubsection.4.31.1.85}%
-\contentsline {subsubsection}{\numberline {4.31.1.86}F6H}{195}{subsubsection.4.31.1.86}%
-\contentsline {subsubsection}{\numberline {4.31.1.87}F7}{195}{subsubsection.4.31.1.87}%
-\contentsline {subsubsection}{\numberline {4.31.1.88}F7H}{196}{subsubsection.4.31.1.88}%
-\contentsline {subsubsection}{\numberline {4.31.1.89}F8}{196}{subsubsection.4.31.1.89}%
-\contentsline {subsubsection}{\numberline {4.31.1.90}F8H}{196}{subsubsection.4.31.1.90}%
-\contentsline {subsubsection}{\numberline {4.31.1.91}G0}{196}{subsubsection.4.31.1.91}%
-\contentsline {subsubsection}{\numberline {4.31.1.92}G0H}{196}{subsubsection.4.31.1.92}%
-\contentsline {subsubsection}{\numberline {4.31.1.93}G1}{196}{subsubsection.4.31.1.93}%
-\contentsline {subsubsection}{\numberline {4.31.1.94}G1H}{197}{subsubsection.4.31.1.94}%
-\contentsline {subsubsection}{\numberline {4.31.1.95}G2}{197}{subsubsection.4.31.1.95}%
-\contentsline {subsubsection}{\numberline {4.31.1.96}G2H}{197}{subsubsection.4.31.1.96}%
-\contentsline {subsubsection}{\numberline {4.31.1.97}G3}{197}{subsubsection.4.31.1.97}%
-\contentsline {subsubsection}{\numberline {4.31.1.98}G3H}{197}{subsubsection.4.31.1.98}%
-\contentsline {subsubsection}{\numberline {4.31.1.99}G4}{197}{subsubsection.4.31.1.99}%
-\contentsline {subsubsection}{\numberline {4.31.1.100}G4H}{198}{subsubsection.4.31.1.100}%
-\contentsline {subsubsection}{\numberline {4.31.1.101}G5}{198}{subsubsection.4.31.1.101}%
-\contentsline {subsubsection}{\numberline {4.31.1.102}G5H}{198}{subsubsection.4.31.1.102}%
-\contentsline {subsubsection}{\numberline {4.31.1.103}G6}{198}{subsubsection.4.31.1.103}%
-\contentsline {subsubsection}{\numberline {4.31.1.104}G6H}{198}{subsubsection.4.31.1.104}%
-\contentsline {subsubsection}{\numberline {4.31.1.105}G7}{198}{subsubsection.4.31.1.105}%
-\contentsline {subsubsection}{\numberline {4.31.1.106}G7H}{199}{subsubsection.4.31.1.106}%
-\contentsline {subsubsection}{\numberline {4.31.1.107}G8}{199}{subsubsection.4.31.1.107}%
-\contentsline {subsubsection}{\numberline {4.31.1.108}G8H}{199}{subsubsection.4.31.1.108}%
-\contentsline {subsubsection}{\numberline {4.31.1.109}T1}{199}{subsubsection.4.31.1.109}%
-\contentsline {subsubsection}{\numberline {4.31.1.110}T1\_1\_2}{199}{subsubsection.4.31.1.110}%
-\contentsline {subsubsection}{\numberline {4.31.1.111}T1\_2}{199}{subsubsection.4.31.1.111}%
-\contentsline {subsubsection}{\numberline {4.31.1.112}T1\_4}{200}{subsubsection.4.31.1.112}%
-\contentsline {subsubsection}{\numberline {4.31.1.113}T2}{200}{subsubsection.4.31.1.113}%
-\contentsline {subsubsection}{\numberline {4.31.1.114}T4}{200}{subsubsection.4.31.1.114}%
-\contentsline {subsection}{\numberline {4.31.2}Typedef Documentation}{200}{subsection.4.31.2}%
-\contentsline {subsubsection}{\numberline {4.31.2.1}note\_t}{200}{subsubsection.4.31.2.1}%
-\contentsline {section}{\numberline {4.32}od.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{200}{section.4.32}%
-\contentsline {subsection}{\numberline {4.32.1}Macro Definition Documentation}{201}{subsection.4.32.1}%
-\contentsline {subsubsection}{\numberline {4.32.1.1}ALLOCATE\_OD\_ENTRY}{201}{subsubsection.4.32.1.1}%
-\contentsline {subsubsection}{\numberline {4.32.1.2}DEBUG\_NO\_CAN}{202}{subsubsection.4.32.1.2}%
-\contentsline {subsubsection}{\numberline {4.32.1.3}LINK\_OD\_ENTRY}{202}{subsubsection.4.32.1.3}%
-\contentsline {subsubsection}{\numberline {4.32.1.4}OD\_MSGQ\_SIZE}{202}{subsubsection.4.32.1.4}%
-\contentsline {subsection}{\numberline {4.32.2}Function Documentation}{202}{subsection.4.32.2}%
-\contentsline {subsubsection}{\numberline {4.32.2.1}od\_init()}{202}{subsubsection.4.32.2.1}%
-\contentsline {subsubsection}{\numberline {4.32.2.2}od\_unsafe\_read()}{203}{subsubsection.4.32.2.2}%
-\contentsline {subsubsection}{\numberline {4.32.2.3}od\_unsafe\_write()}{203}{subsubsection.4.32.2.3}%
-\contentsline {subsubsection}{\numberline {4.32.2.4}od\_update\_task()}{203}{subsubsection.4.32.2.4}%
-\contentsline {subsection}{\numberline {4.32.3}Variable Documentation}{204}{subsection.4.32.3}%
-\contentsline {subsubsection}{\numberline {4.32.3.1}in\_q}{204}{subsubsection.4.32.3.1}%
-\contentsline {subsubsection}{\numberline {4.32.3.2}od\_entries}{204}{subsubsection.4.32.3.2}%
-\contentsline {subsubsection}{\numberline {4.32.3.3}out\_q}{204}{subsubsection.4.32.3.3}%
-\contentsline {section}{\numberline {4.33}od.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{205}{section.4.33}%
-\contentsline {subsection}{\numberline {4.33.1}Macro Definition Documentation}{205}{subsection.4.33.1}%
-\contentsline {subsubsection}{\numberline {4.33.1.1}DECLARE\_OD\_ENTRY}{206}{subsubsection.4.33.1.1}%
-\contentsline {subsubsection}{\numberline {4.33.1.2}OD\_FRAME\_MAX\_SIZE}{206}{subsubsection.4.33.1.2}%
-\contentsline {subsubsection}{\numberline {4.33.1.3}OD\_MAX\_DATAID}{206}{subsubsection.4.33.1.3}%
-\contentsline {subsection}{\numberline {4.33.2}Function Documentation}{206}{subsection.4.33.2}%
-\contentsline {subsubsection}{\numberline {4.33.2.1}od\_init()}{206}{subsubsection.4.33.2.1}%
-\contentsline {subsubsection}{\numberline {4.33.2.2}od\_update\_task()}{207}{subsubsection.4.33.2.2}%
-\contentsline {section}{\numberline {4.34}packet.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{207}{section.4.34}%
-\contentsline {subsection}{\numberline {4.34.1}Typedef Documentation}{207}{subsection.4.34.1}%
-\contentsline {subsubsection}{\numberline {4.34.1.1}packet\_def\_t}{207}{subsubsection.4.34.1.1}%
-\contentsline {subsection}{\numberline {4.34.2}Variable Documentation}{208}{subsection.4.34.2}%
-\contentsline {subsubsection}{\numberline {4.34.2.1}ping}{208}{subsubsection.4.34.2.1}%
-\contentsline {section}{\numberline {4.35}serial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{208}{section.4.35}%
-\contentsline {subsection}{\numberline {4.35.1}Macro Definition Documentation}{209}{subsection.4.35.1}%
-\contentsline {subsubsection}{\numberline {4.35.1.1}S1\_UART}{209}{subsubsection.4.35.1.1}%
-\contentsline {subsubsection}{\numberline {4.35.1.2}S2\_UART}{209}{subsubsection.4.35.1.2}%
-\contentsline {subsubsection}{\numberline {4.35.1.3}S3\_UART}{209}{subsubsection.4.35.1.3}%
-\contentsline {subsubsection}{\numberline {4.35.1.4}SERIAL\_DMA\_LEN}{210}{subsubsection.4.35.1.4}%
-\contentsline {subsection}{\numberline {4.35.2}Function Documentation}{210}{subsection.4.35.2}%
-\contentsline {subsubsection}{\numberline {4.35.2.1}HAL\_UART\_RxCpltCallback()}{210}{subsubsection.4.35.2.1}%
-\contentsline {subsubsection}{\numberline {4.35.2.2}serial\_data\_ready()}{210}{subsubsection.4.35.2.2}%
-\contentsline {subsubsection}{\numberline {4.35.2.3}serial\_feedback\_init()}{211}{subsubsection.4.35.2.3}%
-\contentsline {subsubsection}{\numberline {4.35.2.4}serial\_get\_deamon()}{211}{subsubsection.4.35.2.4}%
-\contentsline {subsubsection}{\numberline {4.35.2.5}serial\_get\_feedback\_interface()}{211}{subsubsection.4.35.2.5}%
-\contentsline {subsubsection}{\numberline {4.35.2.6}serial\_handle\_data()}{212}{subsubsection.4.35.2.6}%
-\contentsline {subsubsection}{\numberline {4.35.2.7}serial\_init()}{212}{subsubsection.4.35.2.7}%
-\contentsline {subsubsection}{\numberline {4.35.2.8}serial\_recv()}{213}{subsubsection.4.35.2.8}%
-\contentsline {subsubsection}{\numberline {4.35.2.9}serial\_send()}{214}{subsubsection.4.35.2.9}%
-\contentsline {subsubsection}{\numberline {4.35.2.10}serial\_setup\_reception()}{215}{subsubsection.4.35.2.10}%
-\contentsline {subsection}{\numberline {4.35.3}Variable Documentation}{215}{subsection.4.35.3}%
-\contentsline {subsubsection}{\numberline {4.35.3.1}feedback\_interface}{215}{subsubsection.4.35.3.1}%
-\contentsline {subsubsection}{\numberline {4.35.3.2}feedback\_interface\_context}{216}{subsubsection.4.35.3.2}%
-\contentsline {subsubsection}{\numberline {4.35.3.3}serial\_deamon}{216}{subsubsection.4.35.3.3}%
-\contentsline {subsubsection}{\numberline {4.35.3.4}serial\_deamon\_context}{216}{subsubsection.4.35.3.4}%
-\contentsline {section}{\numberline {4.36}serial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{216}{section.4.36}%
-\contentsline {subsection}{\numberline {4.36.1}Macro Definition Documentation}{218}{subsection.4.36.1}%
-\contentsline {subsubsection}{\numberline {4.36.1.1}SERIAL\_BUFFER\_LEN}{218}{subsubsection.4.36.1.1}%
-\contentsline {subsection}{\numberline {4.36.2}Typedef Documentation}{218}{subsection.4.36.2}%
-\contentsline {subsubsection}{\numberline {4.36.2.1}serial\_deamon\_context\_t}{218}{subsubsection.4.36.2.1}%
-\contentsline {subsubsection}{\numberline {4.36.2.2}serial\_interface\_context\_t}{218}{subsubsection.4.36.2.2}%
-\contentsline {subsubsection}{\numberline {4.36.2.3}serial\_interrupt\_source\_t}{219}{subsubsection.4.36.2.3}%
-\contentsline {subsubsection}{\numberline {4.36.2.4}serial\_transfer\_mode\_t}{219}{subsubsection.4.36.2.4}%
-\contentsline {subsection}{\numberline {4.36.3}Enumeration Type Documentation}{219}{subsection.4.36.3}%
-\contentsline {subsubsection}{\numberline {4.36.3.1}serial\_interrupt\_source}{219}{subsubsection.4.36.3.1}%
-\contentsline {subsubsection}{\numberline {4.36.3.2}serial\_transfer\_mode}{219}{subsubsection.4.36.3.2}%
-\contentsline {subsection}{\numberline {4.36.4}Function Documentation}{219}{subsection.4.36.4}%
-\contentsline {subsubsection}{\numberline {4.36.4.1}serial\_feedback\_init()}{220}{subsubsection.4.36.4.1}%
-\contentsline {subsubsection}{\numberline {4.36.4.2}serial\_get\_deamon()}{220}{subsubsection.4.36.4.2}%
-\contentsline {subsubsection}{\numberline {4.36.4.3}serial\_get\_feedback\_interface()}{220}{subsubsection.4.36.4.3}%
-\contentsline {subsubsection}{\numberline {4.36.4.4}serial\_init()}{221}{subsubsection.4.36.4.4}%
-\contentsline {subsubsection}{\numberline {4.36.4.5}serial\_recv()}{222}{subsubsection.4.36.4.5}%
-\contentsline {subsubsection}{\numberline {4.36.4.6}serial\_send()}{222}{subsubsection.4.36.4.6}%
-\contentsline {section}{\numberline {4.37}still\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}alive.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{223}{section.4.37}%
-\contentsline {subsection}{\numberline {4.37.1}Variable Documentation}{224}{subsection.4.37.1}%
-\contentsline {subsubsection}{\numberline {4.37.1.1}still\_alive}{224}{subsubsection.4.37.1.1}%
-\contentsline {subsubsection}{\numberline {4.37.1.2}still\_alive\_len}{224}{subsubsection.4.37.1.2}%
-\contentsline {section}{\numberline {4.38}still\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}alive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bak.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{224}{section.4.38}%
-\contentsline {subsection}{\numberline {4.38.1}Variable Documentation}{225}{subsection.4.38.1}%
-\contentsline {subsubsection}{\numberline {4.38.1.1}still\_alive}{225}{subsubsection.4.38.1.1}%
-\contentsline {subsubsection}{\numberline {4.38.1.2}still\_alive\_len}{225}{subsubsection.4.38.1.2}%
-\contentsline {section}{\numberline {4.39}template.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{225}{section.4.39}%
-\contentsline {section}{\numberline {4.40}template.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{226}{section.4.40}%
-\contentsline {section}{\numberline {4.41}threads.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{226}{section.4.41}%
-\contentsline {subsection}{\numberline {4.41.1}Macro Definition Documentation}{227}{subsection.4.41.1}%
-\contentsline {subsubsection}{\numberline {4.41.1.1}CONTROL\_PRIO}{227}{subsubsection.4.41.1.1}%
-\contentsline {subsubsection}{\numberline {4.41.1.2}CONTROL\_SZ}{228}{subsubsection.4.41.1.2}%
-\contentsline {subsubsection}{\numberline {4.41.1.3}CREATE\_THREAD}{228}{subsubsection.4.41.1.3}%
-\contentsline {subsubsection}{\numberline {4.41.1.4}DEFAULT\_SZ}{228}{subsubsection.4.41.1.4}%
-\contentsline {subsubsection}{\numberline {4.41.1.5}LED\_RGB\_PRIO}{229}{subsubsection.4.41.1.5}%
-\contentsline {subsubsection}{\numberline {4.41.1.6}LED\_RGB\_SZ}{229}{subsubsection.4.41.1.6}%
-\contentsline {subsubsection}{\numberline {4.41.1.7}OD\_PRIO}{229}{subsubsection.4.41.1.7}%
-\contentsline {subsubsection}{\numberline {4.41.1.8}OD\_SZ}{229}{subsubsection.4.41.1.8}%
-\contentsline {subsection}{\numberline {4.41.2}Function Documentation}{229}{subsection.4.41.2}%
-\contentsline {subsubsection}{\numberline {4.41.2.1}threads\_init()}{230}{subsubsection.4.41.2.1}%
-\contentsline {subsection}{\numberline {4.41.3}Variable Documentation}{230}{subsection.4.41.3}%
-\contentsline {subsubsection}{\numberline {4.41.3.1}control\_handle}{230}{subsubsection.4.41.3.1}%
-\contentsline {subsubsection}{\numberline {4.41.3.2}led\_rgb\_handle}{231}{subsubsection.4.41.3.2}%
-\contentsline {subsubsection}{\numberline {4.41.3.3}od\_handle}{231}{subsubsection.4.41.3.3}%
-\contentsline {section}{\numberline {4.42}threads.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{231}{section.4.42}%
-\contentsline {subsection}{\numberline {4.42.1}Function Documentation}{232}{subsection.4.42.1}%
-\contentsline {subsubsection}{\numberline {4.42.1.1}threads\_init()}{232}{subsubsection.4.42.1.1}%
-\contentsline {section}{\numberline {4.43}uart.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{233}{section.4.43}%
-\contentsline {section}{\numberline {4.44}uart.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{233}{section.4.44}%
-\contentsline {section}{\numberline {4.45}util.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{234}{section.4.45}%
-\contentsline {subsection}{\numberline {4.45.1}Macro Definition Documentation}{236}{subsection.4.45.1}%
-\contentsline {subsubsection}{\numberline {4.45.1.1}ENTER\_CRITICAL}{236}{subsubsection.4.45.1.1}%
-\contentsline {subsubsection}{\numberline {4.45.1.2}EXIT\_CRITICAL}{236}{subsubsection.4.45.1.2}%
-\contentsline {subsubsection}{\numberline {4.45.1.3}util\_abs}{236}{subsubsection.4.45.1.3}%
-\contentsline {subsubsection}{\numberline {4.45.1.4}UTIL\_GENERATE\_BUFFER}{236}{subsubsection.4.45.1.4}%
-\contentsline {subsubsection}{\numberline {4.45.1.5}WRITE\_IN\_REG}{237}{subsubsection.4.45.1.5}%
-\contentsline {subsection}{\numberline {4.45.2}Typedef Documentation}{237}{subsection.4.45.2}%
-\contentsline {subsubsection}{\numberline {4.45.2.1}util\_buffer\_i16\_t}{237}{subsubsection.4.45.2.1}%
-\contentsline {subsubsection}{\numberline {4.45.2.2}util\_buffer\_u16\_t}{238}{subsubsection.4.45.2.2}%
-\contentsline {subsubsection}{\numberline {4.45.2.3}util\_buffer\_u8\_t}{238}{subsubsection.4.45.2.3}%
-\contentsline {subsubsection}{\numberline {4.45.2.4}util\_error\_t}{238}{subsubsection.4.45.2.4}%
-\contentsline {subsection}{\numberline {4.45.3}Enumeration Type Documentation}{238}{subsection.4.45.3}%
-\contentsline {subsubsection}{\numberline {4.45.3.1}util\_error}{238}{subsubsection.4.45.3.1}%
-\contentsline {subsection}{\numberline {4.45.4}Function Documentation}{239}{subsection.4.45.4}%
-\contentsline {subsubsection}{\numberline {4.45.4.1}util\_buffer\_i16\_add()}{239}{subsubsection.4.45.4.1}%
-\contentsline {subsubsection}{\numberline {4.45.4.2}util\_buffer\_i16\_get()}{239}{subsubsection.4.45.4.2}%
-\contentsline {subsubsection}{\numberline {4.45.4.3}util\_buffer\_i16\_init()}{239}{subsubsection.4.45.4.3}%
-\contentsline {subsubsection}{\numberline {4.45.4.4}util\_buffer\_i16\_isempty()}{239}{subsubsection.4.45.4.4}%
-\contentsline {subsubsection}{\numberline {4.45.4.5}util\_buffer\_u16\_add()}{240}{subsubsection.4.45.4.5}%
-\contentsline {subsubsection}{\numberline {4.45.4.6}util\_buffer\_u16\_get()}{240}{subsubsection.4.45.4.6}%
-\contentsline {subsubsection}{\numberline {4.45.4.7}util\_buffer\_u16\_init()}{240}{subsubsection.4.45.4.7}%
-\contentsline {subsubsection}{\numberline {4.45.4.8}util\_buffer\_u16\_isempty()}{240}{subsubsection.4.45.4.8}%
-\contentsline {subsubsection}{\numberline {4.45.4.9}util\_buffer\_u8\_access()}{241}{subsubsection.4.45.4.9}%
-\contentsline {subsubsection}{\numberline {4.45.4.10}util\_buffer\_u8\_add()}{241}{subsubsection.4.45.4.10}%
-\contentsline {subsubsection}{\numberline {4.45.4.11}util\_buffer\_u8\_get()}{241}{subsubsection.4.45.4.11}%
-\contentsline {subsubsection}{\numberline {4.45.4.12}util\_buffer\_u8\_init()}{242}{subsubsection.4.45.4.12}%
-\contentsline {subsubsection}{\numberline {4.45.4.13}util\_buffer\_u8\_isempty()}{242}{subsubsection.4.45.4.13}%
-\contentsline {subsubsection}{\numberline {4.45.4.14}util\_decode\_i16()}{243}{subsubsection.4.45.4.14}%
-\contentsline {subsubsection}{\numberline {4.45.4.15}util\_decode\_i32()}{243}{subsubsection.4.45.4.15}%
-\contentsline {subsubsection}{\numberline {4.45.4.16}util\_decode\_i8()}{244}{subsubsection.4.45.4.16}%
-\contentsline {subsubsection}{\numberline {4.45.4.17}util\_decode\_u16()}{244}{subsubsection.4.45.4.17}%
-\contentsline {subsubsection}{\numberline {4.45.4.18}util\_decode\_u32()}{245}{subsubsection.4.45.4.18}%
-\contentsline {subsubsection}{\numberline {4.45.4.19}util\_decode\_u8()}{245}{subsubsection.4.45.4.19}%
-\contentsline {subsubsection}{\numberline {4.45.4.20}util\_encode\_i16()}{246}{subsubsection.4.45.4.20}%
-\contentsline {subsubsection}{\numberline {4.45.4.21}util\_encode\_i32()}{246}{subsubsection.4.45.4.21}%
-\contentsline {subsubsection}{\numberline {4.45.4.22}util\_encode\_i8()}{247}{subsubsection.4.45.4.22}%
-\contentsline {subsubsection}{\numberline {4.45.4.23}util\_encode\_u16()}{247}{subsubsection.4.45.4.23}%
-\contentsline {subsubsection}{\numberline {4.45.4.24}util\_encode\_u32()}{248}{subsubsection.4.45.4.24}%
-\contentsline {subsubsection}{\numberline {4.45.4.25}util\_encode\_u8()}{248}{subsubsection.4.45.4.25}%
-\contentsline {section}{\numberline {4.46}wildhorn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{249}{section.4.46}%
-\contentsline {subsection}{\numberline {4.46.1}Macro Definition Documentation}{249}{subsection.4.46.1}%
-\contentsline {subsubsection}{\numberline {4.46.1.1}WH\_FALSE}{250}{subsubsection.4.46.1.1}%
-\contentsline {subsubsection}{\numberline {4.46.1.2}WH\_HAS\_FEEDBACK}{250}{subsubsection.4.46.1.2}%
-\contentsline {subsubsection}{\numberline {4.46.1.3}WH\_HAS\_GNSS}{250}{subsubsection.4.46.1.3}%
-\contentsline {subsubsection}{\numberline {4.46.1.4}WH\_HAS\_KRTEK}{250}{subsubsection.4.46.1.4}%
-\contentsline {subsubsection}{\numberline {4.46.1.5}WH\_HAS\_RADIO}{250}{subsubsection.4.46.1.5}%
-\contentsline {subsubsection}{\numberline {4.46.1.6}WH\_HAS\_SENSORS}{250}{subsubsection.4.46.1.6}%
-\contentsline {subsubsection}{\numberline {4.46.1.7}WH\_TRUE}{250}{subsubsection.4.46.1.7}%
-\contentsline {subsubsection}{\numberline {4.46.1.8}WH\_USE\_BUZZER}{250}{subsubsection.4.46.1.8}%
-\contentsline {chapter}{Index}{251}{section*.335}%
+\contentsline {subsection}{\numberline {3.4.1}Field Documentation}{7}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}context}{7}{subsubsection.3.4.1.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.2}id}{7}{subsubsection.3.4.1.2}%
+\contentsline {subsubsection}{\numberline {3.4.1.3}interface}{8}{subsubsection.3.4.1.3}%
+\contentsline {subsubsection}{\numberline {3.4.1.4}read\_reg}{8}{subsubsection.3.4.1.4}%
+\contentsline {subsubsection}{\numberline {3.4.1.5}write\_reg}{8}{subsubsection.3.4.1.5}%
+\contentsline {section}{\numberline {3.5}device\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deamon Struct Reference}{8}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Field Documentation}{9}{subsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.1.1}buffer}{9}{subsubsection.3.5.1.1}%
+\contentsline {subsubsection}{\numberline {3.5.1.2}context}{9}{subsubsection.3.5.1.2}%
+\contentsline {subsubsection}{\numberline {3.5.1.3}data\_rdy}{9}{subsubsection.3.5.1.3}%
+\contentsline {subsubsection}{\numberline {3.5.1.4}handle}{9}{subsubsection.3.5.1.4}%
+\contentsline {subsubsection}{\numberline {3.5.1.5}id}{10}{subsubsection.3.5.1.5}%
+\contentsline {subsubsection}{\numberline {3.5.1.6}interfaces}{10}{subsubsection.3.5.1.6}%
+\contentsline {subsubsection}{\numberline {3.5.1.7}interfaces\_count}{10}{subsubsection.3.5.1.7}%
+\contentsline {subsubsection}{\numberline {3.5.1.8}stack}{10}{subsubsection.3.5.1.8}%
+\contentsline {section}{\numberline {3.6}device\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface Struct Reference}{10}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Field Documentation}{11}{subsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.1}context}{11}{subsubsection.3.6.1.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.2}handle\_data}{11}{subsubsection.3.6.1.2}%
+\contentsline {subsubsection}{\numberline {3.6.1.3}id}{11}{subsubsection.3.6.1.3}%
+\contentsline {subsubsection}{\numberline {3.6.1.4}recv}{11}{subsubsection.3.6.1.4}%
+\contentsline {subsubsection}{\numberline {3.6.1.5}send}{11}{subsubsection.3.6.1.5}%
+\contentsline {section}{\numberline {3.7}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}request Struct Reference}{12}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Field Documentation}{12}{subsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.1.1}dst}{12}{subsubsection.3.7.1.1}%
+\contentsline {subsubsection}{\numberline {3.7.1.2}dst\_inc}{12}{subsubsection.3.7.1.2}%
+\contentsline {subsubsection}{\numberline {3.7.1.3}src}{12}{subsubsection.3.7.1.3}%
+\contentsline {subsubsection}{\numberline {3.7.1.4}src\_inc}{12}{subsubsection.3.7.1.4}%
+\contentsline {subsubsection}{\numberline {3.7.1.5}tranfser\_len}{12}{subsubsection.3.7.1.5}%
+\contentsline {section}{\numberline {3.8}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}scheduler\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dev Struct Reference}{13}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Field Documentation}{13}{subsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.1.1}free\_stream\_count}{13}{subsubsection.3.8.1.1}%
+\contentsline {subsubsection}{\numberline {3.8.1.2}stream\_count}{13}{subsubsection.3.8.1.2}%
+\contentsline {subsubsection}{\numberline {3.8.1.3}streams}{14}{subsubsection.3.8.1.3}%
+\contentsline {section}{\numberline {3.9}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}stream\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}config Struct Reference}{14}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Field Documentation}{14}{subsection.3.9.1}%
+\contentsline {subsubsection}{\numberline {3.9.1.1}direction}{14}{subsubsection.3.9.1.1}%
+\contentsline {subsubsection}{\numberline {3.9.1.2}dmamux\_request\_number}{14}{subsubsection.3.9.1.2}%
+\contentsline {subsubsection}{\numberline {3.9.1.3}m0\_addr}{15}{subsubsection.3.9.1.3}%
+\contentsline {subsubsection}{\numberline {3.9.1.4}m1\_addr}{15}{subsubsection.3.9.1.4}%
+\contentsline {subsubsection}{\numberline {3.9.1.5}p\_addr}{15}{subsubsection.3.9.1.5}%
+\contentsline {subsubsection}{\numberline {3.9.1.6}peripheral\_flow\_control}{15}{subsubsection.3.9.1.6}%
+\contentsline {subsubsection}{\numberline {3.9.1.7}priority}{15}{subsubsection.3.9.1.7}%
+\contentsline {subsubsection}{\numberline {3.9.1.8}stream\_number}{15}{subsubsection.3.9.1.8}%
+\contentsline {subsubsection}{\numberline {3.9.1.9}transfer\_cplt}{16}{subsubsection.3.9.1.9}%
+\contentsline {subsubsection}{\numberline {3.9.1.10}transfer\_error}{16}{subsubsection.3.9.1.10}%
+\contentsline {subsubsection}{\numberline {3.9.1.11}transfer\_half}{16}{subsubsection.3.9.1.11}%
+\contentsline {subsubsection}{\numberline {3.9.1.12}transfer\_size}{16}{subsubsection.3.9.1.12}%
+\contentsline {subsubsection}{\numberline {3.9.1.13}user\_context}{16}{subsubsection.3.9.1.13}%
+\contentsline {section}{\numberline {3.10}dma\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}stream\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dev Struct Reference}{16}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Field Documentation}{17}{subsection.3.10.1}%
+\contentsline {subsubsection}{\numberline {3.10.1.1}dma}{17}{subsubsection.3.10.1.1}%
+\contentsline {subsubsection}{\numberline {3.10.1.2}dma\_stream}{17}{subsubsection.3.10.1.2}%
+\contentsline {subsubsection}{\numberline {3.10.1.3}dmamux\_channel}{17}{subsubsection.3.10.1.3}%
+\contentsline {subsubsection}{\numberline {3.10.1.4}dmamux\_channel\_status}{17}{subsubsection.3.10.1.4}%
+\contentsline {subsubsection}{\numberline {3.10.1.5}number}{18}{subsubsection.3.10.1.5}%
+\contentsline {subsubsection}{\numberline {3.10.1.6}state}{18}{subsubsection.3.10.1.6}%
+\contentsline {subsubsection}{\numberline {3.10.1.7}transfer\_cplt}{18}{subsubsection.3.10.1.7}%
+\contentsline {subsubsection}{\numberline {3.10.1.8}transfer\_error}{18}{subsubsection.3.10.1.8}%
+\contentsline {subsubsection}{\numberline {3.10.1.9}transfer\_half}{18}{subsubsection.3.10.1.9}%
+\contentsline {subsubsection}{\numberline {3.10.1.10}user\_context}{18}{subsubsection.3.10.1.10}%
+\contentsline {section}{\numberline {3.11}gpio\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}config Struct Reference}{19}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}Field Documentation}{19}{subsection.3.11.1}%
+\contentsline {subsubsection}{\numberline {3.11.1.1}alternate}{19}{subsubsection.3.11.1.1}%
+\contentsline {subsubsection}{\numberline {3.11.1.2}bias}{19}{subsubsection.3.11.1.2}%
+\contentsline {subsubsection}{\numberline {3.11.1.3}drive}{19}{subsubsection.3.11.1.3}%
+\contentsline {subsubsection}{\numberline {3.11.1.4}mode}{19}{subsubsection.3.11.1.4}%
+\contentsline {subsubsection}{\numberline {3.11.1.5}speed}{20}{subsubsection.3.11.1.5}%
+\contentsline {section}{\numberline {3.12}hostproc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{20}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}Field Documentation}{20}{subsection.3.12.1}%
+\contentsline {subsubsection}{\numberline {3.12.1.1}rx\_once}{20}{subsubsection.3.12.1.1}%
+\contentsline {subsubsection}{\numberline {3.12.1.2}uart}{20}{subsubsection.3.12.1.2}%
+\contentsline {section}{\numberline {3.13}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{20}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}Detailed Description}{21}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}Field Documentation}{21}{subsection.3.13.2}%
+\contentsline {subsubsection}{\numberline {3.13.2.1}i2c}{21}{subsubsection.3.13.2.1}%
+\contentsline {section}{\numberline {3.14}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sensor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{21}{section.3.14}%
+\contentsline {subsection}{\numberline {3.14.1}Field Documentation}{21}{subsection.3.14.1}%
+\contentsline {subsubsection}{\numberline {3.14.1.1}device\_address}{21}{subsubsection.3.14.1.1}%
+\contentsline {section}{\numberline {3.15}led\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}color Struct Reference}{22}{section.3.15}%
+\contentsline {subsection}{\numberline {3.15.1}Field Documentation}{22}{subsection.3.15.1}%
+\contentsline {subsubsection}{\numberline {3.15.1.1}b}{22}{subsubsection.3.15.1.1}%
+\contentsline {subsubsection}{\numberline {3.15.1.2}g}{22}{subsubsection.3.15.1.2}%
+\contentsline {subsubsection}{\numberline {3.15.1.3}r}{22}{subsubsection.3.15.1.3}%
+\contentsline {section}{\numberline {3.16}MSV2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}INST Struct Reference}{23}{section.3.16}%
+\contentsline {subsection}{\numberline {3.16.1}Field Documentation}{23}{subsection.3.16.1}%
+\contentsline {subsubsection}{\numberline {3.16.1.1}id}{23}{subsubsection.3.16.1.1}%
+\contentsline {subsubsection}{\numberline {3.16.1.2}rx}{23}{subsubsection.3.16.1.2}%
+\contentsline {subsubsection}{\numberline {3.16.1.3}tx}{24}{subsubsection.3.16.1.3}%
+\contentsline {section}{\numberline {3.17}MSV2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}RX\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DATA Struct Reference}{24}{section.3.17}%
+\contentsline {subsection}{\numberline {3.17.1}Field Documentation}{24}{subsection.3.17.1}%
+\contentsline {subsubsection}{\numberline {3.17.1.1}counter}{24}{subsubsection.3.17.1.1}%
+\contentsline {subsubsection}{\numberline {3.17.1.2}crc}{24}{subsubsection.3.17.1.2}%
+\contentsline {subsubsection}{\numberline {3.17.1.3}crc\_data}{25}{subsubsection.3.17.1.3}%
+\contentsline {subsubsection}{\numberline {3.17.1.4}data}{25}{subsubsection.3.17.1.4}%
+\contentsline {subsubsection}{\numberline {3.17.1.5}data\_len}{25}{subsubsection.3.17.1.5}%
+\contentsline {subsubsection}{\numberline {3.17.1.6}escape}{25}{subsubsection.3.17.1.6}%
+\contentsline {subsubsection}{\numberline {3.17.1.7}length}{25}{subsubsection.3.17.1.7}%
+\contentsline {subsubsection}{\numberline {3.17.1.8}opcode}{25}{subsubsection.3.17.1.8}%
+\contentsline {subsubsection}{\numberline {3.17.1.9}state}{26}{subsubsection.3.17.1.9}%
+\contentsline {section}{\numberline {3.18}MSV2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TX\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DATA Struct Reference}{26}{section.3.18}%
+\contentsline {subsection}{\numberline {3.18.1}Field Documentation}{26}{subsection.3.18.1}%
+\contentsline {subsubsection}{\numberline {3.18.1.1}crc}{26}{subsubsection.3.18.1.1}%
+\contentsline {subsubsection}{\numberline {3.18.1.2}crc\_data}{26}{subsubsection.3.18.1.2}%
+\contentsline {subsubsection}{\numberline {3.18.1.3}data}{26}{subsubsection.3.18.1.3}%
+\contentsline {subsubsection}{\numberline {3.18.1.4}data\_len}{27}{subsubsection.3.18.1.4}%
+\contentsline {subsubsection}{\numberline {3.18.1.5}opcode}{27}{subsubsection.3.18.1.5}%
+\contentsline {section}{\numberline {3.19}note Struct Reference}{27}{section.3.19}%
+\contentsline {subsection}{\numberline {3.19.1}Field Documentation}{27}{subsection.3.19.1}%
+\contentsline {subsubsection}{\numberline {3.19.1.1}freq}{27}{subsubsection.3.19.1.1}%
+\contentsline {subsubsection}{\numberline {3.19.1.2}time}{27}{subsubsection.3.19.1.2}%
+\contentsline {section}{\numberline {3.20}od\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}entry\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{28}{section.3.20}%
+\contentsline {subsection}{\numberline {3.20.1}Field Documentation}{28}{subsection.3.20.1}%
+\contentsline {subsubsection}{\numberline {3.20.1.1}data}{28}{subsubsection.3.20.1.1}%
+\contentsline {subsubsection}{\numberline {3.20.1.2}data\_id}{28}{subsubsection.3.20.1.2}%
+\contentsline {subsubsection}{\numberline {3.20.1.3}size}{28}{subsubsection.3.20.1.3}%
+\contentsline {section}{\numberline {3.21}od\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}frame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{28}{section.3.21}%
+\contentsline {subsection}{\numberline {3.21.1}Field Documentation}{29}{subsection.3.21.1}%
+\contentsline {subsubsection}{\numberline {3.21.1.1}data}{29}{subsubsection.3.21.1.1}%
+\contentsline {subsubsection}{\numberline {3.21.1.2}data\_id}{29}{subsubsection.3.21.1.2}%
+\contentsline {subsubsection}{\numberline {3.21.1.3}size}{29}{subsubsection.3.21.1.3}%
+\contentsline {section}{\numberline {3.22}packet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}def Struct Reference}{29}{section.3.22}%
+\contentsline {subsection}{\numberline {3.22.1}Field Documentation}{29}{subsection.3.22.1}%
+\contentsline {subsubsection}{\numberline {3.22.1.1}len}{30}{subsubsection.3.22.1.1}%
+\contentsline {subsubsection}{\numberline {3.22.1.2}opcode}{30}{subsubsection.3.22.1.2}%
+\contentsline {section}{\numberline {3.23}serial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}deamon\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{30}{section.3.23}%
+\contentsline {subsection}{\numberline {3.23.1}Field Documentation}{30}{subsection.3.23.1}%
+\contentsline {subsubsection}{\numberline {3.23.1.1}rx\_sem}{30}{subsubsection.3.23.1.1}%
+\contentsline {subsubsection}{\numberline {3.23.1.2}rx\_sem\_buffer}{30}{subsubsection.3.23.1.2}%
+\contentsline {section}{\numberline {3.24}serial\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}context Struct Reference}{31}{section.3.24}%
+\contentsline {subsection}{\numberline {3.24.1}Field Documentation}{31}{subsection.3.24.1}%
+\contentsline {subsubsection}{\numberline {3.24.1.1}protocol}{31}{subsubsection.3.24.1.1}%
+\contentsline {subsubsection}{\numberline {3.24.1.2}rx\_buffer}{31}{subsubsection.3.24.1.2}%
+\contentsline {subsubsection}{\numberline {3.24.1.3}rx\_data}{32}{subsubsection.3.24.1.3}%
+\contentsline {subsubsection}{\numberline {3.24.1.4}rx\_data\_len}{32}{subsubsection.3.24.1.4}%
+\contentsline {subsubsection}{\numberline {3.24.1.5}rx\_fragment}{32}{subsubsection.3.24.1.5}%
+\contentsline {subsubsection}{\numberline {3.24.1.6}tx\_data}{32}{subsubsection.3.24.1.6}%
+\contentsline {subsubsection}{\numberline {3.24.1.7}uart}{32}{subsubsection.3.24.1.7}%
+\contentsline {section}{\numberline {3.25}util\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}buffer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}i16 Struct Reference}{32}{section.3.25}%
+\contentsline {subsection}{\numberline {3.25.1}Field Documentation}{33}{subsection.3.25.1}%
+\contentsline {subsubsection}{\numberline {3.25.1.1}bfr\_len}{33}{subsubsection.3.25.1.1}%
+\contentsline {subsubsection}{\numberline {3.25.1.2}buffer}{33}{subsubsection.3.25.1.2}%
+\contentsline {subsubsection}{\numberline {3.25.1.3}c\_ix}{33}{subsubsection.3.25.1.3}%
+\contentsline {subsubsection}{\numberline {3.25.1.4}l\_ix}{33}{subsubsection.3.25.1.4}%
+\contentsline {section}{\numberline {3.26}util\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}buffer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}u16 Struct Reference}{33}{section.3.26}%
+\contentsline {subsection}{\numberline {3.26.1}Field Documentation}{34}{subsection.3.26.1}%
+\contentsline {subsubsection}{\numberline {3.26.1.1}bfr\_len}{34}{subsubsection.3.26.1.1}%
+\contentsline {subsubsection}{\numberline {3.26.1.2}buffer}{34}{subsubsection.3.26.1.2}%
+\contentsline {subsubsection}{\numberline {3.26.1.3}c\_ix}{34}{subsubsection.3.26.1.3}%
+\contentsline {subsubsection}{\numberline {3.26.1.4}l\_ix}{34}{subsubsection.3.26.1.4}%
+\contentsline {section}{\numberline {3.27}util\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}buffer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}u8 Struct Reference}{34}{section.3.27}%
+\contentsline {subsection}{\numberline {3.27.1}Field Documentation}{35}{subsection.3.27.1}%
+\contentsline {subsubsection}{\numberline {3.27.1.1}bfr\_len}{35}{subsubsection.3.27.1.1}%
+\contentsline {subsubsection}{\numberline {3.27.1.2}buffer}{35}{subsubsection.3.27.1.2}%
+\contentsline {subsubsection}{\numberline {3.27.1.3}c\_ix}{35}{subsubsection.3.27.1.3}%
+\contentsline {subsubsection}{\numberline {3.27.1.4}l\_ix}{35}{subsubsection.3.27.1.4}%
+\contentsline {chapter}{\numberline {4}File Documentation}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}accelerometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{37}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Function Documentation}{37}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}accelerometer\_init()}{38}{subsubsection.4.1.1.1}%
+\contentsline {section}{\numberline {4.2}accelerometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{38}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Function Documentation}{39}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}accelerometer\_init()}{39}{subsubsection.4.2.1.1}%
+\contentsline {section}{\numberline {4.3}barometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{39}{section.4.3}%
+\contentsline {section}{\numberline {4.4}barometer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{39}{section.4.4}%
+\contentsline {section}{\numberline {4.5}buzzer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{40}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Macro Definition Documentation}{41}{subsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.1}BUZZER\_PIN}{41}{subsubsection.4.5.1.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.2}BUZZER\_PORT}{41}{subsubsection.4.5.1.2}%
+\contentsline {subsubsection}{\numberline {4.5.1.3}COMPUTE\_NOTE}{41}{subsubsection.4.5.1.3}%
+\contentsline {subsubsection}{\numberline {4.5.1.4}COMPUTE\_RYTM}{41}{subsubsection.4.5.1.4}%
+\contentsline {subsubsection}{\numberline {4.5.1.5}NOTE\_PRESC}{42}{subsubsection.4.5.1.5}%
+\contentsline {subsubsection}{\numberline {4.5.1.6}NOTE\_TIMER}{42}{subsubsection.4.5.1.6}%
+\contentsline {subsubsection}{\numberline {4.5.1.7}NOTE\_TIMER\_DEV}{42}{subsubsection.4.5.1.7}%
+\contentsline {subsubsection}{\numberline {4.5.1.8}RYTM\_MS}{42}{subsubsection.4.5.1.8}%
+\contentsline {subsubsection}{\numberline {4.5.1.9}RYTM\_PRESC}{42}{subsubsection.4.5.1.9}%
+\contentsline {subsubsection}{\numberline {4.5.1.10}RYTM\_TIMER}{42}{subsubsection.4.5.1.10}%
+\contentsline {subsubsection}{\numberline {4.5.1.11}RYTM\_TIMER\_DEV}{42}{subsubsection.4.5.1.11}%
+\contentsline {subsubsection}{\numberline {4.5.1.12}TIMER\_FREQ}{43}{subsubsection.4.5.1.12}%
+\contentsline {subsubsection}{\numberline {4.5.1.13}TIMER\_TRIM}{43}{subsubsection.4.5.1.13}%
+\contentsline {subsection}{\numberline {4.5.2}Function Documentation}{43}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}buzzer\_disable()}{43}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}buzzer\_enable()}{43}{subsubsection.4.5.2.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.3}buzzer\_init()}{43}{subsubsection.4.5.2.3}%
+\contentsline {subsubsection}{\numberline {4.5.2.4}buzzer\_note\_interrupt()}{44}{subsubsection.4.5.2.4}%
+\contentsline {subsubsection}{\numberline {4.5.2.5}buzzer\_rytm\_interrupt()}{44}{subsubsection.4.5.2.5}%
+\contentsline {subsection}{\numberline {4.5.3}Variable Documentation}{44}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}melody\_active}{45}{subsubsection.4.5.3.1}%
+\contentsline {subsubsection}{\numberline {4.5.3.2}melody\_state}{45}{subsubsection.4.5.3.2}%
+\contentsline {subsubsection}{\numberline {4.5.3.3}state}{45}{subsubsection.4.5.3.3}%
+\contentsline {section}{\numberline {4.6}buzzer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{45}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Function Documentation}{46}{subsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.1}buzzer\_disable()}{46}{subsubsection.4.6.1.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.2}buzzer\_enable()}{46}{subsubsection.4.6.1.2}%
+\contentsline {subsubsection}{\numberline {4.6.1.3}buzzer\_init()}{46}{subsubsection.4.6.1.3}%
+\contentsline {subsubsection}{\numberline {4.6.1.4}buzzer\_note\_interrupt()}{47}{subsubsection.4.6.1.4}%
+\contentsline {subsubsection}{\numberline {4.6.1.5}buzzer\_rytm\_interrupt()}{47}{subsubsection.4.6.1.5}%
+\contentsline {section}{\numberline {4.7}control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{48}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Macro Definition Documentation}{50}{subsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.1}CONTROL\_HEART\_BEAT}{50}{subsubsection.4.7.1.1}%
+\contentsline {subsection}{\numberline {4.7.2}Typedef Documentation}{50}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}control\_state\_t}{50}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}control\_t}{50}{subsubsection.4.7.2.2}%
+\contentsline {subsection}{\numberline {4.7.3}Enumeration Type Documentation}{50}{subsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.3.1}control\_state}{50}{subsubsection.4.7.3.1}%
+\contentsline {subsection}{\numberline {4.7.4}Function Documentation}{51}{subsection.4.7.4}%
+\contentsline {subsubsection}{\numberline {4.7.4.1}control\_abort\_run()}{51}{subsubsection.4.7.4.1}%
+\contentsline {subsubsection}{\numberline {4.7.4.2}control\_abort\_start()}{51}{subsubsection.4.7.4.2}%
+\contentsline {subsubsection}{\numberline {4.7.4.3}control\_apogee\_run()}{51}{subsubsection.4.7.4.3}%
+\contentsline {subsubsection}{\numberline {4.7.4.4}control\_apogee\_start()}{52}{subsubsection.4.7.4.4}%
+\contentsline {subsubsection}{\numberline {4.7.4.5}control\_armed\_run()}{52}{subsubsection.4.7.4.5}%
+\contentsline {subsubsection}{\numberline {4.7.4.6}control\_armed\_start()}{52}{subsubsection.4.7.4.6}%
+\contentsline {subsubsection}{\numberline {4.7.4.7}control\_ballistic\_run()}{52}{subsubsection.4.7.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.4.8}control\_ballistic\_start()}{52}{subsubsection.4.7.4.8}%
+\contentsline {subsubsection}{\numberline {4.7.4.9}control\_calibration\_run()}{53}{subsubsection.4.7.4.9}%
+\contentsline {subsubsection}{\numberline {4.7.4.10}control\_calibration\_start()}{53}{subsubsection.4.7.4.10}%
+\contentsline {subsubsection}{\numberline {4.7.4.11}control\_coast\_run()}{53}{subsubsection.4.7.4.11}%
+\contentsline {subsubsection}{\numberline {4.7.4.12}control\_coast\_start()}{53}{subsubsection.4.7.4.12}%
+\contentsline {subsubsection}{\numberline {4.7.4.13}control\_drogue\_run()}{53}{subsubsection.4.7.4.13}%
+\contentsline {subsubsection}{\numberline {4.7.4.14}control\_drogue\_start()}{54}{subsubsection.4.7.4.14}%
+\contentsline {subsubsection}{\numberline {4.7.4.15}control\_error\_run()}{54}{subsubsection.4.7.4.15}%
+\contentsline {subsubsection}{\numberline {4.7.4.16}control\_error\_start()}{54}{subsubsection.4.7.4.16}%
+\contentsline {subsubsection}{\numberline {4.7.4.17}control\_event\_run()}{54}{subsubsection.4.7.4.17}%
+\contentsline {subsubsection}{\numberline {4.7.4.18}control\_event\_start()}{54}{subsubsection.4.7.4.18}%
+\contentsline {subsubsection}{\numberline {4.7.4.19}control\_idle\_run()}{55}{subsubsection.4.7.4.19}%
+\contentsline {subsubsection}{\numberline {4.7.4.20}control\_idle\_start()}{55}{subsubsection.4.7.4.20}%
+\contentsline {subsubsection}{\numberline {4.7.4.21}control\_main\_run()}{55}{subsubsection.4.7.4.21}%
+\contentsline {subsubsection}{\numberline {4.7.4.22}control\_main\_start()}{55}{subsubsection.4.7.4.22}%
+\contentsline {subsubsection}{\numberline {4.7.4.23}control\_powered\_run()}{55}{subsubsection.4.7.4.23}%
+\contentsline {subsubsection}{\numberline {4.7.4.24}control\_powered\_start()}{56}{subsubsection.4.7.4.24}%
+\contentsline {subsubsection}{\numberline {4.7.4.25}control\_supersonic\_run()}{56}{subsubsection.4.7.4.25}%
+\contentsline {subsubsection}{\numberline {4.7.4.26}control\_supersonic\_start()}{56}{subsubsection.4.7.4.26}%
+\contentsline {subsubsection}{\numberline {4.7.4.27}control\_thread()}{56}{subsubsection.4.7.4.27}%
+\contentsline {subsubsection}{\numberline {4.7.4.28}control\_touchdown\_run()}{57}{subsubsection.4.7.4.28}%
+\contentsline {subsubsection}{\numberline {4.7.4.29}control\_touchdown\_start()}{57}{subsubsection.4.7.4.29}%
+\contentsline {subsection}{\numberline {4.7.5}Variable Documentation}{58}{subsection.4.7.5}%
+\contentsline {subsubsection}{\numberline {4.7.5.1}control}{58}{subsubsection.4.7.5.1}%
+\contentsline {section}{\numberline {4.8}control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{58}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Function Documentation}{59}{subsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.1.1}control\_thread()}{59}{subsubsection.4.8.1.1}%
+\contentsline {section}{\numberline {4.9}debug.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{59}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Typedef Documentation}{60}{subsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.1}debug\_context\_t}{60}{subsubsection.4.9.1.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.2}debug\_interface\_context\_t}{60}{subsubsection.4.9.1.2}%
+\contentsline {subsection}{\numberline {4.9.2}Function Documentation}{60}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}debug\_init()}{60}{subsubsection.4.9.2.1}%
+\contentsline {subsection}{\numberline {4.9.3}Variable Documentation}{61}{subsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.1}debug\_context}{61}{subsubsection.4.9.3.1}%
+\contentsline {subsubsection}{\numberline {4.9.3.2}debug\_interface\_context}{61}{subsubsection.4.9.3.2}%
+\contentsline {subsubsection}{\numberline {4.9.3.3}feedback\_interface\_context}{61}{subsubsection.4.9.3.3}%
+\contentsline {section}{\numberline {4.10}debug.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{61}{section.4.10}%
+\contentsline {section}{\numberline {4.11}device.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{62}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Macro Definition Documentation}{63}{subsection.4.11.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.1}LEN\_16}{64}{subsubsection.4.11.1.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.2}LEN\_32}{64}{subsubsection.4.11.1.2}%
+\contentsline {subsubsection}{\numberline {4.11.1.3}LEN\_8}{64}{subsubsection.4.11.1.3}%
+\contentsline {subsection}{\numberline {4.11.2}Function Documentation}{64}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}device\_create()}{64}{subsubsection.4.11.2.1}%
+\contentsline {subsubsection}{\numberline {4.11.2.2}device\_deamon\_create()}{65}{subsubsection.4.11.2.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.3}device\_deamon\_thread()}{66}{subsubsection.4.11.2.3}%
+\contentsline {subsubsection}{\numberline {4.11.2.4}device\_interface\_create()}{67}{subsubsection.4.11.2.4}%
+\contentsline {subsubsection}{\numberline {4.11.2.5}device\_interface\_recv()}{67}{subsubsection.4.11.2.5}%
+\contentsline {subsubsection}{\numberline {4.11.2.6}device\_interface\_send()}{68}{subsubsection.4.11.2.6}%
+\contentsline {subsubsection}{\numberline {4.11.2.7}device\_read\_i16()}{68}{subsubsection.4.11.2.7}%
+\contentsline {subsubsection}{\numberline {4.11.2.8}device\_read\_i32()}{69}{subsubsection.4.11.2.8}%
+\contentsline {subsubsection}{\numberline {4.11.2.9}device\_read\_i8()}{70}{subsubsection.4.11.2.9}%
+\contentsline {subsubsection}{\numberline {4.11.2.10}device\_read\_u16()}{70}{subsubsection.4.11.2.10}%
+\contentsline {subsubsection}{\numberline {4.11.2.11}device\_read\_u32()}{71}{subsubsection.4.11.2.11}%
+\contentsline {subsubsection}{\numberline {4.11.2.12}device\_read\_u8()}{71}{subsubsection.4.11.2.12}%
+\contentsline {subsubsection}{\numberline {4.11.2.13}device\_write\_i16()}{72}{subsubsection.4.11.2.13}%
+\contentsline {subsubsection}{\numberline {4.11.2.14}device\_write\_i32()}{73}{subsubsection.4.11.2.14}%
+\contentsline {subsubsection}{\numberline {4.11.2.15}device\_write\_i8()}{73}{subsubsection.4.11.2.15}%
+\contentsline {subsubsection}{\numberline {4.11.2.16}device\_write\_u16()}{74}{subsubsection.4.11.2.16}%
+\contentsline {subsubsection}{\numberline {4.11.2.17}device\_write\_u32()}{74}{subsubsection.4.11.2.17}%
+\contentsline {subsubsection}{\numberline {4.11.2.18}device\_write\_u8()}{75}{subsubsection.4.11.2.18}%
+\contentsline {section}{\numberline {4.12}device.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{76}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Macro Definition Documentation}{77}{subsection.4.12.1}%
+\contentsline {subsubsection}{\numberline {4.12.1.1}DEAMON\_STACK\_SIZE}{78}{subsubsection.4.12.1.1}%
+\contentsline {subsubsection}{\numberline {4.12.1.2}DEVICE\_MAX\_INTERFACES\_PER\_DEAMON}{78}{subsubsection.4.12.1.2}%
+\contentsline {subsubsection}{\numberline {4.12.1.3}DEVICE\_NAME\_LEN}{78}{subsubsection.4.12.1.3}%
+\contentsline {subsection}{\numberline {4.12.2}Typedef Documentation}{78}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}device\_deamon\_t}{78}{subsubsection.4.12.2.1}%
+\contentsline {subsubsection}{\numberline {4.12.2.2}device\_interface\_t}{78}{subsubsection.4.12.2.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.3}device\_t}{78}{subsubsection.4.12.2.3}%
+\contentsline {subsection}{\numberline {4.12.3}Function Documentation}{78}{subsection.4.12.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.1}device\_create()}{78}{subsubsection.4.12.3.1}%
+\contentsline {subsubsection}{\numberline {4.12.3.2}device\_deamon\_create()}{79}{subsubsection.4.12.3.2}%
+\contentsline {subsubsection}{\numberline {4.12.3.3}device\_interface\_create()}{80}{subsubsection.4.12.3.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.4}device\_interface\_recv()}{81}{subsubsection.4.12.3.4}%
+\contentsline {subsubsection}{\numberline {4.12.3.5}device\_interface\_send()}{82}{subsubsection.4.12.3.5}%
+\contentsline {subsubsection}{\numberline {4.12.3.6}device\_read\_i16()}{82}{subsubsection.4.12.3.6}%
+\contentsline {subsubsection}{\numberline {4.12.3.7}device\_read\_i32()}{83}{subsubsection.4.12.3.7}%
+\contentsline {subsubsection}{\numberline {4.12.3.8}device\_read\_i8()}{83}{subsubsection.4.12.3.8}%
+\contentsline {subsubsection}{\numberline {4.12.3.9}device\_read\_u16()}{84}{subsubsection.4.12.3.9}%
+\contentsline {subsubsection}{\numberline {4.12.3.10}device\_read\_u32()}{85}{subsubsection.4.12.3.10}%
+\contentsline {subsubsection}{\numberline {4.12.3.11}device\_read\_u8()}{85}{subsubsection.4.12.3.11}%
+\contentsline {subsubsection}{\numberline {4.12.3.12}device\_write\_i16()}{86}{subsubsection.4.12.3.12}%
+\contentsline {subsubsection}{\numberline {4.12.3.13}device\_write\_i32()}{86}{subsubsection.4.12.3.13}%
+\contentsline {subsubsection}{\numberline {4.12.3.14}device\_write\_i8()}{87}{subsubsection.4.12.3.14}%
+\contentsline {subsubsection}{\numberline {4.12.3.15}device\_write\_u16()}{88}{subsubsection.4.12.3.15}%
+\contentsline {subsubsection}{\numberline {4.12.3.16}device\_write\_u32()}{88}{subsubsection.4.12.3.16}%
+\contentsline {subsubsection}{\numberline {4.12.3.17}device\_write\_u8()}{89}{subsubsection.4.12.3.17}%
+\contentsline {section}{\numberline {4.13}dma.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{89}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Function Documentation}{90}{subsection.4.13.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.1}dma2\_get\_scheduler()}{90}{subsubsection.4.13.1.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.2}dma2\_get\_streams()}{91}{subsubsection.4.13.1.2}%
+\contentsline {subsubsection}{\numberline {4.13.1.3}dma2\_init\_scheduler()}{91}{subsubsection.4.13.1.3}%
+\contentsline {subsubsection}{\numberline {4.13.1.4}dma\_handle\_interrupt()}{91}{subsubsection.4.13.1.4}%
+\contentsline {subsubsection}{\numberline {4.13.1.5}dma\_scheduler\_init()}{92}{subsubsection.4.13.1.5}%
+\contentsline {subsubsection}{\numberline {4.13.1.6}dma\_scheduler\_release\_stream()}{92}{subsubsection.4.13.1.6}%
+\contentsline {subsubsection}{\numberline {4.13.1.7}dma\_scheduler\_request\_stream()}{92}{subsubsection.4.13.1.7}%
+\contentsline {subsubsection}{\numberline {4.13.1.8}dma\_start\_stream()}{93}{subsubsection.4.13.1.8}%
+\contentsline {subsection}{\numberline {4.13.2}Variable Documentation}{93}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}dma2\_scheduler}{93}{subsubsection.4.13.2.1}%
+\contentsline {subsubsection}{\numberline {4.13.2.2}dma2\_streams}{93}{subsubsection.4.13.2.2}%
+\contentsline {section}{\numberline {4.14}dma.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{93}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}Macro Definition Documentation}{97}{subsection.4.14.1}%
+\contentsline {subsubsection}{\numberline {4.14.1.1}DMA\_STATUS\_TC}{97}{subsubsection.4.14.1.1}%
+\contentsline {subsubsection}{\numberline {4.14.1.2}DMA\_STATUS\_TE}{97}{subsubsection.4.14.1.2}%
+\contentsline {subsubsection}{\numberline {4.14.1.3}DMA\_STATUS\_TH}{98}{subsubsection.4.14.1.3}%
+\contentsline {subsubsection}{\numberline {4.14.1.4}DMA\_STREAMS\_MAX\_LEN}{98}{subsubsection.4.14.1.4}%
+\contentsline {subsubsection}{\numberline {4.14.1.5}STM32\_DMAMUX1\_ADC1}{98}{subsubsection.4.14.1.5}%
+\contentsline {subsubsection}{\numberline {4.14.1.6}STM32\_DMAMUX1\_ADC2}{98}{subsubsection.4.14.1.6}%
+\contentsline {subsubsection}{\numberline {4.14.1.7}STM32\_DMAMUX1\_CRYP2\_IN}{98}{subsubsection.4.14.1.7}%
+\contentsline {subsubsection}{\numberline {4.14.1.8}STM32\_DMAMUX1\_CRYP2\_OUT}{98}{subsubsection.4.14.1.8}%
+\contentsline {subsubsection}{\numberline {4.14.1.9}STM32\_DMAMUX1\_DAC1\_CH1}{98}{subsubsection.4.14.1.9}%
+\contentsline {subsubsection}{\numberline {4.14.1.10}STM32\_DMAMUX1\_DAC1\_CH2}{98}{subsubsection.4.14.1.10}%
+\contentsline {subsubsection}{\numberline {4.14.1.11}STM32\_DMAMUX1\_DCMI}{99}{subsubsection.4.14.1.11}%
+\contentsline {subsubsection}{\numberline {4.14.1.12}STM32\_DMAMUX1\_DFSDM1\_FLT0}{99}{subsubsection.4.14.1.12}%
+\contentsline {subsubsection}{\numberline {4.14.1.13}STM32\_DMAMUX1\_DFSDM1\_FLT1}{99}{subsubsection.4.14.1.13}%
+\contentsline {subsubsection}{\numberline {4.14.1.14}STM32\_DMAMUX1\_DFSDM1\_FLT2}{99}{subsubsection.4.14.1.14}%
+\contentsline {subsubsection}{\numberline {4.14.1.15}STM32\_DMAMUX1\_DFSDM1\_FLT3}{99}{subsubsection.4.14.1.15}%
+\contentsline {subsubsection}{\numberline {4.14.1.16}STM32\_DMAMUX1\_DFSDM1\_FLT4}{99}{subsubsection.4.14.1.16}%
+\contentsline {subsubsection}{\numberline {4.14.1.17}STM32\_DMAMUX1\_DFSDM1\_FLT5}{99}{subsubsection.4.14.1.17}%
+\contentsline {subsubsection}{\numberline {4.14.1.18}STM32\_DMAMUX1\_HASH2\_IN}{99}{subsubsection.4.14.1.18}%
+\contentsline {subsubsection}{\numberline {4.14.1.19}STM32\_DMAMUX1\_I2C1\_RX}{100}{subsubsection.4.14.1.19}%
+\contentsline {subsubsection}{\numberline {4.14.1.20}STM32\_DMAMUX1\_I2C1\_TX}{100}{subsubsection.4.14.1.20}%
+\contentsline {subsubsection}{\numberline {4.14.1.21}STM32\_DMAMUX1\_I2C2\_RX}{100}{subsubsection.4.14.1.21}%
+\contentsline {subsubsection}{\numberline {4.14.1.22}STM32\_DMAMUX1\_I2C2\_TX}{100}{subsubsection.4.14.1.22}%
+\contentsline {subsubsection}{\numberline {4.14.1.23}STM32\_DMAMUX1\_I2C3\_RX}{100}{subsubsection.4.14.1.23}%
+\contentsline {subsubsection}{\numberline {4.14.1.24}STM32\_DMAMUX1\_I2C3\_TX}{100}{subsubsection.4.14.1.24}%
+\contentsline {subsubsection}{\numberline {4.14.1.25}STM32\_DMAMUX1\_I2C5\_RX}{100}{subsubsection.4.14.1.25}%
+\contentsline {subsubsection}{\numberline {4.14.1.26}STM32\_DMAMUX1\_I2C5\_TX}{100}{subsubsection.4.14.1.26}%
+\contentsline {subsubsection}{\numberline {4.14.1.27}STM32\_DMAMUX1\_REQ\_GEN0}{101}{subsubsection.4.14.1.27}%
+\contentsline {subsubsection}{\numberline {4.14.1.28}STM32\_DMAMUX1\_REQ\_GEN1}{101}{subsubsection.4.14.1.28}%
+\contentsline {subsubsection}{\numberline {4.14.1.29}STM32\_DMAMUX1\_REQ\_GEN2}{101}{subsubsection.4.14.1.29}%
+\contentsline {subsubsection}{\numberline {4.14.1.30}STM32\_DMAMUX1\_REQ\_GEN3}{101}{subsubsection.4.14.1.30}%
+\contentsline {subsubsection}{\numberline {4.14.1.31}STM32\_DMAMUX1\_REQ\_GEN4}{101}{subsubsection.4.14.1.31}%
+\contentsline {subsubsection}{\numberline {4.14.1.32}STM32\_DMAMUX1\_REQ\_GEN5}{101}{subsubsection.4.14.1.32}%
+\contentsline {subsubsection}{\numberline {4.14.1.33}STM32\_DMAMUX1\_REQ\_GEN6}{101}{subsubsection.4.14.1.33}%
+\contentsline {subsubsection}{\numberline {4.14.1.34}STM32\_DMAMUX1\_REQ\_GEN7}{101}{subsubsection.4.14.1.34}%
+\contentsline {subsubsection}{\numberline {4.14.1.35}STM32\_DMAMUX1\_RSVD117}{102}{subsubsection.4.14.1.35}%
+\contentsline {subsubsection}{\numberline {4.14.1.36}STM32\_DMAMUX1\_RSVD118}{102}{subsubsection.4.14.1.36}%
+\contentsline {subsubsection}{\numberline {4.14.1.37}STM32\_DMAMUX1\_RSVD119}{102}{subsubsection.4.14.1.37}%
+\contentsline {subsubsection}{\numberline {4.14.1.38}STM32\_DMAMUX1\_RSVD120}{102}{subsubsection.4.14.1.38}%
+\contentsline {subsubsection}{\numberline {4.14.1.39}STM32\_DMAMUX1\_RSVD121}{102}{subsubsection.4.14.1.39}%
+\contentsline {subsubsection}{\numberline {4.14.1.40}STM32\_DMAMUX1\_RSVD122}{102}{subsubsection.4.14.1.40}%
+\contentsline {subsubsection}{\numberline {4.14.1.41}STM32\_DMAMUX1\_RSVD123}{102}{subsubsection.4.14.1.41}%
+\contentsline {subsubsection}{\numberline {4.14.1.42}STM32\_DMAMUX1\_RSVD124}{102}{subsubsection.4.14.1.42}%
+\contentsline {subsubsection}{\numberline {4.14.1.43}STM32\_DMAMUX1\_RSVD125}{103}{subsubsection.4.14.1.43}%
+\contentsline {subsubsection}{\numberline {4.14.1.44}STM32\_DMAMUX1\_RSVD126}{103}{subsubsection.4.14.1.44}%
+\contentsline {subsubsection}{\numberline {4.14.1.45}STM32\_DMAMUX1\_RSVD127}{103}{subsubsection.4.14.1.45}%
+\contentsline {subsubsection}{\numberline {4.14.1.46}STM32\_DMAMUX1\_RSVD41}{103}{subsubsection.4.14.1.46}%
+\contentsline {subsubsection}{\numberline {4.14.1.47}STM32\_DMAMUX1\_RSVD42}{103}{subsubsection.4.14.1.47}%
+\contentsline {subsubsection}{\numberline {4.14.1.48}STM32\_DMAMUX1\_RSVD54}{103}{subsubsection.4.14.1.48}%
+\contentsline {subsubsection}{\numberline {4.14.1.49}STM32\_DMAMUX1\_RSVD95}{103}{subsubsection.4.14.1.49}%
+\contentsline {subsubsection}{\numberline {4.14.1.50}STM32\_DMAMUX1\_RSVD96}{103}{subsubsection.4.14.1.50}%
+\contentsline {subsubsection}{\numberline {4.14.1.51}STM32\_DMAMUX1\_RSVD97}{104}{subsubsection.4.14.1.51}%
+\contentsline {subsubsection}{\numberline {4.14.1.52}STM32\_DMAMUX1\_RSVD98}{104}{subsubsection.4.14.1.52}%
+\contentsline {subsubsection}{\numberline {4.14.1.53}STM32\_DMAMUX1\_SAI1\_A}{104}{subsubsection.4.14.1.53}%
+\contentsline {subsubsection}{\numberline {4.14.1.54}STM32\_DMAMUX1\_SAI1\_B}{104}{subsubsection.4.14.1.54}%
+\contentsline {subsubsection}{\numberline {4.14.1.55}STM32\_DMAMUX1\_SAI2\_A}{104}{subsubsection.4.14.1.55}%
+\contentsline {subsubsection}{\numberline {4.14.1.56}STM32\_DMAMUX1\_SAI2\_B}{104}{subsubsection.4.14.1.56}%
+\contentsline {subsubsection}{\numberline {4.14.1.57}STM32\_DMAMUX1\_SAI3\_A}{104}{subsubsection.4.14.1.57}%
+\contentsline {subsubsection}{\numberline {4.14.1.58}STM32\_DMAMUX1\_SAI3\_B}{104}{subsubsection.4.14.1.58}%
+\contentsline {subsubsection}{\numberline {4.14.1.59}STM32\_DMAMUX1\_SAI4\_A}{105}{subsubsection.4.14.1.59}%
+\contentsline {subsubsection}{\numberline {4.14.1.60}STM32\_DMAMUX1\_SAI4\_B}{105}{subsubsection.4.14.1.60}%
+\contentsline {subsubsection}{\numberline {4.14.1.61}STM32\_DMAMUX1\_SPDIFRX\_CS}{105}{subsubsection.4.14.1.61}%
+\contentsline {subsubsection}{\numberline {4.14.1.62}STM32\_DMAMUX1\_SPDIFRX\_DT}{105}{subsubsection.4.14.1.62}%
+\contentsline {subsubsection}{\numberline {4.14.1.63}STM32\_DMAMUX1\_SPI1\_RX}{105}{subsubsection.4.14.1.63}%
+\contentsline {subsubsection}{\numberline {4.14.1.64}STM32\_DMAMUX1\_SPI1\_TX}{105}{subsubsection.4.14.1.64}%
+\contentsline {subsubsection}{\numberline {4.14.1.65}STM32\_DMAMUX1\_SPI2\_RX}{105}{subsubsection.4.14.1.65}%
+\contentsline {subsubsection}{\numberline {4.14.1.66}STM32\_DMAMUX1\_SPI2\_TX}{105}{subsubsection.4.14.1.66}%
+\contentsline {subsubsection}{\numberline {4.14.1.67}STM32\_DMAMUX1\_SPI3\_RX}{106}{subsubsection.4.14.1.67}%
+\contentsline {subsubsection}{\numberline {4.14.1.68}STM32\_DMAMUX1\_SPI3\_TX}{106}{subsubsection.4.14.1.68}%
+\contentsline {subsubsection}{\numberline {4.14.1.69}STM32\_DMAMUX1\_SPI4\_RX}{106}{subsubsection.4.14.1.69}%
+\contentsline {subsubsection}{\numberline {4.14.1.70}STM32\_DMAMUX1\_SPI4\_TX}{106}{subsubsection.4.14.1.70}%
+\contentsline {subsubsection}{\numberline {4.14.1.71}STM32\_DMAMUX1\_SPI5\_RX}{106}{subsubsection.4.14.1.71}%
+\contentsline {subsubsection}{\numberline {4.14.1.72}STM32\_DMAMUX1\_SPI5\_TX}{106}{subsubsection.4.14.1.72}%
+\contentsline {subsubsection}{\numberline {4.14.1.73}STM32\_DMAMUX1\_TIM15\_CH1}{106}{subsubsection.4.14.1.73}%
+\contentsline {subsubsection}{\numberline {4.14.1.74}STM32\_DMAMUX1\_TIM15\_COM}{106}{subsubsection.4.14.1.74}%
+\contentsline {subsubsection}{\numberline {4.14.1.75}STM32\_DMAMUX1\_TIM15\_TRIG}{107}{subsubsection.4.14.1.75}%
+\contentsline {subsubsection}{\numberline {4.14.1.76}STM32\_DMAMUX1\_TIM15\_UP}{107}{subsubsection.4.14.1.76}%
+\contentsline {subsubsection}{\numberline {4.14.1.77}STM32\_DMAMUX1\_TIM16\_CH1}{107}{subsubsection.4.14.1.77}%
+\contentsline {subsubsection}{\numberline {4.14.1.78}STM32\_DMAMUX1\_TIM16\_UP}{107}{subsubsection.4.14.1.78}%
+\contentsline {subsubsection}{\numberline {4.14.1.79}STM32\_DMAMUX1\_TIM17\_CH1}{107}{subsubsection.4.14.1.79}%
+\contentsline {subsubsection}{\numberline {4.14.1.80}STM32\_DMAMUX1\_TIM17\_UP}{107}{subsubsection.4.14.1.80}%
+\contentsline {subsubsection}{\numberline {4.14.1.81}STM32\_DMAMUX1\_TIM1\_CH1}{107}{subsubsection.4.14.1.81}%
+\contentsline {subsubsection}{\numberline {4.14.1.82}STM32\_DMAMUX1\_TIM1\_CH2}{107}{subsubsection.4.14.1.82}%
+\contentsline {subsubsection}{\numberline {4.14.1.83}STM32\_DMAMUX1\_TIM1\_CH3}{108}{subsubsection.4.14.1.83}%
+\contentsline {subsubsection}{\numberline {4.14.1.84}STM32\_DMAMUX1\_TIM1\_CH4}{108}{subsubsection.4.14.1.84}%
+\contentsline {subsubsection}{\numberline {4.14.1.85}STM32\_DMAMUX1\_TIM1\_COM}{108}{subsubsection.4.14.1.85}%
+\contentsline {subsubsection}{\numberline {4.14.1.86}STM32\_DMAMUX1\_TIM1\_TRIG}{108}{subsubsection.4.14.1.86}%
+\contentsline {subsubsection}{\numberline {4.14.1.87}STM32\_DMAMUX1\_TIM1\_UP}{108}{subsubsection.4.14.1.87}%
+\contentsline {subsubsection}{\numberline {4.14.1.88}STM32\_DMAMUX1\_TIM2\_CH1}{108}{subsubsection.4.14.1.88}%
+\contentsline {subsubsection}{\numberline {4.14.1.89}STM32\_DMAMUX1\_TIM2\_CH2}{108}{subsubsection.4.14.1.89}%
+\contentsline {subsubsection}{\numberline {4.14.1.90}STM32\_DMAMUX1\_TIM2\_CH3}{108}{subsubsection.4.14.1.90}%
+\contentsline {subsubsection}{\numberline {4.14.1.91}STM32\_DMAMUX1\_TIM2\_CH4}{109}{subsubsection.4.14.1.91}%
+\contentsline {subsubsection}{\numberline {4.14.1.92}STM32\_DMAMUX1\_TIM2\_UP}{109}{subsubsection.4.14.1.92}%
+\contentsline {subsubsection}{\numberline {4.14.1.93}STM32\_DMAMUX1\_TIM3\_CH1}{109}{subsubsection.4.14.1.93}%
+\contentsline {subsubsection}{\numberline {4.14.1.94}STM32\_DMAMUX1\_TIM3\_CH2}{109}{subsubsection.4.14.1.94}%
+\contentsline {subsubsection}{\numberline {4.14.1.95}STM32\_DMAMUX1\_TIM3\_CH3}{109}{subsubsection.4.14.1.95}%
+\contentsline {subsubsection}{\numberline {4.14.1.96}STM32\_DMAMUX1\_TIM3\_CH4}{109}{subsubsection.4.14.1.96}%
+\contentsline {subsubsection}{\numberline {4.14.1.97}STM32\_DMAMUX1\_TIM3\_TRIG}{109}{subsubsection.4.14.1.97}%
+\contentsline {subsubsection}{\numberline {4.14.1.98}STM32\_DMAMUX1\_TIM3\_UP}{109}{subsubsection.4.14.1.98}%
+\contentsline {subsubsection}{\numberline {4.14.1.99}STM32\_DMAMUX1\_TIM4\_CH1}{110}{subsubsection.4.14.1.99}%
+\contentsline {subsubsection}{\numberline {4.14.1.100}STM32\_DMAMUX1\_TIM4\_CH2}{110}{subsubsection.4.14.1.100}%
+\contentsline {subsubsection}{\numberline {4.14.1.101}STM32\_DMAMUX1\_TIM4\_CH3}{110}{subsubsection.4.14.1.101}%
+\contentsline {subsubsection}{\numberline {4.14.1.102}STM32\_DMAMUX1\_TIM4\_UP}{110}{subsubsection.4.14.1.102}%
+\contentsline {subsubsection}{\numberline {4.14.1.103}STM32\_DMAMUX1\_TIM5\_CH1}{110}{subsubsection.4.14.1.103}%
+\contentsline {subsubsection}{\numberline {4.14.1.104}STM32\_DMAMUX1\_TIM5\_CH2}{110}{subsubsection.4.14.1.104}%
+\contentsline {subsubsection}{\numberline {4.14.1.105}STM32\_DMAMUX1\_TIM5\_CH3}{110}{subsubsection.4.14.1.105}%
+\contentsline {subsubsection}{\numberline {4.14.1.106}STM32\_DMAMUX1\_TIM5\_CH4}{110}{subsubsection.4.14.1.106}%
+\contentsline {subsubsection}{\numberline {4.14.1.107}STM32\_DMAMUX1\_TIM5\_TRIG}{111}{subsubsection.4.14.1.107}%
+\contentsline {subsubsection}{\numberline {4.14.1.108}STM32\_DMAMUX1\_TIM5\_UP}{111}{subsubsection.4.14.1.108}%
+\contentsline {subsubsection}{\numberline {4.14.1.109}STM32\_DMAMUX1\_TIM6\_UP}{111}{subsubsection.4.14.1.109}%
+\contentsline {subsubsection}{\numberline {4.14.1.110}STM32\_DMAMUX1\_TIM7\_UP}{111}{subsubsection.4.14.1.110}%
+\contentsline {subsubsection}{\numberline {4.14.1.111}STM32\_DMAMUX1\_TIM8\_CH1}{111}{subsubsection.4.14.1.111}%
+\contentsline {subsubsection}{\numberline {4.14.1.112}STM32\_DMAMUX1\_TIM8\_CH2}{111}{subsubsection.4.14.1.112}%
+\contentsline {subsubsection}{\numberline {4.14.1.113}STM32\_DMAMUX1\_TIM8\_CH3}{111}{subsubsection.4.14.1.113}%
+\contentsline {subsubsection}{\numberline {4.14.1.114}STM32\_DMAMUX1\_TIM8\_CH4}{111}{subsubsection.4.14.1.114}%
+\contentsline {subsubsection}{\numberline {4.14.1.115}STM32\_DMAMUX1\_TIM8\_COM}{112}{subsubsection.4.14.1.115}%
+\contentsline {subsubsection}{\numberline {4.14.1.116}STM32\_DMAMUX1\_TIM8\_TRIG}{112}{subsubsection.4.14.1.116}%
+\contentsline {subsubsection}{\numberline {4.14.1.117}STM32\_DMAMUX1\_TIM8\_UP}{112}{subsubsection.4.14.1.117}%
+\contentsline {subsubsection}{\numberline {4.14.1.118}STM32\_DMAMUX1\_UART4\_RX}{112}{subsubsection.4.14.1.118}%
+\contentsline {subsubsection}{\numberline {4.14.1.119}STM32\_DMAMUX1\_UART4\_TX}{112}{subsubsection.4.14.1.119}%
+\contentsline {subsubsection}{\numberline {4.14.1.120}STM32\_DMAMUX1\_UART5\_RX}{112}{subsubsection.4.14.1.120}%
+\contentsline {subsubsection}{\numberline {4.14.1.121}STM32\_DMAMUX1\_UART5\_TX}{112}{subsubsection.4.14.1.121}%
+\contentsline {subsubsection}{\numberline {4.14.1.122}STM32\_DMAMUX1\_UART7\_RX}{112}{subsubsection.4.14.1.122}%
+\contentsline {subsubsection}{\numberline {4.14.1.123}STM32\_DMAMUX1\_UART7\_TX}{113}{subsubsection.4.14.1.123}%
+\contentsline {subsubsection}{\numberline {4.14.1.124}STM32\_DMAMUX1\_UART8\_RX}{113}{subsubsection.4.14.1.124}%
+\contentsline {subsubsection}{\numberline {4.14.1.125}STM32\_DMAMUX1\_UART8\_TX}{113}{subsubsection.4.14.1.125}%
+\contentsline {subsubsection}{\numberline {4.14.1.126}STM32\_DMAMUX1\_USART2\_RX}{113}{subsubsection.4.14.1.126}%
+\contentsline {subsubsection}{\numberline {4.14.1.127}STM32\_DMAMUX1\_USART2\_TX}{113}{subsubsection.4.14.1.127}%
+\contentsline {subsubsection}{\numberline {4.14.1.128}STM32\_DMAMUX1\_USART3\_RX}{113}{subsubsection.4.14.1.128}%
+\contentsline {subsubsection}{\numberline {4.14.1.129}STM32\_DMAMUX1\_USART3\_TX}{113}{subsubsection.4.14.1.129}%
+\contentsline {subsubsection}{\numberline {4.14.1.130}STM32\_DMAMUX1\_USART6\_RX}{113}{subsubsection.4.14.1.130}%
+\contentsline {subsubsection}{\numberline {4.14.1.131}STM32\_DMAMUX1\_USART6\_TX}{114}{subsubsection.4.14.1.131}%
+\contentsline {subsection}{\numberline {4.14.2}Typedef Documentation}{114}{subsection.4.14.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.1}dma\_request\_t}{114}{subsubsection.4.14.2.1}%
+\contentsline {subsubsection}{\numberline {4.14.2.2}dma\_scheduler\_dev\_t}{114}{subsubsection.4.14.2.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.3}dma\_stream\_config\_t}{114}{subsubsection.4.14.2.3}%
+\contentsline {subsubsection}{\numberline {4.14.2.4}dma\_stream\_dev\_t}{114}{subsubsection.4.14.2.4}%
+\contentsline {subsubsection}{\numberline {4.14.2.5}dma\_stream\_dir\_t}{114}{subsubsection.4.14.2.5}%
+\contentsline {subsubsection}{\numberline {4.14.2.6}dma\_stream\_state\_t}{114}{subsubsection.4.14.2.6}%
+\contentsline {subsection}{\numberline {4.14.3}Enumeration Type Documentation}{114}{subsection.4.14.3}%
+\contentsline {subsubsection}{\numberline {4.14.3.1}dma\_stream\_dir}{114}{subsubsection.4.14.3.1}%
+\contentsline {subsubsection}{\numberline {4.14.3.2}dma\_stream\_state}{115}{subsubsection.4.14.3.2}%
+\contentsline {subsection}{\numberline {4.14.4}Function Documentation}{115}{subsection.4.14.4}%
+\contentsline {subsubsection}{\numberline {4.14.4.1}dma2\_get\_scheduler()}{115}{subsubsection.4.14.4.1}%
+\contentsline {subsubsection}{\numberline {4.14.4.2}dma2\_get\_streams()}{115}{subsubsection.4.14.4.2}%
+\contentsline {subsubsection}{\numberline {4.14.4.3}dma2\_init\_scheduler()}{116}{subsubsection.4.14.4.3}%
+\contentsline {subsubsection}{\numberline {4.14.4.4}dma\_copy()}{116}{subsubsection.4.14.4.4}%
+\contentsline {subsubsection}{\numberline {4.14.4.5}dma\_scheduler\_init()}{116}{subsubsection.4.14.4.5}%
+\contentsline {subsubsection}{\numberline {4.14.4.6}dma\_scheduler\_release\_stream()}{117}{subsubsection.4.14.4.6}%
+\contentsline {subsubsection}{\numberline {4.14.4.7}dma\_scheduler\_request\_stream()}{117}{subsubsection.4.14.4.7}%
+\contentsline {subsubsection}{\numberline {4.14.4.8}dma\_start\_stream()}{117}{subsubsection.4.14.4.8}%
+\contentsline {subsubsection}{\numberline {4.14.4.9}dma\_stop\_stream()}{117}{subsubsection.4.14.4.9}%
+\contentsline {section}{\numberline {4.15}gnss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{118}{section.4.15}%
+\contentsline {section}{\numberline {4.16}gnss.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{118}{section.4.16}%
+\contentsline {section}{\numberline {4.17}gpio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{119}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Function Documentation}{119}{subsection.4.17.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.1}gpio\_cfg()}{120}{subsubsection.4.17.1.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.2}gpio\_clr()}{120}{subsubsection.4.17.1.2}%
+\contentsline {subsubsection}{\numberline {4.17.1.3}gpio\_get()}{120}{subsubsection.4.17.1.3}%
+\contentsline {subsubsection}{\numberline {4.17.1.4}gpio\_set()}{121}{subsubsection.4.17.1.4}%
+\contentsline {section}{\numberline {4.18}gpio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{121}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Typedef Documentation}{122}{subsection.4.18.1}%
+\contentsline {subsubsection}{\numberline {4.18.1.1}gpio\_bias\_t}{122}{subsubsection.4.18.1.1}%
+\contentsline {subsubsection}{\numberline {4.18.1.2}gpio\_config\_t}{123}{subsubsection.4.18.1.2}%
+\contentsline {subsubsection}{\numberline {4.18.1.3}gpio\_drive\_t}{123}{subsubsection.4.18.1.3}%
+\contentsline {subsubsection}{\numberline {4.18.1.4}gpio\_mode\_t}{123}{subsubsection.4.18.1.4}%
+\contentsline {subsection}{\numberline {4.18.2}Enumeration Type Documentation}{123}{subsection.4.18.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.1}gpio\_bias}{123}{subsubsection.4.18.2.1}%
+\contentsline {subsubsection}{\numberline {4.18.2.2}gpio\_drive}{123}{subsubsection.4.18.2.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.3}gpio\_mode}{124}{subsubsection.4.18.2.3}%
+\contentsline {subsection}{\numberline {4.18.3}Function Documentation}{124}{subsection.4.18.3}%
+\contentsline {subsubsection}{\numberline {4.18.3.1}gpio\_cfg()}{124}{subsubsection.4.18.3.1}%
+\contentsline {subsubsection}{\numberline {4.18.3.2}gpio\_clr()}{124}{subsubsection.4.18.3.2}%
+\contentsline {subsubsection}{\numberline {4.18.3.3}gpio\_get()}{125}{subsubsection.4.18.3.3}%
+\contentsline {subsubsection}{\numberline {4.18.3.4}gpio\_set()}{125}{subsubsection.4.18.3.4}%
+\contentsline {section}{\numberline {4.19}gyroscope.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{125}{section.4.19}%
+\contentsline {section}{\numberline {4.20}gyroscope.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{126}{section.4.20}%
+\contentsline {section}{\numberline {4.21}hostproc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{126}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Typedef Documentation}{127}{subsection.4.21.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.1}hostproc\_interface\_context\_t}{128}{subsubsection.4.21.1.1}%
+\contentsline {subsection}{\numberline {4.21.2}Function Documentation}{128}{subsection.4.21.2}%
+\contentsline {subsubsection}{\numberline {4.21.2.1}host\_recv()}{128}{subsubsection.4.21.2.1}%
+\contentsline {subsubsection}{\numberline {4.21.2.2}host\_send()}{128}{subsubsection.4.21.2.2}%
+\contentsline {subsubsection}{\numberline {4.21.2.3}host\_UART0\_RX()}{129}{subsubsection.4.21.2.3}%
+\contentsline {subsubsection}{\numberline {4.21.2.4}hostproc\_get\_device()}{129}{subsubsection.4.21.2.4}%
+\contentsline {subsubsection}{\numberline {4.21.2.5}hostproc\_get\_interface()}{130}{subsubsection.4.21.2.5}%
+\contentsline {subsubsection}{\numberline {4.21.2.6}hostproc\_init()}{130}{subsubsection.4.21.2.6}%
+\contentsline {subsection}{\numberline {4.21.3}Variable Documentation}{131}{subsection.4.21.3}%
+\contentsline {subsubsection}{\numberline {4.21.3.1}host\_UART0}{131}{subsubsection.4.21.3.1}%
+\contentsline {subsubsection}{\numberline {4.21.3.2}hostproc\_device}{131}{subsubsection.4.21.3.2}%
+\contentsline {subsubsection}{\numberline {4.21.3.3}hostproc\_interface}{131}{subsubsection.4.21.3.3}%
+\contentsline {subsubsection}{\numberline {4.21.3.4}hostproc\_interface\_context}{131}{subsubsection.4.21.3.4}%
+\contentsline {section}{\numberline {4.22}hostproc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{132}{section.4.22}%
+\contentsline {subsection}{\numberline {4.22.1}Function Documentation}{133}{subsection.4.22.1}%
+\contentsline {subsubsection}{\numberline {4.22.1.1}hostproc\_get\_device()}{133}{subsubsection.4.22.1.1}%
+\contentsline {subsubsection}{\numberline {4.22.1.2}hostproc\_get\_interface()}{133}{subsubsection.4.22.1.2}%
+\contentsline {subsubsection}{\numberline {4.22.1.3}hostproc\_init()}{133}{subsubsection.4.22.1.3}%
+\contentsline {section}{\numberline {4.23}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{134}{section.4.23}%
+\contentsline {subsection}{\numberline {4.23.1}Macro Definition Documentation}{136}{subsection.4.23.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.1}S1\_I2C}{136}{subsubsection.4.23.1.1}%
+\contentsline {subsubsection}{\numberline {4.23.1.2}S2\_I2C}{136}{subsubsection.4.23.1.2}%
+\contentsline {subsubsection}{\numberline {4.23.1.3}S3\_I2C}{136}{subsubsection.4.23.1.3}%
+\contentsline {subsection}{\numberline {4.23.2}Function Documentation}{136}{subsection.4.23.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.1}i2c\_get\_sensor\_interface()}{136}{subsubsection.4.23.2.1}%
+\contentsline {subsubsection}{\numberline {4.23.2.2}i2c\_init()}{137}{subsubsection.4.23.2.2}%
+\contentsline {subsubsection}{\numberline {4.23.2.3}i2c\_spi\_guard()}{137}{subsubsection.4.23.2.3}%
+\contentsline {subsection}{\numberline {4.23.3}Variable Documentation}{138}{subsection.4.23.3}%
+\contentsline {subsubsection}{\numberline {4.23.3.1}sensor\_interface}{138}{subsubsection.4.23.3.1}%
+\contentsline {subsubsection}{\numberline {4.23.3.2}sensor\_interface\_context}{138}{subsubsection.4.23.3.2}%
+\contentsline {section}{\numberline {4.24}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{138}{section.4.24}%
+\contentsline {subsection}{\numberline {4.24.1}Typedef Documentation}{139}{subsection.4.24.1}%
+\contentsline {subsubsection}{\numberline {4.24.1.1}i2c\_interface\_context\_t}{139}{subsubsection.4.24.1.1}%
+\contentsline {subsection}{\numberline {4.24.2}Function Documentation}{140}{subsection.4.24.2}%
+\contentsline {subsubsection}{\numberline {4.24.2.1}i2c\_get\_sensor\_interface()}{140}{subsubsection.4.24.2.1}%
+\contentsline {subsubsection}{\numberline {4.24.2.2}i2c\_init()}{140}{subsubsection.4.24.2.2}%
+\contentsline {subsubsection}{\numberline {4.24.2.3}i2c\_spi\_guard()}{141}{subsubsection.4.24.2.3}%
+\contentsline {section}{\numberline {4.25}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sensor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{141}{section.4.25}%
+\contentsline {subsection}{\numberline {4.25.1}Typedef Documentation}{143}{subsection.4.25.1}%
+\contentsline {subsubsection}{\numberline {4.25.1.1}i2c\_sensor\_context\_t}{143}{subsubsection.4.25.1.1}%
+\contentsline {subsection}{\numberline {4.25.2}Function Documentation}{143}{subsection.4.25.2}%
+\contentsline {subsubsection}{\numberline {4.25.2.1}i2c\_get\_accelerometer()}{143}{subsubsection.4.25.2.1}%
+\contentsline {subsubsection}{\numberline {4.25.2.2}i2c\_sensor\_init()}{143}{subsubsection.4.25.2.2}%
+\contentsline {subsubsection}{\numberline {4.25.2.3}read\_reg()}{144}{subsubsection.4.25.2.3}%
+\contentsline {subsubsection}{\numberline {4.25.2.4}write\_reg()}{144}{subsubsection.4.25.2.4}%
+\contentsline {subsection}{\numberline {4.25.3}Variable Documentation}{145}{subsection.4.25.3}%
+\contentsline {subsubsection}{\numberline {4.25.3.1}i2c\_accelerometer\_device}{145}{subsubsection.4.25.3.1}%
+\contentsline {subsubsection}{\numberline {4.25.3.2}i2c\_accelerometer\_device\_context}{145}{subsubsection.4.25.3.2}%
+\contentsline {subsubsection}{\numberline {4.25.3.3}i2c\_barometer\_device}{145}{subsubsection.4.25.3.3}%
+\contentsline {subsubsection}{\numberline {4.25.3.4}i2c\_barometer\_device\_context}{145}{subsubsection.4.25.3.4}%
+\contentsline {subsubsection}{\numberline {4.25.3.5}i2c\_gyroscope\_device}{145}{subsubsection.4.25.3.5}%
+\contentsline {subsubsection}{\numberline {4.25.3.6}i2c\_gyroscope\_device\_context}{146}{subsubsection.4.25.3.6}%
+\contentsline {section}{\numberline {4.26}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sensor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{146}{section.4.26}%
+\contentsline {subsection}{\numberline {4.26.1}Function Documentation}{146}{subsection.4.26.1}%
+\contentsline {subsubsection}{\numberline {4.26.1.1}i2c\_sensor\_init()}{147}{subsubsection.4.26.1.1}%
+\contentsline {section}{\numberline {4.27}led.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{147}{section.4.27}%
+\contentsline {subsection}{\numberline {4.27.1}Macro Definition Documentation}{148}{subsection.4.27.1}%
+\contentsline {subsubsection}{\numberline {4.27.1.1}LED\_MAX}{148}{subsubsection.4.27.1.1}%
+\contentsline {subsubsection}{\numberline {4.27.1.2}LED\_TIM}{148}{subsubsection.4.27.1.2}%
+\contentsline {subsection}{\numberline {4.27.2}Typedef Documentation}{148}{subsection.4.27.2}%
+\contentsline {subsubsection}{\numberline {4.27.2.1}led\_blink\_state\_t}{149}{subsubsection.4.27.2.1}%
+\contentsline {subsection}{\numberline {4.27.3}Enumeration Type Documentation}{149}{subsection.4.27.3}%
+\contentsline {subsubsection}{\numberline {4.27.3.1}led\_blick\_state}{149}{subsubsection.4.27.3.1}%
+\contentsline {subsection}{\numberline {4.27.4}Function Documentation}{149}{subsection.4.27.4}%
+\contentsline {subsubsection}{\numberline {4.27.4.1}led\_feedback\_init()}{149}{subsubsection.4.27.4.1}%
+\contentsline {subsubsection}{\numberline {4.27.4.2}led\_rgb\_init()}{150}{subsubsection.4.27.4.2}%
+\contentsline {subsubsection}{\numberline {4.27.4.3}led\_rgb\_set\_color()}{150}{subsubsection.4.27.4.3}%
+\contentsline {subsubsection}{\numberline {4.27.4.4}led\_rgb\_set\_rgb()}{151}{subsubsection.4.27.4.4}%
+\contentsline {subsubsection}{\numberline {4.27.4.5}led\_rgb\_thread()}{151}{subsubsection.4.27.4.5}%
+\contentsline {subsection}{\numberline {4.27.5}Variable Documentation}{152}{subsection.4.27.5}%
+\contentsline {subsubsection}{\numberline {4.27.5.1}blink\_sequence}{152}{subsubsection.4.27.5.1}%
+\contentsline {subsubsection}{\numberline {4.27.5.2}blink\_sequence\_len}{153}{subsubsection.4.27.5.2}%
+\contentsline {subsubsection}{\numberline {4.27.5.3}color\_sequence}{153}{subsubsection.4.27.5.3}%
+\contentsline {subsubsection}{\numberline {4.27.5.4}color\_sequence\_len}{153}{subsubsection.4.27.5.4}%
+\contentsline {section}{\numberline {4.28}led.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{153}{section.4.28}%
+\contentsline {subsection}{\numberline {4.28.1}Macro Definition Documentation}{155}{subsection.4.28.1}%
+\contentsline {subsubsection}{\numberline {4.28.1.1}LED\_BLACK}{155}{subsubsection.4.28.1.1}%
+\contentsline {subsubsection}{\numberline {4.28.1.2}LED\_BLUE}{155}{subsubsection.4.28.1.2}%
+\contentsline {subsubsection}{\numberline {4.28.1.3}LED\_GREEN}{155}{subsubsection.4.28.1.3}%
+\contentsline {subsubsection}{\numberline {4.28.1.4}LED\_LILA}{155}{subsubsection.4.28.1.4}%
+\contentsline {subsubsection}{\numberline {4.28.1.5}LED\_ORANGE}{155}{subsubsection.4.28.1.5}%
+\contentsline {subsubsection}{\numberline {4.28.1.6}LED\_PINK}{155}{subsubsection.4.28.1.6}%
+\contentsline {subsubsection}{\numberline {4.28.1.7}LED\_RED}{156}{subsubsection.4.28.1.7}%
+\contentsline {subsubsection}{\numberline {4.28.1.8}LED\_TEAL}{156}{subsubsection.4.28.1.8}%
+\contentsline {subsubsection}{\numberline {4.28.1.9}LED\_WHITE}{156}{subsubsection.4.28.1.9}%
+\contentsline {subsubsection}{\numberline {4.28.1.10}LED\_YELLOW}{156}{subsubsection.4.28.1.10}%
+\contentsline {subsection}{\numberline {4.28.2}Typedef Documentation}{156}{subsection.4.28.2}%
+\contentsline {subsubsection}{\numberline {4.28.2.1}led\_color\_t}{156}{subsubsection.4.28.2.1}%
+\contentsline {subsection}{\numberline {4.28.3}Function Documentation}{156}{subsection.4.28.3}%
+\contentsline {subsubsection}{\numberline {4.28.3.1}led\_feedback\_init()}{157}{subsubsection.4.28.3.1}%
+\contentsline {subsubsection}{\numberline {4.28.3.2}led\_rgb\_init()}{157}{subsubsection.4.28.3.2}%
+\contentsline {subsubsection}{\numberline {4.28.3.3}led\_rgb\_set\_color()}{157}{subsubsection.4.28.3.3}%
+\contentsline {subsubsection}{\numberline {4.28.3.4}led\_rgb\_set\_rgb()}{158}{subsubsection.4.28.3.4}%
+\contentsline {subsubsection}{\numberline {4.28.3.5}led\_rgb\_thread()}{159}{subsubsection.4.28.3.5}%
+\contentsline {subsection}{\numberline {4.28.4}Variable Documentation}{159}{subsection.4.28.4}%
+\contentsline {subsubsection}{\numberline {4.28.4.1}led\_black}{159}{subsubsection.4.28.4.1}%
+\contentsline {subsubsection}{\numberline {4.28.4.2}led\_blue}{159}{subsubsection.4.28.4.2}%
+\contentsline {subsubsection}{\numberline {4.28.4.3}led\_green}{159}{subsubsection.4.28.4.3}%
+\contentsline {subsubsection}{\numberline {4.28.4.4}led\_red}{160}{subsubsection.4.28.4.4}%
+\contentsline {section}{\numberline {4.29}msv2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{160}{section.4.29}%
+\contentsline {subsection}{\numberline {4.29.1}Macro Definition Documentation}{161}{subsection.4.29.1}%
+\contentsline {subsubsection}{\numberline {4.29.1.1}DLE}{161}{subsubsection.4.29.1.1}%
+\contentsline {subsubsection}{\numberline {4.29.1.2}STX}{161}{subsubsection.4.29.1.2}%
+\contentsline {subsection}{\numberline {4.29.2}Function Documentation}{161}{subsection.4.29.2}%
+\contentsline {subsubsection}{\numberline {4.29.2.1}calc\_field\_CRC()}{161}{subsubsection.4.29.2.1}%
+\contentsline {subsubsection}{\numberline {4.29.2.2}msv2\_create\_frame()}{162}{subsubsection.4.29.2.2}%
+\contentsline {subsubsection}{\numberline {4.29.2.3}msv2\_decode\_fragment()}{163}{subsubsection.4.29.2.3}%
+\contentsline {subsubsection}{\numberline {4.29.2.4}msv2\_init()}{163}{subsubsection.4.29.2.4}%
+\contentsline {subsubsection}{\numberline {4.29.2.5}msv2\_rx\_data()}{164}{subsubsection.4.29.2.5}%
+\contentsline {subsubsection}{\numberline {4.29.2.6}msv2\_tx\_data()}{164}{subsubsection.4.29.2.6}%
+\contentsline {section}{\numberline {4.30}msv2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{164}{section.4.30}%
+\contentsline {subsection}{\numberline {4.30.1}Macro Definition Documentation}{166}{subsection.4.30.1}%
+\contentsline {subsubsection}{\numberline {4.30.1.1}MSV2\_MAX\_DATA\_LEN}{166}{subsubsection.4.30.1.1}%
+\contentsline {subsubsection}{\numberline {4.30.1.2}MSV2\_MAX\_FRAME\_LEN}{166}{subsubsection.4.30.1.2}%
+\contentsline {subsection}{\numberline {4.30.2}Typedef Documentation}{167}{subsection.4.30.2}%
+\contentsline {subsubsection}{\numberline {4.30.2.1}MSV2\_DECODE\_STATE\_t}{167}{subsubsection.4.30.2.1}%
+\contentsline {subsubsection}{\numberline {4.30.2.2}MSV2\_ERROR\_t}{167}{subsubsection.4.30.2.2}%
+\contentsline {subsubsection}{\numberline {4.30.2.3}MSV2\_INST\_t}{167}{subsubsection.4.30.2.3}%
+\contentsline {subsubsection}{\numberline {4.30.2.4}MSV2\_RX\_DATA\_t}{167}{subsubsection.4.30.2.4}%
+\contentsline {subsubsection}{\numberline {4.30.2.5}MSV2\_TX\_DATA\_t}{167}{subsubsection.4.30.2.5}%
+\contentsline {subsection}{\numberline {4.30.3}Enumeration Type Documentation}{167}{subsection.4.30.3}%
+\contentsline {subsubsection}{\numberline {4.30.3.1}MSV2\_DECODE\_STATE}{167}{subsubsection.4.30.3.1}%
+\contentsline {subsubsection}{\numberline {4.30.3.2}MSV2\_ERROR}{168}{subsubsection.4.30.3.2}%
+\contentsline {subsection}{\numberline {4.30.4}Function Documentation}{168}{subsection.4.30.4}%
+\contentsline {subsubsection}{\numberline {4.30.4.1}msv2\_create\_frame()}{168}{subsubsection.4.30.4.1}%
+\contentsline {subsubsection}{\numberline {4.30.4.2}msv2\_decode\_fragment()}{169}{subsubsection.4.30.4.2}%
+\contentsline {subsubsection}{\numberline {4.30.4.3}msv2\_init()}{170}{subsubsection.4.30.4.3}%
+\contentsline {subsubsection}{\numberline {4.30.4.4}msv2\_rx\_data()}{170}{subsubsection.4.30.4.4}%
+\contentsline {subsubsection}{\numberline {4.30.4.5}msv2\_tx\_data()}{170}{subsubsection.4.30.4.5}%
+\contentsline {section}{\numberline {4.31}note.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{171}{section.4.31}%
+\contentsline {subsection}{\numberline {4.31.1}Macro Definition Documentation}{173}{subsection.4.31.1}%
+\contentsline {subsubsection}{\numberline {4.31.1.1}A0}{174}{subsubsection.4.31.1.1}%
+\contentsline {subsubsection}{\numberline {4.31.1.2}A0H}{174}{subsubsection.4.31.1.2}%
+\contentsline {subsubsection}{\numberline {4.31.1.3}A1}{174}{subsubsection.4.31.1.3}%
+\contentsline {subsubsection}{\numberline {4.31.1.4}A1H}{174}{subsubsection.4.31.1.4}%
+\contentsline {subsubsection}{\numberline {4.31.1.5}A2}{174}{subsubsection.4.31.1.5}%
+\contentsline {subsubsection}{\numberline {4.31.1.6}A2H}{174}{subsubsection.4.31.1.6}%
+\contentsline {subsubsection}{\numberline {4.31.1.7}A3}{174}{subsubsection.4.31.1.7}%
+\contentsline {subsubsection}{\numberline {4.31.1.8}A3H}{174}{subsubsection.4.31.1.8}%
+\contentsline {subsubsection}{\numberline {4.31.1.9}A4}{175}{subsubsection.4.31.1.9}%
+\contentsline {subsubsection}{\numberline {4.31.1.10}A4H}{175}{subsubsection.4.31.1.10}%
+\contentsline {subsubsection}{\numberline {4.31.1.11}A5}{175}{subsubsection.4.31.1.11}%
+\contentsline {subsubsection}{\numberline {4.31.1.12}A5H}{175}{subsubsection.4.31.1.12}%
+\contentsline {subsubsection}{\numberline {4.31.1.13}A6}{175}{subsubsection.4.31.1.13}%
+\contentsline {subsubsection}{\numberline {4.31.1.14}A6H}{175}{subsubsection.4.31.1.14}%
+\contentsline {subsubsection}{\numberline {4.31.1.15}A7}{175}{subsubsection.4.31.1.15}%
+\contentsline {subsubsection}{\numberline {4.31.1.16}A7H}{175}{subsubsection.4.31.1.16}%
+\contentsline {subsubsection}{\numberline {4.31.1.17}A8}{176}{subsubsection.4.31.1.17}%
+\contentsline {subsubsection}{\numberline {4.31.1.18}A8H}{176}{subsubsection.4.31.1.18}%
+\contentsline {subsubsection}{\numberline {4.31.1.19}B0}{176}{subsubsection.4.31.1.19}%
+\contentsline {subsubsection}{\numberline {4.31.1.20}B1}{176}{subsubsection.4.31.1.20}%
+\contentsline {subsubsection}{\numberline {4.31.1.21}B2}{176}{subsubsection.4.31.1.21}%
+\contentsline {subsubsection}{\numberline {4.31.1.22}B3}{176}{subsubsection.4.31.1.22}%
+\contentsline {subsubsection}{\numberline {4.31.1.23}B4}{176}{subsubsection.4.31.1.23}%
+\contentsline {subsubsection}{\numberline {4.31.1.24}B5}{176}{subsubsection.4.31.1.24}%
+\contentsline {subsubsection}{\numberline {4.31.1.25}B6}{177}{subsubsection.4.31.1.25}%
+\contentsline {subsubsection}{\numberline {4.31.1.26}B7}{177}{subsubsection.4.31.1.26}%
+\contentsline {subsubsection}{\numberline {4.31.1.27}B8}{177}{subsubsection.4.31.1.27}%
+\contentsline {subsubsection}{\numberline {4.31.1.28}C0}{177}{subsubsection.4.31.1.28}%
+\contentsline {subsubsection}{\numberline {4.31.1.29}C0H}{177}{subsubsection.4.31.1.29}%
+\contentsline {subsubsection}{\numberline {4.31.1.30}C1}{177}{subsubsection.4.31.1.30}%
+\contentsline {subsubsection}{\numberline {4.31.1.31}C1H}{177}{subsubsection.4.31.1.31}%
+\contentsline {subsubsection}{\numberline {4.31.1.32}C2}{177}{subsubsection.4.31.1.32}%
+\contentsline {subsubsection}{\numberline {4.31.1.33}C2H}{178}{subsubsection.4.31.1.33}%
+\contentsline {subsubsection}{\numberline {4.31.1.34}C3}{178}{subsubsection.4.31.1.34}%
+\contentsline {subsubsection}{\numberline {4.31.1.35}C3H}{178}{subsubsection.4.31.1.35}%
+\contentsline {subsubsection}{\numberline {4.31.1.36}C4}{178}{subsubsection.4.31.1.36}%
+\contentsline {subsubsection}{\numberline {4.31.1.37}C4H}{178}{subsubsection.4.31.1.37}%
+\contentsline {subsubsection}{\numberline {4.31.1.38}C5}{178}{subsubsection.4.31.1.38}%
+\contentsline {subsubsection}{\numberline {4.31.1.39}C5H}{178}{subsubsection.4.31.1.39}%
+\contentsline {subsubsection}{\numberline {4.31.1.40}C6}{178}{subsubsection.4.31.1.40}%
+\contentsline {subsubsection}{\numberline {4.31.1.41}C6H}{179}{subsubsection.4.31.1.41}%
+\contentsline {subsubsection}{\numberline {4.31.1.42}C7}{179}{subsubsection.4.31.1.42}%
+\contentsline {subsubsection}{\numberline {4.31.1.43}C7H}{179}{subsubsection.4.31.1.43}%
+\contentsline {subsubsection}{\numberline {4.31.1.44}C8}{179}{subsubsection.4.31.1.44}%
+\contentsline {subsubsection}{\numberline {4.31.1.45}C8H}{179}{subsubsection.4.31.1.45}%
+\contentsline {subsubsection}{\numberline {4.31.1.46}D0}{179}{subsubsection.4.31.1.46}%
+\contentsline {subsubsection}{\numberline {4.31.1.47}D0H}{179}{subsubsection.4.31.1.47}%
+\contentsline {subsubsection}{\numberline {4.31.1.48}D1}{179}{subsubsection.4.31.1.48}%
+\contentsline {subsubsection}{\numberline {4.31.1.49}D1H}{180}{subsubsection.4.31.1.49}%
+\contentsline {subsubsection}{\numberline {4.31.1.50}D2}{180}{subsubsection.4.31.1.50}%
+\contentsline {subsubsection}{\numberline {4.31.1.51}D2H}{180}{subsubsection.4.31.1.51}%
+\contentsline {subsubsection}{\numberline {4.31.1.52}D3}{180}{subsubsection.4.31.1.52}%
+\contentsline {subsubsection}{\numberline {4.31.1.53}D3H}{180}{subsubsection.4.31.1.53}%
+\contentsline {subsubsection}{\numberline {4.31.1.54}D4}{180}{subsubsection.4.31.1.54}%
+\contentsline {subsubsection}{\numberline {4.31.1.55}D4H}{180}{subsubsection.4.31.1.55}%
+\contentsline {subsubsection}{\numberline {4.31.1.56}D5}{180}{subsubsection.4.31.1.56}%
+\contentsline {subsubsection}{\numberline {4.31.1.57}D5H}{181}{subsubsection.4.31.1.57}%
+\contentsline {subsubsection}{\numberline {4.31.1.58}D6}{181}{subsubsection.4.31.1.58}%
+\contentsline {subsubsection}{\numberline {4.31.1.59}D6H}{181}{subsubsection.4.31.1.59}%
+\contentsline {subsubsection}{\numberline {4.31.1.60}D7}{181}{subsubsection.4.31.1.60}%
+\contentsline {subsubsection}{\numberline {4.31.1.61}D7H}{181}{subsubsection.4.31.1.61}%
+\contentsline {subsubsection}{\numberline {4.31.1.62}D8}{181}{subsubsection.4.31.1.62}%
+\contentsline {subsubsection}{\numberline {4.31.1.63}D8H}{181}{subsubsection.4.31.1.63}%
+\contentsline {subsubsection}{\numberline {4.31.1.64}E0}{181}{subsubsection.4.31.1.64}%
+\contentsline {subsubsection}{\numberline {4.31.1.65}E1}{182}{subsubsection.4.31.1.65}%
+\contentsline {subsubsection}{\numberline {4.31.1.66}E2}{182}{subsubsection.4.31.1.66}%
+\contentsline {subsubsection}{\numberline {4.31.1.67}E3}{182}{subsubsection.4.31.1.67}%
+\contentsline {subsubsection}{\numberline {4.31.1.68}E4}{182}{subsubsection.4.31.1.68}%
+\contentsline {subsubsection}{\numberline {4.31.1.69}E5}{182}{subsubsection.4.31.1.69}%
+\contentsline {subsubsection}{\numberline {4.31.1.70}E6}{182}{subsubsection.4.31.1.70}%
+\contentsline {subsubsection}{\numberline {4.31.1.71}E7}{182}{subsubsection.4.31.1.71}%
+\contentsline {subsubsection}{\numberline {4.31.1.72}E8}{182}{subsubsection.4.31.1.72}%
+\contentsline {subsubsection}{\numberline {4.31.1.73}F0}{183}{subsubsection.4.31.1.73}%
+\contentsline {subsubsection}{\numberline {4.31.1.74}F0H}{183}{subsubsection.4.31.1.74}%
+\contentsline {subsubsection}{\numberline {4.31.1.75}F1}{183}{subsubsection.4.31.1.75}%
+\contentsline {subsubsection}{\numberline {4.31.1.76}F1H}{183}{subsubsection.4.31.1.76}%
+\contentsline {subsubsection}{\numberline {4.31.1.77}F2}{183}{subsubsection.4.31.1.77}%
+\contentsline {subsubsection}{\numberline {4.31.1.78}F2H}{183}{subsubsection.4.31.1.78}%
+\contentsline {subsubsection}{\numberline {4.31.1.79}F3}{183}{subsubsection.4.31.1.79}%
+\contentsline {subsubsection}{\numberline {4.31.1.80}F3H}{183}{subsubsection.4.31.1.80}%
+\contentsline {subsubsection}{\numberline {4.31.1.81}F4}{184}{subsubsection.4.31.1.81}%
+\contentsline {subsubsection}{\numberline {4.31.1.82}F4H}{184}{subsubsection.4.31.1.82}%
+\contentsline {subsubsection}{\numberline {4.31.1.83}F5}{184}{subsubsection.4.31.1.83}%
+\contentsline {subsubsection}{\numberline {4.31.1.84}F5H}{184}{subsubsection.4.31.1.84}%
+\contentsline {subsubsection}{\numberline {4.31.1.85}F6}{184}{subsubsection.4.31.1.85}%
+\contentsline {subsubsection}{\numberline {4.31.1.86}F6H}{184}{subsubsection.4.31.1.86}%
+\contentsline {subsubsection}{\numberline {4.31.1.87}F7}{184}{subsubsection.4.31.1.87}%
+\contentsline {subsubsection}{\numberline {4.31.1.88}F7H}{184}{subsubsection.4.31.1.88}%
+\contentsline {subsubsection}{\numberline {4.31.1.89}F8}{185}{subsubsection.4.31.1.89}%
+\contentsline {subsubsection}{\numberline {4.31.1.90}F8H}{185}{subsubsection.4.31.1.90}%
+\contentsline {subsubsection}{\numberline {4.31.1.91}G0}{185}{subsubsection.4.31.1.91}%
+\contentsline {subsubsection}{\numberline {4.31.1.92}G0H}{185}{subsubsection.4.31.1.92}%
+\contentsline {subsubsection}{\numberline {4.31.1.93}G1}{185}{subsubsection.4.31.1.93}%
+\contentsline {subsubsection}{\numberline {4.31.1.94}G1H}{185}{subsubsection.4.31.1.94}%
+\contentsline {subsubsection}{\numberline {4.31.1.95}G2}{185}{subsubsection.4.31.1.95}%
+\contentsline {subsubsection}{\numberline {4.31.1.96}G2H}{185}{subsubsection.4.31.1.96}%
+\contentsline {subsubsection}{\numberline {4.31.1.97}G3}{186}{subsubsection.4.31.1.97}%
+\contentsline {subsubsection}{\numberline {4.31.1.98}G3H}{186}{subsubsection.4.31.1.98}%
+\contentsline {subsubsection}{\numberline {4.31.1.99}G4}{186}{subsubsection.4.31.1.99}%
+\contentsline {subsubsection}{\numberline {4.31.1.100}G4H}{186}{subsubsection.4.31.1.100}%
+\contentsline {subsubsection}{\numberline {4.31.1.101}G5}{186}{subsubsection.4.31.1.101}%
+\contentsline {subsubsection}{\numberline {4.31.1.102}G5H}{186}{subsubsection.4.31.1.102}%
+\contentsline {subsubsection}{\numberline {4.31.1.103}G6}{186}{subsubsection.4.31.1.103}%
+\contentsline {subsubsection}{\numberline {4.31.1.104}G6H}{186}{subsubsection.4.31.1.104}%
+\contentsline {subsubsection}{\numberline {4.31.1.105}G7}{187}{subsubsection.4.31.1.105}%
+\contentsline {subsubsection}{\numberline {4.31.1.106}G7H}{187}{subsubsection.4.31.1.106}%
+\contentsline {subsubsection}{\numberline {4.31.1.107}G8}{187}{subsubsection.4.31.1.107}%
+\contentsline {subsubsection}{\numberline {4.31.1.108}G8H}{187}{subsubsection.4.31.1.108}%
+\contentsline {subsubsection}{\numberline {4.31.1.109}T1}{187}{subsubsection.4.31.1.109}%
+\contentsline {subsubsection}{\numberline {4.31.1.110}T1\_1\_2}{187}{subsubsection.4.31.1.110}%
+\contentsline {subsubsection}{\numberline {4.31.1.111}T1\_2}{187}{subsubsection.4.31.1.111}%
+\contentsline {subsubsection}{\numberline {4.31.1.112}T1\_4}{187}{subsubsection.4.31.1.112}%
+\contentsline {subsubsection}{\numberline {4.31.1.113}T2}{188}{subsubsection.4.31.1.113}%
+\contentsline {subsubsection}{\numberline {4.31.1.114}T4}{188}{subsubsection.4.31.1.114}%
+\contentsline {subsection}{\numberline {4.31.2}Typedef Documentation}{188}{subsection.4.31.2}%
+\contentsline {subsubsection}{\numberline {4.31.2.1}note\_t}{188}{subsubsection.4.31.2.1}%
+\contentsline {section}{\numberline {4.32}od.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{188}{section.4.32}%
+\contentsline {subsection}{\numberline {4.32.1}Macro Definition Documentation}{189}{subsection.4.32.1}%
+\contentsline {subsubsection}{\numberline {4.32.1.1}ALLOCATE\_OD\_ENTRY}{189}{subsubsection.4.32.1.1}%
+\contentsline {subsubsection}{\numberline {4.32.1.2}DEBUG\_NO\_CAN}{189}{subsubsection.4.32.1.2}%
+\contentsline {subsubsection}{\numberline {4.32.1.3}LINK\_OD\_ENTRY}{190}{subsubsection.4.32.1.3}%
+\contentsline {subsubsection}{\numberline {4.32.1.4}OD\_MSGQ\_SIZE}{190}{subsubsection.4.32.1.4}%
+\contentsline {subsection}{\numberline {4.32.2}Function Documentation}{190}{subsection.4.32.2}%
+\contentsline {subsubsection}{\numberline {4.32.2.1}od\_init()}{190}{subsubsection.4.32.2.1}%
+\contentsline {subsubsection}{\numberline {4.32.2.2}od\_unsafe\_read()}{190}{subsubsection.4.32.2.2}%
+\contentsline {subsubsection}{\numberline {4.32.2.3}od\_unsafe\_write()}{191}{subsubsection.4.32.2.3}%
+\contentsline {subsubsection}{\numberline {4.32.2.4}od\_update\_task()}{191}{subsubsection.4.32.2.4}%
+\contentsline {subsection}{\numberline {4.32.3}Variable Documentation}{191}{subsection.4.32.3}%
+\contentsline {subsubsection}{\numberline {4.32.3.1}in\_q}{191}{subsubsection.4.32.3.1}%
+\contentsline {subsubsection}{\numberline {4.32.3.2}od\_entries}{192}{subsubsection.4.32.3.2}%
+\contentsline {subsubsection}{\numberline {4.32.3.3}out\_q}{192}{subsubsection.4.32.3.3}%
+\contentsline {section}{\numberline {4.33}od.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{192}{section.4.33}%
+\contentsline {subsection}{\numberline {4.33.1}Macro Definition Documentation}{193}{subsection.4.33.1}%
+\contentsline {subsubsection}{\numberline {4.33.1.1}DECLARE\_OD\_ENTRY}{193}{subsubsection.4.33.1.1}%
+\contentsline {subsubsection}{\numberline {4.33.1.2}OD\_FRAME\_MAX\_SIZE}{193}{subsubsection.4.33.1.2}%
+\contentsline {subsubsection}{\numberline {4.33.1.3}OD\_MAX\_DATAID}{193}{subsubsection.4.33.1.3}%
+\contentsline {subsection}{\numberline {4.33.2}Function Documentation}{193}{subsection.4.33.2}%
+\contentsline {subsubsection}{\numberline {4.33.2.1}od\_init()}{194}{subsubsection.4.33.2.1}%
+\contentsline {subsubsection}{\numberline {4.33.2.2}od\_update\_task()}{194}{subsubsection.4.33.2.2}%
+\contentsline {section}{\numberline {4.34}packet.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{194}{section.4.34}%
+\contentsline {subsection}{\numberline {4.34.1}Typedef Documentation}{195}{subsection.4.34.1}%
+\contentsline {subsubsection}{\numberline {4.34.1.1}packet\_def\_t}{195}{subsubsection.4.34.1.1}%
+\contentsline {subsection}{\numberline {4.34.2}Variable Documentation}{195}{subsection.4.34.2}%
+\contentsline {subsubsection}{\numberline {4.34.2.1}ping}{195}{subsubsection.4.34.2.1}%
+\contentsline {section}{\numberline {4.35}serial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{195}{section.4.35}%
+\contentsline {subsection}{\numberline {4.35.1}Macro Definition Documentation}{197}{subsection.4.35.1}%
+\contentsline {subsubsection}{\numberline {4.35.1.1}S1\_UART}{197}{subsubsection.4.35.1.1}%
+\contentsline {subsubsection}{\numberline {4.35.1.2}S2\_UART}{197}{subsubsection.4.35.1.2}%
+\contentsline {subsubsection}{\numberline {4.35.1.3}S3\_UART}{197}{subsubsection.4.35.1.3}%
+\contentsline {subsubsection}{\numberline {4.35.1.4}SERIAL\_DMA\_LEN}{197}{subsubsection.4.35.1.4}%
+\contentsline {subsection}{\numberline {4.35.2}Function Documentation}{197}{subsection.4.35.2}%
+\contentsline {subsubsection}{\numberline {4.35.2.1}HAL\_UART\_RxCpltCallback()}{197}{subsubsection.4.35.2.1}%
+\contentsline {subsubsection}{\numberline {4.35.2.2}serial\_data\_ready()}{198}{subsubsection.4.35.2.2}%
+\contentsline {subsubsection}{\numberline {4.35.2.3}serial\_feedback\_init()}{198}{subsubsection.4.35.2.3}%
+\contentsline {subsubsection}{\numberline {4.35.2.4}serial\_get\_deamon()}{199}{subsubsection.4.35.2.4}%
+\contentsline {subsubsection}{\numberline {4.35.2.5}serial\_get\_feedback\_interface()}{199}{subsubsection.4.35.2.5}%
+\contentsline {subsubsection}{\numberline {4.35.2.6}serial\_handle\_data()}{199}{subsubsection.4.35.2.6}%
+\contentsline {subsubsection}{\numberline {4.35.2.7}serial\_init()}{200}{subsubsection.4.35.2.7}%
+\contentsline {subsubsection}{\numberline {4.35.2.8}serial\_recv()}{200}{subsubsection.4.35.2.8}%
+\contentsline {subsubsection}{\numberline {4.35.2.9}serial\_send()}{201}{subsubsection.4.35.2.9}%
+\contentsline {subsubsection}{\numberline {4.35.2.10}serial\_setup\_reception()}{202}{subsubsection.4.35.2.10}%
+\contentsline {subsection}{\numberline {4.35.3}Variable Documentation}{202}{subsection.4.35.3}%
+\contentsline {subsubsection}{\numberline {4.35.3.1}feedback\_interface}{202}{subsubsection.4.35.3.1}%
+\contentsline {subsubsection}{\numberline {4.35.3.2}feedback\_interface\_context}{203}{subsubsection.4.35.3.2}%
+\contentsline {subsubsection}{\numberline {4.35.3.3}serial\_deamon}{203}{subsubsection.4.35.3.3}%
+\contentsline {subsubsection}{\numberline {4.35.3.4}serial\_deamon\_context}{203}{subsubsection.4.35.3.4}%
+\contentsline {section}{\numberline {4.36}serial.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{203}{section.4.36}%
+\contentsline {subsection}{\numberline {4.36.1}Macro Definition Documentation}{204}{subsection.4.36.1}%
+\contentsline {subsubsection}{\numberline {4.36.1.1}SERIAL\_BUFFER\_LEN}{205}{subsubsection.4.36.1.1}%
+\contentsline {subsection}{\numberline {4.36.2}Typedef Documentation}{205}{subsection.4.36.2}%
+\contentsline {subsubsection}{\numberline {4.36.2.1}serial\_deamon\_context\_t}{205}{subsubsection.4.36.2.1}%
+\contentsline {subsubsection}{\numberline {4.36.2.2}serial\_interface\_context\_t}{205}{subsubsection.4.36.2.2}%
+\contentsline {subsubsection}{\numberline {4.36.2.3}serial\_interrupt\_source\_t}{205}{subsubsection.4.36.2.3}%
+\contentsline {subsubsection}{\numberline {4.36.2.4}serial\_transfer\_mode\_t}{205}{subsubsection.4.36.2.4}%
+\contentsline {subsection}{\numberline {4.36.3}Enumeration Type Documentation}{205}{subsection.4.36.3}%
+\contentsline {subsubsection}{\numberline {4.36.3.1}serial\_interrupt\_source}{205}{subsubsection.4.36.3.1}%
+\contentsline {subsubsection}{\numberline {4.36.3.2}serial\_transfer\_mode}{206}{subsubsection.4.36.3.2}%
+\contentsline {subsection}{\numberline {4.36.4}Function Documentation}{206}{subsection.4.36.4}%
+\contentsline {subsubsection}{\numberline {4.36.4.1}serial\_feedback\_init()}{206}{subsubsection.4.36.4.1}%
+\contentsline {subsubsection}{\numberline {4.36.4.2}serial\_get\_deamon()}{206}{subsubsection.4.36.4.2}%
+\contentsline {subsubsection}{\numberline {4.36.4.3}serial\_get\_feedback\_interface()}{207}{subsubsection.4.36.4.3}%
+\contentsline {subsubsection}{\numberline {4.36.4.4}serial\_init()}{207}{subsubsection.4.36.4.4}%
+\contentsline {subsubsection}{\numberline {4.36.4.5}serial\_recv()}{208}{subsubsection.4.36.4.5}%
+\contentsline {subsubsection}{\numberline {4.36.4.6}serial\_send()}{208}{subsubsection.4.36.4.6}%
+\contentsline {section}{\numberline {4.37}still\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}alive.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{209}{section.4.37}%
+\contentsline {subsection}{\numberline {4.37.1}Variable Documentation}{210}{subsection.4.37.1}%
+\contentsline {subsubsection}{\numberline {4.37.1.1}still\_alive}{210}{subsubsection.4.37.1.1}%
+\contentsline {subsubsection}{\numberline {4.37.1.2}still\_alive\_len}{210}{subsubsection.4.37.1.2}%
+\contentsline {section}{\numberline {4.38}still\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}alive\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bak.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{210}{section.4.38}%
+\contentsline {subsection}{\numberline {4.38.1}Variable Documentation}{211}{subsection.4.38.1}%
+\contentsline {subsubsection}{\numberline {4.38.1.1}still\_alive}{211}{subsubsection.4.38.1.1}%
+\contentsline {subsubsection}{\numberline {4.38.1.2}still\_alive\_len}{211}{subsubsection.4.38.1.2}%
+\contentsline {section}{\numberline {4.39}template.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{211}{section.4.39}%
+\contentsline {section}{\numberline {4.40}template.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{212}{section.4.40}%
+\contentsline {section}{\numberline {4.41}threads.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{212}{section.4.41}%
+\contentsline {subsection}{\numberline {4.41.1}Macro Definition Documentation}{213}{subsection.4.41.1}%
+\contentsline {subsubsection}{\numberline {4.41.1.1}CONTROL\_PRIO}{213}{subsubsection.4.41.1.1}%
+\contentsline {subsubsection}{\numberline {4.41.1.2}CONTROL\_SZ}{214}{subsubsection.4.41.1.2}%
+\contentsline {subsubsection}{\numberline {4.41.1.3}CREATE\_THREAD}{214}{subsubsection.4.41.1.3}%
+\contentsline {subsubsection}{\numberline {4.41.1.4}DEFAULT\_SZ}{214}{subsubsection.4.41.1.4}%
+\contentsline {subsubsection}{\numberline {4.41.1.5}LED\_RGB\_PRIO}{214}{subsubsection.4.41.1.5}%
+\contentsline {subsubsection}{\numberline {4.41.1.6}LED\_RGB\_SZ}{215}{subsubsection.4.41.1.6}%
+\contentsline {subsubsection}{\numberline {4.41.1.7}OD\_PRIO}{215}{subsubsection.4.41.1.7}%
+\contentsline {subsubsection}{\numberline {4.41.1.8}OD\_SZ}{215}{subsubsection.4.41.1.8}%
+\contentsline {subsection}{\numberline {4.41.2}Function Documentation}{215}{subsection.4.41.2}%
+\contentsline {subsubsection}{\numberline {4.41.2.1}threads\_init()}{215}{subsubsection.4.41.2.1}%
+\contentsline {subsection}{\numberline {4.41.3}Variable Documentation}{216}{subsection.4.41.3}%
+\contentsline {subsubsection}{\numberline {4.41.3.1}control\_handle}{216}{subsubsection.4.41.3.1}%
+\contentsline {subsubsection}{\numberline {4.41.3.2}led\_rgb\_handle}{216}{subsubsection.4.41.3.2}%
+\contentsline {subsubsection}{\numberline {4.41.3.3}od\_handle}{216}{subsubsection.4.41.3.3}%
+\contentsline {section}{\numberline {4.42}threads.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{217}{section.4.42}%
+\contentsline {subsection}{\numberline {4.42.1}Function Documentation}{217}{subsection.4.42.1}%
+\contentsline {subsubsection}{\numberline {4.42.1.1}threads\_init()}{218}{subsubsection.4.42.1.1}%
+\contentsline {section}{\numberline {4.43}uart.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{218}{section.4.43}%
+\contentsline {section}{\numberline {4.44}uart.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{219}{section.4.44}%
+\contentsline {section}{\numberline {4.45}util.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{220}{section.4.45}%
+\contentsline {subsection}{\numberline {4.45.1}Macro Definition Documentation}{222}{subsection.4.45.1}%
+\contentsline {subsubsection}{\numberline {4.45.1.1}ENTER\_CRITICAL}{222}{subsubsection.4.45.1.1}%
+\contentsline {subsubsection}{\numberline {4.45.1.2}EXIT\_CRITICAL}{222}{subsubsection.4.45.1.2}%
+\contentsline {subsubsection}{\numberline {4.45.1.3}util\_abs}{222}{subsubsection.4.45.1.3}%
+\contentsline {subsubsection}{\numberline {4.45.1.4}UTIL\_GENERATE\_BUFFER}{222}{subsubsection.4.45.1.4}%
+\contentsline {subsubsection}{\numberline {4.45.1.5}WRITE\_IN\_REG}{223}{subsubsection.4.45.1.5}%
+\contentsline {subsection}{\numberline {4.45.2}Typedef Documentation}{223}{subsection.4.45.2}%
+\contentsline {subsubsection}{\numberline {4.45.2.1}util\_buffer\_i16\_t}{223}{subsubsection.4.45.2.1}%
+\contentsline {subsubsection}{\numberline {4.45.2.2}util\_buffer\_u16\_t}{223}{subsubsection.4.45.2.2}%
+\contentsline {subsubsection}{\numberline {4.45.2.3}util\_buffer\_u8\_t}{224}{subsubsection.4.45.2.3}%
+\contentsline {subsubsection}{\numberline {4.45.2.4}util\_error\_t}{224}{subsubsection.4.45.2.4}%
+\contentsline {subsection}{\numberline {4.45.3}Enumeration Type Documentation}{224}{subsection.4.45.3}%
+\contentsline {subsubsection}{\numberline {4.45.3.1}util\_error}{224}{subsubsection.4.45.3.1}%
+\contentsline {subsection}{\numberline {4.45.4}Function Documentation}{224}{subsection.4.45.4}%
+\contentsline {subsubsection}{\numberline {4.45.4.1}util\_buffer\_i16\_add()}{224}{subsubsection.4.45.4.1}%
+\contentsline {subsubsection}{\numberline {4.45.4.2}util\_buffer\_i16\_get()}{225}{subsubsection.4.45.4.2}%
+\contentsline {subsubsection}{\numberline {4.45.4.3}util\_buffer\_i16\_init()}{225}{subsubsection.4.45.4.3}%
+\contentsline {subsubsection}{\numberline {4.45.4.4}util\_buffer\_i16\_isempty()}{225}{subsubsection.4.45.4.4}%
+\contentsline {subsubsection}{\numberline {4.45.4.5}util\_buffer\_u16\_add()}{225}{subsubsection.4.45.4.5}%
+\contentsline {subsubsection}{\numberline {4.45.4.6}util\_buffer\_u16\_get()}{225}{subsubsection.4.45.4.6}%
+\contentsline {subsubsection}{\numberline {4.45.4.7}util\_buffer\_u16\_init()}{226}{subsubsection.4.45.4.7}%
+\contentsline {subsubsection}{\numberline {4.45.4.8}util\_buffer\_u16\_isempty()}{226}{subsubsection.4.45.4.8}%
+\contentsline {subsubsection}{\numberline {4.45.4.9}util\_buffer\_u8\_access()}{226}{subsubsection.4.45.4.9}%
+\contentsline {subsubsection}{\numberline {4.45.4.10}util\_buffer\_u8\_add()}{226}{subsubsection.4.45.4.10}%
+\contentsline {subsubsection}{\numberline {4.45.4.11}util\_buffer\_u8\_get()}{227}{subsubsection.4.45.4.11}%
+\contentsline {subsubsection}{\numberline {4.45.4.12}util\_buffer\_u8\_init()}{227}{subsubsection.4.45.4.12}%
+\contentsline {subsubsection}{\numberline {4.45.4.13}util\_buffer\_u8\_isempty()}{228}{subsubsection.4.45.4.13}%
+\contentsline {subsubsection}{\numberline {4.45.4.14}util\_decode\_i16()}{228}{subsubsection.4.45.4.14}%
+\contentsline {subsubsection}{\numberline {4.45.4.15}util\_decode\_i32()}{229}{subsubsection.4.45.4.15}%
+\contentsline {subsubsection}{\numberline {4.45.4.16}util\_decode\_i8()}{229}{subsubsection.4.45.4.16}%
+\contentsline {subsubsection}{\numberline {4.45.4.17}util\_decode\_u16()}{229}{subsubsection.4.45.4.17}%
+\contentsline {subsubsection}{\numberline {4.45.4.18}util\_decode\_u32()}{230}{subsubsection.4.45.4.18}%
+\contentsline {subsubsection}{\numberline {4.45.4.19}util\_decode\_u8()}{230}{subsubsection.4.45.4.19}%
+\contentsline {subsubsection}{\numberline {4.45.4.20}util\_encode\_i16()}{231}{subsubsection.4.45.4.20}%
+\contentsline {subsubsection}{\numberline {4.45.4.21}util\_encode\_i32()}{231}{subsubsection.4.45.4.21}%
+\contentsline {subsubsection}{\numberline {4.45.4.22}util\_encode\_i8()}{232}{subsubsection.4.45.4.22}%
+\contentsline {subsubsection}{\numberline {4.45.4.23}util\_encode\_u16()}{232}{subsubsection.4.45.4.23}%
+\contentsline {subsubsection}{\numberline {4.45.4.24}util\_encode\_u32()}{233}{subsubsection.4.45.4.24}%
+\contentsline {subsubsection}{\numberline {4.45.4.25}util\_encode\_u8()}{233}{subsubsection.4.45.4.25}%
+\contentsline {section}{\numberline {4.46}wildhorn.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{233}{section.4.46}%
+\contentsline {subsection}{\numberline {4.46.1}Macro Definition Documentation}{234}{subsection.4.46.1}%
+\contentsline {subsubsection}{\numberline {4.46.1.1}WH\_FALSE}{234}{subsubsection.4.46.1.1}%
+\contentsline {subsubsection}{\numberline {4.46.1.2}WH\_HAS\_FEEDBACK}{235}{subsubsection.4.46.1.2}%
+\contentsline {subsubsection}{\numberline {4.46.1.3}WH\_HAS\_GNSS}{235}{subsubsection.4.46.1.3}%
+\contentsline {subsubsection}{\numberline {4.46.1.4}WH\_HAS\_KRTEK}{235}{subsubsection.4.46.1.4}%
+\contentsline {subsubsection}{\numberline {4.46.1.5}WH\_HAS\_RADIO}{235}{subsubsection.4.46.1.5}%
+\contentsline {subsubsection}{\numberline {4.46.1.6}WH\_HAS\_SENSORS}{235}{subsubsection.4.46.1.6}%
+\contentsline {subsubsection}{\numberline {4.46.1.7}WH\_TRUE}{235}{subsubsection.4.46.1.7}%
+\contentsline {subsubsection}{\numberline {4.46.1.8}WH\_USE\_BUZZER}{235}{subsubsection.4.46.1.8}%
+\contentsline {chapter}{Index}{237}{section*.335}%

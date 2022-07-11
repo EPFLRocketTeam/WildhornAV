@@ -75,7 +75,7 @@ util_error_t debug_init(void){
 
 	device_interface_t * feedback_interface = serial_get_feedback_interface();
 
-	device_deamon_t * serial_deamon = serial_get_feedback_interface();
+	device_daemon_t * serial_deamon = serial_get_feedback_interface();
 
 
 	error |= device_interface_create(feedback_interface, (void*) &feedback_interface_context, serial_deamon, serial_send, serial_recv, NULL);

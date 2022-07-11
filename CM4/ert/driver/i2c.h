@@ -33,9 +33,12 @@
  *  TYPEDEFS
  **********************/
 
+/**
+ * @brief I2C interface context structure
+ * @details this only contains the HAL I2C handle pointer.
+ */
 typedef struct i2c_interface_context {
 	I2C_HandleTypeDef * i2c;
-
 }i2c_interface_context_t;
 
 

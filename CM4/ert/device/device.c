@@ -54,8 +54,14 @@ void device_deamon_thread(void * arg);
  **********************/
 
 /**
- * @brief Initialize a device instance
- * @details
+ * @brief 	Initialize a device instance
+ * @details This function fills in the fields of a device object. The purpose
+ * 			of the context is to provide the read_reg and write_reg some arbitrary
+ * 			context on the device that is being accessed.
+ * 			The read_reg and write_reg functions should be written by the user
+ * 			and tailored the the device. The arguments given by the system are
+ * 			the device context, the associated interface, a 32 bits address,
+ * 			the data to be written/read and the length of the data
  *
  * @param	dev			Pointer to the @p device_t structure describing this device.
  * @param   context		Generic pointer to a device context.
@@ -66,8 +72,8 @@ void device_deamon_thread(void * arg);
 util_error_t device_create(	device_t * dev,
 						void * context,
 						device_interface_t * interface,
-						util_error_t (*read_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t),
-						util_error_t (*write_reg)(void*, device_interface_t*, uint32_t, uint8_t *, uint32_t))
+						util_error_t (*read_reg)(void*, device_interface_t *, uint32_t, uint8_t *, uint32_t),
+						util_error_t (*write_reg)(void*, device_interface_t *, uint32_t, uint8_t *, uint32_t))
 {
 	static int32_t count = 0;
 	dev->context = context;
@@ -81,21 +87,25 @@ util_error_t device_create(	device_t * dev,
 
 /**
  * @brief	Initialize a device interface instance.
- * @details
+ * @details This function fills the fields of a device interface object. The purpose
+ * 			of the context is to provide the send, recv and handle data with some
+ * 			arbitrary context on the device interface that is being accessed.
+ * 			The daemon
  *
- * @param	interface
- * @param 	context
- * @param	deamon
- * @param	send
- * @param	recv
- * @param 	handle_data
+ * @param	interface	Pointer to the device_interface_t object describing the interface.
+ * @param 	context		Generic pointer to a device interface context.
+ * @param	daemon		Pointer to the daemon associated with this interface.
+ * 						Can be null.
+ * @param	send		Interface specific send function.
+ * @param	recv		Interface specific recv function.
+ * @param 	handle_data Interface specific handle data function.
  */
-util_error_t device_interface_create(   	device_interface_t * interface,
-                            		void * context,
-									device_deamon_t * deamon,
-									util_error_t (*send)(void*, uint8_t*, uint32_t),
-									util_error_t (*recv)(void*, uint8_t*, uint32_t*),
-									util_error_t (*handle_data)(void*, void*))
+util_error_t device_interface_create(   device_interface_t * interface,
+                            			void * context,
+										device_daemon_t * daemon,
+										util_error_t (*send)(void*, uint8_t*, uint32_t),
+										util_error_t (*recv)(void*, uint8_t*, uint32_t*),
+										util_error_t (*handle_data)(void*, void*))
 {
     static int32_t count = 0;
     interface->context = context;
@@ -103,9 +113,9 @@ util_error_t device_interface_create(   	device_interface_t * interface,
     interface->recv = recv;
     interface->handle_data = handle_data;
     interface->id = count++;
-    if(deamon && handle_data) {
-    	deamon->interfaces[deamon->interfaces_count] = interface;
-    	deamon->interfaces_count++;
+    if(daemon && handle_data) {
+    	daemon->interfaces[daemon->interfaces_count] = interface;
+    	daemon->interfaces_count++;
     }
     return ER_SUCCESS;
 }
@@ -114,17 +124,18 @@ util_error_t device_interface_create(   	device_interface_t * interface,
  * @brief Initializea device deamon instance
  * @details
  *
- * @param	deamon
- * @param	name
- * @param	prio
- * @param	context
- * @param 	data_rdy
+ * @param	deamon 		Pointer to a device deamon object.
+ * @param	name		Name of the device deamon thread.
+ * @param	prio		Priority of the device deamon thread.
+ * @param	context 	Generic pointer to a context associated with the deamon.
+ * @param 	data_rdy 	Data ready blocking function, released when the deamon
+ * 						can start processing data.
  */
-util_error_t device_deamon_create(	device_deamon_t * deamon,
-								const char * name,
-								uint32_t prio,
-								void * context,
-								util_error_t (*data_rdy)(void*))
+util_error_t device_deamon_create(	device_daemon_t * deamon,
+									const char * name,
+									uint32_t prio,
+									void * context,
+									util_error_t (*data_rdy)(void*))
 {
 	static uint32_t counter = 0;
 	deamon->id = counter++;
@@ -148,7 +159,7 @@ util_error_t device_deamon_create(	device_deamon_t * deamon,
  */
 void device_deamon_thread(void * arg)
 {
-	device_deamon_t * deamon = (device_deamon_t * ) arg;
+	device_daemon_t * deamon = (device_daemon_t * ) arg;
 
 	for(;;) {
 		if(deamon->data_rdy(deamon->context) == ER_SUCCESS) {

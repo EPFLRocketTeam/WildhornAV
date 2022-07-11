@@ -131,15 +131,19 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9315e3dfa8912309ae77398caa91b2ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a9315e3dfa8912309ae77398caa91b2ef">i2c_spi_guard</a> (void)</td></tr>
+<tr class="memdesc:a9315e3dfa8912309ae77398caa91b2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">This funcion disables completely the SPI for hardware saveguard.  <a href="i2c_8c.html#a9315e3dfa8912309ae77398caa91b2ef">More...</a><br /></td></tr>
 <tr class="separator:a9315e3dfa8912309ae77398caa91b2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf1cc79fc1fd312feb2f87adf80e1c93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="device_8h.html#afd3cf179e8a0451b6dfa544364c6cb22">device_interface_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#adf1cc79fc1fd312feb2f87adf80e1c93">i2c_get_sensor_interface</a> (void)</td></tr>
+<tr class="memdesc:adf1cc79fc1fd312feb2f87adf80e1c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the interface associated with the sensors.  <a href="i2c_8c.html#adf1cc79fc1fd312feb2f87adf80e1c93">More...</a><br /></td></tr>
 <tr class="separator:adf1cc79fc1fd312feb2f87adf80e1c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5730d9445429351b9f750084c5cb5aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a5730d9445429351b9f750084c5cb5aae">i2c_init</a> (void)</td></tr>
+<tr class="memdesc:a5730d9445429351b9f750084c5cb5aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which are present on the hostboards.  <a href="i2c_8c.html#a5730d9445429351b9f750084c5cb5aae">More...</a><br /></td></tr>
 <tr class="separator:a5730d9445429351b9f750084c5cb5aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a5e20935ff70799eeda3bb5cbd10f2ecc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="device_8h.html#afd3cf179e8a0451b6dfa544364c6cb22">device_interface_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#a5e20935ff70799eeda3bb5cbd10f2ecc">sensor_interface</a></td></tr>
+<tr class="memdesc:a5e20935ff70799eeda3bb5cbd10f2ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the I2C Interface associated with the sensors.  <a href="i2c_8c.html#a5e20935ff70799eeda3bb5cbd10f2ecc">More...</a><br /></td></tr>
 <tr class="separator:a5e20935ff70799eeda3bb5cbd10f2ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad725e4c85d7c4c4ed2971ba684ee6a51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="i2c_8h.html#a2524fd243c29c32582e55cf0619c591c">i2c_interface_context_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8c.html#ad725e4c85d7c4c4ed2971ba684ee6a51">sensor_interface_context</a></td></tr>
 <tr class="separator:ad725e4c85d7c4c4ed2971ba684ee6a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,6 +208,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Getter for the interface associated with the sensors. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pointer to the sensor interface object </dd></dl>
+
 <p class="reference">References <a class="el" href="i2c_8c.html#a5e20935ff70799eeda3bb5cbd10f2ecc">sensor_interface</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="i2c__sensor_8c.html#ae29d9882a5c70774cc736efa8ae5fa30">i2c_sensor_init()</a>.</p>
@@ -212,7 +219,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="i2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93_icgraph.png" border="0" usemap="#ai2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93_icgraph" alt=""/></div>
 <map name="ai2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93_icgraph" id="ai2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93_icgraph">
-<area shape="rect" title=" " alt="" coords="172,5,356,32"/>
+<area shape="rect" title="Getter for the interface associated with the sensors." alt="" coords="172,5,356,32"/>
 <area shape="rect" href="i2c__sensor_8c.html#ae29d9882a5c70774cc736efa8ae5fa30" title=" " alt="" coords="5,5,124,32"/>
 </map>
 </div>
@@ -235,6 +242,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which are present on the hostboards. </p>
+
 <p class="reference">References <a class="el" href="device_8c.html#a8f74c3046fc52d8fc597787db18196f5">device_interface_create()</a>, <a class="el" href="util_8h.html#ac063b78dfbf0a7cf3a8bba0150cf75e7ac92c1d77c6ea7ec8e48756f5b0c9acb2">ER_SUCCESS</a>, <a class="el" href="i2c_8c.html#a5e20935ff70799eeda3bb5cbd10f2ecc">sensor_interface</a>, and <a class="el" href="i2c_8c.html#ad725e4c85d7c4c4ed2971ba684ee6a51">sensor_interface_context</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="threads_8c.html#aa5c157013c08e62ad9eb931165c9663b">threads_init()</a>.</p>
@@ -243,7 +252,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="i2c_8c_a5730d9445429351b9f750084c5cb5aae_cgraph.png" border="0" usemap="#ai2c_8c_a5730d9445429351b9f750084c5cb5aae_cgraph" alt=""/></div>
 <map name="ai2c_8c_a5730d9445429351b9f750084c5cb5aae_cgraph" id="ai2c_8c_a5730d9445429351b9f750084c5cb5aae_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,75,32"/>
+<area shape="rect" title="Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which a..." alt="" coords="5,5,75,32"/>
 <area shape="rect" href="device_8c.html#a8f74c3046fc52d8fc597787db18196f5" title="Initialize a device interface instance." alt="" coords="123,5,301,32"/>
 </map>
 </div>
@@ -252,7 +261,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="i2c_8c_a5730d9445429351b9f750084c5cb5aae_icgraph.png" border="0" usemap="#ai2c_8c_a5730d9445429351b9f750084c5cb5aae_icgraph" alt=""/></div>
 <map name="ai2c_8c_a5730d9445429351b9f750084c5cb5aae_icgraph" id="ai2c_8c_a5730d9445429351b9f750084c5cb5aae_icgraph">
-<area shape="rect" title=" " alt="" coords="152,5,221,32"/>
+<area shape="rect" title="Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which a..." alt="" coords="152,5,221,32"/>
 <area shape="rect" href="threads_8c.html#aa5c157013c08e62ad9eb931165c9663b" title="Initialize all the threads of Wildhorn AV." alt="" coords="5,5,104,32"/>
 </map>
 </div>
@@ -275,13 +284,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>This funcion disables completely the SPI for hardware saveguard. </p>
+
 <p class="reference">Referenced by <a class="el" href="threads_8c.html#aa5c157013c08e62ad9eb931165c9663b">threads_init()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="i2c_8c_a9315e3dfa8912309ae77398caa91b2ef_icgraph.png" border="0" usemap="#ai2c_8c_a9315e3dfa8912309ae77398caa91b2ef_icgraph" alt=""/></div>
 <map name="ai2c_8c_a9315e3dfa8912309ae77398caa91b2ef_icgraph" id="ai2c_8c_a9315e3dfa8912309ae77398caa91b2ef_icgraph">
-<area shape="rect" title=" " alt="" coords="152,5,263,32"/>
+<area shape="rect" title="This funcion disables completely the SPI for hardware saveguard." alt="" coords="152,5,263,32"/>
 <area shape="rect" href="threads_8c.html#aa5c157013c08e62ad9eb931165c9663b" title="Initialize all the threads of Wildhorn AV." alt="" coords="5,5,104,32"/>
 </map>
 </div>
@@ -300,6 +311,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is the I2C Interface associated with the sensors. </p>
 
 <p class="reference">Referenced by <a class="el" href="i2c_8c.html#adf1cc79fc1fd312feb2f87adf80e1c93">i2c_get_sensor_interface()</a>, and <a class="el" href="i2c_8c.html#a5730d9445429351b9f750084c5cb5aae">i2c_init()</a>.</p>
 
@@ -332,7 +345,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_4bbd8d19459cf3b74b5c31a1eb8e0988.html">ert</a></li><li class="navelem"><a class="el" href="dir_8828e7e00cd7411d63d03568c1314578.html">driver</a></li><li class="navelem"><a class="el" href="i2c_8c.html">i2c.c</a></li>
-    <li class="footer">Generated on Thu Jun 23 2022 08:28:00 for WildhornAV by
+    <li class="footer">Generated on Fri Jun 24 2022 18:58:07 for WildhornAV by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li>
   </ul>

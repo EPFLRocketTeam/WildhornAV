@@ -3,5 +3,5 @@
 <area shape="rect" id="node2" href="$device_8c.html#a40846c40a3f7c8473fdd3b96d12b7f7d" title="Initialize a device instance." alt="" coords="207,31,321,57"/>
 <area shape="rect" id="node3" href="$i2c__sensor_8c.html#a91cf04fe5df04ba769f873ab7a67c03f" title=" " alt="" coords="406,5,485,32"/>
 <area shape="rect" id="node4" href="$i2c__sensor_8c.html#a5389e7d11cf7b6edabca8ca6d332f33f" title=" " alt="" coords="404,56,487,83"/>
-<area shape="rect" id="node5" href="$i2c_8c.html#adf1cc79fc1fd312feb2f87adf80e1c93" title=" " alt="" coords="172,132,356,159"/>
+<area shape="rect" id="node5" href="$i2c_8c.html#adf1cc79fc1fd312feb2f87adf80e1c93" title="Getter for the interface associated with the sensors." alt="" coords="172,132,356,159"/>
 </map>
