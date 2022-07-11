@@ -173,7 +173,8 @@ void control_thread(__attribute__((unused)) void * arg) {
 
 /**
  * @brief	Idle state entry
- * @details
+ * @details This function resets the state machine into it's (default) Idle
+ * 			state.
  */
 void control_idle_start(void) {
 	control.state = CONTROL_IDLE;
@@ -182,7 +183,9 @@ void control_idle_start(void) {
 
 /**
  * @brief	Idle state runtime
- * @details
+ * @details The Idle state will simply wait for the arming command/action to
+ * 			happen. It will also wait for the calibration command/action to
+ * 			happen.
  */
 void control_idle_run(void) {
 
@@ -190,7 +193,7 @@ void control_idle_run(void) {
 
 /**
  * @brief	Calibration state entry
- * @details
+ * @details This function will setup and initiate the calibration sequence.
  */
 void control_calibration_start(void) {
 	control.state = CONTROL_CALIBRATION;
@@ -198,7 +201,8 @@ void control_calibration_start(void) {
 
 /**
  * @brief	Calibration state runtime
- * @details
+ * @details This state will wait for the calibration sequence to finish and jump
+ * 			back to Idle.
  */
 void control_calibration_run(void) {
 
@@ -206,7 +210,7 @@ void control_calibration_run(void) {
 
 /**
  * @brief	Armed state entry
- * @details
+ * @details This function will setup and initiate the Armed state.
  */
 void control_armed_start(void) {
 	control.state = CONTROL_ARMED;
@@ -215,7 +219,8 @@ void control_armed_start(void) {
 
 /**
  * @brief	Armed state runtime
- * @details
+ * @details This state will wait for the liftoff detection (high Z acceleration)
+ * 			and transition to the Powered state.
  */
 void control_armed_run(void) {
 
