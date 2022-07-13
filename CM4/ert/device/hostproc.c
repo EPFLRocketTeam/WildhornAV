@@ -6,6 +6,7 @@
  *	Description	: messenger to communicate with linux kernel on CA7
  *				  in this file we define the messenger which communicates between
  *				  rpmsg and openAMP
+ *
  */
 
 /**********************
@@ -50,8 +51,52 @@ typedef struct hostproc_interface_context {
  *	VARIABLES
  **********************/
 
+/**
+ * @brief 	Virtual UART channel for feedback messages.
+ * @details	This channel is used to send debug and logging messages
+ * 			to linux, these messages will be saved into log files.
+ *
+ * @note 	These messages will be fed to the feedback board for debug as
+ * 			engineering data (in plain text or connected to a UI)
+ *
+ */
 static VIRT_UART_HandleTypeDef host_UART0;
 
+/**
+ * @brief	Virtual UART channel for OD synchronization.
+ * @details	This channel is used to synchronize the OD with the linux system.
+ *
+ */
+static VIRT_UART_HandleTypeDef host_UART1;
+
+/**
+ * @brief	Virtual UART channel for critical data synchronization.
+ * @details	This channel is used to synchronize some critical data with the
+ * 			linux system. This will be typically used to send sensor data to be
+ * 			processed by the kalman filter and the state estimation.
+ */
+static VIRT_UART_HandleTypeDef host_UART2;
+
+/**
+ * @brief	Virtual UART channel for commands
+ * @details	This channel is used to send commands to and from the hostproc
+ * 			for example to enable some specific operation modes
+ *
+ * @note 	This might be included in the OD as a command word or something.
+ */
+static VIRT_UART_HandleTypeDef host_UART3;
+
+/*
+ * This will need to be
+ *
+ * hostproc_feedback_interface
+ *
+ * hostproc_od_interface
+ *
+ * hostproc_data_interface
+ *
+ * (optional) hostproc_cmd_interface
+ */
 
 static device_t hostproc_device;
 static device_interface_t hostproc_interface;
