@@ -16,6 +16,7 @@
  **********************/
 
 #include <stdint.h>
+#include <util.h>
 
 /**********************
  *  CONSTANTS
@@ -45,6 +46,7 @@
 extern "C"{
 #endif
 
+util_error_t barometer_init(void);
 
 #ifdef __cplusplus
 } // extern "C"

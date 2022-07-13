@@ -130,6 +130,10 @@ util_error_t device_interface_create(   device_interface_t * interface,
  * @param	context 	Generic pointer to a context associated with the deamon.
  * @param 	data_rdy 	Data ready blocking function, released when the deamon
  * 						can start processing data.
+ *
+ * @note 				If a deamon is created without data_rdy function, it can
+ * 						be used to keep a list of interfaces without background
+ * 						process
  */
 util_error_t device_deamon_create(	device_daemon_t * deamon,
 									const char * name,
@@ -145,7 +149,7 @@ util_error_t device_deamon_create(	device_daemon_t * deamon,
 	if(data_rdy) {
 		deamon->handle = xTaskCreateStatic(device_deamon_thread, name, DEAMON_STACK_SIZE, deamon, prio, deamon->stack, &deamon->buffer);
 	} else {
-		return ER_RESSOURCE_ERROR;
+		deamon->handle = NULL;
 	}
 	return ER_SUCCESS;
 }

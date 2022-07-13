@@ -77,6 +77,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 
 		REMOTE_FIRMWARE_HASH=$( kermit $KERMIT_CONFIG -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
 		echo "remote installed firmware hash: "$REMOTE_FIRMWARE_HASH
+		kermit $KERMIT_CONFIG -f
 
 		#kermit $KERMIT_CONFIG -f -C "remote host stty -F 115200, exit"
 
@@ -117,8 +118,10 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		kermit $KERMIT_CONFIG -f
 		echo "firmware installed"	
 
-		REMOTE_FIRMWARE_HASH=$( kermit kermit_config.cfg -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
+		REMOTE_FIRMWARE_HASH=$( kermit $KERMIT_CONFIG -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
 		echo "remote installed firmware hash: "$REMOTE_FIRMWARE_HASH
+
+		kermit $KERMIT_CONFIG -f
 
 		#kermit $KERMIT_CONFIG -f -C "remote host stty -F 115200, exit"
 

@@ -41,38 +41,13 @@
  *	TYPEDEFS
  **********************/
 
-typedef enum led_blick_state {
-	LED_ON,
-	LED_FAINT,
-	LED_OFF
-}led_blink_state_t;
-
-
 
 
 /**********************
  *	VARIABLES
  **********************/
 
-static led_blink_state_t blink_sequence[] = {
-		LED_ON,
-		LED_FAINT,
-		LED_ON,
-		LED_FAINT,
-		LED_ON,
-		LED_OFF
-};
 
-static const int blink_sequence_len = sizeof(blink_sequence)/sizeof(led_blink_state_t);
-
-static led_color_t color_sequence[] =  {
-		led_green,
-		led_red,
-		led_blue,
-		led_red,
-};
-
-static const int color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t);
 
 /**********************
  *	PROTOTYPES
@@ -174,35 +149,9 @@ void led_rgb_thread(__attribute__((unused)) void * arg) {
 
 	last_wake_time = xTaskGetTickCount();
 
-	static uint16_t seq = 0;
-	static uint16_t col = 0;
-
 	for(;;) {
 
-		switch(blink_sequence[seq]) {
-		case LED_ON:
-			period = pdMS_TO_TICKS(500);
-			led_rgb_set_color(color_sequence[col]);
-			break;
-		case LED_FAINT:
-			period = pdMS_TO_TICKS(100);
-			led_rgb_set_rgb(LED_BLACK);
-			break;
-		case LED_OFF:
-			period = pdMS_TO_TICKS(500);
-			led_rgb_set_rgb(LED_BLACK);
-			break;
-		}
-
-		seq++;
-		if(!(seq < blink_sequence_len)) {
-			seq = 0;
-		}
-
-		col++;
-		if(!(col < color_sequence_len)) {
-			col = 0;
-		}
+		led_rgb_set_color(led_blue);
 
 		vTaskDelayUntil( &last_wake_time, period );
 	}

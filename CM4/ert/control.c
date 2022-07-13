@@ -26,6 +26,11 @@
 
 #include <abstraction/gpio.h>
 
+
+//TEMP
+#include <sensor/accelerometer.h>
+#include <sensor/gyroscope.h>
+
 /**********************
  *	CONSTANTS
  **********************/
@@ -161,9 +166,12 @@ void control_thread(__attribute__((unused)) void * arg) {
 
 	for(;;) {
 
-		led_rgb_set_rgb(0xff, 0, 0);
-		static const uint8_t msg[] = "hello\n\r";
+
+		static uint8_t msg[] = "hello\n\r";
 		device_interface_send(hostproc_interface, msg, sizeof(msg));
+
+		accelerometer_init();
+		gyroscope_init();
 
 
 		vTaskDelayUntil( &last_wake_time, period );

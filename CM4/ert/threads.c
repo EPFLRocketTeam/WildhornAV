@@ -18,6 +18,7 @@
 #include <feedback/buzzer.h>
 #include <driver/serial.h>
 #include <driver/i2c.h>
+#include <device/i2c_sensor.h>
 #include <control.h>
 #include <device/hostproc.h>
 #include <od/od.h>
@@ -118,6 +119,7 @@ void threads_init(void) {
 #if WH_HAS_SENSORS == WH_TRUE
 	i2c_spi_guard();
 	i2c_init();
+	i2c_sensor_init();
 #endif
 
 

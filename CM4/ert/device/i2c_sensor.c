@@ -4,6 +4,9 @@
  *	Date		: 22.04.2022
  *	Version		: 0.1
  *	Description	: device driver for i2c sensors
+ *
+ *	@note  	We use semaphores to create a "blocking function" which does not
+ *			slow doen the RTOS with useless polling.
  */
 
 /**********************
@@ -20,6 +23,7 @@
  **********************/
 
 #define TEMP_DATA_LEN	32
+
 
 
 /**********************
@@ -48,11 +52,11 @@ static device_t i2c_gyroscope_device;
 static device_t i2c_barometer_device;
 
 static i2c_sensor_context_t i2c_accelerometer_device_context = {
-		.device_address = 0x68
+		.device_address = 0x30
 };
 
 static i2c_sensor_context_t i2c_gyroscope_device_context = {
-		.device_address = 0x68
+		.device_address = 0xD0
 };
 
 static i2c_sensor_context_t i2c_barometer_device_context = {
@@ -66,6 +70,8 @@ static i2c_sensor_context_t i2c_barometer_device_context = {
 util_error_t i2c_sensor_read_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
 util_error_t i2c_sensor_write_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
 
+util_error_t i2c_sensor_read_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
+util_error_t i2c_sensor_write_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
 
 /**********************
  *	DECLARATIONS
@@ -87,14 +93,48 @@ util_error_t i2c_sensor_init(void) {
 
 	device_interface_t * i2c_sensor_interface = i2c_get_sensor_interface();
 
-	device_create((void*) &i2c_accelerometer_device, &i2c_accelerometer_device_context, i2c_sensor_interface, i2c_sensor_read_reg, i2c_sensor_write_reg);
+	device_create((void*) &i2c_accelerometer_device, &i2c_accelerometer_device_context, i2c_sensor_interface, i2c_sensor_read_reg_HAL, i2c_sensor_write_reg_HAL);
+	device_create((void*) &i2c_gyroscope_device, &i2c_gyroscope_device_context, i2c_sensor_interface, i2c_sensor_read_reg_HAL, i2c_sensor_write_reg_HAL);
+	device_create((void*) &i2c_barometer_device, &i2c_barometer_device_context, i2c_sensor_interface, i2c_sensor_read_reg_HAL, i2c_sensor_write_reg_HAL);
 
 	return ER_SUCCESS;
 
 }
 
+
+void HAL_I2C_MemTxCpltCallback(I2C_HandleTypeDef *hi2c) {
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+	device_interface_t ** i2c_interfaces = i2c_get_interfaces();
+	for(uint32_t i = 0; i < i2c_get_interfaces_count(); i++) {
+		i2c_interface_context_t * if_ctx = (i2c_interface_context_t *) i2c_interfaces[i]->context;
+		if(if_ctx->i2c == hi2c) {
+			xSemaphoreGiveFromISR(if_ctx->sem, &xHigherPriorityTaskWoken);
+		}
+	}
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+	device_interface_t ** i2c_interfaces = i2c_get_interfaces();
+	for(uint32_t i = 0; i < i2c_get_interfaces_count(); i++) {
+		i2c_interface_context_t * if_ctx = (i2c_interface_context_t *) i2c_interfaces[i]->context;
+		if(if_ctx->i2c == hi2c) {
+			xSemaphoreGiveFromISR(if_ctx->sem, &xHigherPriorityTaskWoken);
+		}
+	}
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
 /**
- * @brief Function used to send data to a sensor
+ * @brief Function used to receive register data from a sensor
+ *
+ * @param context	Pointer to a device context
+ * @param interface	Pointer to the interface associated with the device
+ * @param addr		Register address
+ * @param data		Data to read in the register
+ * @param len		Length of the data to be read
+ *
  */
 util_error_t i2c_sensor_read_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len) {
 	i2c_sensor_context_t * ctx = (i2c_sensor_context_t *) context;
@@ -110,6 +150,16 @@ util_error_t i2c_sensor_read_reg(void* context, device_interface_t * interface, 
 	return error;
 }
 
+/**
+ * @brief Function used to send register data to a sensor
+ *
+ * @param context	Pointer to a device context
+ * @param interface	Pointer to the interface associated with the device
+ * @param addr		Register address
+ * @param data		Data to write in the register
+ * @param len		Length of the data to be written
+ *
+ */
 util_error_t i2c_sensor_write_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len) {
 	i2c_sensor_context_t * ctx = (i2c_sensor_context_t *) context;
 	util_error_t error = ER_SUCCESS;
@@ -121,6 +171,52 @@ util_error_t i2c_sensor_write_reg(void* context, device_interface_t * interface,
 	error |= interface->send(interface->context, temp_data, len);
 	memcpy(temp_data+1, data, len-1); //copy data to temp array
 	error |= interface->send(interface->context, temp_data, len);
+	return error;
+}
+
+/**
+ * @brief Function used to receive register data from a sensor using direct HAL
+ *
+ * @param context	Pointer to a device context
+ * @param interface	Pointer to the interface associated with the device
+ * @param addr		Register address
+ * @param data		Data to read in the register
+ * @param len		Length of the data to be read
+ *
+ */
+util_error_t i2c_sensor_read_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len) {
+	i2c_sensor_context_t * ctx = (i2c_sensor_context_t *) context;
+	i2c_interface_context_t * if_ctx = (i2c_interface_context_t *) interface->context;
+	util_error_t error = ER_SUCCESS;
+	HAL_I2C_Mem_Read_IT(if_ctx->i2c, ctx->device_address, addr, sizeof(uint8_t), data, len);
+	if( xSemaphoreTake(if_ctx->sem, 0xffff) == pdTRUE ) {
+		return ER_SUCCESS;
+	} else {
+		return ER_TIMEOUT;
+	}
+	return error;
+}
+
+/**
+ * @brief Function used to send register data to a sensor using direct HAL
+ *
+ * @param context	Pointer to a device context
+ * @param interface	Pointer to the interface associated with the device
+ * @param addr		Register address
+ * @param data		Data to write in the register
+ * @param len		Length of the data to be written
+ *
+ */
+util_error_t i2c_sensor_write_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len) {
+	i2c_sensor_context_t * ctx = (i2c_sensor_context_t *) context;
+	i2c_interface_context_t * if_ctx = (i2c_interface_context_t *) interface->context;
+	util_error_t error = ER_SUCCESS;
+	HAL_I2C_Mem_Write_IT(if_ctx->i2c, ctx->device_address, addr, sizeof(uint8_t), data, len);
+	if( xSemaphoreTake(if_ctx->sem, 0xffff) == pdTRUE ) {
+		return ER_SUCCESS;
+	} else {
+		return ER_TIMEOUT;
+	}
 	return error;
 }
 

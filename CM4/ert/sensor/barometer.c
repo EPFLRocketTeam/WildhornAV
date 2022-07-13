@@ -11,6 +11,9 @@
  **********************/
 
 #include <sensor/barometer.h>
+#include <device/i2c_sensor.h>
+#include <feedback/led.h>
+#include <util.h>
 
 /**********************
  *	CONSTANTS
@@ -31,6 +34,8 @@
  *	VARIABLES
  **********************/
 
+static device_t * barometer;
+
 
 /**********************
  *	PROTOTYPES
@@ -40,5 +45,19 @@
 /**********************
  *	DECLARATIONS
  **********************/
+
+/**
+ * @brief Initialize barometers
+ */
+util_error_t barometer_init(void) {
+
+	barometer = i2c_sensor_get_barometer();
+
+	//Barometer does not have an ID
+
+	//initialize sensor
+
+	return ER_SUCCESS;
+}
 
 /* END */
