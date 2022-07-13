@@ -167,11 +167,11 @@ void control_thread(__attribute__((unused)) void * arg) {
 	for(;;) {
 
 
-		static uint8_t msg[] = "hello\n\r";
+		static uint8_t data[32];
+		static uint32_t len = 32;
+		device_interface_recv(hostproc_interface, data, &len);
+		static uint8_t msg[] = "hello\n";
 		device_interface_send(hostproc_interface, msg, sizeof(msg));
-
-		accelerometer_init();
-		gyroscope_init();
 
 
 		vTaskDelayUntil( &last_wake_time, period );

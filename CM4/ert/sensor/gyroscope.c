@@ -86,10 +86,8 @@ util_error_t gyroscope_init(void) {
 	device_read_u8(gyroscope, WHO_AM_I, &data);
 
 	if(data != WHO_AM_I_MAGIC) {
-		led_rgb_set_rgb(0xff, 0xff, 0);
 		return ER_RESSOURCE_ERROR;
 	}
-	led_rgb_set_rgb(0, 0xff, 0);
 
 	//initialize sensor
 

@@ -82,10 +82,8 @@ util_error_t accelerometer_init(void) {
 	device_read_u8(accelerometer, WHO_AM_I, &data);
 
 	if(data != WHO_AM_I_MAGIC) {
-		led_rgb_set_rgb(0xff, 0, 0);
 		return ER_RESSOURCE_ERROR;
 	}
-	led_rgb_set_rgb(0, 0xff, 0);
 
 	//initialize sensor
 

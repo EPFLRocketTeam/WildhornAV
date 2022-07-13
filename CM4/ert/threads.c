@@ -101,10 +101,9 @@ void threads_init(void) {
 
 	//initialize serial
 	serial_init();
-	//initialize host comm
-	if(hostproc_init() != ER_SUCCESS) {
-		while(1);
-	}
+
+	//initialize hostproc comm
+	hostproc_init();
 
 	// initialize object dictionary
 	od_init();

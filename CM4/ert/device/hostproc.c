@@ -26,6 +26,7 @@
  *	CONSTANTS
  **********************/
 
+#define MAX_RX_DATA	1024
 
 
 /**********************
@@ -40,6 +41,8 @@
 typedef struct hostproc_interface_context {
 	VIRT_UART_HandleTypeDef * uart;
 	uint8_t rx_once;
+	util_buffer_u8_t rx_buffer;
+	uint8_t rx_data[MAX_RX_DATA];
 }hostproc_interface_context_t;
 
 
@@ -81,20 +84,37 @@ device_t * hostproc_get_device(void) {
 void host_UART0_RX(VIRT_UART_HandleTypeDef *huart) {
 	led_rgb_set_rgb(0xff, 0xff, 0xff);
 	hostproc_interface_context.rx_once = 1;
+	uint32_t i = 0;
+	while(i < huart->RxXferSize) {
+		util_buffer_u8_add(&hostproc_interface_context.rx_buffer, huart->pRxBuffPtr[i]);
+		i++;
+	}
 }
 
 util_error_t host_send(void* context, uint8_t* data, uint32_t len) {
 	hostproc_interface_context_t * interface_context = (hostproc_interface_context_t *) context;
 	if(interface_context->rx_once) {
-		VIRT_UART_Transmit(interface_context->uart, data, len);
+
+		if(VIRT_UART_Transmit(interface_context->uart, data, len) != VIRT_UART_OK) {
+			led_rgb_set_rgb(0xff, 0, 0);
+		} else {
+			led_rgb_set_rgb(0, 0xff, 0);
+		}
 	}
-
-
 	return ER_SUCCESS;
 }
 
 util_error_t host_recv(void* context, uint8_t* data, uint32_t* len) {
-
+	hostproc_interface_context_t * if_ctx = (hostproc_interface_context_t *) context;
+	//check if messages where received.
+	OPENAMP_check_for_message();
+	uint32_t i = 0;
+	while(!util_buffer_u8_isempty(&if_ctx->rx_buffer) && i < *len) {
+		data[i] = util_buffer_u8_get(&if_ctx->rx_buffer);
+		i++;
+	}
+	*len = i;
+	return ER_SUCCESS;
 }
 
 
@@ -106,15 +126,12 @@ util_error_t hostproc_init(void) {
 	if (VIRT_UART_RegisterCallback(&host_UART0, VIRT_UART_RXCPLT_CB_ID, host_UART0_RX) != VIRT_UART_OK) {
 		return ER_FAILURE;
 	}
-	//we need to receive once before sending...
-//	if (VIRT_UART_Transmit(&host_UART0, "Welcome", sizeof("welcome")) != VIRT_UART_OK) {
-//		return ER_FAILURE;
-//	}
 
 
 
 	hostproc_interface_context.uart = &host_UART0;
 	hostproc_interface_context.rx_once = 0;
+	util_buffer_u8_init(&hostproc_interface_context.rx_buffer, hostproc_interface_context.rx_data, MAX_RX_DATA);
 
 	device_interface_create(&hostproc_interface, (void*) &hostproc_interface_context, NULL, host_send, host_recv, NULL);
 
