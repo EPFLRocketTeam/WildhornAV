@@ -1,0 +1,214 @@
+\hypertarget{msv2_8c}{}\doxysection{msv2.\+c File Reference}
+\label{msv2_8c}\index{msv2.c@{msv2.c}}
+{\ttfamily \#include \char`\"{}msv2.\+h\char`\"{}}\newline
+Include dependency graph for msv2.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{msv2_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{msv2_8c_add7018db64fb17dd1e4664b4494be0ee}{DLE}}~(0x90)
+\item 
+\#define \mbox{\hyperlink{msv2_8c_aacd744a917e61146ec8b7175b4761683}{STX}}~(0x02)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{msv2_8c_a583360fe13cedeef0c8f98e56cf9ad85}{calc\+\_\+field\+\_\+\+CRC}} (uint16\+\_\+t $\ast$p\+\_\+data\+\_\+array, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Compute the CRC for a data packet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{msv2_8c_a7c8e1e6930814ed33103370c3cb35b07}{msv2\+\_\+init}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2)
+\begin{DoxyCompactList}\small\item\em Initialize a msv2 packet creator instance. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{msv2_8c_a1035988ac07881bb546b9d7bd361d235}{msv2\+\_\+create\+\_\+frame}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2, uint8\+\_\+t opcode, uint8\+\_\+t data\+\_\+len, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Generate an msv2 packet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}{MSV2\+\_\+\+ERROR\+\_\+t}} \mbox{\hyperlink{msv2_8c_a71451e32b773eadfc5e7e20a5e242d3a}{msv2\+\_\+decode\+\_\+fragment}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2, uint8\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Decode an msv2 fragment (one byte at a time) \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{msv2_8c_a2f7c5ee44791fff958d61e2d72548430}{msv2\+\_\+rx\+\_\+data}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2)
+\begin{DoxyCompactList}\small\item\em Getter for the pointer to the rx data array contained in the msv2 packet creator. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{msv2_8c_a355f4b6fbf1e8779663227ff83659ca0}{msv2\+\_\+tx\+\_\+data}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2)
+\begin{DoxyCompactList}\small\item\em Getter for the pointer to the tx data array contained in the msv2 packet creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{msv2_8c_add7018db64fb17dd1e4664b4494be0ee}\label{msv2_8c_add7018db64fb17dd1e4664b4494be0ee}} 
+\index{msv2.c@{msv2.c}!DLE@{DLE}}
+\index{DLE@{DLE}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{DLE}{DLE}}
+{\footnotesize\ttfamily \#define DLE~(0x90)}
+
+\mbox{\Hypertarget{msv2_8c_aacd744a917e61146ec8b7175b4761683}\label{msv2_8c_aacd744a917e61146ec8b7175b4761683}} 
+\index{msv2.c@{msv2.c}!STX@{STX}}
+\index{STX@{STX}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{STX}{STX}}
+{\footnotesize\ttfamily \#define STX~(0x02)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{msv2_8c_a583360fe13cedeef0c8f98e56cf9ad85}\label{msv2_8c_a583360fe13cedeef0c8f98e56cf9ad85}} 
+\index{msv2.c@{msv2.c}!calc\_field\_CRC@{calc\_field\_CRC}}
+\index{calc\_field\_CRC@{calc\_field\_CRC}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{calc\_field\_CRC()}{calc\_field\_CRC()}}
+{\footnotesize\ttfamily uint16\+\_\+t calc\+\_\+field\+\_\+\+CRC (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{p\+\_\+data\+\_\+array,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute the CRC for a data packet. 
+
+Function taken from Maxon Serial V2 specification manual.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+data\+\_\+array} & Pointer to the data array of the packet. \\
+\hline
+{\em length} & Length of the packet\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The p\+\_\+data\+\_\+array data must contain two empty bytes \mbox{[}0x00, 0x00\mbox{]} at the end, where the CRC goes. 
+\end{DoxyNote}
+
+
+Referenced by msv2\+\_\+create\+\_\+frame(), and msv2\+\_\+decode\+\_\+fragment().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{msv2_8c_a583360fe13cedeef0c8f98e56cf9ad85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{msv2_8c_a1035988ac07881bb546b9d7bd361d235}\label{msv2_8c_a1035988ac07881bb546b9d7bd361d235}} 
+\index{msv2.c@{msv2.c}!msv2\_create\_frame@{msv2\_create\_frame}}
+\index{msv2\_create\_frame@{msv2\_create\_frame}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{msv2\_create\_frame()}{msv2\_create\_frame()}}
+{\footnotesize\ttfamily uint16\+\_\+t msv2\+\_\+create\+\_\+frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2,  }\item[{uint8\+\_\+t}]{opcode,  }\item[{uint8\+\_\+t}]{data\+\_\+len,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Generate an msv2 packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+{\em opcode} & Opcode to be placed in the packet header. \\
+\hline
+{\em data\+\_\+len} & Length of the packet data payload. \\
+\hline
+{\em data} & Data to be placed in the packet payload. \\
+\hline
+\end{DoxyParams}
+
+
+References calc\+\_\+field\+\_\+\+CRC(), MSV2\+\_\+\+TX\+\_\+\+DATA\+::crc\+\_\+data, MSV2\+\_\+\+TX\+\_\+\+DATA\+::data, MSV2\+\_\+\+TX\+\_\+\+DATA\+::data\+\_\+len, DLE, MSV2\+\_\+\+TX\+\_\+\+DATA\+::opcode, STX, and MSV2\+\_\+\+INST\+::tx.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{msv2_8c_a1035988ac07881bb546b9d7bd361d235_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{msv2_8c_a71451e32b773eadfc5e7e20a5e242d3a}\label{msv2_8c_a71451e32b773eadfc5e7e20a5e242d3a}} 
+\index{msv2.c@{msv2.c}!msv2\_decode\_fragment@{msv2\_decode\_fragment}}
+\index{msv2\_decode\_fragment@{msv2\_decode\_fragment}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{msv2\_decode\_fragment()}{msv2\_decode\_fragment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}{MSV2\+\_\+\+ERROR\+\_\+t}} msv2\+\_\+decode\+\_\+fragment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2,  }\item[{uint8\+\_\+t}]{d }\end{DoxyParamCaption})}
+
+
+
+Decode an msv2 fragment (one byte at a time) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+{\em d} & Fragment to be decoded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is to be called upon reception of a byte. 
+\end{DoxyNote}
+
+
+References calc\+\_\+field\+\_\+\+CRC(), MSV2\+\_\+\+RX\+\_\+\+DATA\+::counter, MSV2\+\_\+\+RX\+\_\+\+DATA\+::crc, MSV2\+\_\+\+RX\+\_\+\+DATA\+::crc\+\_\+data, MSV2\+\_\+\+RX\+\_\+\+DATA\+::data, MSV2\+\_\+\+RX\+\_\+\+DATA\+::data\+\_\+len, DLE, MSV2\+\_\+\+RX\+\_\+\+DATA\+::escape, MSV2\+\_\+\+RX\+\_\+\+DATA\+::length, MSV2\+\_\+\+PROGRESS, MSV2\+\_\+\+SUCCESS, MSV2\+\_\+\+WRONG\+\_\+\+CRC, MSV2\+\_\+\+RX\+\_\+\+DATA\+::opcode, MSV2\+\_\+\+INST\+::rx, MSV2\+\_\+\+RX\+\_\+\+DATA\+::state, STX, WAITING\+\_\+\+CRC1, WAITING\+\_\+\+CRC2, WAITING\+\_\+\+DATA, WAITING\+\_\+\+DLE, WAITING\+\_\+\+LEN, WAITING\+\_\+\+OPCODE, and WAITING\+\_\+\+STX.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{msv2_8c_a71451e32b773eadfc5e7e20a5e242d3a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{msv2_8c_a7c8e1e6930814ed33103370c3cb35b07}\label{msv2_8c_a7c8e1e6930814ed33103370c3cb35b07}} 
+\index{msv2.c@{msv2.c}!msv2\_init@{msv2\_init}}
+\index{msv2\_init@{msv2\_init}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{msv2\_init()}{msv2\_init()}}
+{\footnotesize\ttfamily void msv2\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2 }\end{DoxyParamCaption})}
+
+
+
+Initialize a msv2 packet creator instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 instance to be initialized. \\
+\hline
+\end{DoxyParams}
+
+
+References MSV2\+\_\+\+INST\+::id.
+
+
+
+Referenced by debug\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{msv2_8c_a7c8e1e6930814ed33103370c3cb35b07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{msv2_8c_a2f7c5ee44791fff958d61e2d72548430}\label{msv2_8c_a2f7c5ee44791fff958d61e2d72548430}} 
+\index{msv2.c@{msv2.c}!msv2\_rx\_data@{msv2\_rx\_data}}
+\index{msv2\_rx\_data@{msv2\_rx\_data}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{msv2\_rx\_data()}{msv2\_rx\_data()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ msv2\+\_\+rx\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2 }\end{DoxyParamCaption})}
+
+
+
+Getter for the pointer to the rx data array contained in the msv2 packet creator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+\end{DoxyParams}
+
+
+References MSV2\+\_\+\+RX\+\_\+\+DATA\+::data, and MSV2\+\_\+\+INST\+::rx.
+
+\mbox{\Hypertarget{msv2_8c_a355f4b6fbf1e8779663227ff83659ca0}\label{msv2_8c_a355f4b6fbf1e8779663227ff83659ca0}} 
+\index{msv2.c@{msv2.c}!msv2\_tx\_data@{msv2\_tx\_data}}
+\index{msv2\_tx\_data@{msv2\_tx\_data}!msv2.c@{msv2.c}}
+\doxysubsubsection{\texorpdfstring{msv2\_tx\_data()}{msv2\_tx\_data()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ msv2\+\_\+tx\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2 }\end{DoxyParamCaption})}
+
+
+
+Getter for the pointer to the tx data array contained in the msv2 packet creator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+\end{DoxyParams}
+
+
+References MSV2\+\_\+\+TX\+\_\+\+DATA\+::data, and MSV2\+\_\+\+INST\+::tx.
+

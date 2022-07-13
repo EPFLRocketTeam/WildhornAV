@@ -1,0 +1,206 @@
+\hypertarget{gpio_8h}{}\doxysection{gpio.\+h File Reference}
+\label{gpio_8h}\index{gpio.h@{gpio.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$main.\+h$>$}\newline
+Include dependency graph for gpio.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{gpio_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{gpio_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgpio__config}{gpio\+\_\+config}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fe}{gpio\+\_\+drive}} \mbox{\hyperlink{gpio_8h_a013d7e35e2a89e06aa61b5dd9613dc42}{gpio\+\_\+drive\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1}{gpio\+\_\+mode}} \mbox{\hyperlink{gpio_8h_adc01fb039bfd52d154eae3c43f159f1f}{gpio\+\_\+mode\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760a}{gpio\+\_\+bias}} \mbox{\hyperlink{gpio_8h_ad567fe714851cc73e4eaa8c65599bcad}{gpio\+\_\+bias\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgpio__config}{gpio\+\_\+config}} \mbox{\hyperlink{gpio_8h_a1704b90d04f66cf6e928d9461762586b}{gpio\+\_\+config\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fe}{gpio\+\_\+drive}} \{ \mbox{\hyperlink{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fea42a9fec4a057a90f75414787e2fee61d}{GPIO\+\_\+\+DRIVE\+\_\+\+PP}} = 0b0
+, \mbox{\hyperlink{gpio_8h_ad387a545fe9671c5a0b456246d3fb5feadd1aa4048daa7ba0d6ece2b97c4c4249}{GPIO\+\_\+\+DRIVE\+\_\+\+OD}} = 0b1
+ \}
+\item 
+enum \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1}{gpio\+\_\+mode}} \{ \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1abf2b796bd08389c6c64bc4390465e12f}{GPIO\+\_\+\+MODE\+\_\+\+IN}} = 0b00
+, \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1a528a0e3cb614e5e10799adb39bbedc49}{GPIO\+\_\+\+MODE\+\_\+\+OUT}} = 0b01
+, \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1a351792a23e96ab31af48893ead6da68b}{GPIO\+\_\+\+MODE\+\_\+\+ALT}} = 0b10
+, \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1af6625aae03518894e473a7718c68954f}{GPIO\+\_\+\+MODE\+\_\+\+ANA}} = 0b11
+ \}
+\item 
+enum \mbox{\hyperlink{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760a}{gpio\+\_\+bias}} \{ \mbox{\hyperlink{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa0653877a2b6645f7caccc2381d6dc6f9}{GPIO\+\_\+\+BIAS\+\_\+\+NONE}} = 0b00
+, \mbox{\hyperlink{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa56da5c9948eb3bf412cdd6103548c8e3}{GPIO\+\_\+\+BIAS\+\_\+\+HIGH}} = 0b01
+, \mbox{\hyperlink{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa67fbd4fb4810a6487d91433e61df7e0d}{GPIO\+\_\+\+BIAS\+\_\+\+LOW}} = 0b10
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gpio_8h_a2420d73edcc6440aa017b9e93d9b0040}{gpio\+\_\+set}} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{gpio_8h_a6856e659b2473d659ca8c67b93ad7386}{gpio\+\_\+clr}} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{gpio_8h_a885d7b6a1c82af1e8aaf19d02d594c99}{gpio\+\_\+get}} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{gpio_8h_afb9cd73c906c6e196b4b87ca9e6d4501}{gpio\+\_\+cfg}} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin, \mbox{\hyperlink{gpio_8h_a1704b90d04f66cf6e928d9461762586b}{gpio\+\_\+config\+\_\+t}} cfg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{gpio_8h_ad567fe714851cc73e4eaa8c65599bcad}\label{gpio_8h_ad567fe714851cc73e4eaa8c65599bcad}} 
+\index{gpio.h@{gpio.h}!gpio\_bias\_t@{gpio\_bias\_t}}
+\index{gpio\_bias\_t@{gpio\_bias\_t}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_bias\_t}{gpio\_bias\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760a}{gpio\+\_\+bias}} \mbox{\hyperlink{gpio_8h_ad567fe714851cc73e4eaa8c65599bcad}{gpio\+\_\+bias\+\_\+t}}}
+
+\mbox{\Hypertarget{gpio_8h_a1704b90d04f66cf6e928d9461762586b}\label{gpio_8h_a1704b90d04f66cf6e928d9461762586b}} 
+\index{gpio.h@{gpio.h}!gpio\_config\_t@{gpio\_config\_t}}
+\index{gpio\_config\_t@{gpio\_config\_t}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_config\_t}{gpio\_config\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgpio__config}{gpio\+\_\+config}} \mbox{\hyperlink{gpio_8h_a1704b90d04f66cf6e928d9461762586b}{gpio\+\_\+config\+\_\+t}}}
+
+\mbox{\Hypertarget{gpio_8h_a013d7e35e2a89e06aa61b5dd9613dc42}\label{gpio_8h_a013d7e35e2a89e06aa61b5dd9613dc42}} 
+\index{gpio.h@{gpio.h}!gpio\_drive\_t@{gpio\_drive\_t}}
+\index{gpio\_drive\_t@{gpio\_drive\_t}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_drive\_t}{gpio\_drive\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fe}{gpio\+\_\+drive}} \mbox{\hyperlink{gpio_8h_a013d7e35e2a89e06aa61b5dd9613dc42}{gpio\+\_\+drive\+\_\+t}}}
+
+\mbox{\Hypertarget{gpio_8h_adc01fb039bfd52d154eae3c43f159f1f}\label{gpio_8h_adc01fb039bfd52d154eae3c43f159f1f}} 
+\index{gpio.h@{gpio.h}!gpio\_mode\_t@{gpio\_mode\_t}}
+\index{gpio\_mode\_t@{gpio\_mode\_t}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_mode\_t}{gpio\_mode\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1}{gpio\+\_\+mode}} \mbox{\hyperlink{gpio_8h_adc01fb039bfd52d154eae3c43f159f1f}{gpio\+\_\+mode\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760a}\label{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760a}} 
+\index{gpio.h@{gpio.h}!gpio\_bias@{gpio\_bias}}
+\index{gpio\_bias@{gpio\_bias}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_bias}{gpio\_bias}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760a}{gpio\+\_\+bias}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_BIAS\_NONE@{GPIO\_BIAS\_NONE}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_BIAS\_NONE@{GPIO\_BIAS\_NONE}}}\mbox{\Hypertarget{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa0653877a2b6645f7caccc2381d6dc6f9}\label{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa0653877a2b6645f7caccc2381d6dc6f9}} 
+GPIO\+\_\+\+BIAS\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_BIAS\_HIGH@{GPIO\_BIAS\_HIGH}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_BIAS\_HIGH@{GPIO\_BIAS\_HIGH}}}\mbox{\Hypertarget{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa56da5c9948eb3bf412cdd6103548c8e3}\label{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa56da5c9948eb3bf412cdd6103548c8e3}} 
+GPIO\+\_\+\+BIAS\+\_\+\+HIGH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_BIAS\_LOW@{GPIO\_BIAS\_LOW}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_BIAS\_LOW@{GPIO\_BIAS\_LOW}}}\mbox{\Hypertarget{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa67fbd4fb4810a6487d91433e61df7e0d}\label{gpio_8h_a4e14d9d63fbf2bcce7aa9710c9f1760aa67fbd4fb4810a6487d91433e61df7e0d}} 
+GPIO\+\_\+\+BIAS\+\_\+\+LOW&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fe}\label{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fe}} 
+\index{gpio.h@{gpio.h}!gpio\_drive@{gpio\_drive}}
+\index{gpio\_drive@{gpio\_drive}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_drive}{gpio\_drive}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fe}{gpio\+\_\+drive}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_DRIVE\_PP@{GPIO\_DRIVE\_PP}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_DRIVE\_PP@{GPIO\_DRIVE\_PP}}}\mbox{\Hypertarget{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fea42a9fec4a057a90f75414787e2fee61d}\label{gpio_8h_ad387a545fe9671c5a0b456246d3fb5fea42a9fec4a057a90f75414787e2fee61d}} 
+GPIO\+\_\+\+DRIVE\+\_\+\+PP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_DRIVE\_OD@{GPIO\_DRIVE\_OD}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_DRIVE\_OD@{GPIO\_DRIVE\_OD}}}\mbox{\Hypertarget{gpio_8h_ad387a545fe9671c5a0b456246d3fb5feadd1aa4048daa7ba0d6ece2b97c4c4249}\label{gpio_8h_ad387a545fe9671c5a0b456246d3fb5feadd1aa4048daa7ba0d6ece2b97c4c4249}} 
+GPIO\+\_\+\+DRIVE\+\_\+\+OD&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1}\label{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1}} 
+\index{gpio.h@{gpio.h}!gpio\_mode@{gpio\_mode}}
+\index{gpio\_mode@{gpio\_mode}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_mode}{gpio\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1}{gpio\+\_\+mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_MODE\_IN@{GPIO\_MODE\_IN}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_MODE\_IN@{GPIO\_MODE\_IN}}}\mbox{\Hypertarget{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1abf2b796bd08389c6c64bc4390465e12f}\label{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1abf2b796bd08389c6c64bc4390465e12f}} 
+GPIO\+\_\+\+MODE\+\_\+\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_MODE\_OUT@{GPIO\_MODE\_OUT}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_MODE\_OUT@{GPIO\_MODE\_OUT}}}\mbox{\Hypertarget{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1a528a0e3cb614e5e10799adb39bbedc49}\label{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1a528a0e3cb614e5e10799adb39bbedc49}} 
+GPIO\+\_\+\+MODE\+\_\+\+OUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_MODE\_ALT@{GPIO\_MODE\_ALT}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_MODE\_ALT@{GPIO\_MODE\_ALT}}}\mbox{\Hypertarget{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1a351792a23e96ab31af48893ead6da68b}\label{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1a351792a23e96ab31af48893ead6da68b}} 
+GPIO\+\_\+\+MODE\+\_\+\+ALT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_MODE\_ANA@{GPIO\_MODE\_ANA}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!GPIO\_MODE\_ANA@{GPIO\_MODE\_ANA}}}\mbox{\Hypertarget{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1af6625aae03518894e473a7718c68954f}\label{gpio_8h_a620d533a2ccc5296d2f6c8b95bf89fe1af6625aae03518894e473a7718c68954f}} 
+GPIO\+\_\+\+MODE\+\_\+\+ANA&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gpio_8h_afb9cd73c906c6e196b4b87ca9e6d4501}\label{gpio_8h_afb9cd73c906c6e196b4b87ca9e6d4501}} 
+\index{gpio.h@{gpio.h}!gpio\_cfg@{gpio\_cfg}}
+\index{gpio\_cfg@{gpio\_cfg}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_cfg()}{gpio\_cfg()}}
+{\footnotesize\ttfamily void gpio\+\_\+cfg (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin,  }\item[{\mbox{\hyperlink{gpio_8h_a1704b90d04f66cf6e928d9461762586b}{gpio\+\_\+config\+\_\+t}}}]{cfg }\end{DoxyParamCaption})}
+
+
+
+References gpio\+\_\+config\+::alternate, gpio\+\_\+config\+::drive, gpio\+\_\+config\+::mode, gpio\+\_\+config\+::speed, and WRITE\+\_\+\+IN\+\_\+\+REG.
+
+\mbox{\Hypertarget{gpio_8h_a6856e659b2473d659ca8c67b93ad7386}\label{gpio_8h_a6856e659b2473d659ca8c67b93ad7386}} 
+\index{gpio.h@{gpio.h}!gpio\_clr@{gpio\_clr}}
+\index{gpio\_clr@{gpio\_clr}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_clr()}{gpio\_clr()}}
+{\footnotesize\ttfamily void gpio\+\_\+clr (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Referenced by buzzer\+\_\+note\+\_\+interrupt(), and buzzer\+\_\+rytm\+\_\+interrupt().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{gpio_8h_a6856e659b2473d659ca8c67b93ad7386_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{gpio_8h_a885d7b6a1c82af1e8aaf19d02d594c99}\label{gpio_8h_a885d7b6a1c82af1e8aaf19d02d594c99}} 
+\index{gpio.h@{gpio.h}!gpio\_get@{gpio\_get}}
+\index{gpio\_get@{gpio\_get}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_get()}{gpio\_get()}}
+{\footnotesize\ttfamily uint8\+\_\+t gpio\+\_\+get (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gpio_8h_a2420d73edcc6440aa017b9e93d9b0040}\label{gpio_8h_a2420d73edcc6440aa017b9e93d9b0040}} 
+\index{gpio.h@{gpio.h}!gpio\_set@{gpio\_set}}
+\index{gpio\_set@{gpio\_set}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_set()}{gpio\_set()}}
+{\footnotesize\ttfamily void gpio\+\_\+set (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Referenced by buzzer\+\_\+note\+\_\+interrupt(), and buzzer\+\_\+rytm\+\_\+interrupt().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{gpio_8h_a2420d73edcc6440aa017b9e93d9b0040_icgraph}
+\end{center}
+\end{figure}

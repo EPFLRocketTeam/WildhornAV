@@ -1,0 +1,6 @@
+<map id="device_deamon_thread" name="device_deamon_thread">
+<area shape="rect" id="node1" title="Generic device deamon thread." alt="" coords="508,5,683,32"/>
+<area shape="rect" id="node2" href="$device_8c.html#a24bb18ba20d0384221faefbced5dffca" title="Initializea device deamon instance." alt="" coords="287,5,460,32"/>
+<area shape="rect" id="node3" href="$serial_8c.html#a82bb0542af81a3d8d7ea89f3aee2f442" title=" " alt="" coords="152,5,239,32"/>
+<area shape="rect" id="node4" href="$threads_8c.html#aa5c157013c08e62ad9eb931165c9663b" title="Initialize all the threads of Wildhorn AV." alt="" coords="5,5,104,32"/>
+</map>

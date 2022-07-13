@@ -1,0 +1,310 @@
+\hypertarget{led_8c}{}\doxysection{led.\+c File Reference}
+\label{led_8c}\index{led.c@{led.c}}
+{\ttfamily \#include \char`\"{}led.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$tim.\+h$>$}\newline
+{\ttfamily \#include $<$cmsis\+\_\+os.\+h$>$}\newline
+Include dependency graph for led.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{led_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{led_8c_ac1619442929fedce3c9378dd3eb01bfb}{LED\+\_\+\+TIM}}~htim3
+\item 
+\#define \mbox{\hyperlink{led_8c_a6536388fb8c0510ed634dad6694cfa62}{LED\+\_\+\+MAX}}~(0xff)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4}{led\+\_\+blick\+\_\+state}} \mbox{\hyperlink{led_8c_a615187cbfe583681a922637320839246}{led\+\_\+blink\+\_\+state\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4}{led\+\_\+blick\+\_\+state}} \{ \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4add01b80eb93658fb4cf7eb9aceb89a1d}{LED\+\_\+\+ON}}
+, \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4a975968c8e12a699331e401a95b54fd88}{LED\+\_\+\+FAINT}}
+, \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\+\_\+\+OFF}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{led_8c_a998dba47134ccc667d347229dfd5f161}{led\+\_\+feedback\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the feedback module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led_8c_a9ef2dbf2af55bb679e15eaec5280872d}{led\+\_\+rgb\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the RGB LED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led_8c_ade6bdac7c83c0d5970b09caca131f7b6}{led\+\_\+rgb\+\_\+set\+\_\+rgb}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Set RBG LED color using r, g, b values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led_8c_aaefbfbd12cbeda9bf240aa909f3175c9}{led\+\_\+rgb\+\_\+set\+\_\+color}} (\mbox{\hyperlink{led_8h_a4bba4fc3bc0c5df22e59c532357076b0}{led\+\_\+color\+\_\+t}} color)
+\begin{DoxyCompactList}\small\item\em Set RBG LED color using color structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led_8c_a2e0daca4bee3ebf17688f6b1a8731e91}{led\+\_\+rgb\+\_\+thread}} (\+\_\+\+\_\+attribute\+\_\+\+\_\+((unused)) void $\ast$arg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{led_8c_a615187cbfe583681a922637320839246}{led\+\_\+blink\+\_\+state\+\_\+t}} \mbox{\hyperlink{led_8c_a7cd72cede84b955f282e35086d5ada9e}{blink\+\_\+sequence}} \mbox{[}$\,$\mbox{]}
+\item 
+static const int \mbox{\hyperlink{led_8c_a417217cb145d26adcbe3078cdea50bf0}{blink\+\_\+sequence\+\_\+len}} = sizeof(\mbox{\hyperlink{led_8c_a7cd72cede84b955f282e35086d5ada9e}{blink\+\_\+sequence}})/sizeof(\mbox{\hyperlink{led_8c_a615187cbfe583681a922637320839246}{led\+\_\+blink\+\_\+state\+\_\+t}})
+\item 
+static \mbox{\hyperlink{led_8h_a4bba4fc3bc0c5df22e59c532357076b0}{led\+\_\+color\+\_\+t}} \mbox{\hyperlink{led_8c_a445a269fd9362704b397118d1a030c91}{color\+\_\+sequence}} \mbox{[}$\,$\mbox{]}
+\item 
+static const int \mbox{\hyperlink{led_8c_a4add5a6fe5ce761f1b1e8823eda08717}{color\+\_\+sequence\+\_\+len}} = sizeof(\mbox{\hyperlink{led_8c_a445a269fd9362704b397118d1a030c91}{color\+\_\+sequence}})/sizeof(\mbox{\hyperlink{led_8h_a4bba4fc3bc0c5df22e59c532357076b0}{led\+\_\+color\+\_\+t}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{led_8c_a6536388fb8c0510ed634dad6694cfa62}\label{led_8c_a6536388fb8c0510ed634dad6694cfa62}} 
+\index{led.c@{led.c}!LED\_MAX@{LED\_MAX}}
+\index{LED\_MAX@{LED\_MAX}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{LED\_MAX}{LED\_MAX}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+MAX~(0xff)}
+
+\mbox{\Hypertarget{led_8c_ac1619442929fedce3c9378dd3eb01bfb}\label{led_8c_ac1619442929fedce3c9378dd3eb01bfb}} 
+\index{led.c@{led.c}!LED\_TIM@{LED\_TIM}}
+\index{LED\_TIM@{LED\_TIM}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{LED\_TIM}{LED\_TIM}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+TIM~htim3}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{led_8c_a615187cbfe583681a922637320839246}\label{led_8c_a615187cbfe583681a922637320839246}} 
+\index{led.c@{led.c}!led\_blink\_state\_t@{led\_blink\_state\_t}}
+\index{led\_blink\_state\_t@{led\_blink\_state\_t}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_blink\_state\_t}{led\_blink\_state\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4}{led\+\_\+blick\+\_\+state}} \mbox{\hyperlink{led_8c_a615187cbfe583681a922637320839246}{led\+\_\+blink\+\_\+state\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4}\label{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4}} 
+\index{led.c@{led.c}!led\_blick\_state@{led\_blick\_state}}
+\index{led\_blick\_state@{led\_blick\_state}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_blick\_state}{led\_blick\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4}{led\+\_\+blick\+\_\+state}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ON@{LED\_ON}!led.c@{led.c}}\index{led.c@{led.c}!LED\_ON@{LED\_ON}}}\mbox{\Hypertarget{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4add01b80eb93658fb4cf7eb9aceb89a1d}\label{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4add01b80eb93658fb4cf7eb9aceb89a1d}} 
+LED\+\_\+\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_FAINT@{LED\_FAINT}!led.c@{led.c}}\index{led.c@{led.c}!LED\_FAINT@{LED\_FAINT}}}\mbox{\Hypertarget{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4a975968c8e12a699331e401a95b54fd88}\label{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4a975968c8e12a699331e401a95b54fd88}} 
+LED\+\_\+\+FAINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_OFF@{LED\_OFF}!led.c@{led.c}}\index{led.c@{led.c}!LED\_OFF@{LED\_OFF}}}\mbox{\Hypertarget{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4afc0ca8cc6cbe215fd3f1ae6d40255b40}\label{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4afc0ca8cc6cbe215fd3f1ae6d40255b40}} 
+LED\+\_\+\+OFF&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{led_8c_a998dba47134ccc667d347229dfd5f161}\label{led_8c_a998dba47134ccc667d347229dfd5f161}} 
+\index{led.c@{led.c}!led\_feedback\_init@{led\_feedback\_init}}
+\index{led\_feedback\_init@{led\_feedback\_init}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_feedback\_init()}{led\_feedback\_init()}}
+{\footnotesize\ttfamily void led\+\_\+feedback\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the feedback module. 
+
+This will initialize a board to accept a feedback board on the S3 socket. 
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{led_8c_a998dba47134ccc667d347229dfd5f161_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{led_8c_a9ef2dbf2af55bb679e15eaec5280872d}\label{led_8c_a9ef2dbf2af55bb679e15eaec5280872d}} 
+\index{led.c@{led.c}!led\_rgb\_init@{led\_rgb\_init}}
+\index{led\_rgb\_init@{led\_rgb\_init}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_rgb\_init()}{led\_rgb\_init()}}
+{\footnotesize\ttfamily void led\+\_\+rgb\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the RGB LED. 
+
+Starts the PWM channels connected to the RGB led for user feedback. 
+
+References LED\+\_\+\+MAX, and LED\+\_\+\+TIM.
+
+
+
+Referenced by led\+\_\+rgb\+\_\+thread().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{led_8c_a9ef2dbf2af55bb679e15eaec5280872d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{led_8c_aaefbfbd12cbeda9bf240aa909f3175c9}\label{led_8c_aaefbfbd12cbeda9bf240aa909f3175c9}} 
+\index{led.c@{led.c}!led\_rgb\_set\_color@{led\_rgb\_set\_color}}
+\index{led\_rgb\_set\_color@{led\_rgb\_set\_color}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_rgb\_set\_color()}{led\_rgb\_set\_color()}}
+{\footnotesize\ttfamily void led\+\_\+rgb\+\_\+set\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{led_8h_a4bba4fc3bc0c5df22e59c532357076b0}{led\+\_\+color\+\_\+t}}}]{color }\end{DoxyParamCaption})}
+
+
+
+Set RBG LED color using color structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & Color structure, defines the color to be set. \\
+\hline
+\end{DoxyParams}
+
+
+References led\+\_\+color\+::b, led\+\_\+color\+::g, LED\+\_\+\+TIM, and led\+\_\+color\+::r.
+
+
+
+Referenced by led\+\_\+rgb\+\_\+thread().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{led_8c_aaefbfbd12cbeda9bf240aa909f3175c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{led_8c_ade6bdac7c83c0d5970b09caca131f7b6}\label{led_8c_ade6bdac7c83c0d5970b09caca131f7b6}} 
+\index{led.c@{led.c}!led\_rgb\_set\_rgb@{led\_rgb\_set\_rgb}}
+\index{led\_rgb\_set\_rgb@{led\_rgb\_set\_rgb}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_rgb\_set\_rgb()}{led\_rgb\_set\_rgb()}}
+{\footnotesize\ttfamily void led\+\_\+rgb\+\_\+set\+\_\+rgb (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Set RBG LED color using r, g, b values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red channel value. \\
+\hline
+{\em g} & Green channel value. \\
+\hline
+{\em b} & Blue channel value. \\
+\hline
+\end{DoxyParams}
+
+
+References LED\+\_\+\+TIM.
+
+
+
+Referenced by control\+\_\+thread(), host\+\_\+\+UART0\+\_\+\+RX(), and led\+\_\+rgb\+\_\+thread().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{led_8c_ade6bdac7c83c0d5970b09caca131f7b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{led_8c_a2e0daca4bee3ebf17688f6b1a8731e91}\label{led_8c_a2e0daca4bee3ebf17688f6b1a8731e91}} 
+\index{led.c@{led.c}!led\_rgb\_thread@{led\_rgb\_thread}}
+\index{led\_rgb\_thread@{led\_rgb\_thread}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_rgb\_thread()}{led\_rgb\_thread()}}
+{\footnotesize\ttfamily void led\+\_\+rgb\+\_\+thread (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+attribute\+\_\+\+\_\+((unused)) void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+References blink\+\_\+sequence, blink\+\_\+sequence\+\_\+len, color\+\_\+sequence, color\+\_\+sequence\+\_\+len, LED\+\_\+\+BLACK, led\+\_\+blue, LED\+\_\+\+FAINT, LED\+\_\+\+OFF, LED\+\_\+\+ON, led\+\_\+rgb\+\_\+init(), led\+\_\+rgb\+\_\+set\+\_\+color(), and led\+\_\+rgb\+\_\+set\+\_\+rgb().
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{led_8c_a2e0daca4bee3ebf17688f6b1a8731e91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{led_8c_a2e0daca4bee3ebf17688f6b1a8731e91_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{led_8c_a7cd72cede84b955f282e35086d5ada9e}\label{led_8c_a7cd72cede84b955f282e35086d5ada9e}} 
+\index{led.c@{led.c}!blink\_sequence@{blink\_sequence}}
+\index{blink\_sequence@{blink\_sequence}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{blink\_sequence}{blink\_sequence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{led_8c_a615187cbfe583681a922637320839246}{led\+\_\+blink\+\_\+state\+\_\+t}} blink\+\_\+sequence\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4add01b80eb93658fb4cf7eb9aceb89a1d}{LED\_ON}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4a975968c8e12a699331e401a95b54fd88}{LED\_FAINT}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4add01b80eb93658fb4cf7eb9aceb89a1d}{LED\_ON}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4a975968c8e12a699331e401a95b54fd88}{LED\_FAINT}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4add01b80eb93658fb4cf7eb9aceb89a1d}{LED\_ON}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8c_a49852ecfbaeb96c371d56f1df0b6d0e4afc0ca8cc6cbe215fd3f1ae6d40255b40}{LED\_OFF}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Referenced by led\+\_\+rgb\+\_\+thread().
+
+\mbox{\Hypertarget{led_8c_a417217cb145d26adcbe3078cdea50bf0}\label{led_8c_a417217cb145d26adcbe3078cdea50bf0}} 
+\index{led.c@{led.c}!blink\_sequence\_len@{blink\_sequence\_len}}
+\index{blink\_sequence\_len@{blink\_sequence\_len}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{blink\_sequence\_len}{blink\_sequence\_len}}
+{\footnotesize\ttfamily const int blink\+\_\+sequence\+\_\+len = sizeof(\mbox{\hyperlink{led_8c_a7cd72cede84b955f282e35086d5ada9e}{blink\+\_\+sequence}})/sizeof(\mbox{\hyperlink{led_8c_a615187cbfe583681a922637320839246}{led\+\_\+blink\+\_\+state\+\_\+t}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by led\+\_\+rgb\+\_\+thread().
+
+\mbox{\Hypertarget{led_8c_a445a269fd9362704b397118d1a030c91}\label{led_8c_a445a269fd9362704b397118d1a030c91}} 
+\index{led.c@{led.c}!color\_sequence@{color\_sequence}}
+\index{color\_sequence@{color\_sequence}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{color\_sequence}{color\_sequence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{led_8h_a4bba4fc3bc0c5df22e59c532357076b0}{led\+\_\+color\+\_\+t}} color\+\_\+sequence\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  \{}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8h_abe45de46f7df1a8e3d8dc675a4d40829}{led\_green}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8h_a0ffab1fc9b12d6a53a3cca01aa0a9e71}{led\_red}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8h_a165241c0ad9940885e1690ee8e6d22ba}{led\_blue}},}
+\DoxyCodeLine{        \mbox{\hyperlink{led_8h_a0ffab1fc9b12d6a53a3cca01aa0a9e71}{led\_red}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Referenced by led\+\_\+rgb\+\_\+thread().
+
+\mbox{\Hypertarget{led_8c_a4add5a6fe5ce761f1b1e8823eda08717}\label{led_8c_a4add5a6fe5ce761f1b1e8823eda08717}} 
+\index{led.c@{led.c}!color\_sequence\_len@{color\_sequence\_len}}
+\index{color\_sequence\_len@{color\_sequence\_len}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{color\_sequence\_len}{color\_sequence\_len}}
+{\footnotesize\ttfamily const int color\+\_\+sequence\+\_\+len = sizeof(\mbox{\hyperlink{led_8c_a445a269fd9362704b397118d1a030c91}{color\+\_\+sequence}})/sizeof(\mbox{\hyperlink{led_8h_a4bba4fc3bc0c5df22e59c532357076b0}{led\+\_\+color\+\_\+t}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by led\+\_\+rgb\+\_\+thread().
+

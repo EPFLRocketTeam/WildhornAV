@@ -1,0 +1,5 @@
+<map id="led_rgb_set_color" name="led_rgb_set_color">
+<area shape="rect" id="node1" title="Set RBG LED color using color structure." alt="" coords="319,5,455,32"/>
+<area shape="rect" id="node2" href="$led_8c.html#a2e0daca4bee3ebf17688f6b1a8731e91" title=" " alt="" coords="152,5,271,32"/>
+<area shape="rect" id="node3" href="$threads_8c.html#aa5c157013c08e62ad9eb931165c9663b" title="Initialize all the threads of Wildhorn AV." alt="" coords="5,5,104,32"/>
+</map>

@@ -45,7 +45,7 @@
  *	VARIABLES
  **********************/
 
-static device_deamon_t serial_deamon;
+static device_daemon_t serial_deamon;
 
 static device_interface_t feedback_interface;
 
@@ -96,7 +96,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 
 
-device_deamon_t * serial_get_deamon(void)
+device_daemon_t * serial_get_deamon(void)
 {
 	return &serial_deamon;
 }
@@ -173,7 +173,7 @@ util_error_t serial_recv(void * context, uint8_t * data, uint32_t * len)
 {
 	serial_interface_context_t * interface_context = (serial_interface_context_t *) context;
 	uint16_t i = 0;
-	while(!util_buffer_u8_isempty(&interface_context->rx_buffer) && i < len) {
+	while(!util_buffer_u8_isempty(&interface_context->rx_buffer) && i < *len) {
 		data[i++] = util_buffer_u8_get(&interface_context->rx_buffer);
 	}
 	*len = i;

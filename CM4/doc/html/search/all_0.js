@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['a0_0',['A0',['../note_8h.html#a0d158f1e3af2ab523eb8423db3e5bd6e',1,'note.h']]],
+  ['a0h_1',['A0H',['../note_8h.html#a420e6433a169ca999bba9f863fc3e8ae',1,'note.h']]],
+  ['a1_2',['A1',['../note_8h.html#acd92b430059d886880c53f13ae038e3f',1,'note.h']]],
+  ['a1h_3',['A1H',['../note_8h.html#a8aef13f0df0e86c3c094fea48647cf67',1,'note.h']]],
+  ['a2_4',['A2',['../note_8h.html#a2946bc30423c2a996eeafa49e995c30e',1,'note.h']]],
+  ['a2h_5',['A2H',['../note_8h.html#a37eeb0cba198241bdfc472d9c8d727f2',1,'note.h']]],
+  ['a3_6',['A3',['../note_8h.html#a48cdc6c9a75eb611d0a703c94bdac6b8',1,'note.h']]],
+  ['a3h_7',['A3H',['../note_8h.html#af7a7e612195cdfc7383096c5b9e487f0',1,'note.h']]],
+  ['a4_8',['A4',['../note_8h.html#aa0a03ad95ca0cb887a11e321fa1c9519',1,'note.h']]],
+  ['a4h_9',['A4H',['../note_8h.html#a92874278ab65262871c5c2a5cce88d59',1,'note.h']]],
+  ['a5_10',['A5',['../note_8h.html#a635a5115ac94c220c2de74fa24fd05b6',1,'note.h']]],
+  ['a5h_11',['A5H',['../note_8h.html#ada5ebc0bb47856c6334c774724436f4d',1,'note.h']]],
+  ['a6_12',['A6',['../note_8h.html#a98b118c8a6727dbb618e0b262d24c939',1,'note.h']]],
+  ['a6h_13',['A6H',['../note_8h.html#a2e251718bcaf02d6570b0fe10f2810d1',1,'note.h']]],
+  ['a7_14',['A7',['../note_8h.html#a41beae8289ccef5c74ce6b247637dcbf',1,'note.h']]],
+  ['a7h_15',['A7H',['../note_8h.html#ad1f7933fce91d20e0cc9506a91390795',1,'note.h']]],
+  ['a8_16',['A8',['../note_8h.html#a61cf7139916a8510db5e10842782232c',1,'note.h']]],
+  ['a8h_17',['A8H',['../note_8h.html#a1487ab0c4f6c37ecffbaab00cbe618a7',1,'note.h']]],
+  ['accelerometer_2ec_18',['accelerometer.c',['../accelerometer_8c.html',1,'']]],
+  ['accelerometer_2eh_19',['accelerometer.h',['../accelerometer_8h.html',1,'']]],
+  ['accelerometer_5finit_20',['accelerometer_init',['../accelerometer_8c.html#ad27cb10e72f967c468f95ec7f1f1688e',1,'accelerometer_init(void):&#160;accelerometer.c'],['../accelerometer_8h.html#ad27cb10e72f967c468f95ec7f1f1688e',1,'accelerometer_init(void):&#160;accelerometer.c']]],
+  ['allocate_5fod_5fentry_21',['ALLOCATE_OD_ENTRY',['../od_8c.html#af636dd987b0fb3839086eb996019ad59',1,'od.c']]],
+  ['alternate_22',['alternate',['../structgpio__config.html#a375b1ff97f67b55b87d698b35bfa3aeb',1,'gpio_config']]]
+];

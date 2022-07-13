@@ -29,8 +29,10 @@
  *  MACROS
  **********************/
 
-//clears mask and writes at its place
-//not thread safe
+/**
+ * @brief	Macro to write masked data into a register.
+ *
+ */
 #define WRITE_IN_REG(reg, mask, data) (reg) &= ~(mask); (reg) |= (data)
 
 #ifdef UTIL_ALLOW_LIST
@@ -43,20 +45,36 @@
 
 #endif
 
-
+/**
+ * @brief	Macro to enter a critical section
+ */
 #define ENTER_CRITICAL taskENTER_CRITICAL
+
+/**
+ * @brief	Macro to exit a critical section
+ */
 #define EXIT_CRITICAL taskEXIT_CRITICAL
 
 /**********************
  *  TYPEDEFS
  **********************/
 
+/**
+ * @brief Unified error codes for the whole WildhornAV project.
+ * @note  The error codes can be ORed together to create more complex errors.
+ */
 typedef enum util_error {
+	/** Operation completed successfully */
     ER_SUCCESS = 0,
+	/** Error due to lack of readiness */
     ER_DATA_NOT_RDY = 0<<1,
+	/** Error due to a generic failure */
     ER_FAILURE = 1<<1,
+	/** Error due to a range issue */
     ER_OUT_OF_RANGE = 1<<2,
+	/** Error due to a timeout */
 	ER_TIMEOUT = 1<<3,
+	/** Error due to a ressource issue */
 	ER_RESSOURCE_ERROR = 1<<4
 }util_error_t;
 

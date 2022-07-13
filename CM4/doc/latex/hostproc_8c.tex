@@ -1,0 +1,227 @@
+\hypertarget{hostproc_8c}{}\doxysection{hostproc.\+c File Reference}
+\label{hostproc_8c}\index{hostproc.c@{hostproc.c}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$cmsis\+\_\+os.\+h$>$}\newline
+{\ttfamily \#include $<$device/hostproc.\+h$>$}\newline
+{\ttfamily \#include $<$feedback/led.\+h$>$}\newline
+{\ttfamily \#include $<$openamp.\+h$>$}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+Include dependency graph for hostproc.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structhostproc__interface__context}{hostproc\+\_\+interface\+\_\+context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structhostproc__interface__context}{hostproc\+\_\+interface\+\_\+context}} \mbox{\hyperlink{hostproc_8c_a86d494ad962014f17af3a24cd8a48071}{hostproc\+\_\+interface\+\_\+context\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hostproc_8c_a34935a7a459d2999d0300e6ad3e38362}{host\+\_\+\+UART0\+\_\+\+RX}} (VIRT\+\_\+\+UART\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{hostproc_8c_a8eb11984d2a8ca04077b2f90e628c5cf}{host\+\_\+send}} (void $\ast$context, uint8\+\_\+t $\ast$data, uint32\+\_\+t len)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{hostproc_8c_aa0f40f23ad9519285d338bd43363c71f}{host\+\_\+recv}} (void $\ast$context, uint8\+\_\+t $\ast$data, uint32\+\_\+t $\ast$len)
+\item 
+\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$ \mbox{\hyperlink{hostproc_8c_ae883ea2a1d7b023c7d9e3446634b0dda}{hostproc\+\_\+get\+\_\+interface}} (void)
+\item 
+\mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} $\ast$ \mbox{\hyperlink{hostproc_8c_a4bec96a248ecceab42732c88857b1b94}{hostproc\+\_\+get\+\_\+device}} (void)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{hostproc_8c_ae4468a3e6e2edab7e071064a558a3aab}{hostproc\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static VIRT\+\_\+\+UART\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{hostproc_8c_a26b23eb868f9c46af8e92ecea6576fa5}{host\+\_\+\+UART0}}
+\item 
+static \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} \mbox{\hyperlink{hostproc_8c_a927b5ea8cb4cba429c143e302c42c3c8}{hostproc\+\_\+device}}
+\item 
+static \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} \mbox{\hyperlink{hostproc_8c_a6e6d87b7e64fffb0afa8ea412f3f6b6c}{hostproc\+\_\+interface}}
+\item 
+static \mbox{\hyperlink{hostproc_8c_a86d494ad962014f17af3a24cd8a48071}{hostproc\+\_\+interface\+\_\+context\+\_\+t}} \mbox{\hyperlink{hostproc_8c_ace4992370a1f9670e845a15eec5728f8}{hostproc\+\_\+interface\+\_\+context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{hostproc_8c_a86d494ad962014f17af3a24cd8a48071}\label{hostproc_8c_a86d494ad962014f17af3a24cd8a48071}} 
+\index{hostproc.c@{hostproc.c}!hostproc\_interface\_context\_t@{hostproc\_interface\_context\_t}}
+\index{hostproc\_interface\_context\_t@{hostproc\_interface\_context\_t}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{hostproc\_interface\_context\_t}{hostproc\_interface\_context\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structhostproc__interface__context}{hostproc\+\_\+interface\+\_\+context}} \mbox{\hyperlink{hostproc_8c_a86d494ad962014f17af3a24cd8a48071}{hostproc\+\_\+interface\+\_\+context\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hostproc_8c_aa0f40f23ad9519285d338bd43363c71f}\label{hostproc_8c_aa0f40f23ad9519285d338bd43363c71f}} 
+\index{hostproc.c@{hostproc.c}!host\_recv@{host\_recv}}
+\index{host\_recv@{host\_recv}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{host\_recv()}{host\_recv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} host\+\_\+recv (\begin{DoxyParamCaption}\item[{void $\ast$}]{context,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+Referenced by hostproc\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8c_aa0f40f23ad9519285d338bd43363c71f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hostproc_8c_a8eb11984d2a8ca04077b2f90e628c5cf}\label{hostproc_8c_a8eb11984d2a8ca04077b2f90e628c5cf}} 
+\index{hostproc.c@{hostproc.c}!host\_send@{host\_send}}
+\index{host\_send@{host\_send}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{host\_send()}{host\_send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} host\+\_\+send (\begin{DoxyParamCaption}\item[{void $\ast$}]{context,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+References ER\+\_\+\+SUCCESS, hostproc\+\_\+interface\+\_\+context\+::rx\+\_\+once, and hostproc\+\_\+interface\+\_\+context\+::uart.
+
+
+
+Referenced by hostproc\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8c_a8eb11984d2a8ca04077b2f90e628c5cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hostproc_8c_a34935a7a459d2999d0300e6ad3e38362}\label{hostproc_8c_a34935a7a459d2999d0300e6ad3e38362}} 
+\index{hostproc.c@{hostproc.c}!host\_UART0\_RX@{host\_UART0\_RX}}
+\index{host\_UART0\_RX@{host\_UART0\_RX}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{host\_UART0\_RX()}{host\_UART0\_RX()}}
+{\footnotesize\ttfamily void host\+\_\+\+UART0\+\_\+\+RX (\begin{DoxyParamCaption}\item[{VIRT\+\_\+\+UART\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+
+
+References led\+\_\+rgb\+\_\+set\+\_\+rgb(), and hostproc\+\_\+interface\+\_\+context\+::rx\+\_\+once.
+
+
+
+Referenced by hostproc\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{hostproc_8c_a34935a7a459d2999d0300e6ad3e38362_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8c_a34935a7a459d2999d0300e6ad3e38362_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hostproc_8c_a4bec96a248ecceab42732c88857b1b94}\label{hostproc_8c_a4bec96a248ecceab42732c88857b1b94}} 
+\index{hostproc.c@{hostproc.c}!hostproc\_get\_device@{hostproc\_get\_device}}
+\index{hostproc\_get\_device@{hostproc\_get\_device}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{hostproc\_get\_device()}{hostproc\_get\_device()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}}$\ast$ hostproc\+\_\+get\+\_\+device (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References hostproc\+\_\+device.
+
+\mbox{\Hypertarget{hostproc_8c_ae883ea2a1d7b023c7d9e3446634b0dda}\label{hostproc_8c_ae883ea2a1d7b023c7d9e3446634b0dda}} 
+\index{hostproc.c@{hostproc.c}!hostproc\_get\_interface@{hostproc\_get\_interface}}
+\index{hostproc\_get\_interface@{hostproc\_get\_interface}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{hostproc\_get\_interface()}{hostproc\_get\_interface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}}$\ast$ hostproc\+\_\+get\+\_\+interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References hostproc\+\_\+interface.
+
+
+
+Referenced by control\+\_\+thread().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8c_ae883ea2a1d7b023c7d9e3446634b0dda_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{hostproc_8c_ae4468a3e6e2edab7e071064a558a3aab}\label{hostproc_8c_ae4468a3e6e2edab7e071064a558a3aab}} 
+\index{hostproc.c@{hostproc.c}!hostproc\_init@{hostproc\_init}}
+\index{hostproc\_init@{hostproc\_init}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{hostproc\_init()}{hostproc\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} hostproc\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+interface\+\_\+create(), ER\+\_\+\+FAILURE, ER\+\_\+\+SUCCESS, host\+\_\+recv(), host\+\_\+send(), host\+\_\+\+UART0, host\+\_\+\+UART0\+\_\+\+RX(), hostproc\+\_\+interface, hostproc\+\_\+interface\+\_\+context\+::rx\+\_\+once, and hostproc\+\_\+interface\+\_\+context\+::uart.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hostproc_8c_ae4468a3e6e2edab7e071064a558a3aab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{hostproc_8c_ae4468a3e6e2edab7e071064a558a3aab_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{hostproc_8c_a26b23eb868f9c46af8e92ecea6576fa5}\label{hostproc_8c_a26b23eb868f9c46af8e92ecea6576fa5}} 
+\index{hostproc.c@{hostproc.c}!host\_UART0@{host\_UART0}}
+\index{host\_UART0@{host\_UART0}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{host\_UART0}{host\_UART0}}
+{\footnotesize\ttfamily VIRT\+\_\+\+UART\+\_\+\+Handle\+Type\+Def host\+\_\+\+UART0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by hostproc\+\_\+init().
+
+\mbox{\Hypertarget{hostproc_8c_a927b5ea8cb4cba429c143e302c42c3c8}\label{hostproc_8c_a927b5ea8cb4cba429c143e302c42c3c8}} 
+\index{hostproc.c@{hostproc.c}!hostproc\_device@{hostproc\_device}}
+\index{hostproc\_device@{hostproc\_device}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{hostproc\_device}{hostproc\_device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a7b572d3f5a6e3ec7e00ecf487b0acf49}{device\+\_\+t}} hostproc\+\_\+device\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by hostproc\+\_\+get\+\_\+device().
+
+\mbox{\Hypertarget{hostproc_8c_a6e6d87b7e64fffb0afa8ea412f3f6b6c}\label{hostproc_8c_a6e6d87b7e64fffb0afa8ea412f3f6b6c}} 
+\index{hostproc.c@{hostproc.c}!hostproc\_interface@{hostproc\_interface}}
+\index{hostproc\_interface@{hostproc\_interface}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{hostproc\_interface}{hostproc\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} hostproc\+\_\+interface\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by control\+\_\+thread(), hostproc\+\_\+get\+\_\+interface(), and hostproc\+\_\+init().
+
+\mbox{\Hypertarget{hostproc_8c_ace4992370a1f9670e845a15eec5728f8}\label{hostproc_8c_ace4992370a1f9670e845a15eec5728f8}} 
+\index{hostproc.c@{hostproc.c}!hostproc\_interface\_context@{hostproc\_interface\_context}}
+\index{hostproc\_interface\_context@{hostproc\_interface\_context}!hostproc.c@{hostproc.c}}
+\doxysubsubsection{\texorpdfstring{hostproc\_interface\_context}{hostproc\_interface\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hostproc_8c_a86d494ad962014f17af3a24cd8a48071}{hostproc\+\_\+interface\+\_\+context\+\_\+t}} \mbox{\hyperlink{structhostproc__interface__context}{hostproc\+\_\+interface\+\_\+context}}\hspace{0.3cm}{\ttfamily [static]}}
+

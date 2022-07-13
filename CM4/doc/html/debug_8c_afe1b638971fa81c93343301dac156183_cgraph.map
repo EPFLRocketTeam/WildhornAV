@@ -1,0 +1,12 @@
+<map id="debug_init" name="debug_init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,144,96,171"/>
+<area shape="rect" id="node2" href="$device_8c.html#a8f74c3046fc52d8fc597787db18196f5" title="Initialize a device interface instance." alt="" coords="144,5,323,32"/>
+<area shape="rect" id="node3" href="$msv2_8c.html#a7c8e1e6930814ed33103370c3cb35b07" title="Initialize a msv2 packet creator instance." alt="" coords="190,56,277,83"/>
+<area shape="rect" id="node4" href="$serial_8c.html#a12f3052d5c514aee2530ea3a4c2e11e9" title=" " alt="" coords="157,107,310,149"/>
+<area shape="rect" id="node5" href="$serial_8c.html#ab4d41ce25afdf0aa91606681e656b269" title=" " alt="" coords="187,173,280,200"/>
+<area shape="rect" id="node8" href="$serial_8c.html#aaa9c92c8c435763f7cdf1ebd4446c03f" title=" " alt="" coords="185,224,281,251"/>
+<area shape="rect" id="node9" href="$serial_8c.html#a8a30ba0a692d0c738876a2deba5f169e" title=" " alt="" coords="149,275,318,301"/>
+<area shape="rect" id="node6" href="$util_8h.html#a7380877202d2b7868d7d2282a8ae77b8" title=" " alt="" coords="387,148,525,175"/>
+<area shape="rect" id="node7" href="$util_8h.html#a8a45ea6e7c44e4c999d1fa69f5c05574" title=" " alt="" coords="371,199,541,225"/>
+<area shape="rect" id="node10" href="$util_8h.html#a33e9e3d0f064d38a99efa8b72ae7c9d5" title=" " alt="" coords="387,275,525,301"/>
+</map>

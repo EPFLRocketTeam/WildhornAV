@@ -1,0 +1,162 @@
+\hypertarget{dma_8c}{}\doxysection{dma.\+c File Reference}
+\label{dma_8c}\index{dma.c@{dma.c}}
+{\ttfamily \#include \char`\"{}dma.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32mp1xx\+\_\+it.\+h\char`\"{}}\newline
+Include dependency graph for dma.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dma_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dma_8c_a05ac286f65194b63742ba36967d94950}{dma\+\_\+handle\+\_\+interrupt}} (\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$stream)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8c_a212f97127bc38430c0b2f29f48e17084}{dma2\+\_\+init\+\_\+scheduler}} (void)
+\item 
+\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$ \mbox{\hyperlink{dma_8c_a57e6b805cb1eec47e3e3d18ff4632c6b}{dma2\+\_\+get\+\_\+scheduler}} (void)
+\item 
+\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$ \mbox{\hyperlink{dma_8c_a10b990a4dba612270a7cf696647c54f7}{dma2\+\_\+get\+\_\+streams}} (void)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8c_aedad147a20b881337c9973d11af866c7}{dma\+\_\+scheduler\+\_\+init}} (\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+scheduler, \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+streams, uint16\+\_\+t nb\+\_\+dma\+\_\+streams)
+\item 
+\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$ \mbox{\hyperlink{dma_8c_adf80e54e3d6ab33cad774f76f6bc51f2}{dma\+\_\+scheduler\+\_\+request\+\_\+stream}} (\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+scheduler)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8c_a0e558ecb912c5ab72ce01112e3de432a}{dma\+\_\+scheduler\+\_\+release\+\_\+stream}} (\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+scheduler, \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+stream)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8c_a53f81707348f3b02e69f0e6618ef201d}{dma\+\_\+start\+\_\+stream}} (\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$stream, \mbox{\hyperlink{dma_8h_abe95b186733422d2ce02fc5780b1a03f}{dma\+\_\+stream\+\_\+config\+\_\+t}} config)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} \mbox{\hyperlink{dma_8c_a1162e096d6c815e8a09596d4a0c7c2aa}{dma2\+\_\+scheduler}}
+\item 
+\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} \mbox{\hyperlink{dma_8c_a79d3c0df0b133fe4c33c35bf5b079a6f}{dma2\+\_\+streams}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dma_8c_a57e6b805cb1eec47e3e3d18ff4632c6b}\label{dma_8c_a57e6b805cb1eec47e3e3d18ff4632c6b}} 
+\index{dma.c@{dma.c}!dma2\_get\_scheduler@{dma2\_get\_scheduler}}
+\index{dma2\_get\_scheduler@{dma2\_get\_scheduler}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma2\_get\_scheduler()}{dma2\_get\_scheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}}$\ast$ dma2\+\_\+get\+\_\+scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References dma2\+\_\+scheduler.
+
+\mbox{\Hypertarget{dma_8c_a10b990a4dba612270a7cf696647c54f7}\label{dma_8c_a10b990a4dba612270a7cf696647c54f7}} 
+\index{dma.c@{dma.c}!dma2\_get\_streams@{dma2\_get\_streams}}
+\index{dma2\_get\_streams@{dma2\_get\_streams}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma2\_get\_streams()}{dma2\_get\_streams()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}}$\ast$ dma2\+\_\+get\+\_\+streams (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References dma2\+\_\+streams.
+
+\mbox{\Hypertarget{dma_8c_a212f97127bc38430c0b2f29f48e17084}\label{dma_8c_a212f97127bc38430c0b2f29f48e17084}} 
+\index{dma.c@{dma.c}!dma2\_init\_scheduler@{dma2\_init\_scheduler}}
+\index{dma2\_init\_scheduler@{dma2\_init\_scheduler}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma2\_init\_scheduler()}{dma2\_init\_scheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma2\+\_\+init\+\_\+scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References dma2\+\_\+scheduler, dma2\+\_\+streams, dma\+\_\+scheduler\+\_\+init(), and ER\+\_\+\+SUCCESS.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dma_8c_a212f97127bc38430c0b2f29f48e17084_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dma_8c_a05ac286f65194b63742ba36967d94950}\label{dma_8c_a05ac286f65194b63742ba36967d94950}} 
+\index{dma.c@{dma.c}!dma\_handle\_interrupt@{dma\_handle\_interrupt}}
+\index{dma\_handle\_interrupt@{dma\_handle\_interrupt}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma\_handle\_interrupt()}{dma\_handle\_interrupt()}}
+{\footnotesize\ttfamily void dma\+\_\+handle\+\_\+interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+
+
+References dma\+\_\+stream\+\_\+dev\+::dma, DMA\+\_\+\+STATUS\+\_\+\+TC, DMA\+\_\+\+STATUS\+\_\+\+TE, DMA\+\_\+\+STATUS\+\_\+\+TH, dma\+\_\+stream\+\_\+dev\+::number, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+cplt, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+error, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+half, and dma\+\_\+stream\+\_\+dev\+::user\+\_\+context.
+
+\mbox{\Hypertarget{dma_8c_aedad147a20b881337c9973d11af866c7}\label{dma_8c_aedad147a20b881337c9973d11af866c7}} 
+\index{dma.c@{dma.c}!dma\_scheduler\_init@{dma\_scheduler\_init}}
+\index{dma\_scheduler\_init@{dma\_scheduler\_init}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma\_scheduler\_init()}{dma\_scheduler\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+scheduler\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+scheduler,  }\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+streams,  }\item[{uint16\+\_\+t}]{nb\+\_\+dma\+\_\+streams }\end{DoxyParamCaption})}
+
+
+
+References DMA\+\_\+\+STREAM\+\_\+\+FREE, DMA\+\_\+\+STREAMS\+\_\+\+MAX\+\_\+\+LEN, ER\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE, ER\+\_\+\+SUCCESS, dma\+\_\+stream\+\_\+dev\+::state, and dma\+\_\+scheduler\+\_\+dev\+::streams.
+
+
+
+Referenced by dma2\+\_\+init\+\_\+scheduler().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dma_8c_aedad147a20b881337c9973d11af866c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dma_8c_a0e558ecb912c5ab72ce01112e3de432a}\label{dma_8c_a0e558ecb912c5ab72ce01112e3de432a}} 
+\index{dma.c@{dma.c}!dma\_scheduler\_release\_stream@{dma\_scheduler\_release\_stream}}
+\index{dma\_scheduler\_release\_stream@{dma\_scheduler\_release\_stream}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma\_scheduler\_release\_stream()}{dma\_scheduler\_release\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+scheduler\+\_\+release\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+scheduler,  }\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+References DMA\+\_\+\+STREAM\+\_\+\+FREE, ENTER\+\_\+\+CRITICAL, ER\+\_\+\+SUCCESS, EXIT\+\_\+\+CRITICAL, dma\+\_\+scheduler\+\_\+dev\+::free\+\_\+stream\+\_\+count, and dma\+\_\+stream\+\_\+dev\+::state.
+
+\mbox{\Hypertarget{dma_8c_adf80e54e3d6ab33cad774f76f6bc51f2}\label{dma_8c_adf80e54e3d6ab33cad774f76f6bc51f2}} 
+\index{dma.c@{dma.c}!dma\_scheduler\_request\_stream@{dma\_scheduler\_request\_stream}}
+\index{dma\_scheduler\_request\_stream@{dma\_scheduler\_request\_stream}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma\_scheduler\_request\_stream()}{dma\_scheduler\_request\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}}$\ast$ dma\+\_\+scheduler\+\_\+request\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+scheduler }\end{DoxyParamCaption})}
+
+
+
+References DMA\+\_\+\+STREAM\+\_\+\+BUSY, DMA\+\_\+\+STREAM\+\_\+\+FREE, ENTER\+\_\+\+CRITICAL, EXIT\+\_\+\+CRITICAL, dma\+\_\+scheduler\+\_\+dev\+::free\+\_\+stream\+\_\+count, dma\+\_\+stream\+\_\+dev\+::state, dma\+\_\+scheduler\+\_\+dev\+::stream\+\_\+count, and dma\+\_\+scheduler\+\_\+dev\+::streams.
+
+\mbox{\Hypertarget{dma_8c_a53f81707348f3b02e69f0e6618ef201d}\label{dma_8c_a53f81707348f3b02e69f0e6618ef201d}} 
+\index{dma.c@{dma.c}!dma\_start\_stream@{dma\_start\_stream}}
+\index{dma\_start\_stream@{dma\_start\_stream}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma\_start\_stream()}{dma\_start\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+start\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{dma_8h_abe95b186733422d2ce02fc5780b1a03f}{dma\+\_\+stream\+\_\+config\+\_\+t}}}]{config }\end{DoxyParamCaption})}
+
+
+
+References dma\+\_\+stream\+\_\+config\+::direction, dma\+\_\+stream\+\_\+dev\+::dma, dma\+\_\+stream\+\_\+dev\+::dma\+\_\+stream, dma\+\_\+stream\+\_\+dev\+::dmamux\+\_\+channel, dma\+\_\+stream\+\_\+config\+::dmamux\+\_\+request\+\_\+number, ER\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE, dma\+\_\+stream\+\_\+config\+::m0\+\_\+addr, dma\+\_\+stream\+\_\+config\+::m1\+\_\+addr, dma\+\_\+stream\+\_\+dev\+::number, dma\+\_\+stream\+\_\+config\+::p\+\_\+addr, dma\+\_\+stream\+\_\+config\+::peripheral\+\_\+flow\+\_\+control, dma\+\_\+stream\+\_\+config\+::priority, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+cplt, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+cplt, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+error, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+error, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+half, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+half, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+size, dma\+\_\+stream\+\_\+config\+::user\+\_\+context, dma\+\_\+stream\+\_\+dev\+::user\+\_\+context, and WRITE\+\_\+\+IN\+\_\+\+REG.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{dma_8c_a1162e096d6c815e8a09596d4a0c7c2aa}\label{dma_8c_a1162e096d6c815e8a09596d4a0c7c2aa}} 
+\index{dma.c@{dma.c}!dma2\_scheduler@{dma2\_scheduler}}
+\index{dma2\_scheduler@{dma2\_scheduler}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma2\_scheduler}{dma2\_scheduler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} dma2\+\_\+scheduler}
+
+
+
+Referenced by dma2\+\_\+get\+\_\+scheduler(), and dma2\+\_\+init\+\_\+scheduler().
+
+\mbox{\Hypertarget{dma_8c_a79d3c0df0b133fe4c33c35bf5b079a6f}\label{dma_8c_a79d3c0df0b133fe4c33c35bf5b079a6f}} 
+\index{dma.c@{dma.c}!dma2\_streams@{dma2\_streams}}
+\index{dma2\_streams@{dma2\_streams}!dma.c@{dma.c}}
+\doxysubsubsection{\texorpdfstring{dma2\_streams}{dma2\_streams}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} dma2\+\_\+streams\mbox{[}$\,$\mbox{]}}
+
+
+
+Referenced by dma2\+\_\+get\+\_\+streams(), and dma2\+\_\+init\+\_\+scheduler().
+

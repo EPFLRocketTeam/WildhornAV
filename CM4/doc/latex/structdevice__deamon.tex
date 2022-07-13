@@ -1,0 +1,122 @@
+\hypertarget{structdevice__deamon}{}\doxysection{device\+\_\+deamon Struct Reference}
+\label{structdevice__deamon}\index{device\_deamon@{device\_deamon}}
+
+
+{\ttfamily \#include $<$device.\+h$>$}
+
+
+
+Collaboration diagram for device\+\_\+deamon\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{structdevice__deamon__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structdevice__deamon_afa033461bd773379f01b595d972a11f7}{id}}
+\item 
+Static\+Task\+\_\+t \mbox{\hyperlink{structdevice__deamon_ae2b7cc50da751d80f13b6559c3a9a687}{buffer}}
+\item 
+Stack\+Type\+\_\+t \mbox{\hyperlink{structdevice__deamon_adca90677c5d6202eee6a90aac6234921}{stack}} \mbox{[}\mbox{\hyperlink{device_8h_a4e7a09f9c19df278cbf0f761a6931625}{DEAMON\+\_\+\+STACK\+\_\+\+SIZE}}\mbox{]}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{structdevice__deamon_ae559cfe5fa77df22c90fa3d4ef6deb15}{handle}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structdevice__deamon_a8297e790b0c7046c40458c7beb47f418}{interfaces\+\_\+count}}
+\item 
+\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$ \mbox{\hyperlink{structdevice__deamon_adf14ab29bd05b96edd43aba1b824c810}{interfaces}} \mbox{[}\mbox{\hyperlink{device_8h_a7a0503a9e7baf5077f8c1d6476753b86}{DEVICE\+\_\+\+MAX\+\_\+\+INTERFACES\+\_\+\+PER\+\_\+\+DEAMON}}\mbox{]}
+\item 
+void $\ast$ \mbox{\hyperlink{structdevice__deamon_a257cafffe16afc52540b87a3876e3033}{context}}
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ \mbox{\hyperlink{structdevice__deamon_acbb6a8991d9c4fdb1e9a71a1d8a476ca}{data\+\_\+rdy}} )(void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structdevice__deamon_ae2b7cc50da751d80f13b6559c3a9a687}\label{structdevice__deamon_ae2b7cc50da751d80f13b6559c3a9a687}} 
+\index{device\_deamon@{device\_deamon}!buffer@{buffer}}
+\index{buffer@{buffer}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily Static\+Task\+\_\+t device\+\_\+deamon\+::buffer}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create().
+
+\mbox{\Hypertarget{structdevice__deamon_a257cafffe16afc52540b87a3876e3033}\label{structdevice__deamon_a257cafffe16afc52540b87a3876e3033}} 
+\index{device\_deamon@{device\_deamon}!context@{context}}
+\index{context@{context}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily void$\ast$ device\+\_\+deamon\+::context}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create(), device\+\_\+deamon\+\_\+thread(), and HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback().
+
+\mbox{\Hypertarget{structdevice__deamon_acbb6a8991d9c4fdb1e9a71a1d8a476ca}\label{structdevice__deamon_acbb6a8991d9c4fdb1e9a71a1d8a476ca}} 
+\index{device\_deamon@{device\_deamon}!data\_rdy@{data\_rdy}}
+\index{data\_rdy@{data\_rdy}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{data\_rdy}{data\_rdy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ device\+\_\+deamon\+::data\+\_\+rdy) (void $\ast$)}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create(), and device\+\_\+deamon\+\_\+thread().
+
+\mbox{\Hypertarget{structdevice__deamon_ae559cfe5fa77df22c90fa3d4ef6deb15}\label{structdevice__deamon_ae559cfe5fa77df22c90fa3d4ef6deb15}} 
+\index{device\_deamon@{device\_deamon}!handle@{handle}}
+\index{handle@{handle}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{handle}{handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t device\+\_\+deamon\+::handle}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create().
+
+\mbox{\Hypertarget{structdevice__deamon_afa033461bd773379f01b595d972a11f7}\label{structdevice__deamon_afa033461bd773379f01b595d972a11f7}} 
+\index{device\_deamon@{device\_deamon}!id@{id}}
+\index{id@{id}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint32\+\_\+t device\+\_\+deamon\+::id}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create().
+
+\mbox{\Hypertarget{structdevice__deamon_adf14ab29bd05b96edd43aba1b824c810}\label{structdevice__deamon_adf14ab29bd05b96edd43aba1b824c810}} 
+\index{device\_deamon@{device\_deamon}!interfaces@{interfaces}}
+\index{interfaces@{interfaces}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{interfaces}{interfaces}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}}$\ast$ device\+\_\+deamon\+::interfaces\mbox{[}\mbox{\hyperlink{device_8h_a7a0503a9e7baf5077f8c1d6476753b86}{DEVICE\+\_\+\+MAX\+\_\+\+INTERFACES\+\_\+\+PER\+\_\+\+DEAMON}}\mbox{]}}
+
+
+
+Referenced by device\+\_\+interface\+\_\+create(), and HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback().
+
+\mbox{\Hypertarget{structdevice__deamon_a8297e790b0c7046c40458c7beb47f418}\label{structdevice__deamon_a8297e790b0c7046c40458c7beb47f418}} 
+\index{device\_deamon@{device\_deamon}!interfaces\_count@{interfaces\_count}}
+\index{interfaces\_count@{interfaces\_count}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{interfaces\_count}{interfaces\_count}}
+{\footnotesize\ttfamily uint32\+\_\+t device\+\_\+deamon\+::interfaces\+\_\+count}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create(), device\+\_\+deamon\+\_\+thread(), device\+\_\+interface\+\_\+create(), and HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback().
+
+\mbox{\Hypertarget{structdevice__deamon_adca90677c5d6202eee6a90aac6234921}\label{structdevice__deamon_adca90677c5d6202eee6a90aac6234921}} 
+\index{device\_deamon@{device\_deamon}!stack@{stack}}
+\index{stack@{stack}!device\_deamon@{device\_deamon}}
+\doxysubsubsection{\texorpdfstring{stack}{stack}}
+{\footnotesize\ttfamily Stack\+Type\+\_\+t device\+\_\+deamon\+::stack\mbox{[}\mbox{\hyperlink{device_8h_a4e7a09f9c19df278cbf0f761a6931625}{DEAMON\+\_\+\+STACK\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+create().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{device_8h}{device.\+h}}\end{DoxyCompactItemize}

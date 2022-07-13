@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['hal_5fuart_5frxcpltcallback_324',['HAL_UART_RxCpltCallback',['../serial_8c.html#ae494a9643f29b87d6d81e5264e60e57b',1,'serial.c']]],
+  ['handle_325',['handle',['../structdevice__deamon.html#ae559cfe5fa77df22c90fa3d4ef6deb15',1,'device_deamon']]],
+  ['handle_5fdata_326',['handle_data',['../structdevice__interface.html#ad245d7e2799cb128b474b5076f43e8f6',1,'device_interface']]],
+  ['host_5frecv_327',['host_recv',['../hostproc_8c.html#aa0f40f23ad9519285d338bd43363c71f',1,'hostproc.c']]],
+  ['host_5fsend_328',['host_send',['../hostproc_8c.html#a8eb11984d2a8ca04077b2f90e628c5cf',1,'hostproc.c']]],
+  ['host_5fuart0_329',['host_UART0',['../hostproc_8c.html#a26b23eb868f9c46af8e92ecea6576fa5',1,'hostproc.c']]],
+  ['host_5fuart0_5frx_330',['host_UART0_RX',['../hostproc_8c.html#a34935a7a459d2999d0300e6ad3e38362',1,'hostproc.c']]],
+  ['hostproc_2ec_331',['hostproc.c',['../hostproc_8c.html',1,'']]],
+  ['hostproc_2eh_332',['hostproc.h',['../hostproc_8h.html',1,'']]],
+  ['hostproc_5fdevice_333',['hostproc_device',['../hostproc_8c.html#a927b5ea8cb4cba429c143e302c42c3c8',1,'hostproc.c']]],
+  ['hostproc_5fget_5fdevice_334',['hostproc_get_device',['../hostproc_8c.html#a4bec96a248ecceab42732c88857b1b94',1,'hostproc_get_device(void):&#160;hostproc.c'],['../hostproc_8h.html#a4bec96a248ecceab42732c88857b1b94',1,'hostproc_get_device(void):&#160;hostproc.c']]],
+  ['hostproc_5fget_5finterface_335',['hostproc_get_interface',['../hostproc_8c.html#ae883ea2a1d7b023c7d9e3446634b0dda',1,'hostproc_get_interface(void):&#160;hostproc.c'],['../hostproc_8h.html#ae883ea2a1d7b023c7d9e3446634b0dda',1,'hostproc_get_interface(void):&#160;hostproc.c']]],
+  ['hostproc_5finit_336',['hostproc_init',['../hostproc_8c.html#ae4468a3e6e2edab7e071064a558a3aab',1,'hostproc_init(void):&#160;hostproc.c'],['../hostproc_8h.html#ae4468a3e6e2edab7e071064a558a3aab',1,'hostproc_init(void):&#160;hostproc.c']]],
+  ['hostproc_5finterface_337',['hostproc_interface',['../hostproc_8c.html#a6e6d87b7e64fffb0afa8ea412f3f6b6c',1,'hostproc.c']]],
+  ['hostproc_5finterface_5fcontext_338',['hostproc_interface_context',['../structhostproc__interface__context.html',1,'hostproc_interface_context'],['../hostproc_8c.html#ace4992370a1f9670e845a15eec5728f8',1,'hostproc_interface_context():&#160;hostproc.c']]],
+  ['hostproc_5finterface_5fcontext_5ft_339',['hostproc_interface_context_t',['../hostproc_8c.html#a86d494ad962014f17af3a24cd8a48071',1,'hostproc.c']]]
+];

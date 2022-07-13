@@ -1,0 +1,653 @@
+\hypertarget{util_8h}{}\doxysection{util.\+h File Reference}
+\label{util_8h}\index{util.h@{util.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$cmsis\+\_\+os.\+h$>$}\newline
+Include dependency graph for util.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{util_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutil__buffer__u8}{util\+\_\+buffer\+\_\+u8}}
+\item 
+struct \mbox{\hyperlink{structutil__buffer__u16}{util\+\_\+buffer\+\_\+u16}}
+\item 
+struct \mbox{\hyperlink{structutil__buffer__i16}{util\+\_\+buffer\+\_\+i16}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{util_8h_af83fcdb80bf796775c79e596f9ab740b}{WRITE\+\_\+\+IN\+\_\+\+REG}}(reg,  mask,  data)~(reg) \&= $\sim$(mask); (reg) $\vert$= (data)
+\begin{DoxyCompactList}\small\item\em Macro to write masked data into a register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{util_8h_a9d5589bc014dcec626ff198d5c9370cd}{ENTER\+\_\+\+CRITICAL}}~task\+ENTER\+\_\+\+CRITICAL
+\begin{DoxyCompactList}\small\item\em Macro to enter a critical section. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{util_8h_ab6899bca80aa0b3119d6f31713998dcf}{EXIT\+\_\+\+CRITICAL}}~task\+EXIT\+\_\+\+CRITICAL
+\begin{DoxyCompactList}\small\item\em Macro to exit a critical section. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{util_8h_a5ec63124df8024b994fe5c7a9aa14a2e}{UTIL\+\_\+\+GENERATE\+\_\+\+BUFFER}}(type,  name)
+\item 
+\#define \mbox{\hyperlink{util_8h_a28304c2cffbbf1d7d314a93572582b95}{util\+\_\+abs}}(a)~((a)$<$0?-\/(a)\+:(a))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7}{util\+\_\+error}} \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Unified error codes for the whole Wildhorn\+AV project. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structutil__buffer__u8}{util\+\_\+buffer\+\_\+u8}} \mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structutil__buffer__u16}{util\+\_\+buffer\+\_\+u16}} \mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structutil__buffer__i16}{util\+\_\+buffer\+\_\+i16}} \mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7}{util\+\_\+error}} \{ \newline
+\mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7ac92c1d77c6ea7ec8e48756f5b0c9acb2}{ER\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a7db26982d5ee6e7d5eb2f511f878e8b6}{ER\+\_\+\+DATA\+\_\+\+NOT\+\_\+\+RDY}} = 0$<$$<$1
+, \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a90eca655b6ffe0de0589a2fa3e2b7041}{ER\+\_\+\+FAILURE}} = 1$<$$<$1
+, \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a78b9394af0a3554ae50df07b765a1158}{ER\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}} = 1$<$$<$2
+, \newline
+\mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7ac4c2c8fe486838aee543ee531df62f60}{ER\+\_\+\+TIMEOUT}} = 1$<$$<$3
+, \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a34cc83ba9a510ffed79920bf622b22cd}{ER\+\_\+\+RESSOURCE\+\_\+\+ERROR}} = 1$<$$<$4
+ \}
+\begin{DoxyCompactList}\small\item\em Unified error codes for the whole Wildhorn\+AV project. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{util_8h_ad81f8781a822f9083a753d0f72c23cb8}{util\+\_\+encode\+\_\+u8}} (uint8\+\_\+t $\ast$data, uint8\+\_\+t value)
+\item 
+static void \mbox{\hyperlink{util_8h_a95fb17930a8de468e638a31a64204187}{util\+\_\+encode\+\_\+u16}} (uint8\+\_\+t $\ast$data, uint16\+\_\+t value)
+\item 
+static void \mbox{\hyperlink{util_8h_a1915932b50d0b3bbf18864c63ce2a277}{util\+\_\+encode\+\_\+u32}} (uint8\+\_\+t $\ast$data, uint32\+\_\+t value)
+\item 
+static void \mbox{\hyperlink{util_8h_a547fe22573ad9d652b7205e26d6a79c2}{util\+\_\+encode\+\_\+i8}} (uint8\+\_\+t $\ast$data, int8\+\_\+t value)
+\item 
+static void \mbox{\hyperlink{util_8h_abd385271c8ae6a6c43597917518bc8c3}{util\+\_\+encode\+\_\+i16}} (uint8\+\_\+t $\ast$data, int16\+\_\+t value)
+\item 
+static void \mbox{\hyperlink{util_8h_a824b9ad8bda8eb404ceea1fa2eefc9bc}{util\+\_\+encode\+\_\+i32}} (uint8\+\_\+t $\ast$data, int32\+\_\+t value)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{util_8h_a717487c53311650e5229f3e1e909f035}{util\+\_\+decode\+\_\+u8}} (uint8\+\_\+t $\ast$data)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{util_8h_a00e8ed41117a61ef0d5662178390358c}{util\+\_\+decode\+\_\+u16}} (uint8\+\_\+t $\ast$data)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{util_8h_a9e97e80d045d0cdb63f4b9a63e1a1f48}{util\+\_\+decode\+\_\+u32}} (uint8\+\_\+t $\ast$data)
+\item 
+static int8\+\_\+t \mbox{\hyperlink{util_8h_ab6dc953e97e3ebc9104fcc116a1a0cf6}{util\+\_\+decode\+\_\+i8}} (uint8\+\_\+t $\ast$data)
+\item 
+static int16\+\_\+t \mbox{\hyperlink{util_8h_a4bbb13e4f3f6d787ead1dcd41713bb7f}{util\+\_\+decode\+\_\+i16}} (uint8\+\_\+t $\ast$data)
+\item 
+static int32\+\_\+t \mbox{\hyperlink{util_8h_a74eb5a7c316313dcda94e0d00f4730fb}{util\+\_\+decode\+\_\+i32}} (uint8\+\_\+t $\ast$data)
+\item 
+static void \mbox{\hyperlink{util_8h_a33e9e3d0f064d38a99efa8b72ae7c9d5}{util\+\_\+buffer\+\_\+u8\+\_\+init}} (\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$bfr, uint8\+\_\+t $\ast$buffer, uint16\+\_\+t bfr\+\_\+len)
+\item 
+static void \mbox{\hyperlink{util_8h_a765f8586354208e56bf7d414fb8906ae}{util\+\_\+buffer\+\_\+u8\+\_\+add}} (\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$bfr, uint8\+\_\+t d)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{util_8h_a7380877202d2b7868d7d2282a8ae77b8}{util\+\_\+buffer\+\_\+u8\+\_\+get}} (\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$bfr)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{util_8h_a978379d72cc0c2a1bc308a6b2879f84b}{util\+\_\+buffer\+\_\+u8\+\_\+access}} (\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$bfr, int16\+\_\+t ix)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{util_8h_a8a45ea6e7c44e4c999d1fa69f5c05574}{util\+\_\+buffer\+\_\+u8\+\_\+isempty}} (\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$bfr)
+\item 
+static void \mbox{\hyperlink{util_8h_a082d9274c6fc67845e3d9151ce4b9a2d}{util\+\_\+buffer\+\_\+u16\+\_\+init}} (\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$bfr, uint16\+\_\+t $\ast$buffer, uint16\+\_\+t bfr\+\_\+len)
+\item 
+static void \mbox{\hyperlink{util_8h_a9545323cffc567c89b9d5ba4f862f4e2}{util\+\_\+buffer\+\_\+u16\+\_\+add}} (\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$bfr, uint16\+\_\+t d)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{util_8h_a5c443eedd1290051178b01d41b2238f0}{util\+\_\+buffer\+\_\+u16\+\_\+get}} (\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$bfr)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{util_8h_abfe37998db9936a44f88eb49e5d75300}{util\+\_\+buffer\+\_\+u16\+\_\+isempty}} (\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$bfr)
+\item 
+static void \mbox{\hyperlink{util_8h_a7b2fe36eca02bbf54a8f26a9a0c4d425}{util\+\_\+buffer\+\_\+i16\+\_\+init}} (\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$bfr, int16\+\_\+t $\ast$buffer, uint16\+\_\+t bfr\+\_\+len)
+\item 
+static void \mbox{\hyperlink{util_8h_a2e51ef301a08c6d39db9cd96cb91e366}{util\+\_\+buffer\+\_\+i16\+\_\+add}} (\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$bfr, int16\+\_\+t d)
+\item 
+static int16\+\_\+t \mbox{\hyperlink{util_8h_afbb668489202d86ca0c8c1a3f70468ac}{util\+\_\+buffer\+\_\+i16\+\_\+get}} (\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$bfr)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{util_8h_ac2183b5ffd9b5f7570ed2421b4a8578b}{util\+\_\+buffer\+\_\+i16\+\_\+isempty}} (\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$bfr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{util_8h_a9d5589bc014dcec626ff198d5c9370cd}\label{util_8h_a9d5589bc014dcec626ff198d5c9370cd}} 
+\index{util.h@{util.h}!ENTER\_CRITICAL@{ENTER\_CRITICAL}}
+\index{ENTER\_CRITICAL@{ENTER\_CRITICAL}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{ENTER\_CRITICAL}{ENTER\_CRITICAL}}
+{\footnotesize\ttfamily \#define ENTER\+\_\+\+CRITICAL~task\+ENTER\+\_\+\+CRITICAL}
+
+
+
+Macro to enter a critical section. 
+
+\mbox{\Hypertarget{util_8h_ab6899bca80aa0b3119d6f31713998dcf}\label{util_8h_ab6899bca80aa0b3119d6f31713998dcf}} 
+\index{util.h@{util.h}!EXIT\_CRITICAL@{EXIT\_CRITICAL}}
+\index{EXIT\_CRITICAL@{EXIT\_CRITICAL}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{EXIT\_CRITICAL}{EXIT\_CRITICAL}}
+{\footnotesize\ttfamily \#define EXIT\+\_\+\+CRITICAL~task\+EXIT\+\_\+\+CRITICAL}
+
+
+
+Macro to exit a critical section. 
+
+\mbox{\Hypertarget{util_8h_a28304c2cffbbf1d7d314a93572582b95}\label{util_8h_a28304c2cffbbf1d7d314a93572582b95}} 
+\index{util.h@{util.h}!util\_abs@{util\_abs}}
+\index{util\_abs@{util\_abs}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_abs}{util\_abs}}
+{\footnotesize\ttfamily \#define util\+\_\+abs(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~((a)$<$0?-\/(a)\+:(a))}
+
+\mbox{\Hypertarget{util_8h_a5ec63124df8024b994fe5c7a9aa14a2e}\label{util_8h_a5ec63124df8024b994fe5c7a9aa14a2e}} 
+\index{util.h@{util.h}!UTIL\_GENERATE\_BUFFER@{UTIL\_GENERATE\_BUFFER}}
+\index{UTIL\_GENERATE\_BUFFER@{UTIL\_GENERATE\_BUFFER}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{UTIL\_GENERATE\_BUFFER}{UTIL\_GENERATE\_BUFFER}}
+{\footnotesize\ttfamily \#define UTIL\+\_\+\+GENERATE\+\_\+\+BUFFER(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{typedef} \textcolor{keyword}{struct }UTIL\_BUFFER\_\#\#name\{                                                                          \(\backslash\)}
+\DoxyCodeLine{        uint16\_t c\_ix;                                                                                          \(\backslash\)}
+\DoxyCodeLine{        uint16\_t l\_ix;                                                                                          \(\backslash\)}
+\DoxyCodeLine{        uint16\_t bfr\_len;                                                                                       \(\backslash\)}
+\DoxyCodeLine{        type * buffer;                                                                                          \(\backslash\)}
+\DoxyCodeLine{    \}UTIL\_BUFFER\_\#\#name\#\#\_t;                                                                                    \(\backslash\)}
+\DoxyCodeLine{static \textcolor{keyword}{inline} \textcolor{keywordtype}{void} util\_buffer\_\#\#name\#\#\_init(UTIL\_BUFFER\_\#\#name\#\#\_t * bfr, type * buffer, uint16\_t bfr\_len) \{   \(\backslash\)}
+\DoxyCodeLine{    bfr-\/>c\_ix = 0;                                                                                              \(\backslash\)}
+\DoxyCodeLine{    bfr-\/>l\_ix = 0;                                                                                              \(\backslash\)}
+\DoxyCodeLine{    bfr-\/>bfr\_len = bfr\_len;                                                                                     \(\backslash\)}
+\DoxyCodeLine{    bfr-\/>buffer = buffer;                                                                                       \(\backslash\)}
+\DoxyCodeLine{\}                                                                                                               \(\backslash\)}
+\DoxyCodeLine{static \textcolor{keyword}{inline} \textcolor{keywordtype}{void} util\_buffer\_\#\#name\#\#\_add(UTIL\_BUFFER\_\#\#name\#\#\_t * bfr, type d) \{                             \(\backslash\)}
+\DoxyCodeLine{    bfr-\/>buffer[bfr-\/>c\_ix++] = d;                                                                               \(\backslash\)}
+\DoxyCodeLine{    if(bfr-\/>c\_ix == bfr-\/>bfr\_len) bfr-\/>c\_ix = 0;                                                                \(\backslash\)}
+\DoxyCodeLine{\}                                                                                                               \(\backslash\)}
+\DoxyCodeLine{static inline type util\_buffer\_\textcolor{preprocessor}{\#\#name\#\#\_get(UTIL\_BUFFER\_\#\#name\#\#\_t * bfr) \{                                     \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    type tmp = bfr-\/>buffer[bfr-\/>l\_ix++];                                                                        \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    if(bfr-\/>l\_ix == bfr-\/>bfr\_len) bfr-\/>l\_ix=0;                                                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    return tmp;                                                                                                 \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{static inline type util\_buffer\_\#\#name\#\#\_access(UTIL\_BUFFER\_\#\#name\#\#\_t * bfr, uint16\_t ix) \{                     \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    int16\_t i = bfr-\/>c\_ix -\/ ix -\/ 1;                                                                             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    while(i < 0) i += bfr-\/>bfr\_len;                                                                             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    return bfr-\/>buffer[i];                                                                                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}                                                                                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{static inline uint8\_t util\_buffer\_\#\#name\#\#\_isempty(UTIL\_BUFFER\_\#\#name\#\#\_t * bfr) \{                              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    return bfr-\/>l\_ix == bfr-\/>c\_ix;                                                                              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{util_8h_af83fcdb80bf796775c79e596f9ab740b}\label{util_8h_af83fcdb80bf796775c79e596f9ab740b}} 
+\index{util.h@{util.h}!WRITE\_IN\_REG@{WRITE\_IN\_REG}}
+\index{WRITE\_IN\_REG@{WRITE\_IN\_REG}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{WRITE\_IN\_REG}{WRITE\_IN\_REG}}
+{\footnotesize\ttfamily \#define WRITE\+\_\+\+IN\+\_\+\+REG(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{mask,  }\item[{}]{data }\end{DoxyParamCaption})~(reg) \&= $\sim$(mask); (reg) $\vert$= (data)}
+
+
+
+Macro to write masked data into a register. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}\label{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}} 
+\index{util.h@{util.h}!util\_buffer\_i16\_t@{util\_buffer\_i16\_t}}
+\index{util\_buffer\_i16\_t@{util\_buffer\_i16\_t}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_i16\_t}{util\_buffer\_i16\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structutil__buffer__i16}{util\+\_\+buffer\+\_\+i16}} \mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}}}
+
+\mbox{\Hypertarget{util_8h_ac1bba7b46933b53e06b99250c9aeb211}\label{util_8h_ac1bba7b46933b53e06b99250c9aeb211}} 
+\index{util.h@{util.h}!util\_buffer\_u16\_t@{util\_buffer\_u16\_t}}
+\index{util\_buffer\_u16\_t@{util\_buffer\_u16\_t}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u16\_t}{util\_buffer\_u16\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structutil__buffer__u16}{util\+\_\+buffer\+\_\+u16}} \mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}}}
+
+\mbox{\Hypertarget{util_8h_ac419ef8010273def92ad5943135df2bb}\label{util_8h_ac419ef8010273def92ad5943135df2bb}} 
+\index{util.h@{util.h}!util\_buffer\_u8\_t@{util\_buffer\_u8\_t}}
+\index{util\_buffer\_u8\_t@{util\_buffer\_u8\_t}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u8\_t}{util\_buffer\_u8\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structutil__buffer__u8}{util\+\_\+buffer\+\_\+u8}} \mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}}}
+
+\mbox{\Hypertarget{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}\label{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}} 
+\index{util.h@{util.h}!util\_error\_t@{util\_error\_t}}
+\index{util\_error\_t@{util\_error\_t}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_error\_t}{util\_error\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7}{util\+\_\+error}} \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}}
+
+
+
+Unified error codes for the whole Wildhorn\+AV project. 
+
+\begin{DoxyNote}{Note}
+The error codes can be ORed together to create more complex errors. 
+\end{DoxyNote}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7}\label{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7}} 
+\index{util.h@{util.h}!util\_error@{util\_error}}
+\index{util\_error@{util\_error}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_error}{util\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7}{util\+\_\+error}}}
+
+
+
+Unified error codes for the whole Wildhorn\+AV project. 
+
+\begin{DoxyNote}{Note}
+The error codes can be ORed together to create more complex errors. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ER\_SUCCESS@{ER\_SUCCESS}!util.h@{util.h}}\index{util.h@{util.h}!ER\_SUCCESS@{ER\_SUCCESS}}}\mbox{\Hypertarget{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7ac92c1d77c6ea7ec8e48756f5b0c9acb2}\label{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7ac92c1d77c6ea7ec8e48756f5b0c9acb2}} 
+ER\+\_\+\+SUCCESS&Operation completed successfully \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ER\_DATA\_NOT\_RDY@{ER\_DATA\_NOT\_RDY}!util.h@{util.h}}\index{util.h@{util.h}!ER\_DATA\_NOT\_RDY@{ER\_DATA\_NOT\_RDY}}}\mbox{\Hypertarget{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a7db26982d5ee6e7d5eb2f511f878e8b6}\label{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a7db26982d5ee6e7d5eb2f511f878e8b6}} 
+ER\+\_\+\+DATA\+\_\+\+NOT\+\_\+\+RDY&Error due to lack of readiness \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ER\_FAILURE@{ER\_FAILURE}!util.h@{util.h}}\index{util.h@{util.h}!ER\_FAILURE@{ER\_FAILURE}}}\mbox{\Hypertarget{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a90eca655b6ffe0de0589a2fa3e2b7041}\label{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a90eca655b6ffe0de0589a2fa3e2b7041}} 
+ER\+\_\+\+FAILURE&Error due to a generic failure \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ER\_OUT\_OF\_RANGE@{ER\_OUT\_OF\_RANGE}!util.h@{util.h}}\index{util.h@{util.h}!ER\_OUT\_OF\_RANGE@{ER\_OUT\_OF\_RANGE}}}\mbox{\Hypertarget{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a78b9394af0a3554ae50df07b765a1158}\label{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a78b9394af0a3554ae50df07b765a1158}} 
+ER\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE&Error due to a range issue \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ER\_TIMEOUT@{ER\_TIMEOUT}!util.h@{util.h}}\index{util.h@{util.h}!ER\_TIMEOUT@{ER\_TIMEOUT}}}\mbox{\Hypertarget{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7ac4c2c8fe486838aee543ee531df62f60}\label{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7ac4c2c8fe486838aee543ee531df62f60}} 
+ER\+\_\+\+TIMEOUT&Error due to a timeout \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ER\_RESSOURCE\_ERROR@{ER\_RESSOURCE\_ERROR}!util.h@{util.h}}\index{util.h@{util.h}!ER\_RESSOURCE\_ERROR@{ER\_RESSOURCE\_ERROR}}}\mbox{\Hypertarget{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a34cc83ba9a510ffed79920bf622b22cd}\label{util_8h_ac063b78dfbf0a7cf3a8bba0150cf75e7a34cc83ba9a510ffed79920bf622b22cd}} 
+ER\+\_\+\+RESSOURCE\+\_\+\+ERROR&Error due to a ressource issue \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{util_8h_a2e51ef301a08c6d39db9cd96cb91e366}\label{util_8h_a2e51ef301a08c6d39db9cd96cb91e366}} 
+\index{util.h@{util.h}!util\_buffer\_i16\_add@{util\_buffer\_i16\_add}}
+\index{util\_buffer\_i16\_add@{util\_buffer\_i16\_add}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_i16\_add()}{util\_buffer\_i16\_add()}}
+{\footnotesize\ttfamily static void util\+\_\+buffer\+\_\+i16\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$}]{bfr,  }\item[{int16\+\_\+t}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+i16\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+i16\+::buffer, and util\+\_\+buffer\+\_\+i16\+::c\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_afbb668489202d86ca0c8c1a3f70468ac}\label{util_8h_afbb668489202d86ca0c8c1a3f70468ac}} 
+\index{util.h@{util.h}!util\_buffer\_i16\_get@{util\_buffer\_i16\_get}}
+\index{util\_buffer\_i16\_get@{util\_buffer\_i16\_get}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_i16\_get()}{util\_buffer\_i16\_get()}}
+{\footnotesize\ttfamily static int16\+\_\+t util\+\_\+buffer\+\_\+i16\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$}]{bfr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+i16\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+i16\+::buffer, and util\+\_\+buffer\+\_\+i16\+::l\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_a7b2fe36eca02bbf54a8f26a9a0c4d425}\label{util_8h_a7b2fe36eca02bbf54a8f26a9a0c4d425}} 
+\index{util.h@{util.h}!util\_buffer\_i16\_init@{util\_buffer\_i16\_init}}
+\index{util\_buffer\_i16\_init@{util\_buffer\_i16\_init}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_i16\_init()}{util\_buffer\_i16\_init()}}
+{\footnotesize\ttfamily static void util\+\_\+buffer\+\_\+i16\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$}]{bfr,  }\item[{int16\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{bfr\+\_\+len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+i16\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+i16\+::buffer, util\+\_\+buffer\+\_\+i16\+::c\+\_\+ix, and util\+\_\+buffer\+\_\+i16\+::l\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_ac2183b5ffd9b5f7570ed2421b4a8578b}\label{util_8h_ac2183b5ffd9b5f7570ed2421b4a8578b}} 
+\index{util.h@{util.h}!util\_buffer\_i16\_isempty@{util\_buffer\_i16\_isempty}}
+\index{util\_buffer\_i16\_isempty@{util\_buffer\_i16\_isempty}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_i16\_isempty()}{util\_buffer\_i16\_isempty()}}
+{\footnotesize\ttfamily static uint8\+\_\+t util\+\_\+buffer\+\_\+i16\+\_\+isempty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_a0f27f36667656c351a8c31e7a6eb50bf}{util\+\_\+buffer\+\_\+i16\+\_\+t}} $\ast$}]{bfr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+i16\+::c\+\_\+ix, and util\+\_\+buffer\+\_\+i16\+::l\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_a9545323cffc567c89b9d5ba4f862f4e2}\label{util_8h_a9545323cffc567c89b9d5ba4f862f4e2}} 
+\index{util.h@{util.h}!util\_buffer\_u16\_add@{util\_buffer\_u16\_add}}
+\index{util\_buffer\_u16\_add@{util\_buffer\_u16\_add}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u16\_add()}{util\_buffer\_u16\_add()}}
+{\footnotesize\ttfamily static void util\+\_\+buffer\+\_\+u16\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$}]{bfr,  }\item[{uint16\+\_\+t}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u16\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+u16\+::buffer, and util\+\_\+buffer\+\_\+u16\+::c\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_a5c443eedd1290051178b01d41b2238f0}\label{util_8h_a5c443eedd1290051178b01d41b2238f0}} 
+\index{util.h@{util.h}!util\_buffer\_u16\_get@{util\_buffer\_u16\_get}}
+\index{util\_buffer\_u16\_get@{util\_buffer\_u16\_get}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u16\_get()}{util\_buffer\_u16\_get()}}
+{\footnotesize\ttfamily static uint16\+\_\+t util\+\_\+buffer\+\_\+u16\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$}]{bfr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u16\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+u16\+::buffer, and util\+\_\+buffer\+\_\+u16\+::l\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_a082d9274c6fc67845e3d9151ce4b9a2d}\label{util_8h_a082d9274c6fc67845e3d9151ce4b9a2d}} 
+\index{util.h@{util.h}!util\_buffer\_u16\_init@{util\_buffer\_u16\_init}}
+\index{util\_buffer\_u16\_init@{util\_buffer\_u16\_init}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u16\_init()}{util\_buffer\_u16\_init()}}
+{\footnotesize\ttfamily static void util\+\_\+buffer\+\_\+u16\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$}]{bfr,  }\item[{uint16\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{bfr\+\_\+len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u16\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+u16\+::buffer, util\+\_\+buffer\+\_\+u16\+::c\+\_\+ix, and util\+\_\+buffer\+\_\+u16\+::l\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_abfe37998db9936a44f88eb49e5d75300}\label{util_8h_abfe37998db9936a44f88eb49e5d75300}} 
+\index{util.h@{util.h}!util\_buffer\_u16\_isempty@{util\_buffer\_u16\_isempty}}
+\index{util\_buffer\_u16\_isempty@{util\_buffer\_u16\_isempty}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u16\_isempty()}{util\_buffer\_u16\_isempty()}}
+{\footnotesize\ttfamily static uint8\+\_\+t util\+\_\+buffer\+\_\+u16\+\_\+isempty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac1bba7b46933b53e06b99250c9aeb211}{util\+\_\+buffer\+\_\+u16\+\_\+t}} $\ast$}]{bfr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u16\+::c\+\_\+ix, and util\+\_\+buffer\+\_\+u16\+::l\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_a978379d72cc0c2a1bc308a6b2879f84b}\label{util_8h_a978379d72cc0c2a1bc308a6b2879f84b}} 
+\index{util.h@{util.h}!util\_buffer\_u8\_access@{util\_buffer\_u8\_access}}
+\index{util\_buffer\_u8\_access@{util\_buffer\_u8\_access}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u8\_access()}{util\_buffer\_u8\_access()}}
+{\footnotesize\ttfamily static uint8\+\_\+t util\+\_\+buffer\+\_\+u8\+\_\+access (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$}]{bfr,  }\item[{int16\+\_\+t}]{ix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u8\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+u8\+::buffer, and util\+\_\+buffer\+\_\+u8\+::c\+\_\+ix.
+
+\mbox{\Hypertarget{util_8h_a765f8586354208e56bf7d414fb8906ae}\label{util_8h_a765f8586354208e56bf7d414fb8906ae}} 
+\index{util.h@{util.h}!util\_buffer\_u8\_add@{util\_buffer\_u8\_add}}
+\index{util\_buffer\_u8\_add@{util\_buffer\_u8\_add}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u8\_add()}{util\_buffer\_u8\_add()}}
+{\footnotesize\ttfamily static void util\+\_\+buffer\+\_\+u8\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$}]{bfr,  }\item[{uint8\+\_\+t}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u8\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+u8\+::buffer, and util\+\_\+buffer\+\_\+u8\+::c\+\_\+ix.
+
+
+
+Referenced by HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h_a765f8586354208e56bf7d414fb8906ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a7380877202d2b7868d7d2282a8ae77b8}\label{util_8h_a7380877202d2b7868d7d2282a8ae77b8}} 
+\index{util.h@{util.h}!util\_buffer\_u8\_get@{util\_buffer\_u8\_get}}
+\index{util\_buffer\_u8\_get@{util\_buffer\_u8\_get}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u8\_get()}{util\_buffer\_u8\_get()}}
+{\footnotesize\ttfamily static uint8\+\_\+t util\+\_\+buffer\+\_\+u8\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$}]{bfr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u8\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+u8\+::buffer, and util\+\_\+buffer\+\_\+u8\+::l\+\_\+ix.
+
+
+
+Referenced by serial\+\_\+recv().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h_a7380877202d2b7868d7d2282a8ae77b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a33e9e3d0f064d38a99efa8b72ae7c9d5}\label{util_8h_a33e9e3d0f064d38a99efa8b72ae7c9d5}} 
+\index{util.h@{util.h}!util\_buffer\_u8\_init@{util\_buffer\_u8\_init}}
+\index{util\_buffer\_u8\_init@{util\_buffer\_u8\_init}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u8\_init()}{util\_buffer\_u8\_init()}}
+{\footnotesize\ttfamily static void util\+\_\+buffer\+\_\+u8\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$}]{bfr,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{bfr\+\_\+len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u8\+::bfr\+\_\+len, util\+\_\+buffer\+\_\+u8\+::buffer, util\+\_\+buffer\+\_\+u8\+::c\+\_\+ix, and util\+\_\+buffer\+\_\+u8\+::l\+\_\+ix.
+
+
+
+Referenced by serial\+\_\+setup\+\_\+reception().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h_a33e9e3d0f064d38a99efa8b72ae7c9d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a8a45ea6e7c44e4c999d1fa69f5c05574}\label{util_8h_a8a45ea6e7c44e4c999d1fa69f5c05574}} 
+\index{util.h@{util.h}!util\_buffer\_u8\_isempty@{util\_buffer\_u8\_isempty}}
+\index{util\_buffer\_u8\_isempty@{util\_buffer\_u8\_isempty}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_buffer\_u8\_isempty()}{util\_buffer\_u8\_isempty()}}
+{\footnotesize\ttfamily static uint8\+\_\+t util\+\_\+buffer\+\_\+u8\+\_\+isempty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{util_8h_ac419ef8010273def92ad5943135df2bb}{util\+\_\+buffer\+\_\+u8\+\_\+t}} $\ast$}]{bfr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+References util\+\_\+buffer\+\_\+u8\+::c\+\_\+ix, and util\+\_\+buffer\+\_\+u8\+::l\+\_\+ix.
+
+
+
+Referenced by serial\+\_\+recv().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h_a8a45ea6e7c44e4c999d1fa69f5c05574_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a4bbb13e4f3f6d787ead1dcd41713bb7f}\label{util_8h_a4bbb13e4f3f6d787ead1dcd41713bb7f}} 
+\index{util.h@{util.h}!util\_decode\_i16@{util\_decode\_i16}}
+\index{util\_decode\_i16@{util\_decode\_i16}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_decode\_i16()}{util\_decode\_i16()}}
+{\footnotesize\ttfamily static int16\+\_\+t util\+\_\+decode\+\_\+i16 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+read\+\_\+i16().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{util_8h_a4bbb13e4f3f6d787ead1dcd41713bb7f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a74eb5a7c316313dcda94e0d00f4730fb}\label{util_8h_a74eb5a7c316313dcda94e0d00f4730fb}} 
+\index{util.h@{util.h}!util\_decode\_i32@{util\_decode\_i32}}
+\index{util\_decode\_i32@{util\_decode\_i32}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_decode\_i32()}{util\_decode\_i32()}}
+{\footnotesize\ttfamily static int32\+\_\+t util\+\_\+decode\+\_\+i32 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+read\+\_\+i32().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{util_8h_a74eb5a7c316313dcda94e0d00f4730fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_ab6dc953e97e3ebc9104fcc116a1a0cf6}\label{util_8h_ab6dc953e97e3ebc9104fcc116a1a0cf6}} 
+\index{util.h@{util.h}!util\_decode\_i8@{util\_decode\_i8}}
+\index{util\_decode\_i8@{util\_decode\_i8}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_decode\_i8()}{util\_decode\_i8()}}
+{\footnotesize\ttfamily static int8\+\_\+t util\+\_\+decode\+\_\+i8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+read\+\_\+i8().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{util_8h_ab6dc953e97e3ebc9104fcc116a1a0cf6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a00e8ed41117a61ef0d5662178390358c}\label{util_8h_a00e8ed41117a61ef0d5662178390358c}} 
+\index{util.h@{util.h}!util\_decode\_u16@{util\_decode\_u16}}
+\index{util\_decode\_u16@{util\_decode\_u16}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_decode\_u16()}{util\_decode\_u16()}}
+{\footnotesize\ttfamily static uint16\+\_\+t util\+\_\+decode\+\_\+u16 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+read\+\_\+u16().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{util_8h_a00e8ed41117a61ef0d5662178390358c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a9e97e80d045d0cdb63f4b9a63e1a1f48}\label{util_8h_a9e97e80d045d0cdb63f4b9a63e1a1f48}} 
+\index{util.h@{util.h}!util\_decode\_u32@{util\_decode\_u32}}
+\index{util\_decode\_u32@{util\_decode\_u32}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_decode\_u32()}{util\_decode\_u32()}}
+{\footnotesize\ttfamily static uint32\+\_\+t util\+\_\+decode\+\_\+u32 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+read\+\_\+u32().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{util_8h_a9e97e80d045d0cdb63f4b9a63e1a1f48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a717487c53311650e5229f3e1e909f035}\label{util_8h_a717487c53311650e5229f3e1e909f035}} 
+\index{util.h@{util.h}!util\_decode\_u8@{util\_decode\_u8}}
+\index{util\_decode\_u8@{util\_decode\_u8}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_decode\_u8()}{util\_decode\_u8()}}
+{\footnotesize\ttfamily static uint8\+\_\+t util\+\_\+decode\+\_\+u8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+read\+\_\+u8().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{util_8h_a717487c53311650e5229f3e1e909f035_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_abd385271c8ae6a6c43597917518bc8c3}\label{util_8h_abd385271c8ae6a6c43597917518bc8c3}} 
+\index{util.h@{util.h}!util\_encode\_i16@{util\_encode\_i16}}
+\index{util\_encode\_i16@{util\_encode\_i16}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_encode\_i16()}{util\_encode\_i16()}}
+{\footnotesize\ttfamily static void util\+\_\+encode\+\_\+i16 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+write\+\_\+i16().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{util_8h_abd385271c8ae6a6c43597917518bc8c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a824b9ad8bda8eb404ceea1fa2eefc9bc}\label{util_8h_a824b9ad8bda8eb404ceea1fa2eefc9bc}} 
+\index{util.h@{util.h}!util\_encode\_i32@{util\_encode\_i32}}
+\index{util\_encode\_i32@{util\_encode\_i32}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_encode\_i32()}{util\_encode\_i32()}}
+{\footnotesize\ttfamily static void util\+\_\+encode\+\_\+i32 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+write\+\_\+i32().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{util_8h_a824b9ad8bda8eb404ceea1fa2eefc9bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a547fe22573ad9d652b7205e26d6a79c2}\label{util_8h_a547fe22573ad9d652b7205e26d6a79c2}} 
+\index{util.h@{util.h}!util\_encode\_i8@{util\_encode\_i8}}
+\index{util\_encode\_i8@{util\_encode\_i8}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_encode\_i8()}{util\_encode\_i8()}}
+{\footnotesize\ttfamily static void util\+\_\+encode\+\_\+i8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+write\+\_\+i8().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{util_8h_a547fe22573ad9d652b7205e26d6a79c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a95fb17930a8de468e638a31a64204187}\label{util_8h_a95fb17930a8de468e638a31a64204187}} 
+\index{util.h@{util.h}!util\_encode\_u16@{util\_encode\_u16}}
+\index{util\_encode\_u16@{util\_encode\_u16}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_encode\_u16()}{util\_encode\_u16()}}
+{\footnotesize\ttfamily static void util\+\_\+encode\+\_\+u16 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+write\+\_\+u16().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{util_8h_a95fb17930a8de468e638a31a64204187_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_a1915932b50d0b3bbf18864c63ce2a277}\label{util_8h_a1915932b50d0b3bbf18864c63ce2a277}} 
+\index{util.h@{util.h}!util\_encode\_u32@{util\_encode\_u32}}
+\index{util\_encode\_u32@{util\_encode\_u32}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_encode\_u32()}{util\_encode\_u32()}}
+{\footnotesize\ttfamily static void util\+\_\+encode\+\_\+u32 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+write\+\_\+u32().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{util_8h_a1915932b50d0b3bbf18864c63ce2a277_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{util_8h_ad81f8781a822f9083a753d0f72c23cb8}\label{util_8h_ad81f8781a822f9083a753d0f72c23cb8}} 
+\index{util.h@{util.h}!util\_encode\_u8@{util\_encode\_u8}}
+\index{util\_encode\_u8@{util\_encode\_u8}!util.h@{util.h}}
+\doxysubsubsection{\texorpdfstring{util\_encode\_u8()}{util\_encode\_u8()}}
+{\footnotesize\ttfamily static void util\+\_\+encode\+\_\+u8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Referenced by device\+\_\+write\+\_\+u8().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{util_8h_ad81f8781a822f9083a753d0f72c23cb8_icgraph}
+\end{center}
+\end{figure}

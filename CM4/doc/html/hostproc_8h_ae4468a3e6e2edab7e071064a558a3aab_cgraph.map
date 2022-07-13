@@ -1,0 +1,8 @@
+<map id="hostproc_init" name="hostproc_init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,112,108"/>
+<area shape="rect" id="node2" href="$device_8c.html#a8f74c3046fc52d8fc597787db18196f5" title="Initialize a device interface instance." alt="" coords="160,5,339,32"/>
+<area shape="rect" id="node3" href="$hostproc_8c.html#aa0f40f23ad9519285d338bd43363c71f" title=" " alt="" coords="207,56,292,83"/>
+<area shape="rect" id="node4" href="$hostproc_8c.html#a8eb11984d2a8ca04077b2f90e628c5cf" title=" " alt="" coords="205,107,293,133"/>
+<area shape="rect" id="node5" href="$hostproc_8c.html#a34935a7a459d2999d0300e6ad3e38362" title=" " alt="" coords="187,157,312,184"/>
+<area shape="rect" id="node6" href="$led_8c.html#ade6bdac7c83c0d5970b09caca131f7b6" title="Set RBG LED color using r, g, b values." alt="" coords="387,157,512,184"/>
+</map>

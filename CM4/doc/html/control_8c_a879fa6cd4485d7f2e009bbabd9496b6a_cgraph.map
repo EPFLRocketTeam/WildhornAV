@@ -1,0 +1,6 @@
+<map id="control_thread" name="control_thread">
+<area shape="rect" id="node1" title="Control thread entry point." alt="" coords="5,56,121,83"/>
+<area shape="rect" id="node2" href="$device_8c.html#a8241a7452a61c40f99634701e0465b8a" title="Send raw data through the interface specific send function." alt="" coords="171,5,339,32"/>
+<area shape="rect" id="node3" href="$hostproc_8c.html#ae883ea2a1d7b023c7d9e3446634b0dda" title=" " alt="" coords="169,56,340,83"/>
+<area shape="rect" id="node4" href="$led_8c.html#ade6bdac7c83c0d5970b09caca131f7b6" title="Set RBG LED color using r, g, b values." alt="" coords="192,107,317,133"/>
+</map>

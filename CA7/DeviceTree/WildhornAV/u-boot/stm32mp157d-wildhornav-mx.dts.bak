@@ -95,7 +95,7 @@
 	};
 	
 	chosen{
-		stdout-path = "serial0:115200n8";
+		stdout-path = "serial0:921600n8";
 	};
 
 	vin:vin{
@@ -882,6 +882,20 @@
 
 	/* USER CODE BEGIN uart8 */
 	/* USER CODE END uart8 */
+};
+
+&usbh_ehci{
+	status = "okay";
+
+	/* USER CODE BEGIN usbh_ehci */
+	/* USER CODE END usbh_ehci */
+};
+
+&usbh_ohci{
+	status = "okay";
+
+	/* USER CODE BEGIN usbh_ohci */
+	/* USER CODE END usbh_ohci */
 };
 
 &usbotg_hs{

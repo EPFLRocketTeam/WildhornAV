@@ -1,0 +1,612 @@
+\hypertarget{control_8c}{}\doxysection{control.\+c File Reference}
+\label{control_8c}\index{control.c@{control.c}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$gpio.\+h$>$}\newline
+{\ttfamily \#include $<$usart.\+h$>$}\newline
+{\ttfamily \#include $<$cmsis\+\_\+os.\+h$>$}\newline
+{\ttfamily \#include $<$driver/serial.\+h$>$}\newline
+{\ttfamily \#include $<$device/device.\+h$>$}\newline
+{\ttfamily \#include $<$device/i2c\+\_\+sensor.\+h$>$}\newline
+{\ttfamily \#include $<$device/hostproc.\+h$>$}\newline
+{\ttfamily \#include $<$control.\+h$>$}\newline
+{\ttfamily \#include $<$feedback/led.\+h$>$}\newline
+{\ttfamily \#include $<$feedback/buzzer.\+h$>$}\newline
+Include dependency graph for control.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{control_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcontrol}{control}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{control_8c_a491d7cc1940114b8f327a9dd77ebf38c}{CONTROL\+\_\+\+HEART\+\_\+\+BEAT}}~200
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38}{control\+\_\+state}} \mbox{\hyperlink{control_8c_aa36246b0b42a653ac18ebfe1865baf3e}{control\+\_\+state\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em State of the control FSM. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structcontrol}{control}} \mbox{\hyperlink{control_8c_a24790f3f10fa27523f51f05cd71cf94e}{control\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38}{control\+\_\+state}} \{ \newline
+\mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a708d16880ce8c279850514ebd681cf9d}{CONTROL\+\_\+\+IDLE}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a034e1cb357a8482cc0a2f43734246b9d}{CONTROL\+\_\+\+CALIBRATION}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38aef94f6b0568f823b0c97ab6f1dcf36cb}{CONTROL\+\_\+\+ARMED}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38ad37ea0b446eba45da436baa58acef070}{CONTROL\+\_\+\+POWERED}}
+, \newline
+\mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a316ceb9e1514310b97fcd5ad2c49f8a9}{CONTROL\+\_\+\+SUPERSONIC}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a372131b234084f74470673e2964a820f}{CONTROL\+\_\+\+COAST}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a0fed264744bcf04ac0ec943ae0d4e95e}{CONTROL\+\_\+\+APOGEE}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a87f14689cd5aced879c87a269c51fd6a}{CONTROL\+\_\+\+DROGUE}}
+, \newline
+\mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a78af2b05b310e67cbbad78bb582e2b4b}{CONTROL\+\_\+\+EVENT}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a6facb8978df11b20b1a78f2b3e52005b}{CONTROL\+\_\+\+MAIN}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38ad2d6a1f2d96c7ff4ceff470a91dcb692}{CONTROL\+\_\+\+TOUCHDOWN}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a25c5f5f8307176931882fc3bc9882145}{CONTROL\+\_\+\+BALLISTIC}}
+, \newline
+\mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38ab3720f25f351fb99c208e0949be4acbb}{CONTROL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38a7966f5b81cc734c411c22f17e164ac2d}{CONTROL\+\_\+\+ABORT}}
+ \}
+\begin{DoxyCompactList}\small\item\em State of the control FSM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{control_8c_acbc1e1ea8cd4fc775cf87f86dbe9dcdd}{control\+\_\+idle\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Idle state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a9ab6249d964f651ba98da64b1f2a9942}{control\+\_\+idle\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Idle state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a15ddc2fae90ee848a28f7edd873a6c27}{control\+\_\+calibration\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Calibration state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a9c067cb7190e29812ecfd896c3c0ccc5}{control\+\_\+calibration\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Calibration state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a7b1bbee3267c7aba59c12553e5d8ddfa}{control\+\_\+armed\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Armed state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a7abf0a6692b4fb24b606649c5e1b0860}{control\+\_\+armed\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Armed state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a2d3139f56f73da29758e39642c59f555}{control\+\_\+powered\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Powered state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_ae6300135aee8e1149456d4c06bb0af05}{control\+\_\+powered\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Powered state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a493ce51baed96c7d1240cff7fde37274}{control\+\_\+supersonic\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Supersonic state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a55d9274014690b8b1821d8be1f8f32ad}{control\+\_\+supersonic\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Supersonic state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a17ef432fddf275bf6b18e5ebaaa1b457}{control\+\_\+coast\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Coast state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_aaebf5e1004d6eac293b661c67adcfd14}{control\+\_\+coast\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Coast state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_ac107dd9bac1c7ece61bb6df5d1b81012}{control\+\_\+apogee\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Apogee state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_aab2dd88780c435a64e156234137c66fb}{control\+\_\+apogee\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Apogee state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a2329f23df04afa8c51998d9694b586b0}{control\+\_\+drogue\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Drogue state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_abbac391573439e745ed788927be9d0a7}{control\+\_\+drogue\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Drogue state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_ab6d133d5f431405399fa35fcc74f9679}{control\+\_\+event\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Event state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a3adb0a2a187574ae0dc60ab518fba81e}{control\+\_\+event\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Event state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_af3d49b93e8abc13489c2ca3f6ff496b9}{control\+\_\+main\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Main state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a13158a28a2d27ee00d7d2d022349bcb8}{control\+\_\+main\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Main state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_af18115df68c760a0a5a41340e609dd29}{control\+\_\+touchdown\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Touchdown state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a6b9b6052183457f0d4ff15beda63e882}{control\+\_\+touchdown\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Touchdown state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a0db5256a478820a3159203abea213c65}{control\+\_\+ballistic\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Ballistic state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_ade4f591f3dca086ea0245ed3f48c0199}{control\+\_\+ballistic\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Ballistic state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_aface8dff6a05b130081f6f08c9121e1a}{control\+\_\+error\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Error state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_ae4506b30ef6065023f289a030256d4f6}{control\+\_\+error\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Error state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a052b7991963d9941670a0c8df8291e19}{control\+\_\+abort\+\_\+start}} (void)
+\begin{DoxyCompactList}\small\item\em Abort state entry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_ab75a836ae4d65ee2017ee3eb256fcdf7}{control\+\_\+abort\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Abort state runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{control_8c_a879fa6cd4485d7f2e009bbabd9496b6a}{control\+\_\+thread}} (\+\_\+\+\_\+attribute\+\_\+\+\_\+((unused)) void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Control thread entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{control_8c_a24790f3f10fa27523f51f05cd71cf94e}{control\+\_\+t}} \mbox{\hyperlink{control_8c_a14d5f01d5bb8d1c89a49385a6690f8ed}{control}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{control_8c_a491d7cc1940114b8f327a9dd77ebf38c}\label{control_8c_a491d7cc1940114b8f327a9dd77ebf38c}} 
+\index{control.c@{control.c}!CONTROL\_HEART\_BEAT@{CONTROL\_HEART\_BEAT}}
+\index{CONTROL\_HEART\_BEAT@{CONTROL\_HEART\_BEAT}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{CONTROL\_HEART\_BEAT}{CONTROL\_HEART\_BEAT}}
+{\footnotesize\ttfamily \#define CONTROL\+\_\+\+HEART\+\_\+\+BEAT~200}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{control_8c_aa36246b0b42a653ac18ebfe1865baf3e}\label{control_8c_aa36246b0b42a653ac18ebfe1865baf3e}} 
+\index{control.c@{control.c}!control\_state\_t@{control\_state\_t}}
+\index{control\_state\_t@{control\_state\_t}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_state\_t}{control\_state\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38}{control\+\_\+state}} \mbox{\hyperlink{control_8c_aa36246b0b42a653ac18ebfe1865baf3e}{control\+\_\+state\+\_\+t}}}
+
+
+
+State of the control FSM. 
+
+\mbox{\Hypertarget{control_8c_a24790f3f10fa27523f51f05cd71cf94e}\label{control_8c_a24790f3f10fa27523f51f05cd71cf94e}} 
+\index{control.c@{control.c}!control\_t@{control\_t}}
+\index{control\_t@{control\_t}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_t}{control\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcontrol}{control}} \mbox{\hyperlink{control_8c_a24790f3f10fa27523f51f05cd71cf94e}{control\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38}} 
+\index{control.c@{control.c}!control\_state@{control\_state}}
+\index{control\_state@{control\_state}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_state}{control\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{control_8c_a96d4f863f5bed95285925b778dfa9e38}{control\+\_\+state}}}
+
+
+
+State of the control FSM. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_IDLE@{CONTROL\_IDLE}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_IDLE@{CONTROL\_IDLE}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a708d16880ce8c279850514ebd681cf9d}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a708d16880ce8c279850514ebd681cf9d}} 
+CONTROL\+\_\+\+IDLE&Wait for arming or calibration \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_CALIBRATION@{CONTROL\_CALIBRATION}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_CALIBRATION@{CONTROL\_CALIBRATION}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a034e1cb357a8482cc0a2f43734246b9d}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a034e1cb357a8482cc0a2f43734246b9d}} 
+CONTROL\+\_\+\+CALIBRATION&Calibrate sensors and actuators \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_ARMED@{CONTROL\_ARMED}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_ARMED@{CONTROL\_ARMED}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38aef94f6b0568f823b0c97ab6f1dcf36cb}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38aef94f6b0568f823b0c97ab6f1dcf36cb}} 
+CONTROL\+\_\+\+ARMED&Armed, wait for liftoff \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_POWERED@{CONTROL\_POWERED}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_POWERED@{CONTROL\_POWERED}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38ad37ea0b446eba45da436baa58acef070}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38ad37ea0b446eba45da436baa58acef070}} 
+CONTROL\+\_\+\+POWERED&Powered ascent \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_SUPERSONIC@{CONTROL\_SUPERSONIC}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_SUPERSONIC@{CONTROL\_SUPERSONIC}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a316ceb9e1514310b97fcd5ad2c49f8a9}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a316ceb9e1514310b97fcd5ad2c49f8a9}} 
+CONTROL\+\_\+\+SUPERSONIC&Supersonic flight \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_COAST@{CONTROL\_COAST}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_COAST@{CONTROL\_COAST}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a372131b234084f74470673e2964a820f}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a372131b234084f74470673e2964a820f}} 
+CONTROL\+\_\+\+COAST&Subsonic, coast flight \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_APOGEE@{CONTROL\_APOGEE}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_APOGEE@{CONTROL\_APOGEE}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a0fed264744bcf04ac0ec943ae0d4e95e}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a0fed264744bcf04ac0ec943ae0d4e95e}} 
+CONTROL\+\_\+\+APOGEE&Apogee reached, trigger first event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_DROGUE@{CONTROL\_DROGUE}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_DROGUE@{CONTROL\_DROGUE}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a87f14689cd5aced879c87a269c51fd6a}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a87f14689cd5aced879c87a269c51fd6a}} 
+CONTROL\+\_\+\+DROGUE&Drogue chute descent, wait for second event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_EVENT@{CONTROL\_EVENT}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_EVENT@{CONTROL\_EVENT}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a78af2b05b310e67cbbad78bb582e2b4b}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a78af2b05b310e67cbbad78bb582e2b4b}} 
+CONTROL\+\_\+\+EVENT&Low alt reached, trigger second event \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_MAIN@{CONTROL\_MAIN}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_MAIN@{CONTROL\_MAIN}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a6facb8978df11b20b1a78f2b3e52005b}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a6facb8978df11b20b1a78f2b3e52005b}} 
+CONTROL\+\_\+\+MAIN&Main chute descent, wait for touchdown \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_TOUCHDOWN@{CONTROL\_TOUCHDOWN}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_TOUCHDOWN@{CONTROL\_TOUCHDOWN}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38ad2d6a1f2d96c7ff4ceff470a91dcb692}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38ad2d6a1f2d96c7ff4ceff470a91dcb692}} 
+CONTROL\+\_\+\+TOUCHDOWN&Touchdown detected, end of the flight \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_BALLISTIC@{CONTROL\_BALLISTIC}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_BALLISTIC@{CONTROL\_BALLISTIC}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a25c5f5f8307176931882fc3bc9882145}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a25c5f5f8307176931882fc3bc9882145}} 
+CONTROL\+\_\+\+BALLISTIC&Ballistic flight detected \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_ERROR@{CONTROL\_ERROR}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_ERROR@{CONTROL\_ERROR}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38ab3720f25f351fb99c208e0949be4acbb}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38ab3720f25f351fb99c208e0949be4acbb}} 
+CONTROL\+\_\+\+ERROR&Auto triggered error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_ABORT@{CONTROL\_ABORT}!control.c@{control.c}}\index{control.c@{control.c}!CONTROL\_ABORT@{CONTROL\_ABORT}}}\mbox{\Hypertarget{control_8c_a96d4f863f5bed95285925b778dfa9e38a7966f5b81cc734c411c22f17e164ac2d}\label{control_8c_a96d4f863f5bed95285925b778dfa9e38a7966f5b81cc734c411c22f17e164ac2d}} 
+CONTROL\+\_\+\+ABORT&User triggered error \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{control_8c_ab75a836ae4d65ee2017ee3eb256fcdf7}\label{control_8c_ab75a836ae4d65ee2017ee3eb256fcdf7}} 
+\index{control.c@{control.c}!control\_abort\_run@{control\_abort\_run}}
+\index{control\_abort\_run@{control\_abort\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_abort\_run()}{control\_abort\_run()}}
+{\footnotesize\ttfamily void control\+\_\+abort\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Abort state runtime. 
+
+\mbox{\Hypertarget{control_8c_a052b7991963d9941670a0c8df8291e19}\label{control_8c_a052b7991963d9941670a0c8df8291e19}} 
+\index{control.c@{control.c}!control\_abort\_start@{control\_abort\_start}}
+\index{control\_abort\_start@{control\_abort\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_abort\_start()}{control\_abort\_start()}}
+{\footnotesize\ttfamily void control\+\_\+abort\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Abort state entry. 
+
+
+
+References CONTROL\+\_\+\+ABORT, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_aab2dd88780c435a64e156234137c66fb}\label{control_8c_aab2dd88780c435a64e156234137c66fb}} 
+\index{control.c@{control.c}!control\_apogee\_run@{control\_apogee\_run}}
+\index{control\_apogee\_run@{control\_apogee\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_apogee\_run()}{control\_apogee\_run()}}
+{\footnotesize\ttfamily void control\+\_\+apogee\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Apogee state runtime. 
+
+\mbox{\Hypertarget{control_8c_ac107dd9bac1c7ece61bb6df5d1b81012}\label{control_8c_ac107dd9bac1c7ece61bb6df5d1b81012}} 
+\index{control.c@{control.c}!control\_apogee\_start@{control\_apogee\_start}}
+\index{control\_apogee\_start@{control\_apogee\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_apogee\_start()}{control\_apogee\_start()}}
+{\footnotesize\ttfamily void control\+\_\+apogee\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Apogee state entry. 
+
+
+
+References CONTROL\+\_\+\+APOGEE, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_a7abf0a6692b4fb24b606649c5e1b0860}\label{control_8c_a7abf0a6692b4fb24b606649c5e1b0860}} 
+\index{control.c@{control.c}!control\_armed\_run@{control\_armed\_run}}
+\index{control\_armed\_run@{control\_armed\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_armed\_run()}{control\_armed\_run()}}
+{\footnotesize\ttfamily void control\+\_\+armed\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Armed state runtime. 
+
+\mbox{\Hypertarget{control_8c_a7b1bbee3267c7aba59c12553e5d8ddfa}\label{control_8c_a7b1bbee3267c7aba59c12553e5d8ddfa}} 
+\index{control.c@{control.c}!control\_armed\_start@{control\_armed\_start}}
+\index{control\_armed\_start@{control\_armed\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_armed\_start()}{control\_armed\_start()}}
+{\footnotesize\ttfamily void control\+\_\+armed\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Armed state entry. 
+
+
+
+References CONTROL\+\_\+\+ARMED, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_ade4f591f3dca086ea0245ed3f48c0199}\label{control_8c_ade4f591f3dca086ea0245ed3f48c0199}} 
+\index{control.c@{control.c}!control\_ballistic\_run@{control\_ballistic\_run}}
+\index{control\_ballistic\_run@{control\_ballistic\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_ballistic\_run()}{control\_ballistic\_run()}}
+{\footnotesize\ttfamily void control\+\_\+ballistic\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Ballistic state runtime. 
+
+\mbox{\Hypertarget{control_8c_a0db5256a478820a3159203abea213c65}\label{control_8c_a0db5256a478820a3159203abea213c65}} 
+\index{control.c@{control.c}!control\_ballistic\_start@{control\_ballistic\_start}}
+\index{control\_ballistic\_start@{control\_ballistic\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_ballistic\_start()}{control\_ballistic\_start()}}
+{\footnotesize\ttfamily void control\+\_\+ballistic\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Ballistic state entry. 
+
+
+
+References CONTROL\+\_\+\+BALLISTIC, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_a9c067cb7190e29812ecfd896c3c0ccc5}\label{control_8c_a9c067cb7190e29812ecfd896c3c0ccc5}} 
+\index{control.c@{control.c}!control\_calibration\_run@{control\_calibration\_run}}
+\index{control\_calibration\_run@{control\_calibration\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_calibration\_run()}{control\_calibration\_run()}}
+{\footnotesize\ttfamily void control\+\_\+calibration\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Calibration state runtime. 
+
+\mbox{\Hypertarget{control_8c_a15ddc2fae90ee848a28f7edd873a6c27}\label{control_8c_a15ddc2fae90ee848a28f7edd873a6c27}} 
+\index{control.c@{control.c}!control\_calibration\_start@{control\_calibration\_start}}
+\index{control\_calibration\_start@{control\_calibration\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_calibration\_start()}{control\_calibration\_start()}}
+{\footnotesize\ttfamily void control\+\_\+calibration\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Calibration state entry. 
+
+
+
+References CONTROL\+\_\+\+CALIBRATION, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_aaebf5e1004d6eac293b661c67adcfd14}\label{control_8c_aaebf5e1004d6eac293b661c67adcfd14}} 
+\index{control.c@{control.c}!control\_coast\_run@{control\_coast\_run}}
+\index{control\_coast\_run@{control\_coast\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_coast\_run()}{control\_coast\_run()}}
+{\footnotesize\ttfamily void control\+\_\+coast\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Coast state runtime. 
+
+\mbox{\Hypertarget{control_8c_a17ef432fddf275bf6b18e5ebaaa1b457}\label{control_8c_a17ef432fddf275bf6b18e5ebaaa1b457}} 
+\index{control.c@{control.c}!control\_coast\_start@{control\_coast\_start}}
+\index{control\_coast\_start@{control\_coast\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_coast\_start()}{control\_coast\_start()}}
+{\footnotesize\ttfamily void control\+\_\+coast\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Coast state entry. 
+
+
+
+References CONTROL\+\_\+\+COAST, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_abbac391573439e745ed788927be9d0a7}\label{control_8c_abbac391573439e745ed788927be9d0a7}} 
+\index{control.c@{control.c}!control\_drogue\_run@{control\_drogue\_run}}
+\index{control\_drogue\_run@{control\_drogue\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_drogue\_run()}{control\_drogue\_run()}}
+{\footnotesize\ttfamily void control\+\_\+drogue\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Drogue state runtime. 
+
+\mbox{\Hypertarget{control_8c_a2329f23df04afa8c51998d9694b586b0}\label{control_8c_a2329f23df04afa8c51998d9694b586b0}} 
+\index{control.c@{control.c}!control\_drogue\_start@{control\_drogue\_start}}
+\index{control\_drogue\_start@{control\_drogue\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_drogue\_start()}{control\_drogue\_start()}}
+{\footnotesize\ttfamily void control\+\_\+drogue\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Drogue state entry. 
+
+
+
+References CONTROL\+\_\+\+DROGUE, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_ae4506b30ef6065023f289a030256d4f6}\label{control_8c_ae4506b30ef6065023f289a030256d4f6}} 
+\index{control.c@{control.c}!control\_error\_run@{control\_error\_run}}
+\index{control\_error\_run@{control\_error\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_error\_run()}{control\_error\_run()}}
+{\footnotesize\ttfamily void control\+\_\+error\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Error state runtime. 
+
+\mbox{\Hypertarget{control_8c_aface8dff6a05b130081f6f08c9121e1a}\label{control_8c_aface8dff6a05b130081f6f08c9121e1a}} 
+\index{control.c@{control.c}!control\_error\_start@{control\_error\_start}}
+\index{control\_error\_start@{control\_error\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_error\_start()}{control\_error\_start()}}
+{\footnotesize\ttfamily void control\+\_\+error\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Error state entry. 
+
+
+
+References CONTROL\+\_\+\+ERROR, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_a3adb0a2a187574ae0dc60ab518fba81e}\label{control_8c_a3adb0a2a187574ae0dc60ab518fba81e}} 
+\index{control.c@{control.c}!control\_event\_run@{control\_event\_run}}
+\index{control\_event\_run@{control\_event\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_event\_run()}{control\_event\_run()}}
+{\footnotesize\ttfamily void control\+\_\+event\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Event state runtime. 
+
+\mbox{\Hypertarget{control_8c_ab6d133d5f431405399fa35fcc74f9679}\label{control_8c_ab6d133d5f431405399fa35fcc74f9679}} 
+\index{control.c@{control.c}!control\_event\_start@{control\_event\_start}}
+\index{control\_event\_start@{control\_event\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_event\_start()}{control\_event\_start()}}
+{\footnotesize\ttfamily void control\+\_\+event\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Event state entry. 
+
+
+
+References CONTROL\+\_\+\+EVENT, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_a9ab6249d964f651ba98da64b1f2a9942}\label{control_8c_a9ab6249d964f651ba98da64b1f2a9942}} 
+\index{control.c@{control.c}!control\_idle\_run@{control\_idle\_run}}
+\index{control\_idle\_run@{control\_idle\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_idle\_run()}{control\_idle\_run()}}
+{\footnotesize\ttfamily void control\+\_\+idle\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Idle state runtime. 
+
+\mbox{\Hypertarget{control_8c_acbc1e1ea8cd4fc775cf87f86dbe9dcdd}\label{control_8c_acbc1e1ea8cd4fc775cf87f86dbe9dcdd}} 
+\index{control.c@{control.c}!control\_idle\_start@{control\_idle\_start}}
+\index{control\_idle\_start@{control\_idle\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_idle\_start()}{control\_idle\_start()}}
+{\footnotesize\ttfamily void control\+\_\+idle\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Idle state entry. 
+
+
+
+References CONTROL\+\_\+\+IDLE, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_a13158a28a2d27ee00d7d2d022349bcb8}\label{control_8c_a13158a28a2d27ee00d7d2d022349bcb8}} 
+\index{control.c@{control.c}!control\_main\_run@{control\_main\_run}}
+\index{control\_main\_run@{control\_main\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_main\_run()}{control\_main\_run()}}
+{\footnotesize\ttfamily void control\+\_\+main\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main state runtime. 
+
+\mbox{\Hypertarget{control_8c_af3d49b93e8abc13489c2ca3f6ff496b9}\label{control_8c_af3d49b93e8abc13489c2ca3f6ff496b9}} 
+\index{control.c@{control.c}!control\_main\_start@{control\_main\_start}}
+\index{control\_main\_start@{control\_main\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_main\_start()}{control\_main\_start()}}
+{\footnotesize\ttfamily void control\+\_\+main\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main state entry. 
+
+
+
+References CONTROL\+\_\+\+MAIN, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_ae6300135aee8e1149456d4c06bb0af05}\label{control_8c_ae6300135aee8e1149456d4c06bb0af05}} 
+\index{control.c@{control.c}!control\_powered\_run@{control\_powered\_run}}
+\index{control\_powered\_run@{control\_powered\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_powered\_run()}{control\_powered\_run()}}
+{\footnotesize\ttfamily void control\+\_\+powered\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Powered state runtime. 
+
+\mbox{\Hypertarget{control_8c_a2d3139f56f73da29758e39642c59f555}\label{control_8c_a2d3139f56f73da29758e39642c59f555}} 
+\index{control.c@{control.c}!control\_powered\_start@{control\_powered\_start}}
+\index{control\_powered\_start@{control\_powered\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_powered\_start()}{control\_powered\_start()}}
+{\footnotesize\ttfamily void control\+\_\+powered\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Powered state entry. 
+
+
+
+References CONTROL\+\_\+\+POWERED, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_a55d9274014690b8b1821d8be1f8f32ad}\label{control_8c_a55d9274014690b8b1821d8be1f8f32ad}} 
+\index{control.c@{control.c}!control\_supersonic\_run@{control\_supersonic\_run}}
+\index{control\_supersonic\_run@{control\_supersonic\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_supersonic\_run()}{control\_supersonic\_run()}}
+{\footnotesize\ttfamily void control\+\_\+supersonic\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Supersonic state runtime. 
+
+\mbox{\Hypertarget{control_8c_a493ce51baed96c7d1240cff7fde37274}\label{control_8c_a493ce51baed96c7d1240cff7fde37274}} 
+\index{control.c@{control.c}!control\_supersonic\_start@{control\_supersonic\_start}}
+\index{control\_supersonic\_start@{control\_supersonic\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_supersonic\_start()}{control\_supersonic\_start()}}
+{\footnotesize\ttfamily void control\+\_\+supersonic\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Supersonic state entry. 
+
+
+
+References CONTROL\+\_\+\+SUPERSONIC, and control\+::state.
+
+\mbox{\Hypertarget{control_8c_a879fa6cd4485d7f2e009bbabd9496b6a}\label{control_8c_a879fa6cd4485d7f2e009bbabd9496b6a}} 
+\index{control.c@{control.c}!control\_thread@{control\_thread}}
+\index{control\_thread@{control\_thread}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_thread()}{control\_thread()}}
+{\footnotesize\ttfamily void control\+\_\+thread (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+attribute\+\_\+\+\_\+((unused)) void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Control thread entry point. 
+
+This thread holds the main state machine of the Wildhorn\+AV software. It will be the main decision point for actions to be taken with respect to real world events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & freertos thread entry point context (unused) \\
+\hline
+\end{DoxyParams}
+
+
+References CONTROL\+\_\+\+HEART\+\_\+\+BEAT, device\+\_\+interface\+\_\+send(), hostproc\+\_\+get\+\_\+interface(), hostproc\+\_\+interface, and led\+\_\+rgb\+\_\+set\+\_\+rgb().
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{control_8c_a879fa6cd4485d7f2e009bbabd9496b6a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{control_8c_a879fa6cd4485d7f2e009bbabd9496b6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{control_8c_a6b9b6052183457f0d4ff15beda63e882}\label{control_8c_a6b9b6052183457f0d4ff15beda63e882}} 
+\index{control.c@{control.c}!control\_touchdown\_run@{control\_touchdown\_run}}
+\index{control\_touchdown\_run@{control\_touchdown\_run}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_touchdown\_run()}{control\_touchdown\_run()}}
+{\footnotesize\ttfamily void control\+\_\+touchdown\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Touchdown state runtime. 
+
+\mbox{\Hypertarget{control_8c_af18115df68c760a0a5a41340e609dd29}\label{control_8c_af18115df68c760a0a5a41340e609dd29}} 
+\index{control.c@{control.c}!control\_touchdown\_start@{control\_touchdown\_start}}
+\index{control\_touchdown\_start@{control\_touchdown\_start}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control\_touchdown\_start()}{control\_touchdown\_start()}}
+{\footnotesize\ttfamily void control\+\_\+touchdown\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Touchdown state entry. 
+
+
+
+References CONTROL\+\_\+\+TOUCHDOWN, and control\+::state.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{control_8c_a14d5f01d5bb8d1c89a49385a6690f8ed}\label{control_8c_a14d5f01d5bb8d1c89a49385a6690f8ed}} 
+\index{control.c@{control.c}!control@{control}}
+\index{control@{control}!control.c@{control.c}}
+\doxysubsubsection{\texorpdfstring{control}{control}}
+{\footnotesize\ttfamily \mbox{\hyperlink{control_8c_a24790f3f10fa27523f51f05cd71cf94e}{control\+\_\+t}} \mbox{\hyperlink{structcontrol}{control}}}
+

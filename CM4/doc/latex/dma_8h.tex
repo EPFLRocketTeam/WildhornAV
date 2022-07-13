@@ -1,0 +1,1313 @@
+\hypertarget{dma_8h}{}\doxysection{dma.\+h File Reference}
+\label{dma_8h}\index{dma.h@{dma.h}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+Include dependency graph for dma.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{dma_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{dma_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdma__request}{dma\+\_\+request}}
+\item 
+struct \mbox{\hyperlink{structdma__stream__config}{dma\+\_\+stream\+\_\+config}}
+\item 
+struct \mbox{\hyperlink{structdma__stream__dev}{dma\+\_\+stream\+\_\+dev}}
+\item 
+struct \mbox{\hyperlink{structdma__scheduler__dev}{dma\+\_\+scheduler\+\_\+dev}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dma_8h_a0d54370a24b75569cf953ed81901a04d}{DMA\+\_\+\+STREAMS\+\_\+\+MAX\+\_\+\+LEN}}~8
+\item 
+\#define \mbox{\hyperlink{dma_8h_ab2619d72003756f07bc630b887210933}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN0}}~1
+\item 
+\#define \mbox{\hyperlink{dma_8h_a336eeca5c5fede1d3ae5db296417219c}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN1}}~2
+\item 
+\#define \mbox{\hyperlink{dma_8h_ab2e90de7100ed5187487f5eaa0fe5048}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN2}}~3
+\item 
+\#define \mbox{\hyperlink{dma_8h_afeefbd228b0a51a940c3196df0d9f1d0}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN3}}~4
+\item 
+\#define \mbox{\hyperlink{dma_8h_a5aeaabad538efc6bba9fedbddb3c1371}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN4}}~5
+\item 
+\#define \mbox{\hyperlink{dma_8h_a66fc4386e908cfe75d50c221714aab33}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN5}}~6
+\item 
+\#define \mbox{\hyperlink{dma_8h_aad4579d86968ea77b8bdee6cf0d50bbd}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN6}}~7
+\item 
+\#define \mbox{\hyperlink{dma_8h_a6d43fab20241fff72431110a1c1a2778}{STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN7}}~8
+\item 
+\#define \mbox{\hyperlink{dma_8h_a835b53e8fbb634ef25450e0fba9879c2}{STM32\+\_\+\+DMAMUX1\+\_\+\+ADC1}}~9
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7ca17f2e65be8c38ad42753ceb1b2b0e}{STM32\+\_\+\+DMAMUX1\+\_\+\+ADC2}}~10
+\item 
+\#define \mbox{\hyperlink{dma_8h_a619df6d984e165e8639bb71cdfb3e0db}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH1}}~11
+\item 
+\#define \mbox{\hyperlink{dma_8h_a90e1aee903389d80dabcb191926ce71f}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH2}}~12
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7e8139b985eeba1e346d5763f0f587bf}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH3}}~13
+\item 
+\#define \mbox{\hyperlink{dma_8h_a9ec917ee4063cdc4616d4598a91568f2}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH4}}~14
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7f82fdad7d1653a3f4b46437d226ef4e}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+UP}}~15
+\item 
+\#define \mbox{\hyperlink{dma_8h_a3d095139d43727db413664b5097315fd}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+TRIG}}~16
+\item 
+\#define \mbox{\hyperlink{dma_8h_ae01821562ab38b50c86c8aeeb3a0096b}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+COM}}~17
+\item 
+\#define \mbox{\hyperlink{dma_8h_acfc84d61366862db2f1dd7eba9e502bf}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH1}}~18
+\item 
+\#define \mbox{\hyperlink{dma_8h_a1bfdfe331b96d802788acb2acbc1f671}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH2}}~19
+\item 
+\#define \mbox{\hyperlink{dma_8h_aee9824f5ac4ddb6b9f00fb7138e08145}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH3}}~20
+\item 
+\#define \mbox{\hyperlink{dma_8h_a88294e52e9880ef1278405075248abd5}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH4}}~21
+\item 
+\#define \mbox{\hyperlink{dma_8h_af1b4afc6418008b518da7e81ebcdd7be}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+UP}}~22
+\item 
+\#define \mbox{\hyperlink{dma_8h_a5e2fb5f9dabb96b5127d144d7f31bb3f}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH1}}~23
+\item 
+\#define \mbox{\hyperlink{dma_8h_a2c367f032f164db200ae8e17a42e4de3}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH2}}~24
+\item 
+\#define \mbox{\hyperlink{dma_8h_ac5e7c7309e2627cac7e9f051caa8610b}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH3}}~25
+\item 
+\#define \mbox{\hyperlink{dma_8h_a9e0611c7c6ff837d42b92211b1742466}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH4}}~26
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7b31801c53a3a73f36651b226c9d2e28}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+UP}}~27
+\item 
+\#define \mbox{\hyperlink{dma_8h_aee5217d7888a08a5ec77d0dc2b26a8ef}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+TRIG}}~28
+\item 
+\#define \mbox{\hyperlink{dma_8h_ac8b759d787eba50ba7d056b4fd53fecb}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+CH1}}~29
+\item 
+\#define \mbox{\hyperlink{dma_8h_a452733063ed008498969c19d21196854}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+CH2}}~30
+\item 
+\#define \mbox{\hyperlink{dma_8h_a677dffedf31cdc181e96c8fe6979d1eb}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+CH3}}~31
+\item 
+\#define \mbox{\hyperlink{dma_8h_adfaae5525924f5103cde2c09f6937756}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+UP}}~32
+\item 
+\#define \mbox{\hyperlink{dma_8h_ae4782c4975f1d21f7571829013bacb59}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C1\+\_\+\+RX}}~33
+\item 
+\#define \mbox{\hyperlink{dma_8h_a9515e23fe1b610d5f65c0be6d8e6b750}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C1\+\_\+\+TX}}~34
+\item 
+\#define \mbox{\hyperlink{dma_8h_af411fb1859ad2c2008b5ec1ef9c1a70a}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C2\+\_\+\+RX}}~35
+\item 
+\#define \mbox{\hyperlink{dma_8h_aa2b400ed365fc03fe1852d636b954a80}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C2\+\_\+\+TX}}~36
+\item 
+\#define \mbox{\hyperlink{dma_8h_a1eac2becda1f6929fa84f469d87bcaeb}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI1\+\_\+\+RX}}~37
+\item 
+\#define \mbox{\hyperlink{dma_8h_ae00ba0548b33df988eace8d792bc3ab1}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI1\+\_\+\+TX}}~38
+\item 
+\#define \mbox{\hyperlink{dma_8h_a70438f740ba145d6b67863783c529bf6}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI2\+\_\+\+RX}}~39
+\item 
+\#define \mbox{\hyperlink{dma_8h_a6726bdac650f07d133805a3a5c0275ee}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI2\+\_\+\+TX}}~40
+\item 
+\#define \mbox{\hyperlink{dma_8h_a4e3fb3bb7f4ed5d7682a7d9fd0ba7b6a}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD41}}~41
+\item 
+\#define \mbox{\hyperlink{dma_8h_a10e8a9200ed5159b08578310c0ad3b09}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD42}}~42
+\item 
+\#define \mbox{\hyperlink{dma_8h_a4d7e01829f1ad1ca460758cea23ad7d5}{STM32\+\_\+\+DMAMUX1\+\_\+\+USART2\+\_\+\+RX}}~43
+\item 
+\#define \mbox{\hyperlink{dma_8h_a42eb61b4adef79ed5c1b22f79b892de1}{STM32\+\_\+\+DMAMUX1\+\_\+\+USART2\+\_\+\+TX}}~44
+\item 
+\#define \mbox{\hyperlink{dma_8h_aea2792540fef9db70f2b1fc3fe5a44c4}{STM32\+\_\+\+DMAMUX1\+\_\+\+USART3\+\_\+\+RX}}~45
+\item 
+\#define \mbox{\hyperlink{dma_8h_aa3231cccc8bc86956d7d01c5d096196b}{STM32\+\_\+\+DMAMUX1\+\_\+\+USART3\+\_\+\+TX}}~46
+\item 
+\#define \mbox{\hyperlink{dma_8h_afdf801631ad1c863ed6a92ca5b29ae98}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH1}}~47
+\item 
+\#define \mbox{\hyperlink{dma_8h_ae1acd4d92c0d6aced65fb9be3a4bf29c}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH2}}~48
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7c3c8367bd322c3c4546ab55b9c216fd}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH3}}~49
+\item 
+\#define \mbox{\hyperlink{dma_8h_a8f7cbabaf6b497a8f36dfb44e2f1de0a}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH4}}~50
+\item 
+\#define \mbox{\hyperlink{dma_8h_ad115b33548e47ab6320a26a9c9563e31}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+UP}}~51
+\item 
+\#define \mbox{\hyperlink{dma_8h_aafd542ef937299a2d45f9a1f37f86433}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+TRIG}}~52
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7a504aa52dd47f9c61e4fa45e42c5467}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+COM}}~53
+\item 
+\#define \mbox{\hyperlink{dma_8h_a8b13373282aead702799dd1652972560}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD54}}~54
+\item 
+\#define \mbox{\hyperlink{dma_8h_a8fe8d3e2ceba05ff4927a746a788ad74}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH1}}~55
+\item 
+\#define \mbox{\hyperlink{dma_8h_a34b91b9c43a1bf51275fc614fb3e116c}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH2}}~56
+\item 
+\#define \mbox{\hyperlink{dma_8h_af1be0378abef528d75515279d9cf2593}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH3}}~57
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7d50ccb84177d010773a51c48ea8404e}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH4}}~58
+\item 
+\#define \mbox{\hyperlink{dma_8h_a8c4e2c7c70ef155ac1a74633815a4bcf}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+UP}}~59
+\item 
+\#define \mbox{\hyperlink{dma_8h_a67fa57e62996c1a29d6467612bdd40bc}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+TRIG}}~60
+\item 
+\#define \mbox{\hyperlink{dma_8h_ae286df185e22a322e533ca5321a53630}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI3\+\_\+\+RX}}~61
+\item 
+\#define \mbox{\hyperlink{dma_8h_a26651be0e8e05cafdeb0aceb3bcef8af}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI3\+\_\+\+TX}}~62
+\item 
+\#define \mbox{\hyperlink{dma_8h_a6626ccfc4a8be21ffa0d82105e0d3a00}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART4\+\_\+\+RX}}~63
+\item 
+\#define \mbox{\hyperlink{dma_8h_a8bb1aa76d3f7f003981f5db60cda0a47}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART4\+\_\+\+TX}}~64
+\item 
+\#define \mbox{\hyperlink{dma_8h_a0cb36dd86860f0c3dca604c51ee8d19b}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART5\+\_\+\+RX}}~65
+\item 
+\#define \mbox{\hyperlink{dma_8h_acd5be0a6b3eee09279f81e6d8167ee0e}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART5\+\_\+\+TX}}~66
+\item 
+\#define \mbox{\hyperlink{dma_8h_a5362144fbaf81b043df76b71818567ad}{STM32\+\_\+\+DMAMUX1\+\_\+\+DAC1\+\_\+\+CH1}}~67
+\item 
+\#define \mbox{\hyperlink{dma_8h_a86f4f667d644d71391a001726776cabe}{STM32\+\_\+\+DMAMUX1\+\_\+\+DAC1\+\_\+\+CH2}}~68
+\item 
+\#define \mbox{\hyperlink{dma_8h_a348460ac3d5aa6de5d2b6b514f35c2fe}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM6\+\_\+\+UP}}~69
+\item 
+\#define \mbox{\hyperlink{dma_8h_aabf9029253a0bcabcf5eb477c21f8a15}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM7\+\_\+\+UP}}~70
+\item 
+\#define \mbox{\hyperlink{dma_8h_a5baa11bbfa21837bf2f340c113a86fa8}{STM32\+\_\+\+DMAMUX1\+\_\+\+USART6\+\_\+\+RX}}~71
+\item 
+\#define \mbox{\hyperlink{dma_8h_ad34c95b9c2fe4712173a9ed4243b7210}{STM32\+\_\+\+DMAMUX1\+\_\+\+USART6\+\_\+\+TX}}~72
+\item 
+\#define \mbox{\hyperlink{dma_8h_a12d4db788ca052e433df9b8ea28babf8}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C3\+\_\+\+RX}}~73
+\item 
+\#define \mbox{\hyperlink{dma_8h_a0145b0ccc8428307f5748df0da300a2d}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C3\+\_\+\+TX}}~74
+\item 
+\#define \mbox{\hyperlink{dma_8h_a9d269ba6417a70f7be98c63c24df926e}{STM32\+\_\+\+DMAMUX1\+\_\+\+DCMI}}~75
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7754f2a2cbd5c711e825759b25b6d8d6}{STM32\+\_\+\+DMAMUX1\+\_\+\+CRYP2\+\_\+\+IN}}~76
+\item 
+\#define \mbox{\hyperlink{dma_8h_a2454223a12cad9bd7b22bbcc7960e9ae}{STM32\+\_\+\+DMAMUX1\+\_\+\+CRYP2\+\_\+\+OUT}}~77
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7d284ffeb809ca6d152c0b15e0f1968e}{STM32\+\_\+\+DMAMUX1\+\_\+\+HASH2\+\_\+\+IN}}~78
+\item 
+\#define \mbox{\hyperlink{dma_8h_ab724d3bc1fa05dac9594ae2047870b3f}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART7\+\_\+\+RX}}~79
+\item 
+\#define \mbox{\hyperlink{dma_8h_af5a92adf43d5e50eae0e0b5f3468eaf1}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART7\+\_\+\+TX}}~80
+\item 
+\#define \mbox{\hyperlink{dma_8h_a31015d55debe4bebd58d73a75193fcf7}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART8\+\_\+\+RX}}~81
+\item 
+\#define \mbox{\hyperlink{dma_8h_abab94bce04b4710a1c5a4fd933b2c0a0}{STM32\+\_\+\+DMAMUX1\+\_\+\+UART8\+\_\+\+TX}}~82
+\item 
+\#define \mbox{\hyperlink{dma_8h_a1e09b4664d5d808e3c26dc40d9098e2d}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI4\+\_\+\+RX}}~83
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7f7adb05ea4373c258143f1b87abad45}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI4\+\_\+\+TX}}~84
+\item 
+\#define \mbox{\hyperlink{dma_8h_a8158b6fb23b30aaa48ba0fe4220e9b6f}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI5\+\_\+\+RX}}~85
+\item 
+\#define \mbox{\hyperlink{dma_8h_a5abaa3e430790fe7cbd64d68c63ed207}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPI5\+\_\+\+TX}}~86
+\item 
+\#define \mbox{\hyperlink{dma_8h_a39c88f7540893ec7ddb1aeb5264c14b8}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI1\+\_\+A}}~87
+\item 
+\#define \mbox{\hyperlink{dma_8h_aba605500923d9c6ba69f0b55ae54bc69}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI1\+\_\+B}}~88
+\item 
+\#define \mbox{\hyperlink{dma_8h_a97abb0167b5d705b2f3cd9f4531795e9}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI2\+\_\+A}}~89
+\item 
+\#define \mbox{\hyperlink{dma_8h_ac6dff00cf64d07a4d8aac6325958cbc5}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI2\+\_\+B}}~90
+\item 
+\#define \mbox{\hyperlink{dma_8h_a51f0595bfe30d81c1621903e57187588}{STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT4}}~91
+\item 
+\#define \mbox{\hyperlink{dma_8h_a08e72addeac5526e303aeb8859381253}{STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT5}}~92
+\item 
+\#define \mbox{\hyperlink{dma_8h_a25ddcea5f220bf992d9d3f40e9ba3b94}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPDIFRX\+\_\+\+DT}}~93
+\item 
+\#define \mbox{\hyperlink{dma_8h_aeef407b969a89a5e989fb75b54d189ab}{STM32\+\_\+\+DMAMUX1\+\_\+\+SPDIFRX\+\_\+\+CS}}~94
+\item 
+\#define \mbox{\hyperlink{dma_8h_a10196cd7bb9809ebf41e09f6e63c73fa}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD95}}~95
+\item 
+\#define \mbox{\hyperlink{dma_8h_a94276c00616ed9885a7654cb12a3d338}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD96}}~96
+\item 
+\#define \mbox{\hyperlink{dma_8h_a77a583c1c77d8a57152e4bb1a657c393}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD97}}~97
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7b438e25fd8b6ef53b9cbaf799f357ad}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD98}}~98
+\item 
+\#define \mbox{\hyperlink{dma_8h_a509e8b0834474386675da875a101523a}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI4\+\_\+A}}~99
+\item 
+\#define \mbox{\hyperlink{dma_8h_a97119386feb7660471c969ded2ead22e}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI4\+\_\+B}}~100
+\item 
+\#define \mbox{\hyperlink{dma_8h_a52494e05d16b4bc6d6970b106d1669d5}{STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT0}}~101
+\item 
+\#define \mbox{\hyperlink{dma_8h_a1194e15708c39690d4b841cc13a3b687}{STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT1}}~102
+\item 
+\#define \mbox{\hyperlink{dma_8h_a46244faabf16e4c277c1137f76db141c}{STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT2}}~103
+\item 
+\#define \mbox{\hyperlink{dma_8h_a879d104097f5eb576e3046dfaad98312}{STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT3}}~104
+\item 
+\#define \mbox{\hyperlink{dma_8h_a91af7ad4f5a130f0c82c9e6baf058263}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+CH1}}~105
+\item 
+\#define \mbox{\hyperlink{dma_8h_a67b5648f596f2a84f96e5688c28be600}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+UP}}~106
+\item 
+\#define \mbox{\hyperlink{dma_8h_a5fd8816744f75b53be7c743b60b2b456}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+TRIG}}~107
+\item 
+\#define \mbox{\hyperlink{dma_8h_afba5d4e8833a6478cdbaf88798e22a24}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+COM}}~108
+\item 
+\#define \mbox{\hyperlink{dma_8h_a51036035f070692266808dd71aca24ac}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM16\+\_\+\+CH1}}~109
+\item 
+\#define \mbox{\hyperlink{dma_8h_a05e188ff6a96fe1703011451e3c0733a}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM16\+\_\+\+UP}}~110
+\item 
+\#define \mbox{\hyperlink{dma_8h_add94861e7ea9eb3c2124ff92a9f91f28}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM17\+\_\+\+CH1}}~111
+\item 
+\#define \mbox{\hyperlink{dma_8h_a7355454aa58304a8214ba0619546d0ec}{STM32\+\_\+\+DMAMUX1\+\_\+\+TIM17\+\_\+\+UP}}~112
+\item 
+\#define \mbox{\hyperlink{dma_8h_a6c9c426c792b3bef3a47c859d7abe686}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI3\+\_\+A}}~113
+\item 
+\#define \mbox{\hyperlink{dma_8h_acc0bf67cbc2568f833a63859145d5651}{STM32\+\_\+\+DMAMUX1\+\_\+\+SAI3\+\_\+B}}~114
+\item 
+\#define \mbox{\hyperlink{dma_8h_a4c082f89a37b346fd31b993169bd0d3b}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C5\+\_\+\+RX}}~115
+\item 
+\#define \mbox{\hyperlink{dma_8h_a74f597660e4e568425fa7092acf0015e}{STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C5\+\_\+\+TX}}~116
+\item 
+\#define \mbox{\hyperlink{dma_8h_aed008c1670762264b79f4b1dbf7647af}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD117}}~117
+\item 
+\#define \mbox{\hyperlink{dma_8h_a879f4a2d8e63faf0de2aed81a7bb8e3f}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD118}}~118
+\item 
+\#define \mbox{\hyperlink{dma_8h_a375790a280f15919d1c2920a977433ee}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD119}}~119
+\item 
+\#define \mbox{\hyperlink{dma_8h_ab05dfd6c51bcfd1af072038d95a908c1}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD120}}~120
+\item 
+\#define \mbox{\hyperlink{dma_8h_a0bcaa85bbf326c882b9e403078f13781}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD121}}~121
+\item 
+\#define \mbox{\hyperlink{dma_8h_aacd36f5b4e91e00930e952b29846d630}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD122}}~122
+\item 
+\#define \mbox{\hyperlink{dma_8h_afb66f6a26784df1c8009e92e8501eade}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD123}}~123
+\item 
+\#define \mbox{\hyperlink{dma_8h_a07c355ced8232ca88956221c1162ed33}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD124}}~124
+\item 
+\#define \mbox{\hyperlink{dma_8h_ad1fed57d703ca2cc7c2c58a6e9745af9}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD125}}~125
+\item 
+\#define \mbox{\hyperlink{dma_8h_ae1292094d8c1a49cc994171aebd8a6d6}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD126}}~126
+\item 
+\#define \mbox{\hyperlink{dma_8h_a9254a0efbef8191ab24dc15c872c8dae}{STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD127}}~127
+\item 
+\#define \mbox{\hyperlink{dma_8h_a2c65cf629dba4f43dc253125283b9353}{DMA\+\_\+\+STATUS\+\_\+\+TC}}~(0b1$<$$<$5)
+\item 
+\#define \mbox{\hyperlink{dma_8h_ab28796a0f2d6b548c3d38a25483e6004}{DMA\+\_\+\+STATUS\+\_\+\+TH}}~(0b1$<$$<$4)
+\item 
+\#define \mbox{\hyperlink{dma_8h_af7e711dceb7072699c4bb5051a77481f}{DMA\+\_\+\+STATUS\+\_\+\+TE}}~(0b1$<$$<$3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20}{dma\+\_\+stream\+\_\+state}} \mbox{\hyperlink{dma_8h_ae37f496dee90e92066d23f36bb37d21e}{dma\+\_\+stream\+\_\+state\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{dma_8h_ab356491650fde7dcb06bb0db5478c186}{dma\+\_\+stream\+\_\+dir}} \mbox{\hyperlink{dma_8h_a9eece4c5de72ab163f7a088a6a9ebe96}{dma\+\_\+stream\+\_\+dir\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structdma__request}{dma\+\_\+request}} \mbox{\hyperlink{dma_8h_a55044093a3093b536a988829df78eb1f}{dma\+\_\+request\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structdma__stream__config}{dma\+\_\+stream\+\_\+config}} \mbox{\hyperlink{dma_8h_abe95b186733422d2ce02fc5780b1a03f}{dma\+\_\+stream\+\_\+config\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structdma__stream__dev}{dma\+\_\+stream\+\_\+dev}} \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structdma__scheduler__dev}{dma\+\_\+scheduler\+\_\+dev}} \mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20}{dma\+\_\+stream\+\_\+state}} \{ \mbox{\hyperlink{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20a627561df3fb7f8973300771af90cc566}{DMA\+\_\+\+STREAM\+\_\+\+BUSY}}
+, \mbox{\hyperlink{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20a3ade634063e3f03fe4a4c4ec7973fa10}{DMA\+\_\+\+STREAM\+\_\+\+FREE}}
+ \}
+\item 
+enum \mbox{\hyperlink{dma_8h_ab356491650fde7dcb06bb0db5478c186}{dma\+\_\+stream\+\_\+dir}} \{ \mbox{\hyperlink{dma_8h_ab356491650fde7dcb06bb0db5478c186a652ca2e6df19ee8efd906d0790ae9f28}{DMA\+\_\+\+STREAM\+\_\+\+P2M}} = 0b00
+, \mbox{\hyperlink{dma_8h_ab356491650fde7dcb06bb0db5478c186abaff97542986de3b4b1c690d2c73322c}{DMA\+\_\+\+STREAM\+\_\+\+M2P}} = 0b01
+, \mbox{\hyperlink{dma_8h_ab356491650fde7dcb06bb0db5478c186ad235e2242d399f472f961c2dcef411d3}{DMA\+\_\+\+STREAM\+\_\+\+M2M}} = 0b10
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8h_a212f97127bc38430c0b2f29f48e17084}{dma2\+\_\+init\+\_\+scheduler}} (void)
+\item 
+\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$ \mbox{\hyperlink{dma_8h_a57e6b805cb1eec47e3e3d18ff4632c6b}{dma2\+\_\+get\+\_\+scheduler}} (void)
+\item 
+\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$ \mbox{\hyperlink{dma_8h_a10b990a4dba612270a7cf696647c54f7}{dma2\+\_\+get\+\_\+streams}} (void)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8h_aedad147a20b881337c9973d11af866c7}{dma\+\_\+scheduler\+\_\+init}} (\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+scheduler, \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+streams, uint16\+\_\+t nb\+\_\+dma\+\_\+streams)
+\item 
+\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$ \mbox{\hyperlink{dma_8h_adf80e54e3d6ab33cad774f76f6bc51f2}{dma\+\_\+scheduler\+\_\+request\+\_\+stream}} (\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+scheduler)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8h_a0e558ecb912c5ab72ce01112e3de432a}{dma\+\_\+scheduler\+\_\+release\+\_\+stream}} (\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+scheduler, \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$dma\+\_\+stream)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8h_a53f81707348f3b02e69f0e6618ef201d}{dma\+\_\+start\+\_\+stream}} (\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$stream, \mbox{\hyperlink{dma_8h_abe95b186733422d2ce02fc5780b1a03f}{dma\+\_\+stream\+\_\+config\+\_\+t}} config)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8h_a7ab232b7f9a1a89dbe4db365c57dd622}{dma\+\_\+stop\+\_\+stream}} (\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$stream)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{dma_8h_abdee22e78d91d6b3a52498093da20ff1}{dma\+\_\+copy}} (void $\ast$dst, void $\ast$src, uint32\+\_\+t len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dma_8h_a2c65cf629dba4f43dc253125283b9353}\label{dma_8h_a2c65cf629dba4f43dc253125283b9353}} 
+\index{dma.h@{dma.h}!DMA\_STATUS\_TC@{DMA\_STATUS\_TC}}
+\index{DMA\_STATUS\_TC@{DMA\_STATUS\_TC}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{DMA\_STATUS\_TC}{DMA\_STATUS\_TC}}
+{\footnotesize\ttfamily \#define DMA\+\_\+\+STATUS\+\_\+\+TC~(0b1$<$$<$5)}
+
+\mbox{\Hypertarget{dma_8h_af7e711dceb7072699c4bb5051a77481f}\label{dma_8h_af7e711dceb7072699c4bb5051a77481f}} 
+\index{dma.h@{dma.h}!DMA\_STATUS\_TE@{DMA\_STATUS\_TE}}
+\index{DMA\_STATUS\_TE@{DMA\_STATUS\_TE}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{DMA\_STATUS\_TE}{DMA\_STATUS\_TE}}
+{\footnotesize\ttfamily \#define DMA\+\_\+\+STATUS\+\_\+\+TE~(0b1$<$$<$3)}
+
+\mbox{\Hypertarget{dma_8h_ab28796a0f2d6b548c3d38a25483e6004}\label{dma_8h_ab28796a0f2d6b548c3d38a25483e6004}} 
+\index{dma.h@{dma.h}!DMA\_STATUS\_TH@{DMA\_STATUS\_TH}}
+\index{DMA\_STATUS\_TH@{DMA\_STATUS\_TH}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{DMA\_STATUS\_TH}{DMA\_STATUS\_TH}}
+{\footnotesize\ttfamily \#define DMA\+\_\+\+STATUS\+\_\+\+TH~(0b1$<$$<$4)}
+
+\mbox{\Hypertarget{dma_8h_a0d54370a24b75569cf953ed81901a04d}\label{dma_8h_a0d54370a24b75569cf953ed81901a04d}} 
+\index{dma.h@{dma.h}!DMA\_STREAMS\_MAX\_LEN@{DMA\_STREAMS\_MAX\_LEN}}
+\index{DMA\_STREAMS\_MAX\_LEN@{DMA\_STREAMS\_MAX\_LEN}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{DMA\_STREAMS\_MAX\_LEN}{DMA\_STREAMS\_MAX\_LEN}}
+{\footnotesize\ttfamily \#define DMA\+\_\+\+STREAMS\+\_\+\+MAX\+\_\+\+LEN~8}
+
+\mbox{\Hypertarget{dma_8h_a835b53e8fbb634ef25450e0fba9879c2}\label{dma_8h_a835b53e8fbb634ef25450e0fba9879c2}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_ADC1@{STM32\_DMAMUX1\_ADC1}}
+\index{STM32\_DMAMUX1\_ADC1@{STM32\_DMAMUX1\_ADC1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_ADC1}{STM32\_DMAMUX1\_ADC1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+ADC1~9}
+
+\mbox{\Hypertarget{dma_8h_a7ca17f2e65be8c38ad42753ceb1b2b0e}\label{dma_8h_a7ca17f2e65be8c38ad42753ceb1b2b0e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_ADC2@{STM32\_DMAMUX1\_ADC2}}
+\index{STM32\_DMAMUX1\_ADC2@{STM32\_DMAMUX1\_ADC2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_ADC2}{STM32\_DMAMUX1\_ADC2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+ADC2~10}
+
+\mbox{\Hypertarget{dma_8h_a7754f2a2cbd5c711e825759b25b6d8d6}\label{dma_8h_a7754f2a2cbd5c711e825759b25b6d8d6}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_CRYP2\_IN@{STM32\_DMAMUX1\_CRYP2\_IN}}
+\index{STM32\_DMAMUX1\_CRYP2\_IN@{STM32\_DMAMUX1\_CRYP2\_IN}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_CRYP2\_IN}{STM32\_DMAMUX1\_CRYP2\_IN}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+CRYP2\+\_\+\+IN~76}
+
+\mbox{\Hypertarget{dma_8h_a2454223a12cad9bd7b22bbcc7960e9ae}\label{dma_8h_a2454223a12cad9bd7b22bbcc7960e9ae}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_CRYP2\_OUT@{STM32\_DMAMUX1\_CRYP2\_OUT}}
+\index{STM32\_DMAMUX1\_CRYP2\_OUT@{STM32\_DMAMUX1\_CRYP2\_OUT}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_CRYP2\_OUT}{STM32\_DMAMUX1\_CRYP2\_OUT}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+CRYP2\+\_\+\+OUT~77}
+
+\mbox{\Hypertarget{dma_8h_a5362144fbaf81b043df76b71818567ad}\label{dma_8h_a5362144fbaf81b043df76b71818567ad}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DAC1\_CH1@{STM32\_DMAMUX1\_DAC1\_CH1}}
+\index{STM32\_DMAMUX1\_DAC1\_CH1@{STM32\_DMAMUX1\_DAC1\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DAC1\_CH1}{STM32\_DMAMUX1\_DAC1\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DAC1\+\_\+\+CH1~67}
+
+\mbox{\Hypertarget{dma_8h_a86f4f667d644d71391a001726776cabe}\label{dma_8h_a86f4f667d644d71391a001726776cabe}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DAC1\_CH2@{STM32\_DMAMUX1\_DAC1\_CH2}}
+\index{STM32\_DMAMUX1\_DAC1\_CH2@{STM32\_DMAMUX1\_DAC1\_CH2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DAC1\_CH2}{STM32\_DMAMUX1\_DAC1\_CH2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DAC1\+\_\+\+CH2~68}
+
+\mbox{\Hypertarget{dma_8h_a9d269ba6417a70f7be98c63c24df926e}\label{dma_8h_a9d269ba6417a70f7be98c63c24df926e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DCMI@{STM32\_DMAMUX1\_DCMI}}
+\index{STM32\_DMAMUX1\_DCMI@{STM32\_DMAMUX1\_DCMI}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DCMI}{STM32\_DMAMUX1\_DCMI}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DCMI~75}
+
+\mbox{\Hypertarget{dma_8h_a52494e05d16b4bc6d6970b106d1669d5}\label{dma_8h_a52494e05d16b4bc6d6970b106d1669d5}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DFSDM1\_FLT0@{STM32\_DMAMUX1\_DFSDM1\_FLT0}}
+\index{STM32\_DMAMUX1\_DFSDM1\_FLT0@{STM32\_DMAMUX1\_DFSDM1\_FLT0}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DFSDM1\_FLT0}{STM32\_DMAMUX1\_DFSDM1\_FLT0}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT0~101}
+
+\mbox{\Hypertarget{dma_8h_a1194e15708c39690d4b841cc13a3b687}\label{dma_8h_a1194e15708c39690d4b841cc13a3b687}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DFSDM1\_FLT1@{STM32\_DMAMUX1\_DFSDM1\_FLT1}}
+\index{STM32\_DMAMUX1\_DFSDM1\_FLT1@{STM32\_DMAMUX1\_DFSDM1\_FLT1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DFSDM1\_FLT1}{STM32\_DMAMUX1\_DFSDM1\_FLT1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT1~102}
+
+\mbox{\Hypertarget{dma_8h_a46244faabf16e4c277c1137f76db141c}\label{dma_8h_a46244faabf16e4c277c1137f76db141c}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DFSDM1\_FLT2@{STM32\_DMAMUX1\_DFSDM1\_FLT2}}
+\index{STM32\_DMAMUX1\_DFSDM1\_FLT2@{STM32\_DMAMUX1\_DFSDM1\_FLT2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DFSDM1\_FLT2}{STM32\_DMAMUX1\_DFSDM1\_FLT2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT2~103}
+
+\mbox{\Hypertarget{dma_8h_a879d104097f5eb576e3046dfaad98312}\label{dma_8h_a879d104097f5eb576e3046dfaad98312}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DFSDM1\_FLT3@{STM32\_DMAMUX1\_DFSDM1\_FLT3}}
+\index{STM32\_DMAMUX1\_DFSDM1\_FLT3@{STM32\_DMAMUX1\_DFSDM1\_FLT3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DFSDM1\_FLT3}{STM32\_DMAMUX1\_DFSDM1\_FLT3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT3~104}
+
+\mbox{\Hypertarget{dma_8h_a51f0595bfe30d81c1621903e57187588}\label{dma_8h_a51f0595bfe30d81c1621903e57187588}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DFSDM1\_FLT4@{STM32\_DMAMUX1\_DFSDM1\_FLT4}}
+\index{STM32\_DMAMUX1\_DFSDM1\_FLT4@{STM32\_DMAMUX1\_DFSDM1\_FLT4}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DFSDM1\_FLT4}{STM32\_DMAMUX1\_DFSDM1\_FLT4}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT4~91}
+
+\mbox{\Hypertarget{dma_8h_a08e72addeac5526e303aeb8859381253}\label{dma_8h_a08e72addeac5526e303aeb8859381253}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_DFSDM1\_FLT5@{STM32\_DMAMUX1\_DFSDM1\_FLT5}}
+\index{STM32\_DMAMUX1\_DFSDM1\_FLT5@{STM32\_DMAMUX1\_DFSDM1\_FLT5}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_DFSDM1\_FLT5}{STM32\_DMAMUX1\_DFSDM1\_FLT5}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+DFSDM1\+\_\+\+FLT5~92}
+
+\mbox{\Hypertarget{dma_8h_a7d284ffeb809ca6d152c0b15e0f1968e}\label{dma_8h_a7d284ffeb809ca6d152c0b15e0f1968e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_HASH2\_IN@{STM32\_DMAMUX1\_HASH2\_IN}}
+\index{STM32\_DMAMUX1\_HASH2\_IN@{STM32\_DMAMUX1\_HASH2\_IN}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_HASH2\_IN}{STM32\_DMAMUX1\_HASH2\_IN}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+HASH2\+\_\+\+IN~78}
+
+\mbox{\Hypertarget{dma_8h_ae4782c4975f1d21f7571829013bacb59}\label{dma_8h_ae4782c4975f1d21f7571829013bacb59}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C1\_RX@{STM32\_DMAMUX1\_I2C1\_RX}}
+\index{STM32\_DMAMUX1\_I2C1\_RX@{STM32\_DMAMUX1\_I2C1\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C1\_RX}{STM32\_DMAMUX1\_I2C1\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C1\+\_\+\+RX~33}
+
+\mbox{\Hypertarget{dma_8h_a9515e23fe1b610d5f65c0be6d8e6b750}\label{dma_8h_a9515e23fe1b610d5f65c0be6d8e6b750}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C1\_TX@{STM32\_DMAMUX1\_I2C1\_TX}}
+\index{STM32\_DMAMUX1\_I2C1\_TX@{STM32\_DMAMUX1\_I2C1\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C1\_TX}{STM32\_DMAMUX1\_I2C1\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C1\+\_\+\+TX~34}
+
+\mbox{\Hypertarget{dma_8h_af411fb1859ad2c2008b5ec1ef9c1a70a}\label{dma_8h_af411fb1859ad2c2008b5ec1ef9c1a70a}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C2\_RX@{STM32\_DMAMUX1\_I2C2\_RX}}
+\index{STM32\_DMAMUX1\_I2C2\_RX@{STM32\_DMAMUX1\_I2C2\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C2\_RX}{STM32\_DMAMUX1\_I2C2\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C2\+\_\+\+RX~35}
+
+\mbox{\Hypertarget{dma_8h_aa2b400ed365fc03fe1852d636b954a80}\label{dma_8h_aa2b400ed365fc03fe1852d636b954a80}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C2\_TX@{STM32\_DMAMUX1\_I2C2\_TX}}
+\index{STM32\_DMAMUX1\_I2C2\_TX@{STM32\_DMAMUX1\_I2C2\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C2\_TX}{STM32\_DMAMUX1\_I2C2\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C2\+\_\+\+TX~36}
+
+\mbox{\Hypertarget{dma_8h_a12d4db788ca052e433df9b8ea28babf8}\label{dma_8h_a12d4db788ca052e433df9b8ea28babf8}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C3\_RX@{STM32\_DMAMUX1\_I2C3\_RX}}
+\index{STM32\_DMAMUX1\_I2C3\_RX@{STM32\_DMAMUX1\_I2C3\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C3\_RX}{STM32\_DMAMUX1\_I2C3\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C3\+\_\+\+RX~73}
+
+\mbox{\Hypertarget{dma_8h_a0145b0ccc8428307f5748df0da300a2d}\label{dma_8h_a0145b0ccc8428307f5748df0da300a2d}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C3\_TX@{STM32\_DMAMUX1\_I2C3\_TX}}
+\index{STM32\_DMAMUX1\_I2C3\_TX@{STM32\_DMAMUX1\_I2C3\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C3\_TX}{STM32\_DMAMUX1\_I2C3\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C3\+\_\+\+TX~74}
+
+\mbox{\Hypertarget{dma_8h_a4c082f89a37b346fd31b993169bd0d3b}\label{dma_8h_a4c082f89a37b346fd31b993169bd0d3b}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C5\_RX@{STM32\_DMAMUX1\_I2C5\_RX}}
+\index{STM32\_DMAMUX1\_I2C5\_RX@{STM32\_DMAMUX1\_I2C5\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C5\_RX}{STM32\_DMAMUX1\_I2C5\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C5\+\_\+\+RX~115}
+
+\mbox{\Hypertarget{dma_8h_a74f597660e4e568425fa7092acf0015e}\label{dma_8h_a74f597660e4e568425fa7092acf0015e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_I2C5\_TX@{STM32\_DMAMUX1\_I2C5\_TX}}
+\index{STM32\_DMAMUX1\_I2C5\_TX@{STM32\_DMAMUX1\_I2C5\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_I2C5\_TX}{STM32\_DMAMUX1\_I2C5\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+I2\+C5\+\_\+\+TX~116}
+
+\mbox{\Hypertarget{dma_8h_ab2619d72003756f07bc630b887210933}\label{dma_8h_ab2619d72003756f07bc630b887210933}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN0@{STM32\_DMAMUX1\_REQ\_GEN0}}
+\index{STM32\_DMAMUX1\_REQ\_GEN0@{STM32\_DMAMUX1\_REQ\_GEN0}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN0}{STM32\_DMAMUX1\_REQ\_GEN0}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN0~1}
+
+\mbox{\Hypertarget{dma_8h_a336eeca5c5fede1d3ae5db296417219c}\label{dma_8h_a336eeca5c5fede1d3ae5db296417219c}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN1@{STM32\_DMAMUX1\_REQ\_GEN1}}
+\index{STM32\_DMAMUX1\_REQ\_GEN1@{STM32\_DMAMUX1\_REQ\_GEN1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN1}{STM32\_DMAMUX1\_REQ\_GEN1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN1~2}
+
+\mbox{\Hypertarget{dma_8h_ab2e90de7100ed5187487f5eaa0fe5048}\label{dma_8h_ab2e90de7100ed5187487f5eaa0fe5048}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN2@{STM32\_DMAMUX1\_REQ\_GEN2}}
+\index{STM32\_DMAMUX1\_REQ\_GEN2@{STM32\_DMAMUX1\_REQ\_GEN2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN2}{STM32\_DMAMUX1\_REQ\_GEN2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN2~3}
+
+\mbox{\Hypertarget{dma_8h_afeefbd228b0a51a940c3196df0d9f1d0}\label{dma_8h_afeefbd228b0a51a940c3196df0d9f1d0}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN3@{STM32\_DMAMUX1\_REQ\_GEN3}}
+\index{STM32\_DMAMUX1\_REQ\_GEN3@{STM32\_DMAMUX1\_REQ\_GEN3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN3}{STM32\_DMAMUX1\_REQ\_GEN3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN3~4}
+
+\mbox{\Hypertarget{dma_8h_a5aeaabad538efc6bba9fedbddb3c1371}\label{dma_8h_a5aeaabad538efc6bba9fedbddb3c1371}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN4@{STM32\_DMAMUX1\_REQ\_GEN4}}
+\index{STM32\_DMAMUX1\_REQ\_GEN4@{STM32\_DMAMUX1\_REQ\_GEN4}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN4}{STM32\_DMAMUX1\_REQ\_GEN4}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN4~5}
+
+\mbox{\Hypertarget{dma_8h_a66fc4386e908cfe75d50c221714aab33}\label{dma_8h_a66fc4386e908cfe75d50c221714aab33}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN5@{STM32\_DMAMUX1\_REQ\_GEN5}}
+\index{STM32\_DMAMUX1\_REQ\_GEN5@{STM32\_DMAMUX1\_REQ\_GEN5}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN5}{STM32\_DMAMUX1\_REQ\_GEN5}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN5~6}
+
+\mbox{\Hypertarget{dma_8h_aad4579d86968ea77b8bdee6cf0d50bbd}\label{dma_8h_aad4579d86968ea77b8bdee6cf0d50bbd}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN6@{STM32\_DMAMUX1\_REQ\_GEN6}}
+\index{STM32\_DMAMUX1\_REQ\_GEN6@{STM32\_DMAMUX1\_REQ\_GEN6}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN6}{STM32\_DMAMUX1\_REQ\_GEN6}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN6~7}
+
+\mbox{\Hypertarget{dma_8h_a6d43fab20241fff72431110a1c1a2778}\label{dma_8h_a6d43fab20241fff72431110a1c1a2778}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_REQ\_GEN7@{STM32\_DMAMUX1\_REQ\_GEN7}}
+\index{STM32\_DMAMUX1\_REQ\_GEN7@{STM32\_DMAMUX1\_REQ\_GEN7}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_REQ\_GEN7}{STM32\_DMAMUX1\_REQ\_GEN7}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+REQ\+\_\+\+GEN7~8}
+
+\mbox{\Hypertarget{dma_8h_aed008c1670762264b79f4b1dbf7647af}\label{dma_8h_aed008c1670762264b79f4b1dbf7647af}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD117@{STM32\_DMAMUX1\_RSVD117}}
+\index{STM32\_DMAMUX1\_RSVD117@{STM32\_DMAMUX1\_RSVD117}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD117}{STM32\_DMAMUX1\_RSVD117}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD117~117}
+
+\mbox{\Hypertarget{dma_8h_a879f4a2d8e63faf0de2aed81a7bb8e3f}\label{dma_8h_a879f4a2d8e63faf0de2aed81a7bb8e3f}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD118@{STM32\_DMAMUX1\_RSVD118}}
+\index{STM32\_DMAMUX1\_RSVD118@{STM32\_DMAMUX1\_RSVD118}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD118}{STM32\_DMAMUX1\_RSVD118}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD118~118}
+
+\mbox{\Hypertarget{dma_8h_a375790a280f15919d1c2920a977433ee}\label{dma_8h_a375790a280f15919d1c2920a977433ee}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD119@{STM32\_DMAMUX1\_RSVD119}}
+\index{STM32\_DMAMUX1\_RSVD119@{STM32\_DMAMUX1\_RSVD119}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD119}{STM32\_DMAMUX1\_RSVD119}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD119~119}
+
+\mbox{\Hypertarget{dma_8h_ab05dfd6c51bcfd1af072038d95a908c1}\label{dma_8h_ab05dfd6c51bcfd1af072038d95a908c1}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD120@{STM32\_DMAMUX1\_RSVD120}}
+\index{STM32\_DMAMUX1\_RSVD120@{STM32\_DMAMUX1\_RSVD120}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD120}{STM32\_DMAMUX1\_RSVD120}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD120~120}
+
+\mbox{\Hypertarget{dma_8h_a0bcaa85bbf326c882b9e403078f13781}\label{dma_8h_a0bcaa85bbf326c882b9e403078f13781}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD121@{STM32\_DMAMUX1\_RSVD121}}
+\index{STM32\_DMAMUX1\_RSVD121@{STM32\_DMAMUX1\_RSVD121}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD121}{STM32\_DMAMUX1\_RSVD121}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD121~121}
+
+\mbox{\Hypertarget{dma_8h_aacd36f5b4e91e00930e952b29846d630}\label{dma_8h_aacd36f5b4e91e00930e952b29846d630}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD122@{STM32\_DMAMUX1\_RSVD122}}
+\index{STM32\_DMAMUX1\_RSVD122@{STM32\_DMAMUX1\_RSVD122}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD122}{STM32\_DMAMUX1\_RSVD122}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD122~122}
+
+\mbox{\Hypertarget{dma_8h_afb66f6a26784df1c8009e92e8501eade}\label{dma_8h_afb66f6a26784df1c8009e92e8501eade}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD123@{STM32\_DMAMUX1\_RSVD123}}
+\index{STM32\_DMAMUX1\_RSVD123@{STM32\_DMAMUX1\_RSVD123}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD123}{STM32\_DMAMUX1\_RSVD123}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD123~123}
+
+\mbox{\Hypertarget{dma_8h_a07c355ced8232ca88956221c1162ed33}\label{dma_8h_a07c355ced8232ca88956221c1162ed33}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD124@{STM32\_DMAMUX1\_RSVD124}}
+\index{STM32\_DMAMUX1\_RSVD124@{STM32\_DMAMUX1\_RSVD124}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD124}{STM32\_DMAMUX1\_RSVD124}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD124~124}
+
+\mbox{\Hypertarget{dma_8h_ad1fed57d703ca2cc7c2c58a6e9745af9}\label{dma_8h_ad1fed57d703ca2cc7c2c58a6e9745af9}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD125@{STM32\_DMAMUX1\_RSVD125}}
+\index{STM32\_DMAMUX1\_RSVD125@{STM32\_DMAMUX1\_RSVD125}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD125}{STM32\_DMAMUX1\_RSVD125}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD125~125}
+
+\mbox{\Hypertarget{dma_8h_ae1292094d8c1a49cc994171aebd8a6d6}\label{dma_8h_ae1292094d8c1a49cc994171aebd8a6d6}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD126@{STM32\_DMAMUX1\_RSVD126}}
+\index{STM32\_DMAMUX1\_RSVD126@{STM32\_DMAMUX1\_RSVD126}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD126}{STM32\_DMAMUX1\_RSVD126}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD126~126}
+
+\mbox{\Hypertarget{dma_8h_a9254a0efbef8191ab24dc15c872c8dae}\label{dma_8h_a9254a0efbef8191ab24dc15c872c8dae}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD127@{STM32\_DMAMUX1\_RSVD127}}
+\index{STM32\_DMAMUX1\_RSVD127@{STM32\_DMAMUX1\_RSVD127}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD127}{STM32\_DMAMUX1\_RSVD127}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD127~127}
+
+\mbox{\Hypertarget{dma_8h_a4e3fb3bb7f4ed5d7682a7d9fd0ba7b6a}\label{dma_8h_a4e3fb3bb7f4ed5d7682a7d9fd0ba7b6a}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD41@{STM32\_DMAMUX1\_RSVD41}}
+\index{STM32\_DMAMUX1\_RSVD41@{STM32\_DMAMUX1\_RSVD41}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD41}{STM32\_DMAMUX1\_RSVD41}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD41~41}
+
+\mbox{\Hypertarget{dma_8h_a10e8a9200ed5159b08578310c0ad3b09}\label{dma_8h_a10e8a9200ed5159b08578310c0ad3b09}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD42@{STM32\_DMAMUX1\_RSVD42}}
+\index{STM32\_DMAMUX1\_RSVD42@{STM32\_DMAMUX1\_RSVD42}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD42}{STM32\_DMAMUX1\_RSVD42}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD42~42}
+
+\mbox{\Hypertarget{dma_8h_a8b13373282aead702799dd1652972560}\label{dma_8h_a8b13373282aead702799dd1652972560}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD54@{STM32\_DMAMUX1\_RSVD54}}
+\index{STM32\_DMAMUX1\_RSVD54@{STM32\_DMAMUX1\_RSVD54}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD54}{STM32\_DMAMUX1\_RSVD54}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD54~54}
+
+\mbox{\Hypertarget{dma_8h_a10196cd7bb9809ebf41e09f6e63c73fa}\label{dma_8h_a10196cd7bb9809ebf41e09f6e63c73fa}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD95@{STM32\_DMAMUX1\_RSVD95}}
+\index{STM32\_DMAMUX1\_RSVD95@{STM32\_DMAMUX1\_RSVD95}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD95}{STM32\_DMAMUX1\_RSVD95}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD95~95}
+
+\mbox{\Hypertarget{dma_8h_a94276c00616ed9885a7654cb12a3d338}\label{dma_8h_a94276c00616ed9885a7654cb12a3d338}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD96@{STM32\_DMAMUX1\_RSVD96}}
+\index{STM32\_DMAMUX1\_RSVD96@{STM32\_DMAMUX1\_RSVD96}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD96}{STM32\_DMAMUX1\_RSVD96}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD96~96}
+
+\mbox{\Hypertarget{dma_8h_a77a583c1c77d8a57152e4bb1a657c393}\label{dma_8h_a77a583c1c77d8a57152e4bb1a657c393}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD97@{STM32\_DMAMUX1\_RSVD97}}
+\index{STM32\_DMAMUX1\_RSVD97@{STM32\_DMAMUX1\_RSVD97}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD97}{STM32\_DMAMUX1\_RSVD97}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD97~97}
+
+\mbox{\Hypertarget{dma_8h_a7b438e25fd8b6ef53b9cbaf799f357ad}\label{dma_8h_a7b438e25fd8b6ef53b9cbaf799f357ad}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_RSVD98@{STM32\_DMAMUX1\_RSVD98}}
+\index{STM32\_DMAMUX1\_RSVD98@{STM32\_DMAMUX1\_RSVD98}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_RSVD98}{STM32\_DMAMUX1\_RSVD98}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+RSVD98~98}
+
+\mbox{\Hypertarget{dma_8h_a39c88f7540893ec7ddb1aeb5264c14b8}\label{dma_8h_a39c88f7540893ec7ddb1aeb5264c14b8}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI1\_A@{STM32\_DMAMUX1\_SAI1\_A}}
+\index{STM32\_DMAMUX1\_SAI1\_A@{STM32\_DMAMUX1\_SAI1\_A}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI1\_A}{STM32\_DMAMUX1\_SAI1\_A}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI1\+\_\+A~87}
+
+\mbox{\Hypertarget{dma_8h_aba605500923d9c6ba69f0b55ae54bc69}\label{dma_8h_aba605500923d9c6ba69f0b55ae54bc69}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI1\_B@{STM32\_DMAMUX1\_SAI1\_B}}
+\index{STM32\_DMAMUX1\_SAI1\_B@{STM32\_DMAMUX1\_SAI1\_B}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI1\_B}{STM32\_DMAMUX1\_SAI1\_B}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI1\+\_\+B~88}
+
+\mbox{\Hypertarget{dma_8h_a97abb0167b5d705b2f3cd9f4531795e9}\label{dma_8h_a97abb0167b5d705b2f3cd9f4531795e9}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI2\_A@{STM32\_DMAMUX1\_SAI2\_A}}
+\index{STM32\_DMAMUX1\_SAI2\_A@{STM32\_DMAMUX1\_SAI2\_A}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI2\_A}{STM32\_DMAMUX1\_SAI2\_A}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI2\+\_\+A~89}
+
+\mbox{\Hypertarget{dma_8h_ac6dff00cf64d07a4d8aac6325958cbc5}\label{dma_8h_ac6dff00cf64d07a4d8aac6325958cbc5}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI2\_B@{STM32\_DMAMUX1\_SAI2\_B}}
+\index{STM32\_DMAMUX1\_SAI2\_B@{STM32\_DMAMUX1\_SAI2\_B}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI2\_B}{STM32\_DMAMUX1\_SAI2\_B}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI2\+\_\+B~90}
+
+\mbox{\Hypertarget{dma_8h_a6c9c426c792b3bef3a47c859d7abe686}\label{dma_8h_a6c9c426c792b3bef3a47c859d7abe686}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI3\_A@{STM32\_DMAMUX1\_SAI3\_A}}
+\index{STM32\_DMAMUX1\_SAI3\_A@{STM32\_DMAMUX1\_SAI3\_A}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI3\_A}{STM32\_DMAMUX1\_SAI3\_A}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI3\+\_\+A~113}
+
+\mbox{\Hypertarget{dma_8h_acc0bf67cbc2568f833a63859145d5651}\label{dma_8h_acc0bf67cbc2568f833a63859145d5651}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI3\_B@{STM32\_DMAMUX1\_SAI3\_B}}
+\index{STM32\_DMAMUX1\_SAI3\_B@{STM32\_DMAMUX1\_SAI3\_B}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI3\_B}{STM32\_DMAMUX1\_SAI3\_B}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI3\+\_\+B~114}
+
+\mbox{\Hypertarget{dma_8h_a509e8b0834474386675da875a101523a}\label{dma_8h_a509e8b0834474386675da875a101523a}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI4\_A@{STM32\_DMAMUX1\_SAI4\_A}}
+\index{STM32\_DMAMUX1\_SAI4\_A@{STM32\_DMAMUX1\_SAI4\_A}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI4\_A}{STM32\_DMAMUX1\_SAI4\_A}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI4\+\_\+A~99}
+
+\mbox{\Hypertarget{dma_8h_a97119386feb7660471c969ded2ead22e}\label{dma_8h_a97119386feb7660471c969ded2ead22e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SAI4\_B@{STM32\_DMAMUX1\_SAI4\_B}}
+\index{STM32\_DMAMUX1\_SAI4\_B@{STM32\_DMAMUX1\_SAI4\_B}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SAI4\_B}{STM32\_DMAMUX1\_SAI4\_B}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SAI4\+\_\+B~100}
+
+\mbox{\Hypertarget{dma_8h_aeef407b969a89a5e989fb75b54d189ab}\label{dma_8h_aeef407b969a89a5e989fb75b54d189ab}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPDIFRX\_CS@{STM32\_DMAMUX1\_SPDIFRX\_CS}}
+\index{STM32\_DMAMUX1\_SPDIFRX\_CS@{STM32\_DMAMUX1\_SPDIFRX\_CS}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPDIFRX\_CS}{STM32\_DMAMUX1\_SPDIFRX\_CS}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPDIFRX\+\_\+\+CS~94}
+
+\mbox{\Hypertarget{dma_8h_a25ddcea5f220bf992d9d3f40e9ba3b94}\label{dma_8h_a25ddcea5f220bf992d9d3f40e9ba3b94}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPDIFRX\_DT@{STM32\_DMAMUX1\_SPDIFRX\_DT}}
+\index{STM32\_DMAMUX1\_SPDIFRX\_DT@{STM32\_DMAMUX1\_SPDIFRX\_DT}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPDIFRX\_DT}{STM32\_DMAMUX1\_SPDIFRX\_DT}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPDIFRX\+\_\+\+DT~93}
+
+\mbox{\Hypertarget{dma_8h_a1eac2becda1f6929fa84f469d87bcaeb}\label{dma_8h_a1eac2becda1f6929fa84f469d87bcaeb}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI1\_RX@{STM32\_DMAMUX1\_SPI1\_RX}}
+\index{STM32\_DMAMUX1\_SPI1\_RX@{STM32\_DMAMUX1\_SPI1\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI1\_RX}{STM32\_DMAMUX1\_SPI1\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI1\+\_\+\+RX~37}
+
+\mbox{\Hypertarget{dma_8h_ae00ba0548b33df988eace8d792bc3ab1}\label{dma_8h_ae00ba0548b33df988eace8d792bc3ab1}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI1\_TX@{STM32\_DMAMUX1\_SPI1\_TX}}
+\index{STM32\_DMAMUX1\_SPI1\_TX@{STM32\_DMAMUX1\_SPI1\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI1\_TX}{STM32\_DMAMUX1\_SPI1\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI1\+\_\+\+TX~38}
+
+\mbox{\Hypertarget{dma_8h_a70438f740ba145d6b67863783c529bf6}\label{dma_8h_a70438f740ba145d6b67863783c529bf6}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI2\_RX@{STM32\_DMAMUX1\_SPI2\_RX}}
+\index{STM32\_DMAMUX1\_SPI2\_RX@{STM32\_DMAMUX1\_SPI2\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI2\_RX}{STM32\_DMAMUX1\_SPI2\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI2\+\_\+\+RX~39}
+
+\mbox{\Hypertarget{dma_8h_a6726bdac650f07d133805a3a5c0275ee}\label{dma_8h_a6726bdac650f07d133805a3a5c0275ee}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI2\_TX@{STM32\_DMAMUX1\_SPI2\_TX}}
+\index{STM32\_DMAMUX1\_SPI2\_TX@{STM32\_DMAMUX1\_SPI2\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI2\_TX}{STM32\_DMAMUX1\_SPI2\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI2\+\_\+\+TX~40}
+
+\mbox{\Hypertarget{dma_8h_ae286df185e22a322e533ca5321a53630}\label{dma_8h_ae286df185e22a322e533ca5321a53630}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI3\_RX@{STM32\_DMAMUX1\_SPI3\_RX}}
+\index{STM32\_DMAMUX1\_SPI3\_RX@{STM32\_DMAMUX1\_SPI3\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI3\_RX}{STM32\_DMAMUX1\_SPI3\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI3\+\_\+\+RX~61}
+
+\mbox{\Hypertarget{dma_8h_a26651be0e8e05cafdeb0aceb3bcef8af}\label{dma_8h_a26651be0e8e05cafdeb0aceb3bcef8af}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI3\_TX@{STM32\_DMAMUX1\_SPI3\_TX}}
+\index{STM32\_DMAMUX1\_SPI3\_TX@{STM32\_DMAMUX1\_SPI3\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI3\_TX}{STM32\_DMAMUX1\_SPI3\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI3\+\_\+\+TX~62}
+
+\mbox{\Hypertarget{dma_8h_a1e09b4664d5d808e3c26dc40d9098e2d}\label{dma_8h_a1e09b4664d5d808e3c26dc40d9098e2d}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI4\_RX@{STM32\_DMAMUX1\_SPI4\_RX}}
+\index{STM32\_DMAMUX1\_SPI4\_RX@{STM32\_DMAMUX1\_SPI4\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI4\_RX}{STM32\_DMAMUX1\_SPI4\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI4\+\_\+\+RX~83}
+
+\mbox{\Hypertarget{dma_8h_a7f7adb05ea4373c258143f1b87abad45}\label{dma_8h_a7f7adb05ea4373c258143f1b87abad45}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI4\_TX@{STM32\_DMAMUX1\_SPI4\_TX}}
+\index{STM32\_DMAMUX1\_SPI4\_TX@{STM32\_DMAMUX1\_SPI4\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI4\_TX}{STM32\_DMAMUX1\_SPI4\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI4\+\_\+\+TX~84}
+
+\mbox{\Hypertarget{dma_8h_a8158b6fb23b30aaa48ba0fe4220e9b6f}\label{dma_8h_a8158b6fb23b30aaa48ba0fe4220e9b6f}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI5\_RX@{STM32\_DMAMUX1\_SPI5\_RX}}
+\index{STM32\_DMAMUX1\_SPI5\_RX@{STM32\_DMAMUX1\_SPI5\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI5\_RX}{STM32\_DMAMUX1\_SPI5\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI5\+\_\+\+RX~85}
+
+\mbox{\Hypertarget{dma_8h_a5abaa3e430790fe7cbd64d68c63ed207}\label{dma_8h_a5abaa3e430790fe7cbd64d68c63ed207}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_SPI5\_TX@{STM32\_DMAMUX1\_SPI5\_TX}}
+\index{STM32\_DMAMUX1\_SPI5\_TX@{STM32\_DMAMUX1\_SPI5\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_SPI5\_TX}{STM32\_DMAMUX1\_SPI5\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+SPI5\+\_\+\+TX~86}
+
+\mbox{\Hypertarget{dma_8h_a91af7ad4f5a130f0c82c9e6baf058263}\label{dma_8h_a91af7ad4f5a130f0c82c9e6baf058263}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM15\_CH1@{STM32\_DMAMUX1\_TIM15\_CH1}}
+\index{STM32\_DMAMUX1\_TIM15\_CH1@{STM32\_DMAMUX1\_TIM15\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM15\_CH1}{STM32\_DMAMUX1\_TIM15\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+CH1~105}
+
+\mbox{\Hypertarget{dma_8h_afba5d4e8833a6478cdbaf88798e22a24}\label{dma_8h_afba5d4e8833a6478cdbaf88798e22a24}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM15\_COM@{STM32\_DMAMUX1\_TIM15\_COM}}
+\index{STM32\_DMAMUX1\_TIM15\_COM@{STM32\_DMAMUX1\_TIM15\_COM}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM15\_COM}{STM32\_DMAMUX1\_TIM15\_COM}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+COM~108}
+
+\mbox{\Hypertarget{dma_8h_a5fd8816744f75b53be7c743b60b2b456}\label{dma_8h_a5fd8816744f75b53be7c743b60b2b456}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM15\_TRIG@{STM32\_DMAMUX1\_TIM15\_TRIG}}
+\index{STM32\_DMAMUX1\_TIM15\_TRIG@{STM32\_DMAMUX1\_TIM15\_TRIG}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM15\_TRIG}{STM32\_DMAMUX1\_TIM15\_TRIG}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+TRIG~107}
+
+\mbox{\Hypertarget{dma_8h_a67b5648f596f2a84f96e5688c28be600}\label{dma_8h_a67b5648f596f2a84f96e5688c28be600}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM15\_UP@{STM32\_DMAMUX1\_TIM15\_UP}}
+\index{STM32\_DMAMUX1\_TIM15\_UP@{STM32\_DMAMUX1\_TIM15\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM15\_UP}{STM32\_DMAMUX1\_TIM15\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM15\+\_\+\+UP~106}
+
+\mbox{\Hypertarget{dma_8h_a51036035f070692266808dd71aca24ac}\label{dma_8h_a51036035f070692266808dd71aca24ac}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM16\_CH1@{STM32\_DMAMUX1\_TIM16\_CH1}}
+\index{STM32\_DMAMUX1\_TIM16\_CH1@{STM32\_DMAMUX1\_TIM16\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM16\_CH1}{STM32\_DMAMUX1\_TIM16\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM16\+\_\+\+CH1~109}
+
+\mbox{\Hypertarget{dma_8h_a05e188ff6a96fe1703011451e3c0733a}\label{dma_8h_a05e188ff6a96fe1703011451e3c0733a}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM16\_UP@{STM32\_DMAMUX1\_TIM16\_UP}}
+\index{STM32\_DMAMUX1\_TIM16\_UP@{STM32\_DMAMUX1\_TIM16\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM16\_UP}{STM32\_DMAMUX1\_TIM16\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM16\+\_\+\+UP~110}
+
+\mbox{\Hypertarget{dma_8h_add94861e7ea9eb3c2124ff92a9f91f28}\label{dma_8h_add94861e7ea9eb3c2124ff92a9f91f28}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM17\_CH1@{STM32\_DMAMUX1\_TIM17\_CH1}}
+\index{STM32\_DMAMUX1\_TIM17\_CH1@{STM32\_DMAMUX1\_TIM17\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM17\_CH1}{STM32\_DMAMUX1\_TIM17\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM17\+\_\+\+CH1~111}
+
+\mbox{\Hypertarget{dma_8h_a7355454aa58304a8214ba0619546d0ec}\label{dma_8h_a7355454aa58304a8214ba0619546d0ec}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM17\_UP@{STM32\_DMAMUX1\_TIM17\_UP}}
+\index{STM32\_DMAMUX1\_TIM17\_UP@{STM32\_DMAMUX1\_TIM17\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM17\_UP}{STM32\_DMAMUX1\_TIM17\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM17\+\_\+\+UP~112}
+
+\mbox{\Hypertarget{dma_8h_a619df6d984e165e8639bb71cdfb3e0db}\label{dma_8h_a619df6d984e165e8639bb71cdfb3e0db}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM1\_CH1@{STM32\_DMAMUX1\_TIM1\_CH1}}
+\index{STM32\_DMAMUX1\_TIM1\_CH1@{STM32\_DMAMUX1\_TIM1\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM1\_CH1}{STM32\_DMAMUX1\_TIM1\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH1~11}
+
+\mbox{\Hypertarget{dma_8h_a90e1aee903389d80dabcb191926ce71f}\label{dma_8h_a90e1aee903389d80dabcb191926ce71f}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM1\_CH2@{STM32\_DMAMUX1\_TIM1\_CH2}}
+\index{STM32\_DMAMUX1\_TIM1\_CH2@{STM32\_DMAMUX1\_TIM1\_CH2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM1\_CH2}{STM32\_DMAMUX1\_TIM1\_CH2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH2~12}
+
+\mbox{\Hypertarget{dma_8h_a7e8139b985eeba1e346d5763f0f587bf}\label{dma_8h_a7e8139b985eeba1e346d5763f0f587bf}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM1\_CH3@{STM32\_DMAMUX1\_TIM1\_CH3}}
+\index{STM32\_DMAMUX1\_TIM1\_CH3@{STM32\_DMAMUX1\_TIM1\_CH3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM1\_CH3}{STM32\_DMAMUX1\_TIM1\_CH3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH3~13}
+
+\mbox{\Hypertarget{dma_8h_a9ec917ee4063cdc4616d4598a91568f2}\label{dma_8h_a9ec917ee4063cdc4616d4598a91568f2}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM1\_CH4@{STM32\_DMAMUX1\_TIM1\_CH4}}
+\index{STM32\_DMAMUX1\_TIM1\_CH4@{STM32\_DMAMUX1\_TIM1\_CH4}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM1\_CH4}{STM32\_DMAMUX1\_TIM1\_CH4}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+CH4~14}
+
+\mbox{\Hypertarget{dma_8h_ae01821562ab38b50c86c8aeeb3a0096b}\label{dma_8h_ae01821562ab38b50c86c8aeeb3a0096b}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM1\_COM@{STM32\_DMAMUX1\_TIM1\_COM}}
+\index{STM32\_DMAMUX1\_TIM1\_COM@{STM32\_DMAMUX1\_TIM1\_COM}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM1\_COM}{STM32\_DMAMUX1\_TIM1\_COM}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+COM~17}
+
+\mbox{\Hypertarget{dma_8h_a3d095139d43727db413664b5097315fd}\label{dma_8h_a3d095139d43727db413664b5097315fd}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM1\_TRIG@{STM32\_DMAMUX1\_TIM1\_TRIG}}
+\index{STM32\_DMAMUX1\_TIM1\_TRIG@{STM32\_DMAMUX1\_TIM1\_TRIG}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM1\_TRIG}{STM32\_DMAMUX1\_TIM1\_TRIG}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+TRIG~16}
+
+\mbox{\Hypertarget{dma_8h_a7f82fdad7d1653a3f4b46437d226ef4e}\label{dma_8h_a7f82fdad7d1653a3f4b46437d226ef4e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM1\_UP@{STM32\_DMAMUX1\_TIM1\_UP}}
+\index{STM32\_DMAMUX1\_TIM1\_UP@{STM32\_DMAMUX1\_TIM1\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM1\_UP}{STM32\_DMAMUX1\_TIM1\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM1\+\_\+\+UP~15}
+
+\mbox{\Hypertarget{dma_8h_acfc84d61366862db2f1dd7eba9e502bf}\label{dma_8h_acfc84d61366862db2f1dd7eba9e502bf}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM2\_CH1@{STM32\_DMAMUX1\_TIM2\_CH1}}
+\index{STM32\_DMAMUX1\_TIM2\_CH1@{STM32\_DMAMUX1\_TIM2\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM2\_CH1}{STM32\_DMAMUX1\_TIM2\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH1~18}
+
+\mbox{\Hypertarget{dma_8h_a1bfdfe331b96d802788acb2acbc1f671}\label{dma_8h_a1bfdfe331b96d802788acb2acbc1f671}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM2\_CH2@{STM32\_DMAMUX1\_TIM2\_CH2}}
+\index{STM32\_DMAMUX1\_TIM2\_CH2@{STM32\_DMAMUX1\_TIM2\_CH2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM2\_CH2}{STM32\_DMAMUX1\_TIM2\_CH2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH2~19}
+
+\mbox{\Hypertarget{dma_8h_aee9824f5ac4ddb6b9f00fb7138e08145}\label{dma_8h_aee9824f5ac4ddb6b9f00fb7138e08145}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM2\_CH3@{STM32\_DMAMUX1\_TIM2\_CH3}}
+\index{STM32\_DMAMUX1\_TIM2\_CH3@{STM32\_DMAMUX1\_TIM2\_CH3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM2\_CH3}{STM32\_DMAMUX1\_TIM2\_CH3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH3~20}
+
+\mbox{\Hypertarget{dma_8h_a88294e52e9880ef1278405075248abd5}\label{dma_8h_a88294e52e9880ef1278405075248abd5}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM2\_CH4@{STM32\_DMAMUX1\_TIM2\_CH4}}
+\index{STM32\_DMAMUX1\_TIM2\_CH4@{STM32\_DMAMUX1\_TIM2\_CH4}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM2\_CH4}{STM32\_DMAMUX1\_TIM2\_CH4}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+CH4~21}
+
+\mbox{\Hypertarget{dma_8h_af1b4afc6418008b518da7e81ebcdd7be}\label{dma_8h_af1b4afc6418008b518da7e81ebcdd7be}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM2\_UP@{STM32\_DMAMUX1\_TIM2\_UP}}
+\index{STM32\_DMAMUX1\_TIM2\_UP@{STM32\_DMAMUX1\_TIM2\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM2\_UP}{STM32\_DMAMUX1\_TIM2\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM2\+\_\+\+UP~22}
+
+\mbox{\Hypertarget{dma_8h_a5e2fb5f9dabb96b5127d144d7f31bb3f}\label{dma_8h_a5e2fb5f9dabb96b5127d144d7f31bb3f}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM3\_CH1@{STM32\_DMAMUX1\_TIM3\_CH1}}
+\index{STM32\_DMAMUX1\_TIM3\_CH1@{STM32\_DMAMUX1\_TIM3\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM3\_CH1}{STM32\_DMAMUX1\_TIM3\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH1~23}
+
+\mbox{\Hypertarget{dma_8h_a2c367f032f164db200ae8e17a42e4de3}\label{dma_8h_a2c367f032f164db200ae8e17a42e4de3}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM3\_CH2@{STM32\_DMAMUX1\_TIM3\_CH2}}
+\index{STM32\_DMAMUX1\_TIM3\_CH2@{STM32\_DMAMUX1\_TIM3\_CH2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM3\_CH2}{STM32\_DMAMUX1\_TIM3\_CH2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH2~24}
+
+\mbox{\Hypertarget{dma_8h_ac5e7c7309e2627cac7e9f051caa8610b}\label{dma_8h_ac5e7c7309e2627cac7e9f051caa8610b}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM3\_CH3@{STM32\_DMAMUX1\_TIM3\_CH3}}
+\index{STM32\_DMAMUX1\_TIM3\_CH3@{STM32\_DMAMUX1\_TIM3\_CH3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM3\_CH3}{STM32\_DMAMUX1\_TIM3\_CH3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH3~25}
+
+\mbox{\Hypertarget{dma_8h_a9e0611c7c6ff837d42b92211b1742466}\label{dma_8h_a9e0611c7c6ff837d42b92211b1742466}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM3\_CH4@{STM32\_DMAMUX1\_TIM3\_CH4}}
+\index{STM32\_DMAMUX1\_TIM3\_CH4@{STM32\_DMAMUX1\_TIM3\_CH4}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM3\_CH4}{STM32\_DMAMUX1\_TIM3\_CH4}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+CH4~26}
+
+\mbox{\Hypertarget{dma_8h_aee5217d7888a08a5ec77d0dc2b26a8ef}\label{dma_8h_aee5217d7888a08a5ec77d0dc2b26a8ef}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM3\_TRIG@{STM32\_DMAMUX1\_TIM3\_TRIG}}
+\index{STM32\_DMAMUX1\_TIM3\_TRIG@{STM32\_DMAMUX1\_TIM3\_TRIG}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM3\_TRIG}{STM32\_DMAMUX1\_TIM3\_TRIG}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+TRIG~28}
+
+\mbox{\Hypertarget{dma_8h_a7b31801c53a3a73f36651b226c9d2e28}\label{dma_8h_a7b31801c53a3a73f36651b226c9d2e28}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM3\_UP@{STM32\_DMAMUX1\_TIM3\_UP}}
+\index{STM32\_DMAMUX1\_TIM3\_UP@{STM32\_DMAMUX1\_TIM3\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM3\_UP}{STM32\_DMAMUX1\_TIM3\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM3\+\_\+\+UP~27}
+
+\mbox{\Hypertarget{dma_8h_ac8b759d787eba50ba7d056b4fd53fecb}\label{dma_8h_ac8b759d787eba50ba7d056b4fd53fecb}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM4\_CH1@{STM32\_DMAMUX1\_TIM4\_CH1}}
+\index{STM32\_DMAMUX1\_TIM4\_CH1@{STM32\_DMAMUX1\_TIM4\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM4\_CH1}{STM32\_DMAMUX1\_TIM4\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+CH1~29}
+
+\mbox{\Hypertarget{dma_8h_a452733063ed008498969c19d21196854}\label{dma_8h_a452733063ed008498969c19d21196854}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM4\_CH2@{STM32\_DMAMUX1\_TIM4\_CH2}}
+\index{STM32\_DMAMUX1\_TIM4\_CH2@{STM32\_DMAMUX1\_TIM4\_CH2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM4\_CH2}{STM32\_DMAMUX1\_TIM4\_CH2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+CH2~30}
+
+\mbox{\Hypertarget{dma_8h_a677dffedf31cdc181e96c8fe6979d1eb}\label{dma_8h_a677dffedf31cdc181e96c8fe6979d1eb}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM4\_CH3@{STM32\_DMAMUX1\_TIM4\_CH3}}
+\index{STM32\_DMAMUX1\_TIM4\_CH3@{STM32\_DMAMUX1\_TIM4\_CH3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM4\_CH3}{STM32\_DMAMUX1\_TIM4\_CH3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+CH3~31}
+
+\mbox{\Hypertarget{dma_8h_adfaae5525924f5103cde2c09f6937756}\label{dma_8h_adfaae5525924f5103cde2c09f6937756}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM4\_UP@{STM32\_DMAMUX1\_TIM4\_UP}}
+\index{STM32\_DMAMUX1\_TIM4\_UP@{STM32\_DMAMUX1\_TIM4\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM4\_UP}{STM32\_DMAMUX1\_TIM4\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM4\+\_\+\+UP~32}
+
+\mbox{\Hypertarget{dma_8h_a8fe8d3e2ceba05ff4927a746a788ad74}\label{dma_8h_a8fe8d3e2ceba05ff4927a746a788ad74}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM5\_CH1@{STM32\_DMAMUX1\_TIM5\_CH1}}
+\index{STM32\_DMAMUX1\_TIM5\_CH1@{STM32\_DMAMUX1\_TIM5\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM5\_CH1}{STM32\_DMAMUX1\_TIM5\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH1~55}
+
+\mbox{\Hypertarget{dma_8h_a34b91b9c43a1bf51275fc614fb3e116c}\label{dma_8h_a34b91b9c43a1bf51275fc614fb3e116c}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM5\_CH2@{STM32\_DMAMUX1\_TIM5\_CH2}}
+\index{STM32\_DMAMUX1\_TIM5\_CH2@{STM32\_DMAMUX1\_TIM5\_CH2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM5\_CH2}{STM32\_DMAMUX1\_TIM5\_CH2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH2~56}
+
+\mbox{\Hypertarget{dma_8h_af1be0378abef528d75515279d9cf2593}\label{dma_8h_af1be0378abef528d75515279d9cf2593}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM5\_CH3@{STM32\_DMAMUX1\_TIM5\_CH3}}
+\index{STM32\_DMAMUX1\_TIM5\_CH3@{STM32\_DMAMUX1\_TIM5\_CH3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM5\_CH3}{STM32\_DMAMUX1\_TIM5\_CH3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH3~57}
+
+\mbox{\Hypertarget{dma_8h_a7d50ccb84177d010773a51c48ea8404e}\label{dma_8h_a7d50ccb84177d010773a51c48ea8404e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM5\_CH4@{STM32\_DMAMUX1\_TIM5\_CH4}}
+\index{STM32\_DMAMUX1\_TIM5\_CH4@{STM32\_DMAMUX1\_TIM5\_CH4}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM5\_CH4}{STM32\_DMAMUX1\_TIM5\_CH4}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+CH4~58}
+
+\mbox{\Hypertarget{dma_8h_a67fa57e62996c1a29d6467612bdd40bc}\label{dma_8h_a67fa57e62996c1a29d6467612bdd40bc}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM5\_TRIG@{STM32\_DMAMUX1\_TIM5\_TRIG}}
+\index{STM32\_DMAMUX1\_TIM5\_TRIG@{STM32\_DMAMUX1\_TIM5\_TRIG}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM5\_TRIG}{STM32\_DMAMUX1\_TIM5\_TRIG}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+TRIG~60}
+
+\mbox{\Hypertarget{dma_8h_a8c4e2c7c70ef155ac1a74633815a4bcf}\label{dma_8h_a8c4e2c7c70ef155ac1a74633815a4bcf}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM5\_UP@{STM32\_DMAMUX1\_TIM5\_UP}}
+\index{STM32\_DMAMUX1\_TIM5\_UP@{STM32\_DMAMUX1\_TIM5\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM5\_UP}{STM32\_DMAMUX1\_TIM5\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM5\+\_\+\+UP~59}
+
+\mbox{\Hypertarget{dma_8h_a348460ac3d5aa6de5d2b6b514f35c2fe}\label{dma_8h_a348460ac3d5aa6de5d2b6b514f35c2fe}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM6\_UP@{STM32\_DMAMUX1\_TIM6\_UP}}
+\index{STM32\_DMAMUX1\_TIM6\_UP@{STM32\_DMAMUX1\_TIM6\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM6\_UP}{STM32\_DMAMUX1\_TIM6\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM6\+\_\+\+UP~69}
+
+\mbox{\Hypertarget{dma_8h_aabf9029253a0bcabcf5eb477c21f8a15}\label{dma_8h_aabf9029253a0bcabcf5eb477c21f8a15}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM7\_UP@{STM32\_DMAMUX1\_TIM7\_UP}}
+\index{STM32\_DMAMUX1\_TIM7\_UP@{STM32\_DMAMUX1\_TIM7\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM7\_UP}{STM32\_DMAMUX1\_TIM7\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM7\+\_\+\+UP~70}
+
+\mbox{\Hypertarget{dma_8h_afdf801631ad1c863ed6a92ca5b29ae98}\label{dma_8h_afdf801631ad1c863ed6a92ca5b29ae98}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM8\_CH1@{STM32\_DMAMUX1\_TIM8\_CH1}}
+\index{STM32\_DMAMUX1\_TIM8\_CH1@{STM32\_DMAMUX1\_TIM8\_CH1}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM8\_CH1}{STM32\_DMAMUX1\_TIM8\_CH1}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH1~47}
+
+\mbox{\Hypertarget{dma_8h_ae1acd4d92c0d6aced65fb9be3a4bf29c}\label{dma_8h_ae1acd4d92c0d6aced65fb9be3a4bf29c}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM8\_CH2@{STM32\_DMAMUX1\_TIM8\_CH2}}
+\index{STM32\_DMAMUX1\_TIM8\_CH2@{STM32\_DMAMUX1\_TIM8\_CH2}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM8\_CH2}{STM32\_DMAMUX1\_TIM8\_CH2}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH2~48}
+
+\mbox{\Hypertarget{dma_8h_a7c3c8367bd322c3c4546ab55b9c216fd}\label{dma_8h_a7c3c8367bd322c3c4546ab55b9c216fd}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM8\_CH3@{STM32\_DMAMUX1\_TIM8\_CH3}}
+\index{STM32\_DMAMUX1\_TIM8\_CH3@{STM32\_DMAMUX1\_TIM8\_CH3}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM8\_CH3}{STM32\_DMAMUX1\_TIM8\_CH3}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH3~49}
+
+\mbox{\Hypertarget{dma_8h_a8f7cbabaf6b497a8f36dfb44e2f1de0a}\label{dma_8h_a8f7cbabaf6b497a8f36dfb44e2f1de0a}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM8\_CH4@{STM32\_DMAMUX1\_TIM8\_CH4}}
+\index{STM32\_DMAMUX1\_TIM8\_CH4@{STM32\_DMAMUX1\_TIM8\_CH4}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM8\_CH4}{STM32\_DMAMUX1\_TIM8\_CH4}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+CH4~50}
+
+\mbox{\Hypertarget{dma_8h_a7a504aa52dd47f9c61e4fa45e42c5467}\label{dma_8h_a7a504aa52dd47f9c61e4fa45e42c5467}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM8\_COM@{STM32\_DMAMUX1\_TIM8\_COM}}
+\index{STM32\_DMAMUX1\_TIM8\_COM@{STM32\_DMAMUX1\_TIM8\_COM}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM8\_COM}{STM32\_DMAMUX1\_TIM8\_COM}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+COM~53}
+
+\mbox{\Hypertarget{dma_8h_aafd542ef937299a2d45f9a1f37f86433}\label{dma_8h_aafd542ef937299a2d45f9a1f37f86433}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM8\_TRIG@{STM32\_DMAMUX1\_TIM8\_TRIG}}
+\index{STM32\_DMAMUX1\_TIM8\_TRIG@{STM32\_DMAMUX1\_TIM8\_TRIG}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM8\_TRIG}{STM32\_DMAMUX1\_TIM8\_TRIG}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+TRIG~52}
+
+\mbox{\Hypertarget{dma_8h_ad115b33548e47ab6320a26a9c9563e31}\label{dma_8h_ad115b33548e47ab6320a26a9c9563e31}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_TIM8\_UP@{STM32\_DMAMUX1\_TIM8\_UP}}
+\index{STM32\_DMAMUX1\_TIM8\_UP@{STM32\_DMAMUX1\_TIM8\_UP}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_TIM8\_UP}{STM32\_DMAMUX1\_TIM8\_UP}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+TIM8\+\_\+\+UP~51}
+
+\mbox{\Hypertarget{dma_8h_a6626ccfc4a8be21ffa0d82105e0d3a00}\label{dma_8h_a6626ccfc4a8be21ffa0d82105e0d3a00}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART4\_RX@{STM32\_DMAMUX1\_UART4\_RX}}
+\index{STM32\_DMAMUX1\_UART4\_RX@{STM32\_DMAMUX1\_UART4\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART4\_RX}{STM32\_DMAMUX1\_UART4\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART4\+\_\+\+RX~63}
+
+\mbox{\Hypertarget{dma_8h_a8bb1aa76d3f7f003981f5db60cda0a47}\label{dma_8h_a8bb1aa76d3f7f003981f5db60cda0a47}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART4\_TX@{STM32\_DMAMUX1\_UART4\_TX}}
+\index{STM32\_DMAMUX1\_UART4\_TX@{STM32\_DMAMUX1\_UART4\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART4\_TX}{STM32\_DMAMUX1\_UART4\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART4\+\_\+\+TX~64}
+
+\mbox{\Hypertarget{dma_8h_a0cb36dd86860f0c3dca604c51ee8d19b}\label{dma_8h_a0cb36dd86860f0c3dca604c51ee8d19b}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART5\_RX@{STM32\_DMAMUX1\_UART5\_RX}}
+\index{STM32\_DMAMUX1\_UART5\_RX@{STM32\_DMAMUX1\_UART5\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART5\_RX}{STM32\_DMAMUX1\_UART5\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART5\+\_\+\+RX~65}
+
+\mbox{\Hypertarget{dma_8h_acd5be0a6b3eee09279f81e6d8167ee0e}\label{dma_8h_acd5be0a6b3eee09279f81e6d8167ee0e}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART5\_TX@{STM32\_DMAMUX1\_UART5\_TX}}
+\index{STM32\_DMAMUX1\_UART5\_TX@{STM32\_DMAMUX1\_UART5\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART5\_TX}{STM32\_DMAMUX1\_UART5\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART5\+\_\+\+TX~66}
+
+\mbox{\Hypertarget{dma_8h_ab724d3bc1fa05dac9594ae2047870b3f}\label{dma_8h_ab724d3bc1fa05dac9594ae2047870b3f}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART7\_RX@{STM32\_DMAMUX1\_UART7\_RX}}
+\index{STM32\_DMAMUX1\_UART7\_RX@{STM32\_DMAMUX1\_UART7\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART7\_RX}{STM32\_DMAMUX1\_UART7\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART7\+\_\+\+RX~79}
+
+\mbox{\Hypertarget{dma_8h_af5a92adf43d5e50eae0e0b5f3468eaf1}\label{dma_8h_af5a92adf43d5e50eae0e0b5f3468eaf1}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART7\_TX@{STM32\_DMAMUX1\_UART7\_TX}}
+\index{STM32\_DMAMUX1\_UART7\_TX@{STM32\_DMAMUX1\_UART7\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART7\_TX}{STM32\_DMAMUX1\_UART7\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART7\+\_\+\+TX~80}
+
+\mbox{\Hypertarget{dma_8h_a31015d55debe4bebd58d73a75193fcf7}\label{dma_8h_a31015d55debe4bebd58d73a75193fcf7}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART8\_RX@{STM32\_DMAMUX1\_UART8\_RX}}
+\index{STM32\_DMAMUX1\_UART8\_RX@{STM32\_DMAMUX1\_UART8\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART8\_RX}{STM32\_DMAMUX1\_UART8\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART8\+\_\+\+RX~81}
+
+\mbox{\Hypertarget{dma_8h_abab94bce04b4710a1c5a4fd933b2c0a0}\label{dma_8h_abab94bce04b4710a1c5a4fd933b2c0a0}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_UART8\_TX@{STM32\_DMAMUX1\_UART8\_TX}}
+\index{STM32\_DMAMUX1\_UART8\_TX@{STM32\_DMAMUX1\_UART8\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_UART8\_TX}{STM32\_DMAMUX1\_UART8\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+UART8\+\_\+\+TX~82}
+
+\mbox{\Hypertarget{dma_8h_a4d7e01829f1ad1ca460758cea23ad7d5}\label{dma_8h_a4d7e01829f1ad1ca460758cea23ad7d5}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_USART2\_RX@{STM32\_DMAMUX1\_USART2\_RX}}
+\index{STM32\_DMAMUX1\_USART2\_RX@{STM32\_DMAMUX1\_USART2\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_USART2\_RX}{STM32\_DMAMUX1\_USART2\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+USART2\+\_\+\+RX~43}
+
+\mbox{\Hypertarget{dma_8h_a42eb61b4adef79ed5c1b22f79b892de1}\label{dma_8h_a42eb61b4adef79ed5c1b22f79b892de1}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_USART2\_TX@{STM32\_DMAMUX1\_USART2\_TX}}
+\index{STM32\_DMAMUX1\_USART2\_TX@{STM32\_DMAMUX1\_USART2\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_USART2\_TX}{STM32\_DMAMUX1\_USART2\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+USART2\+\_\+\+TX~44}
+
+\mbox{\Hypertarget{dma_8h_aea2792540fef9db70f2b1fc3fe5a44c4}\label{dma_8h_aea2792540fef9db70f2b1fc3fe5a44c4}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_USART3\_RX@{STM32\_DMAMUX1\_USART3\_RX}}
+\index{STM32\_DMAMUX1\_USART3\_RX@{STM32\_DMAMUX1\_USART3\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_USART3\_RX}{STM32\_DMAMUX1\_USART3\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+USART3\+\_\+\+RX~45}
+
+\mbox{\Hypertarget{dma_8h_aa3231cccc8bc86956d7d01c5d096196b}\label{dma_8h_aa3231cccc8bc86956d7d01c5d096196b}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_USART3\_TX@{STM32\_DMAMUX1\_USART3\_TX}}
+\index{STM32\_DMAMUX1\_USART3\_TX@{STM32\_DMAMUX1\_USART3\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_USART3\_TX}{STM32\_DMAMUX1\_USART3\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+USART3\+\_\+\+TX~46}
+
+\mbox{\Hypertarget{dma_8h_a5baa11bbfa21837bf2f340c113a86fa8}\label{dma_8h_a5baa11bbfa21837bf2f340c113a86fa8}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_USART6\_RX@{STM32\_DMAMUX1\_USART6\_RX}}
+\index{STM32\_DMAMUX1\_USART6\_RX@{STM32\_DMAMUX1\_USART6\_RX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_USART6\_RX}{STM32\_DMAMUX1\_USART6\_RX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+USART6\+\_\+\+RX~71}
+
+\mbox{\Hypertarget{dma_8h_ad34c95b9c2fe4712173a9ed4243b7210}\label{dma_8h_ad34c95b9c2fe4712173a9ed4243b7210}} 
+\index{dma.h@{dma.h}!STM32\_DMAMUX1\_USART6\_TX@{STM32\_DMAMUX1\_USART6\_TX}}
+\index{STM32\_DMAMUX1\_USART6\_TX@{STM32\_DMAMUX1\_USART6\_TX}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{STM32\_DMAMUX1\_USART6\_TX}{STM32\_DMAMUX1\_USART6\_TX}}
+{\footnotesize\ttfamily \#define STM32\+\_\+\+DMAMUX1\+\_\+\+USART6\+\_\+\+TX~72}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{dma_8h_a55044093a3093b536a988829df78eb1f}\label{dma_8h_a55044093a3093b536a988829df78eb1f}} 
+\index{dma.h@{dma.h}!dma\_request\_t@{dma\_request\_t}}
+\index{dma\_request\_t@{dma\_request\_t}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_request\_t}{dma\_request\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdma__request}{dma\+\_\+request}} \mbox{\hyperlink{dma_8h_a55044093a3093b536a988829df78eb1f}{dma\+\_\+request\+\_\+t}}}
+
+\mbox{\Hypertarget{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}\label{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}} 
+\index{dma.h@{dma.h}!dma\_scheduler\_dev\_t@{dma\_scheduler\_dev\_t}}
+\index{dma\_scheduler\_dev\_t@{dma\_scheduler\_dev\_t}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_scheduler\_dev\_t}{dma\_scheduler\_dev\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdma__scheduler__dev}{dma\+\_\+scheduler\+\_\+dev}} \mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}}}
+
+\mbox{\Hypertarget{dma_8h_abe95b186733422d2ce02fc5780b1a03f}\label{dma_8h_abe95b186733422d2ce02fc5780b1a03f}} 
+\index{dma.h@{dma.h}!dma\_stream\_config\_t@{dma\_stream\_config\_t}}
+\index{dma\_stream\_config\_t@{dma\_stream\_config\_t}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_stream\_config\_t}{dma\_stream\_config\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdma__stream__config}{dma\+\_\+stream\+\_\+config}} \mbox{\hyperlink{dma_8h_abe95b186733422d2ce02fc5780b1a03f}{dma\+\_\+stream\+\_\+config\+\_\+t}}}
+
+\mbox{\Hypertarget{dma_8h_a763c487ee816c6057f45ed558f779644}\label{dma_8h_a763c487ee816c6057f45ed558f779644}} 
+\index{dma.h@{dma.h}!dma\_stream\_dev\_t@{dma\_stream\_dev\_t}}
+\index{dma\_stream\_dev\_t@{dma\_stream\_dev\_t}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_stream\_dev\_t}{dma\_stream\_dev\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdma__stream__dev}{dma\+\_\+stream\+\_\+dev}} \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}}}
+
+\mbox{\Hypertarget{dma_8h_a9eece4c5de72ab163f7a088a6a9ebe96}\label{dma_8h_a9eece4c5de72ab163f7a088a6a9ebe96}} 
+\index{dma.h@{dma.h}!dma\_stream\_dir\_t@{dma\_stream\_dir\_t}}
+\index{dma\_stream\_dir\_t@{dma\_stream\_dir\_t}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_stream\_dir\_t}{dma\_stream\_dir\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{dma_8h_ab356491650fde7dcb06bb0db5478c186}{dma\+\_\+stream\+\_\+dir}} \mbox{\hyperlink{dma_8h_a9eece4c5de72ab163f7a088a6a9ebe96}{dma\+\_\+stream\+\_\+dir\+\_\+t}}}
+
+\mbox{\Hypertarget{dma_8h_ae37f496dee90e92066d23f36bb37d21e}\label{dma_8h_ae37f496dee90e92066d23f36bb37d21e}} 
+\index{dma.h@{dma.h}!dma\_stream\_state\_t@{dma\_stream\_state\_t}}
+\index{dma\_stream\_state\_t@{dma\_stream\_state\_t}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_stream\_state\_t}{dma\_stream\_state\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20}{dma\+\_\+stream\+\_\+state}} \mbox{\hyperlink{dma_8h_ae37f496dee90e92066d23f36bb37d21e}{dma\+\_\+stream\+\_\+state\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{dma_8h_ab356491650fde7dcb06bb0db5478c186}\label{dma_8h_ab356491650fde7dcb06bb0db5478c186}} 
+\index{dma.h@{dma.h}!dma\_stream\_dir@{dma\_stream\_dir}}
+\index{dma\_stream\_dir@{dma\_stream\_dir}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_stream\_dir}{dma\_stream\_dir}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{dma_8h_ab356491650fde7dcb06bb0db5478c186}{dma\+\_\+stream\+\_\+dir}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DMA\_STREAM\_P2M@{DMA\_STREAM\_P2M}!dma.h@{dma.h}}\index{dma.h@{dma.h}!DMA\_STREAM\_P2M@{DMA\_STREAM\_P2M}}}\mbox{\Hypertarget{dma_8h_ab356491650fde7dcb06bb0db5478c186a652ca2e6df19ee8efd906d0790ae9f28}\label{dma_8h_ab356491650fde7dcb06bb0db5478c186a652ca2e6df19ee8efd906d0790ae9f28}} 
+DMA\+\_\+\+STREAM\+\_\+\+P2M&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DMA\_STREAM\_M2P@{DMA\_STREAM\_M2P}!dma.h@{dma.h}}\index{dma.h@{dma.h}!DMA\_STREAM\_M2P@{DMA\_STREAM\_M2P}}}\mbox{\Hypertarget{dma_8h_ab356491650fde7dcb06bb0db5478c186abaff97542986de3b4b1c690d2c73322c}\label{dma_8h_ab356491650fde7dcb06bb0db5478c186abaff97542986de3b4b1c690d2c73322c}} 
+DMA\+\_\+\+STREAM\+\_\+\+M2P&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DMA\_STREAM\_M2M@{DMA\_STREAM\_M2M}!dma.h@{dma.h}}\index{dma.h@{dma.h}!DMA\_STREAM\_M2M@{DMA\_STREAM\_M2M}}}\mbox{\Hypertarget{dma_8h_ab356491650fde7dcb06bb0db5478c186ad235e2242d399f472f961c2dcef411d3}\label{dma_8h_ab356491650fde7dcb06bb0db5478c186ad235e2242d399f472f961c2dcef411d3}} 
+DMA\+\_\+\+STREAM\+\_\+\+M2M&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20}\label{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20}} 
+\index{dma.h@{dma.h}!dma\_stream\_state@{dma\_stream\_state}}
+\index{dma\_stream\_state@{dma\_stream\_state}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_stream\_state}{dma\_stream\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20}{dma\+\_\+stream\+\_\+state}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DMA\_STREAM\_BUSY@{DMA\_STREAM\_BUSY}!dma.h@{dma.h}}\index{dma.h@{dma.h}!DMA\_STREAM\_BUSY@{DMA\_STREAM\_BUSY}}}\mbox{\Hypertarget{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20a627561df3fb7f8973300771af90cc566}\label{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20a627561df3fb7f8973300771af90cc566}} 
+DMA\+\_\+\+STREAM\+\_\+\+BUSY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DMA\_STREAM\_FREE@{DMA\_STREAM\_FREE}!dma.h@{dma.h}}\index{dma.h@{dma.h}!DMA\_STREAM\_FREE@{DMA\_STREAM\_FREE}}}\mbox{\Hypertarget{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20a3ade634063e3f03fe4a4c4ec7973fa10}\label{dma_8h_a752e9a7f48c683654e5ffbb2aa2b7c20a3ade634063e3f03fe4a4c4ec7973fa10}} 
+DMA\+\_\+\+STREAM\+\_\+\+FREE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dma_8h_a57e6b805cb1eec47e3e3d18ff4632c6b}\label{dma_8h_a57e6b805cb1eec47e3e3d18ff4632c6b}} 
+\index{dma.h@{dma.h}!dma2\_get\_scheduler@{dma2\_get\_scheduler}}
+\index{dma2\_get\_scheduler@{dma2\_get\_scheduler}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma2\_get\_scheduler()}{dma2\_get\_scheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}}$\ast$ dma2\+\_\+get\+\_\+scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References dma2\+\_\+scheduler.
+
+\mbox{\Hypertarget{dma_8h_a10b990a4dba612270a7cf696647c54f7}\label{dma_8h_a10b990a4dba612270a7cf696647c54f7}} 
+\index{dma.h@{dma.h}!dma2\_get\_streams@{dma2\_get\_streams}}
+\index{dma2\_get\_streams@{dma2\_get\_streams}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma2\_get\_streams()}{dma2\_get\_streams()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}}$\ast$ dma2\+\_\+get\+\_\+streams (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References dma2\+\_\+streams.
+
+\mbox{\Hypertarget{dma_8h_a212f97127bc38430c0b2f29f48e17084}\label{dma_8h_a212f97127bc38430c0b2f29f48e17084}} 
+\index{dma.h@{dma.h}!dma2\_init\_scheduler@{dma2\_init\_scheduler}}
+\index{dma2\_init\_scheduler@{dma2\_init\_scheduler}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma2\_init\_scheduler()}{dma2\_init\_scheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma2\+\_\+init\+\_\+scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References dma2\+\_\+scheduler, dma2\+\_\+streams, dma\+\_\+scheduler\+\_\+init(), and ER\+\_\+\+SUCCESS.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dma_8h_a212f97127bc38430c0b2f29f48e17084_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dma_8h_abdee22e78d91d6b3a52498093da20ff1}\label{dma_8h_abdee22e78d91d6b3a52498093da20ff1}} 
+\index{dma.h@{dma.h}!dma\_copy@{dma\_copy}}
+\index{dma\_copy@{dma\_copy}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_copy()}{dma\_copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+copy (\begin{DoxyParamCaption}\item[{void $\ast$}]{dst,  }\item[{void $\ast$}]{src,  }\item[{uint32\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dma_8h_aedad147a20b881337c9973d11af866c7}\label{dma_8h_aedad147a20b881337c9973d11af866c7}} 
+\index{dma.h@{dma.h}!dma\_scheduler\_init@{dma\_scheduler\_init}}
+\index{dma\_scheduler\_init@{dma\_scheduler\_init}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_scheduler\_init()}{dma\_scheduler\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+scheduler\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+scheduler,  }\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+streams,  }\item[{uint16\+\_\+t}]{nb\+\_\+dma\+\_\+streams }\end{DoxyParamCaption})}
+
+
+
+References DMA\+\_\+\+STREAM\+\_\+\+FREE, DMA\+\_\+\+STREAMS\+\_\+\+MAX\+\_\+\+LEN, ER\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE, ER\+\_\+\+SUCCESS, dma\+\_\+stream\+\_\+dev\+::state, and dma\+\_\+scheduler\+\_\+dev\+::streams.
+
+
+
+Referenced by dma2\+\_\+init\+\_\+scheduler().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dma_8h_aedad147a20b881337c9973d11af866c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dma_8h_a0e558ecb912c5ab72ce01112e3de432a}\label{dma_8h_a0e558ecb912c5ab72ce01112e3de432a}} 
+\index{dma.h@{dma.h}!dma\_scheduler\_release\_stream@{dma\_scheduler\_release\_stream}}
+\index{dma\_scheduler\_release\_stream@{dma\_scheduler\_release\_stream}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_scheduler\_release\_stream()}{dma\_scheduler\_release\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+scheduler\+\_\+release\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+scheduler,  }\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+stream }\end{DoxyParamCaption})}
+
+
+
+References DMA\+\_\+\+STREAM\+\_\+\+FREE, ENTER\+\_\+\+CRITICAL, ER\+\_\+\+SUCCESS, EXIT\+\_\+\+CRITICAL, dma\+\_\+scheduler\+\_\+dev\+::free\+\_\+stream\+\_\+count, and dma\+\_\+stream\+\_\+dev\+::state.
+
+\mbox{\Hypertarget{dma_8h_adf80e54e3d6ab33cad774f76f6bc51f2}\label{dma_8h_adf80e54e3d6ab33cad774f76f6bc51f2}} 
+\index{dma.h@{dma.h}!dma\_scheduler\_request\_stream@{dma\_scheduler\_request\_stream}}
+\index{dma\_scheduler\_request\_stream@{dma\_scheduler\_request\_stream}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_scheduler\_request\_stream()}{dma\_scheduler\_request\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}}$\ast$ dma\+\_\+scheduler\+\_\+request\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_ab33c52af4e7ffcd1ba05fb06004133d3}{dma\+\_\+scheduler\+\_\+dev\+\_\+t}} $\ast$}]{dma\+\_\+scheduler }\end{DoxyParamCaption})}
+
+
+
+References DMA\+\_\+\+STREAM\+\_\+\+BUSY, DMA\+\_\+\+STREAM\+\_\+\+FREE, ENTER\+\_\+\+CRITICAL, EXIT\+\_\+\+CRITICAL, dma\+\_\+scheduler\+\_\+dev\+::free\+\_\+stream\+\_\+count, dma\+\_\+stream\+\_\+dev\+::state, dma\+\_\+scheduler\+\_\+dev\+::stream\+\_\+count, and dma\+\_\+scheduler\+\_\+dev\+::streams.
+
+\mbox{\Hypertarget{dma_8h_a53f81707348f3b02e69f0e6618ef201d}\label{dma_8h_a53f81707348f3b02e69f0e6618ef201d}} 
+\index{dma.h@{dma.h}!dma\_start\_stream@{dma\_start\_stream}}
+\index{dma\_start\_stream@{dma\_start\_stream}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_start\_stream()}{dma\_start\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+start\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{dma_8h_abe95b186733422d2ce02fc5780b1a03f}{dma\+\_\+stream\+\_\+config\+\_\+t}}}]{config }\end{DoxyParamCaption})}
+
+
+
+References dma\+\_\+stream\+\_\+config\+::direction, dma\+\_\+stream\+\_\+dev\+::dma, dma\+\_\+stream\+\_\+dev\+::dma\+\_\+stream, dma\+\_\+stream\+\_\+dev\+::dmamux\+\_\+channel, dma\+\_\+stream\+\_\+config\+::dmamux\+\_\+request\+\_\+number, ER\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE, dma\+\_\+stream\+\_\+config\+::m0\+\_\+addr, dma\+\_\+stream\+\_\+config\+::m1\+\_\+addr, dma\+\_\+stream\+\_\+dev\+::number, dma\+\_\+stream\+\_\+config\+::p\+\_\+addr, dma\+\_\+stream\+\_\+config\+::peripheral\+\_\+flow\+\_\+control, dma\+\_\+stream\+\_\+config\+::priority, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+cplt, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+cplt, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+error, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+error, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+half, dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+half, dma\+\_\+stream\+\_\+config\+::transfer\+\_\+size, dma\+\_\+stream\+\_\+config\+::user\+\_\+context, dma\+\_\+stream\+\_\+dev\+::user\+\_\+context, and WRITE\+\_\+\+IN\+\_\+\+REG.
+
+\mbox{\Hypertarget{dma_8h_a7ab232b7f9a1a89dbe4db365c57dd622}\label{dma_8h_a7ab232b7f9a1a89dbe4db365c57dd622}} 
+\index{dma.h@{dma.h}!dma\_stop\_stream@{dma\_stop\_stream}}
+\index{dma\_stop\_stream@{dma\_stop\_stream}!dma.h@{dma.h}}
+\doxysubsubsection{\texorpdfstring{dma\_stop\_stream()}{dma\_stop\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} dma\+\_\+stop\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dma_8h_a763c487ee816c6057f45ed558f779644}{dma\+\_\+stream\+\_\+dev\+\_\+t}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
