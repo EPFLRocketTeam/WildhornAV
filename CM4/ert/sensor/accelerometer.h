@@ -17,6 +17,7 @@
 
 #include <stdint.h>
 #include <util.h>
+#include <device/device.h>
 
 /**********************
  *  CONSTANTS
@@ -47,7 +48,7 @@ extern "C"{
 #endif
 
 
-util_error_t accelerometer_init(void);
+util_error_t accelerometer_init(device_t * acc);
 
 #ifdef __cplusplus
 } // extern "C"

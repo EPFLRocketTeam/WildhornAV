@@ -27,10 +27,6 @@
 #include <abstraction/gpio.h>
 
 
-//TEMP
-#include <sensor/accelerometer.h>
-#include <sensor/gyroscope.h>
-
 /**********************
  *	CONSTANTS
  **********************/

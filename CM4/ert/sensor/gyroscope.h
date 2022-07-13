@@ -17,6 +17,7 @@
 
 #include <stdint.h>
 #include <util.h>
+#include <device/device.h>
 
 /**********************
  *  CONSTANTS
@@ -46,7 +47,7 @@
 extern "C"{
 #endif
 
-util_error_t gyroscope_init(void);
+util_error_t gyroscope_init(device_t * gyro);
 
 #ifdef __cplusplus
 } // extern "C"

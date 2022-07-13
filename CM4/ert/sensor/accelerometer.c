@@ -11,8 +11,6 @@
  **********************/
 
 #include <sensor/accelerometer.h>
-#include <device/i2c_sensor.h>
-#include <feedback/led.h>
 
 /**********************
  *	CONSTANTS
@@ -58,7 +56,7 @@
  *	VARIABLES
  **********************/
 
-static device_t * accelerometer;
+
 
 
 /**********************
@@ -73,13 +71,10 @@ static device_t * accelerometer;
 /**
  * @brief Initialize accelerometers
  */
-util_error_t accelerometer_init(void) {
+util_error_t accelerometer_init(device_t * acc) {
 
-	accelerometer = i2c_sensor_get_accelerometer();
-
-	//TODO: put correct magic numbers
 	uint8_t data; //read sensor magic number
-	device_read_u8(accelerometer, WHO_AM_I, &data);
+	device_read_u8(acc, WHO_AM_I, &data);
 
 	if(data != WHO_AM_I_MAGIC) {
 		return ER_RESSOURCE_ERROR;

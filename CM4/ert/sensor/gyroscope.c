@@ -11,8 +11,6 @@
  **********************/
 
 #include <sensor/gyroscope.h>
-#include <device/i2c_sensor.h>
-#include <feedback/led.h>
 #include <util.h>
 
 /**********************
@@ -62,8 +60,6 @@
  *	VARIABLES
  **********************/
 
-static device_t * gyroscope;
-
 
 /**********************
  *	PROTOTYPES
@@ -77,13 +73,10 @@ static device_t * gyroscope;
 /**
  * @brief Initialize gyroscopes
  */
-util_error_t gyroscope_init(void) {
+util_error_t gyroscope_init(device_t * gyro) {
 
-	gyroscope = i2c_sensor_get_gyroscope();
-
-	//TODO: put correct magic numbers
 	uint8_t data; //read sensor magic number
-	device_read_u8(gyroscope, WHO_AM_I, &data);
+	device_read_u8(gyro, WHO_AM_I, &data);
 
 	if(data != WHO_AM_I_MAGIC) {
 		return ER_RESSOURCE_ERROR;
