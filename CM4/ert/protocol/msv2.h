@@ -34,20 +34,37 @@
  *  TYPEDEFS
  **********************/
 
+/**
+ * @brief Msv2 packet creator return codes.
+ */
 typedef enum MSV2_ERROR {
+	/** Packet sucessfully decoded/encoded */
 	MSV2_SUCCESS = 0,
+	/** Packed decoding in progress */
 	MSV2_PROGRESS,
+	/** Packet decoding error due to wrong crc */
 	MSV2_WRONG_CRC,
+	/** generic error */
 	MSV2_ERROR
 }MSV2_ERROR_t;
 
+/**
+ * @brief Msv2 packet decoded state.
+ */
 typedef enum MSV2_DECODE_STATE{
+	/** Waiting for data Link Escape */
 	WAITING_DLE,
+	/** Waiting for Start of Text */
 	WAITING_STX,
+	/** Waiting for Opcode */
 	WAITING_OPCODE,
+	/** Waiting for Packet Length */
 	WAITING_LEN,
+	/** Waiting for Data */
 	WAITING_DATA,
+	/** Waiting for CRC Byte 1 */
 	WAITING_CRC1,
+	/** Waiting for CRC Byte 2 */
 	WAITING_CRC2
 }MSV2_DECODE_STATE_t;
 

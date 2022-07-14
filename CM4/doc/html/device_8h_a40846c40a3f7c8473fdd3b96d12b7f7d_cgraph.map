@@ -1,0 +1,5 @@
+<map id="device_create" name="device_create">
+<area shape="rect" id="node1" title="Initialize a device instance." alt="" coords="5,31,119,57"/>
+<area shape="rect" id="node2" href="$i2c__sensor_8c.html#a91cf04fe5df04ba769f873ab7a67c03f" title=" " alt="" coords="169,5,247,32"/>
+<area shape="rect" id="node3" href="$i2c__sensor_8c.html#a5389e7d11cf7b6edabca8ca6d332f33f" title=" " alt="" coords="167,56,249,83"/>
+</map>

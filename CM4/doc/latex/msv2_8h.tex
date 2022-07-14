@@ -1,0 +1,341 @@
+\hypertarget{msv2_8h}{}\doxysection{msv2.\+h File Reference}
+\label{msv2_8h}\index{msv2.h@{msv2.h}}
+{\ttfamily \#include $<$util.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for msv2.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{msv2_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{msv2_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMSV2__RX__DATA}{MSV2\+\_\+\+RX\+\_\+\+DATA}}
+\item 
+struct \mbox{\hyperlink{structMSV2__TX__DATA}{MSV2\+\_\+\+TX\+\_\+\+DATA}}
+\item 
+struct \mbox{\hyperlink{structMSV2__INST}{MSV2\+\_\+\+INST}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{msv2_8h_ac122f39047f5204c83ee5eba8b11917b}{MSV2\+\_\+\+MAX\+\_\+\+FRAME\+\_\+\+LEN}}~(1024)
+\item 
+\#define \mbox{\hyperlink{msv2_8h_a9be7364fb210684732bac1a942c6f12e}{MSV2\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN}}~(512)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792}{MSV2\+\_\+\+ERROR}} \mbox{\hyperlink{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}{MSV2\+\_\+\+ERROR\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Msv2 packet creator return codes. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370}{MSV2\+\_\+\+DECODE\+\_\+\+STATE}} \mbox{\hyperlink{msv2_8h_a844d50aaf5622812ab0a58b27797f53d}{MSV2\+\_\+\+DECODE\+\_\+\+STATE\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Msv2 packet decoded state. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structMSV2__RX__DATA}{MSV2\+\_\+\+RX\+\_\+\+DATA}} \mbox{\hyperlink{msv2_8h_af87acd7db832f7b61a04fa66e6242bf5}{MSV2\+\_\+\+RX\+\_\+\+DATA\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structMSV2__TX__DATA}{MSV2\+\_\+\+TX\+\_\+\+DATA}} \mbox{\hyperlink{msv2_8h_ab1ff58325ec1c9483730d79643edd2e0}{MSV2\+\_\+\+TX\+\_\+\+DATA\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structMSV2__INST}{MSV2\+\_\+\+INST}} \mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792}{MSV2\+\_\+\+ERROR}} \{ \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a43d93d5fb9d4c7ae0949b035fbee98fb}{MSV2\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792afceee8b0d6fe14f7df36be1dfe274f84}{MSV2\+\_\+\+PROGRESS}}
+, \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a525109d72f2222e3550869c8b4e14e5f}{MSV2\+\_\+\+WRONG\+\_\+\+CRC}}
+, \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a38743db96533715a4486485f6aa62c2e}{MSV2\+\_\+\+ERROR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Msv2 packet creator return codes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370}{MSV2\+\_\+\+DECODE\+\_\+\+STATE}} \{ \newline
+\mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a89b9ad33aec815c5a0bd2ca8cb32e141}{WAITING\+\_\+\+DLE}}
+, \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a54219fc033a6e5ced5de07dccc7ac69d}{WAITING\+\_\+\+STX}}
+, \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a2f2901d932316fe9315e0a92743f5333}{WAITING\+\_\+\+OPCODE}}
+, \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5f0744cd183d4d893df64decc273bb06}{WAITING\+\_\+\+LEN}}
+, \newline
+\mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5a43836fe893b81b44d364533f36d85d}{WAITING\+\_\+\+DATA}}
+, \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370ab4fd3fa68b0043fbc9894445ad7d0fbd}{WAITING\+\_\+\+CRC1}}
+, \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5e3d7b04ace4c5ee06ba9a16dff56a36}{WAITING\+\_\+\+CRC2}}
+ \}
+\begin{DoxyCompactList}\small\item\em Msv2 packet decoded state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}{MSV2\+\_\+\+ERROR\+\_\+t}} \mbox{\hyperlink{msv2_8h_a71451e32b773eadfc5e7e20a5e242d3a}{msv2\+\_\+decode\+\_\+fragment}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2, uint8\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Decode an msv2 fragment (one byte at a time) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{msv2_8h_a7c8e1e6930814ed33103370c3cb35b07}{msv2\+\_\+init}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2)
+\begin{DoxyCompactList}\small\item\em Initialize a msv2 packet creator instance. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{msv2_8h_a1035988ac07881bb546b9d7bd361d235}{msv2\+\_\+create\+\_\+frame}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2, uint8\+\_\+t opcode, uint8\+\_\+t data\+\_\+len, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Generate an msv2 packet. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{msv2_8h_a2f7c5ee44791fff958d61e2d72548430}{msv2\+\_\+rx\+\_\+data}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2)
+\begin{DoxyCompactList}\small\item\em Getter for the pointer to the rx data array contained in the msv2 packet creator. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{msv2_8h_a355f4b6fbf1e8779663227ff83659ca0}{msv2\+\_\+tx\+\_\+data}} (\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$msv2)
+\begin{DoxyCompactList}\small\item\em Getter for the pointer to the tx data array contained in the msv2 packet creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{msv2_8h_a9be7364fb210684732bac1a942c6f12e}\label{msv2_8h_a9be7364fb210684732bac1a942c6f12e}} 
+\index{msv2.h@{msv2.h}!MSV2\_MAX\_DATA\_LEN@{MSV2\_MAX\_DATA\_LEN}}
+\index{MSV2\_MAX\_DATA\_LEN@{MSV2\_MAX\_DATA\_LEN}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_MAX\_DATA\_LEN}{MSV2\_MAX\_DATA\_LEN}}
+{\footnotesize\ttfamily \#define MSV2\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN~(512)}
+
+\mbox{\Hypertarget{msv2_8h_ac122f39047f5204c83ee5eba8b11917b}\label{msv2_8h_ac122f39047f5204c83ee5eba8b11917b}} 
+\index{msv2.h@{msv2.h}!MSV2\_MAX\_FRAME\_LEN@{MSV2\_MAX\_FRAME\_LEN}}
+\index{MSV2\_MAX\_FRAME\_LEN@{MSV2\_MAX\_FRAME\_LEN}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_MAX\_FRAME\_LEN}{MSV2\_MAX\_FRAME\_LEN}}
+{\footnotesize\ttfamily \#define MSV2\+\_\+\+MAX\+\_\+\+FRAME\+\_\+\+LEN~(1024)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{msv2_8h_a844d50aaf5622812ab0a58b27797f53d}\label{msv2_8h_a844d50aaf5622812ab0a58b27797f53d}} 
+\index{msv2.h@{msv2.h}!MSV2\_DECODE\_STATE\_t@{MSV2\_DECODE\_STATE\_t}}
+\index{MSV2\_DECODE\_STATE\_t@{MSV2\_DECODE\_STATE\_t}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_DECODE\_STATE\_t}{MSV2\_DECODE\_STATE\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370}{MSV2\+\_\+\+DECODE\+\_\+\+STATE}} \mbox{\hyperlink{msv2_8h_a844d50aaf5622812ab0a58b27797f53d}{MSV2\+\_\+\+DECODE\+\_\+\+STATE\+\_\+t}}}
+
+
+
+Msv2 packet decoded state. 
+
+\mbox{\Hypertarget{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}\label{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}} 
+\index{msv2.h@{msv2.h}!MSV2\_ERROR\_t@{MSV2\_ERROR\_t}}
+\index{MSV2\_ERROR\_t@{MSV2\_ERROR\_t}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_ERROR\_t}{MSV2\_ERROR\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792}{MSV2\+\_\+\+ERROR}} \mbox{\hyperlink{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}{MSV2\+\_\+\+ERROR\+\_\+t}}}
+
+
+
+Msv2 packet creator return codes. 
+
+\mbox{\Hypertarget{msv2_8h_a158ad369a979d87984bd075a6d5912cd}\label{msv2_8h_a158ad369a979d87984bd075a6d5912cd}} 
+\index{msv2.h@{msv2.h}!MSV2\_INST\_t@{MSV2\_INST\_t}}
+\index{MSV2\_INST\_t@{MSV2\_INST\_t}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_INST\_t}{MSV2\_INST\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structMSV2__INST}{MSV2\+\_\+\+INST}} \mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}}}
+
+\mbox{\Hypertarget{msv2_8h_af87acd7db832f7b61a04fa66e6242bf5}\label{msv2_8h_af87acd7db832f7b61a04fa66e6242bf5}} 
+\index{msv2.h@{msv2.h}!MSV2\_RX\_DATA\_t@{MSV2\_RX\_DATA\_t}}
+\index{MSV2\_RX\_DATA\_t@{MSV2\_RX\_DATA\_t}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_RX\_DATA\_t}{MSV2\_RX\_DATA\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structMSV2__RX__DATA}{MSV2\+\_\+\+RX\+\_\+\+DATA}} \mbox{\hyperlink{msv2_8h_af87acd7db832f7b61a04fa66e6242bf5}{MSV2\+\_\+\+RX\+\_\+\+DATA\+\_\+t}}}
+
+\mbox{\Hypertarget{msv2_8h_ab1ff58325ec1c9483730d79643edd2e0}\label{msv2_8h_ab1ff58325ec1c9483730d79643edd2e0}} 
+\index{msv2.h@{msv2.h}!MSV2\_TX\_DATA\_t@{MSV2\_TX\_DATA\_t}}
+\index{MSV2\_TX\_DATA\_t@{MSV2\_TX\_DATA\_t}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_TX\_DATA\_t}{MSV2\_TX\_DATA\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structMSV2__TX__DATA}{MSV2\+\_\+\+TX\+\_\+\+DATA}} \mbox{\hyperlink{msv2_8h_ab1ff58325ec1c9483730d79643edd2e0}{MSV2\+\_\+\+TX\+\_\+\+DATA\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370}} 
+\index{msv2.h@{msv2.h}!MSV2\_DECODE\_STATE@{MSV2\_DECODE\_STATE}}
+\index{MSV2\_DECODE\_STATE@{MSV2\_DECODE\_STATE}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_DECODE\_STATE}{MSV2\_DECODE\_STATE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{msv2_8h_a73804efbc544b18162ca9ba66d8c9370}{MSV2\+\_\+\+DECODE\+\_\+\+STATE}}}
+
+
+
+Msv2 packet decoded state. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_DLE@{WAITING\_DLE}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!WAITING\_DLE@{WAITING\_DLE}}}\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a89b9ad33aec815c5a0bd2ca8cb32e141}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a89b9ad33aec815c5a0bd2ca8cb32e141}} 
+WAITING\+\_\+\+DLE&Waiting for data Link Escape \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_STX@{WAITING\_STX}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!WAITING\_STX@{WAITING\_STX}}}\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a54219fc033a6e5ced5de07dccc7ac69d}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a54219fc033a6e5ced5de07dccc7ac69d}} 
+WAITING\+\_\+\+STX&Waiting for Start of Text \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_OPCODE@{WAITING\_OPCODE}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!WAITING\_OPCODE@{WAITING\_OPCODE}}}\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a2f2901d932316fe9315e0a92743f5333}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a2f2901d932316fe9315e0a92743f5333}} 
+WAITING\+\_\+\+OPCODE&Waiting for Opcode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_LEN@{WAITING\_LEN}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!WAITING\_LEN@{WAITING\_LEN}}}\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5f0744cd183d4d893df64decc273bb06}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5f0744cd183d4d893df64decc273bb06}} 
+WAITING\+\_\+\+LEN&Waiting for Packet Length \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_DATA@{WAITING\_DATA}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!WAITING\_DATA@{WAITING\_DATA}}}\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5a43836fe893b81b44d364533f36d85d}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5a43836fe893b81b44d364533f36d85d}} 
+WAITING\+\_\+\+DATA&Waiting for Data \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_CRC1@{WAITING\_CRC1}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!WAITING\_CRC1@{WAITING\_CRC1}}}\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370ab4fd3fa68b0043fbc9894445ad7d0fbd}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370ab4fd3fa68b0043fbc9894445ad7d0fbd}} 
+WAITING\+\_\+\+CRC1&Waiting for CRC Byte 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING\_CRC2@{WAITING\_CRC2}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!WAITING\_CRC2@{WAITING\_CRC2}}}\mbox{\Hypertarget{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5e3d7b04ace4c5ee06ba9a16dff56a36}\label{msv2_8h_a73804efbc544b18162ca9ba66d8c9370a5e3d7b04ace4c5ee06ba9a16dff56a36}} 
+WAITING\+\_\+\+CRC2&Waiting for CRC Byte 2 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792}\label{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792}} 
+\index{msv2.h@{msv2.h}!MSV2\_ERROR@{MSV2\_ERROR}}
+\index{MSV2\_ERROR@{MSV2\_ERROR}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{MSV2\_ERROR}{MSV2\_ERROR}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792}{MSV2\+\_\+\+ERROR}}}
+
+
+
+Msv2 packet creator return codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSV2\_SUCCESS@{MSV2\_SUCCESS}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!MSV2\_SUCCESS@{MSV2\_SUCCESS}}}\mbox{\Hypertarget{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a43d93d5fb9d4c7ae0949b035fbee98fb}\label{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a43d93d5fb9d4c7ae0949b035fbee98fb}} 
+MSV2\+\_\+\+SUCCESS&Packet sucessfully decoded/encoded \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSV2\_PROGRESS@{MSV2\_PROGRESS}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!MSV2\_PROGRESS@{MSV2\_PROGRESS}}}\mbox{\Hypertarget{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792afceee8b0d6fe14f7df36be1dfe274f84}\label{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792afceee8b0d6fe14f7df36be1dfe274f84}} 
+MSV2\+\_\+\+PROGRESS&Packed decoding in progress \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSV2\_WRONG\_CRC@{MSV2\_WRONG\_CRC}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!MSV2\_WRONG\_CRC@{MSV2\_WRONG\_CRC}}}\mbox{\Hypertarget{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a525109d72f2222e3550869c8b4e14e5f}\label{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a525109d72f2222e3550869c8b4e14e5f}} 
+MSV2\+\_\+\+WRONG\+\_\+\+CRC&Packet decoding error due to wrong crc \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSV2\_ERROR@{MSV2\_ERROR}!msv2.h@{msv2.h}}\index{msv2.h@{msv2.h}!MSV2\_ERROR@{MSV2\_ERROR}}}\mbox{\Hypertarget{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a38743db96533715a4486485f6aa62c2e}\label{msv2_8h_a9877ce35d5a7a0a7fd3924f0b6102792a38743db96533715a4486485f6aa62c2e}} 
+MSV2\+\_\+\+ERROR&generic error \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{msv2_8h_a1035988ac07881bb546b9d7bd361d235}\label{msv2_8h_a1035988ac07881bb546b9d7bd361d235}} 
+\index{msv2.h@{msv2.h}!msv2\_create\_frame@{msv2\_create\_frame}}
+\index{msv2\_create\_frame@{msv2\_create\_frame}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{msv2\_create\_frame()}{msv2\_create\_frame()}}
+{\footnotesize\ttfamily uint16\+\_\+t msv2\+\_\+create\+\_\+frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2,  }\item[{uint8\+\_\+t}]{opcode,  }\item[{uint8\+\_\+t}]{data\+\_\+len,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Generate an msv2 packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+{\em opcode} & Opcode to be placed in the packet header. \\
+\hline
+{\em data\+\_\+len} & Length of the packet data payload. \\
+\hline
+{\em data} & Data to be placed in the packet payload. \\
+\hline
+\end{DoxyParams}
+
+
+References calc\+\_\+field\+\_\+\+CRC(), MSV2\+\_\+\+TX\+\_\+\+DATA\+::crc\+\_\+data, MSV2\+\_\+\+TX\+\_\+\+DATA\+::data, MSV2\+\_\+\+TX\+\_\+\+DATA\+::data\+\_\+len, DLE, MSV2\+\_\+\+TX\+\_\+\+DATA\+::opcode, STX, and MSV2\+\_\+\+INST\+::tx.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{msv2_8h_a1035988ac07881bb546b9d7bd361d235_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{msv2_8h_a71451e32b773eadfc5e7e20a5e242d3a}\label{msv2_8h_a71451e32b773eadfc5e7e20a5e242d3a}} 
+\index{msv2.h@{msv2.h}!msv2\_decode\_fragment@{msv2\_decode\_fragment}}
+\index{msv2\_decode\_fragment@{msv2\_decode\_fragment}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{msv2\_decode\_fragment()}{msv2\_decode\_fragment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{msv2_8h_aa80f951d2e124463f6bff216a5fadc00}{MSV2\+\_\+\+ERROR\+\_\+t}} msv2\+\_\+decode\+\_\+fragment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2,  }\item[{uint8\+\_\+t}]{d }\end{DoxyParamCaption})}
+
+
+
+Decode an msv2 fragment (one byte at a time) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+{\em d} & Fragment to be decoded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is to be called upon reception of a byte. 
+\end{DoxyNote}
+
+
+References calc\+\_\+field\+\_\+\+CRC(), MSV2\+\_\+\+RX\+\_\+\+DATA\+::counter, MSV2\+\_\+\+RX\+\_\+\+DATA\+::crc, MSV2\+\_\+\+RX\+\_\+\+DATA\+::crc\+\_\+data, MSV2\+\_\+\+RX\+\_\+\+DATA\+::data, MSV2\+\_\+\+RX\+\_\+\+DATA\+::data\+\_\+len, DLE, MSV2\+\_\+\+RX\+\_\+\+DATA\+::escape, MSV2\+\_\+\+RX\+\_\+\+DATA\+::length, MSV2\+\_\+\+PROGRESS, MSV2\+\_\+\+SUCCESS, MSV2\+\_\+\+WRONG\+\_\+\+CRC, MSV2\+\_\+\+RX\+\_\+\+DATA\+::opcode, MSV2\+\_\+\+INST\+::rx, MSV2\+\_\+\+RX\+\_\+\+DATA\+::state, STX, WAITING\+\_\+\+CRC1, WAITING\+\_\+\+CRC2, WAITING\+\_\+\+DATA, WAITING\+\_\+\+DLE, WAITING\+\_\+\+LEN, WAITING\+\_\+\+OPCODE, and WAITING\+\_\+\+STX.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{msv2_8h_a71451e32b773eadfc5e7e20a5e242d3a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{msv2_8h_a7c8e1e6930814ed33103370c3cb35b07}\label{msv2_8h_a7c8e1e6930814ed33103370c3cb35b07}} 
+\index{msv2.h@{msv2.h}!msv2\_init@{msv2\_init}}
+\index{msv2\_init@{msv2\_init}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{msv2\_init()}{msv2\_init()}}
+{\footnotesize\ttfamily void msv2\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2 }\end{DoxyParamCaption})}
+
+
+
+Initialize a msv2 packet creator instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 instance to be initialized. \\
+\hline
+\end{DoxyParams}
+
+
+References MSV2\+\_\+\+INST\+::id.
+
+
+
+Referenced by debug\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{msv2_8h_a7c8e1e6930814ed33103370c3cb35b07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{msv2_8h_a2f7c5ee44791fff958d61e2d72548430}\label{msv2_8h_a2f7c5ee44791fff958d61e2d72548430}} 
+\index{msv2.h@{msv2.h}!msv2\_rx\_data@{msv2\_rx\_data}}
+\index{msv2\_rx\_data@{msv2\_rx\_data}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{msv2\_rx\_data()}{msv2\_rx\_data()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ msv2\+\_\+rx\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2 }\end{DoxyParamCaption})}
+
+
+
+Getter for the pointer to the rx data array contained in the msv2 packet creator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+\end{DoxyParams}
+
+
+References MSV2\+\_\+\+RX\+\_\+\+DATA\+::data, and MSV2\+\_\+\+INST\+::rx.
+
+\mbox{\Hypertarget{msv2_8h_a355f4b6fbf1e8779663227ff83659ca0}\label{msv2_8h_a355f4b6fbf1e8779663227ff83659ca0}} 
+\index{msv2.h@{msv2.h}!msv2\_tx\_data@{msv2\_tx\_data}}
+\index{msv2\_tx\_data@{msv2\_tx\_data}!msv2.h@{msv2.h}}
+\doxysubsubsection{\texorpdfstring{msv2\_tx\_data()}{msv2\_tx\_data()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ msv2\+\_\+tx\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{msv2_8h_a158ad369a979d87984bd075a6d5912cd}{MSV2\+\_\+\+INST\+\_\+t}} $\ast$}]{msv2 }\end{DoxyParamCaption})}
+
+
+
+Getter for the pointer to the tx data array contained in the msv2 packet creator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msv2} & Pointer to the msv2 packet creator instance. \\
+\hline
+\end{DoxyParams}
+
+
+References MSV2\+\_\+\+TX\+\_\+\+DATA\+::data, and MSV2\+\_\+\+INST\+::tx.
+

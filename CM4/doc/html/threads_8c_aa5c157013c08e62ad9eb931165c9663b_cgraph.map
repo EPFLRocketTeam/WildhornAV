@@ -1,0 +1,25 @@
+<map id="threads_init" name="threads_init">
+<area shape="rect" id="node1" title="Initialize all the threads of Wildhorn AV." alt="" coords="5,284,104,311"/>
+<area shape="rect" id="node2" href="$buzzer_8c.html#a0cead532fdd0c0de5fa1c1de0f6556bd" title=" " alt="" coords="174,56,267,83"/>
+<area shape="rect" id="node3" href="$control_8c.html#a879fa6cd4485d7f2e009bbabd9496b6a" title="Control thread entry point." alt="" coords="163,107,279,133"/>
+<area shape="rect" id="node7" href="$hostproc_8c.html#ae4468a3e6e2edab7e071064a558a3aab" title=" " alt="" coords="167,208,274,235"/>
+<area shape="rect" id="node12" href="$i2c_8c.html#a5730d9445429351b9f750084c5cb5aae" title="Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which a..." alt="" coords="186,157,255,184"/>
+<area shape="rect" id="node13" href="$i2c_8c.html#a9315e3dfa8912309ae77398caa91b2ef" title="This funcion disables completely the SPI for hardware saveguard." alt="" coords="165,259,276,285"/>
+<area shape="rect" id="node14" href="$led_8c.html#a998dba47134ccc667d347229dfd5f161" title="Initialize the feedback module." alt="" coords="152,309,289,336"/>
+<area shape="rect" id="node15" href="$led_8c.html#a2e0daca4bee3ebf17688f6b1a8731e91" title=" " alt="" coords="161,360,280,387"/>
+<area shape="rect" id="node18" href="$od_8c.html#a10181de621233b7e4244042929ab216c" title=" " alt="" coords="187,411,254,437"/>
+<area shape="rect" id="node19" href="$od_8c.html#a5df7e9f1b3ad69a76bd18428b135f1dc" title=" " alt="" coords="158,461,283,488"/>
+<area shape="rect" id="node20" href="$serial_8c.html#a82bb0542af81a3d8d7ea89f3aee2f442" title=" " alt="" coords="177,512,264,539"/>
+<area shape="rect" id="node4" href="$device_8c.html#a8241a7452a61c40f99634701e0465b8a" title="Send raw data through the interface specific send function." alt="" coords="343,5,511,32"/>
+<area shape="rect" id="node5" href="$hostproc_8c.html#ae883ea2a1d7b023c7d9e3446634b0dda" title=" " alt="" coords="341,56,512,83"/>
+<area shape="rect" id="node6" href="$led_8c.html#ade6bdac7c83c0d5970b09caca131f7b6" title="Set RBG LED color using r, g, b values." alt="" coords="589,309,714,336"/>
+<area shape="rect" id="node8" href="$device_8c.html#a8f74c3046fc52d8fc597787db18196f5" title="Initialize a device interface instance." alt="" coords="337,157,516,184"/>
+<area shape="rect" id="node9" href="$hostproc_8c.html#aa0f40f23ad9519285d338bd43363c71f" title=" " alt="" coords="384,208,469,235"/>
+<area shape="rect" id="node10" href="$hostproc_8c.html#a8eb11984d2a8ca04077b2f90e628c5cf" title=" " alt="" coords="383,259,471,285"/>
+<area shape="rect" id="node11" href="$hostproc_8c.html#a34935a7a459d2999d0300e6ad3e38362" title=" " alt="" coords="364,309,489,336"/>
+<area shape="rect" id="node16" href="$led_8c.html#a9ef2dbf2af55bb679e15eaec5280872d" title="Initialize the RGB LED." alt="" coords="377,411,476,437"/>
+<area shape="rect" id="node17" href="$led_8c.html#aaefbfbd12cbeda9bf240aa909f3175c9" title="Set RBG LED color using color structure." alt="" coords="359,461,495,488"/>
+<area shape="rect" id="node21" href="$device_8c.html#a24bb18ba20d0384221faefbced5dffca" title="Initializea device deamon instance." alt="" coords="340,512,513,539"/>
+<area shape="rect" id="node23" href="$serial_8c.html#a072531bfe1b8f4e3513546f68ced7ad2" title=" " alt="" coords="357,563,496,589"/>
+<area shape="rect" id="node22" href="$device_8c.html#ad46e400d04e068c348c8d2c8ec10ec41" title="Generic device deamon thread." alt="" coords="564,512,739,539"/>
+</map>

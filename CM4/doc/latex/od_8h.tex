@@ -1,0 +1,90 @@
+\hypertarget{od_8h}{}\doxysection{od.\+h File Reference}
+\label{od_8h}\index{od.h@{od.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for od.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{od_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{od_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{od_8h_acb90a67762050ab29c18edcc7f2469e1}{OD\+\_\+\+FRAME\+\_\+\+MAX\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{od_8h_ac45fa0b897e73823341746de80d76ade}{OD\+\_\+\+MAX\+\_\+\+DATAID}}~(256U)
+\item 
+\#define \mbox{\hyperlink{od_8h_a0094e51519929916bb09d6f50e5a4726}{DECLARE\+\_\+\+OD\+\_\+\+ENTRY}}(NAME,  TYPE)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{od_8h_a10181de621233b7e4244042929ab216c}{od\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{od_8h_ad26e4a06fa8de5b5977453661fe569f3}{od\+\_\+update\+\_\+task}} (void $\ast$argument)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{od_8h_a0094e51519929916bb09d6f50e5a4726}\label{od_8h_a0094e51519929916bb09d6f50e5a4726}} 
+\index{od.h@{od.h}!DECLARE\_OD\_ENTRY@{DECLARE\_OD\_ENTRY}}
+\index{DECLARE\_OD\_ENTRY@{DECLARE\_OD\_ENTRY}!od.h@{od.h}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_OD\_ENTRY}{DECLARE\_OD\_ENTRY}}
+{\footnotesize\ttfamily \#define DECLARE\+\_\+\+OD\+\_\+\+ENTRY(\begin{DoxyParamCaption}\item[{}]{NAME,  }\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} od\_read\_ \#\# NAME  (TYPE *dst); \(\backslash\)}
+\DoxyCodeLine{    void od\_write\_ \#\# NAME (TYPE *src);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{od_8h_acb90a67762050ab29c18edcc7f2469e1}\label{od_8h_acb90a67762050ab29c18edcc7f2469e1}} 
+\index{od.h@{od.h}!OD\_FRAME\_MAX\_SIZE@{OD\_FRAME\_MAX\_SIZE}}
+\index{OD\_FRAME\_MAX\_SIZE@{OD\_FRAME\_MAX\_SIZE}!od.h@{od.h}}
+\doxysubsubsection{\texorpdfstring{OD\_FRAME\_MAX\_SIZE}{OD\_FRAME\_MAX\_SIZE}}
+{\footnotesize\ttfamily \#define OD\+\_\+\+FRAME\+\_\+\+MAX\+\_\+\+SIZE~(64)}
+
+\mbox{\Hypertarget{od_8h_ac45fa0b897e73823341746de80d76ade}\label{od_8h_ac45fa0b897e73823341746de80d76ade}} 
+\index{od.h@{od.h}!OD\_MAX\_DATAID@{OD\_MAX\_DATAID}}
+\index{OD\_MAX\_DATAID@{OD\_MAX\_DATAID}!od.h@{od.h}}
+\doxysubsubsection{\texorpdfstring{OD\_MAX\_DATAID}{OD\_MAX\_DATAID}}
+{\footnotesize\ttfamily \#define OD\+\_\+\+MAX\+\_\+\+DATAID~(256U)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{od_8h_a10181de621233b7e4244042929ab216c}\label{od_8h_a10181de621233b7e4244042929ab216c}} 
+\index{od.h@{od.h}!od\_init@{od\_init}}
+\index{od\_init@{od\_init}!od.h@{od.h}}
+\doxysubsubsection{\texorpdfstring{od\_init()}{od\_init()}}
+{\footnotesize\ttfamily void od\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+References in\+\_\+q, OD\+\_\+\+MSGQ\+\_\+\+SIZE, and out\+\_\+q.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{od_8h_a10181de621233b7e4244042929ab216c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{od_8h_ad26e4a06fa8de5b5977453661fe569f3}\label{od_8h_ad26e4a06fa8de5b5977453661fe569f3}} 
+\index{od.h@{od.h}!od\_update\_task@{od\_update\_task}}
+\index{od\_update\_task@{od\_update\_task}!od.h@{od.h}}
+\doxysubsubsection{\texorpdfstring{od\_update\_task()}{od\_update\_task()}}
+{\footnotesize\ttfamily void od\+\_\+update\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{argument }\end{DoxyParamCaption})}
+

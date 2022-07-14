@@ -1,0 +1,181 @@
+\hypertarget{i2c_8c}{}\doxysection{i2c.\+c File Reference}
+\label{i2c_8c}\index{i2c.c@{i2c.c}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+{\ttfamily \#include $<$driver/i2c.\+h$>$}\newline
+{\ttfamily \#include $<$device/device.\+h$>$}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+Include dependency graph for i2c.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{i2c_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{i2c_8c_a9ac038ee2cdfb084935f0d75d5413959}{S1\+\_\+\+I2C}}~hi2c1
+\item 
+\#define \mbox{\hyperlink{i2c_8c_a225d6d3981747724ab1c8a6a6f053106}{S2\+\_\+\+I2C}}~hi2c2
+\item 
+\#define \mbox{\hyperlink{i2c_8c_a1c16e69f492cfea042c5fa9bf838e1a8}{S3\+\_\+\+I2C}}~hi2c5
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{i2c_8c_a9315e3dfa8912309ae77398caa91b2ef}{i2c\+\_\+spi\+\_\+guard}} (void)
+\begin{DoxyCompactList}\small\item\em This funcion disables completely the SPI for hardware saveguard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$ \mbox{\hyperlink{i2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93}{i2c\+\_\+get\+\_\+sensor\+\_\+interface}} (void)
+\begin{DoxyCompactList}\small\item\em Getter for the interface associated with the sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{i2c_8c_a5730d9445429351b9f750084c5cb5aae}{i2c\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which are present on the hostboards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} \mbox{\hyperlink{i2c_8c_a5e20935ff70799eeda3bb5cbd10f2ecc}{sensor\+\_\+interface}}
+\begin{DoxyCompactList}\small\item\em This is the I2C Interface associated with the sensors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{i2c_8h_a2524fd243c29c32582e55cf0619c591c}{i2c\+\_\+interface\+\_\+context\+\_\+t}} \mbox{\hyperlink{i2c_8c_ad725e4c85d7c4c4ed2971ba684ee6a51}{sensor\+\_\+interface\+\_\+context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{i2c_8c_a9ac038ee2cdfb084935f0d75d5413959}\label{i2c_8c_a9ac038ee2cdfb084935f0d75d5413959}} 
+\index{i2c.c@{i2c.c}!S1\_I2C@{S1\_I2C}}
+\index{S1\_I2C@{S1\_I2C}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{S1\_I2C}{S1\_I2C}}
+{\footnotesize\ttfamily \#define S1\+\_\+\+I2C~hi2c1}
+
+\mbox{\Hypertarget{i2c_8c_a225d6d3981747724ab1c8a6a6f053106}\label{i2c_8c_a225d6d3981747724ab1c8a6a6f053106}} 
+\index{i2c.c@{i2c.c}!S2\_I2C@{S2\_I2C}}
+\index{S2\_I2C@{S2\_I2C}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{S2\_I2C}{S2\_I2C}}
+{\footnotesize\ttfamily \#define S2\+\_\+\+I2C~hi2c2}
+
+\mbox{\Hypertarget{i2c_8c_a1c16e69f492cfea042c5fa9bf838e1a8}\label{i2c_8c_a1c16e69f492cfea042c5fa9bf838e1a8}} 
+\index{i2c.c@{i2c.c}!S3\_I2C@{S3\_I2C}}
+\index{S3\_I2C@{S3\_I2C}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{S3\_I2C}{S3\_I2C}}
+{\footnotesize\ttfamily \#define S3\+\_\+\+I2C~hi2c5}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93}\label{i2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93}} 
+\index{i2c.c@{i2c.c}!i2c\_get\_sensor\_interface@{i2c\_get\_sensor\_interface}}
+\index{i2c\_get\_sensor\_interface@{i2c\_get\_sensor\_interface}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_get\_sensor\_interface()}{i2c\_get\_sensor\_interface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}}$\ast$ i2c\+\_\+get\+\_\+sensor\+\_\+interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the interface associated with the sensors. 
+
+\begin{DoxyReturn}{Returns}
+The pointer to the sensor interface object 
+\end{DoxyReturn}
+
+
+References sensor\+\_\+interface.
+
+
+
+Referenced by i2c\+\_\+sensor\+\_\+init().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{i2c_8c_adf1cc79fc1fd312feb2f87adf80e1c93_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c_8c_a5730d9445429351b9f750084c5cb5aae}\label{i2c_8c_a5730d9445429351b9f750084c5cb5aae}} 
+\index{i2c.c@{i2c.c}!i2c\_init@{i2c\_init}}
+\index{i2c\_init@{i2c\_init}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_init()}{i2c\_init()}}
+{\footnotesize\ttfamily void i2c\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializer for the i2c subsystem. @deails This function initializes the three i2c interfaces which are present on the hostboards. 
+
+
+
+References device\+\_\+interface\+\_\+create(), ER\+\_\+\+SUCCESS, sensor\+\_\+interface, and sensor\+\_\+interface\+\_\+context.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{i2c_8c_a5730d9445429351b9f750084c5cb5aae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{i2c_8c_a5730d9445429351b9f750084c5cb5aae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c_8c_a9315e3dfa8912309ae77398caa91b2ef}\label{i2c_8c_a9315e3dfa8912309ae77398caa91b2ef}} 
+\index{i2c.c@{i2c.c}!i2c\_spi\_guard@{i2c\_spi\_guard}}
+\index{i2c\_spi\_guard@{i2c\_spi\_guard}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_spi\_guard()}{i2c\_spi\_guard()}}
+{\footnotesize\ttfamily void i2c\+\_\+spi\+\_\+guard (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This funcion disables completely the SPI for hardware saveguard. 
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{i2c_8c_a9315e3dfa8912309ae77398caa91b2ef_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{i2c_8c_a5e20935ff70799eeda3bb5cbd10f2ecc}\label{i2c_8c_a5e20935ff70799eeda3bb5cbd10f2ecc}} 
+\index{i2c.c@{i2c.c}!sensor\_interface@{sensor\_interface}}
+\index{sensor\_interface@{sensor\_interface}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{sensor\_interface}{sensor\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} sensor\+\_\+interface}
+
+
+
+This is the I2C Interface associated with the sensors. 
+
+
+
+Referenced by i2c\+\_\+get\+\_\+sensor\+\_\+interface(), and i2c\+\_\+init().
+
+\mbox{\Hypertarget{i2c_8c_ad725e4c85d7c4c4ed2971ba684ee6a51}\label{i2c_8c_ad725e4c85d7c4c4ed2971ba684ee6a51}} 
+\index{i2c.c@{i2c.c}!sensor\_interface\_context@{sensor\_interface\_context}}
+\index{sensor\_interface\_context@{sensor\_interface\_context}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{sensor\_interface\_context}{sensor\_interface\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{i2c_8h_a2524fd243c29c32582e55cf0619c591c}{i2c\+\_\+interface\+\_\+context\+\_\+t}} sensor\+\_\+interface\+\_\+context}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        .i2c = \&\mbox{\hyperlink{i2c_8c_a225d6d3981747724ab1c8a6a6f053106}{S2\_I2C}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Referenced by i2c\+\_\+init().
+

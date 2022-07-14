@@ -1,0 +1,133 @@
+\hypertarget{structdma__stream__dev}{}\doxysection{dma\+\_\+stream\+\_\+dev Struct Reference}
+\label{structdma__stream__dev}\index{dma\_stream\_dev@{dma\_stream\_dev}}
+
+
+{\ttfamily \#include $<$dma.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+DMA\+\_\+\+Type\+Def $\ast$ \mbox{\hyperlink{structdma__stream__dev_aa13b15eec4a40ebd33f488694ebb1f15}{dma}}
+\item 
+DMA\+\_\+\+Stream\+\_\+\+Type\+Def $\ast$ \mbox{\hyperlink{structdma__stream__dev_a70a1af7167490d48ec60e7fe1b04952b}{dma\+\_\+stream}}
+\item 
+DMAMUX\+\_\+\+Channel\+\_\+\+Type\+Def $\ast$ \mbox{\hyperlink{structdma__stream__dev_a3724e9e205b3a4c885ab87472783e52a}{dmamux\+\_\+channel}}
+\item 
+DMAMUX\+\_\+\+Channel\+Status\+\_\+\+Type\+Def $\ast$ \mbox{\hyperlink{structdma__stream__dev_a4842e254a8cc05a208fa9d4ecca4c9c5}{dmamux\+\_\+channel\+\_\+status}}
+\item 
+\mbox{\hyperlink{dma_8h_ae37f496dee90e92066d23f36bb37d21e}{dma\+\_\+stream\+\_\+state\+\_\+t}} \mbox{\hyperlink{structdma__stream__dev_a23e376c46f991ca45156fdf34fa1dc3b}{state}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structdma__stream__dev_a8c1b141707c25e9cffe9e769480ca83e}{number}}
+\item 
+void $\ast$ \mbox{\hyperlink{structdma__stream__dev_aabb9df4fc09073acc751c2d4a80063e0}{user\+\_\+context}}
+\item 
+void($\ast$ \mbox{\hyperlink{structdma__stream__dev_aea55de3ce91a4aa3a706ba25c2a865d3}{transfer\+\_\+cplt}} )(void $\ast$)
+\item 
+void($\ast$ \mbox{\hyperlink{structdma__stream__dev_a2253fd2e67be612c431a2c053fbe8914}{transfer\+\_\+half}} )(void $\ast$)
+\item 
+void($\ast$ \mbox{\hyperlink{structdma__stream__dev_a06962a27ac2599fb8593e4074f92c6e1}{transfer\+\_\+error}} )(void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structdma__stream__dev_aa13b15eec4a40ebd33f488694ebb1f15}\label{structdma__stream__dev_aa13b15eec4a40ebd33f488694ebb1f15}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!dma@{dma}}
+\index{dma@{dma}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{dma}{dma}}
+{\footnotesize\ttfamily DMA\+\_\+\+Type\+Def$\ast$ dma\+\_\+stream\+\_\+dev\+::dma}
+
+
+
+Referenced by dma\+\_\+handle\+\_\+interrupt(), and dma\+\_\+start\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_a70a1af7167490d48ec60e7fe1b04952b}\label{structdma__stream__dev_a70a1af7167490d48ec60e7fe1b04952b}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!dma\_stream@{dma\_stream}}
+\index{dma\_stream@{dma\_stream}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{dma\_stream}{dma\_stream}}
+{\footnotesize\ttfamily DMA\+\_\+\+Stream\+\_\+\+Type\+Def$\ast$ dma\+\_\+stream\+\_\+dev\+::dma\+\_\+stream}
+
+
+
+Referenced by dma\+\_\+start\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_a3724e9e205b3a4c885ab87472783e52a}\label{structdma__stream__dev_a3724e9e205b3a4c885ab87472783e52a}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!dmamux\_channel@{dmamux\_channel}}
+\index{dmamux\_channel@{dmamux\_channel}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{dmamux\_channel}{dmamux\_channel}}
+{\footnotesize\ttfamily DMAMUX\+\_\+\+Channel\+\_\+\+Type\+Def$\ast$ dma\+\_\+stream\+\_\+dev\+::dmamux\+\_\+channel}
+
+
+
+Referenced by dma\+\_\+start\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_a4842e254a8cc05a208fa9d4ecca4c9c5}\label{structdma__stream__dev_a4842e254a8cc05a208fa9d4ecca4c9c5}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!dmamux\_channel\_status@{dmamux\_channel\_status}}
+\index{dmamux\_channel\_status@{dmamux\_channel\_status}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{dmamux\_channel\_status}{dmamux\_channel\_status}}
+{\footnotesize\ttfamily DMAMUX\+\_\+\+Channel\+Status\+\_\+\+Type\+Def$\ast$ dma\+\_\+stream\+\_\+dev\+::dmamux\+\_\+channel\+\_\+status}
+
+\mbox{\Hypertarget{structdma__stream__dev_a8c1b141707c25e9cffe9e769480ca83e}\label{structdma__stream__dev_a8c1b141707c25e9cffe9e769480ca83e}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!number@{number}}
+\index{number@{number}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily uint16\+\_\+t dma\+\_\+stream\+\_\+dev\+::number}
+
+
+
+Referenced by dma\+\_\+handle\+\_\+interrupt(), and dma\+\_\+start\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_a23e376c46f991ca45156fdf34fa1dc3b}\label{structdma__stream__dev_a23e376c46f991ca45156fdf34fa1dc3b}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!state@{state}}
+\index{state@{state}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dma_8h_ae37f496dee90e92066d23f36bb37d21e}{dma\+\_\+stream\+\_\+state\+\_\+t}} dma\+\_\+stream\+\_\+dev\+::state}
+
+
+
+Referenced by dma\+\_\+scheduler\+\_\+init(), dma\+\_\+scheduler\+\_\+release\+\_\+stream(), and dma\+\_\+scheduler\+\_\+request\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_aea55de3ce91a4aa3a706ba25c2a865d3}\label{structdma__stream__dev_aea55de3ce91a4aa3a706ba25c2a865d3}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!transfer\_cplt@{transfer\_cplt}}
+\index{transfer\_cplt@{transfer\_cplt}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{transfer\_cplt}{transfer\_cplt}}
+{\footnotesize\ttfamily void($\ast$ dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+cplt) (void $\ast$)}
+
+
+
+Referenced by dma\+\_\+handle\+\_\+interrupt(), and dma\+\_\+start\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_a06962a27ac2599fb8593e4074f92c6e1}\label{structdma__stream__dev_a06962a27ac2599fb8593e4074f92c6e1}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!transfer\_error@{transfer\_error}}
+\index{transfer\_error@{transfer\_error}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{transfer\_error}{transfer\_error}}
+{\footnotesize\ttfamily void($\ast$ dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+error) (void $\ast$)}
+
+
+
+Referenced by dma\+\_\+handle\+\_\+interrupt(), and dma\+\_\+start\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_a2253fd2e67be612c431a2c053fbe8914}\label{structdma__stream__dev_a2253fd2e67be612c431a2c053fbe8914}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!transfer\_half@{transfer\_half}}
+\index{transfer\_half@{transfer\_half}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{transfer\_half}{transfer\_half}}
+{\footnotesize\ttfamily void($\ast$ dma\+\_\+stream\+\_\+dev\+::transfer\+\_\+half) (void $\ast$)}
+
+
+
+Referenced by dma\+\_\+handle\+\_\+interrupt(), and dma\+\_\+start\+\_\+stream().
+
+\mbox{\Hypertarget{structdma__stream__dev_aabb9df4fc09073acc751c2d4a80063e0}\label{structdma__stream__dev_aabb9df4fc09073acc751c2d4a80063e0}} 
+\index{dma\_stream\_dev@{dma\_stream\_dev}!user\_context@{user\_context}}
+\index{user\_context@{user\_context}!dma\_stream\_dev@{dma\_stream\_dev}}
+\doxysubsubsection{\texorpdfstring{user\_context}{user\_context}}
+{\footnotesize\ttfamily void$\ast$ dma\+\_\+stream\+\_\+dev\+::user\+\_\+context}
+
+
+
+Referenced by dma\+\_\+handle\+\_\+interrupt(), and dma\+\_\+start\+\_\+stream().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dma_8h}{dma.\+h}}\end{DoxyCompactItemize}

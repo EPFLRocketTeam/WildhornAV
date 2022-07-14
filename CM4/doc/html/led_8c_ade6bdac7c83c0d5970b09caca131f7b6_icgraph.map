@@ -1,0 +1,8 @@
+<map id="led_rgb_set_rgb" name="led_rgb_set_rgb">
+<area shape="rect" id="node1" title="Set RBG LED color using r, g, b values." alt="" coords="489,56,615,83"/>
+<area shape="rect" id="node2" href="$control_8c.html#a879fa6cd4485d7f2e009bbabd9496b6a" title="Control thread entry point." alt="" coords="152,5,268,32"/>
+<area shape="rect" id="node4" href="$hostproc_8c.html#a34935a7a459d2999d0300e6ad3e38362" title=" " alt="" coords="316,56,441,83"/>
+<area shape="rect" id="node6" href="$led_8c.html#a2e0daca4bee3ebf17688f6b1a8731e91" title=" " alt="" coords="319,107,438,133"/>
+<area shape="rect" id="node3" href="$threads_8c.html#aa5c157013c08e62ad9eb931165c9663b" title="Initialize all the threads of Wildhorn AV." alt="" coords="5,56,104,83"/>
+<area shape="rect" id="node5" href="$hostproc_8c.html#ae4468a3e6e2edab7e071064a558a3aab" title=" " alt="" coords="157,56,263,83"/>
+</map>

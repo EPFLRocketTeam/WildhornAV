@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['send_1035',['send',['../structdevice__interface.html#aa6c51c288f99470d88c6d298d992e57c',1,'device_interface']]],
+  ['sensor_5finterface_1036',['sensor_interface',['../i2c_8c.html#a5e20935ff70799eeda3bb5cbd10f2ecc',1,'i2c.c']]],
+  ['sensor_5finterface_5fcontext_1037',['sensor_interface_context',['../i2c_8c.html#ad725e4c85d7c4c4ed2971ba684ee6a51',1,'i2c.c']]],
+  ['serial_5fdeamon_1038',['serial_deamon',['../serial_8c.html#a73925aac7a23e77eb64e1111a3f519c5',1,'serial.c']]],
+  ['serial_5fdeamon_5fcontext_1039',['serial_deamon_context',['../serial_8c.html#a27a567c2aa6e686e2d09f528f9435792',1,'serial.c']]],
+  ['size_1040',['size',['../structod__entry__t.html#a5f3c363c5602bc07e1f055eade0622a0',1,'od_entry_t::size()'],['../structod__frame__t.html#a95b9ae24c25f03dcc0a56e4c247fcea6',1,'od_frame_t::size()']]],
+  ['speed_1041',['speed',['../structgpio__config.html#a5b2c321db6a6eb985a7f70bd10c015c7',1,'gpio_config']]],
+  ['src_1042',['src',['../structdma__request.html#ae5c98a9116b4a970d18ad9766f55dde9',1,'dma_request']]],
+  ['src_5finc_1043',['src_inc',['../structdma__request.html#aa221a4c198f9e83dc878da2451d1fc5b',1,'dma_request']]],
+  ['stack_1044',['stack',['../structdevice__deamon.html#adca90677c5d6202eee6a90aac6234921',1,'device_deamon']]],
+  ['state_1045',['state',['../structMSV2__RX__DATA.html#ad1379b5fab055c49831fb052a040de54',1,'MSV2_RX_DATA::state()'],['../buzzer_8c.html#a0b57aa10271a66f3dc936bba1d2f3830',1,'state():&#160;buzzer.c'],['../structcontrol.html#affcd71b4905f972285292c46b6d9823c',1,'control::state()'],['../structdma__stream__dev.html#a23e376c46f991ca45156fdf34fa1dc3b',1,'dma_stream_dev::state()']]],
+  ['still_5falive_1046',['still_alive',['../still__alive__bak_8h.html#a405484eceda70370be99d85794606f5f',1,'still_alive():&#160;still_alive_bak.h'],['../still__alive_8h.html#a60c2a9508578195584ace3afb912a0de',1,'still_alive():&#160;still_alive.h']]],
+  ['still_5falive_5flen_1047',['still_alive_len',['../still__alive_8h.html#a6665ad0875e41971ac237b684d48bfbe',1,'still_alive_len():&#160;still_alive.h'],['../still__alive__bak_8h.html#a6665ad0875e41971ac237b684d48bfbe',1,'still_alive_len():&#160;still_alive_bak.h']]],
+  ['stream_5fcount_1048',['stream_count',['../structdma__scheduler__dev.html#ae779a7d43dea8955d57b7d7b30e7783d',1,'dma_scheduler_dev']]],
+  ['stream_5fnumber_1049',['stream_number',['../structdma__stream__config.html#a05524f459bcf24a043cd534a54870ba1',1,'dma_stream_config']]],
+  ['streams_1050',['streams',['../structdma__scheduler__dev.html#a517126886494cb2d6351848f1623b509',1,'dma_scheduler_dev']]]
+];

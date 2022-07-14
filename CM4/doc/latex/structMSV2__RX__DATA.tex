@@ -1,0 +1,125 @@
+\hypertarget{structMSV2__RX__DATA}{}\doxysection{MSV2\+\_\+\+RX\+\_\+\+DATA Struct Reference}
+\label{structMSV2__RX__DATA}\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+
+
+{\ttfamily \#include $<$msv2.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_a8df50a035ff4075d76f40900cc11272a}{opcode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_a4f486d394f8c4cc10150f787d0d735d0}{data\+\_\+len}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_a05544a09b43cf33b34abd4def70b221c}{crc}}
+\item 
+\mbox{\hyperlink{msv2_8h_a844d50aaf5622812ab0a58b27797f53d}{MSV2\+\_\+\+DECODE\+\_\+\+STATE\+\_\+t}} \mbox{\hyperlink{structMSV2__RX__DATA_ad1379b5fab055c49831fb052a040de54}{state}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_a83d037c4f0d99de33390335b53379266}{escape}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_a66ee8fe9d249af91baf1cb6ef729775c}{length}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_a5ce3da3345da6e2d9769ff981eb4a0bf}{counter}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_a70831b2eaa1c20612e3ddf4da8dbd1d5}{data}} \mbox{[}\mbox{\hyperlink{msv2_8h_ac122f39047f5204c83ee5eba8b11917b}{MSV2\+\_\+\+MAX\+\_\+\+FRAME\+\_\+\+LEN}}\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structMSV2__RX__DATA_ab544f18551ade1223d7f7b89822e7922}{crc\+\_\+data}} \mbox{[}\mbox{\hyperlink{msv2_8h_ac122f39047f5204c83ee5eba8b11917b}{MSV2\+\_\+\+MAX\+\_\+\+FRAME\+\_\+\+LEN}}/sizeof(uint16\+\_\+t)\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structMSV2__RX__DATA_a5ce3da3345da6e2d9769ff981eb4a0bf}\label{structMSV2__RX__DATA_a5ce3da3345da6e2d9769ff981eb4a0bf}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!counter@{counter}}
+\index{counter@{counter}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily uint16\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::counter}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_a05544a09b43cf33b34abd4def70b221c}\label{structMSV2__RX__DATA_a05544a09b43cf33b34abd4def70b221c}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!crc@{crc}}
+\index{crc@{crc}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{crc}{crc}}
+{\footnotesize\ttfamily uint16\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::crc}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_ab544f18551ade1223d7f7b89822e7922}\label{structMSV2__RX__DATA_ab544f18551ade1223d7f7b89822e7922}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!crc\_data@{crc\_data}}
+\index{crc\_data@{crc\_data}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{crc\_data}{crc\_data}}
+{\footnotesize\ttfamily uint16\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::crc\+\_\+data\mbox{[}\mbox{\hyperlink{msv2_8h_ac122f39047f5204c83ee5eba8b11917b}{MSV2\+\_\+\+MAX\+\_\+\+FRAME\+\_\+\+LEN}}/sizeof(uint16\+\_\+t)\mbox{]}}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_a70831b2eaa1c20612e3ddf4da8dbd1d5}\label{structMSV2__RX__DATA_a70831b2eaa1c20612e3ddf4da8dbd1d5}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!data@{data}}
+\index{data@{data}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily uint8\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::data\mbox{[}\mbox{\hyperlink{msv2_8h_ac122f39047f5204c83ee5eba8b11917b}{MSV2\+\_\+\+MAX\+\_\+\+FRAME\+\_\+\+LEN}}\mbox{]}}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment(), and msv2\+\_\+rx\+\_\+data().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_a4f486d394f8c4cc10150f787d0d735d0}\label{structMSV2__RX__DATA_a4f486d394f8c4cc10150f787d0d735d0}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!data\_len@{data\_len}}
+\index{data\_len@{data\_len}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{data\_len}{data\_len}}
+{\footnotesize\ttfamily uint8\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::data\+\_\+len}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_a83d037c4f0d99de33390335b53379266}\label{structMSV2__RX__DATA_a83d037c4f0d99de33390335b53379266}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!escape@{escape}}
+\index{escape@{escape}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{escape}{escape}}
+{\footnotesize\ttfamily uint8\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::escape}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_a66ee8fe9d249af91baf1cb6ef729775c}\label{structMSV2__RX__DATA_a66ee8fe9d249af91baf1cb6ef729775c}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!length@{length}}
+\index{length@{length}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily uint16\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::length}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_a8df50a035ff4075d76f40900cc11272a}\label{structMSV2__RX__DATA_a8df50a035ff4075d76f40900cc11272a}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!opcode@{opcode}}
+\index{opcode@{opcode}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{opcode}{opcode}}
+{\footnotesize\ttfamily uint8\+\_\+t MSV2\+\_\+\+RX\+\_\+\+DATA\+::opcode}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+\mbox{\Hypertarget{structMSV2__RX__DATA_ad1379b5fab055c49831fb052a040de54}\label{structMSV2__RX__DATA_ad1379b5fab055c49831fb052a040de54}} 
+\index{MSV2\_RX\_DATA@{MSV2\_RX\_DATA}!state@{state}}
+\index{state@{state}!MSV2\_RX\_DATA@{MSV2\_RX\_DATA}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{msv2_8h_a844d50aaf5622812ab0a58b27797f53d}{MSV2\+\_\+\+DECODE\+\_\+\+STATE\+\_\+t}} MSV2\+\_\+\+RX\+\_\+\+DATA\+::state}
+
+
+
+Referenced by msv2\+\_\+decode\+\_\+fragment().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{msv2_8h}{msv2.\+h}}\end{DoxyCompactItemize}

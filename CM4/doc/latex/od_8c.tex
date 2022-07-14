@@ -1,0 +1,196 @@
+\hypertarget{od_8c}{}\doxysection{od.\+c File Reference}
+\label{od_8c}\index{od.c@{od.c}}
+{\ttfamily \#include \char`\"{}od.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cmsis\+\_\+os2.\+h$>$}\newline
+{\ttfamily \#include $<$Free\+RTOS.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for od.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{od_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structod__entry__t}{od\+\_\+entry\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structod__frame__t}{od\+\_\+frame\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{od_8c_a6b08966b0824d3ba6783438d073440b5}{OD\+\_\+\+MSGQ\+\_\+\+SIZE}}~(16)
+\item 
+\#define \mbox{\hyperlink{od_8c_a4007b6231a14004d81ccb8a60fb56ee8}{DEBUG\+\_\+\+NO\+\_\+\+CAN}}~0
+\item 
+\#define \mbox{\hyperlink{od_8c_af636dd987b0fb3839086eb996019ad59}{ALLOCATE\+\_\+\+OD\+\_\+\+ENTRY}}(NAME,  ID,  TYPE)
+\item 
+\#define \mbox{\hyperlink{od_8c_a348042ccd367beeea50bfb29f024d9f9}{LINK\+\_\+\+OD\+\_\+\+ENTRY}}(NAME)~\mbox{[}(NAME)\mbox{]} = (NAME \#\# \+\_\+entry)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{od_8c_a7eb02db83a367bde963753b9aa66302e}{od\+\_\+unsafe\+\_\+read}} (uint8\+\_\+t data\+\_\+id, uint8\+\_\+t $\ast$dst)
+\item 
+static void \mbox{\hyperlink{od_8c_ad08abe221e02eeb25337d3d7534fbb42}{od\+\_\+unsafe\+\_\+write}} (uint8\+\_\+t data\+\_\+id, uint8\+\_\+t $\ast$src)
+\item 
+void \mbox{\hyperlink{od_8c_a10181de621233b7e4244042929ab216c}{od\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{od_8c_a5df7e9f1b3ad69a76bd18428b135f1dc}{od\+\_\+update\+\_\+task}} (\+\_\+\+\_\+attribute\+\_\+\+\_\+((unused)) void $\ast$argument)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{structod__entry__t}{od\+\_\+entry\+\_\+t}} \mbox{\hyperlink{od_8c_a2334170f658f46b6cd8bd576de9855d2}{od\+\_\+entries}} \mbox{[}\mbox{\hyperlink{od_8h_ac45fa0b897e73823341746de80d76ade}{OD\+\_\+\+MAX\+\_\+\+DATAID}}\mbox{]}
+\item 
+os\+Message\+Queue\+Id\+\_\+t \mbox{\hyperlink{od_8c_ac8be946ba70a7e2de7d65f3f0f68f60c}{out\+\_\+q}}
+\item 
+os\+Message\+Queue\+Id\+\_\+t \mbox{\hyperlink{od_8c_a74286f5bd8f7352ba6d7fb95fa212ad2}{in\+\_\+q}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{od_8c_af636dd987b0fb3839086eb996019ad59}\label{od_8c_af636dd987b0fb3839086eb996019ad59}} 
+\index{od.c@{od.c}!ALLOCATE\_OD\_ENTRY@{ALLOCATE\_OD\_ENTRY}}
+\index{ALLOCATE\_OD\_ENTRY@{ALLOCATE\_OD\_ENTRY}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{ALLOCATE\_OD\_ENTRY}{ALLOCATE\_OD\_ENTRY}}
+{\footnotesize\ttfamily \#define ALLOCATE\+\_\+\+OD\+\_\+\+ENTRY(\begin{DoxyParamCaption}\item[{}]{NAME,  }\item[{}]{ID,  }\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{enum} \{ NAME = ID \}; \(\backslash\)}
+\DoxyCodeLine{    static\_assert((NAME) < \mbox{\hyperlink{od_8h_ac45fa0b897e73823341746de80d76ade}{OD\_MAX\_DATAID}}); \(\backslash\)}
+\DoxyCodeLine{    static\_assert(\textcolor{keyword}{sizeof}(TYPE) < \mbox{\hyperlink{od_8h_acb90a67762050ab29c18edcc7f2469e1}{OD\_FRAME\_MAX\_SIZE}}); \(\backslash\)}
+\DoxyCodeLine{    static TYPE (NAME \#\# \_var); \(\backslash\)}
+\DoxyCodeLine{    static \textcolor{keyword}{const} \mbox{\hyperlink{structod__entry__t}{od\_entry\_t}} (NAME \#\# \_entry) = \{ .\mbox{\hyperlink{structod__entry__t_acb8b2ae12cf9d83ee36bde041d3e10bb}{data\_id}}=(NAME), .size=\textcolor{keyword}{sizeof}(TYPE), .data=(uint8\_t*)\&(NAME \#\# \_var) \}; \(\backslash\)}
+\DoxyCodeLine{    \(\backslash\)}
+\DoxyCodeLine{    void od\_read\_ \#\# NAME  (TYPE *dst) \{ \mbox{\hyperlink{od_8c_a7eb02db83a367bde963753b9aa66302e}{od\_unsafe\_read}} ((NAME), (uint8\_t*) dst); \} \(\backslash\)}
+\DoxyCodeLine{    void od\_write\_ \#\# NAME (TYPE *src) \{ \mbox{\hyperlink{od_8c_ad08abe221e02eeb25337d3d7534fbb42}{od\_unsafe\_write}}((NAME), (uint8\_t*) src); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{od_8c_a4007b6231a14004d81ccb8a60fb56ee8}\label{od_8c_a4007b6231a14004d81ccb8a60fb56ee8}} 
+\index{od.c@{od.c}!DEBUG\_NO\_CAN@{DEBUG\_NO\_CAN}}
+\index{DEBUG\_NO\_CAN@{DEBUG\_NO\_CAN}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_NO\_CAN}{DEBUG\_NO\_CAN}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+NO\+\_\+\+CAN~0}
+
+\mbox{\Hypertarget{od_8c_a348042ccd367beeea50bfb29f024d9f9}\label{od_8c_a348042ccd367beeea50bfb29f024d9f9}} 
+\index{od.c@{od.c}!LINK\_OD\_ENTRY@{LINK\_OD\_ENTRY}}
+\index{LINK\_OD\_ENTRY@{LINK\_OD\_ENTRY}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{LINK\_OD\_ENTRY}{LINK\_OD\_ENTRY}}
+{\footnotesize\ttfamily \#define LINK\+\_\+\+OD\+\_\+\+ENTRY(\begin{DoxyParamCaption}\item[{}]{NAME }\end{DoxyParamCaption})~\mbox{[}(NAME)\mbox{]} = (NAME \#\# \+\_\+entry)}
+
+\mbox{\Hypertarget{od_8c_a6b08966b0824d3ba6783438d073440b5}\label{od_8c_a6b08966b0824d3ba6783438d073440b5}} 
+\index{od.c@{od.c}!OD\_MSGQ\_SIZE@{OD\_MSGQ\_SIZE}}
+\index{OD\_MSGQ\_SIZE@{OD\_MSGQ\_SIZE}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{OD\_MSGQ\_SIZE}{OD\_MSGQ\_SIZE}}
+{\footnotesize\ttfamily \#define OD\+\_\+\+MSGQ\+\_\+\+SIZE~(16)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{od_8c_a10181de621233b7e4244042929ab216c}\label{od_8c_a10181de621233b7e4244042929ab216c}} 
+\index{od.c@{od.c}!od\_init@{od\_init}}
+\index{od\_init@{od\_init}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{od\_init()}{od\_init()}}
+{\footnotesize\ttfamily void od\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+References in\+\_\+q, OD\+\_\+\+MSGQ\+\_\+\+SIZE, and out\+\_\+q.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{od_8c_a10181de621233b7e4244042929ab216c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{od_8c_a7eb02db83a367bde963753b9aa66302e}\label{od_8c_a7eb02db83a367bde963753b9aa66302e}} 
+\index{od.c@{od.c}!od\_unsafe\_read@{od\_unsafe\_read}}
+\index{od\_unsafe\_read@{od\_unsafe\_read}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{od\_unsafe\_read()}{od\_unsafe\_read()}}
+{\footnotesize\ttfamily static void od\+\_\+unsafe\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data\+\_\+id,  }\item[{uint8\+\_\+t $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Read/write interface 
+
+References od\+\_\+entry\+\_\+t\+::data, od\+\_\+entries, and od\+\_\+entry\+\_\+t\+::size.
+
+\mbox{\Hypertarget{od_8c_ad08abe221e02eeb25337d3d7534fbb42}\label{od_8c_ad08abe221e02eeb25337d3d7534fbb42}} 
+\index{od.c@{od.c}!od\_unsafe\_write@{od\_unsafe\_write}}
+\index{od\_unsafe\_write@{od\_unsafe\_write}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{od\_unsafe\_write()}{od\_unsafe\_write()}}
+{\footnotesize\ttfamily static void od\+\_\+unsafe\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data\+\_\+id,  }\item[{uint8\+\_\+t $\ast$}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References od\+\_\+frame\+\_\+t\+::data, od\+\_\+entry\+\_\+t\+::data\+\_\+id, od\+\_\+frame\+\_\+t\+::data\+\_\+id, od\+\_\+entries, out\+\_\+q, od\+\_\+entry\+\_\+t\+::size, and od\+\_\+frame\+\_\+t\+::size.
+
+\mbox{\Hypertarget{od_8c_a5df7e9f1b3ad69a76bd18428b135f1dc}\label{od_8c_a5df7e9f1b3ad69a76bd18428b135f1dc}} 
+\index{od.c@{od.c}!od\_update\_task@{od\_update\_task}}
+\index{od\_update\_task@{od\_update\_task}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{od\_update\_task()}{od\_update\_task()}}
+{\footnotesize\ttfamily void od\+\_\+update\+\_\+task (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+attribute\+\_\+\+\_\+((unused)) void $\ast$}]{argument }\end{DoxyParamCaption})}
+
+Task definition 
+
+References od\+\_\+entry\+\_\+t\+::data, od\+\_\+frame\+\_\+t\+::data, od\+\_\+frame\+\_\+t\+::data\+\_\+id, in\+\_\+q, od\+\_\+entries, out\+\_\+q, and od\+\_\+entry\+\_\+t\+::size.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{od_8c_a5df7e9f1b3ad69a76bd18428b135f1dc_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{od_8c_a74286f5bd8f7352ba6d7fb95fa212ad2}\label{od_8c_a74286f5bd8f7352ba6d7fb95fa212ad2}} 
+\index{od.c@{od.c}!in\_q@{in\_q}}
+\index{in\_q@{in\_q}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{in\_q}{in\_q}}
+{\footnotesize\ttfamily os\+Message\+Queue\+Id\+\_\+t in\+\_\+q}
+
+
+
+Referenced by od\+\_\+init(), and od\+\_\+update\+\_\+task().
+
+\mbox{\Hypertarget{od_8c_a2334170f658f46b6cd8bd576de9855d2}\label{od_8c_a2334170f658f46b6cd8bd576de9855d2}} 
+\index{od.c@{od.c}!od\_entries@{od\_entries}}
+\index{od\_entries@{od\_entries}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{od\_entries}{od\_entries}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structod__entry__t}{od\+\_\+entry\+\_\+t}} od\+\_\+entries\mbox{[}\mbox{\hyperlink{od_8h_ac45fa0b897e73823341746de80d76ade}{OD\+\_\+\+MAX\+\_\+\+DATAID}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{od_8c_a348042ccd367beeea50bfb29f024d9f9}{LINK\_OD\_ENTRY}}(TEMPERATURE),}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Object dictionary entries The object dictionary 
+
+Referenced by od\+\_\+unsafe\+\_\+read(), od\+\_\+unsafe\+\_\+write(), and od\+\_\+update\+\_\+task().
+
+\mbox{\Hypertarget{od_8c_ac8be946ba70a7e2de7d65f3f0f68f60c}\label{od_8c_ac8be946ba70a7e2de7d65f3f0f68f60c}} 
+\index{od.c@{od.c}!out\_q@{out\_q}}
+\index{out\_q@{out\_q}!od.c@{od.c}}
+\doxysubsubsection{\texorpdfstring{out\_q}{out\_q}}
+{\footnotesize\ttfamily os\+Message\+Queue\+Id\+\_\+t out\+\_\+q}
+
+Synchronization primitives 
+
+Referenced by od\+\_\+init(), od\+\_\+unsafe\+\_\+write(), and od\+\_\+update\+\_\+task().
+

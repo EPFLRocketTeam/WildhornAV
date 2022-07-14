@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['data_958',['data',['../structod__frame__t.html#a42117cc5e09e524678311c6f6e06cc29',1,'od_frame_t::data()'],['../structMSV2__RX__DATA.html#a70831b2eaa1c20612e3ddf4da8dbd1d5',1,'MSV2_RX_DATA::data()'],['../structMSV2__TX__DATA.html#aa701eaa9fac2a179fb9fc3a42cb3860f',1,'MSV2_TX_DATA::data()'],['../structod__entry__t.html#afe3658f9744943cc2f8495d5bd55fedd',1,'od_entry_t::data()']]],
+  ['data_5fid_959',['data_id',['../structod__entry__t.html#acb8b2ae12cf9d83ee36bde041d3e10bb',1,'od_entry_t::data_id()'],['../structod__frame__t.html#a5a04f62e712e8aa9a395a3cb1cd366e7',1,'od_frame_t::data_id()']]],
+  ['data_5flen_960',['data_len',['../structMSV2__RX__DATA.html#a4f486d394f8c4cc10150f787d0d735d0',1,'MSV2_RX_DATA::data_len()'],['../structMSV2__TX__DATA.html#af765040091300b01c20b7a8df0f203aa',1,'MSV2_TX_DATA::data_len()']]],
+  ['data_5frdy_961',['data_rdy',['../structdevice__deamon.html#acbb6a8991d9c4fdb1e9a71a1d8a476ca',1,'device_deamon']]],
+  ['debug_5fcontext_962',['debug_context',['../debug_8c.html#a6202bd9dd374b93f47abe59ad02947c8',1,'debug.c']]],
+  ['debug_5finterface_5fcontext_963',['debug_interface_context',['../debug_8c.html#a73518a021f8685545e4b735f99d7b354',1,'debug.c']]],
+  ['device_5faddress_964',['device_address',['../structi2c__sensor__context.html#a28c49b18ad425af2191bf9f5584587f9',1,'i2c_sensor_context']]],
+  ['direction_965',['direction',['../structdma__stream__config.html#a7259a79339bae6dd184539ab27819caa',1,'dma_stream_config']]],
+  ['dma_966',['dma',['../structdma__stream__dev.html#aa13b15eec4a40ebd33f488694ebb1f15',1,'dma_stream_dev']]],
+  ['dma2_5fscheduler_967',['dma2_scheduler',['../dma_8c.html#a1162e096d6c815e8a09596d4a0c7c2aa',1,'dma.c']]],
+  ['dma2_5fstreams_968',['dma2_streams',['../dma_8c.html#a79d3c0df0b133fe4c33c35bf5b079a6f',1,'dma.c']]],
+  ['dma_5fstream_969',['dma_stream',['../structdma__stream__dev.html#a70a1af7167490d48ec60e7fe1b04952b',1,'dma_stream_dev']]],
+  ['dmamux_5fchannel_970',['dmamux_channel',['../structdma__stream__dev.html#a3724e9e205b3a4c885ab87472783e52a',1,'dma_stream_dev']]],
+  ['dmamux_5fchannel_5fstatus_971',['dmamux_channel_status',['../structdma__stream__dev.html#a4842e254a8cc05a208fa9d4ecca4c9c5',1,'dma_stream_dev']]],
+  ['dmamux_5frequest_5fnumber_972',['dmamux_request_number',['../structdma__stream__config.html#ab6495a3ee1399413eb4491c0404eb6df',1,'dma_stream_config']]],
+  ['drive_973',['drive',['../structgpio__config.html#aaf5abc9b43d045104794b8554c51e8cb',1,'gpio_config']]],
+  ['dst_974',['dst',['../structdma__request.html#afd7a22eb95add9b9f9a67a2e638e60f6',1,'dma_request']]],
+  ['dst_5finc_975',['dst_inc',['../structdma__request.html#a3640f2e3fdacfdc472facd1713abade2',1,'dma_request']]]
+];

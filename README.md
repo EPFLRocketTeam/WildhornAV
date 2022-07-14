@@ -20,20 +20,23 @@ The CM4 subdir contains all the code which will be running on the coprocessor. T
 * ![img](https://img.shields.io/badge/Feature-Done-success) Coprocessor launch [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Done-success) Blinking led [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Done-success) Generic device driver [Iacopo] 
-* ![img](https://img.shields.io/badge/Feature-Progress-important) Coprocessor communication [Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Working-yellow) Coprocessor communication [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Progress-important) Multiboard communication [Olivér]
-* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Barometer device [unassigned]
-* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Accelerometer device [unassigned]
-* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Gyroscope device [unassigned]
-* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) GNSS device [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Barometer device [Johanna, Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Accelerometer device [Johanna, Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) Gyroscope device [Johanna, Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) GNSS device [Charlotte]
 * ![img](https://img.shields.io/badge/Feature-Progress-important) Radio device [Martin, Charlotte]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Recovery device [unassigned]
-* ![img](https://img.shields.io/badge/Feature-Progress-important) I2C interface [Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Done-success) I2C interface [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) SPI interface [unassigned]
 * ![img](https://img.shields.io/badge/Feature-Done-success) UART interface [Iacopo]
-* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) State machine [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Progress-important) State machine [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) State estimation [Yohann]
-* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) A7 Application [Michael]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Feedback logging app [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) OD Sync and logging app [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Data handling app [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Command handling app [unassigned]
 
 
 ## Contributors
@@ -42,6 +45,5 @@ The CM4 subdir contains all the code which will be running on the coprocessor. T
 * Yohann Paulus
 * Maxime Chantemargue
 * Oliver Facklam
-* Michael Buchar
 * Iacopo Sprenger
 

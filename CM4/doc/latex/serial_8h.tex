@@ -1,0 +1,273 @@
+\hypertarget{serial_8h}{}\doxysection{serial.\+h File Reference}
+\label{serial_8h}\index{serial.h@{serial.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$device/device.\+h$>$}\newline
+{\ttfamily \#include $<$util.\+h$>$}\newline
+{\ttfamily \#include $<$semphr.\+h$>$}\newline
+Include dependency graph for serial.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{serial_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serial_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structserial__deamon__context}{serial\+\_\+deamon\+\_\+context}}
+\item 
+struct \mbox{\hyperlink{structserial__interface__context}{serial\+\_\+interface\+\_\+context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serial_8h_a18cfa1a8dfcd9e011effeeca1e191d05}{SERIAL\+\_\+\+BUFFER\+\_\+\+LEN}}~256
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{serial_8h_aba7fa9af3dec6a6730cc339f6f47044b}{serial\+\_\+interrupt\+\_\+source}} \mbox{\hyperlink{serial_8h_a7a03a85f1af50cb280841ab59166e7f7}{serial\+\_\+interrupt\+\_\+source\+\_\+t}}
+\item 
+typedef enum \mbox{\hyperlink{serial_8h_a2e1e6756d733240bedcc75c4f1762732}{serial\+\_\+transfer\+\_\+mode}} \mbox{\hyperlink{serial_8h_a0be03766ce51e576d4624875752af305}{serial\+\_\+transfer\+\_\+mode\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structserial__deamon__context}{serial\+\_\+deamon\+\_\+context}} \mbox{\hyperlink{serial_8h_ad71909a9681408568fe69662015827c2}{serial\+\_\+deamon\+\_\+context\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structserial__interface__context}{serial\+\_\+interface\+\_\+context}} \mbox{\hyperlink{serial_8h_a6a5de23f5d5f45dc454a399454027b8f}{serial\+\_\+interface\+\_\+context\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{serial_8h_aba7fa9af3dec6a6730cc339f6f47044b}{serial\+\_\+interrupt\+\_\+source}} \{ \mbox{\hyperlink{serial_8h_aba7fa9af3dec6a6730cc339f6f47044ba32194f329ce2d97285ec1c9f78fc21f4}{SERIAL\+\_\+\+SOURCE\+\_\+\+DMA\+\_\+\+FIRST\+\_\+\+HALF}}
+, \mbox{\hyperlink{serial_8h_aba7fa9af3dec6a6730cc339f6f47044baa4cc61642a7f2dbcf701231a9cb2a42e}{SERIAL\+\_\+\+SOURCE\+\_\+\+DMA\+\_\+\+SECOND\+\_\+\+HALF}}
+, \mbox{\hyperlink{serial_8h_aba7fa9af3dec6a6730cc339f6f47044bab31ca828c6985e74ced5a1f540a9f97c}{SERIAL\+\_\+\+SOURCE\+\_\+\+IDLE}}
+ \}
+\item 
+enum \mbox{\hyperlink{serial_8h_a2e1e6756d733240bedcc75c4f1762732}{serial\+\_\+transfer\+\_\+mode}} \{ \mbox{\hyperlink{serial_8h_a2e1e6756d733240bedcc75c4f1762732a2eab1d48e1cd0a045446a001e14427c5}{SERIAL\+\_\+\+TRANSFER\+\_\+\+DMA}}
+, \mbox{\hyperlink{serial_8h_a2e1e6756d733240bedcc75c4f1762732acf419a98f9063a8660149ae0cce06fac}{SERIAL\+\_\+\+TRANSFER\+\_\+\+IT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{serial_8h_a82bb0542af81a3d8d7ea89f3aee2f442}{serial\+\_\+init}} (void)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{serial_8h_a035895fca7f038e31817520a194d3ef7}{serial\+\_\+feedback\+\_\+init}} (void)
+\item 
+\mbox{\hyperlink{device_8h_a3f1dc2e1b55c12b0d136fdff2f3f0807}{device\+\_\+deamon\+\_\+t}} $\ast$ \mbox{\hyperlink{serial_8h_a3a917d1088913a9f061bb7aecdfa7706}{serial\+\_\+get\+\_\+deamon}} (void)
+\item 
+\mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}} $\ast$ \mbox{\hyperlink{serial_8h_a12f3052d5c514aee2530ea3a4c2e11e9}{serial\+\_\+get\+\_\+feedback\+\_\+interface}} (void)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{serial_8h_aaa9c92c8c435763f7cdf1ebd4446c03f}{serial\+\_\+send}} (void $\ast$context, uint8\+\_\+t $\ast$data, uint32\+\_\+t len)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{serial_8h_ab4d41ce25afdf0aa91606681e656b269}{serial\+\_\+recv}} (void $\ast$context, uint8\+\_\+t $\ast$data, uint32\+\_\+t $\ast$len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{serial_8h_a18cfa1a8dfcd9e011effeeca1e191d05}\label{serial_8h_a18cfa1a8dfcd9e011effeeca1e191d05}} 
+\index{serial.h@{serial.h}!SERIAL\_BUFFER\_LEN@{SERIAL\_BUFFER\_LEN}}
+\index{SERIAL\_BUFFER\_LEN@{SERIAL\_BUFFER\_LEN}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_BUFFER\_LEN}{SERIAL\_BUFFER\_LEN}}
+{\footnotesize\ttfamily \#define SERIAL\+\_\+\+BUFFER\+\_\+\+LEN~256}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{serial_8h_ad71909a9681408568fe69662015827c2}\label{serial_8h_ad71909a9681408568fe69662015827c2}} 
+\index{serial.h@{serial.h}!serial\_deamon\_context\_t@{serial\_deamon\_context\_t}}
+\index{serial\_deamon\_context\_t@{serial\_deamon\_context\_t}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_deamon\_context\_t}{serial\_deamon\_context\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structserial__deamon__context}{serial\+\_\+deamon\+\_\+context}} \mbox{\hyperlink{serial_8h_ad71909a9681408568fe69662015827c2}{serial\+\_\+deamon\+\_\+context\+\_\+t}}}
+
+\mbox{\Hypertarget{serial_8h_a6a5de23f5d5f45dc454a399454027b8f}\label{serial_8h_a6a5de23f5d5f45dc454a399454027b8f}} 
+\index{serial.h@{serial.h}!serial\_interface\_context\_t@{serial\_interface\_context\_t}}
+\index{serial\_interface\_context\_t@{serial\_interface\_context\_t}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_interface\_context\_t}{serial\_interface\_context\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structserial__interface__context}{serial\+\_\+interface\+\_\+context}} \mbox{\hyperlink{serial_8h_a6a5de23f5d5f45dc454a399454027b8f}{serial\+\_\+interface\+\_\+context\+\_\+t}}}
+
+\mbox{\Hypertarget{serial_8h_a7a03a85f1af50cb280841ab59166e7f7}\label{serial_8h_a7a03a85f1af50cb280841ab59166e7f7}} 
+\index{serial.h@{serial.h}!serial\_interrupt\_source\_t@{serial\_interrupt\_source\_t}}
+\index{serial\_interrupt\_source\_t@{serial\_interrupt\_source\_t}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_interrupt\_source\_t}{serial\_interrupt\_source\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{serial_8h_aba7fa9af3dec6a6730cc339f6f47044b}{serial\+\_\+interrupt\+\_\+source}} \mbox{\hyperlink{serial_8h_a7a03a85f1af50cb280841ab59166e7f7}{serial\+\_\+interrupt\+\_\+source\+\_\+t}}}
+
+\mbox{\Hypertarget{serial_8h_a0be03766ce51e576d4624875752af305}\label{serial_8h_a0be03766ce51e576d4624875752af305}} 
+\index{serial.h@{serial.h}!serial\_transfer\_mode\_t@{serial\_transfer\_mode\_t}}
+\index{serial\_transfer\_mode\_t@{serial\_transfer\_mode\_t}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_transfer\_mode\_t}{serial\_transfer\_mode\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{serial_8h_a2e1e6756d733240bedcc75c4f1762732}{serial\+\_\+transfer\+\_\+mode}} \mbox{\hyperlink{serial_8h_a0be03766ce51e576d4624875752af305}{serial\+\_\+transfer\+\_\+mode\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{serial_8h_aba7fa9af3dec6a6730cc339f6f47044b}\label{serial_8h_aba7fa9af3dec6a6730cc339f6f47044b}} 
+\index{serial.h@{serial.h}!serial\_interrupt\_source@{serial\_interrupt\_source}}
+\index{serial\_interrupt\_source@{serial\_interrupt\_source}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_interrupt\_source}{serial\_interrupt\_source}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{serial_8h_aba7fa9af3dec6a6730cc339f6f47044b}{serial\+\_\+interrupt\+\_\+source}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SERIAL\_SOURCE\_DMA\_FIRST\_HALF@{SERIAL\_SOURCE\_DMA\_FIRST\_HALF}!serial.h@{serial.h}}\index{serial.h@{serial.h}!SERIAL\_SOURCE\_DMA\_FIRST\_HALF@{SERIAL\_SOURCE\_DMA\_FIRST\_HALF}}}\mbox{\Hypertarget{serial_8h_aba7fa9af3dec6a6730cc339f6f47044ba32194f329ce2d97285ec1c9f78fc21f4}\label{serial_8h_aba7fa9af3dec6a6730cc339f6f47044ba32194f329ce2d97285ec1c9f78fc21f4}} 
+SERIAL\+\_\+\+SOURCE\+\_\+\+DMA\+\_\+\+FIRST\+\_\+\+HALF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SERIAL\_SOURCE\_DMA\_SECOND\_HALF@{SERIAL\_SOURCE\_DMA\_SECOND\_HALF}!serial.h@{serial.h}}\index{serial.h@{serial.h}!SERIAL\_SOURCE\_DMA\_SECOND\_HALF@{SERIAL\_SOURCE\_DMA\_SECOND\_HALF}}}\mbox{\Hypertarget{serial_8h_aba7fa9af3dec6a6730cc339f6f47044baa4cc61642a7f2dbcf701231a9cb2a42e}\label{serial_8h_aba7fa9af3dec6a6730cc339f6f47044baa4cc61642a7f2dbcf701231a9cb2a42e}} 
+SERIAL\+\_\+\+SOURCE\+\_\+\+DMA\+\_\+\+SECOND\+\_\+\+HALF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SERIAL\_SOURCE\_IDLE@{SERIAL\_SOURCE\_IDLE}!serial.h@{serial.h}}\index{serial.h@{serial.h}!SERIAL\_SOURCE\_IDLE@{SERIAL\_SOURCE\_IDLE}}}\mbox{\Hypertarget{serial_8h_aba7fa9af3dec6a6730cc339f6f47044bab31ca828c6985e74ced5a1f540a9f97c}\label{serial_8h_aba7fa9af3dec6a6730cc339f6f47044bab31ca828c6985e74ced5a1f540a9f97c}} 
+SERIAL\+\_\+\+SOURCE\+\_\+\+IDLE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{serial_8h_a2e1e6756d733240bedcc75c4f1762732}\label{serial_8h_a2e1e6756d733240bedcc75c4f1762732}} 
+\index{serial.h@{serial.h}!serial\_transfer\_mode@{serial\_transfer\_mode}}
+\index{serial\_transfer\_mode@{serial\_transfer\_mode}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_transfer\_mode}{serial\_transfer\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{serial_8h_a2e1e6756d733240bedcc75c4f1762732}{serial\+\_\+transfer\+\_\+mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SERIAL\_TRANSFER\_DMA@{SERIAL\_TRANSFER\_DMA}!serial.h@{serial.h}}\index{serial.h@{serial.h}!SERIAL\_TRANSFER\_DMA@{SERIAL\_TRANSFER\_DMA}}}\mbox{\Hypertarget{serial_8h_a2e1e6756d733240bedcc75c4f1762732a2eab1d48e1cd0a045446a001e14427c5}\label{serial_8h_a2e1e6756d733240bedcc75c4f1762732a2eab1d48e1cd0a045446a001e14427c5}} 
+SERIAL\+\_\+\+TRANSFER\+\_\+\+DMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SERIAL\_TRANSFER\_IT@{SERIAL\_TRANSFER\_IT}!serial.h@{serial.h}}\index{serial.h@{serial.h}!SERIAL\_TRANSFER\_IT@{SERIAL\_TRANSFER\_IT}}}\mbox{\Hypertarget{serial_8h_a2e1e6756d733240bedcc75c4f1762732acf419a98f9063a8660149ae0cce06fac}\label{serial_8h_a2e1e6756d733240bedcc75c4f1762732acf419a98f9063a8660149ae0cce06fac}} 
+SERIAL\+\_\+\+TRANSFER\+\_\+\+IT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{serial_8h_a035895fca7f038e31817520a194d3ef7}\label{serial_8h_a035895fca7f038e31817520a194d3ef7}} 
+\index{serial.h@{serial.h}!serial\_feedback\_init@{serial\_feedback\_init}}
+\index{serial\_feedback\_init@{serial\_feedback\_init}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_feedback\_init()}{serial\_feedback\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} serial\+\_\+feedback\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+interface\+\_\+create(), ER\+\_\+\+SUCCESS, feedback\+\_\+interface, feedback\+\_\+interface\+\_\+context, serial\+\_\+deamon, serial\+\_\+handle\+\_\+data(), serial\+\_\+recv(), serial\+\_\+send(), serial\+\_\+setup\+\_\+reception(), and SERIAL\+\_\+\+TRANSFER\+\_\+\+IT.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serial_8h_a035895fca7f038e31817520a194d3ef7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{serial_8h_a3a917d1088913a9f061bb7aecdfa7706}\label{serial_8h_a3a917d1088913a9f061bb7aecdfa7706}} 
+\index{serial.h@{serial.h}!serial\_get\_deamon@{serial\_get\_deamon}}
+\index{serial\_get\_deamon@{serial\_get\_deamon}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_get\_deamon()}{serial\_get\_deamon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_a3f1dc2e1b55c12b0d136fdff2f3f0807}{device\+\_\+deamon\+\_\+t}}$\ast$ serial\+\_\+get\+\_\+deamon (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References serial\+\_\+deamon.
+
+\mbox{\Hypertarget{serial_8h_a12f3052d5c514aee2530ea3a4c2e11e9}\label{serial_8h_a12f3052d5c514aee2530ea3a4c2e11e9}} 
+\index{serial.h@{serial.h}!serial\_get\_feedback\_interface@{serial\_get\_feedback\_interface}}
+\index{serial\_get\_feedback\_interface@{serial\_get\_feedback\_interface}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_get\_feedback\_interface()}{serial\_get\_feedback\_interface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{device_8h_afd3cf179e8a0451b6dfa544364c6cb22}{device\+\_\+interface\+\_\+t}}$\ast$ serial\+\_\+get\+\_\+feedback\+\_\+interface (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References feedback\+\_\+interface.
+
+
+
+Referenced by debug\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{serial_8h_a12f3052d5c514aee2530ea3a4c2e11e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{serial_8h_a82bb0542af81a3d8d7ea89f3aee2f442}\label{serial_8h_a82bb0542af81a3d8d7ea89f3aee2f442}} 
+\index{serial.h@{serial.h}!serial\_init@{serial\_init}}
+\index{serial\_init@{serial\_init}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_init()}{serial\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} serial\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+deamon\+\_\+create(), ER\+\_\+\+SUCCESS, serial\+\_\+deamon\+\_\+context\+::rx\+\_\+sem, serial\+\_\+deamon\+\_\+context\+::rx\+\_\+sem\+\_\+buffer, serial\+\_\+data\+\_\+ready(), and serial\+\_\+deamon.
+
+
+
+Referenced by threads\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serial_8h_a82bb0542af81a3d8d7ea89f3aee2f442_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{serial_8h_a82bb0542af81a3d8d7ea89f3aee2f442_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{serial_8h_ab4d41ce25afdf0aa91606681e656b269}\label{serial_8h_ab4d41ce25afdf0aa91606681e656b269}} 
+\index{serial.h@{serial.h}!serial\_recv@{serial\_recv}}
+\index{serial\_recv@{serial\_recv}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_recv()}{serial\_recv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} serial\+\_\+recv (\begin{DoxyParamCaption}\item[{void $\ast$}]{context,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+References ER\+\_\+\+SUCCESS, serial\+\_\+interface\+\_\+context\+::rx\+\_\+buffer, util\+\_\+buffer\+\_\+u8\+\_\+get(), and util\+\_\+buffer\+\_\+u8\+\_\+isempty().
+
+
+
+Referenced by debug\+\_\+init(), and serial\+\_\+feedback\+\_\+init().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{serial_8h_ab4d41ce25afdf0aa91606681e656b269_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{serial_8h_ab4d41ce25afdf0aa91606681e656b269_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{serial_8h_aaa9c92c8c435763f7cdf1ebd4446c03f}\label{serial_8h_aaa9c92c8c435763f7cdf1ebd4446c03f}} 
+\index{serial.h@{serial.h}!serial\_send@{serial\_send}}
+\index{serial\_send@{serial\_send}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_send()}{serial\_send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} serial\+\_\+send (\begin{DoxyParamCaption}\item[{void $\ast$}]{context,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint32\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+References ER\+\_\+\+SUCCESS, and serial\+\_\+interface\+\_\+context\+::uart.
+
+
+
+Referenced by debug\+\_\+init(), and serial\+\_\+feedback\+\_\+init().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{serial_8h_aaa9c92c8c435763f7cdf1ebd4446c03f_icgraph}
+\end{center}
+\end{figure}

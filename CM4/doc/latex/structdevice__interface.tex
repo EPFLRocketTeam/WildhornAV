@@ -1,0 +1,77 @@
+\hypertarget{structdevice__interface}{}\doxysection{device\+\_\+interface Struct Reference}
+\label{structdevice__interface}\index{device\_interface@{device\_interface}}
+
+
+{\ttfamily \#include $<$device.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structdevice__interface_a39907072254922230bbe6cfe6b659cb4}{id}}
+\item 
+void $\ast$ \mbox{\hyperlink{structdevice__interface_addc75ce0d4bcbcbc1ec5cc6d22acc156}{context}}
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ \mbox{\hyperlink{structdevice__interface_aa6c51c288f99470d88c6d298d992e57c}{send}} )(void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ \mbox{\hyperlink{structdevice__interface_aaf6a4523111ab118073acac7c190a89b}{recv}} )(void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t $\ast$)
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ \mbox{\hyperlink{structdevice__interface_ad245d7e2799cb128b474b5076f43e8f6}{handle\+\_\+data}} )(void $\ast$, void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structdevice__interface_addc75ce0d4bcbcbc1ec5cc6d22acc156}\label{structdevice__interface_addc75ce0d4bcbcbc1ec5cc6d22acc156}} 
+\index{device\_interface@{device\_interface}!context@{context}}
+\index{context@{context}!device\_interface@{device\_interface}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily void$\ast$ device\+\_\+interface\+::context}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+thread(), device\+\_\+interface\+\_\+create(), device\+\_\+interface\+\_\+recv(), device\+\_\+interface\+\_\+send(), HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback(), read\+\_\+reg(), and write\+\_\+reg().
+
+\mbox{\Hypertarget{structdevice__interface_ad245d7e2799cb128b474b5076f43e8f6}\label{structdevice__interface_ad245d7e2799cb128b474b5076f43e8f6}} 
+\index{device\_interface@{device\_interface}!handle\_data@{handle\_data}}
+\index{handle\_data@{handle\_data}!device\_interface@{device\_interface}}
+\doxysubsubsection{\texorpdfstring{handle\_data}{handle\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ device\+\_\+interface\+::handle\+\_\+data) (void $\ast$, void $\ast$)}
+
+
+
+Referenced by device\+\_\+deamon\+\_\+thread(), and device\+\_\+interface\+\_\+create().
+
+\mbox{\Hypertarget{structdevice__interface_a39907072254922230bbe6cfe6b659cb4}\label{structdevice__interface_a39907072254922230bbe6cfe6b659cb4}} 
+\index{device\_interface@{device\_interface}!id@{id}}
+\index{id@{id}!device\_interface@{device\_interface}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint32\+\_\+t device\+\_\+interface\+::id}
+
+
+
+Referenced by device\+\_\+interface\+\_\+create().
+
+\mbox{\Hypertarget{structdevice__interface_aaf6a4523111ab118073acac7c190a89b}\label{structdevice__interface_aaf6a4523111ab118073acac7c190a89b}} 
+\index{device\_interface@{device\_interface}!recv@{recv}}
+\index{recv@{recv}!device\_interface@{device\_interface}}
+\doxysubsubsection{\texorpdfstring{recv}{recv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ device\+\_\+interface\+::recv) (void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t $\ast$)}
+
+
+
+Referenced by device\+\_\+interface\+\_\+create(), and device\+\_\+interface\+\_\+recv().
+
+\mbox{\Hypertarget{structdevice__interface_aa6c51c288f99470d88c6d298d992e57c}\label{structdevice__interface_aa6c51c288f99470d88c6d298d992e57c}} 
+\index{device\_interface@{device\_interface}!send@{send}}
+\index{send@{send}!device\_interface@{device\_interface}}
+\doxysubsubsection{\texorpdfstring{send}{send}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}}($\ast$ device\+\_\+interface\+::send) (void $\ast$, uint8\+\_\+t $\ast$, uint32\+\_\+t)}
+
+
+
+Referenced by device\+\_\+interface\+\_\+create(), device\+\_\+interface\+\_\+recv(), and device\+\_\+interface\+\_\+send().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{device_8h}{device.\+h}}\end{DoxyCompactItemize}

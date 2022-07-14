@@ -41,38 +41,13 @@
  *	TYPEDEFS
  **********************/
 
-typedef enum led_blick_state {
-	LED_ON,
-	LED_FAINT,
-	LED_OFF
-}led_blink_state_t;
-
-
 
 
 /**********************
  *	VARIABLES
  **********************/
 
-static led_blink_state_t blink_sequence[] = {
-		LED_ON,
-		LED_FAINT,
-		LED_ON,
-		LED_FAINT,
-		LED_ON,
-		LED_OFF
-};
 
-static const int blink_sequence_len = sizeof(blink_sequence)/sizeof(led_blink_state_t);
-
-static led_color_t color_sequence[] =  {
-		led_green,
-		led_red,
-		led_blue,
-		led_red,
-};
-
-static const int color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t);
 
 /**********************
  *	PROTOTYPES
@@ -84,7 +59,12 @@ static const int color_sequence_len = sizeof(color_sequence)/sizeof(led_color_t)
  *	DECLARATIONS
  **********************/
 
-
+/**
+ * @brief 	Initialize the feedback module
+ * @details This will initialize a board to accept a feedback board on
+ * 			the S3 socket.
+ *
+ */
 void led_feedback_init(void) {
 	//GPIO init leds
 	//feedback leds located on socket 3
@@ -101,6 +81,10 @@ void led_feedback_init(void) {
 
 }
 
+/**
+ * @brief 	Initialize the RGB LED.
+ * @details Starts the PWM channels connected to the RGB led for user feedback.
+ */
 void led_rgb_init(void) {
 
 	//make sure GPIO are initialized correctly
@@ -130,17 +114,30 @@ void led_rgb_init(void) {
 	HAL_TIM_PWM_Start(&LED_TIM, TIM_CHANNEL_3);
 }
 
+/**
+ * @brief	Set RBG LED color using r, g, b values.
+ *
+ * @param	r	Red channel value.
+ * @param 	g	Green channel value.
+ * @param	b	Blue channel value.
+ */
 void led_rgb_set_rgb(uint8_t r, uint8_t g, uint8_t b) {
 	LED_TIM.Instance->CCR1 = r;
 	LED_TIM.Instance->CCR2 = g;
 	LED_TIM.Instance->CCR3 = b;
 }
 
+/**
+ * @brief	Set RBG LED color using color structure.
+ *
+ * @param	color	Color structure, defines the color to be set.
+ */
 void led_rgb_set_color(led_color_t color) {
 	LED_TIM.Instance->CCR1 = color.r;
 	LED_TIM.Instance->CCR2 = color.g;
 	LED_TIM.Instance->CCR3 = color.b;
 }
+
 
 void led_rgb_thread(__attribute__((unused)) void * arg) {
 	static TickType_t last_wake_time;
@@ -152,35 +149,9 @@ void led_rgb_thread(__attribute__((unused)) void * arg) {
 
 	last_wake_time = xTaskGetTickCount();
 
-	static uint16_t seq = 0;
-	static uint16_t col = 0;
-
 	for(;;) {
 
-		switch(blink_sequence[seq]) {
-		case LED_ON:
-			period = pdMS_TO_TICKS(500);
-			led_rgb_set_color(color_sequence[col]);
-			break;
-		case LED_FAINT:
-			period = pdMS_TO_TICKS(100);
-			led_rgb_set_rgb(LED_BLACK);
-			break;
-		case LED_OFF:
-			period = pdMS_TO_TICKS(500);
-			led_rgb_set_rgb(LED_BLACK);
-			break;
-		}
-
-		seq++;
-		if(!(seq < blink_sequence_len)) {
-			seq = 0;
-		}
-
-		col++;
-		if(!(col < color_sequence_len)) {
-			col = 0;
-		}
+		led_rgb_set_color(led_blue);
 
 		vTaskDelayUntil( &last_wake_time, period );
 	}

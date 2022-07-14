@@ -1,0 +1,47 @@
+\hypertarget{threads_8h}{}\doxysection{threads.\+h File Reference}
+\label{threads_8h}\index{threads.h@{threads.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for threads.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{threads_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{threads_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{threads_8h_aa5c157013c08e62ad9eb931165c9663b}{threads\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize all the threads of Wildhorn AV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{threads_8h_aa5c157013c08e62ad9eb931165c9663b}\label{threads_8h_aa5c157013c08e62ad9eb931165c9663b}} 
+\index{threads.h@{threads.h}!threads\_init@{threads\_init}}
+\index{threads\_init@{threads\_init}!threads.h@{threads.h}}
+\doxysubsubsection{\texorpdfstring{threads\_init()}{threads\_init()}}
+{\footnotesize\ttfamily void threads\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize all the threads of Wildhorn AV. 
+
+This is the only function that needs to be called from the ST Auto-\/generated files. This is clever in case the autogeneration fails. This will minimize the code to be rewritten. 
+
+References buzzer\+\_\+init(), control\+\_\+handle, CONTROL\+\_\+\+PRIO, CONTROL\+\_\+\+SZ, control\+\_\+thread(), CREATE\+\_\+\+THREAD, ER\+\_\+\+SUCCESS, hostproc\+\_\+init(), i2c\+\_\+init(), i2c\+\_\+spi\+\_\+guard(), led\+\_\+feedback\+\_\+init(), led\+\_\+rgb\+\_\+handle, LED\+\_\+\+RGB\+\_\+\+PRIO, LED\+\_\+\+RGB\+\_\+\+SZ, led\+\_\+rgb\+\_\+thread(), od\+\_\+handle, od\+\_\+init(), OD\+\_\+\+PRIO, OD\+\_\+\+SZ, od\+\_\+update\+\_\+task(), and serial\+\_\+init().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{threads_8h_aa5c157013c08e62ad9eb931165c9663b_cgraph}
+\end{center}
+\end{figure}

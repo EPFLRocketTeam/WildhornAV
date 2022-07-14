@@ -1,0 +1,100 @@
+\hypertarget{debug_8c}{}\doxysection{debug.\+c File Reference}
+\label{debug_8c}\index{debug.c@{debug.c}}
+{\ttfamily \#include $<$protocol/msv2.\+h$>$}\newline
+{\ttfamily \#include $<$feedback/debug.\+h$>$}\newline
+{\ttfamily \#include $<$driver/serial.\+h$>$}\newline
+Include dependency graph for debug.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debug_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdebug__interface__context}{debug\+\_\+interface\+\_\+context}}
+\item 
+struct \mbox{\hyperlink{structdebug__context}{debug\+\_\+context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structdebug__interface__context}{debug\+\_\+interface\+\_\+context}} \mbox{\hyperlink{debug_8c_ab1f6130932f935796c13367d5d264dde}{debug\+\_\+interface\+\_\+context\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structdebug__context}{debug\+\_\+context}} \mbox{\hyperlink{debug_8c_ab495a099ee51ead7dcc94c94993239e5}{debug\+\_\+context\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} \mbox{\hyperlink{debug_8c_afe1b638971fa81c93343301dac156183}{debug\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{debug_8c_ab495a099ee51ead7dcc94c94993239e5}{debug\+\_\+context\+\_\+t}} \mbox{\hyperlink{debug_8c_a6202bd9dd374b93f47abe59ad02947c8}{debug\+\_\+context}}
+\item 
+\mbox{\hyperlink{serial_8h_a6a5de23f5d5f45dc454a399454027b8f}{serial\+\_\+interface\+\_\+context\+\_\+t}} \mbox{\hyperlink{debug_8c_a4028458e3f34e7cac24f3adff9c525a2}{feedback\+\_\+interface\+\_\+context}}
+\item 
+\mbox{\hyperlink{debug_8c_ab1f6130932f935796c13367d5d264dde}{debug\+\_\+interface\+\_\+context\+\_\+t}} \mbox{\hyperlink{debug_8c_a73518a021f8685545e4b735f99d7b354}{debug\+\_\+interface\+\_\+context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{debug_8c_ab495a099ee51ead7dcc94c94993239e5}\label{debug_8c_ab495a099ee51ead7dcc94c94993239e5}} 
+\index{debug.c@{debug.c}!debug\_context\_t@{debug\_context\_t}}
+\index{debug\_context\_t@{debug\_context\_t}!debug.c@{debug.c}}
+\doxysubsubsection{\texorpdfstring{debug\_context\_t}{debug\_context\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdebug__context}{debug\+\_\+context}} \mbox{\hyperlink{debug_8c_ab495a099ee51ead7dcc94c94993239e5}{debug\+\_\+context\+\_\+t}}}
+
+\mbox{\Hypertarget{debug_8c_ab1f6130932f935796c13367d5d264dde}\label{debug_8c_ab1f6130932f935796c13367d5d264dde}} 
+\index{debug.c@{debug.c}!debug\_interface\_context\_t@{debug\_interface\_context\_t}}
+\index{debug\_interface\_context\_t@{debug\_interface\_context\_t}!debug.c@{debug.c}}
+\doxysubsubsection{\texorpdfstring{debug\_interface\_context\_t}{debug\_interface\_context\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdebug__interface__context}{debug\+\_\+interface\+\_\+context}} \mbox{\hyperlink{debug_8c_ab1f6130932f935796c13367d5d264dde}{debug\+\_\+interface\+\_\+context\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{debug_8c_afe1b638971fa81c93343301dac156183}\label{debug_8c_afe1b638971fa81c93343301dac156183}} 
+\index{debug.c@{debug.c}!debug\_init@{debug\_init}}
+\index{debug\_init@{debug\_init}!debug.c@{debug.c}}
+\doxysubsubsection{\texorpdfstring{debug\_init()}{debug\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{util_8h_a2184c4f9b1e8dce91ddaaf7ea79ed194}{util\+\_\+error\+\_\+t}} debug\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+References device\+\_\+interface\+\_\+create(), feedback\+\_\+interface, feedback\+\_\+interface\+\_\+context, debug\+\_\+interface\+\_\+context\+::msv2, msv2\+\_\+init(), serial\+\_\+deamon, serial\+\_\+get\+\_\+feedback\+\_\+interface(), serial\+\_\+recv(), serial\+\_\+send(), serial\+\_\+setup\+\_\+reception(), and SERIAL\+\_\+\+TRANSFER\+\_\+\+IT.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debug_8c_afe1b638971fa81c93343301dac156183_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{debug_8c_a6202bd9dd374b93f47abe59ad02947c8}\label{debug_8c_a6202bd9dd374b93f47abe59ad02947c8}} 
+\index{debug.c@{debug.c}!debug\_context@{debug\_context}}
+\index{debug\_context@{debug\_context}!debug.c@{debug.c}}
+\doxysubsubsection{\texorpdfstring{debug\_context}{debug\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{debug_8c_ab495a099ee51ead7dcc94c94993239e5}{debug\+\_\+context\+\_\+t}} \mbox{\hyperlink{structdebug__context}{debug\+\_\+context}}}
+
+\mbox{\Hypertarget{debug_8c_a73518a021f8685545e4b735f99d7b354}\label{debug_8c_a73518a021f8685545e4b735f99d7b354}} 
+\index{debug.c@{debug.c}!debug\_interface\_context@{debug\_interface\_context}}
+\index{debug\_interface\_context@{debug\_interface\_context}!debug.c@{debug.c}}
+\doxysubsubsection{\texorpdfstring{debug\_interface\_context}{debug\_interface\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{debug_8c_ab1f6130932f935796c13367d5d264dde}{debug\+\_\+interface\+\_\+context\+\_\+t}} \mbox{\hyperlink{structdebug__interface__context}{debug\+\_\+interface\+\_\+context}}}
+
+\mbox{\Hypertarget{debug_8c_a4028458e3f34e7cac24f3adff9c525a2}\label{debug_8c_a4028458e3f34e7cac24f3adff9c525a2}} 
+\index{debug.c@{debug.c}!feedback\_interface\_context@{feedback\_interface\_context}}
+\index{feedback\_interface\_context@{feedback\_interface\_context}!debug.c@{debug.c}}
+\doxysubsubsection{\texorpdfstring{feedback\_interface\_context}{feedback\_interface\_context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{serial_8h_a6a5de23f5d5f45dc454a399454027b8f}{serial\+\_\+interface\+\_\+context\+\_\+t}} feedback\+\_\+interface\+\_\+context}
+
+
+
+Referenced by debug\+\_\+init().
+

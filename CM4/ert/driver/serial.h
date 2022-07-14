@@ -81,9 +81,11 @@ util_error_t serial_init(void);
 
 util_error_t serial_feedback_init(void);
 
-device_deamon_t * serial_get_deamon(void);
+device_daemon_t * serial_get_deamon(void);
 
 device_interface_t * serial_get_feedback_interface(void);
+
+util_error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode);
 
 util_error_t serial_send(void * context, uint8_t* data, uint32_t len);
 

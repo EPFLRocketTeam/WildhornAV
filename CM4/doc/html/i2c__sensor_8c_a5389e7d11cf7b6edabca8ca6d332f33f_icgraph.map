@@ -1,0 +1,5 @@
+<map id="write_reg" name="write_reg">
+<area shape="rect" id="node1" title=" " alt="" coords="333,31,416,57"/>
+<area shape="rect" id="node2" href="$device_8c.html#a40846c40a3f7c8473fdd3b96d12b7f7d" title="Initialize a device instance." alt="" coords="172,5,285,32"/>
+<area shape="rect" id="node3" href="$i2c__sensor_8c.html#ae29d9882a5c70774cc736efa8ae5fa30" title=" " alt="" coords="5,31,124,57"/>
+</map>

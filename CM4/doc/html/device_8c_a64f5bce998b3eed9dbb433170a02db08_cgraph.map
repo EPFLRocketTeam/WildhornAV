@@ -1,0 +1,4 @@
+<map id="device_write_u8" name="device_write_u8">
+<area shape="rect" id="node1" title="Write an uint8_t to a device register." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node2" href="$util_8h.html#ad81f8781a822f9083a753d0f72c23cb8" title=" " alt="" coords="181,5,301,32"/>
+</map>

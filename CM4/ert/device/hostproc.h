@@ -49,8 +49,10 @@
 extern "C"{
 #endif
 
-device_interface_t * hostproc_get_interface(void);
-device_t * hostproc_get_device(void);
+device_interface_t * hostproc_get_feedback_interface(void);
+device_interface_t * hostproc_get_sync_interface(void);
+device_interface_t * hostproc_get_data_interface(void);
+device_interface_t * hostproc_get_cmd_interface(void);
 
 util_error_t hostproc_init(void);
 
