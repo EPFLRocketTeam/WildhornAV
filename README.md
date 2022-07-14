@@ -33,7 +33,10 @@ The CM4 subdir contains all the code which will be running on the coprocessor. T
 * ![img](https://img.shields.io/badge/Feature-Done-success) UART interface [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Progress-important) State machine [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) State estimation [Yohann]
-* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) A7 Application [Yohann]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Feedback logging app [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) OD Sync and logging app [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Data handling app [unassigned]
+* ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Command handling app [unassigned]
 
 
 ## Contributors
