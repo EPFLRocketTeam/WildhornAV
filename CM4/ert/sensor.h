@@ -1,13 +1,13 @@
-/*  Title		: Barometer
- *  Filename	: barometer.h
+/*  Title		: I2C Acquisition
+ *  Filename	: i2c_acq.h
  *	Author		: iacopo sprenger
- *	Date		: 10.06.2022
+ *	Date		: 13.07.2021
  *	Version		: 0.1
- *	Description	: barometer setup and acquisition
+ *	Description	: Thread grouping all the sensors on the same I2C bus.
  */
 
-#ifndef BAROMETER_H
-#define BAROMETER_H
+#ifndef I2C_ACQ_H
+#define I2C_ACQ_H
 
 
 
@@ -16,8 +16,6 @@
  **********************/
 
 #include <stdint.h>
-#include <util.h>
-#include <device/device.h>
 
 /**********************
  *  CONSTANTS
@@ -47,12 +45,12 @@
 extern "C"{
 #endif
 
-util_error_t barometer_init(device_t * baro);
+void sensor_i2c_thread(__attribute__((unused)) void * arg);
 
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* BAROMETER_H */
+#endif /* I2C_ACQ_H */
 
 /* END */

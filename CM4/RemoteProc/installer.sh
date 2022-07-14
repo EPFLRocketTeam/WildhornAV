@@ -15,6 +15,8 @@ KERMIT_CONFIG_SLOW=kermit_config_slow.cfg
 
 KERMIT_CONFIG=$KERMIT_CONFIG_FAST
 
+SOURCE_FOLDER=Debug
+
 
 if [[ $1 == "kermit" ]]; then
 	REMOTE_SSH=
@@ -44,7 +46,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 	if [[ $LAST_FIRMWARE_HASH == $REMOTE_FIRMWARE_HASH ]] ; then
 		echo "firmware match, delta update possible"
 
-		diff -au --to-file=../Release/WildhornAV_CM4.elf WildhornAV_CM4.elf > update.patch
+		diff -au --to-file=../$SOURCE_FOLDER/WildhornAV_CM4.elf WildhornAV_CM4.elf > update.patch
 		echo "delta created"
 
 		DATA_CHECK=$( cat  update.patch )
@@ -101,7 +103,7 @@ if [[ -z "$REMOTE_SSH" ]]; then
 		kermit $KERMIT_CONFIG -C " remote host chmod +x /etc/rc.local, exit"
 		echo "tools sent"
 
-		cp  ../Release/WildhornAV_CM4.elf WildhornAV_CM4.elf
+		cp  ../$SOURCE_FOLDER/WildhornAV_CM4.elf WildhornAV_CM4.elf
 		bzip2 -f WildhornAV_CM4.elf
 		echo "firmware compressed"
 
@@ -140,7 +142,7 @@ else
 	if [[ $LAST_FIRMWARE_HASH == $REMOTE_FIRMWARE_HASH ]] ; then #use delta update
 		echo "firmware match, delta update possible"
 
-		diff -au --to-file=../Release/WildhornAV_CM4.elf WildhornAV_CM4.elf > update.patch
+		diff -au --to-file=../$SOURCE_FOLDER/WildhornAV_CM4.elf WildhornAV_CM4.elf > update.patch
 		echo "delta created"
 
 		DATA_CHECK=$( cat  update.patch )
@@ -202,7 +204,7 @@ else
 
 	
 
-	LOCAL_HASH_CHECK=$( sha256sum ../Release/WildhornAV_CM4.elf | awk '{print $1}' )
+	LOCAL_HASH_CHECK=$( sha256sum ../$SOURCE_FOLDER/WildhornAV_CM4.elf | awk '{print $1}' )
 	echo "local latest firmware hash: "$LOCAL_HASH_CHECK
 
 	if [[ $REMOTE_HASH_CHECK == $LOCAL_HASH_CHECK ]]; then
@@ -216,7 +218,7 @@ fi
 
 
 echo "updating local cache"
-cp ../Release/WildhornAV_CM4.elf WildhornAV_CM4.elf 
+cp ../$SOURCE_FOLDER/WildhornAV_CM4.elf WildhornAV_CM4.elf 
 echo "local cache updated"
 echo "terminating, reset hostboard"
 

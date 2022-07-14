@@ -1,3 +1,16 @@
 #!/bin/bash
 
-sh /home/root/start_fw.sh
+# full script in here
+
+FW_NAME=rproc-m4-fw
+FW_LOCATION=/lib/firmware
+
+# stop remoteproc
+echo -n stop > /sys/class/remoteproc/remoteproc0/state
+
+# load firmware 
+echo -n $FW_LOCATION > /sys/module/firmware_class/parameters/path
+echo -n $FW_NAME > /sys/class/remoteproc/remoteproc0/firmware
+
+# start remoteproc
+echo -n start > /sys/class/remoteproc/remoteproc0/state

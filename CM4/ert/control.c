@@ -27,10 +27,6 @@
 #include <abstraction/gpio.h>
 
 
-//TEMP
-#include <sensor/accelerometer.h>
-#include <sensor/gyroscope.h>
-
 /**********************
  *	CONSTANTS
  **********************/
@@ -160,18 +156,18 @@ void control_thread(__attribute__((unused)) void * arg) {
 	static const TickType_t period = pdMS_TO_TICKS(CONTROL_HEART_BEAT);
 	last_wake_time = xTaskGetTickCount();
 
-	device_interface_t * hostproc_interface = hostproc_get_interface();
+	device_interface_t * hostproc_interface = hostproc_get_feedback_interface();
 
 
 
 	for(;;) {
 
 
-		static uint8_t msg[] = "hello\n\r";
+		static uint8_t data[32];
+		static uint32_t len = 32;
+		device_interface_recv(hostproc_interface, data, &len);
+		static uint8_t msg[] = "hello\n";
 		device_interface_send(hostproc_interface, msg, sizeof(msg));
-
-		accelerometer_init();
-		gyroscope_init();
 
 
 		vTaskDelayUntil( &last_wake_time, period );
