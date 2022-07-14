@@ -156,7 +156,6 @@ void host_UART_RX(VIRT_UART_HandleTypeDef *huart) {
 			if_ctx->rx_once = 1;
 			uint32_t i = 0;
 			while(i < huart->RxXferSize) {
-				led_rgb_set_rgb(0xff, 0xff, 0xff);
 				util_buffer_u8_add(&if_ctx->rx_buffer, huart->pRxBuffPtr[i]);
 				i++;
 			}
@@ -178,7 +177,8 @@ util_error_t host_recv(void* context, uint8_t* data, uint32_t* len) {
 	//check if messages where received.
 	OPENAMP_check_for_message();
 	uint32_t i = 0;
-	while(!util_buffer_u8_isempty(&if_ctx->rx_buffer) && i < *len) {
+	while((!util_buffer_u8_isempty(&if_ctx->rx_buffer)) && (i < *len)) {
+		//led_rgb_set_rgb(0xff, 0xff, 0xff);
 		data[i] = util_buffer_u8_get(&if_ctx->rx_buffer);
 		i++;
 	}
