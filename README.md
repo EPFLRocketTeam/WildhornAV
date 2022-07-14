@@ -20,7 +20,7 @@ The CM4 subdir contains all the code which will be running on the coprocessor. T
 * ![img](https://img.shields.io/badge/Feature-Done-success) Coprocessor launch [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Done-success) Blinking led [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Done-success) Generic device driver [Iacopo] 
-* ![img](https://img.shields.io/badge/Feature-Progress-important) Coprocessor communication [Iacopo]
+* ![img](https://img.shields.io/badge/Feature-Working-yellow) Coprocessor communication [Iacopo]
 * ![img](https://img.shields.io/badge/Feature-Progress-important) Multiboard communication [Olivér]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Barometer device [unassigned]
 * ![img](https://img.shields.io/badge/Feature-Unstarted-critical) Accelerometer device [unassigned]
