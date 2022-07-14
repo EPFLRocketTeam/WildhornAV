@@ -43,7 +43,8 @@ if [[ -z "$REMOTE_SSH" ]]; then
 
 	REMOTE_FIRMWARE_HASH=$( kermit $KERMIT_CONFIG -C "remote host sha256sum WildhornAV_CM4.elf, exit" | awk '{print $1}')
 	echo "last firmware hash [remote]: "$REMOTE_FIRMWARE_HASH
-	if [[ $LAST_FIRMWARE_HASH == $REMOTE_FIRMWARE_HASH ]] ; then
+	#if [[ $LAST_FIRMWARE_HASH == $REMOTE_FIRMWARE_HASH ]] ; then
+	if [[ "A" == "B" ]] ; then #false
 		echo "firmware match, delta update possible"
 
 		diff -au --to-file=../$SOURCE_FOLDER/WildhornAV_CM4.elf WildhornAV_CM4.elf > update.patch
@@ -139,7 +140,8 @@ else
 	REMOTE_FIRMWARE_HASH=$( ssh $SSH_TARGET "sha256sum WildhornAV_CM4.elf" | awk '{print $1}' )
 	echo "last firmware hash [remote]: "$REMOTE_FIRMWARE_HASH
 
-	if [[ $LAST_FIRMWARE_HASH == $REMOTE_FIRMWARE_HASH ]] ; then #use delta update
+	#if [[ $LAST_FIRMWARE_HASH == $REMOTE_FIRMWARE_HASH ]] ; then #use delta update
+	if [[ "A" == "B" ]] ; then #false
 		echo "firmware match, delta update possible"
 
 		diff -au --to-file=../$SOURCE_FOLDER/WildhornAV_CM4.elf WildhornAV_CM4.elf > update.patch
@@ -182,7 +184,7 @@ else
 		ssh $SSH_TARGET "chmod +x /etc/rc.local"
 		echo "tools sent"
 
-		cp  ../Release/WildhornAV_CM4.elf WildhornAV_CM4.elf
+		cp  ../$SOURCE_FOLDER/WildhornAV_CM4.elf WildhornAV_CM4.elf
 		bzip2 -f WildhornAV_CM4.elf
 		echo "firmware compressed"
 
