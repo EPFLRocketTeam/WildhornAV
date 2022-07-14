@@ -22,3 +22,6 @@
 [submodule "distribution-package/openstlinux-5.10-dunfell-mp1-21-11-17/layers/meta-st/scripts"]
 	path = distribution-package/layers/meta-st/scripts
 	url = https://github.com/STMicroelectronics/meta-st-scripts
+[submodule "distribution-package/layers/meta-ros"]
+	path = distribution-package/layers/meta-ros
+	url = https://github.com/ros/meta-ros.git
