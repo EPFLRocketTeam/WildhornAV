@@ -68,6 +68,14 @@
  *	DECLARATIONS
  **********************/
 
+util_error_t accelerometer_calibrate(device_t * acc, accelerometer_data_t * data) {
+
+}
+
+util_error_t accelerometer_read_data(device_t * acc, accelerometer_data_t * data) {
+
+}
+
 /**
  * @brief Initialize accelerometers
  */
@@ -81,6 +89,8 @@ util_error_t accelerometer_init(device_t * acc) {
 	}
 
 	//initialize sensor
+	//write to ctrl1
+	//write to ctrl3
 
 	return ER_SUCCESS;
 }
