@@ -9,11 +9,10 @@ IMAGE_LINGUAS = "en-us"
 
 IMAGE_FEATURES += "\
     package-management  \
-    ssh-server-openssh \
     tools-debug \
     tools-sdk \ 
     "
-
+# ssh-server-openssh
 #
 # INSTALL addons
 #
@@ -25,4 +24,11 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     \
     ${@bb.utils.contains('COMBINED_FEATURES', 'optee', 'packagegroup-optee-core', '', d)}   \
     ${@bb.utils.contains('COMBINED_FEATURES', 'optee', 'packagegroup-optee-test', '', d)}   \
+    \
+    vim \
+    git \
+    python3-smbus \
+    i2c-tools \
+    python3-numpy \
+    python3-pyserial \
     "
