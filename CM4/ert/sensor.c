@@ -1,5 +1,5 @@
-/*  Title		: I2C Acquisition
- *  Filename	: i2c_acq.c
+/*  Title		: Sensor Acquisition
+ *  Filename	: sensor.c
  *	Author		: iacopo sprenger
  *	Date		: 13.07.2021
  *	Version		: 0.1
@@ -10,7 +10,7 @@
  *	INCLUDES
  **********************/
 
-#include <sensor/i2c_acq.h>
+#include <sensor.h>
 
 #include <main.h>
 #include <cmsis_os.h>
@@ -57,7 +57,7 @@ static device_t * barometer;
  *	DECLARATIONS
  **********************/
 
-void i2c_acq_thread(__attribute__((unused)) void * arg) {
+void sensor_i2c_thread(__attribute__((unused)) void * arg) {
 	static TickType_t last_wake_time;
 	static const TickType_t period = pdMS_TO_TICKS(I2C_ACQ_HEART_BEAT);
 	last_wake_time = xTaskGetTickCount();

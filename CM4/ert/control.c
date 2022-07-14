@@ -156,7 +156,7 @@ void control_thread(__attribute__((unused)) void * arg) {
 	static const TickType_t period = pdMS_TO_TICKS(CONTROL_HEART_BEAT);
 	last_wake_time = xTaskGetTickCount();
 
-	device_interface_t * hostproc_interface = hostproc_get_interface();
+	device_interface_t * hostproc_interface = hostproc_get_feedback_interface();
 
 
 

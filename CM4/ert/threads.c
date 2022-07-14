@@ -21,7 +21,7 @@
 #include <device/i2c_sensor.h>
 #include <control.h>
 #include <device/hostproc.h>
-#include <sensor/i2c_acq.h>
+#include <sensor.h>
 #include <od/od.h>
 
 
@@ -40,8 +40,8 @@
 #define LED_RGB_SZ		DEFAULT_SZ
 #define LED_RGB_PRIO	(1)
 
-#define i2C_ACQ_SZ		DEFAULT_SZ
-#define i2C_ACQ_PRIO	(6)
+#define SENSOR_I2C_SZ	DEFAULT_SZ
+#define SENSOR_I2C_PRIO	(6)
 
 
 /**********************
@@ -84,7 +84,7 @@
 static TaskHandle_t od_handle = NULL;
 static TaskHandle_t control_handle = NULL;
 static TaskHandle_t led_rgb_handle = NULL;
-static TaskHandle_t i2c_acq_handle = NULL;
+static TaskHandle_t sensor_i2c_handle = NULL;
 
 /**********************
  *	PROTOTYPES
@@ -136,7 +136,7 @@ void threads_init(void) {
 	CREATE_THREAD(control_handle, control, control_thread, NULL, CONTROL_SZ, CONTROL_PRIO);
 
 
-	CREATE_THREAD(i2c_acq_handle, i2c_acq, i2c_acq_thread, NULL, i2C_ACQ_SZ, i2C_ACQ_PRIO);
+	CREATE_THREAD(sensor_i2c_handle, sensor_i2c, sensor_i2c_thread, NULL, SENSOR_I2C_SZ, SENSOR_I2C_PRIO);
 
 
 }

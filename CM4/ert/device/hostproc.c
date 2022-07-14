@@ -61,6 +61,10 @@ typedef struct hostproc_interface_context {
  *
  */
 static VIRT_UART_HandleTypeDef host_UART0;
+static device_interface_t hostproc_feedback_interface;
+static hostproc_interface_context_t hostproc_feedback_interface_context = {
+		.uart = &host_UART0
+};
 
 /**
  * @brief	Virtual UART channel for OD synchronization.
@@ -68,6 +72,10 @@ static VIRT_UART_HandleTypeDef host_UART0;
  *
  */
 static VIRT_UART_HandleTypeDef host_UART1;
+static device_interface_t hostproc_sync_interface;
+static hostproc_interface_context_t hostproc_sync_interface_context = {
+		.uart = &host_UART1
+};
 
 /**
  * @brief	Virtual UART channel for critical data synchronization.
@@ -76,6 +84,10 @@ static VIRT_UART_HandleTypeDef host_UART1;
  * 			processed by the kalman filter and the state estimation.
  */
 static VIRT_UART_HandleTypeDef host_UART2;
+static device_interface_t hostproc_data_interface;
+static hostproc_interface_context_t hostproc_data_interface_context = {
+		.uart = &host_UART2
+};
 
 /**
  * @brief	Virtual UART channel for commands
@@ -85,29 +97,29 @@ static VIRT_UART_HandleTypeDef host_UART2;
  * @note 	This might be included in the OD as a command word or something.
  */
 static VIRT_UART_HandleTypeDef host_UART3;
+static device_interface_t hostproc_cmd_interface;
+static hostproc_interface_context_t hostproc_cmd_interface_context = {
+		.uart = &host_UART3
+};
 
-/*
- * This will need to be
- *
- * hostproc_feedback_interface
- *
- * hostproc_od_interface
- *
- * hostproc_data_interface
- *
- * (optional) hostproc_cmd_interface
- */
 
-static device_t hostproc_device;
-static device_interface_t hostproc_interface;
-static hostproc_interface_context_t hostproc_interface_context;
+static device_interface_t * hostproc_interfaces[] = {
+		&hostproc_feedback_interface,
+		&hostproc_sync_interface,
+		&hostproc_data_interface,
+		&hostproc_cmd_interface
+};
+
+static uint32_t hostproc_interfaces_count =
+		sizeof(hostproc_interfaces) / sizeof(device_interface_t *);
+
 
 
 /**********************
  *	PROTOTYPES
  **********************/
 
-void host_UART0_RX(VIRT_UART_HandleTypeDef *huart);
+void host_UART_RX(VIRT_UART_HandleTypeDef *huart);
 
 util_error_t host_send(void* context, uint8_t* data, uint32_t len);
 util_error_t host_recv(void* context, uint8_t* data, uint32_t* len);
@@ -116,35 +128,47 @@ util_error_t host_recv(void* context, uint8_t* data, uint32_t* len);
  *	DECLARATIONS
  **********************/
 
-
-device_interface_t * hostproc_get_interface(void) {
-	return &hostproc_interface;
+device_interface_t * hostproc_get_feedback_interface(void) {
+	return &hostproc_feedback_interface;
 }
 
-device_t * hostproc_get_device(void) {
-	return &hostproc_device;
+device_interface_t * hostproc_get_sync_interface(void) {
+	return &hostproc_sync_interface;
+}
+
+device_interface_t * hostproc_get_data_interface(void) {
+	return &hostproc_data_interface;
+}
+
+device_interface_t * hostproc_get_cmd_interface(void) {
+	return &hostproc_cmd_interface;
 }
 
 
-void host_UART0_RX(VIRT_UART_HandleTypeDef *huart) {
-	led_rgb_set_rgb(0xff, 0xff, 0xff);
-	hostproc_interface_context.rx_once = 1;
-	uint32_t i = 0;
-	while(i < huart->RxXferSize) {
-		util_buffer_u8_add(&hostproc_interface_context.rx_buffer, huart->pRxBuffPtr[i]);
-		i++;
+
+/**
+ * @brief Virtual uart reception callback, called from the rpmsg polling function.
+ */
+void host_UART_RX(VIRT_UART_HandleTypeDef *huart) {
+	for(uint32_t i = 0; i < hostproc_interfaces_count; i++) {
+		hostproc_interface_context_t * if_ctx = (hostproc_interface_context_t *) hostproc_interfaces[i]->context;
+		if(if_ctx->uart == huart) {
+			if_ctx->rx_once = 1;
+			uint32_t i = 0;
+			while(i < huart->RxXferSize) {
+				led_rgb_set_rgb(0xff, 0xff, 0xff);
+				util_buffer_u8_add(&if_ctx->rx_buffer, huart->pRxBuffPtr[i]);
+				i++;
+			}
+			break; //no need to check others after match
+		}
 	}
 }
 
 util_error_t host_send(void* context, uint8_t* data, uint32_t len) {
 	hostproc_interface_context_t * interface_context = (hostproc_interface_context_t *) context;
 	if(interface_context->rx_once) {
-
-		if(VIRT_UART_Transmit(interface_context->uart, data, len) != VIRT_UART_OK) {
-			led_rgb_set_rgb(0xff, 0, 0);
-		} else {
-			led_rgb_set_rgb(0, 0xff, 0);
-		}
+		VIRT_UART_Transmit(interface_context->uart, data, len);
 	}
 	return ER_SUCCESS;
 }
@@ -162,23 +186,33 @@ util_error_t host_recv(void* context, uint8_t* data, uint32_t* len) {
 	return ER_SUCCESS;
 }
 
+util_error_t hostproc_uart_init(device_interface_t * hostproc, hostproc_interface_context_t * context) {
+	if(VIRT_UART_Init(context->uart) != VIRT_UART_OK) {
+		return ER_FAILURE;
+	}
+
+	if (VIRT_UART_RegisterCallback(context->uart, VIRT_UART_RXCPLT_CB_ID, host_UART_RX) != VIRT_UART_OK) {
+		return ER_FAILURE;
+	}
+
+
+
+	context->rx_once = 0;
+	util_buffer_u8_init(&context->rx_buffer, context->rx_data, MAX_RX_DATA);
+
+	device_interface_create(hostproc, (void*) context, NULL, host_send, host_recv, NULL);
+
+	return ER_SUCCESS;
+}
+
 
 util_error_t hostproc_init(void) {
-	if(VIRT_UART_Init(&host_UART0) != VIRT_UART_OK) {
-		return ER_FAILURE;
-	}
 
-	if (VIRT_UART_RegisterCallback(&host_UART0, VIRT_UART_RXCPLT_CB_ID, host_UART0_RX) != VIRT_UART_OK) {
-		return ER_FAILURE;
-	}
+	hostproc_uart_init(&hostproc_feedback_interface, &hostproc_feedback_interface_context);
+	hostproc_uart_init(&hostproc_sync_interface, &hostproc_sync_interface_context);
+	hostproc_uart_init(&hostproc_data_interface, &hostproc_data_interface_context);
+	hostproc_uart_init(&hostproc_cmd_interface, &hostproc_cmd_interface_context);
 
-
-
-	hostproc_interface_context.uart = &host_UART0;
-	hostproc_interface_context.rx_once = 0;
-	util_buffer_u8_init(&hostproc_interface_context.rx_buffer, hostproc_interface_context.rx_data, MAX_RX_DATA);
-
-	device_interface_create(&hostproc_interface, (void*) &hostproc_interface_context, NULL, host_send, host_recv, NULL);
 
 	return ER_SUCCESS;
 

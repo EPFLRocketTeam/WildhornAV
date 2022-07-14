@@ -45,7 +45,7 @@
 extern "C"{
 #endif
 
-void i2c_acq_thread(__attribute__((unused)) void * arg);
+void sensor_i2c_thread(__attribute__((unused)) void * arg);
 
 #ifdef __cplusplus
 } // extern "C"
