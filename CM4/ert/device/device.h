@@ -128,6 +128,9 @@ util_error_t device_read_u16(device_t * dev, uint32_t addr, uint16_t* data);
 util_error_t device_read_i8(device_t * dev, uint32_t addr, int8_t* data);
 util_error_t device_read_u8(device_t * dev, uint32_t addr, uint8_t* data);
 
+util_error_t device_read(device_t * dev, uint32_t addr, uint8_t* data, uint32_t len);
+util_error_t device_write(device_t * dev, uint32_t addr, uint8_t* data, uint32_t len);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */

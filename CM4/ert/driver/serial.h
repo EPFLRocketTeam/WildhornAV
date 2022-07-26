@@ -36,17 +36,6 @@
  *  TYPEDEFS
  **********************/
 
-typedef enum serial_interrupt_source{
-	SERIAL_SOURCE_DMA_FIRST_HALF,
-	SERIAL_SOURCE_DMA_SECOND_HALF,
-	SERIAL_SOURCE_IDLE
-}serial_interrupt_source_t;
-
-typedef enum serial_transfer_mode{
-	SERIAL_TRANSFER_DMA,
-	SERIAL_TRANSFER_IT
-}serial_transfer_mode_t;
-
 typedef struct serial_deamon_context {
 	SemaphoreHandle_t rx_sem;
 	StaticSemaphore_t rx_sem_buffer;
@@ -85,7 +74,7 @@ device_daemon_t * serial_get_deamon(void);
 
 device_interface_t * serial_get_feedback_interface(void);
 
-util_error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode);
+util_error_t serial_setup_reception(serial_interface_context_t * interface_context);
 
 util_error_t serial_send(void * context, uint8_t* data, uint32_t len);
 

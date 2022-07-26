@@ -1,9 +1,9 @@
-/*  Title		: i2c_sensor
- *  Filename	: i2c_sensor.c
+/*  Title		: spi_sensor
+ *  Filename	: spi_sensor.c
  *	Author		: iacopo sprenger
  *	Date		: 22.04.2022
  *	Version		: 0.1
- *	Description	: device driver for i2c sensors
+ *	Description	: device driver for spi sensors
  *
  *	@note  	We use semaphores to create a "blocking function" which does not
  *			slow doen the RTOS with useless polling.
@@ -14,8 +14,8 @@
  **********************/
 #include <main.h>
 #include <device/device.h>
-#include <device/i2c_sensor.h>
-#include <driver/i2c.h>
+#include <device/spi_sensor.h>
+#include <driver/spi.h>
 #include <util.h>
 #include <string.h>
 /**********************
@@ -45,51 +45,51 @@
 
 
 
-static device_t i2c_accelerometer_device;
-static device_t i2c_gyroscope_device;
-static device_t i2c_barometer_device;
+static device_t spi_accelerometer_device;
+static device_t spi_gyroscope_device;
+static device_t spi_barometer_device;
 
-static i2c_sensor_context_t i2c_accelerometer_device_context = {
-		.device_address = 0x30
+static i2c_sensor_context_t spi_accelerometer_device_context = {
+
 };
 
-static i2c_sensor_context_t i2c_gyroscope_device_context = {
-		.device_address = 0xD0
+static i2c_sensor_context_t spi_gyroscope_device_context = {
+
 };
 
-static i2c_sensor_context_t i2c_barometer_device_context = {
-		.device_address = 0x18
+static i2c_sensor_context_t spi_barometer_device_context = {
+
 };
 
 /**********************
  *	PROTOTYPES
  **********************/
 
-util_error_t i2c_sensor_read_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
-util_error_t i2c_sensor_write_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
+util_error_t spi_sensor_read_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
+util_error_t spi_sensor_write_reg(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
 
-util_error_t i2c_sensor_read_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
-util_error_t i2c_sensor_write_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
+util_error_t spi_sensor_read_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
+util_error_t spi_sensor_write_reg_HAL(void* context, device_interface_t * interface, uint32_t addr, uint8_t * data, uint32_t len);
 
 /**********************
  *	DECLARATIONS
  **********************/
 
-device_t * i2c_sensor_get_accelerometer(void) {
-	return &i2c_accelerometer_device;
+device_t * spi_sensor_get_accelerometer(void) {
+	return &spi_accelerometer_device;
 }
 
-device_t * i2c_sensor_get_gyroscope(void) {
-	return &i2c_gyroscope_device;
+device_t * spi_sensor_get_gyroscope(void) {
+	return &spi_gyroscope_device;
 }
 
-device_t * i2c_sensor_get_barometer(void) {
-	return &i2c_barometer_device;
+device_t * spi_sensor_get_barometer(void) {
+	return &spi_barometer_device;
 }
 
-util_error_t i2c_sensor_init(void) {
+util_error_t spi_sensor_init(void) {
 
-	device_interface_t * i2c_sensor_interface = i2c_get_sensor_interface();
+	device_interface_t * spi_sensor_interface = spi_get_sensor_interface();
 
 	device_create((void*) &i2c_accelerometer_device, &i2c_accelerometer_device_context, i2c_sensor_interface, i2c_sensor_read_reg_HAL, i2c_sensor_write_reg_HAL);
 	device_create((void*) &i2c_gyroscope_device, &i2c_gyroscope_device_context, i2c_sensor_interface, i2c_sensor_read_reg_HAL, i2c_sensor_write_reg_HAL);

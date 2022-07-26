@@ -68,8 +68,6 @@ util_error_t serial_recv(void * context, uint8_t* data, uint32_t * len);
 
 util_error_t serial_handle_data(void * if_context, void * dem_context);
 
-util_error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode);
-
 
 /**********************
  *	DECLARATIONS
@@ -125,7 +123,7 @@ util_error_t serial_feedback_init(void) {
 
 	error |= device_interface_create(&feedback_interface, (void*) &feedback_interface_context, &serial_deamon, serial_send, serial_recv, serial_handle_data);
 
-	serial_setup_reception(&feedback_interface_context, SERIAL_TRANSFER_IT);
+	serial_setup_reception(&feedback_interface_context);
 
 	return error;
 }
@@ -141,23 +139,13 @@ util_error_t serial_data_ready(void * context)
 
 }
 
-util_error_t serial_setup_reception(serial_interface_context_t * interface_context, serial_transfer_mode_t mode)
+util_error_t serial_setup_reception(serial_interface_context_t * interface_context)
 {
-	if( mode == SERIAL_TRANSFER_DMA) {
-		//setup dma reception
+	//setup Interrupt reception byte per byte
+	util_buffer_u8_init(&interface_context->rx_buffer, interface_context->rx_data, SERIAL_BUFFER_LEN);
 
-		return ER_RESSOURCE_ERROR;
-		//TODO: setup reception using DMA
+	HAL_UART_Receive_IT(interface_context->uart, &interface_context->rx_fragment, 1);
 
-
-	} else if ( mode == SERIAL_TRANSFER_IT) {
-		//setup Interrupt reception byte per byte
-		util_buffer_u8_init(&interface_context->rx_buffer, interface_context->rx_data, SERIAL_BUFFER_LEN);
-
-		HAL_UART_Receive_IT(interface_context->uart, &interface_context->rx_fragment, 1);
-
-	}
-	return ER_FAILURE;
 }
 
 util_error_t serial_send(void * context, uint8_t* data, uint32_t len)

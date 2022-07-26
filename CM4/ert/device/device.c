@@ -408,5 +408,12 @@ util_error_t device_read_u8(device_t * dev, uint32_t addr, uint8_t* data)
     return ER_SUCCESS;
 }
 
+util_error_t device_read(device_t * dev, uint32_t addr, uint8_t* data, uint32_t len) {
+	dev->read_reg(dev->context, dev->interface, addr, data, len);
+}
+
+util_error_t device_write(device_t * dev, uint32_t addr, uint8_t* data, uint32_t len) {
+	dev->write_reg(dev->context, dev->interface, addr, data, len);
+}
 
 /* END */

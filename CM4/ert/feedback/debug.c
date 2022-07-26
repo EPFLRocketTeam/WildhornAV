@@ -73,14 +73,12 @@ util_error_t debug_init(void){
 
 	msv2_init(&debug_interface_context.msv2);
 
+	serial_feedback_init();
+
 	device_interface_t * feedback_interface = serial_get_feedback_interface();
 
 	device_daemon_t * serial_deamon = serial_get_deamon();
 
-
-	error |= device_interface_create(feedback_interface, (void*) &feedback_interface_context, serial_deamon, serial_send, serial_recv, NULL);
-
-	serial_setup_reception(&feedback_interface_context, SERIAL_TRANSFER_IT);
 
 }
 

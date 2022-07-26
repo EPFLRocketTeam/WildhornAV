@@ -1,13 +1,13 @@
-/*  Title		: i2c_sensor
- *  Filename	: i2c_sensor.c
+/*  Title		: spi_sensor
+ *  Filename	: spi_sensor.h
  *	Author		: iacopo sprenger
  *	Date		: 22.04.2022
  *	Version		: 0.1
- *	Description	: device driver for i2c sensors
+ *	Description	: device driver for spi sensors
  */
 
-#ifndef I2C_SENSOR_H
-#define I2C_SENSOR_H
+#ifndef SPI_SENSOR_H
+#define SPI_SENSOR_H
 
 
 
@@ -37,14 +37,13 @@
  **********************/
 
 // pas sur pour les données de capteur ici...
-typedef struct i2c_sensor_context {
-	uint8_t device_address;
+typedef struct spi_sensor_context {
 	union data {
 		accelerometer_data_t acc_data;
 		barometer_data_t baro_data;
 		gyroscope_data_t gyro_data;
 	} data;
-}i2c_sensor_context_t;
+}spi_sensor_context_t;
 
 
 /**********************
@@ -60,17 +59,17 @@ typedef struct i2c_sensor_context {
 extern "C"{
 #endif
 
-device_t * i2c_sensor_get_accelerometer(void);
-device_t * i2c_sensor_get_gyroscope(void);
-device_t * i2c_sensor_get_barometer(void);
+device_t * spi_sensor_get_accelerometer(void);
+device_t * spi_sensor_get_gyroscope(void);
+device_t * spi_sensor_get_barometer(void);
 
-util_error_t i2c_sensor_init(void);
+util_error_t spi_sensor_init(void);
 
 
 #ifdef __cplusplus
 } // extern "C"
 #endif /* __cplusplus */
 
-#endif /* I2C_SENSOR_H */
+#endif /* SPI_SENSOR_H */
 
 /* END */

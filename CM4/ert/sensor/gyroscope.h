@@ -23,6 +23,8 @@
  *  CONSTANTS
  **********************/
 
+#define GYRO_AXIS_COUNT 3
+
 
 /**********************
  *  MACROS
@@ -32,6 +34,11 @@
 /**********************
  *  TYPEDEFS
  **********************/
+
+typedef struct gyroscope_data {
+	int16_t raw[GYRO_AXIS_COUNT];
+	int16_t	processed[GYRO_AXIS_COUNT];
+}gyroscope_data_t;
 
 
 /**********************

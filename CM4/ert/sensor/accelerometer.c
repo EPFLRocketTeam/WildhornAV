@@ -11,6 +11,7 @@
  **********************/
 
 #include <sensor/accelerometer.h>
+#include <device/i2c_sensor.h>
 
 /**********************
  *	CONSTANTS
@@ -72,27 +73,46 @@ util_error_t accelerometer_calibrate(device_t * acc, accelerometer_data_t * data
 
 }
 
-util_error_t accelerometer_read_data(device_t * acc, accelerometer_data_t * data) {
+void accelerometer_process_data(accelerometer_data_t * data, uint16_t range) {
+	for (uint8_t i = 0; i < ACC_AXIS_COUNT; i++) {
+		data->processed[i] = ((int32_t)data->raw[i] * range) >> 15;
+	}
+}
 
+util_error_t accelerometer_read_data(device_t * acc, accelerometer_data_t * data) {
+	//i2c_sensor_context_t * context = (i2c_sensor_context_t *) acc->context;
+	util_error_t error = ER_SUCCESS;
+	uint8_t tmp[6];
+	error |= device_read(acc, OUT_X_L, tmp, 6);
+	data->raw[ACC_X] = tmp[0] | (tmp[1]<<8);
+	data->raw[ACC_Y] = tmp[2] | (tmp[3]<<8);
+	data->raw[ACC_Z] = tmp[4] | (tmp[5]<<8);
+
+	return error;
 }
 
 /**
  * @brief Initialize accelerometers
  */
 util_error_t accelerometer_init(device_t * acc) {
-
+	util_error_t error = ER_SUCCESS;
 	uint8_t data; //read sensor magic number
-	device_read_u8(acc, WHO_AM_I, &data);
+	error |= device_read_u8(acc, WHO_AM_I, &data);
 
 	if(data != WHO_AM_I_MAGIC) {
-		return ER_RESSOURCE_ERROR;
+		return error | ER_RESSOURCE_ERROR;
 	}
 
 	//initialize sensor
-	//write to ctrl1
-	//write to ctrl3
+	//enable all axis of the accelerometer at 50Hz
+	error |= device_write_u8(acc, CTRL_REG1, 0b00100111);
+	//enable internal high pass filter with cutoff=8
+	error |= device_write_u8(acc, CTRL_REG2, 0b00010000);
+	//enable DBU and change endianess, +/- 100g
+	error |= device_write_u8(acc, CTRL_REG4, 0b11000000);
 
-	return ER_SUCCESS;
+
+	return error;
 }
 
 /* END */
